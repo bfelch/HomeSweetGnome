@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Player : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class Player : MonoBehaviour
     public float restTime;
     public float sprintTime;
     private CharacterMotor charMotor;
+
+
     // Use this for initialization
     void Start()
     {
@@ -19,21 +22,13 @@ public class Player : MonoBehaviour
         restTime = .75f;
         sprintTime = 1.25f;
         charMotor = gameObject.GetComponent<CharacterMotor>();
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        sanity -= .002f;
-        if (sanity < 0)
-        {
-            Destroy(gameObject);
-        }
-        if (sanity > maxSanity)
-        {
-            sanity = maxSanity;
-        }
-
+        Sanity();
         Sprint();
     }
 
@@ -42,7 +37,6 @@ public class Player : MonoBehaviour
         healthBarLength = (Screen.width / 3) * (sanity / (float)maxSanity);
         GUI.color = Color.red;
         GUI.Box(new Rect(550, 10, healthBarLength, 30), "Sanity");
-
     }
     //Note: Bug: enemies will not pathfind close enough to you to actually register the collision.
     void OnControllerColliderHit(ControllerColliderHit hit)
@@ -72,6 +66,20 @@ public class Player : MonoBehaviour
                 restTime = 0;
                 Debug.Log(sprintTime);
             }
+        }
+    }
+
+    
+    void Sanity()
+    {
+        sanity -= .002f;
+        if (sanity < 0)
+        {
+            Destroy(gameObject);
+        }
+        if (sanity > maxSanity)
+        {
+            sanity = maxSanity;
         }
     }
 }
