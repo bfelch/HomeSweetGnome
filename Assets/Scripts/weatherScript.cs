@@ -4,10 +4,14 @@ using System.Collections;
 public class weatherScript : MonoBehaviour 
 {
 	public GameObject lightning;
-	public GameObject stormClouds;
+	public GameObject clouds;
 	public GameObject fog;
+	public GameObject lightRain;
 	public GameObject heavyRain;
-	public GameObject rainSheet;
+
+	public GameObject[] weather; //Array to hold all weather particle systems
+
+	//Distant lightning variables
 	float minRate = 0.2f;
 	float maxRate = 0.8f;
 	float rate = 0.2f;
@@ -15,19 +19,8 @@ public class weatherScript : MonoBehaviour
 	float newTime = 2.0f;
 
 	float oldWeatherTime = 0.0f;
-	float newWeatherTime = 20.0f;
-	int weatherType = 1;
-
-	public GameObject[] weather;
-
-	/*
-	int NONE = 0;
-	int FOG = 1;
-	int CLOUDS = 2;
-	int THUNDERSTORM = 3;
-	int RAIN = 4;
-	int ALL = 5;
-	*/
+	float newWeatherTime = 20.0f; //How often to change weather
+	int weatherType = 0; //What's the weather?
 
 	// Use this for initialization
 	void Start () 
@@ -39,63 +32,74 @@ public class weatherScript : MonoBehaviour
 			weather[i].particleSystem.enableEmission = false;
 		}
 
-		lightning = GameObject.Find("Clouds Stormy/Lightning");
-		stormClouds = GameObject.Find("Clouds Stormy");
+		lightning = GameObject.Find("Lightning");
+		clouds = GameObject.Find("Clouds");
 		fog = GameObject.Find("Fog");
-		heavyRain = GameObject.Find("Rain Heavy");
-		rainSheet = GameObject.Find ("Rain Heavy/RainSheet");
+		lightRain = GameObject.Find ("Light Rain");
+		heavyRain = GameObject.Find("Heavy Rain");
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
+		checkWeatherTime();
+	}
+
+	void checkWeatherTime()
+	{
+		//Random time for distant lightning
 		if(Time.time > oldTime + newTime)
 		{
 			oldTime = Time.time;
 			rate = Random.Range(minRate, maxRate);
 			lightning.particleSystem.emissionRate = rate;
 		}
-
-		if (Time.time > oldWeatherTime + newWeatherTime) 
+		
+		//Change weather?
+		if(Time.time > oldWeatherTime + newWeatherTime) 
 		{
 			oldWeatherTime = Time.time;
-			weatherType = Random.Range(0, 5);
-
+			weatherType = Random.Range(0, 5); //Pick random weather
+			
+			//Turn off weather
 			for(int i = 0; i < weather.Length; i++)
 			{
 				weather[i].particleSystem.enableEmission = false;
 			}
-
-			Debug.Log(weatherType);
-
+			
+			//Turn on weather
 			switch(weatherType)
 			{
+				//Fog
 				case 0:
-					//do nothing
-					break;
-				case 1:
 					fog.particleSystem.enableEmission = true;
 					break;
-				case 2:
-					stormClouds.particleSystem.enableEmission = true;
+				//Light Rain
+				case 1:
+					clouds.particleSystem.enableEmission = true;
+					lightRain.particleSystem.enableEmission = true;
 					break;
+				//Heavy Rain
+				case 2:
+					clouds.particleSystem.enableEmission = true;
+					lightRain.particleSystem.enableEmission = true;
+					heavyRain.particleSystem.enableEmission = true;
+					break;
+				//Thunderstorm
 				case 3:
-					stormClouds.particleSystem.enableEmission = true;
+					clouds.particleSystem.enableEmission = true;
+					lightRain.particleSystem.enableEmission = true;
+					heavyRain.particleSystem.enableEmission = true;
 					lightning.particleSystem.enableEmission = true;
 					break;
+				//All weather
 				case 4:
-					stormClouds.particleSystem.enableEmission = true;
-					heavyRain.particleSystem.enableEmission = true;
-					rainSheet.particleSystem.enableEmission = true;
-					fog.particleSystem.enableEmission = true;
-					break;
-				case 5:
 					for(int i = 0; i < weather.Length; i++)
 					{
-						Debug.Log(weather[i].name);
 						weather[i].particleSystem.enableEmission = true;
 					}
 					break;
+				//Catch all
 				default:
 					//do nothing
 					break;
