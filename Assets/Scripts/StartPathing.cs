@@ -7,11 +7,13 @@ public class StartPathing : MonoBehaviour
     public NavMeshAgent agent;
     //Target in world
     public GameObject target;
+    public Blink targetBlink;
 
     //Range at which will follow target
     public float sightRange;
     //Movement speed
     public float moveSpeed;
+    private float blinkSpeed;
     //Wander speed
     public float wanderSpeed;
 
@@ -22,7 +24,9 @@ public class StartPathing : MonoBehaviour
     {
         QualitySettings.antiAliasing = 4;
         target = GameObject.Find("Player");
+        targetBlink = target.GetComponent<Blink>();
         agent = gameObject.GetComponent<NavMeshAgent>();
+        blinkSpeed = float.MaxValue;
     }
 
     void Update()
@@ -49,7 +53,10 @@ public class StartPathing : MonoBehaviour
     {
         lastKnownLocation = target.transform.position;
         agent.SetDestination(lastKnownLocation);
-        agent.speed = moveSpeed;
+        if (targetBlink.blink)
+            agent.speed = blinkSpeed;
+        else
+            agent.speed = moveSpeed;
     }
 
     private void Wander()
@@ -86,6 +93,7 @@ public class StartPathing : MonoBehaviour
         isSeen = (viewportX >= lowBound && viewportX <= highBound);
         isSeen = isSeen && (viewportY >= lowBound && viewportY <= highBound);
         isSeen = isSeen && viewportZ > zBound;
+        isSeen = isSeen && !targetBlink.blink;
         return isSeen;
     }
 

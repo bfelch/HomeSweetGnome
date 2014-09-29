@@ -8,7 +8,7 @@ public class Blink : MonoBehaviour {
     float blinkTimer = 5.0f;
     float openTimer = 10.0f;
     float maxOpenTimer = 10.0f;
-    private bool blink = false;
+    public bool blink = false;
     private bool rechargeBlink = false;
 
     private bool showGUI = false;
@@ -44,14 +44,14 @@ public class Blink : MonoBehaviour {
         blinkTimer -= Time.deltaTime;
         if (blinkTimer <= 0)
         {
-            blinkTimer = 5;
+            blinkTimer = 5.08f;
+            topLid.animation.Play("BlinkTop");
+            bottomLid.animation.Play("BlinkBottom");
             blink = true;
         }
 
-        if (blink)
+        if (blinkTimer <= 5.0f)
         {
-            topLid.animation.Play("BlinkTop");
-            bottomLid.animation.Play("BlinkBottom");
             blink = false;
         }
     }
