@@ -55,7 +55,7 @@
      <Compile Include="Assets\Scripts\lightningFlash.cs" />
      <Compile Include="Assets\Scripts\weatherScript.cs" />
  <Reference Include="Assembly-UnityScript-firstpass">
- <HintPath>C:/Users/redmannm4034/Desktop/HomeSweetGnome/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
+ <HintPath>C:/Users/glodowskie4641/Desktop/HomeSweetGnome/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>
