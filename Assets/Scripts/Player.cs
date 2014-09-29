@@ -7,10 +7,18 @@ public class Player : MonoBehaviour
     public float sanity;
     public float maxSanity;
     float healthBarLength;
-    public float restTime;
-    public float sprintTime;
+    private float restTime;
+    private float maxRestTime;
+    private float sprintTime;
+    private float maxSprintTime;
     private CharacterMotor charMotor;
 
+    private Texture2D background;
+    private Texture2D foreground;
+    private Rect fatigue = new Rect(5, 5, 200, 22);
+    private Rect sprint = new Rect(215,5, 200, 22);
+
+    private bool showGUI = false;
 
     // Use this for initialization
     void Start()
@@ -19,9 +27,19 @@ public class Player : MonoBehaviour
         //The lower it gets, the more hazards are in the level.
         sanity = 100;
         maxSanity = 100;
-        restTime = .75f;
-        sprintTime = 1.25f;
+        restTime = maxRestTime = .75f;
+        sprintTime = maxSprintTime = 1.25f;
         charMotor = gameObject.GetComponent<CharacterMotor>();
+
+        background = new Texture2D(1, 1, TextureFormat.RGB24, false);
+        foreground = new Texture2D(1, 1, TextureFormat.RGB24, false);
+
+        background.SetPixel(0, 0, Color.clear);
+        foreground.SetPixel(0, 0, Color.red);
+
+        background.Apply();
+        foreground.Apply();
+
 
     }
 
@@ -30,21 +48,45 @@ public class Player : MonoBehaviour
     {
         Sanity();
         Sprint();
+        GUIControl();
     }
 
     void OnGUI()
     {
-        healthBarLength = (Screen.width / 3) * (sanity / (float)maxSanity);
-        GUI.color = Color.red;
-        GUI.Box(new Rect(550, 10, healthBarLength, 30), "Sanity");
+        if (showGUI)
+        {
+            GUI.BeginGroup(fatigue);
+            {
+                GUI.DrawTexture(new Rect(0, 0, fatigue.width, fatigue.height), background, ScaleMode.StretchToFill);
+                GUI.DrawTexture(new Rect(0, 0, fatigue.width * sanity / maxSanity, fatigue.height), foreground, ScaleMode.StretchToFill);
+                GUI.backgroundColor = Color.clear;
+                GUI.TextArea(new Rect(0, 0, fatigue.width, fatigue.height), "Fatigue");
+            }
+            GUI.EndGroup(); ;
+
+            GUI.BeginGroup(sprint);
+            {
+                GUI.DrawTexture(new Rect(0, 0, sprint.width, sprint.height), background, ScaleMode.StretchToFill);
+                GUI.DrawTexture(new Rect(0, 0, sprint.width * sprintTime / maxSprintTime, sprint.height), foreground, ScaleMode.StretchToFill);
+                GUI.backgroundColor = Color.clear;
+                GUI.TextArea(new Rect(0, 0, sprint.width, sprint.height), "Sprint");
+            }
+            GUI.EndGroup(); ;
+        }
+        
     }
     //Note: Bug: enemies will not pathfind close enough to you to actually register the collision.
     void OnControllerColliderHit(ControllerColliderHit hit)
     {
-        if (hit.gameObject.name == "Enemy")
+        if (hit.gameObject.tag.Equals("Enemy"))
         {
             //Destroy(gameObject);
             sanity -= 2;
+            showGUI = true;
+        }
+        else
+        {
+            showGUI = false;
         }
     }
 
@@ -82,4 +124,21 @@ public class Player : MonoBehaviour
             sanity = maxSanity;
         }
     }
+
+    void GUIControl()
+    {
+        if(Input.GetMouseButton(0))
+        {
+            showGUI = true;
+        }
+        if(Input.GetMouseButtonUp(0))
+        {
+            showGUI = false;
+        }
+
+    }
+
+
+   
+ 
 }
