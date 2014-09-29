@@ -16,7 +16,7 @@ public class Player : MonoBehaviour
     private Texture2D background;
     private Texture2D foreground;
     private Rect fatigue = new Rect(5, 5, 200, 22);
-    private Rect sprint = new Rect(215,5, 200, 22);
+    private Rect sprint = new Rect(215, 5, 200, 22);
 
     private bool showGUI = false;
 
@@ -40,6 +40,7 @@ public class Player : MonoBehaviour
         background.Apply();
         foreground.Apply();
 
+        Screen.lockCursor = true;
 
     }
 
@@ -72,22 +73,27 @@ public class Player : MonoBehaviour
                 GUI.TextArea(new Rect(0, 0, sprint.width, sprint.height), "Sprint");
             }
             GUI.EndGroup(); ;
+
         }
-        
+
+
+        GUI.color = Color.white;
+        GUIStyle centeredStyle = GUI.skin.GetStyle("Label");
+        centeredStyle.alignment = TextAnchor.MiddleCenter;
+        // Draw the label at the center of the screen 
+        GUI.Label(new Rect(Screen.width / 2 - 50, Screen.height / 2 - 25, 100, 50), "+", centeredStyle);
     }
     //Note: Bug: enemies will not pathfind close enough to you to actually register the collision.
     void OnControllerColliderHit(ControllerColliderHit hit)
     {
         if (hit.gameObject.tag.Equals("Enemy"))
         {
-            //Destroy(gameObject);
             sanity -= 2;
             showGUI = true;
         }
-        else
-        {
-            showGUI = false;
-        }
+        else{showGUI = false;}
+
+        openDoor(hit);
     }
 
     void Sprint()
@@ -111,7 +117,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    
+
     void Sanity()
     {
         sanity -= .002f;
@@ -127,18 +133,36 @@ public class Player : MonoBehaviour
 
     void GUIControl()
     {
-        if(Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0))
         {
             showGUI = true;
         }
-        if(Input.GetMouseButtonUp(0))
+        if (Input.GetMouseButtonUp(0))
         {
             showGUI = false;
         }
 
     }
 
-
-   
  
+    void openDoor (ControllerColliderHit hit)
+    {
+        float pushPower = 2.0f;
+
+        Rigidbody body = hit.collider.attachedRigidbody;
+        // no rigidbody
+        if (body == null || body.isKinematic) { return; }
+        // We dont want to push objects below us
+        //if (hit.moveDirection.y < -0.3) { return; }
+        // Calculate push direction from move direction,
+        // we only push objects to the sides never up and down
+        var pushDir = new Vector3 (hit.moveDirection.x, 0, hit.moveDirection.z);
+        // If you know how fast your character is trying to move,
+        // then you can also multiply the push velocity by that.
+        // Apply the push
+        body.velocity = pushDir * pushPower;
+        Debug.Log(body.velocity);
+    }
 }
+ 
+
