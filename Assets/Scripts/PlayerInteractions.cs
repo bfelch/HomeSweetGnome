@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayerItems : MonoBehaviour
+public class PlayerInteractions : MonoBehaviour
 {
     public static ArrayList pickUp_names = new ArrayList();  //Stores items that can be picked up
     public static ArrayList pickUp_values = new ArrayList();  //Stores value for whether items have been picked up
@@ -30,11 +30,16 @@ public class PlayerItems : MonoBehaviour
     {
         GUI.color = Color.white;
         GUI.backgroundColor = Color.white;
-        if (canHover)
+        if (canHover && activeTarget != null)
         {
             //Display item name
             GUI.Box(new Rect(Screen.width / 2 - 100, Screen.height / 2 - 100, 100, 30), activeTarget.name);
         }
+    }
+
+    void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        openDoor(hit);
     }
 
     void itemAction()
@@ -54,7 +59,7 @@ public class PlayerItems : MonoBehaviour
             //Is the item close and useable?
             else if (hit.distance <= 5.0 && activeTarget.tag == "Useable")
             {
-                UseItem(); //Use it
+                UseItem(activeTarget); //Use it
             }
             else
             {
@@ -83,7 +88,7 @@ public class PlayerItems : MonoBehaviour
         }
     }
 
-    void UseItem()
+    void UseItem(GameObject activeTarget)
     {
         canHover = true; //Display item name
 
@@ -97,11 +102,28 @@ public class PlayerItems : MonoBehaviour
                 {
                     if ((bool)pickUp_values.ToArray()[j] == true)
                     {
-                        Destroy(activeTarget); //Remove item
+                        if(activeTarget.tag == "Useable")
+                        {
+                            activeTarget.tag = "Door";
+                        }
+                        //Destroy(activeTarget); //Remove item
                         useable_values[j] = true; //Item was interacted with
                     }
                 }
             }
+        }
+    }
+
+    void openDoor(ControllerColliderHit hit)
+    {
+        float pushPower = 2.0f;
+
+        Rigidbody body = hit.collider.attachedRigidbody;
+        if (body == null || body.isKinematic) { return; }
+        if (hit.collider.gameObject.tag.Equals("Door"))
+        {
+            var pushDir = new Vector3(hit.moveDirection.x, 0, hit.moveDirection.z);
+            body.velocity = pushDir * pushPower;
         }
     }
 }

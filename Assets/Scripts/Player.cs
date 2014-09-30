@@ -92,8 +92,6 @@ public class Player : MonoBehaviour
             showGUI = true;
         }
         else{showGUI = false;}
-
-        openDoor(hit);
     }
 
     void Sprint()
@@ -102,7 +100,6 @@ public class Player : MonoBehaviour
         {
             charMotor.movement.maxForwardSpeed = 50;
             sprintTime -= Time.deltaTime;
-            Debug.Log(sprintTime);
         }
         else
         {
@@ -112,7 +109,6 @@ public class Player : MonoBehaviour
             {
                 sprintTime += Time.deltaTime;
                 restTime = 0;
-                Debug.Log(sprintTime);
             }
         }
     }
@@ -145,24 +141,9 @@ public class Player : MonoBehaviour
     }
 
  
-    void openDoor (ControllerColliderHit hit)
-    {
-        float pushPower = 2.0f;
+    
 
-        Rigidbody body = hit.collider.attachedRigidbody;
-        // no rigidbody
-        if (body == null || body.isKinematic) { return; }
-        // We dont want to push objects below us
-        //if (hit.moveDirection.y < -0.3) { return; }
-        // Calculate push direction from move direction,
-        // we only push objects to the sides never up and down
-        var pushDir = new Vector3 (hit.moveDirection.x, 0, hit.moveDirection.z);
-        // If you know how fast your character is trying to move,
-        // then you can also multiply the push velocity by that.
-        // Apply the push
-        body.velocity = pushDir * pushPower;
-        Debug.Log(body.velocity);
-    }
+   
 }
  
 
