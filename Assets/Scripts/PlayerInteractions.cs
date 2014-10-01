@@ -11,14 +11,21 @@ public class PlayerInteractions : MonoBehaviour
 
     private bool canHover = false; //Show the item name being look at?
     private GameObject activeTarget; //The item being looked at
+	private Camera mainC;
 
     void Start()
     {
-        pickUp_names.Add("ShedKey"); //Items that can be picked up
-        pickUp_values.Add(false); //Has the item been picked up?
+        pickUp_names.Add("ShedKey"); //Index 1
+		pickUp_names.Add("Shovel"); //Index 2
 
-        useable_names.Add("ShedDoor"); //Items that can be interacted with
-        useable_values.Add(false); //Has the item been interacted with?
+        pickUp_values.Add(false); //Index 1
+		pickUp_values.Add(false); //Index 2
+
+        useable_names.Add("ShedDoor"); //Index 1
+		useable_names.Add("Dirt"); //Index 2
+
+        useable_values.Add(false); //Index 1
+		useable_values.Add(false); //Index 2
     }
 
     void Update()
@@ -44,10 +51,14 @@ public class PlayerInteractions : MonoBehaviour
 
     void itemAction()
     {
-        Vector3 fwd = transform.TransformDirection(Vector3.forward);
-        RaycastHit hit;
+		Transform cam = Camera.main.transform;
+        //Vector3 fwd = transform.TransformDirection(Vector3.forward);
+       
+		Ray ray = new Ray(cam.position, cam.forward);
+		RaycastHit hit;
+		Debug.DrawRay(ray.origin, ray.direction * 10, Color.yellow);
 
-        if (Physics.Raycast(transform.position, fwd, out hit))
+        if (Physics.Raycast(cam.position, cam.forward, out hit))
         {
             activeTarget = hit.collider.gameObject; //Store item being looked at
 
@@ -102,10 +113,15 @@ public class PlayerInteractions : MonoBehaviour
                 {
                     if ((bool)pickUp_values.ToArray()[j] == true)
                     {
-                        if(activeTarget.tag == "Useable")
+                        if(activeTarget.name == "ShedDoor")
                         {
                             activeTarget.tag = "Door";
                         }
+
+						if(activeTarget.name == "Dirt")
+						{
+							Destroy(activeTarget); //Remove item
+						}
                         //Destroy(activeTarget); //Remove item
                         useable_values[j] = true; //Item was interacted with
                     }
