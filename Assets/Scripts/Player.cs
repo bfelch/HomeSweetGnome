@@ -32,6 +32,12 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Quit the game
+        if (Input.GetKey("escape"))
+        {
+            Application.Quit();
+        }
+
         Sanity();
         Sprint();
     }
@@ -58,7 +64,7 @@ public class Player : MonoBehaviour
             restTime += Time.deltaTime;
             if (restTime >= .75 && sprintTime <= 1.25)
             {
-                sprintTime += Time.deltaTime;
+                sprintTime += Time.deltaTime * 4;
                 restTime = 0;
             }
         }

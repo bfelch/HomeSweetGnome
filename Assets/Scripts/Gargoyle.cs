@@ -3,14 +3,13 @@ using System.Collections;
 
 public class Gargoyle : MonoBehaviour 
 {
-	public float rotateSpeed = 0.2f;
+	public float rotateSpeed = 0.2f; //How fast the spotlight rotates
 	private float oldTime = 0.0f;
-	public float switchTime = 8.0f;
-	private bool lookRight = false;
-	private GameObject player;
-	private bool screeching = false;
-
-	private Player playerScript;
+	public float switchTime = 8.0f; //How long before the spotlight switches directions
+    public float screechTime = 2.0f; //How long the screech lasts
+	private bool lookRight = false; //Direction of the spotlight
+	private GameObject player; //Player game object
+	private bool screeching = false; //Is the gargoyle screeching?
 
 	// Use this for initialization
 	void Start () 
@@ -21,46 +20,66 @@ public class Gargoyle : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
-		if(!screeching)
-		{
-		 	LookAround();
-		}
+        //Gargoyle is not screeching; look around
+        if (!screeching)
+        {
+            LookAround();
+        }
+        //Gargoyle is screeching; screech
+        else
+        {
+            Screech();
+        }
 	}
 
+    //Looks back and forth
 	void LookAround()
 	{
 		if(Time.time > oldTime + switchTime)
 		{
-			Debug.Log("switch");
 			oldTime = Time.time;
 			lookRight = !lookRight;
 		}
 
 		if(lookRight == true)
 		{
-			//Debug.Log("One");
 			transform.Rotate(Vector3.up * rotateSpeed);
 		}
 		else
 		{
-			//Debug.Log("Two");
 			transform.Rotate(Vector3.down * rotateSpeed);
 		}
 	}
 
+    //Screech at the player
 	void Screech()
 	{
-		screeching = true;
+		//Stop the player's movement and camera
+        player.GetComponent<CharacterMotor>().enabled = false;
+        player.GetComponent<MouseLook>().enabled = false;
 
-		//stop player here
+        //Decreases the player's energy
+        player.GetComponent<Player>().sanity -= .02f;
+
+        //Enable the player's movement and camera
+        if (Time.time > oldTime + screechTime)
+        {
+            oldTime = Time.time;
+            player.GetComponent<CharacterMotor>().enabled = true;
+            player.GetComponent<MouseLook>().enabled = true;
+            screeching = false;
+        }
 	}
 
+    //Has an object entered the spotlight?
 	void OnTriggerEnter(Collider other)
 	{
+        //Is the object the player?
 		if(other.gameObject == player)
-		{
-			playerScript = other.GetComponent<Player>();
-			Screech();
+		{   
+            //Start screeching
+            screeching = true;
+            oldTime = Time.time;
 		}
 	}
 }
