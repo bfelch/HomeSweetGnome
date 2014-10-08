@@ -12,6 +12,7 @@ public class PlayerInteractions : MonoBehaviour
     private bool canHover = false; //Show the item name being look at?
     private GameObject activeTarget; //The item being looked at
 	private Camera mainC;
+    private HingeJoint doorHinge;
 
     void Start()
     {
