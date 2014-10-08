@@ -11,10 +11,25 @@ public class Gargoyle : MonoBehaviour
 	private GameObject player; //Player game object
 	private bool screeching = false; //Is the gargoyle screeching?
 
+	private GameObject eyeLight;
+	private cameraShake shakeScript;
+	private Vector3 offset;
+	private Transform playerTrans;
+	private Transform eyeLightTrans;
+
 	// Use this for initialization
 	void Start () 
 	{
 		player = GameObject.FindGameObjectWithTag("Player");
+		eyeLight = transform.Find("Spotlight").gameObject;
+		//camerashake = player.GetComponentInChildren<cameraShake>();
+		shakeScript = player.GetComponentInChildren<cameraShake>();
+
+		Debug.Log (shakeScript);
+
+		//Cache the transform properties
+		playerTrans = player.transform;
+		eyeLightTrans = eyeLight.transform;
 	}
 	
 	// Update is called once per frame
@@ -54,19 +69,30 @@ public class Gargoyle : MonoBehaviour
     //Screech at the player
 	void Screech()
 	{
+		eyeLightTrans.rotation = Quaternion.Lerp(eyeLightTrans.rotation, Quaternion.LookRotation(offset), Time.deltaTime);
+
 		//Stop the player's movement and camera
         player.GetComponent<CharacterMotor>().enabled = false;
         player.GetComponent<MouseLook>().enabled = false;
 
+		//Blur the player's camera view
+		player.GetComponentInChildren<BlurEffect>().enabled = true;
+
         //Decreases the player's energy
-        player.GetComponent<Player>().sanity -= .02f;
+        player.GetComponent<Player>().sanity -= .05f;
 
         //Enable the player's movement and camera
         if (Time.time > oldTime + screechTime)
         {
             oldTime = Time.time;
+
+			//Enable the player controls
             player.GetComponent<CharacterMotor>().enabled = true;
             player.GetComponent<MouseLook>().enabled = true;
+
+			//Remove the blur
+			player.GetComponentInChildren<BlurEffect> ().enabled = false;
+
             screeching = false;
         }
 	}
@@ -77,6 +103,12 @@ public class Gargoyle : MonoBehaviour
         //Is the object the player?
 		if(other.gameObject == player)
 		{   
+			//Find the offset between the spotlight and player
+			offset = playerTrans.position - eyeLightTrans.position;
+
+			//Trigger the cameraShake
+			//shakeScript.CameraShake();
+
             //Start screeching
             screeching = true;
             oldTime = Time.time;
