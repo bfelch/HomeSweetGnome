@@ -12,7 +12,7 @@ public class Gargoyle : MonoBehaviour
 	private bool screeching = false; //Is the gargoyle screeching?
 
 	private GameObject eyeLight;
-	private cameraShakee shakeScript;
+	private cameraShake shakeScript;
 	private Vector3 offset;
 	private Transform playerTrans;
 	private Transform eyeLightTrans;
@@ -22,10 +22,7 @@ public class Gargoyle : MonoBehaviour
 	{
 		player = GameObject.FindGameObjectWithTag("Player");
 		eyeLight = transform.Find("Spotlight").gameObject;
-		//camerashake = player.GetComponentInChildren<cameraShake>();
-		shakeScript = player.GetComponentInChildren<cameraShakee>();
-
-		Debug.Log (shakeScript);
+		shakeScript = player.GetComponentInChildren<cameraShake>();
 
 		//Cache the transform properties
 		playerTrans = player.transform;
@@ -107,7 +104,7 @@ public class Gargoyle : MonoBehaviour
 			offset = playerTrans.position - eyeLightTrans.position;
 
 			//Trigger the cameraShake
-			//shakeScript.CameraShake();
+			shakeScript.CameraShake();
 
             //Start screeching
             screeching = true;

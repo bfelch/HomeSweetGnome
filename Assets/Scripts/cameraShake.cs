@@ -26,6 +26,8 @@ public class cameraShake : MonoBehaviour
 			else
 			{
 				shakeTimer += Time.deltaTime;
+
+				//Shake and bake!
 				Camera.main.transform.position = originalPos + Vector3.Scale(SmoothRandom.GetVector2(shakeSpeed--), shakeRange);
 
 				shakeSpeed *= -1;
