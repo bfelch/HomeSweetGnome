@@ -12,10 +12,14 @@ public class Player : MonoBehaviour
     public float sprintTime;
     public float maxSprintTime;
     private CharacterMotor charMotor;
+    private Animation blinkBottom;
+    private Animation blinkTop;
 
     // Use this for initialization
     void Start()
     {
+        
+        
         //Sanity instead of health. As they touch you, sanity falls. It also slowly falls over time. Must find items to raise it.
         //The lower it gets, the more hazards are in the level.
         sanity = 100;
