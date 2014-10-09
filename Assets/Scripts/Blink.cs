@@ -41,8 +41,8 @@ public class Blink : MonoBehaviour
     void BlinkMechanics()
     {
         //adjust the speed depending on player's health
-        topLid.animation["BlinkTop"].speed = (playerSanity / playerSanityMax);
-        bottomLid.animation["BlinkBottom"].speed = (playerSanity / playerSanityMax);
+        topLid.animation["BlinkTopNew"].speed = (playerSanity / playerSanityMax);
+        bottomLid.animation["BlinkBottomNew"].speed = (playerSanity / playerSanityMax);
 
         //decrease the blink timer
         blinkTimer -= Time.deltaTime;
@@ -51,8 +51,8 @@ public class Blink : MonoBehaviour
         if (blinkTimer <= 0)
         {
             blinkTimer = 5.08f;
-            topLid.animation.Play("BlinkTop");
-            bottomLid.animation.Play("BlinkBottom");
+            topLid.animation.Play("BlinkTopNew");
+			bottomLid.animation.Play("BlinkBottomNew");
             blink = true;
         }
 
@@ -82,8 +82,8 @@ public class Blink : MonoBehaviour
             }
             if (openTimer <= 0)
             {
-                topLid.animation.Play("BlinkTop");
-                bottomLid.animation.Play("BlinkBottom");
+                topLid.animation.Play("BlinkTopNew");
+                bottomLid.animation.Play("BlinkBottomNew");
                 rechargeBlink = true;
             }
         }

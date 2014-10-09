@@ -25,8 +25,6 @@ public class Gargoyle : MonoBehaviour
 		//camerashake = player.GetComponentInChildren<cameraShake>();
 		shakeScript = player.GetComponentInChildren<cameraShake>();
 
-		Debug.Log (shakeScript);
-
 		//Cache the transform properties
 		playerTrans = player.transform;
 		eyeLightTrans = eyeLight.transform;
@@ -79,7 +77,7 @@ public class Gargoyle : MonoBehaviour
 		player.GetComponentInChildren<BlurEffect>().enabled = true;
 
         //Decreases the player's energy
-        player.GetComponent<Player>().sanity -= .05f;
+        player.GetComponent<Player>().sanity -= 0.1f;
 
         //Enable the player's movement and camera
         if (Time.time > oldTime + screechTime)
@@ -107,7 +105,7 @@ public class Gargoyle : MonoBehaviour
 			offset = playerTrans.position - eyeLightTrans.position;
 
 			//Trigger the cameraShake
-			//shakeScript.CameraShake();
+			shakeScript.CameraShake();
 
             //Start screeching
             screeching = true;
