@@ -31,7 +31,7 @@ public class DoorInteraction : MonoBehaviour
             activeTarget = hit.collider.gameObject; //Store item being looked at
 
             //Am I looking at the door?
-            if (hit.distance <= 5.0 && activeTarget.tag == "Door")
+            if (hit.distance <= 50.0 && activeTarget.tag == "Door")
             {
                 this.jointLimits.max = 90;
                 gameObject.GetComponent<HingeJoint>().limits = this.jointLimits;
@@ -39,6 +39,7 @@ public class DoorInteraction : MonoBehaviour
                 if (Input.GetKey("e"))
                 {
                     hingeJoint.useMotor = true;
+                    Debug.Log("use motor");
                 }
                 if (Input.GetKeyUp(KeyCode.E))
                 {

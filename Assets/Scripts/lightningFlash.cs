@@ -11,15 +11,15 @@ public class lightningFlash : MonoBehaviour
 	public GameObject dir2; //Light2
 
 	float oldTime = 0.0f;
-	float newTime = 15.0f; //When the lightning flash happens next
+	float newTime = .01f; //When the lightning flash happens next
 	int slot = 0; //Flash 3 times witin 10 slots
 	int direction = 0; //Lightning direction
 
 	// Use this for initialization
 	void Start () 
 	{
-		dir1 = GameObject.Find("Dir1");
-		dir2 = GameObject.Find("Dir2");
+		//dir1 = GameObject.Find("Dir1");
+		//dir2 = GameObject.Find("Dir2");
 	}
 	
 	// Update is called once per frame
@@ -32,7 +32,8 @@ public class lightningFlash : MonoBehaviour
 	{
 		if(Time.time > oldTime + newTime)
 		{
-			newTime = Random.Range(15, 20); //Set next lightning flash
+			//newTime = Random.Range(15, 20); //Set next lightning flash
+            newTime = 2; //for testing
 			oldTime = Time.time;
 
 			direction = Random.Range(0,3); //Pick a light direction
