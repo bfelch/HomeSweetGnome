@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class cameraShake : MonoBehaviour 
+public class cameraShakee : MonoBehaviour 
 {
 	public float startingShakeDistance = 0.8f;
 	public float decreasePercentage = 0.5f;
