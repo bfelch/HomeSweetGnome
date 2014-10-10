@@ -47,11 +47,11 @@ public class Player : MonoBehaviour
     }
 
     //Note: Bug: enemies will not pathfind close enough to you to actually register the collision.
-    void OnControllerColliderHit(ControllerColliderHit hit)
+    void OnTriggerStay(Collider other)
     {
-        if (hit.gameObject.tag.Equals("Enemy"))
+        if (other.gameObject.tag.Equals("Enemy"))
         {
-            sanity -= 2;
+            sanity -= 0.2f;
         }
     }
 

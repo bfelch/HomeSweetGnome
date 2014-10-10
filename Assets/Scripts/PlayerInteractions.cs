@@ -54,30 +54,35 @@ public class PlayerInteractions : MonoBehaviour
     {
 		Transform cam = Camera.main.transform;
         //Vector3 fwd = transform.TransformDirection(Vector3.forward);
-       
-		Ray ray = new Ray(cam.position, cam.forward);
-		RaycastHit hit;
-		Debug.DrawRay(ray.origin, ray.direction * 10, Color.yellow);
 
-        if (Physics.Raycast(cam.position, cam.forward, out hit))
+		//Layer mask to only hit interactable objects
+		int itemLayer = 8;
+		int itemMask = 1 << itemLayer;
+
+		//Ray ray = new Ray(cam.position, cam.forward);
+		RaycastHit hit;
+
+		Debug.DrawRay(cam.position, cam.forward * 5, Color.white);
+
+        if (Physics.Raycast(cam.position, cam.forward, out hit, 5, itemMask))
         {
             activeTarget = hit.collider.gameObject; //Store item being looked at
 
             //Is the item close and a pick up?
-            if (hit.distance <= 5.0 && activeTarget.tag == "PickUp")
+            if (activeTarget.tag == "PickUp")
             {
                 PickUp(); //Pick it up
             }
             //Is the item close and useable?
-            else if (hit.distance <= 5.0 && activeTarget.tag == "Useable")
+            else if (activeTarget.tag == "Useable")
             {
                 UseItem(activeTarget); //Use it
             }
-            else
-            {
-                canHover = false; //Hide item name
-            }
         }
+		else
+		{
+			canHover = false; //Hide item name
+		}
     }
 
     void PickUp()

@@ -4,8 +4,9 @@ using System.Collections;
 public class Gargoyle : MonoBehaviour 
 {
 	public float rotateSpeed = 0.2f; //How fast the spotlight rotates
-	private float oldTime = 0.0f;
+	private float switchTimer = 0.0f;
 	public float switchTime = 8.0f; //How long before the spotlight switches directions
+	private float oldTime = 0.0f;
     public float screechTime = 2.0f; //How long the screech lasts
 	private bool lookRight = false; //Direction of the spotlight
 	private GameObject player; //Player game object
@@ -16,6 +17,7 @@ public class Gargoyle : MonoBehaviour
 	private Vector3 offset;
 	private Transform playerTrans;
 	private Transform eyeLightTrans;
+	private Quaternion eyeLightOrigin;
 
 	// Use this for initialization
 	void Start () 
@@ -47,10 +49,14 @@ public class Gargoyle : MonoBehaviour
     //Looks back and forth
 	void LookAround()
 	{
-		if(Time.time > oldTime + switchTime)
+		if(switchTimer > switchTime)
 		{
-			oldTime = Time.time;
+			switchTimer = 0;
 			lookRight = !lookRight;
+		}
+		else
+		{
+			switchTimer += Time.deltaTime;
 		}
 
 		if(lookRight == true)
@@ -66,7 +72,7 @@ public class Gargoyle : MonoBehaviour
     //Screech at the player
 	void Screech()
 	{
-		eyeLightTrans.rotation = Quaternion.Lerp(eyeLightTrans.rotation, Quaternion.LookRotation(offset), Time.deltaTime);
+		eyeLightTrans.rotation = Quaternion.Lerp(eyeLightTrans.rotation, Quaternion.LookRotation(offset), Time.deltaTime * 2);
 
 		//Stop the player's movement and camera
         player.GetComponent<CharacterMotor>().enabled = false;
@@ -76,12 +82,13 @@ public class Gargoyle : MonoBehaviour
 		player.GetComponentInChildren<BlurEffect>().enabled = true;
 
         //Decreases the player's energy
-        player.GetComponent<Player>().sanity -= .05f;
+        player.GetComponent<Player>().sanity -= 0.2f;
 
         //Enable the player's movement and camera
         if (Time.time > oldTime + screechTime)
         {
-            oldTime = Time.time;
+			eyeLightTrans.rotation = eyeLightOrigin;
+			//eyeLightTrans.rotation = Quaternion.Lerp(eyeLightTrans.rotation, Quaternion.LookRotation(eyeLightOrigin), Time.deltaTime * 10);
 
 			//Enable the player controls
             player.GetComponent<CharacterMotor>().enabled = true;
@@ -89,6 +96,8 @@ public class Gargoyle : MonoBehaviour
 
 			//Remove the blur
 			player.GetComponentInChildren<BlurEffect> ().enabled = false;
+
+			eyeLight.light.color = Color.yellow;
 
             screeching = false;
         }
@@ -100,6 +109,9 @@ public class Gargoyle : MonoBehaviour
         //Is the object the player?
 		if(other.gameObject == player)
 		{   
+			//Store starting rotation
+			eyeLightOrigin = eyeLightTrans.rotation;
+
 			//Find the offset between the spotlight and player
 			offset = playerTrans.position - eyeLightTrans.position;
 
@@ -109,6 +121,8 @@ public class Gargoyle : MonoBehaviour
             //Start screeching
             screeching = true;
             oldTime = Time.time;
+
+			eyeLight.light.color = Color.red;
 		}
 	}
 }
