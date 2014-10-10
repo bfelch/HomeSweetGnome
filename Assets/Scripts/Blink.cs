@@ -27,6 +27,9 @@ public class Blink : MonoBehaviour
         playerSanity = gameObject.GetComponent<Player>().sanity;
         playerSanityMax = gameObject.GetComponent<Player>().maxSanity;
 
+        topLid.animation.Play("OpeningUpperBlink");
+        bottomLid.animation.Play("OpeningBottomBlink");
+
     }
 
     // Update is called once per frame
@@ -35,7 +38,7 @@ public class Blink : MonoBehaviour
         BlinkMechanics();
         OpenEyes();
         playerSanity = gameObject.GetComponent<Player>().sanity;
-
+ 
     }
 
     void BlinkMechanics()
