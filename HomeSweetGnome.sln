@@ -9,8 +9,6 @@ Project("{FEA54C8E-0308-E479-04BD-2542D8B7A260}") = "HomeSweetGnome", "Assembly-
 EndProject
 Project("{FEA54C8E-0308-E479-04BD-2542D8B7A260}") = "HomeSweetGnome", "Assembly-UnityScript-firstpass.unityproj", "{81D0F8AB-195E-7A73-0432-1EF7758E57DB}"
 EndProject
-Project("{FEA54C8E-0308-E479-04BD-2542D8B7A260}") = "HomeSweetGnome", "Assembly-UnityScript.unityproj", "{3F424622-9E1B-C4B7-3835-442F28E96473}"
-EndProject
 Project("{FEA54C8E-0308-E479-04BD-2542D8B7A260}") = "HomeSweetGnome", "Assembly-UnityScript-Editor.unityproj", "{7343B5DB-C034-0C78-B998-697A56B7F0A4}"
 EndProject
 Global
@@ -35,10 +33,6 @@ Global
 		{81D0F8AB-195E-7A73-0432-1EF7758E57DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{81D0F8AB-195E-7A73-0432-1EF7758E57DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{81D0F8AB-195E-7A73-0432-1EF7758E57DB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3F424622-9E1B-C4B7-3835-442F28E96473}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3F424622-9E1B-C4B7-3835-442F28E96473}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3F424622-9E1B-C4B7-3835-442F28E96473}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3F424622-9E1B-C4B7-3835-442F28E96473}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7343B5DB-C034-0C78-B998-697A56B7F0A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7343B5DB-C034-0C78-B998-697A56B7F0A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7343B5DB-C034-0C78-B998-697A56B7F0A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -47,8 +41,7 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-																																																																																														GlobalSection(MonoDevelopProperties) = preSolution
-																									GlobalSection(MonoDevelopProperties) = preSolution
+																		GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1
