@@ -11,9 +11,16 @@ public class Player : MonoBehaviour
     private float maxRestTime;
     public float sprintTime;
     public float maxSprintTime;
-    private CharacterMotor charMotor;
     private Animation blinkBottom;
     private Animation blinkTop;
+
+    public GameObject gui;
+    public CharacterMotor charMotor;
+    public MouseLook mouseLook;
+    public MouseLook cameraLook;
+
+    public bool showGUI;
+
 
     // Use this for initialization
     void Start()
@@ -26,10 +33,8 @@ public class Player : MonoBehaviour
         maxSanity = 100;
         restTime = maxRestTime = .75f;
         sprintTime = maxSprintTime = 1.25f;
-        charMotor = gameObject.GetComponent<CharacterMotor>();
 
-
-        Screen.lockCursor = true;
+        ToggleGUI(showGUI);
 
     }
 
@@ -44,6 +49,7 @@ public class Player : MonoBehaviour
 
         Sanity();
         Sprint();
+        GUIControl();
     }
 
     //Note: Bug: enemies will not pathfind close enough to you to actually register the collision.
@@ -88,12 +94,20 @@ public class Player : MonoBehaviour
         }
     }
 
-   
+    void GUIControl() {
+        if (Input.GetKeyUp(KeyCode.LeftControl) || Input.GetKeyUp(KeyCode.LeftCommand)) {
+            ToggleGUI(!showGUI);
+        }
+    }
 
- 
-    
-
-   
+    void ToggleGUI(bool activeGUI) {
+        showGUI = activeGUI;
+        gui.SetActive(showGUI);
+        charMotor.enabled = !showGUI;
+        mouseLook.enabled = !showGUI;
+        cameraLook.enabled = !showGUI;
+        Screen.lockCursor = !showGUI;
+    }
 }
  
 
