@@ -42,6 +42,8 @@
 -define:ENABLE_PROFILER
 -define:UNITY_EDITOR
 -define:UNITY_EDITOR_WIN
+-define:UNITY_TEAM_LICENSE
+-define:UNITY_PRO_LICENSE
 "Assets/Editor/Water (Pro Only)/Water4/GerstnerDisplaceEditor.cs"
 "Assets/Editor/Water (Pro Only)/Water4/PlanarReflectionEditor.cs"
 "Assets/Editor/Water (Pro Only)/Water4/SpecularLightingEditor.cs"

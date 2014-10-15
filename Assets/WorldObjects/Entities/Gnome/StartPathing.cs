@@ -67,7 +67,10 @@ public class StartPathing : MonoBehaviour
             float targetZ = Random.Range(transform.position.z - (sightRange / 2), transform.position.z + (sightRange / 2));
             Vector3 targetPos = new Vector3(targetX, 0, targetZ);
 
-            agent.SetDestination(targetPos);
+            NavMeshHit hit;
+            NavMesh.SamplePosition(transform.position + targetPos, out hit, sightRange, 1);
+
+            agent.SetDestination(hit.position);
             agent.speed = wanderSpeed;
         }
 

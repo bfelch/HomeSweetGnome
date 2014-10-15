@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class GUISlot : MonoBehaviour {
+public class GUISlot : MonoBehaviour
+{
 
     public float rotationBound;
     public float rotationSpeed;
@@ -11,27 +12,40 @@ public class GUISlot : MonoBehaviour {
 
     private bool clockwise;
 
-	// Use this for initialization
-    void Start() {
+    // Use this for initialization
+    void Start()
+    {
         lowerBound = 360f - rotationBound;
         upperBound = rotationBound;
     }
-	
-	// Update is called once per frame
-	void Update () {
 
-        float currentAngle = transform.rotation.eulerAngles.y;
+    // Update is called once per frame
+    void Update()
+    {
 
-        if (clockwise) {
+        float currentAngle = transform.localRotation.eulerAngles.y;
+
+        if (clockwise)
+        {
             transform.Rotate(new Vector3(0, rotationSpeed, 0));
-        } else {
+        }
+        else
+        {
             transform.Rotate(new Vector3(0, -rotationSpeed, 0));
         }
 
-        if (currentAngle < lowerBound && currentAngle > 180f) {
+        if (currentAngle < lowerBound && currentAngle > 180f)
+        {
             clockwise = true;
-        } else if (currentAngle > upperBound && currentAngle < 180f) {
+        }
+        else if (currentAngle > upperBound && currentAngle < 180f)
+        {
             clockwise = false;
         }
-	}
+    }
+
+    public void ResetRotation()
+    {
+        transform.localRotation = Quaternion.identity;
+    }
 }

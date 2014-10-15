@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
     private Animation blinkTop;
 
     public GameObject gui;
+    private GUISlot[] guiSlots;
     public CharacterMotor charMotor;
     public MouseLook mouseLook;
     public MouseLook cameraLook;
@@ -33,7 +34,7 @@ public class Player : MonoBehaviour
         sprintTime = maxSprintTime = 1.25f;
 
         ToggleGUI(showGUI);
-
+        guiSlots = GetComponentsInChildren<GUISlot>();
     }
 
     // Update is called once per frame
@@ -63,7 +64,7 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.LeftShift) && sprintTime > 0)
         {
-            charMotor.movement.maxForwardSpeed = 50;
+            charMotor.movement.maxForwardSpeed = 12;
             sprintTime -= Time.deltaTime;
         }
         else
@@ -92,21 +93,30 @@ public class Player : MonoBehaviour
         }
     }
 
-    void GUIControl() {
-        if (Input.GetKeyUp(KeyCode.LeftControl) || Input.GetKeyUp(KeyCode.LeftCommand)) 
-		{
+    void GUIControl()
+    {
+        if (Input.GetKeyUp(KeyCode.LeftControl) || Input.GetKeyUp(KeyCode.LeftCommand))
+        {
             ToggleGUI(!showGUI);
         }
     }
 
-    void ToggleGUI(bool activeGUI) {
+    void ToggleGUI(bool activeGUI)
+    {
         showGUI = activeGUI;
         gui.SetActive(showGUI);
+
+        if (showGUI && guiSlots != null)
+        {
+            foreach (GUISlot slot in guiSlots)
+            {
+                slot.ResetRotation();
+            }
+        }
+
         charMotor.enabled = !showGUI;
         mouseLook.enabled = !showGUI;
         cameraLook.enabled = !showGUI;
         Screen.lockCursor = !showGUI;
     }
 }
- 
-
