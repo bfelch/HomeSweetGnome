@@ -12,6 +12,8 @@ public class Gargoyle : MonoBehaviour
 	private GameObject player; //Player game object
 	private bool screeching = false; //Is the gargoyle screeching?
 
+	public AudioClip screechSound;
+
 	private GameObject eyeLight;
 	private cameraShake shakeScript;
 	private Vector3 offset;
@@ -123,6 +125,9 @@ public class Gargoyle : MonoBehaviour
             oldTime = Time.time;
 
 			eyeLight.light.color = Color.red;
+
+			//Play screech sound
+			audio.PlayOneShot(screechSound);
 		}
 	}
 }

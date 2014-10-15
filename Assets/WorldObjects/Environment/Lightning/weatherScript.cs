@@ -72,7 +72,7 @@ public class weatherScript : MonoBehaviour
 			{
 				//Fog
 				case 0:
-					fog.particleSystem.enableEmission = true;
+					//fog.particleSystem.enableEmission = true;
 					break;
 				//Light Rain
 				case 1:

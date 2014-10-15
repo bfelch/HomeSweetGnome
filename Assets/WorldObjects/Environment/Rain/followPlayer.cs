@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class fogSphere : MonoBehaviour 
+public class followPlayer : MonoBehaviour 
 {
 	public Transform target;
 

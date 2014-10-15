@@ -25,8 +25,6 @@ public class Player : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        
-        
         //Sanity instead of health. As they touch you, sanity falls. It also slowly falls over time. Must find items to raise it.
         //The lower it gets, the more hazards are in the level.
         sanity = 100;
@@ -86,7 +84,7 @@ public class Player : MonoBehaviour
         sanity -= .002f;
         if (sanity < 0)
         {
-            Application.LoadLevel("HSGMenu");
+            Application.LoadLevel("MainMenu");
         }
         if (sanity > maxSanity)
         {
@@ -95,7 +93,8 @@ public class Player : MonoBehaviour
     }
 
     void GUIControl() {
-        if (Input.GetKeyUp(KeyCode.LeftControl) || Input.GetKeyUp(KeyCode.LeftCommand)) {
+        if (Input.GetKeyUp(KeyCode.LeftControl) || Input.GetKeyUp(KeyCode.LeftCommand)) 
+		{
             ToggleGUI(!showGUI);
         }
     }

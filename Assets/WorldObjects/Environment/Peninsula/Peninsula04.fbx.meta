@@ -12,6 +12,7 @@ ModelImporter:
     2300000: PeniBasecliff2
     3300000: PeniBasecliff2
     4300000: PeniBasecliff2
+    6400000: PeniBasecliff2
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -34,7 +35,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: .0299999993
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     importBlendShapes: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
