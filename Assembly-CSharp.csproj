@@ -60,7 +60,9 @@
      <Compile Include="Assets\WorldObjects\Environment\Lightning\weatherScript.cs" />
      <Compile Include="Assets\WorldObjects\Environment\Rain\followPlayer.cs" />
      <Compile Include="Assets\WorldObjects\Structures\Door\DoorInteraction.cs" />
-     <Compile Include="Assets\mainMenu.cs" />
+     <Compile Include="Assets\followMain.cs" />
+     <Compile Include="Assets\menuCam.cs" />
+     <Compile Include="Assets\menuMouse.cs" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\BlendOneOne.shader" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\NoiseEffectShaderRGB.shader" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_DepthOfField\SeparableWeightedBlurDof34.shader" />
