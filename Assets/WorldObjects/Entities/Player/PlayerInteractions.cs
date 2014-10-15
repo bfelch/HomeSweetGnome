@@ -13,20 +13,40 @@ public class PlayerInteractions : MonoBehaviour
     private GameObject activeTarget; //The item being looked at
 	private Camera mainC;
     private HingeJoint doorHinge;
+    private int gateKeyCount = 8; //how many keys are left to open the front gate? need to double for two gates
 
     void Start()
     {
         pickUp_names.Add("ShedKey"); //Index 1
 		pickUp_names.Add("Shovel"); //Index 2
+        pickUp_names.Add("GateKeyOne");
+        pickUp_names.Add("GateKeyOne");
+        pickUp_names.Add("GateKeyTwo");
+        pickUp_names.Add("GateKeyTwo");
+        pickUp_names.Add("GateKeyThree");
+        pickUp_names.Add("GateKeyThree");
+        pickUp_names.Add("GateKeyFour");
+        pickUp_names.Add("GateKeyFour");
 
-        pickUp_values.Add(false); //Index 1
-		pickUp_values.Add(false); //Index 2
+
+        for (int i = 0; i < 10; i++){
+            pickUp_values.Add(false); 
+        }
 
         useable_names.Add("ShedDoor"); //Index 1
 		useable_names.Add("Dirt"); //Index 2
+        useable_names.Add("Gate1");
+        useable_names.Add("Gate2");
+        useable_names.Add("Gate1");
+        useable_names.Add("Gate2");
+        useable_names.Add("Gate1");
+        useable_names.Add("Gate2");
+        useable_names.Add("Gate1");
+        useable_names.Add("Gate2");
 
-        useable_values.Add(false); //Index 1
-		useable_values.Add(false); //Index 2
+        for (int i = 0; i < 10; i++){
+            useable_values.Add(false); 
+        }
     }
 
     void Update()
@@ -99,6 +119,7 @@ public class PlayerInteractions : MonoBehaviour
             {
                 if (pickUp_names.ToArray()[j].Equals(activeTarget.name))
                 {
+                    Debug.Log(activeTarget.name);
                     pickUp_values[j] = true; //Item is picked up
                 }
             }
@@ -119,15 +140,21 @@ public class PlayerInteractions : MonoBehaviour
                 {
                     if ((bool)pickUp_values.ToArray()[j] == true)
                     {
-                        if(activeTarget.name == "ShedDoor")
-                        {
+                        if(activeTarget.name == "ShedDoor"){
                             activeTarget.tag = "Door";
                         }
 
-						if(activeTarget.name == "Dirt")
-						{
+						if(activeTarget.name == "Dirt"){
 							Destroy(activeTarget); //Remove item
 						}
+
+                        if (activeTarget.name == "Gate1" || activeTarget.name == "Gate2"){
+                            gateKeyCount--;
+                            Debug.Log(gateKeyCount);
+                            if(gateKeyCount == 0){
+                                activeTarget.tag = "Door";
+                            }
+                        }
                         //Destroy(activeTarget); //Remove item
                         useable_values[j] = true; //Item was interacted with
                     }
@@ -146,6 +173,15 @@ public class PlayerInteractions : MonoBehaviour
         {
             var pushDir = new Vector3(hit.moveDirection.x, 0, hit.moveDirection.z);
             body.velocity = pushDir * pushPower;
+        }
+    }
+
+    void OnTriggerEnter(Collider col)
+    {
+        Debug.Log(col.gameObject.name);
+        if(col.gameObject.name == "EndGame")
+        {
+            Application.LoadLevel("MainMenu"); //should be player win screen
         }
     }
 }
