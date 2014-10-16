@@ -3,7 +3,7 @@ using System.Collections;
 
 public class GUISlot : MonoBehaviour
 {
-
+    public float startRotation;
     public float rotationBound;
     public float rotationSpeed;
 
@@ -46,6 +46,11 @@ public class GUISlot : MonoBehaviour
 
     public void ResetRotation()
     {
+        Debug.Log("Reset Rotation");
+        rotationBound = Random.Range(10f, 20f);
+        rotationSpeed = Random.Range(.1f, .2f);
+        startRotation = Random.Range(-rotationBound, rotationBound);
         transform.localRotation = Quaternion.identity;
+        transform.Rotate(new Vector3(0, startRotation, 0));
     }
 }

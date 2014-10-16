@@ -15,7 +15,7 @@ public class Player : MonoBehaviour
     private Animation blinkTop;
 
     public GameObject gui;
-    private GUISlot[] guiSlots;
+    public GUISlot[] guiSlots;
     public CharacterMotor charMotor;
     public MouseLook mouseLook;
     public MouseLook cameraLook;
@@ -34,7 +34,6 @@ public class Player : MonoBehaviour
         sprintTime = maxSprintTime = 1.25f;
 
         ToggleGUI(showGUI);
-        guiSlots = GetComponentsInChildren<GUISlot>();
     }
 
     // Update is called once per frame
