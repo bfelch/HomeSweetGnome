@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class StartPathing : MonoBehaviour
+public class Gnome : MonoBehaviour
 {
     //NavMesh controller
     public NavMeshAgent agent;
@@ -19,6 +19,7 @@ public class StartPathing : MonoBehaviour
 
     //Last known location of target
     private Vector3 lastKnownLocation;
+
 
     void Start()
     {
@@ -47,6 +48,7 @@ public class StartPathing : MonoBehaviour
         {
             agent.speed = 0;
         }
+
     }
 
     private void FollowPlayer()
@@ -104,4 +106,6 @@ public class StartPathing : MonoBehaviour
     {
         return true;
     }
+
+    
 }

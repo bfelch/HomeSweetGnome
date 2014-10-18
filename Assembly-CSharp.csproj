@@ -52,7 +52,8 @@
      <Compile Include="Assets\WorldObjects\Entities\Gargoyle\Perlin.cs" />
      <Compile Include="Assets\WorldObjects\Entities\Gargoyle\SpotLightning.cs" />
      <Compile Include="Assets\WorldObjects\Entities\Gargoyle\cameraShake.cs" />
-     <Compile Include="Assets\WorldObjects\Entities\Gnome\StartPathing.cs" />
+     <Compile Include="Assets\WorldObjects\Entities\Gnome\Gnome.cs" />
+     <Compile Include="Assets\WorldObjects\Entities\Gnome\GnomeParent.cs" />
      <Compile Include="Assets\WorldObjects\Entities\Player\Blink.cs" />
      <Compile Include="Assets\WorldObjects\Entities\Player\GUISlot.cs" />
      <Compile Include="Assets\WorldObjects\Entities\Player\GUIWrapper.cs" />
