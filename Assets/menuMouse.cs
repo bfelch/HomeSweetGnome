@@ -10,23 +10,28 @@ public class menuMouse : MonoBehaviour
 
 	void OnMouseDown()
 	{
-		if(this.gameObject.name == ("PlayGame"))
-		{
-			Application.LoadLevel("HomeSweetGnome");
-		}
-		else if(this.gameObject.name == ("LoadGame"))
-		{
-			Debug.Log("Load Game Clicked");
-		}
-		else if(this.gameObject.name == ("Options"))
-		{
-			Debug.Log("Options Clicked");
-		}
-		else if(this.gameObject.name == ("Credits"))
-		{
-			Debug.Log("Credits Clicked");
-		}
+        renderer.material.color = Color.red;
 	}
+
+    void OnMouseUp()
+    {
+        if (this.gameObject.name == ("PlayGame"))
+        {
+            Application.LoadLevel("HomeSweetGnome");
+        }
+        else if (this.gameObject.name == ("LoadGame"))
+        {
+            Debug.Log("Load Game Clicked");
+        }
+        else if (this.gameObject.name == ("Options"))
+        {
+            Debug.Log("Options Clicked");
+        }
+        else if (this.gameObject.name == ("Credits"))
+        {
+            Debug.Log("Credits Clicked");
+        }
+    }
 	
 	void OnMouseEnter()
 	{
