@@ -6,7 +6,7 @@ public class Blink : MonoBehaviour
     public GameObject topLid;
     public GameObject bottomLid;
 
-    float blinkTimer = 5.0f;
+    public float blinkTimer = 5.0f;
     public float openTimer = 10.0f;
     public float maxOpenTimer = 10.0f;
     public bool blink = false;
@@ -41,7 +41,7 @@ public class Blink : MonoBehaviour
  
     }
 
-    void BlinkMechanics()
+    public void BlinkMechanics()
     {
         //adjust the speed depending on player's health
         topLid.animation["BlinkTopNew"].speed = (playerSanity / playerSanityMax);

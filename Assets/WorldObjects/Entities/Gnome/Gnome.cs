@@ -28,6 +28,8 @@ public class Gnome : MonoBehaviour
         targetBlink = target.GetComponent<Blink>();
         agent = gameObject.GetComponent<NavMeshAgent>();
         blinkSpeed = float.MaxValue;
+
+        Debug.Log("started");
     }
 
     void Update()
@@ -82,7 +84,7 @@ public class Gnome : MonoBehaviour
         return Vector3.Distance(transform.position, target.transform.position) < sightRange;
     }
 
-    private bool SeenByPlayer()
+    public bool SeenByPlayer()
     {
         bool isSeen;
         Vector3 viewportPos = Camera.main.WorldToViewportPoint(transform.position);
