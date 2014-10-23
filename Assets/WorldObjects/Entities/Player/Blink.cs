@@ -5,6 +5,7 @@ public class Blink : MonoBehaviour
 {
     public GameObject topLid;
     public GameObject bottomLid;
+    public GameObject player;
 
     public float blinkTimer = 5.0f;
     public float openTimer = 10.0f;
@@ -24,11 +25,16 @@ public class Blink : MonoBehaviour
         //get lids and players health
         topLid = GameObject.Find("UpperEyeLid");
         bottomLid = GameObject.Find("LowerEyeLid");
+        player = GameObject.Find("Player");
         playerSanity = gameObject.GetComponent<Player>().sanity;
         playerSanityMax = gameObject.GetComponent<Player>().maxSanity;
 
-        topLid.animation.Play("OpeningUpperBlink");
-        bottomLid.animation.Play("OpeningBottomBlink");
+        if (PlayerPrefs.GetInt("LoadGame") != 1)
+        {
+            topLid.animation.Play("OpeningUpperBlink");
+            bottomLid.animation.Play("OpeningBottomBlink");
+            player.animation.Play("OpeningCut");
+        }
 
     }
 

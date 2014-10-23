@@ -8,7 +8,6 @@ public class SaveLoad: MonoBehaviour
 {
 
     public static List<Game> savedGames = new List<Game>();
-
     //it's static so we can call it from anywhere
     public void Save()
     {
@@ -77,7 +76,7 @@ public class SaveLoad: MonoBehaviour
             data.gnomeRotations[k,3] = enemies[k].transform.rotation.w;
         }
         data.playerLocation = new float[3] { player.transform.position.x, player.transform.position.y, player.transform.position.z };
-        data.playerRotation = new float[3] { player.transform.rotation.x, player.transform.rotation.y, player.transform.rotation.z };
+        data.playerRotation = new float[4] { player.transform.rotation.x, player.transform.rotation.y, player.transform.rotation.z, player.transform.rotation.w };
         data.playerHealth = player.gameObject.GetComponent<Player>().sanity;
         data.pickUp_names = player.gameObject.GetComponent<PlayerInteractions>().pickUp_names;
         data.pickUp_values = player.gameObject.GetComponent<PlayerInteractions>().pickUp_values;
@@ -100,7 +99,7 @@ public class SaveLoad: MonoBehaviour
             enemies[k].transform.rotation = new Quaternion(data.gnomeRotations[k,0], data.gnomeRotations[k,1], data.gnomeRotations[k,2], data.gnomeRotations[k,3]);
         }
         player.transform.position = new Vector3(data.playerLocation[0], data.playerLocation[1], data.playerLocation[2]);
-        player.transform.rotation = new Quaternion(data.playerRotation[0], data.playerRotation[1], data.playerRotation[2], 0);
+        player.transform.rotation = new Quaternion(data.playerRotation[0], data.playerRotation[1], data.playerRotation[2], data.playerRotation[3]);
         player.gameObject.GetComponent<Player>().sanity = data.playerHealth;
         player.gameObject.GetComponent<PlayerInteractions>().pickUp_names = data.pickUp_names;
         player.gameObject.GetComponent<PlayerInteractions>().pickUp_values = data.pickUp_values;

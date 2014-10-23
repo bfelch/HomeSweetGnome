@@ -34,6 +34,11 @@ public class Player : MonoBehaviour
         sprintTime = maxSprintTime = 1.25f;
 
         ToggleGUI(showGUI);
+
+        if(PlayerPrefs.GetInt("LoadGame")==1)
+        {
+            GameObject.Find("Save").gameObject.GetComponent<SaveLoad>().Load();
+        }
     }
 
     // Update is called once per frame

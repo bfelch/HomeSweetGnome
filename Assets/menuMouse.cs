@@ -18,9 +18,12 @@ public class menuMouse : MonoBehaviour
         if (this.gameObject.name == ("PlayGame"))
         {
             Application.LoadLevel("HomeSweetGnome");
+            PlayerPrefs.SetInt("LoadGame", 0);
         }
         else if (this.gameObject.name == ("LoadGame"))
         {
+            PlayerPrefs.SetInt("LoadGame", 1);
+            Application.LoadLevel("HomeSweetGnome");
             Debug.Log("Load Game Clicked");
         }
         else if (this.gameObject.name == ("Options"))
