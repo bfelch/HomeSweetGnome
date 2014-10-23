@@ -7,8 +7,8 @@ using System.IO;
 public class SaveLoad : MonoBehaviour
 {
 
-    public static List<Game> savedGames = new List<Game>();
-    //it's static so we can call it from anywhere
+    private bool saving = false;
+    private int displayTime = 300;
     public void Save()
     {
         BinaryFormatter bf = new BinaryFormatter();
@@ -45,6 +45,7 @@ public class SaveLoad : MonoBehaviour
         if (gameObject.name == "Save")
         {
             Save();
+            saving = true;
         }
         else if (gameObject.name == "Load")
         {
@@ -121,5 +122,24 @@ public class SaveLoad : MonoBehaviour
         }
 
     }
+
+    void OnGUI()
+    {
+        if (saving)
+        {
+            GUI.backgroundColor = Color.clear;
+            GUI.Box(new Rect(-5, 5, 100, 25), "Saving...");
+            if (displayTime == 0)
+            {
+                saving = false;
+                displayTime = 300;
+            }
+            else
+            {
+                displayTime--;
+            }
+        }
+    }
+
 
 }
