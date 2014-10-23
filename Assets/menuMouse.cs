@@ -24,7 +24,6 @@ public class menuMouse : MonoBehaviour
         {
             PlayerPrefs.SetInt("LoadGame", 1);
             Application.LoadLevel("HomeSweetGnome");
-            Debug.Log("Load Game Clicked");
         }
         else if (this.gameObject.name == ("Options"))
         {

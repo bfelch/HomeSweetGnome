@@ -29,13 +29,12 @@ public class Blink : MonoBehaviour
         playerSanity = gameObject.GetComponent<Player>().sanity;
         playerSanityMax = gameObject.GetComponent<Player>().maxSanity;
 
-        if (PlayerPrefs.GetInt("LoadGame") != 1)
+        if(PlayerPrefs.GetInt("LoadGame") != 1)
         {
+            player.animation.Play("OpeningCut");
             topLid.animation.Play("OpeningUpperBlink");
             bottomLid.animation.Play("OpeningBottomBlink");
-            player.animation.Play("OpeningCut");
         }
-
     }
 
     // Update is called once per frame

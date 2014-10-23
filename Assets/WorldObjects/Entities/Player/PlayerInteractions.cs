@@ -3,11 +3,11 @@ using System.Collections;
 
 public class PlayerInteractions : MonoBehaviour
 {
-    public static ArrayList pickUp_names = new ArrayList();  //Stores items that can be picked up
-    public static ArrayList pickUp_values = new ArrayList();  //Stores value for whether items have been picked up
+    public  ArrayList pickUp_names = new ArrayList();  //Stores items that can be picked up
+    public  ArrayList pickUp_values = new ArrayList();  //Stores value for whether items have been picked up
 
-    public static ArrayList useable_names = new ArrayList(); //Stores items that can be interacted with
-    public static ArrayList useable_values = new ArrayList(); //Stores value for whether items have been interacted with
+    public  ArrayList useable_names = new ArrayList(); //Stores items that can be interacted with
+    public  ArrayList useable_values = new ArrayList(); //Stores value for whether items have been interacted with
 
     private bool canHover = false; //Show the item name being look at?
     private GameObject activeTarget; //The item being looked at
@@ -88,12 +88,10 @@ public class PlayerInteractions : MonoBehaviour
         if (Physics.Raycast(cam.position, cam.forward, out hit, 5, playerMask))
         {
             activeTarget = hit.collider.gameObject; //Store item being looked at
-            Debug.Log(activeTarget);
 
             //Is the item close and a pick up?
             if (activeTarget.tag == "PickUp")
             {
-                Debug.Log("Pick Up");
                 PickUp(); //Pick it up
             }
             //Is the item close and useable?
@@ -122,7 +120,6 @@ public class PlayerInteractions : MonoBehaviour
             {
                 if (pickUp_names.ToArray()[j].Equals(activeTarget.name))
                 {
-                    Debug.Log(activeTarget.name);
                     pickUp_values[j] = true; //Item is picked up
                 }
             }
@@ -181,7 +178,6 @@ public class PlayerInteractions : MonoBehaviour
 
     void OnTriggerEnter(Collider col)
     {
-        Debug.Log(col.gameObject.name);
         if(col.gameObject.name == "EndGame")
         {
             Application.LoadLevel("MainMenu"); //should be player win screen

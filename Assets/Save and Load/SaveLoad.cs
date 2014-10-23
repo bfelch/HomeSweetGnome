@@ -4,32 +4,75 @@ using System.Collections.Generic;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 
-public static class SaveLoad
+public class SaveLoad : MonoBehaviour
 {
 
     public static List<Game> savedGames = new List<Game>();
     //it's static so we can call it from anywhere
-    public static void Save()
+    public void Save()
     {
-        SaveLoad.savedGames.Add(Game.current);
         BinaryFormatter bf = new BinaryFormatter();
-        //Application.persistentDataPath is a string, so if you wanted you can put that into debug.log if you want to know where save games are located
-        FileStream file = File.Create(Application.persistentDataPath + "/savedGames.gd"); //you can call it anything you want
-        bf.Serialize(file, SaveLoad.savedGames);
+        FileStream file = File.Create(Application.persistentDataPath + "/playerInfo.dat");
+
+        Game data = new Game();
+        saveGameValues(data);
+
+        bf.Serialize(file, data);
         file.Close();
     }
 
-    public static void Load()
+    public void Load()
     {
-        if (File.Exists(Application.persistentDataPath + "/savedGames.gd"))
+        if (File.Exists(Application.persistentDataPath + "/playerInfo.dat"))
         {
             BinaryFormatter bf = new BinaryFormatter();
-            FileStream file = File.Open(Application.persistentDataPath + "/savedGames.gd", FileMode.Open);
-            SaveLoad.savedGames = (List<Game>)bf.Deserialize(file);
+            FileStream file = File.Open(Application.persistentDataPath + "/playerInfo.dat", FileMode.Open);
+
+            Game data = (Game)bf.Deserialize(file);
             file.Close();
+
+            loadGameValues(data);
+            //sceneModification(data);
         }
-<<<<<<< HEAD
-<<<<<<< HEAD
+        else
+        {
+            Debug.LogError("Couldn't Load File.");
+        }
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (gameObject.name == "Save")
+        {
+            Save();
+        }
+        else if (gameObject.name == "Load")
+        {
+            Load();
+        }
+    }
+    public void saveGameValues(Game data)
+    {
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        GameObject[] pickUps = GameObject.FindGameObjectsWithTag("PickUp");
+        GameObject[] useable = GameObject.FindGameObjectsWithTag("Useable");
+        GameObject[] structures = GameObject.FindGameObjectsWithTag("Structure");
+
+        data.gnomeLocations = new float[enemies.Length, 3];
+        data.gnomeRotations = new float[enemies.Length, 4];
+
+        for (int k = 0; k < enemies.Length; k++)
+        {
+            data.gnomeLocations[k, 0] = enemies[k].transform.position.x;
+            data.gnomeLocations[k, 1] = enemies[k].transform.position.y;
+            data.gnomeLocations[k, 2] = enemies[k].transform.position.z;
+
+            data.gnomeRotations[k, 0] = enemies[k].transform.rotation.x;
+            data.gnomeRotations[k, 1] = enemies[k].transform.rotation.y;
+            data.gnomeRotations[k, 2] = enemies[k].transform.rotation.z;
+            data.gnomeRotations[k, 3] = enemies[k].transform.rotation.w;
+        }
         data.playerLocation = new float[3] { player.transform.position.x, player.transform.position.y, player.transform.position.z };
         data.playerRotation = new float[4] { player.transform.rotation.x, player.transform.rotation.y, player.transform.rotation.z, player.transform.rotation.w };
         data.playerHealth = player.gameObject.GetComponent<Player>().sanity;
@@ -50,8 +93,8 @@ public static class SaveLoad
 
         for (int k = 0; k < enemies.Length; k++)
         {
-            enemies[k].transform.position = new Vector3(data.gnomeLocations[k,0], data.gnomeLocations[k,1], data.gnomeLocations[k,2]);
-            enemies[k].transform.rotation = new Quaternion(data.gnomeRotations[k,0], data.gnomeRotations[k,1], data.gnomeRotations[k,2], data.gnomeRotations[k,3]);
+            enemies[k].transform.position = new Vector3(data.gnomeLocations[k, 0], data.gnomeLocations[k, 1], data.gnomeLocations[k, 2]);
+            enemies[k].transform.rotation = new Quaternion(data.gnomeRotations[k, 0], data.gnomeRotations[k, 1], data.gnomeRotations[k, 2], data.gnomeRotations[k, 3]);
         }
         player.transform.position = new Vector3(data.playerLocation[0], data.playerLocation[1], data.playerLocation[2]);
         player.transform.rotation = new Quaternion(data.playerRotation[0], data.playerRotation[1], data.playerRotation[2], data.playerRotation[3]);
@@ -79,10 +122,4 @@ public static class SaveLoad
 
     }
 
-=======
-    }
->>>>>>> parent of 7b05c24... Saving and Loading Started
-=======
-    }
->>>>>>> parent of 7b05c24... Saving and Loading Started
 }

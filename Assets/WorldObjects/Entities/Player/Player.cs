@@ -35,9 +35,9 @@ public class Player : MonoBehaviour
 
         ToggleGUI(showGUI);
 
-        if(PlayerPrefs.GetInt("LoadGame")==1)
+        if(PlayerPrefs.GetInt("LoadGame") == 1)
         {
-            GameObject.Find("Save").gameObject.GetComponent<SaveLoad>().Load();
+            GameObject.Find("Save").GetComponent<SaveLoad>().Load();
         }
     }
 
