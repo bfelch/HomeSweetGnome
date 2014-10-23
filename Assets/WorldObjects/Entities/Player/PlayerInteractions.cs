@@ -3,11 +3,11 @@ using System.Collections;
 
 public class PlayerInteractions : MonoBehaviour
 {
-    public ArrayList pickUp_names; //Stores items that can be picked up
-    public ArrayList pickUp_values;  //Stores value for whether items have been picked up
+    public static ArrayList pickUp_names = new ArrayList();  //Stores items that can be picked up
+    public static ArrayList pickUp_values = new ArrayList();  //Stores value for whether items have been picked up
 
-    public ArrayList useable_names; //Stores items that can be interacted with
-    public ArrayList useable_values; //Stores value for whether items have been interacted with
+    public static ArrayList useable_names = new ArrayList(); //Stores items that can be interacted with
+    public static ArrayList useable_values = new ArrayList(); //Stores value for whether items have been interacted with
 
     private bool canHover = false; //Show the item name being look at?
     private GameObject activeTarget; //The item being looked at
@@ -17,12 +17,6 @@ public class PlayerInteractions : MonoBehaviour
 
     void Start()
     {
-        pickUp_names = new ArrayList();  //Stores items that can be picked up
-        pickUp_values = new ArrayList();  //Stores value for whether items have been picked up
-
-        useable_names = new ArrayList(); //Stores items that can be interacted with
-        useable_values = new ArrayList(); //Stores value for whether items have been interacted with
-        
         pickUp_names.Add("ShedKey"); //Index 1
 		pickUp_names.Add("Shovel"); //Index 2
         pickUp_names.Add("GateKeyOne");
