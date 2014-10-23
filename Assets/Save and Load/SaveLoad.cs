@@ -29,6 +29,7 @@ public static class SaveLoad
             file.Close();
         }
 <<<<<<< HEAD
+<<<<<<< HEAD
         data.playerLocation = new float[3] { player.transform.position.x, player.transform.position.y, player.transform.position.z };
         data.playerRotation = new float[4] { player.transform.rotation.x, player.transform.rotation.y, player.transform.rotation.z, player.transform.rotation.w };
         data.playerHealth = player.gameObject.GetComponent<Player>().sanity;
@@ -78,6 +79,9 @@ public static class SaveLoad
 
     }
 
+=======
+    }
+>>>>>>> parent of 7b05c24... Saving and Loading Started
 =======
     }
 >>>>>>> parent of 7b05c24... Saving and Loading Started
