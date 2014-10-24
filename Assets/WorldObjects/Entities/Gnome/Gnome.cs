@@ -28,8 +28,6 @@ public class Gnome : MonoBehaviour
         targetBlink = target.GetComponent<Blink>();
         agent = gameObject.GetComponent<NavMeshAgent>();
         blinkSpeed = float.MaxValue;
-
-        Debug.Log("started");
     }
 
     void Update()

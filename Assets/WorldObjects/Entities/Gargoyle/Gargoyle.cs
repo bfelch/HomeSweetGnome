@@ -11,6 +11,7 @@ public class Gargoyle : MonoBehaviour
 	private bool lookRight = false; //Direction of the spotlight
 	private GameObject player; //Player game object
 	private bool screeching = false; //Is the gargoyle screeching?
+    private bool adjusting = false;
 
 	public AudioClip screechSound;
 
@@ -37,14 +38,18 @@ public class Gargoyle : MonoBehaviour
 	void Update () 
 	{
         //Gargoyle is not screeching; look around
-        if (!screeching)
+        if (!screeching && !adjusting)
         {
             LookAround();
         }
         //Gargoyle is screeching; screech
-        else
+        else if (screeching)
         {
             Screech();
+        }
+        else
+        {
+            Adjust();
         }
 	}
 
@@ -89,9 +94,6 @@ public class Gargoyle : MonoBehaviour
         //Enable the player's movement and camera
         if (Time.time > oldTime + screechTime)
         {
-			eyeLightTrans.rotation = eyeLightOrigin;
-			//eyeLightTrans.rotation = Quaternion.Lerp(eyeLightTrans.rotation, Quaternion.LookRotation(eyeLightOrigin), Time.deltaTime * 10);
-
 			//Enable the player controls
             player.GetComponent<CharacterMotor>().enabled = true;
             player.GetComponent<MouseLook>().enabled = true;
@@ -102,14 +104,24 @@ public class Gargoyle : MonoBehaviour
 			eyeLight.light.color = Color.yellow;
 
             screeching = false;
+            adjusting = true;
         }
 	}
+     void Adjust()
+    {
+        eyeLightTrans.rotation = Quaternion.Lerp(eyeLightTrans.rotation, eyeLightOrigin, Time.deltaTime * 2);
+
+        if(eyeLightTrans.rotation == eyeLightOrigin)
+        {
+            adjusting = false;
+        }
+    }
 
     //Has an object entered the spotlight?
 	void OnTriggerEnter(Collider other)
 	{
         //Is the object the player?
-		if(other.gameObject == player)
+		if(other.gameObject == player && !adjusting && !screeching)
 		{   
 			//Store starting rotation
 			eyeLightOrigin = eyeLightTrans.rotation;
@@ -124,6 +136,7 @@ public class Gargoyle : MonoBehaviour
             screeching = true;
             oldTime = Time.time;
 
+            //Chance color red
 			eyeLight.light.color = Color.red;
 
 			//Play screech sound

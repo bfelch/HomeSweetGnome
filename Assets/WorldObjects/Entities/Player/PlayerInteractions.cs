@@ -56,13 +56,11 @@ public class PlayerInteractions : MonoBehaviour
         if (Physics.Raycast(cam.position, cam.forward, out hit, 5, playerMask))
         {
             activeTarget = hit.collider.gameObject; //Store item being looked at
-            Debug.Log(activeTarget);
 
             //Is the item close and a pick up?
             if (activeTarget.tag == "PickUp")
             {
                 Item targetItem = activeTarget.GetComponent<Item>();
-                Debug.Log("Pick Up");
                 PickUp(targetItem); //Pick it up
             }
             //Is the item close and useable?
@@ -71,13 +69,20 @@ public class PlayerInteractions : MonoBehaviour
                 Useable targetUseable = activeTarget.GetComponent<Useable>();
                 UseItem(targetUseable); //Use it
             }
+            else if (activeTarget.tag == "Consumable")
+            {
+                Consume();
+            }
             else
             {
-                Debug.Log("No Pick Up");
+                //Check this (might not be needed)
                 canHover = false; //Hide item name
             }
         }
-        else { Debug.Log("NO OBJECT"); }
+        else 
+        {
+            canHover = false;
+        }
     }
 
     void PickUp(Item targetItem)
@@ -105,11 +110,35 @@ public class PlayerInteractions : MonoBehaviour
         }
     }
 
+    void Consume()
+    {
+        canHover = true; //Display item name
+
+        //Pressing the E (Interact) key?
+        if (Input.GetKeyUp(KeyCode.E))
+        {
+            Destroy(activeTarget); //Remove item
+
+            if (activeTarget.name == "EnergyBar")
+            {
+                //Increase the player's energy
+                GetComponent<Player>().sanity += 20.0F;
+            }
+        }
+    }
+
     void OnTriggerEnter(Collider col)
     {
         if(col.gameObject.name == "EndGame")
         {
             Application.LoadLevel("MainMenu"); //should be player win screen
+        }
+
+        //First time exiting shed trigger
+        if(col.gameObject.name == "ExitTutorial")
+        {
+            GameObject.Find("Weather").GetComponent<weatherScript>().start = true; //Start changing the weather randomly
+            GetComponentInChildren<AudioSource>().Play(); //Start playing background music
         }
     }
 

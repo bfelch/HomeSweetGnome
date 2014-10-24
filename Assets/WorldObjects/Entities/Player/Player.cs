@@ -6,11 +6,14 @@ public class Player : MonoBehaviour
 {
     public float sanity;
     public float maxSanity;
+    public float minSanity;
     float healthBarLength;
     private float restTime;
     private float maxRestTime;
     public float sprintTime;
     public float maxSprintTime;
+    public bool playerDied;
+    public GUIText deathText;
     private Animation blinkBottom;
     private Animation blinkTop;
     public CharacterMotor charMotor;
@@ -22,8 +25,13 @@ public class Player : MonoBehaviour
         //The lower it gets, the more hazards are in the level.
         sanity = 100;
         maxSanity = 100;
+        minSanity = 0;
         restTime = maxRestTime = .75f;
         sprintTime = maxSprintTime = 1.25f;
+        playerDied = false;
+
+        deathText = GameObject.Find("DeathText").guiText;
+        deathText.enabled = false;
 
         if(PlayerPrefs.GetInt("LoadGame") == 1)
         {
@@ -75,14 +83,29 @@ public class Player : MonoBehaviour
 
     void Sanity()
     {
+        Debug.Log(sanity);
         sanity -= .002f;
         if (sanity < 0)
         {
-            Application.LoadLevel("MainMenu");
+            //Application.LoadLevel("MainMenu");
+            playerDied = true;
         }
+
         if (sanity > maxSanity)
         {
             sanity = maxSanity;
+        }
+        else if(sanity < minSanity)
+        {
+            sanity = 0;
+        }
+    }
+
+    void OnGUI()
+    {
+        if (playerDied)
+        {
+            deathText.enabled = true;
         }
     }
 }

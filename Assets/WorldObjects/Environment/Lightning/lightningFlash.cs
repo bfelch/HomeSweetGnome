@@ -17,6 +17,8 @@ public class lightningFlash : MonoBehaviour
 	private int slot = 0; //Flash 3 times witin 10 slots
 	private int direction = 0; //Lightning direction
 
+    private AudioSource sound;
+
 	// Use this for initialization
 	void Start () 
 	{
@@ -94,13 +96,13 @@ public class lightningFlash : MonoBehaviour
 			switch(direction)
 			{
 				case 0:
-					AudioSource.PlayClipAtPoint(lightningStrike, light.transform.position);
+                    sound = PlayClipAt(lightningStrike, light.transform.position);
 					break;
 				case 1:
-					AudioSource.PlayClipAtPoint(lightningStrike, dir1.transform.position);
+                    sound = PlayClipAt(lightningStrike, dir1.transform.position);
 					break;
 				case 2:
-					AudioSource.PlayClipAtPoint(lightningStrike, dir2.transform.position);
+                    sound = PlayClipAt(lightningStrike, dir2.transform.position);
 					break;
 				default:
 					//do nothing
@@ -111,4 +113,18 @@ public class lightningFlash : MonoBehaviour
 			CancelInvoke("Flash");
 		}
 	}
+
+    AudioSource PlayClipAt(AudioClip clip, Vector3 pos)
+    {
+        GameObject tempSound = new GameObject("TempSound"); // create the temp object
+        tempSound.transform.position = pos; // set its position
+        AudioSource aSource = tempSound.AddComponent<AudioSource>(); // add an audio source
+        aSource.clip = clip; // define the clip
+
+        // set other aSource properties here, if desired
+        aSource.Play(); // start the sound
+        aSource.minDistance = 20;
+        Destroy(tempSound, clip.length); // destroy object after clip duration
+        return aSource; // return the AudioSource reference
+    }
 }

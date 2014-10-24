@@ -3,8 +3,11 @@ using System.Collections;
 
 public class weatherScript : MonoBehaviour 
 {
-	public GameObject lightning;
-	public GameObject clouds;
+	public GameObject farLightning1;
+    public GameObject farLightning2;
+    public GameObject farLightning3;
+    public GameObject farLightning4;
+	public GameObject rain;
 	public GameObject fog;
 	public GameObject lightRain;
 	public GameObject heavyRain;
@@ -12,15 +15,23 @@ public class weatherScript : MonoBehaviour
 	public GameObject[] weather; //Array to hold all weather particle systems
 
 	//Distant lightning variables
-	float minRate = 0.2f;
-	float maxRate = 0.8f;
-	float rate = 0.2f;
-	float oldTime = 0.0f;
-	float newTime = 2.0f;
+	float minRate = 0.05F;
+	float maxRate = 0.2F;
+	float rate = 0.2F;
+	float oldTime = 0.0F;
+	float newTime = 2.0F;
 
-	float oldWeatherTime = 0.0f;
-	float newWeatherTime = 20.0f; //How often to change weather
+    lightningFlash lightningScript;
+
+    float rainVolume = 0.5F;
+    bool rainFadeIn = false;
+    bool rainFadeOut = false;
+
+	float oldWeatherTime = 0.0F;
+	float newWeatherTime = 60.0F; //How often to change weather
 	int weatherType = 0; //What's the weather?
+
+    public bool start = false;
 
 	// Use this for initialization
 	void Start () 
@@ -29,20 +40,37 @@ public class weatherScript : MonoBehaviour
 
 		for(int i = 0; i < weather.Length; i++)
 		{
-			weather[i].particleSystem.enableEmission = false;
+			weather[i].particleSystem.enableEmission = true;
 		}
 
-		lightning = GameObject.Find("Lightning");
-		clouds = GameObject.Find("Clouds");
+		farLightning1 = GameObject.Find("FarLightning1");
+        farLightning2 = GameObject.Find("FarLightning2");
+        farLightning3 = GameObject.Find("FarLightning3");
+        farLightning4 = GameObject.Find("FarLightning4");
 		fog = GameObject.Find("Fog");
 		lightRain = GameObject.Find ("Light Rain");
 		heavyRain = GameObject.Find("Heavy Rain");
+        rain = GameObject.Find("Rain");
+
+        lightningScript = GameObject.Find("LightFlash").GetComponent<lightningFlash>();
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
-		checkWeatherTime();
+        if(start)
+        {
+            checkWeatherTime();
+
+            if (rainFadeIn == true)
+            {
+                AudioFadeIn();
+            }
+            else if (rainFadeOut == true)
+            {
+                AudioFadeOut();
+            }
+        }
 	}
 
 	void checkWeatherTime()
@@ -52,58 +80,86 @@ public class weatherScript : MonoBehaviour
 		{
 			oldTime = Time.time;
 			rate = Random.Range(minRate, maxRate);
-			lightning.particleSystem.emissionRate = rate;
+			farLightning1.particleSystem.emissionRate = rate;
+            farLightning2.particleSystem.emissionRate = rate;
+            farLightning3.particleSystem.emissionRate = rate;
+            farLightning4.particleSystem.emissionRate = rate;
 		}
 		
 		//Change weather?
 		if(Time.time > oldWeatherTime + newWeatherTime) 
 		{
 			oldWeatherTime = Time.time;
-			weatherType = Random.Range(0, 5); //Pick random weather
+			weatherType = Random.Range(0, 3); //Pick random weather
 			
 			//Turn off weather
 			for(int i = 0; i < weather.Length; i++)
 			{
 				weather[i].particleSystem.enableEmission = false;
 			}
+
+            lightningScript.enabled = false;
 			
 			//Turn on weather
 			switch(weatherType)
 			{
 				//Fog
 				case 0:
-					//fog.particleSystem.enableEmission = true;
-					break;
-				//Light Rain
-				case 1:
-					clouds.particleSystem.enableEmission = true;
-					lightRain.particleSystem.enableEmission = true;
-					break;
-				//Heavy Rain
-				case 2:
-					clouds.particleSystem.enableEmission = true;
-					lightRain.particleSystem.enableEmission = true;
-					heavyRain.particleSystem.enableEmission = true;
+					fog.particleSystem.enableEmission = true;
+                    rainFadeOut = true;
 					break;
 				//Thunderstorm
-				case 3:
-					clouds.particleSystem.enableEmission = true;
+				case 1:
 					lightRain.particleSystem.enableEmission = true;
-					heavyRain.particleSystem.enableEmission = true;
-					lightning.particleSystem.enableEmission = true;
+                    heavyRain.particleSystem.enableEmission = true;
+                    farLightning1.particleSystem.enableEmission = true;
+                    farLightning2.particleSystem.enableEmission = true;
+                    farLightning3.particleSystem.enableEmission = true;
+                    farLightning4.particleSystem.enableEmission = true;
+                    lightningScript.enabled = true;
+                    rainFadeIn = true;
 					break;
 				//All weather
-				case 4:
+				case 2:
 					for(int i = 0; i < weather.Length; i++)
 					{
 						weather[i].particleSystem.enableEmission = true;
 					}
+                    lightningScript.enabled = true;
+                    rainFadeIn = true;
 					break;
 				//Catch all
 				default:
 					//do nothing
+                    rainFadeOut = true;
 					break;
 			}
 		}
 	}
+
+    void AudioFadeIn()
+    {
+        if (rainVolume < 0.3F)
+        {
+            rainVolume += 0.05F * Time.deltaTime;
+            rain.audio.volume = rainVolume;
+        }
+        else
+        {
+            rainFadeIn = false;
+        }
+    }
+
+    void AudioFadeOut()
+    {
+        if (rainVolume > 0.0F)
+        {
+            rainVolume -= 0.05F * Time.deltaTime;
+            rain.audio.volume = rainVolume;
+        }
+        else
+        {
+            rainFadeOut = false;
+        }
+    }
 }

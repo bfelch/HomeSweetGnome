@@ -12,6 +12,8 @@ public class Blink : MonoBehaviour
     public float maxOpenTimer = 10.0f;
     public bool blink = false;
     private bool rechargeBlink = false;
+    private bool playerDied = false;
+    private bool gameEnded = false;
 
     private bool showGUI = false;
     //need player health and max health to adjust blink speed
@@ -40,17 +42,28 @@ public class Blink : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        BlinkMechanics();
-        OpenEyes();
         playerSanity = gameObject.GetComponent<Player>().sanity;
- 
+        playerDied = gameObject.GetComponent<Player>().playerDied;
+
+        if (!playerDied)
+        {
+            BlinkMechanics();
+            OpenEyes();
+        }
+        else
+        {
+            if(!gameEnded)
+            {
+                FallAsleep();
+            }
+        }
     }
 
     public void BlinkMechanics()
     {
         //adjust the speed depending on player's health
-        topLid.animation["BlinkTopNew"].speed = (playerSanity / playerSanityMax);
-        bottomLid.animation["BlinkBottomNew"].speed = (playerSanity / playerSanityMax);
+        topLid.animation["BlinkTopNew"].speed = ((playerSanity + 5) / playerSanityMax);
+        bottomLid.animation["BlinkBottomNew"].speed = ((playerSanity + 5) / playerSanityMax);
 
         //decrease the blink timer
         blinkTimer -= Time.deltaTime;
@@ -98,5 +111,14 @@ public class Blink : MonoBehaviour
 
     }
 
-
+    void FallAsleep()
+    {
+        Debug.Log("Fall Asleep");
+        if (!topLid.animation.isPlaying)
+        {
+            gameEnded = true;
+            topLid.animation.Play("ClosingTop");
+            bottomLid.animation.Play("ClosingBottom");
+        }
+    }
 }
