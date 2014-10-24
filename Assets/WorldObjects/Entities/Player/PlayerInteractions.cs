@@ -3,55 +3,28 @@ using System.Collections;
 
 public class PlayerInteractions : MonoBehaviour
 {
-    public  ArrayList pickUp_names = new ArrayList();  //Stores items that can be picked up
-    public  ArrayList pickUp_values = new ArrayList();  //Stores value for whether items have been picked up
-
-    public  ArrayList useable_names = new ArrayList(); //Stores items that can be interacted with
-    public  ArrayList useable_values = new ArrayList(); //Stores value for whether items have been interacted with
-
     private bool canHover = false; //Show the item name being look at?
     private GameObject activeTarget; //The item being looked at
 	private Camera mainC;
     private HingeJoint doorHinge;
-    private int gateKeyCount = 8; //how many keys are left to open the front gate? need to double for two gates
+
+    public CharacterMotor charMotor;
+    public MouseLook mouseLook;
+    public MouseLook cameraLook;
+
+    public bool showGUI;
+
+    public GUIWrapper playerGUI;
 
     void Start()
     {
-        pickUp_names.Add("ShedKey"); //Index 1
-		pickUp_names.Add("Shovel"); //Index 2
-        pickUp_names.Add("GateKeyOne");
-        pickUp_names.Add("GateKeyOne");
-        pickUp_names.Add("GateKeyTwo");
-        pickUp_names.Add("GateKeyTwo");
-        pickUp_names.Add("GateKeyThree");
-        pickUp_names.Add("GateKeyThree");
-        pickUp_names.Add("GateKeyFour");
-        pickUp_names.Add("GateKeyFour");
-
-
-        for (int i = 0; i < 10; i++){
-            pickUp_values.Add(false); 
-        }
-
-        useable_names.Add("ShedDoor"); //Index 1
-		useable_names.Add("Dirt"); //Index 2
-        useable_names.Add("Gate1");
-        useable_names.Add("Gate2");
-        useable_names.Add("Gate1");
-        useable_names.Add("Gate2");
-        useable_names.Add("Gate1");
-        useable_names.Add("Gate2");
-        useable_names.Add("Gate1");
-        useable_names.Add("Gate2");
-
-        for (int i = 0; i < 10; i++){
-            useable_values.Add(false); 
-        }
+        ToggleGUI(showGUI);
     }
 
     void Update()
     {
         itemAction();
+        GUIControl();
     }
 
     void OnGUI()
@@ -63,11 +36,6 @@ public class PlayerInteractions : MonoBehaviour
             //Display item name
             GUI.Box(new Rect(Screen.width / 2 - 100, Screen.height / 2 - 100, 100, 30), activeTarget.name);
         }
-    }
-
-    void OnControllerColliderHit(ControllerColliderHit hit)
-    {
-        openDoor(hit);
     }
 
     void itemAction()
@@ -88,91 +56,52 @@ public class PlayerInteractions : MonoBehaviour
         if (Physics.Raycast(cam.position, cam.forward, out hit, 5, playerMask))
         {
             activeTarget = hit.collider.gameObject; //Store item being looked at
+            Debug.Log(activeTarget);
 
             //Is the item close and a pick up?
             if (activeTarget.tag == "PickUp")
             {
-                PickUp(); //Pick it up
+                Item targetItem = activeTarget.GetComponent<Item>();
+                Debug.Log("Pick Up");
+                PickUp(targetItem); //Pick it up
             }
             //Is the item close and useable?
             else if (activeTarget.tag == "Useable")
             {
-                UseItem(activeTarget); //Use it
+                Useable targetUseable = activeTarget.GetComponent<Useable>();
+                UseItem(targetUseable); //Use it
             }
             else
             {
+                Debug.Log("No Pick Up");
                 canHover = false; //Hide item name
             }
         }
+        else { Debug.Log("NO OBJECT"); }
     }
 
-    void PickUp()
+    void PickUp(Item targetItem)
     {
         canHover = true; //Display item name
 
         //Pressing the E (Interact) key?
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyUp(KeyCode.E))
         {
-            Destroy(activeTarget); //Remove item
-
-            //Find index of item being looked at
-            for (int j = 0; j < pickUp_names.Count; j++)
+            if (playerGUI.AddToSlot(targetItem))
             {
-                if (pickUp_names.ToArray()[j].Equals(activeTarget.name))
-                {
-                    pickUp_values[j] = true; //Item is picked up
-                }
+                Destroy(activeTarget);
             }
         }
     }
 
-    void UseItem(GameObject activeTarget)
+    void UseItem(Useable targetUseable)
     {
         canHover = true; //Display item name
 
         //Pressing the E (Interact) key?
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyUp(KeyCode.E))
         {
-            //Find index of item being looked at
-            for (int j = 0; j < useable_names.Count; j++)
-            {
-                if (useable_names.ToArray()[j].Equals(activeTarget.name))
-                {
-                    if ((bool)pickUp_values.ToArray()[j] == true)
-                    {
-                        if(activeTarget.name == "ShedDoor"){
-                            activeTarget.tag = "Door";
-                        }
-
-						if(activeTarget.name == "Dirt"){
-							Destroy(activeTarget); //Remove item
-						}
-
-                        if (activeTarget.name == "Gate1" || activeTarget.name == "Gate2"){
-                            gateKeyCount--;
-                            Debug.Log(gateKeyCount);
-                            if(gateKeyCount == 0){
-                                activeTarget.tag = "Door";
-                            }
-                        }
-                        //Destroy(activeTarget); //Remove item
-                        useable_values[j] = true; //Item was interacted with
-                    }
-                }
-            }
-        }
-    }
-
-    void openDoor(ControllerColliderHit hit)
-    {
-        float pushPower = 2.0f;
-
-        Rigidbody body = hit.collider.attachedRigidbody;
-        if (body == null || body.isKinematic) { return; }
-        if (hit.collider.gameObject.tag.Equals("Door"))
-        {
-            var pushDir = new Vector3(hit.moveDirection.x, 0, hit.moveDirection.z);
-            body.velocity = pushDir * pushPower;
+            targetUseable.Interact();
         }
     }
 
@@ -182,5 +111,32 @@ public class PlayerInteractions : MonoBehaviour
         {
             Application.LoadLevel("MainMenu"); //should be player win screen
         }
+    }
+
+    void GUIControl()
+    {
+        if (Input.GetKeyUp(KeyCode.LeftControl) || Input.GetKeyUp(KeyCode.LeftCommand))
+        {
+            ToggleGUI(!showGUI);
+        }
+    }
+
+    void ToggleGUI(bool activeGUI)
+    {
+        showGUI = activeGUI;
+        playerGUI.gameObject.SetActive(showGUI);
+
+        if (showGUI && playerGUI.slots != null)
+        {
+            foreach (ItemSlot slot in playerGUI.slots)
+            {
+                slot.gui.ResetRotation();
+            }
+        }
+
+        charMotor.enabled = !showGUI;
+        mouseLook.enabled = !showGUI;
+        cameraLook.enabled = !showGUI;
+        Screen.lockCursor = !showGUI;
     }
 }

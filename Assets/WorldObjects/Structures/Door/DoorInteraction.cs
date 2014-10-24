@@ -13,46 +13,14 @@ public class DoorInteraction : MonoBehaviour
         this.jointLimits = gameObject.GetComponent<HingeJoint>().limits;
 
     }
-    //Main function
-    void Update()
+
+    public void DoorKeyOpen()
     {
-        DoorKeyOpen();
-    }
-
-    void DoorKeyOpen()
-    {
-        Transform cam = Camera.main.transform;       
-		Ray ray = new Ray(cam.position, cam.forward);
-		RaycastHit hit;
-		Debug.DrawRay(ray.origin, ray.direction * 10, Color.yellow);
-
-        if (Physics.Raycast(cam.position, cam.forward, out hit))
-        {
-            activeTarget = hit.collider.gameObject; //Store item being looked at
-
-            //Am I looking at the door?
-            if (hit.distance <= 50.0 && activeTarget.tag == "Door")
-            {
-                this.jointLimits.max = 90;
-                gameObject.GetComponent<HingeJoint>().limits = this.jointLimits;
-
-                if (Input.GetKey("e"))
-                {
-                    hingeJoint.useMotor = true;
-                    Debug.Log("use motor");
-                }
-                if (Input.GetKeyUp(KeyCode.E))
-                {
-                    this.hingeMotorThing.targetVelocity = -this.hingeMotorThing.targetVelocity;
-                    gameObject.GetComponent<HingeJoint>().motor = this.hingeMotorThing;
-
-                }
-                else
-                {
-                    hingeJoint.useMotor = false;
-                }
-            }
-        }
-
+        this.jointLimits.max = 90;
+        gameObject.GetComponent<HingeJoint>().limits = this.jointLimits;
+        hingeJoint.useMotor = true;
+        Debug.Log("use motor");
+        this.hingeMotorThing.targetVelocity = -this.hingeMotorThing.targetVelocity;
+        gameObject.GetComponent<HingeJoint>().motor = this.hingeMotorThing;
     }
 }

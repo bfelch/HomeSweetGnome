@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class GUISlot : MonoBehaviour
 {
@@ -12,17 +13,19 @@ public class GUISlot : MonoBehaviour
 
     private bool clockwise;
 
+    public bool hovering;
+
     // Use this for initialization
     void Start()
     {
         lowerBound = 360f - rotationBound;
         upperBound = rotationBound;
+        hovering = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-
         float currentAngle = transform.localRotation.eulerAngles.y;
 
         if (clockwise)
@@ -52,5 +55,30 @@ public class GUISlot : MonoBehaviour
         startRotation = Random.Range(-rotationBound, rotationBound);
         transform.localRotation = Quaternion.identity;
         transform.Rotate(new Vector3(0, startRotation, 0));
+        ToggleSlotHover(false);
+    }
+
+    void OnMouseEnter()
+    {
+        ToggleSlotHover(true);
+    }
+
+    void OnMouseExit()
+    {
+        ToggleSlotHover(false);
+    }
+
+    void ToggleSlotHover(bool hovering)
+    {
+        this.hovering = hovering;
+
+        if (this.hovering)
+        {
+            this.renderer.material.color = Color.red;
+        }
+        else
+        {
+            this.renderer.material.color = Color.white;
+        }
     }
 }

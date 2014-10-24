@@ -77,10 +77,10 @@ public class SaveLoad : MonoBehaviour
         data.playerLocation = new float[3] { player.transform.position.x, player.transform.position.y, player.transform.position.z };
         data.playerRotation = new float[4] { player.transform.rotation.x, player.transform.rotation.y, player.transform.rotation.z, player.transform.rotation.w };
         data.playerHealth = player.gameObject.GetComponent<Player>().sanity;
-        data.pickUp_names = player.gameObject.GetComponent<PlayerInteractions>().pickUp_names;
+        /*data.pickUp_names = player.gameObject.GetComponent<PlayerInteractions>().pickUp_names;
         data.pickUp_values = player.gameObject.GetComponent<PlayerInteractions>().pickUp_values;
         data.useable_names = player.gameObject.GetComponent<PlayerInteractions>().useable_names;
-        data.useable_values = player.gameObject.GetComponent<PlayerInteractions>().useable_values;
+        data.useable_values = player.gameObject.GetComponent<PlayerInteractions>().useable_values;*/
 
     }
 
@@ -100,10 +100,10 @@ public class SaveLoad : MonoBehaviour
         player.transform.position = new Vector3(data.playerLocation[0], data.playerLocation[1], data.playerLocation[2]);
         player.transform.rotation = new Quaternion(data.playerRotation[0], data.playerRotation[1], data.playerRotation[2], data.playerRotation[3]);
         player.gameObject.GetComponent<Player>().sanity = data.playerHealth;
-        player.gameObject.GetComponent<PlayerInteractions>().pickUp_names = data.pickUp_names;
+        /*player.gameObject.GetComponent<PlayerInteractions>().pickUp_names = data.pickUp_names;
         player.gameObject.GetComponent<PlayerInteractions>().pickUp_values = data.pickUp_values;
         player.gameObject.GetComponent<PlayerInteractions>().useable_names = data.useable_names;
-        player.gameObject.GetComponent<PlayerInteractions>().useable_values = data.useable_values;
+        player.gameObject.GetComponent<PlayerInteractions>().useable_values = data.useable_values;*/
 
         for (int i = 0; i < data.pickUp_names.ToArray().Length; i++)
         {
