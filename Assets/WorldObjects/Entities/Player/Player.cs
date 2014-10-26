@@ -85,6 +85,7 @@ public class Player : MonoBehaviour
     {
         Debug.Log(sanity);
         sanity -= .002f;
+		sanity = 100.0F;
         if (sanity < 0)
         {
             //Application.LoadLevel("MainMenu");

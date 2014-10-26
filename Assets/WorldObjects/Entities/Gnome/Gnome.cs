@@ -107,5 +107,17 @@ public class Gnome : MonoBehaviour
         return true;
     }
 
-    
+    void OnTriggerEnter(Collider other)
+	{
+		if(other.name == "DirtTrap")
+		{
+			Destroy(GetComponent<NavMeshAgent>());
+			Destroy(GetComponent<Gnome>());
+			//Disable navmesh script
+			//!Kinematic
+			rigidbody.isKinematic = false;
+			rigidbody.useGravity = true;
+			//Falls in
+		}
+	}
 }

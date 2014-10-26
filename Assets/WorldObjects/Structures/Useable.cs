@@ -28,6 +28,9 @@ public class Useable : MonoBehaviour {
             else if (type == UseableType.DIRT)
             {
                 Destroy(this.gameObject);
+
+				//Spawn the trap trigger
+				GameObject.Find("DirtTrap").collider.enabled = true;
             }
         }
     }
