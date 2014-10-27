@@ -144,7 +144,7 @@ public class PlayerInteractions : MonoBehaviour
 
     void GUIControl()
     {
-        if (Input.GetKeyUp(KeyCode.LeftControl) || Input.GetKeyUp(KeyCode.LeftCommand))
+        if (Input.GetKeyUp(KeyCode.Q))
         {
             ToggleGUI(!showGUI);
         }
