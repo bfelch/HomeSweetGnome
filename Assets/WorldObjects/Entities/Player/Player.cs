@@ -18,6 +18,8 @@ public class Player : MonoBehaviour
     private Animation blinkTop;
     public CharacterMotor charMotor;
 
+    private bool crouching;
+
     // Use this for initialization
     void Start()
     {
@@ -50,6 +52,7 @@ public class Player : MonoBehaviour
 
         Sanity();
         Sprint();
+        Crouch();
     }
 
     //Note: Bug: enemies will not pathfind close enough to you to actually register the collision.
@@ -77,6 +80,22 @@ public class Player : MonoBehaviour
                 sprintTime += Time.deltaTime * 4;
                 restTime = 0;
             }
+        }
+    }
+
+    void Crouch()
+    {
+        if((Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.LeftCommand)) && !crouching){
+            crouching = true;
+            charMotor.movement.maxForwardSpeed = 3;
+            gameObject.transform.localScale = new Vector3(1, .5f, 1);
+        }
+        else if (Input.GetKeyUp(KeyCode.LeftControl) || Input.GetKeyUp(KeyCode.LeftCommand))
+        {
+            crouching = false;
+            gameObject.transform.localScale = new Vector3(1, 1, 1);
+            Vector3 pos = gameObject.transform.position;
+            gameObject.transform.position = new Vector3(pos.x, pos.y + .6f, pos.z);
         }
     }
 
