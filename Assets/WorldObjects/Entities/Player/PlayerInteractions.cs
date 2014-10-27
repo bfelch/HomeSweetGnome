@@ -94,7 +94,7 @@ public class PlayerInteractions : MonoBehaviour
         {
             if (playerGUI.AddToSlot(targetItem))
             {
-                Destroy(activeTarget);
+                activeTarget.SetActive(false);
             }
         }
     }
