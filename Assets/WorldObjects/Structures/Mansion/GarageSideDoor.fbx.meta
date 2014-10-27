@@ -1,0 +1,141 @@
+fileFormatVersion: 2
+guid: b86218c6f3f118f4784298d73e157e0d
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: Base
+    100002: DoorHandle1
+    100004: DoorHandle:Base
+    100006: DoorHandle:DoorHandle
+    100008: DoorHandle:Handle
+    100010: DoorHandle:Keyhole
+    100012: DoorHandle:Small
+    100014: //RootNode
+    100016: GarageSmallDoor
+    100018: Handle
+    100020: Hinge
+    100022: Hinge1
+    100024: Keyhole
+    100026: SideDoorGlass
+    100028: SideDoorGlass1
+    100030: SideDoorGlass2
+    100032: SideDoorGlass3
+    100034: Small
+    400000: Base
+    400002: DoorHandle1
+    400004: DoorHandle:Base
+    400006: DoorHandle:DoorHandle
+    400008: DoorHandle:Handle
+    400010: DoorHandle:Keyhole
+    400012: DoorHandle:Small
+    400014: //RootNode
+    400016: GarageSmallDoor
+    400018: Handle
+    400020: Hinge
+    400022: Hinge1
+    400024: Keyhole
+    400026: SideDoorGlass
+    400028: SideDoorGlass1
+    400030: SideDoorGlass2
+    400032: SideDoorGlass3
+    400034: Small
+    2300000: Base
+    2300002: DoorHandle:Base
+    2300004: DoorHandle:Handle
+    2300006: DoorHandle:Keyhole
+    2300008: DoorHandle:Small
+    2300010: GarageSmallDoor
+    2300012: Handle
+    2300014: Hinge
+    2300016: Hinge1
+    2300018: Keyhole
+    2300020: SideDoorGlass
+    2300022: SideDoorGlass1
+    2300024: SideDoorGlass2
+    2300026: SideDoorGlass3
+    2300028: Small
+    3300000: Base
+    3300002: DoorHandle:Base
+    3300004: DoorHandle:Handle
+    3300006: DoorHandle:Keyhole
+    3300008: DoorHandle:Small
+    3300010: GarageSmallDoor
+    3300012: Handle
+    3300014: Hinge
+    3300016: Hinge1
+    3300018: Keyhole
+    3300020: SideDoorGlass
+    3300022: SideDoorGlass1
+    3300024: SideDoorGlass2
+    3300026: SideDoorGlass3
+    3300028: Small
+    4300000: GarageSmallDoor
+    4300002: Hinge
+    4300004: Hinge1
+    4300006: DoorHandle:Base
+    4300008: DoorHandle:Small
+    4300010: DoorHandle:Handle
+    4300012: DoorHandle:Keyhole
+    4300014: Base
+    4300016: Small
+    4300018: Handle
+    4300020: Keyhole
+    4300022: SideDoorGlass
+    4300024: SideDoorGlass1
+    4300026: SideDoorGlass2
+    4300028: SideDoorGlass3
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .0549999997
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 

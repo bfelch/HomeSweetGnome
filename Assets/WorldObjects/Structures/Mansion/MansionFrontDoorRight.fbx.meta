@@ -1,13 +1,20 @@
 fileFormatVersion: 2
-guid: 872fd1beafbca6b43ba3cf016a3c393d
+guid: 875ef5566e3bfec4083c34163672241c
 ModelImporter:
   serializedVersion: 16
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Shovel
+    100000: FrontDoor2
+    100002: Handle2
+    100004: //RootNode
+    400000: FrontDoor2
+    400002: Handle2
+    400004: //RootNode
+    2300000: FrontDoor2
+    2300002: Handle2
+    3300000: FrontDoor2
+    3300002: Handle2
+    4300000: FrontDoor2
+    4300002: Handle2
     9500000: //RootNode
   materials:
     importMaterials: 1
