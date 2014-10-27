@@ -29,11 +29,15 @@ public class Useable : MonoBehaviour {
             {
                 Destroy(this.gameObject);
 
-				//Spawn the trap trigger
-				GameObject.Find("DirtTrap").collider.enabled = true;
+                //Spawn the trap trigger
+                GameObject.Find("DirtTrap").collider.enabled = true;
+            }
+            else if (type == UseableType.GATE)
+            {
+                Application.LoadLevel("MainMenu");
             }
         }
     }
 }
 
-public enum UseableType { DOOR, DIRT };
+public enum UseableType { DOOR, DIRT, GATE };
