@@ -3,14 +3,18 @@ using System.Collections;
 
 public class PlayerInteractions : MonoBehaviour
 {
-    private bool canHover = false; //Show the item name being look at?
-    private GameObject activeTarget; //The item being looked at
 	private Camera mainC;
     private HingeJoint doorHinge;
+    private ShedTutorial st;
+    private string GUIString;
 
+    public GameObject activeTarget; //The item being looked at
+    public bool canHover = false; //Show the item name being look at?
+    public bool notUseable = false;
     public CharacterMotor charMotor;
     public MouseLook mouseLook;
     public MouseLook cameraLook;
+    
 
     public bool showGUI;
 
@@ -19,6 +23,7 @@ public class PlayerInteractions : MonoBehaviour
     void Start()
     {
         ToggleGUI(showGUI);
+        st = gameObject.GetComponent<ShedTutorial>();
     }
 
     void Update()
@@ -31,10 +36,15 @@ public class PlayerInteractions : MonoBehaviour
     {
         GUI.color = Color.white;
         GUI.backgroundColor = Color.white;
-        if (canHover && activeTarget != null)
+        if (canHover && activeTarget != null && !st.tutorial)
         {
             //Display item name
             GUI.Box(new Rect(Screen.width / 2 - 100, Screen.height / 2 - 100, 100, 30), activeTarget.name);
+        }
+        else if(notUseable && activeTarget != null)
+        {
+            GUI.backgroundColor = Color.clear;
+            GUI.Box(new Rect(5, 5, 300, 30), "You need the " + GUIString + " to continue.");
         }
     }
 
@@ -77,6 +87,7 @@ public class PlayerInteractions : MonoBehaviour
             {
                 //Check this (might not be needed)
                 canHover = false; //Hide item name
+                notUseable = false;
             }
         }
         else 
@@ -106,7 +117,12 @@ public class PlayerInteractions : MonoBehaviour
         //Pressing the E (Interact) key?
         if (Input.GetKeyUp(KeyCode.E))
         {
-            targetUseable.Interact();
+            if(targetUseable.Interact() != "")
+            {
+                notUseable = true;
+                canHover = false;
+                GUIString = targetUseable.Interact();
+            }
         }
     }
 
@@ -139,6 +155,7 @@ public class PlayerInteractions : MonoBehaviour
         {
             GameObject.Find("Weather").GetComponent<weatherScript>().start = true; //Start changing the weather randomly
             GetComponentInChildren<AudioSource>().Play(); //Start playing background music
+            st.tutorial = false;
         }
     }
 

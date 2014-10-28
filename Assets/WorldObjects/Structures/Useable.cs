@@ -17,7 +17,7 @@ public class Useable : MonoBehaviour {
 	
 	}
 
-    public void Interact()
+    public string Interact()
     {
         if (playerGUI.HasItems(requiredItems))
         {
@@ -36,8 +36,25 @@ public class Useable : MonoBehaviour {
             {
                 Application.LoadLevel("MainMenu");
             }
+            else if (type == UseableType.LIGHT)
+            {
+                Debug.Log("Light");
+                gameObject.GetComponent<Light>().enabled = !gameObject.GetComponent<Light>().enabled;
+            }
+            return "";
         }
+
+        string items = "";
+        for (int i = 0; i < requiredItems.Count; i++)
+        {
+            if(i == requiredItems.Count -1)
+                items += requiredItems.ToArray()[i] + " ";
+            else
+                items += requiredItems.ToArray()[i] + " and ";
+
+        }
+        return items;
     }
 }
 
-public enum UseableType { DOOR, DIRT, GATE };
+public enum UseableType { DOOR, DIRT, GATE, LIGHT };

@@ -66,6 +66,7 @@
      <Compile Include="Assets\WorldObjects\Environment\Rain\followPlayer.cs" />
      <Compile Include="Assets\WorldObjects\Items\Item.cs" />
      <Compile Include="Assets\WorldObjects\Structures\Door\DoorInteraction.cs" />
+     <Compile Include="Assets\WorldObjects\Structures\Shed\ShedTutorial.cs" />
      <Compile Include="Assets\WorldObjects\Structures\Useable.cs" />
      <Compile Include="Assets\followMain.cs" />
      <Compile Include="Assets\menuCam.cs" />
