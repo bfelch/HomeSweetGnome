@@ -11,12 +11,12 @@ public class DoorInteraction : MonoBehaviour
     {
         this.hingeMotorThing = gameObject.GetComponent<HingeJoint>().motor;
         this.jointLimits = gameObject.GetComponent<HingeJoint>().limits;
-
+        Debug.Log(this.hingeMotorThing.targetVelocity);
     }
 
     public void DoorKeyOpen()
     {
-        this.jointLimits.max = 90;
+        //this.jointLimits.max = 90;
         gameObject.GetComponent<HingeJoint>().limits = this.jointLimits;
         hingeJoint.useMotor = true;
         this.hingeMotorThing.targetVelocity = -this.hingeMotorThing.targetVelocity;
