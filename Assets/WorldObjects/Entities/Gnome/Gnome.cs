@@ -20,6 +20,12 @@ public class Gnome : MonoBehaviour
     //Last known location of target
     private Vector3 lastKnownLocation;
 
+    //Is the gnome trapped?
+    private bool trapped = false;
+    private bool readyToSpawn = false;
+
+    //Dirt Spawner object
+    public GameObject dirtSpawner;
 
     void Start()
     {
@@ -28,25 +34,33 @@ public class Gnome : MonoBehaviour
         targetBlink = target.GetComponent<Blink>();
         agent = gameObject.GetComponent<NavMeshAgent>();
         blinkSpeed = float.MaxValue;
+        dirtSpawner = GameObject.Find("DirtSpawner");
     }
 
     void Update()
     {
-        if (!SeenByPlayer())
+        if(readyToSpawn)
         {
-            if (TargetInRange())
-            {
-                //Do pathing
-                FollowPlayer();
-            }
-            else
-            {
-                Wander();
-            }
+            Respawn();
         }
         else
         {
-            agent.speed = 0;
+            if (!SeenByPlayer() && !trapped)
+            {
+                if (TargetInRange())
+                {
+                    //Do pathing
+                    FollowPlayer();
+                }
+                else
+                {
+                    Wander();
+                }
+            }
+            else
+            {
+                agent.speed = 0;
+            }
         }
 
     }
@@ -78,7 +92,8 @@ public class Gnome : MonoBehaviour
 
     }
 
-    private bool TargetInRange() {
+    private bool TargetInRange() 
+    {
         return Vector3.Distance(transform.position, target.transform.position) < sightRange;
     }
 
@@ -107,17 +122,61 @@ public class Gnome : MonoBehaviour
         return true;
     }
 
+    IEnumerator SpawnTimer(float waitTime)
+    {
+        Debug.Log("Spawner Timer Started");
+
+        //Wait spawn time
+        yield return new WaitForSeconds(waitTime);
+
+        readyToSpawn = true;
+    }
+
+    void Respawn()
+    {
+        Debug.Log("Spawned");
+
+        //Gnome is no longer trapped
+        trapped = false;
+
+        //Set position
+        transform.position = dirtSpawner.transform.position;
+
+        //Enable NavMeshAgent
+        GetComponent<NavMeshAgent>().enabled = true;
+
+        //Make the gnome kinematic again
+        rigidbody.isKinematic = true;
+        rigidbody.useGravity = false;
+
+        readyToSpawn = false;
+    }
+
     void OnTriggerEnter(Collider other)
 	{
 		if(other.name == "DirtTrap")
 		{
-			Destroy(GetComponent<NavMeshAgent>());
-			Destroy(GetComponent<Gnome>());
-			//Disable navmesh script
-			//!Kinematic
-			rigidbody.isKinematic = false;
-			rigidbody.useGravity = true;
-			//Falls in
+            Debug.Log("Trapped");
+
+            //Gnome is trapped
+            trapped = true;
+
+			//Disable NavMeshAgent
+            GetComponent<NavMeshAgent>().enabled = false;
+
+            //Make the gnome fall
+            rigidbody.isKinematic = false;
+            rigidbody.useGravity = true;
+
+            //Set spawn timer
+            StartCoroutine(SpawnTimer(5.0F));
 		}
+        else if(other.tag == "DropTrap")
+        {
+            //Crush the gnome
+            Destroy(this.gameObject);
+
+            //Emit particle effect here
+        }
 	}
 }
