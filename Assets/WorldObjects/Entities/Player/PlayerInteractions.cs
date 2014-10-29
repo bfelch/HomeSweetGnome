@@ -178,6 +178,9 @@ public class PlayerInteractions : MonoBehaviour
             {
                 slot.gui.ResetRotation();
             }
+
+            playerGUI.keyRing.gui.ResetRotation();
+            playerGUI.energyBar.gui.ResetRotation();
         }
 
         charMotor.enabled = !showGUI;

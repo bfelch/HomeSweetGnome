@@ -5,6 +5,7 @@ using System.Collections.Generic;
 public class GUIWrapper : MonoBehaviour {
     public ItemSlot[] slots;
     public KeyRing keyRing;
+    public EnergyBar energyBar;
 
     void Start() {
     }
