@@ -72,7 +72,7 @@ public class Player : MonoBehaviour
     //Note: Bug: enemies will not pathfind close enough to you to actually register the collision.
     void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.tag.Equals("Enemy"))
+        if (other.gameObject.tag.Equals("Enemy") && other.gameObject.name != "GnomeShed")
         {
             sanity -= 0.2f;
         }

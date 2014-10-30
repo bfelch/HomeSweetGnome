@@ -49,7 +49,7 @@ public class GnomeParent : MonoBehaviour
             modelNumber = 2;
             for (int i = 0; i < gnomes.Length; i++)
             {
-                Vector3 newPos = new Vector3(gnomes[i].transform.position.x, 17f, gnomes[i].transform.position.z);
+                Vector3 newPos = new Vector3(gnomes[i].transform.position.x, gnomes[i].transform.position.y, gnomes[i].transform.position.z);
                 GameObject thisModel = Instantiate(gnomeLvl2, newPos, gnomes[i].transform.rotation) as GameObject;
                 thisModel.transform.parent = transform;
 				thisModel.GetComponent<Gnome>().gnomeLevel = 2;
@@ -66,7 +66,7 @@ public class GnomeParent : MonoBehaviour
             modelNumber = 1;
             for (int i = 0; i < gnomes.Length; i++)
             {
-                Vector3 newPos = new Vector3(gnomes[i].transform.position.x, 17f, gnomes[i].transform.position.z);
+                Vector3 newPos = new Vector3(gnomes[i].transform.position.x, gnomes[i].transform.position.y, gnomes[i].transform.position.z);
                 GameObject thisModel = Instantiate(gnomeLvl1, newPos, gnomes[i].transform.rotation) as GameObject;
                 thisModel.transform.parent = transform;
 				thisModel.GetComponent<Gnome>().gnomeLevel = 1;

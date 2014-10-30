@@ -42,6 +42,13 @@ ModelImporter:
     4300008: WindowPane1
     4300010: WindowPane2
     4300012: WindowPane3
+    6400000: LowerLevel
+    6400002: Stairs
+    6400004: UpperLevel
+    6400006: WindowPane
+    6400008: WindowPane1
+    6400010: WindowPane2
+    6400012: WindowPane3
     9500000: //RootNode
   materials:
     importMaterials: 1

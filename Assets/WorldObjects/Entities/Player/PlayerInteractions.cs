@@ -105,6 +105,17 @@ public class PlayerInteractions : MonoBehaviour
         {
             if (playerGUI.AddToSlot(targetItem))
             {
+                if (targetItem.name == "ShedKey")
+                {
+                    GameObject gnome = GameObject.Find("GnomeShed");
+                    gnome.GetComponent<NavMeshAgent>().enabled = false;
+                    gnome.GetComponent<Gnome>().enabled = false;
+                    gnome.GetComponent<AudioSource>().Play();
+                    gnome.tag = "Untagged";
+                    gnome.transform.eulerAngles = new Vector3(gnome.transform.eulerAngles.x, 346, gnome.transform.eulerAngles.z);
+                    gnome.transform.localPosition = new Vector3(3.894336f, 1.053835f, 0.2515474f);
+
+                }
                 activeTarget.SetActive(false);
             }
         }
