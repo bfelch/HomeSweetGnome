@@ -171,7 +171,7 @@ public class Gnome : MonoBehaviour
 		pushed = false;
 		
 		//Set position
-		transform.position = new Vector3(transform.position.x, 17f, transform.position.z);
+		transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
 
 		//Set rotation
 		transform.rotation = new Quaternion(0, 0, 0, 0);
