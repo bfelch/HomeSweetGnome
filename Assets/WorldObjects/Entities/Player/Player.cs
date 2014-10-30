@@ -19,7 +19,10 @@ public class Player : MonoBehaviour
     public CharacterMotor charMotor;
 
     private bool crouching;
+	private bool readyToPush;
     private float yScale;
+
+	public GameObject activeTarget; //The item being looked at
 
     // Use this for initialization
     void Start()
@@ -32,6 +35,7 @@ public class Player : MonoBehaviour
         restTime = maxRestTime = .75f;
         sprintTime = maxSprintTime = 1.25f;
         playerDied = false;
+		readyToPush = true;
 
         yScale = this.transform.localScale.y;
 
@@ -56,6 +60,7 @@ public class Player : MonoBehaviour
         Sanity();
         Sprint();
         Crouch();
+		Push();
     }
 
     //Note: Bug: enemies will not pathfind close enough to you to actually register the collision.
@@ -104,6 +109,56 @@ public class Player : MonoBehaviour
         }
     }
 
+	IEnumerator SpawnTimer(float waitTime)
+	{
+		Debug.Log("Push Timer Started");
+		
+		//Wait spawn time
+		yield return new WaitForSeconds(waitTime);
+		
+		readyToPush = true;
+	}
+
+	void Push()
+	{
+		if (Input.GetMouseButtonDown(0) && readyToPush)
+		{
+			Transform cam = Camera.main.transform;
+
+			//Player layer mask
+			int playerLayer = 8;
+			int playerMask = 1 << playerLayer;
+			
+			//Invert bitmask to only ignore this layer
+			playerMask = ~playerMask;
+			
+			RaycastHit hit;
+			
+			if (Physics.Raycast(cam.position, cam.forward, out hit, 5, playerMask))
+			{
+				activeTarget = hit.collider.gameObject; //Store item being looked at
+
+				if(activeTarget.tag == "Enemy")
+				{
+					readyToPush = false;
+					activeTarget.GetComponent<Gnome>().trapped = true;
+
+					//Start push timer
+					StartCoroutine(SpawnTimer(5.0F));
+
+					//Disable NavMeshAgent
+					activeTarget.GetComponent<NavMeshAgent>().enabled = false;
+					
+					//Make the gnome fall
+					activeTarget.rigidbody.isKinematic = false;
+					activeTarget.rigidbody.useGravity = true;
+
+					//Apply a force in the direction of the push
+					activeTarget.rigidbody.AddForce((activeTarget.transform.position - this.transform.position).normalized * 10);
+				}
+			}
+		}
+	}
 
     void Sanity()
     {

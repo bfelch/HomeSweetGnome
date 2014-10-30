@@ -21,7 +21,7 @@ public class Gnome : MonoBehaviour
     private Vector3 lastKnownLocation;
 
     //Is the gnome trapped?
-    private bool trapped = false;
+    public bool trapped = false;
     private bool readyToSpawn = false;
 
     //Dirt Spawner object
