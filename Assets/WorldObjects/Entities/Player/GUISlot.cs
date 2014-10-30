@@ -49,7 +49,6 @@ public class GUISlot : MonoBehaviour
 
     public void ResetRotation()
     {
-        Debug.Log("Reset Rotation");
         rotationBound = Random.Range(10f, 20f);
         rotationSpeed = Random.Range(.1f, .2f);
         startRotation = Random.Range(-rotationBound, rotationBound);

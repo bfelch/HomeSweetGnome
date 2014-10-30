@@ -12,7 +12,7 @@ public class Blink : MonoBehaviour
     public float maxOpenTimer = 10.0f;
     public bool blink = false;
     private bool rechargeBlink = false;
-    private bool playerDied = false;
+    private bool playerSlept = false;
     private bool gameEnded = false;
 
     private bool showGUI = false;
@@ -43,9 +43,9 @@ public class Blink : MonoBehaviour
     void Update()
     {
         playerSanity = gameObject.GetComponent<Player>().sanity;
-        playerDied = gameObject.GetComponent<Player>().playerDied;
+        playerSlept = gameObject.GetComponent<Player>().playerSlept;
 
-        if (!playerDied)
+        if (!playerSlept)
         {
             BlinkMechanics();
             OpenEyes();
@@ -113,7 +113,6 @@ public class Blink : MonoBehaviour
 
     void FallAsleep()
     {
-        Debug.Log("Fall Asleep");
         if (!topLid.animation.isPlaying)
         {
             gameEnded = true;

@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class GnomeParent : MonoBehaviour {
-
+public class GnomeParent : MonoBehaviour 
+{
     public GameObject target;
 
     public GameObject gnomeLvl1;
@@ -12,15 +12,15 @@ public class GnomeParent : MonoBehaviour {
 
     private float playerSanity;
     private float playerSanityMax;
-    private int modelNumber = 1;
+    public int modelNumber = 1;
 
     private GameObject[] gnomes;
 
     public Blink blink;
 
 	// Use this for initialization
-	void Start () {
-
+	void Start () 
+	{
         playerSanity = target.GetComponent<Player>().sanity;
         playerSanityMax = target.GetComponent<Player>().maxSanity;
 
@@ -31,7 +31,8 @@ public class GnomeParent : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update () 
+	{
         ChangeModel();
 	}
 
@@ -43,35 +44,17 @@ public class GnomeParent : MonoBehaviour {
         float sanityPercentage = playerSanity / playerSanityMax;
 
         //check the model number and sanity percetange and change the model accordingly
-        if(modelNumber != 3 && sanityPercentage < .4)
-        {
-            modelNumber = 3;
-            for (int i = 0; i < gnomes.Length; i++)
-            {
-                Vector3 newPos = new Vector3(gnomes[i].transform.position.x, 25.8f, gnomes[i].transform.position.z);
-                GameObject thisModel = Instantiate(gnomeLvl3, newPos, gnomes[i].transform.rotation) as GameObject;
-                thisModel.transform.parent = transform;
-                Destroy(gnomes[i]);
-                gnomes[i] = thisModel;
-                Debug.Log("Less thant 40%");
-            }
-            //blink if model is changing
-            blink.blinkTimer = 0;
-            blink.BlinkMechanics();
-
-        }
-
-        else if(sanityPercentage < .7 && sanityPercentage > .4 && modelNumber != 2)
+        if(sanityPercentage < .7 && sanityPercentage > .4 && modelNumber != 2)
         {
             modelNumber = 2;
             for (int i = 0; i < gnomes.Length; i++)
             {
-                Vector3 newPos = new Vector3(gnomes[i].transform.position.x, 21.4f, gnomes[i].transform.position.z);
+                Vector3 newPos = new Vector3(gnomes[i].transform.position.x, 17f, gnomes[i].transform.position.z);
                 GameObject thisModel = Instantiate(gnomeLvl2, newPos, gnomes[i].transform.rotation) as GameObject;
                 thisModel.transform.parent = transform;
+				thisModel.GetComponent<Gnome>().gnomeLevel = 2;
                 Destroy(gnomes[i]);
                 gnomes[i] = thisModel;
-                Debug.Log("Less thant 70%");
             }
             //blink if model is changing
             blink.blinkTimer = 0;
@@ -86,9 +69,9 @@ public class GnomeParent : MonoBehaviour {
                 Vector3 newPos = new Vector3(gnomes[i].transform.position.x, 17f, gnomes[i].transform.position.z);
                 GameObject thisModel = Instantiate(gnomeLvl1, newPos, gnomes[i].transform.rotation) as GameObject;
                 thisModel.transform.parent = transform;
+				thisModel.GetComponent<Gnome>().gnomeLevel = 1;
                 Destroy(gnomes[i].gameObject);
                 gnomes[i] = thisModel;
-                Debug.Log("Greater than 70%");
             }
             //blink if model is changing
             blink.blinkTimer = 0;

@@ -11,7 +11,6 @@ public class DoorInteraction : MonoBehaviour
     {
         this.hingeMotorThing = gameObject.GetComponent<HingeJoint>().motor;
         this.jointLimits = gameObject.GetComponent<HingeJoint>().limits;
-        Debug.Log(this.hingeMotorThing.targetVelocity);
     }
 
     public void DoorKeyOpen()

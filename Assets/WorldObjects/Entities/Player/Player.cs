@@ -12,8 +12,10 @@ public class Player : MonoBehaviour
     private float maxRestTime;
     public float sprintTime;
     public float maxSprintTime;
-    public bool playerDied;
-    public GUIText deathText;
+    public bool playerSlept;
+	public bool playerFell;
+    public GUIText deathTextSleep;
+	public GUIText deathTextFall;
     private Animation blinkBottom;
     private Animation blinkTop;
     public CharacterMotor charMotor;
@@ -34,13 +36,17 @@ public class Player : MonoBehaviour
         minSanity = 0;
         restTime = maxRestTime = .75f;
         sprintTime = maxSprintTime = 1.25f;
-        playerDied = false;
+        playerSlept = false;
+		playerFell = false;
 		readyToPush = true;
 
         yScale = this.transform.localScale.y;
 
-        deathText = GameObject.Find("DeathText").guiText;
-        deathText.enabled = false;
+        deathTextSleep = GameObject.Find("DeathTextSleep").guiText;
+        deathTextSleep.enabled = false;
+
+		deathTextFall = GameObject.Find("DeathTextFall").guiText;
+		deathTextFall.enabled = false;
 
         if(PlayerPrefs.GetInt("LoadGame") == 1)
         {
@@ -109,13 +115,14 @@ public class Player : MonoBehaviour
         }
     }
 
-	IEnumerator SpawnTimer(float waitTime)
+	IEnumerator PushTimer(float waitTime, GameObject target)
 	{
 		Debug.Log("Push Timer Started");
 		
 		//Wait spawn time
 		yield return new WaitForSeconds(waitTime);
-		
+
+		target.GetComponent<Gnome> ().readyToSpawn = true;
 		readyToPush = true;
 	}
 
@@ -138,23 +145,24 @@ public class Player : MonoBehaviour
 			{
 				activeTarget = hit.collider.gameObject; //Store item being looked at
 
-				if(activeTarget.tag == "Enemy")
+				if(activeTarget.tag == "Enemy" && activeTarget.GetComponent<Gnome>().gnomeLevel == 1)
 				{
+					Debug.Log (activeTarget.GetComponent<Gnome>().gnomeLevel);
 					readyToPush = false;
-					activeTarget.GetComponent<Gnome>().trapped = true;
+					activeTarget.GetComponent<Gnome>().pushed = true;
 
 					//Start push timer
-					StartCoroutine(SpawnTimer(5.0F));
+					StartCoroutine(PushTimer(10.0F, activeTarget));
 
 					//Disable NavMeshAgent
 					activeTarget.GetComponent<NavMeshAgent>().enabled = false;
 					
-					//Make the gnome fall
+					//Make the gnome moveable
 					activeTarget.rigidbody.isKinematic = false;
 					activeTarget.rigidbody.useGravity = true;
 
 					//Apply a force in the direction of the push
-					activeTarget.rigidbody.AddForce((activeTarget.transform.position - this.transform.position).normalized * 10);
+					activeTarget.rigidbody.AddForce((activeTarget.transform.position - this.transform.position).normalized * 6, ForceMode.Impulse);
 				}
 			}
 		}
@@ -165,8 +173,9 @@ public class Player : MonoBehaviour
         sanity -= .002f;
         if (sanity < 0)
         {
-            //Application.LoadLevel("MainMenu");
-            playerDied = true;
+            playerSlept = true;
+
+			StartCoroutine(WaitToReload(5.0F));
         }
 
         if (sanity > maxSanity)
@@ -181,9 +190,33 @@ public class Player : MonoBehaviour
 
     void OnGUI()
     {
-        if (playerDied)
+        if (playerSlept)
         {
-            deathText.enabled = true;
+            deathTextSleep.enabled = true;
         }
+
+		if(playerFell)
+		{
+			deathTextFall.enabled = true;
+		}
     }
+
+	void OnTriggerEnter(Collider other)
+	{
+		if(other.tag == "Fall")
+		{
+			playerFell = true;
+
+			StartCoroutine(WaitToReload(5.0F));
+		}
+	}
+
+	IEnumerator WaitToReload(float waitTime)
+	{
+		//Wait before loading the main menu
+		yield return new WaitForSeconds (waitTime);
+
+		//Load the main menu
+		Application.LoadLevel ("MainMenu");
+	}
 }

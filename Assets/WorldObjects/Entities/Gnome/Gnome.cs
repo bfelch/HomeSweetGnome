@@ -22,7 +22,10 @@ public class Gnome : MonoBehaviour
 
     //Is the gnome trapped?
     public bool trapped = false;
-    private bool readyToSpawn = false;
+    public bool readyToSpawn = false;
+	public bool pushed = false;
+
+	public int gnomeLevel = 1;
 
     //Dirt Spawner object
     public GameObject dirtSpawner;
@@ -39,13 +42,21 @@ public class Gnome : MonoBehaviour
 
     void Update()
     {
-        if(readyToSpawn)
+		//Climb or Stand when the player is not looking
+        if(readyToSpawn && !SeenByPlayer())
         {
-            Respawn();
+			if(trapped && gnomeLevel == 2)
+			{
+            	Climb();
+			}
+			else if(pushed)
+			{
+				Stand();
+			}
         }
         else
         {
-            if (!SeenByPlayer() && !trapped)
+            if (!SeenByPlayer() && !trapped && !pushed)
             {
                 if (TargetInRange())
                 {
@@ -132,9 +143,9 @@ public class Gnome : MonoBehaviour
         readyToSpawn = true;
     }
 
-    void Respawn()
+    void Climb()
     {
-        Debug.Log("Spawned");
+        Debug.Log("Climbed");
 
         //Gnome is no longer trapped
         trapped = false;
@@ -151,6 +162,29 @@ public class Gnome : MonoBehaviour
 
         readyToSpawn = false;
     }
+
+	void Stand()
+	{
+		Debug.Log("Stand");
+		
+		//Gnome is no longer pushed
+		pushed = false;
+		
+		//Set position
+		transform.position = new Vector3(transform.position.x, 17f, transform.position.z);
+
+		//Set rotation
+		transform.rotation = new Quaternion(0, 0, 0, 0);
+		
+		//Enable NavMeshAgent
+		GetComponent<NavMeshAgent>().enabled = true;
+		
+		//Make the gnome kinematic again
+		rigidbody.isKinematic = true;
+		rigidbody.useGravity = false;
+		
+		readyToSpawn = false;
+	}
 
     void OnTriggerEnter(Collider other)
 	{
