@@ -26,6 +26,16 @@ public class Game
     public ArrayList useable_names;
     [SerializeField]
     public ArrayList useable_values;
+    [SerializeField]
+    public string[] heldItems;
+    [SerializeField]
+    public string[] keys;
+    [SerializeField]
+    public float[,] useableRotations;
+    [SerializeField]
+    public float[,] useableLocations;
+
+
 
     void findObjects()
     {
@@ -35,6 +45,7 @@ public class Game
         GameObject[] useable = GameObject.FindGameObjectsWithTag("Useable");
         GameObject[] structures = GameObject.FindGameObjectsWithTag("Structure");
 
+        heldItems = new string[15];
         playerLocation = new float[3];
         playerRotation = new float[3];
     }

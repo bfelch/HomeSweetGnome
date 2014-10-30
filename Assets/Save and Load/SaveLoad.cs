@@ -6,7 +6,6 @@ using System.IO;
 
 public class SaveLoad : MonoBehaviour
 {
-
     private bool saving = false;
     private int displayTime = 300;
     public void Save()
@@ -59,6 +58,8 @@ public class SaveLoad : MonoBehaviour
         GameObject[] pickUps = GameObject.FindGameObjectsWithTag("PickUp");
         GameObject[] useable = GameObject.FindGameObjectsWithTag("Useable");
         GameObject[] structures = GameObject.FindGameObjectsWithTag("Structure");
+        ItemSlot[] held = GameObject.Find("Player").GetComponent<PlayerInteractions>().playerGUI.slots;
+        KeyRing keyRing = GameObject.Find("Player").GetComponent<PlayerInteractions>().playerGUI.keyRing;
 
         data.gnomeLocations = new float[enemies.Length, 3];
         data.gnomeRotations = new float[enemies.Length, 4];
@@ -77,10 +78,37 @@ public class SaveLoad : MonoBehaviour
         data.playerLocation = new float[3] { player.transform.position.x, player.transform.position.y, player.transform.position.z };
         data.playerRotation = new float[4] { player.transform.rotation.x, player.transform.rotation.y, player.transform.rotation.z, player.transform.rotation.w };
         data.playerHealth = player.gameObject.GetComponent<Player>().sanity;
-        /*data.pickUp_names = player.gameObject.GetComponent<PlayerInteractions>().pickUp_names;
-        data.pickUp_values = player.gameObject.GetComponent<PlayerInteractions>().pickUp_values;
-        data.useable_names = player.gameObject.GetComponent<PlayerInteractions>().useable_names;
-        data.useable_values = player.gameObject.GetComponent<PlayerInteractions>().useable_values;*/
+
+        data.heldItems = new string[held.Length];
+        for (int i = 0; i < held.Length; i++)
+        {
+            if (held[i].heldItem != null)
+            {
+                data.heldItems[i] = held[i].heldItem.name;
+            }
+            else
+                data.heldItems[i] = null;
+        }
+
+        data.keys = new string[keyRing.keys.Count];
+        for (int j = 0; j < keyRing.keys.Count; j++)
+        {
+          data.keys[j] = keyRing.keys.ToArray()[j].name;
+        }
+
+        data.useableLocations = new float[useable.Length, 3];
+        data.useableRotations = new float[useable.Length, 4];
+        for (int m = 0; m < useable.Length; m++)
+        {
+            data.useableLocations[m, 0] = useable[m].transform.position.x;
+            data.useableLocations[m, 1] = useable[m].transform.position.y;
+            data.useableLocations[m, 2] = useable[m].transform.position.z;
+
+            data.useableRotations[m, 0] = useable[m].transform.rotation.x;
+            data.useableRotations[m, 1] = useable[m].transform.rotation.y;
+            data.useableRotations[m, 2] = useable[m].transform.rotation.z;
+            data.useableRotations[m, 3] = useable[m].transform.rotation.w;
+        }
 
     }
 
@@ -91,6 +119,9 @@ public class SaveLoad : MonoBehaviour
         GameObject[] pickUps = GameObject.FindGameObjectsWithTag("PickUp");
         GameObject[] useable = GameObject.FindGameObjectsWithTag("Useable");
         GameObject[] structures = GameObject.FindGameObjectsWithTag("Structure");
+        ItemSlot[] held = GameObject.Find("Player").GetComponent<PlayerInteractions>().playerGUI.slots;
+        KeyRing keyRing = GameObject.Find("Player").GetComponent<PlayerInteractions>().playerGUI.keyRing;
+
 
         for (int k = 0; k < enemies.Length; k++)
         {
@@ -100,25 +131,31 @@ public class SaveLoad : MonoBehaviour
         player.transform.position = new Vector3(data.playerLocation[0], data.playerLocation[1], data.playerLocation[2]);
         player.transform.rotation = new Quaternion(data.playerRotation[0], data.playerRotation[1], data.playerRotation[2], data.playerRotation[3]);
         player.gameObject.GetComponent<Player>().sanity = data.playerHealth;
-        /*player.gameObject.GetComponent<PlayerInteractions>().pickUp_names = data.pickUp_names;
-        player.gameObject.GetComponent<PlayerInteractions>().pickUp_values = data.pickUp_values;
-        player.gameObject.GetComponent<PlayerInteractions>().useable_names = data.useable_names;
-        player.gameObject.GetComponent<PlayerInteractions>().useable_values = data.useable_values;*/
 
-        for (int i = 0; i < data.pickUp_names.ToArray().Length; i++)
+        for (int i = 0; i < held.Length; i++)
         {
-            if ((bool)data.pickUp_values.ToArray()[i])
+            if (data.heldItems[i] == null)
+                held[i].heldItem = null;
+            else
             {
-                Destroy(GameObject.Find(data.pickUp_names.ToArray()[i].ToString()));
+                held[i].heldItem = GameObject.Find(data.heldItems[i]).GetComponent<Item>();
+                held[i].heldItem.name = data.heldItems[i];
+                GameObject.Find(data.heldItems[i]).SetActive(false);
             }
         }
 
-        for (int i = 0; i < data.useable_values.ToArray().Length; i++)
+        for (int j = 0; j < data.keys.Length; j++)
         {
-            if ((bool)data.useable_values.ToArray()[i] && data.useable_names.ToArray()[i].ToString().Contains("Door"))
-            {
-                GameObject.Find(data.useable_names.ToArray()[i].ToString()).tag = "Door";
-            }
+            keyRing.AddKey(GameObject.Find(data.keys[j]).GetComponent<Item>());
+            keyRing.keys.ToArray()[j].name = data.keys[j];
+            GameObject.Find(data.keys[j]).SetActive(false);
+        }
+
+        for (int m = 0; m < useable.Length; m++)
+        {
+            useable[m].transform.position = new Vector3(data.useableLocations[m, 0], data.useableLocations[m, 1], data.useableLocations[m, 2]);
+            useable[m].transform.rotation = new Quaternion(data.useableRotations[m, 0], data.useableRotations[m, 1], data.useableRotations[m, 2], data.useableRotations[m, 3]);
+   
         }
 
     }
