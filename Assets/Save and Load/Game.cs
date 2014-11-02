@@ -34,6 +34,8 @@ public class Game
     public float[,] useableRotations;
     [SerializeField]
     public float[,] useableLocations;
+    [SerializeField]
+    public float[,] consumables;
 
 
 

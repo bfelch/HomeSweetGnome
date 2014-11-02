@@ -44,7 +44,7 @@ public class GnomeParent : MonoBehaviour
         float sanityPercentage = playerSanity / playerSanityMax;
 
         //check the model number and sanity percetange and change the model accordingly
-        if(sanityPercentage < .7 && sanityPercentage > .4 && modelNumber != 2)
+        if(sanityPercentage < .5 && modelNumber != 2)
         {
             modelNumber = 2;
             for (int i = 0; i < gnomes.Length; i++)

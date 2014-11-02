@@ -57,7 +57,7 @@ public class SaveLoad : MonoBehaviour
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         GameObject[] pickUps = GameObject.FindGameObjectsWithTag("PickUp");
         GameObject[] useable = GameObject.FindGameObjectsWithTag("Useable");
-        GameObject[] structures = GameObject.FindGameObjectsWithTag("Structure");
+        GameObject[] consumables = GameObject.FindGameObjectsWithTag("Consumable");
         ItemSlot[] held = GameObject.Find("Player").GetComponent<PlayerInteractions>().playerGUI.slots;
         KeyRing keyRing = GameObject.Find("Player").GetComponent<PlayerInteractions>().playerGUI.keyRing;
 
@@ -74,6 +74,7 @@ public class SaveLoad : MonoBehaviour
             data.gnomeRotations[k, 1] = enemies[k].transform.rotation.y;
             data.gnomeRotations[k, 2] = enemies[k].transform.rotation.z;
             data.gnomeRotations[k, 3] = enemies[k].transform.rotation.w;
+            Debug.Log(enemies[k].transform.position);
         }
         data.playerLocation = new float[3] { player.transform.position.x, player.transform.position.y, player.transform.position.z };
         data.playerRotation = new float[4] { player.transform.rotation.x, player.transform.rotation.y, player.transform.rotation.z, player.transform.rotation.w };
@@ -110,6 +111,13 @@ public class SaveLoad : MonoBehaviour
             data.useableRotations[m, 3] = useable[m].transform.rotation.w;
         }
 
+        data.consumables = new float[consumables.Length, 3];
+        for(int n = 0; n < consumables.Length; n++)
+        {
+            data.consumables[n, 0] = consumables[n].transform.position.x;
+            data.consumables[n, 1] = consumables[n].transform.position.y;
+            data.consumables[n, 2] = consumables[n].transform.position.z;
+        }
     }
 
     public void loadGameValues(Game data)
@@ -118,15 +126,18 @@ public class SaveLoad : MonoBehaviour
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         GameObject[] pickUps = GameObject.FindGameObjectsWithTag("PickUp");
         GameObject[] useable = GameObject.FindGameObjectsWithTag("Useable");
-        GameObject[] structures = GameObject.FindGameObjectsWithTag("Structure");
+        GameObject[] consumables = GameObject.FindGameObjectsWithTag("Consumable");
         ItemSlot[] held = GameObject.Find("Player").GetComponent<PlayerInteractions>().playerGUI.slots;
         KeyRing keyRing = GameObject.Find("Player").GetComponent<PlayerInteractions>().playerGUI.keyRing;
 
 
         for (int k = 0; k < enemies.Length; k++)
         {
+            enemies[k].GetComponent<NavMeshAgent>().enabled = false;
             enemies[k].transform.position = new Vector3(data.gnomeLocations[k, 0], data.gnomeLocations[k, 1], data.gnomeLocations[k, 2]);
             enemies[k].transform.rotation = new Quaternion(data.gnomeRotations[k, 0], data.gnomeRotations[k, 1], data.gnomeRotations[k, 2], data.gnomeRotations[k, 3]);
+            enemies[k].GetComponent<NavMeshAgent>().enabled = true;
+
         }
         player.transform.position = new Vector3(data.playerLocation[0], data.playerLocation[1], data.playerLocation[2]);
         player.transform.rotation = new Quaternion(data.playerRotation[0], data.playerRotation[1], data.playerRotation[2], data.playerRotation[3]);
@@ -156,6 +167,22 @@ public class SaveLoad : MonoBehaviour
             useable[m].transform.position = new Vector3(data.useableLocations[m, 0], data.useableLocations[m, 1], data.useableLocations[m, 2]);
             useable[m].transform.rotation = new Quaternion(data.useableRotations[m, 0], data.useableRotations[m, 1], data.useableRotations[m, 2], data.useableRotations[m, 3]);
    
+        }
+
+        for (int h = 0; h < consumables.Length; h++)
+        {
+            bool notfound = false;
+            for (int n = 0; n < data.consumables.GetLength(0); n++ )
+            {
+                if(data.consumables[n,0] == consumables[h].transform.position.x && data.consumables[n,1] == consumables[h].transform.position.y && data.consumables[n,2] == consumables[h].transform.position.z)
+                {
+                    notfound = true;
+                }
+            }
+            if(!notfound)
+            {
+                Destroy(GameObject.Find(consumables[h].name));
+            }
         }
 
     }
