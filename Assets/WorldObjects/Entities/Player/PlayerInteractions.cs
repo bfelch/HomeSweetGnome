@@ -14,8 +14,9 @@ public class PlayerInteractions : MonoBehaviour
     public CharacterMotor charMotor;
     public MouseLook mouseLook;
     public MouseLook cameraLook;
-    
+    private GameObject lastActiveTarget = null;
 
+    private Material outline;
     public bool showGUI;
 
     public GUIWrapper playerGUI;
@@ -24,6 +25,7 @@ public class PlayerInteractions : MonoBehaviour
     {
         ToggleGUI(showGUI);
         st = gameObject.GetComponent<ShedTutorial>();
+        outline = Resources.Load("Outline") as Material;
     }
 
     void Update()
@@ -70,8 +72,15 @@ public class PlayerInteractions : MonoBehaviour
             //Is the item close and a pick up?
             if (activeTarget.tag == "PickUp")
             {
+                MeshRenderer currentMesh = activeTarget.GetComponent<MeshRenderer>();
+                Material current = currentMesh.material;
+                Material[] mats = new Material[2];
+                mats[0] = current;
+                mats[1] = outline;
+                currentMesh.materials = mats;
                 Item targetItem = activeTarget.GetComponent<Item>();
                 PickUp(targetItem); //Pick it up
+                lastActiveTarget = activeTarget;
             }
             //Is the item close and useable?
             else if (activeTarget.tag == "Useable")
@@ -81,7 +90,24 @@ public class PlayerInteractions : MonoBehaviour
             }
             else if (activeTarget.tag == "Consumable")
             {
+                MeshRenderer currentMesh = activeTarget.GetComponent<MeshRenderer>();
+                Material current = currentMesh.material;
+                Material[] mats = new Material[2];
+                mats[0] = current;
+                mats[1] = outline;
+                currentMesh.materials = mats;
                 Consume();
+                lastActiveTarget = activeTarget;
+
+            }
+            else if(lastActiveTarget != null && lastActiveTarget != activeTarget)
+            {
+                MeshRenderer currentMesh = lastActiveTarget.GetComponent<MeshRenderer>();
+                Material current = currentMesh.materials[0];
+                Material[] mats = new Material[1];
+                mats[0] = current;
+                currentMesh.materials = mats;
+                lastActiveTarget = null;
             }
             else
             {
