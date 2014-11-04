@@ -72,14 +72,20 @@ public class PlayerInteractions : MonoBehaviour
             //Is the item close and a pick up?
             if (activeTarget.tag == "PickUp")
             {
+                //get the mesh renderer
                 MeshRenderer currentMesh = activeTarget.GetComponent<MeshRenderer>();
+                //save the current mesh material
                 Material current = currentMesh.material;
+                //create new array of materials of size 2
                 Material[] mats = new Material[2];
+                //set materials to the current one and the outline
                 mats[0] = current;
                 mats[1] = outline;
-                currentMesh.materials = mats;
+                //set the materials to the currentMesh
+                currentMesh.materials = mats; 
                 Item targetItem = activeTarget.GetComponent<Item>();
                 PickUp(targetItem); //Pick it up
+                //set the lastActiveTarget to this activeTarget
                 lastActiveTarget = activeTarget;
             }
             //Is the item close and useable?
@@ -90,23 +96,35 @@ public class PlayerInteractions : MonoBehaviour
             }
             else if (activeTarget.tag == "Consumable")
             {
+                //get the mesh renderer
                 MeshRenderer currentMesh = activeTarget.GetComponent<MeshRenderer>();
+                //save the current mesh material
                 Material current = currentMesh.material;
+                //create new array of materials of size 2
                 Material[] mats = new Material[2];
+                //set materials to the current one and the outline
                 mats[0] = current;
                 mats[1] = outline;
+                //set the materials to the currentMesh
                 currentMesh.materials = mats;
                 Consume();
+                //set the lastActiveTarget to this activeTarget
                 lastActiveTarget = activeTarget;
 
             }
             else if(lastActiveTarget != null && lastActiveTarget != activeTarget)
             {
+                //get the mesh renderer
                 MeshRenderer currentMesh = lastActiveTarget.GetComponent<MeshRenderer>();
+                //save the first material
                 Material current = currentMesh.materials[0];
+                //create new array of materials of size 1
                 Material[] mats = new Material[1];
+                //set the material 
                 mats[0] = current;
+                //set the material to the current mehs
                 currentMesh.materials = mats;
+                //set the lastActiveTarget to null
                 lastActiveTarget = null;
             }
             else
@@ -131,14 +149,22 @@ public class PlayerInteractions : MonoBehaviour
         {
             if (playerGUI.AddToSlot(targetItem))
             {
+                //check if the target name is the shed key
                 if (targetItem.name == "ShedKey")
                 {
+                    //get the gnome in the shed
                     GameObject gnome = GameObject.Find("GnomeShed");
+                    //set the nav mesh agent to be false
                     gnome.GetComponent<NavMeshAgent>().enabled = false;
+                    //set the gnome scirpt to false
                     gnome.GetComponent<Gnome>().enabled = false;
+                    //play the drop and laugh audio
                     gnome.GetComponent<AudioSource>().Play();
+                    //rotate the gnome so it's facing you
                     gnome.transform.eulerAngles = new Vector3(gnome.transform.eulerAngles.x, 346, gnome.transform.eulerAngles.z);
+                    //set it's position on the floor
                     gnome.transform.localPosition = new Vector3(3.894336f, 1.053835f, 0.2515474f);
+                    //enable the nav mesh and the gnome script
                     gnome.GetComponent<NavMeshAgent>().enabled = true;
                     gnome.GetComponent<Gnome>().enabled = true;
 

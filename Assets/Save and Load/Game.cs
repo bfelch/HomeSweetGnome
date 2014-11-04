@@ -1,57 +1,41 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+//this class holsd all the data that needs to be saved and loaded
 [System.Serializable]
 public class Game
 {
-
-
+    //store all the gnome locations
     [SerializeField]
     public float[,] gnomeLocations;
+    //store all the gnome rotations
     [SerializeField]
     public float[,] gnomeRotations;
 
+    //store the player's location
     [SerializeField]
     public float[] playerLocation;
+    //store the player's rotation
     [SerializeField]
     public float[] playerRotation;
+    //store the player's health
     [SerializeField]
     public float playerHealth;
 
-    [SerializeField]
-    public ArrayList pickUp_names;
-    [SerializeField]
-    public ArrayList pickUp_values;
-    [SerializeField]
-    public ArrayList useable_names;
-    [SerializeField]
-    public ArrayList useable_values;
+    //store all the held items
     [SerializeField]
     public string[] heldItems;
+    //store all the held keys
     [SerializeField]
     public string[] keys;
+    //store all the useable's rotations (mainly for doors)
     [SerializeField]
     public float[,] useableRotations;
     [SerializeField]
+    //store all the useable's locations
     public float[,] useableLocations;
     [SerializeField]
+    //store all the consumables
     public float[,] consumables;
-
-
-
-    void findObjects()
-    {
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
-        GameObject[] pickUps = GameObject.FindGameObjectsWithTag("PickUp");
-        GameObject[] useable = GameObject.FindGameObjectsWithTag("Useable");
-        GameObject[] structures = GameObject.FindGameObjectsWithTag("Structure");
-
-        heldItems = new string[15];
-        playerLocation = new float[3];
-        playerRotation = new float[3];
-    }
-
-
 
 }

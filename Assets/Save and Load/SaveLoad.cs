@@ -6,53 +6,70 @@ using System.IO;
 
 public class SaveLoad : MonoBehaviour
 {
+    //is the game saving?
     private bool saving = false;
+    //display time for saving notification
     private int displayTime = 300;
+
+    //this method saves the values into playerInfo.dat
     public void Save()
     {
+        //create new binary formatter
         BinaryFormatter bf = new BinaryFormatter();
+        //create new filestream
         FileStream file = File.Create(Application.persistentDataPath + "/playerInfo.dat");
 
+        //create new Game object
         Game data = new Game();
+        //put data into the Game object
         saveGameValues(data);
 
+        //save the Game object
         bf.Serialize(file, data);
+        //close the file
         file.Close();
     }
 
     public void Load()
     {
+        //check if there is a file to load
         if (File.Exists(Application.persistentDataPath + "/playerInfo.dat"))
         {
+            //creat a binary formatter
             BinaryFormatter bf = new BinaryFormatter();
+            //create a new file stream
             FileStream file = File.Open(Application.persistentDataPath + "/playerInfo.dat", FileMode.Open);
 
+            //get the game data from the file
             Game data = (Game)bf.Deserialize(file);
+            //close the file
             file.Close();
 
+            //apply the loaded game values to the scene
             loadGameValues(data);
-            //sceneModification(data);
         }
         else
         {
+            //display if the file could not be loaded
             Debug.LogError("Couldn't Load File.");
         }
     }
 
     void OnTriggerEnter(Collider other)
     {
+        //did we enter a save trigger?
         if (gameObject.name == "Save")
         {
+            //save the game
             Save();
+            //set saving to true
             saving = true;
         }
-        else if (gameObject.name == "Load")
-        {
-            Load();
-        }
+
     }
     public void saveGameValues(Game data)
     {
+        //retreive all the objects that need data saved from the scene
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         GameObject[] pickUps = GameObject.FindGameObjectsWithTag("PickUp");
@@ -61,9 +78,11 @@ public class SaveLoad : MonoBehaviour
         ItemSlot[] held = GameObject.Find("Player").GetComponent<PlayerInteractions>().playerGUI.slots;
         KeyRing keyRing = GameObject.Find("Player").GetComponent<PlayerInteractions>().playerGUI.keyRing;
 
+        //create new gnome location and rotations arrays
         data.gnomeLocations = new float[enemies.Length, 3];
         data.gnomeRotations = new float[enemies.Length, 4];
 
+        //store all the gnome locations and rotations into the arrays
         for (int k = 0; k < enemies.Length; k++)
         {
             data.gnomeLocations[k, 0] = enemies[k].transform.position.x;
@@ -74,13 +93,16 @@ public class SaveLoad : MonoBehaviour
             data.gnomeRotations[k, 1] = enemies[k].transform.rotation.y;
             data.gnomeRotations[k, 2] = enemies[k].transform.rotation.z;
             data.gnomeRotations[k, 3] = enemies[k].transform.rotation.w;
-            Debug.Log(enemies[k].transform.position);
         }
+
+        //store the player location, rotation, and health
         data.playerLocation = new float[3] { player.transform.position.x, player.transform.position.y, player.transform.position.z };
         data.playerRotation = new float[4] { player.transform.rotation.x, player.transform.rotation.y, player.transform.rotation.z, player.transform.rotation.w };
         data.playerHealth = player.gameObject.GetComponent<Player>().sanity;
 
+        //create new array to hold all held items
         data.heldItems = new string[held.Length];
+        //save all the held item names
         for (int i = 0; i < held.Length; i++)
         {
             if (held[i].heldItem != null)
@@ -91,14 +113,18 @@ public class SaveLoad : MonoBehaviour
                 data.heldItems[i] = null;
         }
 
+        //create new array to hold all the keys
         data.keys = new string[keyRing.keys.Count];
+        //save all the key names
         for (int j = 0; j < keyRing.keys.Count; j++)
         {
           data.keys[j] = keyRing.keys.ToArray()[j].name;
         }
 
+        //create new array to hold the useable's locations and rotations
         data.useableLocations = new float[useable.Length, 3];
         data.useableRotations = new float[useable.Length, 4];
+        //store all the useable's locations and rotations into the arrays
         for (int m = 0; m < useable.Length; m++)
         {
             data.useableLocations[m, 0] = useable[m].transform.position.x;
@@ -110,8 +136,9 @@ public class SaveLoad : MonoBehaviour
             data.useableRotations[m, 2] = useable[m].transform.rotation.z;
             data.useableRotations[m, 3] = useable[m].transform.rotation.w;
         }
-
+        //create new array to hold the consumables
         data.consumables = new float[consumables.Length, 3];
+        //save all the consumable's locations
         for(int n = 0; n < consumables.Length; n++)
         {
             data.consumables[n, 0] = consumables[n].transform.position.x;
@@ -122,6 +149,7 @@ public class SaveLoad : MonoBehaviour
 
     public void loadGameValues(Game data)
     {
+        //retreive all the objects that need data loaded into them
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         GameObject[] pickUps = GameObject.FindGameObjectsWithTag("PickUp");
@@ -130,23 +158,31 @@ public class SaveLoad : MonoBehaviour
         ItemSlot[] held = GameObject.Find("Player").GetComponent<PlayerInteractions>().playerGUI.slots;
         KeyRing keyRing = GameObject.Find("Player").GetComponent<PlayerInteractions>().playerGUI.keyRing;
 
-
+        //loop through the enemies(gnomes)
         for (int k = 0; k < enemies.Length; k++)
         {
+            //disable the gnome nav mesh's so they can be moved
             enemies[k].GetComponent<NavMeshAgent>().enabled = false;
+            //move the gnomes into position and adjust their rotation
             enemies[k].transform.position = new Vector3(data.gnomeLocations[k, 0], data.gnomeLocations[k, 1], data.gnomeLocations[k, 2]);
             enemies[k].transform.rotation = new Quaternion(data.gnomeRotations[k, 0], data.gnomeRotations[k, 1], data.gnomeRotations[k, 2], data.gnomeRotations[k, 3]);
+            //re-enable the nav mesh agent on the gnomes
             enemies[k].GetComponent<NavMeshAgent>().enabled = true;
 
         }
+        //position the player
         player.transform.position = new Vector3(data.playerLocation[0], data.playerLocation[1], data.playerLocation[2]);
         player.transform.rotation = new Quaternion(data.playerRotation[0], data.playerRotation[1], data.playerRotation[2], data.playerRotation[3]);
+        //set the player's health
         player.gameObject.GetComponent<Player>().sanity = data.playerHealth;
 
+        //load the player's inventory
         for (int i = 0; i < held.Length; i++)
         {
+            //if there was no item, set it to null
             if (data.heldItems[i] == null)
                 held[i].heldItem = null;
+            //if their was an item, set the item in the GUI and remove it from the scene
             else
             {
                 held[i].heldItem = GameObject.Find(data.heldItems[i]).GetComponent<Item>();
@@ -155,13 +191,16 @@ public class SaveLoad : MonoBehaviour
             }
         }
 
+        //load the player's keys
         for (int j = 0; j < data.keys.Length; j++)
         {
+            //add the keys back into the inventory and remove them from the scene
             keyRing.AddKey(GameObject.Find(data.keys[j]).GetComponent<Item>());
             keyRing.keys.ToArray()[j].name = data.keys[j];
             GameObject.Find(data.keys[j]).SetActive(false);
         }
 
+        //set the useable's position and rotation
         for (int m = 0; m < useable.Length; m++)
         {
             useable[m].transform.position = new Vector3(data.useableLocations[m, 0], data.useableLocations[m, 1], data.useableLocations[m, 2]);
@@ -169,16 +208,20 @@ public class SaveLoad : MonoBehaviour
    
         }
 
+        //load the consumables
         for (int h = 0; h < consumables.Length; h++)
         {
+            //checks whether the consumable was consumed or not
             bool notfound = false;
             for (int n = 0; n < data.consumables.GetLength(0); n++ )
             {
+                //if the consumable wasn't consumed, make sure it is in the game world
                 if(data.consumables[n,0] == consumables[h].transform.position.x && data.consumables[n,1] == consumables[h].transform.position.y && data.consumables[n,2] == consumables[h].transform.position.z)
                 {
                     notfound = true;
                 }
             }
+            //if the consumable was not found in the list, remove it from the game world
             if(!notfound)
             {
                 Destroy(GameObject.Find(consumables[h].name));
@@ -189,15 +232,19 @@ public class SaveLoad : MonoBehaviour
 
     void OnGUI()
     {
+        //check if we are saving
         if (saving)
         {
+            //display saving notification
             GUI.backgroundColor = Color.clear;
             GUI.Box(new Rect(-5, 5, 100, 25), "Saving...");
+            //if the display time is 0, stop displaying
             if (displayTime == 0)
             {
                 saving = false;
                 displayTime = 300;
             }
+            //remove time from the timer
             else
             {
                 displayTime--;

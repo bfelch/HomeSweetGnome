@@ -7,15 +7,22 @@ public class Blink : MonoBehaviour
     public GameObject bottomLid;
     public GameObject player;
 
+    //how long between heach blink
     public float blinkTimer = 5.0f;
+    //how long have I been holder my eyes open
     public float openTimer = 10.0f;
+    //how long can I hold my eyes open
     public float maxOpenTimer = 10.0f;
+    //am I blinking
     public bool blink = false;
+    //am I recharging my starte
     private bool rechargeBlink = false;
     private bool playerSlept = false;
     private bool gameEnded = false;
 
+    //am I showing the GUI
     private bool showGUI = false;
+
     //need player health and max health to adjust blink speed
     private float playerSanity;
     private float playerSanityMax;
@@ -31,6 +38,7 @@ public class Blink : MonoBehaviour
         playerSanity = gameObject.GetComponent<Player>().sanity;
         playerSanityMax = gameObject.GetComponent<Player>().maxSanity;
 
+        //if the game was loaded, do not playing opening scene
         if(PlayerPrefs.GetInt("LoadGame") != 1)
         {
             player.animation.Play("OpeningCut");
@@ -42,6 +50,7 @@ public class Blink : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //get the player sanity values
         playerSanity = gameObject.GetComponent<Player>().sanity;
         playerSlept = gameObject.GetComponent<Player>().playerSlept;
 
@@ -86,23 +95,32 @@ public class Blink : MonoBehaviour
 
     void OpenEyes()
     {
+        //check if I'm not holding my eyes open and the openTimer is less than 10
         if (openTimer <= 10 && !Input.GetKey(KeyCode.Q))
         {
+            //add onto the openTimer
             openTimer += Time.deltaTime;
+            //if the open timer is greater than 5, you can hold your eyes open again
             if (openTimer >= 5)
             {
                 rechargeBlink = false;
             }
         }
+        //am I holding my eyes open and my blink is recharged?
         if (Input.GetKey(KeyCode.Q) && !rechargeBlink)
         {
+            //are we greater than 0
             if (openTimer > 0)
             {
+                //decrease from the openTimer
                 openTimer -= Time.deltaTime;
+                //set blinkTimer to 5 to keep from blinking
                 blinkTimer = 5;
             }
+            //have we hit 0?
             if (openTimer <= 0)
             {
+                //blink
                 topLid.animation.Play("BlinkTopNew");
                 bottomLid.animation.Play("BlinkBottomNew");
                 rechargeBlink = true;
