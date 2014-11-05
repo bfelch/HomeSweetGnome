@@ -36,7 +36,7 @@ public class Player : MonoBehaviour
         maxSanity = 100;
         minSanity = 0;
         restTime = maxRestTime = .75f;
-        sprintTime = maxSprintTime = 1.25f;
+        sprintTime = maxSprintTime = 50f;
         playerSlept = false;
 		playerFell = false;
 		readyToPush = true;
@@ -92,11 +92,13 @@ public class Player : MonoBehaviour
         {
             charMotor.movement.maxForwardSpeed = 12;
             sprintTime -= Time.deltaTime;
+            this.gameObject.animation.Play("Sprint");
         }
         else
         {
             charMotor.movement.maxForwardSpeed = 6;
             restTime += Time.deltaTime;
+            this.gameObject.animation.Stop("Sprint");
             if (restTime >= .75 && sprintTime <= 1.25)
             {
                 sprintTime += Time.deltaTime * 4;
