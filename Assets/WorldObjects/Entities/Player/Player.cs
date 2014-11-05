@@ -84,11 +84,13 @@ public class Player : MonoBehaviour
         {
             charMotor.movement.maxForwardSpeed = 12;
             sprintTime -= Time.deltaTime;
+            Camera.main.animation.Play();
         }
         else
         {
             charMotor.movement.maxForwardSpeed = 6;
             restTime += Time.deltaTime;
+            Camera.main.animation.Stop();
             if (restTime >= .75 && sprintTime <= 1.25)
             {
                 sprintTime += Time.deltaTime * 4;
