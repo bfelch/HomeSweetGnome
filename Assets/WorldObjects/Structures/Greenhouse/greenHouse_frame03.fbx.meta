@@ -1,18 +1,16 @@
 fileFormatVersion: 2
-guid: d60241ffe4114e04c9f6a825ca0b5827
+guid: 9021a6755d7a57742b558c564b0458bc
 ModelImporter:
   serializedVersion: 16
   fileIDToRecycleName:
-    100000: PeniBasecliff2
+    100000: frame03
     100002: //RootNode
-    100004: PeninsulaBase
-    400000: PeniBasecliff2
+    400000: frame03
     400002: //RootNode
-    400004: PeninsulaBase
-    2300000: PeniBasecliff2
-    3300000: PeniBasecliff2
-    4300000: PeniBasecliff2
-    6400000: PeniBasecliff2
+    2300000: frame03
+    3300000: frame03
+    4300000: frame03
+    6400000: frame03
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -51,7 +49,7 @@ ModelImporter:
     splitTangentsAcrossUV: 1
     normalImportMode: 0
     tangentImportMode: 1
-  importAnimation: 1
+  importAnimation: 0
   copyAvatar: 0
   humanDescription:
     human: []

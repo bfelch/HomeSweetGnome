@@ -1,16 +1,13 @@
 fileFormatVersion: 2
-guid: c616c43edd93d8b40a0217a506fa9394
+guid: cd07a44a1cc820342aacc217721988b5
 ModelImporter:
   serializedVersion: 16
   fileIDToRecycleName:
-    100000: glass01
-    100002: //RootNode
-    400000: glass01
-    400002: //RootNode
-    2300000: glass01
-    3300000: glass01
-    4300000: glass01
-    6400000: glass01
+    100000: //RootNode
+    400000: //RootNode
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Key_4
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -33,7 +30,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: .0549999997
     meshCompression: 0
-    addColliders: 1
+    addColliders: 0
     importBlendShapes: 1
     swapUVChannels: 0
     generateSecondaryUV: 0

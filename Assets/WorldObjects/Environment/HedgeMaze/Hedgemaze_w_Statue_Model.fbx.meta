@@ -1,0 +1,1780 @@
+fileFormatVersion: 2
+guid: a4f1edf3c1e83464cb414dd65b75f3c7
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: Arm_Mesh
+    100002: Arm_Mesh 1
+    100004: Arm_Mesh 10
+    100006: Arm_Mesh 11
+    100008: Arm_Mesh 2
+    100010: Arm_Mesh 3
+    100012: Arm_Mesh 4
+    100014: Arm_Mesh 5
+    100016: Arm_Mesh 6
+    100018: Arm_Mesh 7
+    100020: Arm_Mesh 8
+    100022: Arm_Mesh 9
+    100024: Arm_Skeleton
+    100026: Arm_Skeleton 1
+    100028: Arm_Skeleton 10
+    100030: Arm_Skeleton 11
+    100032: Arm_Skeleton 2
+    100034: Arm_Skeleton 3
+    100036: Arm_Skeleton 4
+    100038: Arm_Skeleton 5
+    100040: Arm_Skeleton 6
+    100042: Arm_Skeleton 7
+    100044: Arm_Skeleton 8
+    100046: Arm_Skeleton 9
+    100048: Arm_TOTAL
+    100050: Arm_TOTAL1
+    100052: Arm_TOTAL10
+    100054: Arm_TOTAL11
+    100056: Arm_TOTAL2
+    100058: Arm_TOTAL3
+    100060: Arm_TOTAL4
+    100062: Arm_TOTAL5
+    100064: Arm_TOTAL6
+    100066: Arm_TOTAL7
+    100068: Arm_TOTAL8
+    100070: Arm_TOTAL9
+    100072: ArmForest2
+    100074: be_Middle_01
+    100076: be_Middle_01 1
+    100078: be_Middle_01 10
+    100080: be_Middle_01 11
+    100082: be_Middle_01 2
+    100084: be_Middle_01 3
+    100086: be_Middle_01 4
+    100088: be_Middle_01 5
+    100090: be_Middle_01 6
+    100092: be_Middle_01 7
+    100094: be_Middle_01 8
+    100096: be_Middle_01 9
+    100098: be_Pinky_01
+    100100: be_Pinky_01 1
+    100102: be_Pinky_01 10
+    100104: be_Pinky_01 11
+    100106: be_Pinky_01 2
+    100108: be_Pinky_01 3
+    100110: be_Pinky_01 4
+    100112: be_Pinky_01 5
+    100114: be_Pinky_01 6
+    100116: be_Pinky_01 7
+    100118: be_Pinky_01 8
+    100120: be_Pinky_01 9
+    100122: be_Pointer_01
+    100124: be_Pointer_01 1
+    100126: be_Pointer_01 10
+    100128: be_Pointer_01 11
+    100130: be_Pointer_01 2
+    100132: be_Pointer_01 3
+    100134: be_Pointer_01 4
+    100136: be_Pointer_01 5
+    100138: be_Pointer_01 6
+    100140: be_Pointer_01 7
+    100142: be_Pointer_01 8
+    100144: be_Pointer_01 9
+    100146: be_Ring_01
+    100148: be_Ring_01 1
+    100150: be_Ring_01 10
+    100152: be_Ring_01 11
+    100154: be_Ring_01 2
+    100156: be_Ring_01 3
+    100158: be_Ring_01 4
+    100160: be_Ring_01 5
+    100162: be_Ring_01 6
+    100164: be_Ring_01 7
+    100166: be_Ring_01 8
+    100168: be_Ring_01 9
+    100170: be_Thumb_01
+    100172: be_Thumb_01 1
+    100174: be_Thumb_01 10
+    100176: be_Thumb_01 11
+    100178: be_Thumb_01 2
+    100180: be_Thumb_01 3
+    100182: be_Thumb_01 4
+    100184: be_Thumb_01 5
+    100186: be_Thumb_01 6
+    100188: be_Thumb_01 7
+    100190: be_Thumb_01 8
+    100192: be_Thumb_01 9
+    100194: CTRL_Root
+    100196: CTRL_Root 1
+    100198: CTRL_Root 10
+    100200: CTRL_Root 11
+    100202: CTRL_Root 2
+    100204: CTRL_Root 3
+    100206: CTRL_Root 4
+    100208: CTRL_Root 5
+    100210: CTRL_Root 6
+    100212: CTRL_Root 7
+    100214: CTRL_Root 8
+    100216: CTRL_Root 9
+    100218: CTRL_Wrist
+    100220: CTRL_Wrist 1
+    100222: CTRL_Wrist 10
+    100224: CTRL_Wrist 11
+    100226: CTRL_Wrist 2
+    100228: CTRL_Wrist 3
+    100230: CTRL_Wrist 4
+    100232: CTRL_Wrist 5
+    100234: CTRL_Wrist 6
+    100236: CTRL_Wrist 7
+    100238: CTRL_Wrist 8
+    100240: CTRL_Wrist 9
+    100242: CTRLs_Fingers
+    100244: CTRLs_Fingers 1
+    100246: CTRLs_Fingers 10
+    100248: CTRLs_Fingers 11
+    100250: CTRLs_Fingers 2
+    100252: CTRLs_Fingers 3
+    100254: CTRLs_Fingers 4
+    100256: CTRLs_Fingers 5
+    100258: CTRLs_Fingers 6
+    100260: CTRLs_Fingers 7
+    100262: CTRLs_Fingers 8
+    100264: CTRLs_Fingers 9
+    100266: CTRLs_Middle
+    100268: CTRLs_Middle 1
+    100270: CTRLs_Middle 10
+    100272: CTRLs_Middle 11
+    100274: CTRLs_Middle 2
+    100276: CTRLs_Middle 3
+    100278: CTRLs_Middle 4
+    100280: CTRLs_Middle 5
+    100282: CTRLs_Middle 6
+    100284: CTRLs_Middle 7
+    100286: CTRLs_Middle 8
+    100288: CTRLs_Middle 9
+    100290: CTRLs_Pinky
+    100292: CTRLs_Pinky 1
+    100294: CTRLs_Pinky 10
+    100296: CTRLs_Pinky 11
+    100298: CTRLs_Pinky 2
+    100300: CTRLs_Pinky 3
+    100302: CTRLs_Pinky 4
+    100304: CTRLs_Pinky 5
+    100306: CTRLs_Pinky 6
+    100308: CTRLs_Pinky 7
+    100310: CTRLs_Pinky 8
+    100312: CTRLs_Pinky 9
+    100314: CTRLs_Pointer
+    100316: CTRLs_Pointer 1
+    100318: CTRLs_Pointer 10
+    100320: CTRLs_Pointer 11
+    100322: CTRLs_Pointer 2
+    100324: CTRLs_Pointer 3
+    100326: CTRLs_Pointer 4
+    100328: CTRLs_Pointer 5
+    100330: CTRLs_Pointer 6
+    100332: CTRLs_Pointer 7
+    100334: CTRLs_Pointer 8
+    100336: CTRLs_Pointer 9
+    100338: CTRLs_Ring
+    100340: CTRLs_Ring 1
+    100342: CTRLs_Ring 10
+    100344: CTRLs_Ring 11
+    100346: CTRLs_Ring 2
+    100348: CTRLs_Ring 3
+    100350: CTRLs_Ring 4
+    100352: CTRLs_Ring 5
+    100354: CTRLs_Ring 6
+    100356: CTRLs_Ring 7
+    100358: CTRLs_Ring 8
+    100360: CTRLs_Ring 9
+    100362: CTRLs_Thumb
+    100364: CTRLs_Thumb 1
+    100366: CTRLs_Thumb 10
+    100368: CTRLs_Thumb 11
+    100370: CTRLs_Thumb 2
+    100372: CTRLs_Thumb 3
+    100374: CTRLs_Thumb 4
+    100376: CTRLs_Thumb 5
+    100378: CTRLs_Thumb 6
+    100380: CTRLs_Thumb 7
+    100382: CTRLs_Thumb 8
+    100384: CTRLs_Thumb 9
+    100386: curve1
+    100388: curve1 1
+    100390: curve1 10
+    100392: curve1 100
+    100394: curve1 101
+    100396: curve1 102
+    100398: curve1 103
+    100400: curve1 104
+    100402: curve1 105
+    100404: curve1 106
+    100406: curve1 107
+    100408: curve1 108
+    100410: curve1 109
+    100412: curve1 11
+    100414: curve1 110
+    100416: curve1 111
+    100418: curve1 112
+    100420: curve1 113
+    100422: curve1 114
+    100424: curve1 115
+    100426: curve1 116
+    100428: curve1 117
+    100430: curve1 118
+    100432: curve1 119
+    100434: curve1 12
+    100436: curve1 120
+    100438: curve1 121
+    100440: curve1 122
+    100442: curve1 123
+    100444: curve1 124
+    100446: curve1 125
+    100448: curve1 126
+    100450: curve1 127
+    100452: curve1 128
+    100454: curve1 129
+    100456: curve1 13
+    100458: curve1 130
+    100460: curve1 131
+    100462: curve1 132
+    100464: curve1 133
+    100466: curve1 134
+    100468: curve1 135
+    100470: curve1 136
+    100472: curve1 137
+    100474: curve1 138
+    100476: curve1 139
+    100478: curve1 14
+    100480: curve1 140
+    100482: curve1 141
+    100484: curve1 142
+    100486: curve1 143
+    100488: curve1 144
+    100490: curve1 145
+    100492: curve1 146
+    100494: curve1 147
+    100496: curve1 148
+    100498: curve1 149
+    100500: curve1 15
+    100502: curve1 150
+    100504: curve1 151
+    100506: curve1 152
+    100508: curve1 153
+    100510: curve1 154
+    100512: curve1 155
+    100514: curve1 156
+    100516: curve1 157
+    100518: curve1 158
+    100520: curve1 159
+    100522: curve1 16
+    100524: curve1 160
+    100526: curve1 161
+    100528: curve1 162
+    100530: curve1 163
+    100532: curve1 164
+    100534: curve1 165
+    100536: curve1 166
+    100538: curve1 167
+    100540: curve1 168
+    100542: curve1 169
+    100544: curve1 17
+    100546: curve1 170
+    100548: curve1 171
+    100550: curve1 172
+    100552: curve1 173
+    100554: curve1 174
+    100556: curve1 175
+    100558: curve1 176
+    100560: curve1 177
+    100562: curve1 178
+    100564: curve1 179
+    100566: curve1 18
+    100568: curve1 180
+    100570: curve1 181
+    100572: curve1 182
+    100574: curve1 183
+    100576: curve1 184
+    100578: curve1 185
+    100580: curve1 186
+    100582: curve1 187
+    100584: curve1 188
+    100586: curve1 189
+    100588: curve1 19
+    100590: curve1 190
+    100592: curve1 191
+    100594: curve1 192
+    100596: curve1 193
+    100598: curve1 194
+    100600: curve1 195
+    100602: curve1 196
+    100604: curve1 197
+    100606: curve1 198
+    100608: curve1 199
+    100610: curve1 2
+    100612: curve1 20
+    100614: curve1 200
+    100616: curve1 201
+    100618: curve1 202
+    100620: curve1 203
+    100622: curve1 204
+    100624: curve1 205
+    100626: curve1 206
+    100628: curve1 207
+    100630: curve1 208
+    100632: curve1 209
+    100634: curve1 21
+    100636: curve1 210
+    100638: curve1 211
+    100640: curve1 212
+    100642: curve1 213
+    100644: curve1 214
+    100646: curve1 215
+    100648: curve1 216
+    100650: curve1 217
+    100652: curve1 218
+    100654: curve1 219
+    100656: curve1 22
+    100658: curve1 220
+    100660: curve1 221
+    100662: curve1 222
+    100664: curve1 223
+    100666: curve1 224
+    100668: curve1 225
+    100670: curve1 226
+    100672: curve1 227
+    100674: curve1 23
+    100676: curve1 24
+    100678: curve1 25
+    100680: curve1 26
+    100682: curve1 27
+    100684: curve1 28
+    100686: curve1 29
+    100688: curve1 3
+    100690: curve1 30
+    100692: curve1 31
+    100694: curve1 32
+    100696: curve1 33
+    100698: curve1 34
+    100700: curve1 35
+    100702: curve1 36
+    100704: curve1 37
+    100706: curve1 38
+    100708: curve1 39
+    100710: curve1 4
+    100712: curve1 40
+    100714: curve1 41
+    100716: curve1 42
+    100718: curve1 43
+    100720: curve1 44
+    100722: curve1 45
+    100724: curve1 46
+    100726: curve1 47
+    100728: curve1 48
+    100730: curve1 49
+    100732: curve1 5
+    100734: curve1 50
+    100736: curve1 51
+    100738: curve1 52
+    100740: curve1 53
+    100742: curve1 54
+    100744: curve1 55
+    100746: curve1 56
+    100748: curve1 57
+    100750: curve1 58
+    100752: curve1 59
+    100754: curve1 6
+    100756: curve1 60
+    100758: curve1 61
+    100760: curve1 62
+    100762: curve1 63
+    100764: curve1 64
+    100766: curve1 65
+    100768: curve1 66
+    100770: curve1 67
+    100772: curve1 68
+    100774: curve1 69
+    100776: curve1 7
+    100778: curve1 70
+    100780: curve1 71
+    100782: curve1 72
+    100784: curve1 73
+    100786: curve1 74
+    100788: curve1 75
+    100790: curve1 76
+    100792: curve1 77
+    100794: curve1 78
+    100796: curve1 79
+    100798: curve1 8
+    100800: curve1 80
+    100802: curve1 81
+    100804: curve1 82
+    100806: curve1 83
+    100808: curve1 84
+    100810: curve1 85
+    100812: curve1 86
+    100814: curve1 87
+    100816: curve1 88
+    100818: curve1 89
+    100820: curve1 9
+    100822: curve1 90
+    100824: curve1 91
+    100826: curve1 92
+    100828: curve1 93
+    100830: curve1 94
+    100832: curve1 95
+    100834: curve1 96
+    100836: curve1 97
+    100838: curve1 98
+    100840: curve1 99
+    100842: group11
+    100844: group11 1
+    100846: group11 10
+    100848: group11 11
+    100850: group11 2
+    100852: group11 3
+    100854: group11 4
+    100856: group11 5
+    100858: group11 6
+    100860: group11 7
+    100862: group11 8
+    100864: group11 9
+    100866: group12
+    100868: group12 1
+    100870: group12 10
+    100872: group12 11
+    100874: group12 2
+    100876: group12 3
+    100878: group12 4
+    100880: group12 5
+    100882: group12 6
+    100884: group12 7
+    100886: group12 8
+    100888: group12 9
+    100890: group14
+    100892: group14 1
+    100894: group14 10
+    100896: group14 11
+    100898: group14 2
+    100900: group14 3
+    100902: group14 4
+    100904: group14 5
+    100906: group14 6
+    100908: group14 7
+    100910: group14 8
+    100912: group14 9
+    100914: group16
+    100916: group16 1
+    100918: group16 10
+    100920: group16 11
+    100922: group16 2
+    100924: group16 3
+    100926: group16 4
+    100928: group16 5
+    100930: group16 6
+    100932: group16 7
+    100934: group16 8
+    100936: group16 9
+    100938: group17
+    100940: group17 1
+    100942: group17 10
+    100944: group17 11
+    100946: group17 2
+    100948: group17 3
+    100950: group17 4
+    100952: group17 5
+    100954: group17 6
+    100956: group17 7
+    100958: group17 8
+    100960: group17 9
+    100962: group18
+    100964: group18 1
+    100966: group18 10
+    100968: group18 11
+    100970: group18 2
+    100972: group18 3
+    100974: group18 4
+    100976: group18 5
+    100978: group18 6
+    100980: group18 7
+    100982: group18 8
+    100984: group18 9
+    100986: group19
+    100988: group19 1
+    100990: group19 10
+    100992: group19 11
+    100994: group19 2
+    100996: group19 3
+    100998: group19 4
+    101000: group19 5
+    101002: group19 6
+    101004: group19 7
+    101006: group19 8
+    101008: group19 9
+    101010: group2
+    101012: group2 1
+    101014: group2 10
+    101016: group2 11
+    101018: group2 2
+    101020: group2 3
+    101022: group2 4
+    101024: group2 5
+    101026: group2 6
+    101028: group2 7
+    101030: group2 8
+    101032: group2 9
+    101034: group20
+    101036: group20 1
+    101038: group20 10
+    101040: group20 11
+    101042: group20 2
+    101044: group20 3
+    101046: group20 4
+    101048: group20 5
+    101050: group20 6
+    101052: group20 7
+    101054: group20 8
+    101056: group20 9
+    101058: group3
+    101060: group3 1
+    101062: group3 10
+    101064: group3 11
+    101066: group3 2
+    101068: group3 3
+    101070: group3 4
+    101072: group3 5
+    101074: group3 6
+    101076: group3 7
+    101078: group3 8
+    101080: group3 9
+    101082: group5
+    101084: group5 1
+    101086: group5 10
+    101088: group5 11
+    101090: group5 2
+    101092: group5 3
+    101094: group5 4
+    101096: group5 5
+    101098: group5 6
+    101100: group5 7
+    101102: group5 8
+    101104: group5 9
+    101106: group6
+    101108: group6 1
+    101110: group6 10
+    101112: group6 11
+    101114: group6 2
+    101116: group6 3
+    101118: group6 4
+    101120: group6 5
+    101122: group6 6
+    101124: group6 7
+    101126: group6 8
+    101128: group6 9
+    101130: group8
+    101132: group8 1
+    101134: group8 10
+    101136: group8 11
+    101138: group8 2
+    101140: group8 3
+    101142: group8 4
+    101144: group8 5
+    101146: group8 6
+    101148: group8 7
+    101150: group8 8
+    101152: group8 9
+    101154: group9
+    101156: group9 1
+    101158: group9 10
+    101160: group9 11
+    101162: group9 2
+    101164: group9 3
+    101166: group9 4
+    101168: group9 5
+    101170: group9 6
+    101172: group9 7
+    101174: group9 8
+    101176: group9 9
+    101178: Hedgemaze1
+    101180: //RootNode
+    101182: Jnt_ArmBase_01
+    101184: Jnt_ArmBase_01 1
+    101186: Jnt_ArmBase_01 10
+    101188: Jnt_ArmBase_01 11
+    101190: Jnt_ArmBase_01 2
+    101192: Jnt_ArmBase_01 3
+    101194: Jnt_ArmBase_01 4
+    101196: Jnt_ArmBase_01 5
+    101198: Jnt_ArmBase_01 6
+    101200: Jnt_ArmBase_01 7
+    101202: Jnt_ArmBase_01 8
+    101204: Jnt_ArmBase_01 9
+    101206: Jnt_ArmChain_a01
+    101208: Jnt_ArmChain_a01 1
+    101210: Jnt_ArmChain_a01 10
+    101212: Jnt_ArmChain_a01 11
+    101214: Jnt_ArmChain_a01 2
+    101216: Jnt_ArmChain_a01 3
+    101218: Jnt_ArmChain_a01 4
+    101220: Jnt_ArmChain_a01 5
+    101222: Jnt_ArmChain_a01 6
+    101224: Jnt_ArmChain_a01 7
+    101226: Jnt_ArmChain_a01 8
+    101228: Jnt_ArmChain_a01 9
+    101230: Jnt_ArmChain_b01
+    101232: Jnt_ArmChain_b01 1
+    101234: Jnt_ArmChain_b01 10
+    101236: Jnt_ArmChain_b01 11
+    101238: Jnt_ArmChain_b01 2
+    101240: Jnt_ArmChain_b01 3
+    101242: Jnt_ArmChain_b01 4
+    101244: Jnt_ArmChain_b01 5
+    101246: Jnt_ArmChain_b01 6
+    101248: Jnt_ArmChain_b01 7
+    101250: Jnt_ArmChain_b01 8
+    101252: Jnt_ArmChain_b01 9
+    101254: Jnt_ArmChain_c01
+    101256: Jnt_ArmChain_c01 1
+    101258: Jnt_ArmChain_c01 10
+    101260: Jnt_ArmChain_c01 11
+    101262: Jnt_ArmChain_c01 2
+    101264: Jnt_ArmChain_c01 3
+    101266: Jnt_ArmChain_c01 4
+    101268: Jnt_ArmChain_c01 5
+    101270: Jnt_ArmChain_c01 6
+    101272: Jnt_ArmChain_c01 7
+    101274: Jnt_ArmChain_c01 8
+    101276: Jnt_ArmChain_c01 9
+    101278: Jnt_Middle_a01
+    101280: Jnt_Middle_a01 1
+    101282: Jnt_Middle_a01 10
+    101284: Jnt_Middle_a01 11
+    101286: Jnt_Middle_a01 2
+    101288: Jnt_Middle_a01 3
+    101290: Jnt_Middle_a01 4
+    101292: Jnt_Middle_a01 5
+    101294: Jnt_Middle_a01 6
+    101296: Jnt_Middle_a01 7
+    101298: Jnt_Middle_a01 8
+    101300: Jnt_Middle_a01 9
+    101302: Jnt_Middle_b01
+    101304: Jnt_Middle_b01 1
+    101306: Jnt_Middle_b01 10
+    101308: Jnt_Middle_b01 11
+    101310: Jnt_Middle_b01 2
+    101312: Jnt_Middle_b01 3
+    101314: Jnt_Middle_b01 4
+    101316: Jnt_Middle_b01 5
+    101318: Jnt_Middle_b01 6
+    101320: Jnt_Middle_b01 7
+    101322: Jnt_Middle_b01 8
+    101324: Jnt_Middle_b01 9
+    101326: Jnt_Middle_c01
+    101328: Jnt_Middle_c01 1
+    101330: Jnt_Middle_c01 10
+    101332: Jnt_Middle_c01 11
+    101334: Jnt_Middle_c01 2
+    101336: Jnt_Middle_c01 3
+    101338: Jnt_Middle_c01 4
+    101340: Jnt_Middle_c01 5
+    101342: Jnt_Middle_c01 6
+    101344: Jnt_Middle_c01 7
+    101346: Jnt_Middle_c01 8
+    101348: Jnt_Middle_c01 9
+    101350: Jnt_Palm_01
+    101352: Jnt_Palm_01 1
+    101354: Jnt_Palm_01 10
+    101356: Jnt_Palm_01 11
+    101358: Jnt_Palm_01 2
+    101360: Jnt_Palm_01 3
+    101362: Jnt_Palm_01 4
+    101364: Jnt_Palm_01 5
+    101366: Jnt_Palm_01 6
+    101368: Jnt_Palm_01 7
+    101370: Jnt_Palm_01 8
+    101372: Jnt_Palm_01 9
+    101374: Jnt_Pinky_a01
+    101376: Jnt_Pinky_a01 1
+    101378: Jnt_Pinky_a01 10
+    101380: Jnt_Pinky_a01 11
+    101382: Jnt_Pinky_a01 2
+    101384: Jnt_Pinky_a01 3
+    101386: Jnt_Pinky_a01 4
+    101388: Jnt_Pinky_a01 5
+    101390: Jnt_Pinky_a01 6
+    101392: Jnt_Pinky_a01 7
+    101394: Jnt_Pinky_a01 8
+    101396: Jnt_Pinky_a01 9
+    101398: Jnt_Pinky_b01
+    101400: Jnt_Pinky_b01 1
+    101402: Jnt_Pinky_b01 10
+    101404: Jnt_Pinky_b01 11
+    101406: Jnt_Pinky_b01 2
+    101408: Jnt_Pinky_b01 3
+    101410: Jnt_Pinky_b01 4
+    101412: Jnt_Pinky_b01 5
+    101414: Jnt_Pinky_b01 6
+    101416: Jnt_Pinky_b01 7
+    101418: Jnt_Pinky_b01 8
+    101420: Jnt_Pinky_b01 9
+    101422: Jnt_Pinky_c01
+    101424: Jnt_Pinky_c01 1
+    101426: Jnt_Pinky_c01 10
+    101428: Jnt_Pinky_c01 11
+    101430: Jnt_Pinky_c01 2
+    101432: Jnt_Pinky_c01 3
+    101434: Jnt_Pinky_c01 4
+    101436: Jnt_Pinky_c01 5
+    101438: Jnt_Pinky_c01 6
+    101440: Jnt_Pinky_c01 7
+    101442: Jnt_Pinky_c01 8
+    101444: Jnt_Pinky_c01 9
+    101446: Jnt_Pointer_a01
+    101448: Jnt_Pointer_a01 1
+    101450: Jnt_Pointer_a01 10
+    101452: Jnt_Pointer_a01 11
+    101454: Jnt_Pointer_a01 2
+    101456: Jnt_Pointer_a01 3
+    101458: Jnt_Pointer_a01 4
+    101460: Jnt_Pointer_a01 5
+    101462: Jnt_Pointer_a01 6
+    101464: Jnt_Pointer_a01 7
+    101466: Jnt_Pointer_a01 8
+    101468: Jnt_Pointer_a01 9
+    101470: Jnt_Pointer_b01
+    101472: Jnt_Pointer_b01 1
+    101474: Jnt_Pointer_b01 10
+    101476: Jnt_Pointer_b01 11
+    101478: Jnt_Pointer_b01 2
+    101480: Jnt_Pointer_b01 3
+    101482: Jnt_Pointer_b01 4
+    101484: Jnt_Pointer_b01 5
+    101486: Jnt_Pointer_b01 6
+    101488: Jnt_Pointer_b01 7
+    101490: Jnt_Pointer_b01 8
+    101492: Jnt_Pointer_b01 9
+    101494: Jnt_Pointer_c01
+    101496: Jnt_Pointer_c01 1
+    101498: Jnt_Pointer_c01 10
+    101500: Jnt_Pointer_c01 11
+    101502: Jnt_Pointer_c01 2
+    101504: Jnt_Pointer_c01 3
+    101506: Jnt_Pointer_c01 4
+    101508: Jnt_Pointer_c01 5
+    101510: Jnt_Pointer_c01 6
+    101512: Jnt_Pointer_c01 7
+    101514: Jnt_Pointer_c01 8
+    101516: Jnt_Pointer_c01 9
+    101518: Jnt_Ring_a01
+    101520: Jnt_Ring_a01 1
+    101522: Jnt_Ring_a01 10
+    101524: Jnt_Ring_a01 11
+    101526: Jnt_Ring_a01 2
+    101528: Jnt_Ring_a01 3
+    101530: Jnt_Ring_a01 4
+    101532: Jnt_Ring_a01 5
+    101534: Jnt_Ring_a01 6
+    101536: Jnt_Ring_a01 7
+    101538: Jnt_Ring_a01 8
+    101540: Jnt_Ring_a01 9
+    101542: Jnt_Ring_b01
+    101544: Jnt_Ring_b01 1
+    101546: Jnt_Ring_b01 10
+    101548: Jnt_Ring_b01 11
+    101550: Jnt_Ring_b01 2
+    101552: Jnt_Ring_b01 3
+    101554: Jnt_Ring_b01 4
+    101556: Jnt_Ring_b01 5
+    101558: Jnt_Ring_b01 6
+    101560: Jnt_Ring_b01 7
+    101562: Jnt_Ring_b01 8
+    101564: Jnt_Ring_b01 9
+    101566: Jnt_Ring_c01
+    101568: Jnt_Ring_c01 1
+    101570: Jnt_Ring_c01 10
+    101572: Jnt_Ring_c01 11
+    101574: Jnt_Ring_c01 2
+    101576: Jnt_Ring_c01 3
+    101578: Jnt_Ring_c01 4
+    101580: Jnt_Ring_c01 5
+    101582: Jnt_Ring_c01 6
+    101584: Jnt_Ring_c01 7
+    101586: Jnt_Ring_c01 8
+    101588: Jnt_Ring_c01 9
+    101590: Jnt_Thumb_a01
+    101592: Jnt_Thumb_a01 1
+    101594: Jnt_Thumb_a01 10
+    101596: Jnt_Thumb_a01 11
+    101598: Jnt_Thumb_a01 2
+    101600: Jnt_Thumb_a01 3
+    101602: Jnt_Thumb_a01 4
+    101604: Jnt_Thumb_a01 5
+    101606: Jnt_Thumb_a01 6
+    101608: Jnt_Thumb_a01 7
+    101610: Jnt_Thumb_a01 8
+    101612: Jnt_Thumb_a01 9
+    101614: Jnt_Thumb_b01
+    101616: Jnt_Thumb_b01 1
+    101618: Jnt_Thumb_b01 10
+    101620: Jnt_Thumb_b01 11
+    101622: Jnt_Thumb_b01 2
+    101624: Jnt_Thumb_b01 3
+    101626: Jnt_Thumb_b01 4
+    101628: Jnt_Thumb_b01 5
+    101630: Jnt_Thumb_b01 6
+    101632: Jnt_Thumb_b01 7
+    101634: Jnt_Thumb_b01 8
+    101636: Jnt_Thumb_b01 9
+    101638: Jnt_Wrist_01
+    101640: Jnt_Wrist_01 1
+    101642: Jnt_Wrist_01 10
+    101644: Jnt_Wrist_01 11
+    101646: Jnt_Wrist_01 2
+    101648: Jnt_Wrist_01 3
+    101650: Jnt_Wrist_01 4
+    101652: Jnt_Wrist_01 5
+    101654: Jnt_Wrist_01 6
+    101656: Jnt_Wrist_01 7
+    101658: Jnt_Wrist_01 8
+    101660: Jnt_Wrist_01 9
+    101662: pCylinder1
+    400000: Arm_Mesh
+    400002: Arm_Mesh 1
+    400004: Arm_Mesh 10
+    400006: Arm_Mesh 11
+    400008: Arm_Mesh 2
+    400010: Arm_Mesh 3
+    400012: Arm_Mesh 4
+    400014: Arm_Mesh 5
+    400016: Arm_Mesh 6
+    400018: Arm_Mesh 7
+    400020: Arm_Mesh 8
+    400022: Arm_Mesh 9
+    400024: Arm_Skeleton
+    400026: Arm_Skeleton 1
+    400028: Arm_Skeleton 10
+    400030: Arm_Skeleton 11
+    400032: Arm_Skeleton 2
+    400034: Arm_Skeleton 3
+    400036: Arm_Skeleton 4
+    400038: Arm_Skeleton 5
+    400040: Arm_Skeleton 6
+    400042: Arm_Skeleton 7
+    400044: Arm_Skeleton 8
+    400046: Arm_Skeleton 9
+    400048: Arm_TOTAL
+    400050: Arm_TOTAL1
+    400052: Arm_TOTAL10
+    400054: Arm_TOTAL11
+    400056: Arm_TOTAL2
+    400058: Arm_TOTAL3
+    400060: Arm_TOTAL4
+    400062: Arm_TOTAL5
+    400064: Arm_TOTAL6
+    400066: Arm_TOTAL7
+    400068: Arm_TOTAL8
+    400070: Arm_TOTAL9
+    400072: ArmForest2
+    400074: be_Middle_01
+    400076: be_Middle_01 1
+    400078: be_Middle_01 10
+    400080: be_Middle_01 11
+    400082: be_Middle_01 2
+    400084: be_Middle_01 3
+    400086: be_Middle_01 4
+    400088: be_Middle_01 5
+    400090: be_Middle_01 6
+    400092: be_Middle_01 7
+    400094: be_Middle_01 8
+    400096: be_Middle_01 9
+    400098: be_Pinky_01
+    400100: be_Pinky_01 1
+    400102: be_Pinky_01 10
+    400104: be_Pinky_01 11
+    400106: be_Pinky_01 2
+    400108: be_Pinky_01 3
+    400110: be_Pinky_01 4
+    400112: be_Pinky_01 5
+    400114: be_Pinky_01 6
+    400116: be_Pinky_01 7
+    400118: be_Pinky_01 8
+    400120: be_Pinky_01 9
+    400122: be_Pointer_01
+    400124: be_Pointer_01 1
+    400126: be_Pointer_01 10
+    400128: be_Pointer_01 11
+    400130: be_Pointer_01 2
+    400132: be_Pointer_01 3
+    400134: be_Pointer_01 4
+    400136: be_Pointer_01 5
+    400138: be_Pointer_01 6
+    400140: be_Pointer_01 7
+    400142: be_Pointer_01 8
+    400144: be_Pointer_01 9
+    400146: be_Ring_01
+    400148: be_Ring_01 1
+    400150: be_Ring_01 10
+    400152: be_Ring_01 11
+    400154: be_Ring_01 2
+    400156: be_Ring_01 3
+    400158: be_Ring_01 4
+    400160: be_Ring_01 5
+    400162: be_Ring_01 6
+    400164: be_Ring_01 7
+    400166: be_Ring_01 8
+    400168: be_Ring_01 9
+    400170: be_Thumb_01
+    400172: be_Thumb_01 1
+    400174: be_Thumb_01 10
+    400176: be_Thumb_01 11
+    400178: be_Thumb_01 2
+    400180: be_Thumb_01 3
+    400182: be_Thumb_01 4
+    400184: be_Thumb_01 5
+    400186: be_Thumb_01 6
+    400188: be_Thumb_01 7
+    400190: be_Thumb_01 8
+    400192: be_Thumb_01 9
+    400194: CTRL_Root
+    400196: CTRL_Root 1
+    400198: CTRL_Root 10
+    400200: CTRL_Root 11
+    400202: CTRL_Root 2
+    400204: CTRL_Root 3
+    400206: CTRL_Root 4
+    400208: CTRL_Root 5
+    400210: CTRL_Root 6
+    400212: CTRL_Root 7
+    400214: CTRL_Root 8
+    400216: CTRL_Root 9
+    400218: CTRL_Wrist
+    400220: CTRL_Wrist 1
+    400222: CTRL_Wrist 10
+    400224: CTRL_Wrist 11
+    400226: CTRL_Wrist 2
+    400228: CTRL_Wrist 3
+    400230: CTRL_Wrist 4
+    400232: CTRL_Wrist 5
+    400234: CTRL_Wrist 6
+    400236: CTRL_Wrist 7
+    400238: CTRL_Wrist 8
+    400240: CTRL_Wrist 9
+    400242: CTRLs_Fingers
+    400244: CTRLs_Fingers 1
+    400246: CTRLs_Fingers 10
+    400248: CTRLs_Fingers 11
+    400250: CTRLs_Fingers 2
+    400252: CTRLs_Fingers 3
+    400254: CTRLs_Fingers 4
+    400256: CTRLs_Fingers 5
+    400258: CTRLs_Fingers 6
+    400260: CTRLs_Fingers 7
+    400262: CTRLs_Fingers 8
+    400264: CTRLs_Fingers 9
+    400266: CTRLs_Middle
+    400268: CTRLs_Middle 1
+    400270: CTRLs_Middle 10
+    400272: CTRLs_Middle 11
+    400274: CTRLs_Middle 2
+    400276: CTRLs_Middle 3
+    400278: CTRLs_Middle 4
+    400280: CTRLs_Middle 5
+    400282: CTRLs_Middle 6
+    400284: CTRLs_Middle 7
+    400286: CTRLs_Middle 8
+    400288: CTRLs_Middle 9
+    400290: CTRLs_Pinky
+    400292: CTRLs_Pinky 1
+    400294: CTRLs_Pinky 10
+    400296: CTRLs_Pinky 11
+    400298: CTRLs_Pinky 2
+    400300: CTRLs_Pinky 3
+    400302: CTRLs_Pinky 4
+    400304: CTRLs_Pinky 5
+    400306: CTRLs_Pinky 6
+    400308: CTRLs_Pinky 7
+    400310: CTRLs_Pinky 8
+    400312: CTRLs_Pinky 9
+    400314: CTRLs_Pointer
+    400316: CTRLs_Pointer 1
+    400318: CTRLs_Pointer 10
+    400320: CTRLs_Pointer 11
+    400322: CTRLs_Pointer 2
+    400324: CTRLs_Pointer 3
+    400326: CTRLs_Pointer 4
+    400328: CTRLs_Pointer 5
+    400330: CTRLs_Pointer 6
+    400332: CTRLs_Pointer 7
+    400334: CTRLs_Pointer 8
+    400336: CTRLs_Pointer 9
+    400338: CTRLs_Ring
+    400340: CTRLs_Ring 1
+    400342: CTRLs_Ring 10
+    400344: CTRLs_Ring 11
+    400346: CTRLs_Ring 2
+    400348: CTRLs_Ring 3
+    400350: CTRLs_Ring 4
+    400352: CTRLs_Ring 5
+    400354: CTRLs_Ring 6
+    400356: CTRLs_Ring 7
+    400358: CTRLs_Ring 8
+    400360: CTRLs_Ring 9
+    400362: CTRLs_Thumb
+    400364: CTRLs_Thumb 1
+    400366: CTRLs_Thumb 10
+    400368: CTRLs_Thumb 11
+    400370: CTRLs_Thumb 2
+    400372: CTRLs_Thumb 3
+    400374: CTRLs_Thumb 4
+    400376: CTRLs_Thumb 5
+    400378: CTRLs_Thumb 6
+    400380: CTRLs_Thumb 7
+    400382: CTRLs_Thumb 8
+    400384: CTRLs_Thumb 9
+    400386: curve1
+    400388: curve1 1
+    400390: curve1 10
+    400392: curve1 100
+    400394: curve1 101
+    400396: curve1 102
+    400398: curve1 103
+    400400: curve1 104
+    400402: curve1 105
+    400404: curve1 106
+    400406: curve1 107
+    400408: curve1 108
+    400410: curve1 109
+    400412: curve1 11
+    400414: curve1 110
+    400416: curve1 111
+    400418: curve1 112
+    400420: curve1 113
+    400422: curve1 114
+    400424: curve1 115
+    400426: curve1 116
+    400428: curve1 117
+    400430: curve1 118
+    400432: curve1 119
+    400434: curve1 12
+    400436: curve1 120
+    400438: curve1 121
+    400440: curve1 122
+    400442: curve1 123
+    400444: curve1 124
+    400446: curve1 125
+    400448: curve1 126
+    400450: curve1 127
+    400452: curve1 128
+    400454: curve1 129
+    400456: curve1 13
+    400458: curve1 130
+    400460: curve1 131
+    400462: curve1 132
+    400464: curve1 133
+    400466: curve1 134
+    400468: curve1 135
+    400470: curve1 136
+    400472: curve1 137
+    400474: curve1 138
+    400476: curve1 139
+    400478: curve1 14
+    400480: curve1 140
+    400482: curve1 141
+    400484: curve1 142
+    400486: curve1 143
+    400488: curve1 144
+    400490: curve1 145
+    400492: curve1 146
+    400494: curve1 147
+    400496: curve1 148
+    400498: curve1 149
+    400500: curve1 15
+    400502: curve1 150
+    400504: curve1 151
+    400506: curve1 152
+    400508: curve1 153
+    400510: curve1 154
+    400512: curve1 155
+    400514: curve1 156
+    400516: curve1 157
+    400518: curve1 158
+    400520: curve1 159
+    400522: curve1 16
+    400524: curve1 160
+    400526: curve1 161
+    400528: curve1 162
+    400530: curve1 163
+    400532: curve1 164
+    400534: curve1 165
+    400536: curve1 166
+    400538: curve1 167
+    400540: curve1 168
+    400542: curve1 169
+    400544: curve1 17
+    400546: curve1 170
+    400548: curve1 171
+    400550: curve1 172
+    400552: curve1 173
+    400554: curve1 174
+    400556: curve1 175
+    400558: curve1 176
+    400560: curve1 177
+    400562: curve1 178
+    400564: curve1 179
+    400566: curve1 18
+    400568: curve1 180
+    400570: curve1 181
+    400572: curve1 182
+    400574: curve1 183
+    400576: curve1 184
+    400578: curve1 185
+    400580: curve1 186
+    400582: curve1 187
+    400584: curve1 188
+    400586: curve1 189
+    400588: curve1 19
+    400590: curve1 190
+    400592: curve1 191
+    400594: curve1 192
+    400596: curve1 193
+    400598: curve1 194
+    400600: curve1 195
+    400602: curve1 196
+    400604: curve1 197
+    400606: curve1 198
+    400608: curve1 199
+    400610: curve1 2
+    400612: curve1 20
+    400614: curve1 200
+    400616: curve1 201
+    400618: curve1 202
+    400620: curve1 203
+    400622: curve1 204
+    400624: curve1 205
+    400626: curve1 206
+    400628: curve1 207
+    400630: curve1 208
+    400632: curve1 209
+    400634: curve1 21
+    400636: curve1 210
+    400638: curve1 211
+    400640: curve1 212
+    400642: curve1 213
+    400644: curve1 214
+    400646: curve1 215
+    400648: curve1 216
+    400650: curve1 217
+    400652: curve1 218
+    400654: curve1 219
+    400656: curve1 22
+    400658: curve1 220
+    400660: curve1 221
+    400662: curve1 222
+    400664: curve1 223
+    400666: curve1 224
+    400668: curve1 225
+    400670: curve1 226
+    400672: curve1 227
+    400674: curve1 23
+    400676: curve1 24
+    400678: curve1 25
+    400680: curve1 26
+    400682: curve1 27
+    400684: curve1 28
+    400686: curve1 29
+    400688: curve1 3
+    400690: curve1 30
+    400692: curve1 31
+    400694: curve1 32
+    400696: curve1 33
+    400698: curve1 34
+    400700: curve1 35
+    400702: curve1 36
+    400704: curve1 37
+    400706: curve1 38
+    400708: curve1 39
+    400710: curve1 4
+    400712: curve1 40
+    400714: curve1 41
+    400716: curve1 42
+    400718: curve1 43
+    400720: curve1 44
+    400722: curve1 45
+    400724: curve1 46
+    400726: curve1 47
+    400728: curve1 48
+    400730: curve1 49
+    400732: curve1 5
+    400734: curve1 50
+    400736: curve1 51
+    400738: curve1 52
+    400740: curve1 53
+    400742: curve1 54
+    400744: curve1 55
+    400746: curve1 56
+    400748: curve1 57
+    400750: curve1 58
+    400752: curve1 59
+    400754: curve1 6
+    400756: curve1 60
+    400758: curve1 61
+    400760: curve1 62
+    400762: curve1 63
+    400764: curve1 64
+    400766: curve1 65
+    400768: curve1 66
+    400770: curve1 67
+    400772: curve1 68
+    400774: curve1 69
+    400776: curve1 7
+    400778: curve1 70
+    400780: curve1 71
+    400782: curve1 72
+    400784: curve1 73
+    400786: curve1 74
+    400788: curve1 75
+    400790: curve1 76
+    400792: curve1 77
+    400794: curve1 78
+    400796: curve1 79
+    400798: curve1 8
+    400800: curve1 80
+    400802: curve1 81
+    400804: curve1 82
+    400806: curve1 83
+    400808: curve1 84
+    400810: curve1 85
+    400812: curve1 86
+    400814: curve1 87
+    400816: curve1 88
+    400818: curve1 89
+    400820: curve1 9
+    400822: curve1 90
+    400824: curve1 91
+    400826: curve1 92
+    400828: curve1 93
+    400830: curve1 94
+    400832: curve1 95
+    400834: curve1 96
+    400836: curve1 97
+    400838: curve1 98
+    400840: curve1 99
+    400842: group11
+    400844: group11 1
+    400846: group11 10
+    400848: group11 11
+    400850: group11 2
+    400852: group11 3
+    400854: group11 4
+    400856: group11 5
+    400858: group11 6
+    400860: group11 7
+    400862: group11 8
+    400864: group11 9
+    400866: group12
+    400868: group12 1
+    400870: group12 10
+    400872: group12 11
+    400874: group12 2
+    400876: group12 3
+    400878: group12 4
+    400880: group12 5
+    400882: group12 6
+    400884: group12 7
+    400886: group12 8
+    400888: group12 9
+    400890: group14
+    400892: group14 1
+    400894: group14 10
+    400896: group14 11
+    400898: group14 2
+    400900: group14 3
+    400902: group14 4
+    400904: group14 5
+    400906: group14 6
+    400908: group14 7
+    400910: group14 8
+    400912: group14 9
+    400914: group16
+    400916: group16 1
+    400918: group16 10
+    400920: group16 11
+    400922: group16 2
+    400924: group16 3
+    400926: group16 4
+    400928: group16 5
+    400930: group16 6
+    400932: group16 7
+    400934: group16 8
+    400936: group16 9
+    400938: group17
+    400940: group17 1
+    400942: group17 10
+    400944: group17 11
+    400946: group17 2
+    400948: group17 3
+    400950: group17 4
+    400952: group17 5
+    400954: group17 6
+    400956: group17 7
+    400958: group17 8
+    400960: group17 9
+    400962: group18
+    400964: group18 1
+    400966: group18 10
+    400968: group18 11
+    400970: group18 2
+    400972: group18 3
+    400974: group18 4
+    400976: group18 5
+    400978: group18 6
+    400980: group18 7
+    400982: group18 8
+    400984: group18 9
+    400986: group19
+    400988: group19 1
+    400990: group19 10
+    400992: group19 11
+    400994: group19 2
+    400996: group19 3
+    400998: group19 4
+    401000: group19 5
+    401002: group19 6
+    401004: group19 7
+    401006: group19 8
+    401008: group19 9
+    401010: group2
+    401012: group2 1
+    401014: group2 10
+    401016: group2 11
+    401018: group2 2
+    401020: group2 3
+    401022: group2 4
+    401024: group2 5
+    401026: group2 6
+    401028: group2 7
+    401030: group2 8
+    401032: group2 9
+    401034: group20
+    401036: group20 1
+    401038: group20 10
+    401040: group20 11
+    401042: group20 2
+    401044: group20 3
+    401046: group20 4
+    401048: group20 5
+    401050: group20 6
+    401052: group20 7
+    401054: group20 8
+    401056: group20 9
+    401058: group3
+    401060: group3 1
+    401062: group3 10
+    401064: group3 11
+    401066: group3 2
+    401068: group3 3
+    401070: group3 4
+    401072: group3 5
+    401074: group3 6
+    401076: group3 7
+    401078: group3 8
+    401080: group3 9
+    401082: group5
+    401084: group5 1
+    401086: group5 10
+    401088: group5 11
+    401090: group5 2
+    401092: group5 3
+    401094: group5 4
+    401096: group5 5
+    401098: group5 6
+    401100: group5 7
+    401102: group5 8
+    401104: group5 9
+    401106: group6
+    401108: group6 1
+    401110: group6 10
+    401112: group6 11
+    401114: group6 2
+    401116: group6 3
+    401118: group6 4
+    401120: group6 5
+    401122: group6 6
+    401124: group6 7
+    401126: group6 8
+    401128: group6 9
+    401130: group8
+    401132: group8 1
+    401134: group8 10
+    401136: group8 11
+    401138: group8 2
+    401140: group8 3
+    401142: group8 4
+    401144: group8 5
+    401146: group8 6
+    401148: group8 7
+    401150: group8 8
+    401152: group8 9
+    401154: group9
+    401156: group9 1
+    401158: group9 10
+    401160: group9 11
+    401162: group9 2
+    401164: group9 3
+    401166: group9 4
+    401168: group9 5
+    401170: group9 6
+    401172: group9 7
+    401174: group9 8
+    401176: group9 9
+    401178: Hedgemaze1
+    401180: //RootNode
+    401182: Jnt_ArmBase_01
+    401184: Jnt_ArmBase_01 1
+    401186: Jnt_ArmBase_01 10
+    401188: Jnt_ArmBase_01 11
+    401190: Jnt_ArmBase_01 2
+    401192: Jnt_ArmBase_01 3
+    401194: Jnt_ArmBase_01 4
+    401196: Jnt_ArmBase_01 5
+    401198: Jnt_ArmBase_01 6
+    401200: Jnt_ArmBase_01 7
+    401202: Jnt_ArmBase_01 8
+    401204: Jnt_ArmBase_01 9
+    401206: Jnt_ArmChain_a01
+    401208: Jnt_ArmChain_a01 1
+    401210: Jnt_ArmChain_a01 10
+    401212: Jnt_ArmChain_a01 11
+    401214: Jnt_ArmChain_a01 2
+    401216: Jnt_ArmChain_a01 3
+    401218: Jnt_ArmChain_a01 4
+    401220: Jnt_ArmChain_a01 5
+    401222: Jnt_ArmChain_a01 6
+    401224: Jnt_ArmChain_a01 7
+    401226: Jnt_ArmChain_a01 8
+    401228: Jnt_ArmChain_a01 9
+    401230: Jnt_ArmChain_b01
+    401232: Jnt_ArmChain_b01 1
+    401234: Jnt_ArmChain_b01 10
+    401236: Jnt_ArmChain_b01 11
+    401238: Jnt_ArmChain_b01 2
+    401240: Jnt_ArmChain_b01 3
+    401242: Jnt_ArmChain_b01 4
+    401244: Jnt_ArmChain_b01 5
+    401246: Jnt_ArmChain_b01 6
+    401248: Jnt_ArmChain_b01 7
+    401250: Jnt_ArmChain_b01 8
+    401252: Jnt_ArmChain_b01 9
+    401254: Jnt_ArmChain_c01
+    401256: Jnt_ArmChain_c01 1
+    401258: Jnt_ArmChain_c01 10
+    401260: Jnt_ArmChain_c01 11
+    401262: Jnt_ArmChain_c01 2
+    401264: Jnt_ArmChain_c01 3
+    401266: Jnt_ArmChain_c01 4
+    401268: Jnt_ArmChain_c01 5
+    401270: Jnt_ArmChain_c01 6
+    401272: Jnt_ArmChain_c01 7
+    401274: Jnt_ArmChain_c01 8
+    401276: Jnt_ArmChain_c01 9
+    401278: Jnt_Middle_a01
+    401280: Jnt_Middle_a01 1
+    401282: Jnt_Middle_a01 10
+    401284: Jnt_Middle_a01 11
+    401286: Jnt_Middle_a01 2
+    401288: Jnt_Middle_a01 3
+    401290: Jnt_Middle_a01 4
+    401292: Jnt_Middle_a01 5
+    401294: Jnt_Middle_a01 6
+    401296: Jnt_Middle_a01 7
+    401298: Jnt_Middle_a01 8
+    401300: Jnt_Middle_a01 9
+    401302: Jnt_Middle_b01
+    401304: Jnt_Middle_b01 1
+    401306: Jnt_Middle_b01 10
+    401308: Jnt_Middle_b01 11
+    401310: Jnt_Middle_b01 2
+    401312: Jnt_Middle_b01 3
+    401314: Jnt_Middle_b01 4
+    401316: Jnt_Middle_b01 5
+    401318: Jnt_Middle_b01 6
+    401320: Jnt_Middle_b01 7
+    401322: Jnt_Middle_b01 8
+    401324: Jnt_Middle_b01 9
+    401326: Jnt_Middle_c01
+    401328: Jnt_Middle_c01 1
+    401330: Jnt_Middle_c01 10
+    401332: Jnt_Middle_c01 11
+    401334: Jnt_Middle_c01 2
+    401336: Jnt_Middle_c01 3
+    401338: Jnt_Middle_c01 4
+    401340: Jnt_Middle_c01 5
+    401342: Jnt_Middle_c01 6
+    401344: Jnt_Middle_c01 7
+    401346: Jnt_Middle_c01 8
+    401348: Jnt_Middle_c01 9
+    401350: Jnt_Palm_01
+    401352: Jnt_Palm_01 1
+    401354: Jnt_Palm_01 10
+    401356: Jnt_Palm_01 11
+    401358: Jnt_Palm_01 2
+    401360: Jnt_Palm_01 3
+    401362: Jnt_Palm_01 4
+    401364: Jnt_Palm_01 5
+    401366: Jnt_Palm_01 6
+    401368: Jnt_Palm_01 7
+    401370: Jnt_Palm_01 8
+    401372: Jnt_Palm_01 9
+    401374: Jnt_Pinky_a01
+    401376: Jnt_Pinky_a01 1
+    401378: Jnt_Pinky_a01 10
+    401380: Jnt_Pinky_a01 11
+    401382: Jnt_Pinky_a01 2
+    401384: Jnt_Pinky_a01 3
+    401386: Jnt_Pinky_a01 4
+    401388: Jnt_Pinky_a01 5
+    401390: Jnt_Pinky_a01 6
+    401392: Jnt_Pinky_a01 7
+    401394: Jnt_Pinky_a01 8
+    401396: Jnt_Pinky_a01 9
+    401398: Jnt_Pinky_b01
+    401400: Jnt_Pinky_b01 1
+    401402: Jnt_Pinky_b01 10
+    401404: Jnt_Pinky_b01 11
+    401406: Jnt_Pinky_b01 2
+    401408: Jnt_Pinky_b01 3
+    401410: Jnt_Pinky_b01 4
+    401412: Jnt_Pinky_b01 5
+    401414: Jnt_Pinky_b01 6
+    401416: Jnt_Pinky_b01 7
+    401418: Jnt_Pinky_b01 8
+    401420: Jnt_Pinky_b01 9
+    401422: Jnt_Pinky_c01
+    401424: Jnt_Pinky_c01 1
+    401426: Jnt_Pinky_c01 10
+    401428: Jnt_Pinky_c01 11
+    401430: Jnt_Pinky_c01 2
+    401432: Jnt_Pinky_c01 3
+    401434: Jnt_Pinky_c01 4
+    401436: Jnt_Pinky_c01 5
+    401438: Jnt_Pinky_c01 6
+    401440: Jnt_Pinky_c01 7
+    401442: Jnt_Pinky_c01 8
+    401444: Jnt_Pinky_c01 9
+    401446: Jnt_Pointer_a01
+    401448: Jnt_Pointer_a01 1
+    401450: Jnt_Pointer_a01 10
+    401452: Jnt_Pointer_a01 11
+    401454: Jnt_Pointer_a01 2
+    401456: Jnt_Pointer_a01 3
+    401458: Jnt_Pointer_a01 4
+    401460: Jnt_Pointer_a01 5
+    401462: Jnt_Pointer_a01 6
+    401464: Jnt_Pointer_a01 7
+    401466: Jnt_Pointer_a01 8
+    401468: Jnt_Pointer_a01 9
+    401470: Jnt_Pointer_b01
+    401472: Jnt_Pointer_b01 1
+    401474: Jnt_Pointer_b01 10
+    401476: Jnt_Pointer_b01 11
+    401478: Jnt_Pointer_b01 2
+    401480: Jnt_Pointer_b01 3
+    401482: Jnt_Pointer_b01 4
+    401484: Jnt_Pointer_b01 5
+    401486: Jnt_Pointer_b01 6
+    401488: Jnt_Pointer_b01 7
+    401490: Jnt_Pointer_b01 8
+    401492: Jnt_Pointer_b01 9
+    401494: Jnt_Pointer_c01
+    401496: Jnt_Pointer_c01 1
+    401498: Jnt_Pointer_c01 10
+    401500: Jnt_Pointer_c01 11
+    401502: Jnt_Pointer_c01 2
+    401504: Jnt_Pointer_c01 3
+    401506: Jnt_Pointer_c01 4
+    401508: Jnt_Pointer_c01 5
+    401510: Jnt_Pointer_c01 6
+    401512: Jnt_Pointer_c01 7
+    401514: Jnt_Pointer_c01 8
+    401516: Jnt_Pointer_c01 9
+    401518: Jnt_Ring_a01
+    401520: Jnt_Ring_a01 1
+    401522: Jnt_Ring_a01 10
+    401524: Jnt_Ring_a01 11
+    401526: Jnt_Ring_a01 2
+    401528: Jnt_Ring_a01 3
+    401530: Jnt_Ring_a01 4
+    401532: Jnt_Ring_a01 5
+    401534: Jnt_Ring_a01 6
+    401536: Jnt_Ring_a01 7
+    401538: Jnt_Ring_a01 8
+    401540: Jnt_Ring_a01 9
+    401542: Jnt_Ring_b01
+    401544: Jnt_Ring_b01 1
+    401546: Jnt_Ring_b01 10
+    401548: Jnt_Ring_b01 11
+    401550: Jnt_Ring_b01 2
+    401552: Jnt_Ring_b01 3
+    401554: Jnt_Ring_b01 4
+    401556: Jnt_Ring_b01 5
+    401558: Jnt_Ring_b01 6
+    401560: Jnt_Ring_b01 7
+    401562: Jnt_Ring_b01 8
+    401564: Jnt_Ring_b01 9
+    401566: Jnt_Ring_c01
+    401568: Jnt_Ring_c01 1
+    401570: Jnt_Ring_c01 10
+    401572: Jnt_Ring_c01 11
+    401574: Jnt_Ring_c01 2
+    401576: Jnt_Ring_c01 3
+    401578: Jnt_Ring_c01 4
+    401580: Jnt_Ring_c01 5
+    401582: Jnt_Ring_c01 6
+    401584: Jnt_Ring_c01 7
+    401586: Jnt_Ring_c01 8
+    401588: Jnt_Ring_c01 9
+    401590: Jnt_Thumb_a01
+    401592: Jnt_Thumb_a01 1
+    401594: Jnt_Thumb_a01 10
+    401596: Jnt_Thumb_a01 11
+    401598: Jnt_Thumb_a01 2
+    401600: Jnt_Thumb_a01 3
+    401602: Jnt_Thumb_a01 4
+    401604: Jnt_Thumb_a01 5
+    401606: Jnt_Thumb_a01 6
+    401608: Jnt_Thumb_a01 7
+    401610: Jnt_Thumb_a01 8
+    401612: Jnt_Thumb_a01 9
+    401614: Jnt_Thumb_b01
+    401616: Jnt_Thumb_b01 1
+    401618: Jnt_Thumb_b01 10
+    401620: Jnt_Thumb_b01 11
+    401622: Jnt_Thumb_b01 2
+    401624: Jnt_Thumb_b01 3
+    401626: Jnt_Thumb_b01 4
+    401628: Jnt_Thumb_b01 5
+    401630: Jnt_Thumb_b01 6
+    401632: Jnt_Thumb_b01 7
+    401634: Jnt_Thumb_b01 8
+    401636: Jnt_Thumb_b01 9
+    401638: Jnt_Wrist_01
+    401640: Jnt_Wrist_01 1
+    401642: Jnt_Wrist_01 10
+    401644: Jnt_Wrist_01 11
+    401646: Jnt_Wrist_01 2
+    401648: Jnt_Wrist_01 3
+    401650: Jnt_Wrist_01 4
+    401652: Jnt_Wrist_01 5
+    401654: Jnt_Wrist_01 6
+    401656: Jnt_Wrist_01 7
+    401658: Jnt_Wrist_01 8
+    401660: Jnt_Wrist_01 9
+    401662: pCylinder1
+    2300000: Arm_Mesh
+    2300002: Arm_Mesh 1
+    2300004: Arm_Mesh 10
+    2300006: Arm_Mesh 11
+    2300008: Arm_Mesh 2
+    2300010: Arm_Mesh 3
+    2300012: Arm_Mesh 4
+    2300014: Arm_Mesh 5
+    2300016: Arm_Mesh 6
+    2300018: Arm_Mesh 7
+    2300020: Arm_Mesh 8
+    2300022: Arm_Mesh 9
+    2300024: Hedgemaze1
+    2300026: pCylinder1
+    3300000: Arm_Mesh
+    3300002: Arm_Mesh 1
+    3300004: Arm_Mesh 10
+    3300006: Arm_Mesh 11
+    3300008: Arm_Mesh 2
+    3300010: Arm_Mesh 3
+    3300012: Arm_Mesh 4
+    3300014: Arm_Mesh 5
+    3300016: Arm_Mesh 6
+    3300018: Arm_Mesh 7
+    3300020: Arm_Mesh 8
+    3300022: Arm_Mesh 9
+    3300024: Hedgemaze1
+    3300026: pCylinder1
+    4300000: Arm_Mesh
+    4300002: Arm_Mesh
+    4300004: Arm_Mesh
+    4300006: Arm_Mesh
+    4300008: Arm_Mesh
+    4300010: Arm_Mesh
+    4300012: Arm_Mesh
+    4300014: Arm_Mesh
+    4300016: Arm_Mesh
+    4300018: Arm_Mesh
+    4300020: Arm_Mesh
+    4300022: Arm_Mesh
+    4300024: pCylinder1
+    4300026: Hedgemaze1
+    6400000: Arm_Mesh
+    6400002: Arm_Mesh 1
+    6400004: Arm_Mesh 10
+    6400006: Arm_Mesh 11
+    6400008: Arm_Mesh 2
+    6400010: Arm_Mesh 3
+    6400012: Arm_Mesh 4
+    6400014: Arm_Mesh 5
+    6400016: Arm_Mesh 6
+    6400018: Arm_Mesh 7
+    6400020: Arm_Mesh 8
+    6400022: Arm_Mesh 9
+    6400024: Hedgemaze1
+    6400026: pCylinder1
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .0549999997
+    meshCompression: 0
+    addColliders: 1
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
