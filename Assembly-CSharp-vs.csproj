@@ -56,6 +56,7 @@
      <Compile Include="Assets\WorldObjects\Entities\Gnome\GnomeParent.cs" />
      <Compile Include="Assets\WorldObjects\Entities\Player\Blink.cs" />
      <Compile Include="Assets\WorldObjects\Entities\Player\EnergyBar.cs" />
+     <Compile Include="Assets\WorldObjects\Entities\Player\GUIDamage.cs" />
      <Compile Include="Assets\WorldObjects\Entities\Player\GUISlot.cs" />
      <Compile Include="Assets\WorldObjects\Entities\Player\GUIWrapper.cs" />
      <Compile Include="Assets\WorldObjects\Entities\Player\ItemSlot.cs" />

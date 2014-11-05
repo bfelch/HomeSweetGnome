@@ -23,6 +23,7 @@ public class Player : MonoBehaviour
     private bool crouching;
 	private bool readyToPush;
     private float yScale;
+    private float fadeIn = 0;
 
 	public GameObject activeTarget; //The item being looked at
 
@@ -57,9 +58,16 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Quit the game
+        //Save the game then go to the main menu
         if (Input.GetKey("escape"))
         {
+            GameObject.Find("Save").GetComponent<SaveLoad>().Save();
+            Application.LoadLevel("MainMenu");
+        }
+        //temporary close game screen
+        if (Input.GetKey(KeyCode.LeftAlt))
+        {
+            GameObject.Find("Save").GetComponent<SaveLoad>().Save();
             Application.Quit();
         }
 
@@ -193,11 +201,28 @@ public class Player : MonoBehaviour
         if (playerSlept)
         {
             deathTextSleep.enabled = true;
+            //find the GUI Text for death by sleep
+            GUIText sleepDeath = GameObject.Find("DeathTextSleep").GetComponent<GUIText>();
+            //create a new color with the changed alpha value
+            Color changing = new Color(sleepDeath.color.r, sleepDeath.color.g, sleepDeath.color.b, fadeIn);
+            //set the new color
+            sleepDeath.color = changing;
+            //update the alpha value
+            fadeIn += .1f*Time.deltaTime;
         }
 
 		if(playerFell)
 		{
 			deathTextFall.enabled = true;
+            //find the GUI Text for death by fall
+            GUIText fallDeath = GameObject.Find("DeathTextFall").GetComponent<GUIText>();
+            //create a new color with the changed alpha value
+            Color changing = new Color(fallDeath.color.r, fallDeath.color.g, fallDeath.color.b, fadeIn);
+            //set the new color
+            fallDeath.color = changing;
+            //update the alpha value
+            fadeIn += .1f * Time.deltaTime;
+            
 		}
     }
 
