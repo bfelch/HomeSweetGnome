@@ -20,6 +20,8 @@ public class Player : MonoBehaviour
     private Animation blinkTop;
     public CharacterMotor charMotor;
 
+    //public AudioClip breathingSound;
+
     private bool crouching;
 	private bool readyToPush;
     private float yScale;
@@ -35,8 +37,9 @@ public class Player : MonoBehaviour
         sanity = 100;
         maxSanity = 100;
         minSanity = 0;
-        restTime = maxRestTime = .75f;
-        sprintTime = maxSprintTime = 50f;
+        restTime = 0;
+        maxRestTime = 4f;
+        sprintTime = maxSprintTime = 5f;
         playerSlept = false;
 		playerFell = false;
 		readyToPush = true;
@@ -88,20 +91,28 @@ public class Player : MonoBehaviour
 
     void Sprint()
     {
-        if (Input.GetKey(KeyCode.LeftShift) && sprintTime > 0)
+        if (sprintTime > 0)
         {
-            charMotor.movement.maxForwardSpeed = 12;
-            sprintTime -= Time.deltaTime;
-            this.gameObject.animation.Play("Sprint");
+            if (Input.GetKey(KeyCode.LeftShift))
+            {
+                charMotor.movement.maxForwardSpeed = 12;
+                sprintTime -= Time.deltaTime;
+                this.gameObject.animation.Play("Sprint");
+            }
+            else if (sprintTime <= maxSprintTime)
+            {
+                sprintTime += Time.deltaTime;
+            }
         }
         else
         {
+            //breathingSound.
             charMotor.movement.maxForwardSpeed = 6;
             restTime += Time.deltaTime;
             this.gameObject.animation.Stop("Sprint");
-            if (restTime >= .75 && sprintTime <= 1.25)
+            if (restTime >= maxRestTime)
             {
-                sprintTime += Time.deltaTime * 4;
+                sprintTime = 5.0F;
                 restTime = 0;
             }
         }
