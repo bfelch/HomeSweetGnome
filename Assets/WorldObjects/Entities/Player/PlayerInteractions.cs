@@ -21,6 +21,8 @@ public class PlayerInteractions : MonoBehaviour
 
     public GUIWrapper playerGUI;
 
+    public Texture2D crosshair;
+
     void Start()
     {
         ToggleGUI(showGUI);
@@ -47,6 +49,10 @@ public class PlayerInteractions : MonoBehaviour
         {
             GUI.backgroundColor = Color.clear;
             GUI.Box(new Rect(5, 5, 300, 30), "You need the " + GUIString + " to continue.");
+        }
+
+        if (!showGUI) {
+            GUI.DrawTexture(new Rect(Screen.width / 2, Screen.height / 2, crosshair.width, crosshair.height), crosshair);
         }
     }
 

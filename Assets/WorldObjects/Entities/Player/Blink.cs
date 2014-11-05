@@ -27,6 +27,9 @@ public class Blink : MonoBehaviour
     private float playerSanity;
     private float playerSanityMax;
 
+    private float maxBlinkDisplayTimer = 3f;
+    private float blinkDisplayTimer;
+
 
     // Use this for initialization
     void Start()
@@ -37,6 +40,8 @@ public class Blink : MonoBehaviour
         player = GameObject.Find("Player");
         playerSanity = gameObject.GetComponent<Player>().sanity;
         playerSanityMax = gameObject.GetComponent<Player>().maxSanity;
+
+        blinkDisplayTimer = maxBlinkDisplayTimer;
 
         //if the game was loaded, do not playing opening scene
         if(PlayerPrefs.GetInt("LoadGame") != 1)
@@ -96,7 +101,7 @@ public class Blink : MonoBehaviour
     void OpenEyes()
     {
         //check if I'm not holding my eyes open and the openTimer is less than 10
-        if (openTimer <= 10 && !Input.GetKey(KeyCode.Q))
+        if (openTimer <= 10 && !Input.GetKey(KeyCode.F))
         {
             //add onto the openTimer
             openTimer += Time.deltaTime;
@@ -107,7 +112,7 @@ public class Blink : MonoBehaviour
             }
         }
         //am I holding my eyes open and my blink is recharged?
-        if (Input.GetKey(KeyCode.Q) && !rechargeBlink)
+        if (Input.GetKey(KeyCode.F) && !rechargeBlink)
         {
             //are we greater than 0
             if (openTimer > 0)
@@ -124,6 +129,7 @@ public class Blink : MonoBehaviour
                 topLid.animation.Play("BlinkTopNew");
                 bottomLid.animation.Play("BlinkBottomNew");
                 rechargeBlink = true;
+                blinkDisplayTimer = maxBlinkDisplayTimer;
             }
         }
 
@@ -136,6 +142,13 @@ public class Blink : MonoBehaviour
             gameEnded = true;
             topLid.animation.Play("ClosingTop");
             bottomLid.animation.Play("ClosingBottom");
+        }
+    }
+
+    void OnGUI() {
+        if (!rechargeBlink && blinkDisplayTimer > 0) {
+            blinkDisplayTimer -= Time.deltaTime;
+            GUI.Box(new Rect(10, 10, 50, 50), "blink");
         }
     }
 }
