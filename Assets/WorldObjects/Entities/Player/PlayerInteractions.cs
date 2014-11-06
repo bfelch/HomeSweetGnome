@@ -224,7 +224,7 @@ public class PlayerInteractions : MonoBehaviour
         if(col.gameObject.name == "ExitTutorial")
         {
             GameObject.Find("Weather").GetComponent<weatherScript>().start = true; //Start changing the weather randomly
-            GetComponentInChildren<AudioSource>().Play(); //Start playing background music
+            GetComponent<Player>().audio1.Play(); //Start playing background music
             st.tutorial = false;
         }
     }

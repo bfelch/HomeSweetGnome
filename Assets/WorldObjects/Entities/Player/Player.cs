@@ -20,7 +20,9 @@ public class Player : MonoBehaviour
     private Animation blinkTop;
     public CharacterMotor charMotor;
 
-    //public AudioClip breathingSound;
+    public AudioSource audio1;
+    public AudioSource audio2;
+    public bool breathe = true; //To check whether to play the heavyBreathing sound
 
     private bool crouching;
 	private bool readyToPush;
@@ -38,7 +40,7 @@ public class Player : MonoBehaviour
         maxSanity = 100;
         minSanity = 0;
         restTime = 0;
-        maxRestTime = 4f;
+        maxRestTime = 3.7f;
         sprintTime = maxSprintTime = 5f;
         playerSlept = false;
 		playerFell = false;
@@ -52,6 +54,11 @@ public class Player : MonoBehaviour
 		deathTextFall = GameObject.Find("DeathTextFall").guiText;
 		deathTextFall.enabled = false;
 
+        AudioSource[] aSources = GetComponentsInChildren<AudioSource>(); //Grab all the audio sources on this object
+        Debug.Log(aSources.Length);
+        audio1 = aSources[0];
+        audio2 = aSources[1];
+
         if(PlayerPrefs.GetInt("LoadGame") == 1)
         {
             GameObject.Find("Save").GetComponent<SaveLoad>().Load();
@@ -62,7 +69,7 @@ public class Player : MonoBehaviour
     void Update()
     {
         //Save the game then go to the main menu
-        if (Input.GetKey("escape"))
+        if (Input.GetKey("m"))
         {
             GameObject.Find("Save").GetComponent<SaveLoad>().Save();
             Application.LoadLevel("MainMenu");
@@ -101,12 +108,18 @@ public class Player : MonoBehaviour
             }
             else if (sprintTime <= maxSprintTime)
             {
+                charMotor.movement.maxForwardSpeed = 6;
                 sprintTime += Time.deltaTime;
             }
         }
         else
         {
-            //breathingSound.
+            if (breathe)
+            {
+                breathe = false;
+                audio2.Play();
+            }
+
             charMotor.movement.maxForwardSpeed = 6;
             restTime += Time.deltaTime;
             this.gameObject.animation.Stop("Sprint");
@@ -114,6 +127,7 @@ public class Player : MonoBehaviour
             {
                 sprintTime = 5.0F;
                 restTime = 0;
+                breathe = true;
             }
         }
     }

@@ -9,6 +9,7 @@ public class Useable : MonoBehaviour
     public GUIWrapper playerGUI;
 
     public bool chandDropped = false;
+    public bool activate = false;
 
 	// Use this for initialization
 	void Start () 
@@ -58,6 +59,10 @@ public class Useable : MonoBehaviour
                 //Enable trigger only when falling
                 GameObject.Find("Chandelier").GetComponentInChildren<chandStuff>().dropping = true;
             }
+            else if (type == UseableType.ELEVATOR)
+            {
+                GameObject.Find("Elevator").GetComponent<elevatorStuff>().Activate();
+            }
             return "";
         }
 
@@ -74,4 +79,4 @@ public class Useable : MonoBehaviour
     }
 }
 
-public enum UseableType { DOOR, DIRT, GATE, LIGHT, CHAND };
+public enum UseableType { DOOR, DIRT, GATE, LIGHT, CHAND, ELEVATOR };

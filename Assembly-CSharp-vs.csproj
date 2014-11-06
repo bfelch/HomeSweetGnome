@@ -73,6 +73,8 @@
      <Compile Include="Assets\WorldObjects\Structures\Shed\ShedTutorial.cs" />
      <Compile Include="Assets\WorldObjects\Structures\Useable.cs" />
      <Compile Include="Assets\chandStuff.cs" />
+     <Compile Include="Assets\elevatorStuff.cs" />
+     <Compile Include="Assets\elevatorTrigger.cs" />
      <Compile Include="Assets\followMain.cs" />
      <Compile Include="Assets\menuCam.cs" />
      <Compile Include="Assets\menuMouse.cs" />
