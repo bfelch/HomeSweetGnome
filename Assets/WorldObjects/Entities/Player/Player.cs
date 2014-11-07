@@ -26,7 +26,9 @@ public class Player : MonoBehaviour
 
     private bool crouching;
 	private bool readyToPush;
-    private float yScale;
+    private float yHeight;
+    public BoxCollider box;
+    public CharacterController controllerBox;
     private float fadeIn = 0;
 
 	public GameObject activeTarget; //The item being looked at
@@ -46,7 +48,7 @@ public class Player : MonoBehaviour
 		playerFell = false;
 		readyToPush = true;
 
-        yScale = this.transform.localScale.y;
+        yHeight = box.size.y;
 
         deathTextSleep = GameObject.Find("DeathTextSleep").guiText;
         deathTextSleep.enabled = false;
@@ -137,16 +139,20 @@ public class Player : MonoBehaviour
         if((Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.LeftCommand)) && !crouching){
             crouching = true;
             charMotor.movement.maxForwardSpeed = 3;
-            gameObject.transform.localScale = new Vector3(1, yScale / 2, 1);
-            Camera.main.transform.localScale = new Vector3(1, 2 * yScale, 1);
+            box.size = new Vector3(1, yHeight / 2, 1);
+            controllerBox.height = yHeight / 2;
+            Vector3 pos = Camera.main.transform.position;
+            Camera.main.transform.position = new Vector3(pos.x, pos.y - .5f, pos.z);
         }
         else if (Input.GetKeyUp(KeyCode.LeftControl) || Input.GetKeyUp(KeyCode.LeftCommand))
         {
             crouching = false;
-            gameObject.transform.localScale = new Vector3(1, yScale, 1);
-            Vector3 pos = gameObject.transform.position;
-            gameObject.transform.position = new Vector3(pos.x, pos.y + .6f, pos.z);
-            Camera.main.transform.localScale = new Vector3(1, yScale, 1);
+            box.size = new Vector3(1, yHeight, 1);
+            controllerBox.height = yHeight;
+            Vector3 pos = Camera.main.transform.position;
+            Camera.main.transform.position = new Vector3(pos.x, pos.y + .5f, pos.z);
+            pos = this.transform.position;
+            this.transform.position = new Vector3(pos.x, pos.y + yHeight / 3, pos.z);
         }
     }
 
