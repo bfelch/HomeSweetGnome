@@ -4,11 +4,14 @@ using System.Collections.Generic;
 
 public class KeyRing : MonoBehaviour {
     public List<Item> keys;
+    public List<KeyItem> keysOnRing;
     public GUISlot gui;
 
 	// Use this for initialization
 	void Start () {
-	
+        foreach (KeyItem key in keysOnRing) {
+            key.gameObject.SetActive(false);
+        }
 	}
 	
 	// Update is called once per frame
@@ -27,6 +30,11 @@ public class KeyRing : MonoBehaviour {
 
     public void AddKey(Item key)
     {
+        foreach (KeyItem keyOnRing in keysOnRing) {
+            if (keyOnRing.key.Equals(key)) {
+                keyOnRing.gameObject.SetActive(true);
+            }
+        }
         keys.Add(key);
     }
 }

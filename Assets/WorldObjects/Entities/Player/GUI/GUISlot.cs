@@ -14,6 +14,7 @@ public class GUISlot : MonoBehaviour
     private bool clockwise;
 
     public bool hovering;
+    public bool isKeyRing;
 
     // Use this for initialization
     void Start()
@@ -26,15 +27,25 @@ public class GUISlot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float currentAngle = transform.localRotation.eulerAngles.y;
+        float currentAngle;
+
+        currentAngle = transform.localRotation.eulerAngles.y;
 
         if (clockwise)
         {
-            transform.Rotate(new Vector3(0, rotationSpeed, 0));
+            if (isKeyRing) {
+                transform.Rotate(new Vector3(0, 0, -rotationSpeed));
+            } else {
+                transform.Rotate(new Vector3(0, rotationSpeed, 0));
+            }
         }
         else
         {
-            transform.Rotate(new Vector3(0, -rotationSpeed, 0));
+            if (isKeyRing) {
+                transform.Rotate(new Vector3(0, 0, rotationSpeed));
+            } else {
+                transform.Rotate(new Vector3(0, -rotationSpeed, 0));
+            }
         }
 
         if (currentAngle < lowerBound && currentAngle > 180f)
@@ -53,7 +64,11 @@ public class GUISlot : MonoBehaviour
         rotationSpeed = Random.Range(.1f, .2f);
         startRotation = Random.Range(-rotationBound, rotationBound);
         transform.localRotation = Quaternion.identity;
-        transform.Rotate(new Vector3(0, startRotation, 0));
+        if (isKeyRing) {
+            transform.Rotate(new Vector3(90, 0, startRotation));
+        } else {
+            transform.Rotate(new Vector3(0, startRotation, 0));
+        }
         ToggleSlotHover(false);
     }
 
