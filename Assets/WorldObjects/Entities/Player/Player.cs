@@ -70,12 +70,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Save the game then go to the main menu
-        if (Input.GetKey("m"))
-        {
-            GameObject.Find("Save").GetComponent<SaveLoad>().Save();
-            Application.LoadLevel("MainMenu");
-        }
+
         //temporary close game screen
         if (Input.GetKey(KeyCode.LeftAlt))
         {

@@ -23,6 +23,8 @@ public class PlayerInteractions : MonoBehaviour
 
     public Texture2D crosshair;
 
+    private bool pause;
+
     void Start()
     {
         ToggleGUI(showGUI);
@@ -34,25 +36,71 @@ public class PlayerInteractions : MonoBehaviour
     {
         itemAction();
         GUIControl();
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            pause = true;
+            Screen.showCursor = true;
+            Screen.lockCursor = false;
+            Time.timeScale = 0.0f;
+
+
+        }
     }
 
     void OnGUI()
     {
         GUI.color = Color.white;
         GUI.backgroundColor = Color.white;
-        if (canHover && activeTarget != null && !st.tutorial)
-        {
-            //Display item name
-            GUI.Box(new Rect(Screen.width / 2 - 100, Screen.height / 2 - 100, 100, 30), activeTarget.name);
-        }
-        else if(notUseable && activeTarget != null)
-        {
-            GUI.backgroundColor = Color.clear;
-            GUI.Box(new Rect(5, 5, 300, 30), "You need the " + GUIString + " to continue.");
-        }
 
-        if (!showGUI) {
-            GUI.DrawTexture(new Rect(Screen.width / 2, Screen.height / 2, crosshair.width, crosshair.height), crosshair);
+        if (pause)
+        {
+            this.GetComponent<MouseLook>().enabled = false;
+            Camera.main.GetComponent<MouseLook>().enabled = false;
+
+            
+            GUI.BeginGroup(new Rect(Screen.width / 2 - 150, 100, 300, 250));
+            //GUI.Box(new Rect(0, 0,200, 250), "");
+
+            if (GUI.Button(new Rect(55, 100, 180, 40), "Resume"))
+            {
+                Screen.showCursor = false;
+                Screen.lockCursor = true;
+                Time.timeScale = 1.0f;
+                pause = false;
+            }
+            if (GUI.Button( new Rect(55, 150, 180, 40), "Main Menu"))
+            {
+                GameObject.Find("Save").GetComponent<SaveLoad>().Save();
+                Application.LoadLevel("MainMenu");
+            }
+            if (GUI.Button(new Rect(55, 200, 180, 40), "Quit"))
+            {
+                Application.Quit();
+            }
+
+            //layout end
+            GUI.EndGroup(); 
+        }
+        else
+        {
+            this.GetComponent<MouseLook>().enabled = true;
+            Camera.main.GetComponent<MouseLook>().enabled = true;
+
+            if (canHover && activeTarget != null && !st.tutorial)
+            {
+                //Display item name
+                GUI.Box(new Rect(Screen.width / 2 - 100, Screen.height / 2 - 100, 100, 30), activeTarget.name);
+            }
+            else if (notUseable && activeTarget != null)
+            {
+                GUI.backgroundColor = Color.clear;
+                GUI.Box(new Rect(5, 5, 300, 30), "You need the " + GUIString + " to continue.");
+            }
+
+            if (!showGUI)
+            {
+                GUI.DrawTexture(new Rect(Screen.width / 2, Screen.height / 2, crosshair.width, crosshair.height), crosshair);
+            }
         }
     }
 
