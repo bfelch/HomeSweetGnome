@@ -15,12 +15,12 @@ public class menuMouse : MonoBehaviour
 
     void OnMouseUp()
     {
-        if (this.gameObject.name == ("PlayGame"))
+        if (this.gameObject.name == ("NewGame"))
         {
             Application.LoadLevel("HomeSweetGnome");
             PlayerPrefs.SetInt("LoadGame", 0);
         }
-        else if (this.gameObject.name == ("LoadGame"))
+        else if (this.gameObject.name == ("Continue"))
         {
             PlayerPrefs.SetInt("LoadGame", 1);
             Application.LoadLevel("HomeSweetGnome");
@@ -32,6 +32,10 @@ public class menuMouse : MonoBehaviour
         else if (this.gameObject.name == ("Credits"))
         {
             Debug.Log("Credits Clicked");
+        }
+        else if (this.gameObject.name == ("Quit"))
+        {
+            Application.Quit();
         }
     }
 	
