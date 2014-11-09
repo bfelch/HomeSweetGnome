@@ -4,12 +4,15 @@ using System.Collections.Generic;
 
 public class Player : MonoBehaviour
 {
+    //player health
     public float sanity;
     public float maxSanity;
     public float minSanity;
     float healthBarLength;
+    //time until can sprint
     private float restTime;
     private float maxRestTime;
+    //time player can sprint
     public float sprintTime;
     public float maxSprintTime;
     public bool playerSlept;
@@ -97,14 +100,18 @@ public class Player : MonoBehaviour
     {
         if (sprintTime > 0)
         {
+            //listent for shift press
             if (Input.GetKey(KeyCode.LeftShift))
             {
+                //make player faster
                 charMotor.movement.maxForwardSpeed = 12;
                 sprintTime -= Time.deltaTime;
+                //play sprint animation
                 this.gameObject.animation.Play("Sprint");
             }
             else if (sprintTime <= maxSprintTime)
             {
+                //recharge sprint time
                 charMotor.movement.maxForwardSpeed = 6;
                 sprintTime += Time.deltaTime;
             }
@@ -131,21 +138,29 @@ public class Player : MonoBehaviour
 
     void Crouch()
     {
+        //listen for button press if not already crouching
         if((Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.LeftCommand)) && !crouching){
             crouching = true;
+            //alter speed
             charMotor.movement.maxForwardSpeed = 3;
+            //alter size
             box.size = new Vector3(1, yHeight / 2, 1);
             controllerBox.height = yHeight / 2;
+            //alter camera position
             Vector3 pos = Camera.main.transform.position;
             Camera.main.transform.position = new Vector3(pos.x, pos.y - .5f, pos.z);
         }
+        //listen for key up
         else if (Input.GetKeyUp(KeyCode.LeftControl) || Input.GetKeyUp(KeyCode.LeftCommand))
         {
             crouching = false;
+            //alter size
             box.size = new Vector3(1, yHeight, 1);
             controllerBox.height = yHeight;
+            //alter camera position
             Vector3 pos = Camera.main.transform.position;
             Camera.main.transform.position = new Vector3(pos.x, pos.y + .5f, pos.z);
+            //move player up to prevent falling through items
             pos = this.transform.position;
             this.transform.position = new Vector3(pos.x, pos.y + yHeight / 3, pos.z);
         }

@@ -4,8 +4,11 @@ using System.Collections.Generic;
 
 public class Useable : MonoBehaviour 
 {
+    //door, dirt, gate, light, chadelier, elevator...
     public UseableType type;
+    //list of items required to use this item
     public List<Item> requiredItems;
+    //reference to player gui
     public GUIWrapper playerGUI;
 
     public bool chandDropped = false;
@@ -25,10 +28,12 @@ public class Useable : MonoBehaviour
 
     public string Interact()
     {
+        //checks that player has all required items
         if (playerGUI.HasItems(requiredItems))
         {
             if (type == UseableType.DOOR)
             {
+                //opens door
                 this.gameObject.GetComponent<DoorInteraction>().DoorKeyOpen();
             }
             else if (type == UseableType.DIRT)
@@ -40,10 +45,12 @@ public class Useable : MonoBehaviour
             }
             else if (type == UseableType.GATE)
             {
+                //ends game
                 Application.LoadLevel("MainMenu");
             }
             else if (type == UseableType.LIGHT)
             {
+                //toggles light
                 Debug.Log("Light");
                 gameObject.GetComponent<Light>().enabled = !gameObject.GetComponent<Light>().enabled;
             }

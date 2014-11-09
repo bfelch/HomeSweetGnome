@@ -2,7 +2,9 @@
 using System.Collections;
 
 public class ItemSlot : MonoBehaviour {
+    //reference to held item
     public Item heldItem;
+    //reference to the gui slot
     public GUISlot gui;
 
 	// Use this for initialization
@@ -19,6 +21,7 @@ public class ItemSlot : MonoBehaviour {
     {
         if (gui.hovering)
         {
+            //if hovering, draw name on mouse position
             Rect box = new Rect(Input.mousePosition.x, Screen.height - Input.mousePosition.y, 100, 30);
             if (heldItem != null)
             {
@@ -33,6 +36,7 @@ public class ItemSlot : MonoBehaviour {
 
     public bool AddItem(Item item)
     {
+        //if no item in slot, add it
         if (heldItem == null)
         {
             heldItem = item;

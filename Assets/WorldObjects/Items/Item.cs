@@ -2,7 +2,9 @@
 using System.Collections;
 
 public class Item : MonoBehaviour {
+    //is this item a key
     public bool isKey;
+    //stored name
     public string name;
 
 	// Use this for initialization

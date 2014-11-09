@@ -28,7 +28,8 @@ public class Blink : MonoBehaviour
     private float playerSanityMax;
 
     private float maxBlinkDisplayTimer = 3f;
-    private float blinkDisplayTimer;
+    private float blinkDisplayTimer = 0f;
+    public Texture2D blinkDisplay;
 
 
     // Use this for initialization
@@ -40,8 +41,6 @@ public class Blink : MonoBehaviour
         player = GameObject.Find("Player");
         playerSanity = gameObject.GetComponent<Player>().sanity;
         playerSanityMax = gameObject.GetComponent<Player>().maxSanity;
-
-        blinkDisplayTimer = maxBlinkDisplayTimer;
 
         //if the game was loaded, do not playing opening scene
         if(PlayerPrefs.GetInt("LoadGame") != 1)
@@ -148,7 +147,26 @@ public class Blink : MonoBehaviour
     void OnGUI() {
         if (!rechargeBlink && blinkDisplayTimer > 0) {
             blinkDisplayTimer -= Time.deltaTime;
-            GUI.Box(new Rect(10, 10, 50, 50), "blink");
+            //save original GUI color
+            Color original = GUI.color;
+            //calculate changing GUI color with changing alpha value
+            Color changing;
+            if (blinkDisplayTimer / maxBlinkDisplayTimer < .25f) {
+                //if below 25%, fade in
+                changing = new Color(GUI.color.r, GUI.color.g, GUI.color.b, (blinkDisplayTimer * 4) / maxBlinkDisplayTimer);
+            } else if (blinkDisplayTimer / maxBlinkDisplayTimer < .75f) {
+                //if between 25% and 75%, keep visible
+                changing = original;
+            } else {
+                //if above 75%, fade out
+                changing = new Color(GUI.color.r, GUI.color.g, GUI.color.b, Mathf.Abs(((blinkDisplayTimer * 4) / maxBlinkDisplayTimer) - 4));
+            }
+            //set GUI color to changing color
+            GUI.color = changing;
+            //draw the texture
+            GUI.DrawTexture(new Rect(10, 10, 100, 100), blinkDisplay);
+            //set GUI color back to original
+            GUI.color = original;
         }
     }
 }

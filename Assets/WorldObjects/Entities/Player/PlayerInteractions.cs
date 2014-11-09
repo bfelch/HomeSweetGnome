@@ -11,14 +11,19 @@ public class PlayerInteractions : MonoBehaviour
     public GameObject activeTarget; //The item being looked at
     public bool canHover = false; //Show the item name being look at?
     public bool notUseable = false;
+    //player movement
     public CharacterMotor charMotor;
+    //horizontal look
     public MouseLook mouseLook;
+    //vertical look
     public MouseLook cameraLook;
     private GameObject lastActiveTarget = null;
 
     private Material outline;
+    //is gui active
     public bool showGUI;
 
+    //reference to gui
     public GUIWrapper playerGUI;
 
     public Texture2D crosshair;
@@ -27,6 +32,7 @@ public class PlayerInteractions : MonoBehaviour
 
     void Start()
     {
+        //sets gui start
         ToggleGUI(showGUI);
         st = gameObject.GetComponent<ShedTutorial>();
         outline = Resources.Load("Outline") as Material;
@@ -43,7 +49,8 @@ public class PlayerInteractions : MonoBehaviour
             Screen.lockCursor = false;
             Time.timeScale = 0.0f;
 
-
+            mouseLook.enabled = false;
+            cameraLook.enabled = false;
         }
     }
 
@@ -54,10 +61,6 @@ public class PlayerInteractions : MonoBehaviour
 
         if (pause)
         {
-            this.GetComponent<MouseLook>().enabled = false;
-            Camera.main.GetComponent<MouseLook>().enabled = false;
-
-            
             GUI.BeginGroup(new Rect(Screen.width / 2 - 150, 100, 300, 250));
             //GUI.Box(new Rect(0, 0,200, 250), "");
 
@@ -66,6 +69,8 @@ public class PlayerInteractions : MonoBehaviour
                 Screen.showCursor = false;
                 Screen.lockCursor = true;
                 Time.timeScale = 1.0f;
+                mouseLook.enabled = true;
+                cameraLook.enabled = true;
                 pause = false;
             }
             if (GUI.Button( new Rect(55, 150, 180, 40), "Main Menu"))
@@ -83,9 +88,6 @@ public class PlayerInteractions : MonoBehaviour
         }
         else
         {
-            this.GetComponent<MouseLook>().enabled = true;
-            Camera.main.GetComponent<MouseLook>().enabled = true;
-
             if (canHover && activeTarget != null && !st.tutorial)
             {
                 //Display item name
@@ -279,6 +281,7 @@ public class PlayerInteractions : MonoBehaviour
 
     void GUIControl()
     {
+        //listen for Q being pressed
         if (Input.GetKeyUp(KeyCode.Q))
         {
             ToggleGUI(!showGUI);
@@ -288,19 +291,23 @@ public class PlayerInteractions : MonoBehaviour
     void ToggleGUI(bool activeGUI)
     {
         showGUI = activeGUI;
+        //activate/deactivate gui
         playerGUI.gameObject.SetActive(showGUI);
 
         if (showGUI && playerGUI.slots != null)
         {
             foreach (ItemSlot slot in playerGUI.slots)
             {
+                //reset rotation for each slot
                 slot.gui.ResetRotation();
             }
 
+            //reset rotation for key ring and energy bar
             playerGUI.keyRing.gui.ResetRotation();
             playerGUI.energyBar.gui.ResetRotation();
         }
 
+        //toggle movements, looking, cursor
         charMotor.enabled = !showGUI;
         mouseLook.enabled = !showGUI;
         cameraLook.enabled = !showGUI;

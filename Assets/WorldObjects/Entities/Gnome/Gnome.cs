@@ -56,20 +56,19 @@ public class Gnome : MonoBehaviour
         }
         else
         {
-            if (!SeenByPlayer() && !trapped && !pushed)
-            {
-                if (TargetInRange())
-                {
-                    //Do pathing
+            //if not on screen, trapped, or pushed
+            if (!SeenByPlayer() && !trapped && !pushed) {
+                if (TargetInRange()) {
+                    //if player in range
                     FollowPlayer();
-                }
-                else
-                {
+                } else {
+                    //if player not in range
                     Wander();
                 }
             }
             else
             {
+                //prevent movement
                 agent.speed = 0;
             }
         }
@@ -78,18 +77,25 @@ public class Gnome : MonoBehaviour
 
     private void FollowPlayer()
     {
+        //set last know location of player
         lastKnownLocation = target.transform.position;
+        //set destination
         agent.SetDestination(lastKnownLocation);
-        if (targetBlink.blink)
+        if (targetBlink.blink) {
+            //if player is blinking move super fast
             agent.speed = blinkSpeed;
-        else
+        } else {
+            //move at normal speed
             agent.speed = moveSpeed;
+        }
     }
 
     private void Wander()
     {
+        //if done with current path
         if (agent.pathStatus == NavMeshPathStatus.PathComplete || agent.pathStatus == NavMeshPathStatus.PathInvalid)
         {
+            //find new destination
             float targetX = Random.Range(transform.position.x - (sightRange / 2), transform.position.x + (sightRange / 2));
             float targetZ = Random.Range(transform.position.z - (sightRange / 2), transform.position.z + (sightRange / 2));
             Vector3 targetPos = new Vector3(targetX, 0, targetZ);
@@ -105,22 +111,26 @@ public class Gnome : MonoBehaviour
 
     private bool TargetInRange() 
     {
+        //checks distance between player and gnome
         return Vector3.Distance(transform.position, target.transform.position) < sightRange;
     }
 
     public bool SeenByPlayer()
     {
+        //sets viewport coordinates
         bool isSeen;
         Vector3 viewportPos = Camera.main.WorldToViewportPoint(transform.position);
         float viewportX = viewportPos.x;
         float viewportY = viewportPos.y;
         float viewportZ = viewportPos.z;
 
+        //adjusts for tolerance
         float tolerance = 0.2f;
         float lowBound = -tolerance;
         float highBound = 1.0f + tolerance;
         float zBound = -tolerance;
 
+        //checks for gnomes in view
         isSeen = (viewportX >= lowBound && viewportX <= highBound);
         isSeen = isSeen && (viewportY >= lowBound && viewportY <= highBound);
         isSeen = isSeen && viewportZ > zBound;
