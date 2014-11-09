@@ -30,6 +30,9 @@ public class Gnome : MonoBehaviour
     //Dirt Spawner object
     public GameObject dirtSpawner;
 
+	//Shatter Effect Prefab
+	public GameObject shatterEffect;
+
     void Start()
     {
         QualitySettings.antiAliasing = 4;
@@ -217,10 +220,11 @@ public class Gnome : MonoBehaviour
 		}
         else if(other.tag == "DropTrap")
         {
+			//Emit particle effect at shatter location
+			Instantiate(shatterEffect, new Vector3(transform.position.x, transform.position.y - 0.8F, transform.position.z), shatterEffect.transform.rotation);
+
             //Crush the gnome
             Destroy(this.gameObject);
-
-            //Emit particle effect here
         }
 	}
 }
