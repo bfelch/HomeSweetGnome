@@ -1,12 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class GUIDamage : MonoBehaviour {
-
+public class GUIDamage : MonoBehaviour 
+{
     public Texture damageOne;
-    private bool enterCollider = false;
-    public float damageTimer = 10;
-    private float maxDamageTimer = 10;
+	public bool enterCollider = false;
+    public float damageTimer = 20;
+    private float maxDamageTimer = 20;
     private bool deathSleep = false;
     private bool deathFall = false;
 
@@ -27,7 +27,8 @@ public class GUIDamage : MonoBehaviour {
     }
 	
 	// Update is called once per frame
-	void Update () {
+	void Update () 
+	{
         //check if the damage timer is greater than 0
         if (damageTimer >= 0)
         {
@@ -56,9 +57,7 @@ public class GUIDamage : MonoBehaviour {
 
         //get the death variables from player
         deathFall = GameObject.Find("Player").GetComponent<Player>().playerFell;
-        deathSleep = GameObject.Find("Player").GetComponent<Player>().playerSlept;
-
-
+		deathSleep = GameObject.Find ("Player").GetComponent<Player> ().playerSlept;
 	}
 
     void OnGUI()

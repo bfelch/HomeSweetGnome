@@ -177,9 +177,7 @@ public class Gnome : MonoBehaviour
     }
 
 	void Stand()
-	{
-		Debug.Log("Stand");
-		
+	{	
 		//Gnome is no longer pushed
 		pushed = false;
 		
