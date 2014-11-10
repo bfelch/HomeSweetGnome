@@ -69,6 +69,7 @@
      <Compile Include="Assets\WorldObjects\Entities\Player\PlayerInteractions.cs" />
      <Compile Include="Assets\WorldObjects\Environment\Lightning\lightningFlash.cs" />
      <Compile Include="Assets\WorldObjects\Environment\Lightning\weatherScript.cs" />
+     <Compile Include="Assets\WorldObjects\Environment\Peninsula\Floater.cs" />
      <Compile Include="Assets\WorldObjects\Environment\Rain\followPlayer.cs" />
      <Compile Include="Assets\WorldObjects\Environment\Traps\chandStuff.cs" />
      <Compile Include="Assets\WorldObjects\Environment\Traps\shatterScript.cs" />
