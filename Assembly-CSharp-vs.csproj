@@ -72,7 +72,8 @@
      <Compile Include="Assets\WorldObjects\Environment\Peninsula\Floater.cs" />
      <Compile Include="Assets\WorldObjects\Environment\Rain\followPlayer.cs" />
      <Compile Include="Assets\WorldObjects\Environment\Traps\chandStuff.cs" />
-     <Compile Include="Assets\WorldObjects\Environment\Traps\shatterScript.cs" />
+     <Compile Include="Assets\WorldObjects\Environment\Traps\dirtStuff.cs" />
+     <Compile Include="Assets\WorldObjects\Environment\Traps\particleDeleter.cs" />
      <Compile Include="Assets\WorldObjects\Items\Item.cs" />
      <Compile Include="Assets\WorldObjects\Items\Nodes\Node.cs" />
      <Compile Include="Assets\WorldObjects\Items\Nodes\NodeWrapper.cs" />

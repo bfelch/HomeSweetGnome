@@ -1,6 +1,13 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\WorldObjects\Environment\Traps\dirtStuff.cs">
+    <Files>
+      <File FileName="Assets\WorldObjects\Structures\Useable.cs" Line="42" Column="16" />
+      <File FileName="Assets\WorldObjects\Items\Nodes\NodeWrapper.cs" Line="1" Column="1" />
+      <File FileName="Assets\WorldObjects\Environment\Traps\dirtStuff.cs" Line="8" Column="70" />
+      <File FileName="Assets\WorldObjects\Entities\Gnome\Gnome.cs" Line="221" Column="21" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

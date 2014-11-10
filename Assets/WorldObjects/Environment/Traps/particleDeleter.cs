@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class shatterScript : MonoBehaviour 
+public class particleDeleter : MonoBehaviour 
 {
 	private float timer = 0.0F; //Counter
 	private float deleteTime = 5.0F; //Time to delete object

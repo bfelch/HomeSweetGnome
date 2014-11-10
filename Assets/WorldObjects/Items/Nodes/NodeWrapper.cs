@@ -2,7 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class NodeWrapper : MonoBehaviour {
+public class NodeWrapper : MonoBehaviour 
+{
     //list of all nodes in world
     public List<Node> nodeList;
     //list of items that spawn in nodes
@@ -10,13 +11,17 @@ public class NodeWrapper : MonoBehaviour {
     public bool newGame;
 
 	// Use this for initialization
-	void Start () {
+	void Start () 
+	{
         //if starting new game, spawns items
-        if (newGame) {
-            foreach (Item item in itemList) {
+        if (newGame) 
+		{
+            foreach (Item item in itemList) 
+			{
                 //for each item, find empty node that allows item
                 Node node;
-                do {
+                do 
+				{
                     int index = Random.Range(0, nodeList.Count);
                     node = nodeList[index];
                 } while (node.hasItem || node.IsRestrictedItem(item.gameObject));
@@ -28,7 +33,8 @@ public class NodeWrapper : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update () 
+	{
 	
 	}
 }
