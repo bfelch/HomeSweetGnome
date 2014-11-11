@@ -6,54 +6,52 @@ public class Gargoyle : MonoBehaviour
 	public float rotateSpeed = 0.2f; //How fast the spotlight rotates
 	private float switchTimer = 0.0f;
 	public float switchTime = 8.0f; //How long before the spotlight switches directions
-	private float oldTime = 0.0f;
-    public float screechTime = 2.0f; //How long the screech lasts
 	private bool lookRight = false; //Direction of the spotlight
 	private GameObject player; //Player game object
 	private bool screeching = false; //Is the gargoyle screeching?
-    private bool adjusting = false;
-
-	public AudioClip screechSound;
-
-	private GameObject eyeLight;
-	private cameraShake shakeScript;
-	private Vector3 offset;
-	private Transform playerTrans;
-	private Transform eyeLightTrans;
-	private Quaternion eyeLightOrigin;
-
+	private bool adjusting = false; //Gargoyle is adjusting
+	
+	public AudioClip screechSound; //Sreeching sound
+	
+	public Transform target; //Target to look at
+	private float damping = 6.0F; //How fast to look at target
+	private bool smooth = true;
+	private Quaternion initialRot; //For gargoyle adjust
+	private GameObject activeTarget; //The object being looked at
+	private bool targetLost = false; //Is the play within view?
+	private float timeLost = 0.0F; //Counter to break line of sight
+	
+	private GameObject eyeLight; //To change eye light color
+	private cameraShake shakeScript; //Script to shake camera
+	
 	// Use this for initialization
 	void Start () 
 	{
 		player = GameObject.FindGameObjectWithTag("Player");
-		eyeLight = transform.Find("Spotlight").gameObject;
+		eyeLight = transform.Find ("Spotlight").gameObject;
 		shakeScript = player.GetComponentInChildren<cameraShake>();
-
-		//Cache the transform properties
-		playerTrans = player.transform;
-		eyeLightTrans = eyeLight.transform;
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
-        //Gargoyle is not screeching; look around
-        if (!screeching && !adjusting)
-        {
-            LookAround();
-        }
-        //Gargoyle is screeching; screech
-        else if (screeching)
-        {
-            Screech();
-        }
-        else
-        {
-            Adjust();
-        }
+		//Gargoyle is not screeching; look around
+		if (!screeching && !adjusting)
+		{
+			LookAround();
+		}
+		//Gargoyle is screeching; screech
+		else if (screeching)
+		{
+			Screech();
+		}
+		else
+		{
+			Adjust();
+		}
 	}
-
-    //Looks back and forth
+	
+	//Looks back and forth
 	void LookAround()
 	{
 		if(switchTimer > switchTime)
@@ -65,7 +63,7 @@ public class Gargoyle : MonoBehaviour
 		{
 			switchTimer += Time.deltaTime;
 		}
-
+		
 		if(lookRight == true)
 		{
 			transform.Rotate(Vector3.up * rotateSpeed);
@@ -75,70 +73,119 @@ public class Gargoyle : MonoBehaviour
 			transform.Rotate(Vector3.down * rotateSpeed);
 		}
 	}
-
-    //Screech at the player
+	
+	//Screech at the player
 	void Screech()
-	{
-		eyeLightTrans.rotation = Quaternion.Lerp(eyeLightTrans.rotation, Quaternion.LookRotation(offset), Time.deltaTime * 2);
-
-		//Stop the player's movement and camera
-        player.GetComponent<CharacterMotor>().enabled = false;
-        player.GetComponent<MouseLook>().enabled = false;
-
+	{	
+		if(target) 
+		{
+			if(smooth)
+			{
+				// Look at and dampen the rotation
+				Quaternion rotation = Quaternion.LookRotation(target.position - transform.position);
+				transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * damping);
+			}
+			else
+			{
+				// Just lookat
+				transform.LookAt(target);
+			}
+		}
+		
 		//Blur the player's camera view
-		player.GetComponentInChildren<BlurEffect>().enabled = true;
-
-        //Decreases the player's energy
-        player.GetComponent<Player>().sanity -= 0.2f;
-
-        //Enable the player's movement and camera
-        if (Time.time > oldTime + screechTime)
-        {
-			//Enable the player controls
-            player.GetComponent<CharacterMotor>().enabled = true;
-            player.GetComponent<MouseLook>().enabled = true;
-
+		//player.GetComponentInChildren<BlurEffect>().enabled = true;
+		
+		//Decreases the player's energy
+		player.GetComponent<Player>().sanity -= 0.1f;
+		
+		//Decrease the players speed
+		player.GetComponent<Player>().charMotor.movement.maxForwardSpeed = 3;
+		
+		//Enemy layer mask
+		int enemyLayer = 9;
+		int enemyMask = 1 << enemyLayer;
+		
+		//Invert bitmask to only ignore this layer
+		enemyMask = ~enemyMask;		
+		
+		RaycastHit hit;
+		Debug.DrawRay(transform.position, transform.forward * 20, Color.white);
+		
+		if(Physics.Raycast(transform.position, transform.forward, out hit, 20, enemyMask))
+		{
+			activeTarget = hit.collider.gameObject; //Store item being looked at
+			Debug.Log(activeTarget.name);
+			
+			//Is the item close and a pick up?
+			if(activeTarget.tag == "Player")
+			{
+				//Reset time lost
+				timeLost = 0.0F;
+			}
+			else
+			{
+				//Increase time lost
+				timeLost += 1.0F * Time.deltaTime;
+				
+				if(timeLost >= 1.0F)
+				{
+					//Player not in line of sight
+					targetLost = true;
+				}
+			}
+		}
+		
+		//Is the player far enough away or behind another object?
+		if(Vector3.Distance (target.position, transform.position) >= 20.0F || targetLost)
+		{
+			//Fix player speed
+			player.GetComponent<Player>().charMotor.movement.maxForwardSpeed = 6;
+			
 			//Remove the blur
-			player.GetComponentInChildren<BlurEffect> ().enabled = false;
-
+			//player.GetComponentInChildren<BlurEffect> ().enabled = false;
+			
+			//Change gargoyle light color
 			eyeLight.light.color = Color.yellow;
-
-            screeching = false;
-            adjusting = true;
-        }
+			
+			//No longer alerted, adjust to normal scouting rotation
+			timeLost = 0.0F;
+			targetLost = false;
+			screeching = false;
+			adjusting = true;
+		}
 	}
-     void Adjust()
-    {
-        eyeLightTrans.rotation = Quaternion.Lerp(eyeLightTrans.rotation, eyeLightOrigin, Time.deltaTime * 2);
-
-        if(eyeLightTrans.rotation == eyeLightOrigin)
-        {
-            adjusting = false;
-        }
-    }
-
-    //Has an object entered the spotlight?
+	
+	void Adjust()
+	{
+		transform.rotation = Quaternion.Lerp(transform.rotation, initialRot, Time.deltaTime * 2);
+		
+		if(transform.rotation == initialRot)
+		{
+			adjusting = false;
+		}
+	}
+	
+	//Has an object entered the spotlight?
 	void OnTriggerEnter(Collider other)
 	{
-        //Is the object the player?
+		//Is the object the player?
 		if(other.gameObject == player && !adjusting && !screeching)
 		{   
+			//Grab players transform
+			target = other.gameObject.transform;
+			
 			//Store starting rotation
-			eyeLightOrigin = eyeLightTrans.rotation;
-
-			//Find the offset between the spotlight and player
-			offset = playerTrans.position - eyeLightTrans.position;
-
+			initialRot = transform.rotation;
+			
 			//Trigger the cameraShake
 			shakeScript.CameraShake();
-
-            //Start screeching
-            screeching = true;
-            oldTime = Time.time;
-
-            //Chance color red
+			
+			//Start screeching
+			screeching = true;
+			
+			//Change color red
 			eyeLight.light.color = Color.red;
-
+			
 			//Play screech sound
 			audio.PlayOneShot(screechSound);
 		}

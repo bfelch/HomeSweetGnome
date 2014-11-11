@@ -1,5 +1,5 @@
 Base path: C:/Program Files (x86)/Unity/Editor/Data
-Pipe name: \\.\pipe\UnityShaderCompiler-1-6496
+Pipe name: \\.\pipe\UnityShaderCompiler-1-15680
 Cmd: getPlatforms
 Cmd: preprocess
   insize=9613 outsize=2432 ok=1
@@ -145,3 +145,55 @@ Cmd: preprocess
   insize=5533 outsize=943 ok=1
 Cmd: preprocess
   insize=1808 outsize=713 ok=1
+Cmd: compileSnippet
+  api=0 type=0 insize=3359 outsize=743 kw=WATER_REFRACTIVE ok=1
+Cmd: compileSnippet
+  api=8 type=0 insize=3359 outsize=3072 kw=WATER_REFLECTIVE ok=1
+Cmd: compileSnippet
+  api=0 type=1 insize=3359 outsize=1055 kw=WATER_REFRACTIVE ok=1
+Cmd: compileSnippet
+  api=8 type=1 insize=3359 outsize=3860 kw=WATER_REFLECTIVE ok=1
+Cmd: compileSnippet
+  api=0 type=0 insize=10220 outsize=6429 kw=WATER_REFLECTIVE WATER_VERTEX_DISPLACEMENT_ON WATER_EDGEBLEND_ON ok=1
+Cmd: compileSnippet
+  api=0 type=0 insize=10220 outsize=4140 kw=WATER_REFLECTIVE WATER_EDGEBLEND_ON WATER_VERTEX_DISPLACEMENT_OFF ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=10220 outsize=2720 kw=WATER_SIMPLE WATER_EDGEBLEND_ON WATER_VERTEX_DISPLACEMENT_OFF ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=10220 outsize=2720 kw=WATER_REFLECTIVE WATER_EDGEBLEND_OFF WATER_VERTEX_DISPLACEMENT_OFF ok=1
+Cmd: compileSnippet
+  api=0 type=1 insize=10220 outsize=6 kw=WATER_REFLECTIVE WATER_VERTEX_DISPLACEMENT_ON WATER_EDGEBLEND_ON ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=10220 outsize=5507 kw=WATER_SIMPLE WATER_VERTEX_DISPLACEMENT_ON WATER_EDGEBLEND_ON ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=10220 outsize=5897 kw=WATER_REFLECTIVE WATER_EDGEBLEND_ON WATER_VERTEX_DISPLACEMENT_OFF ok=1
+Cmd: compileSnippet
+  api=1 type=1 insize=10220 outsize=1414 kw=WATER_SIMPLE WATER_EDGEBLEND_OFF WATER_VERTEX_DISPLACEMENT_OFF ok=1
+Cmd: compileSnippet
+  api=0 type=0 insize=10224 outsize=5120 kw=WATER_REFLECTIVE WATER_VERTEX_DISPLACEMENT_ON WATER_EDGEBLEND_ON ok=1
+Cmd: compileSnippet
+  api=0 type=0 insize=10224 outsize=2850 kw=WATER_REFLECTIVE WATER_EDGEBLEND_ON WATER_VERTEX_DISPLACEMENT_OFF ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=10224 outsize=2330 kw=WATER_SIMPLE WATER_EDGEBLEND_ON WATER_VERTEX_DISPLACEMENT_OFF ok=1
+Cmd: compileSnippet
+  api=1 type=0 insize=10224 outsize=484 kw=WATER_REFLECTIVE WATER_EDGEBLEND_OFF WATER_VERTEX_DISPLACEMENT_OFF ok=1
+Cmd: compileSnippet
+  api=0 type=1 insize=10224 outsize=6 kw=WATER_REFLECTIVE WATER_VERTEX_DISPLACEMENT_ON WATER_EDGEBLEND_ON ok=1
+Cmd: compileSnippet
+  api=0 type=1 insize=10224 outsize=6 kw=WATER_REFLECTIVE WATER_VERTEX_DISPLACEMENT_ON WATER_EDGEBLEND_OFF ok=1
+Cmd: compileSnippet
+  api=1 type=1 insize=10224 outsize=1339 kw=WATER_REFLECTIVE WATER_EDGEBLEND_ON WATER_VERTEX_DISPLACEMENT_OFF ok=1
+Cmd: compileSnippet
+  api=0 type=1 insize=10224 outsize=6 kw=WATER_REFLECTIVE WATER_EDGEBLEND_OFF WATER_VERTEX_DISPLACEMENT_OFF ok=1
+Cmd: compileSnippet
+  api=0 type=1 insize=10224 outsize=6 kw=WATER_SIMPLE WATER_EDGEBLEND_OFF WATER_VERTEX_DISPLACEMENT_OFF ok=1
+Cmd: compileSnippet
+  api=0 type=0 insize=9966 outsize=566 kw= ok=1
+Cmd: compileSnippet
+  api=0 type=1 insize=9966 outsize=1094 kw= ok=1
+Cmd: compileSnippet
+  api=0 type=0 insize=1294 outsize=630 kw= ok=1
+Cmd: compileSnippet
+  api=0 type=1 insize=1294 outsize=402 kw= ok=1
+Cmd: compileSnippet
+  api=0 type=0 insize=925 outsize=635 kw= ok=1
