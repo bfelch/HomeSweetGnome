@@ -1,0 +1,138 @@
+fileFormatVersion: 2
+guid: 0644c2588aa99dd4c843efcdbc41a614
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: book
+    100002: book1
+    100004: computer
+    100006: flowerpot1
+    100008: keyboard1
+    100010: keyboard_cord
+    100012: monitor
+    100014: mouse
+    100016: mouse_cord
+    100018: mouse_pad
+    100020: plant1:Desk
+    100022: plant1:flowerpot:flowerpot2:leafyTwig3Main
+    100024: plant1:flowerpot:flowerpot5:leafyTwig3Leaf
+    100026: plant1:plant
+    100028: //RootNode
+    400000: book
+    400002: book1
+    400004: computer
+    400006: flowerpot1
+    400008: keyboard1
+    400010: keyboard_cord
+    400012: monitor
+    400014: mouse
+    400016: mouse_cord
+    400018: mouse_pad
+    400020: plant1:Desk
+    400022: plant1:flowerpot:flowerpot2:leafyTwig3Main
+    400024: plant1:flowerpot:flowerpot5:leafyTwig3Leaf
+    400026: plant1:plant
+    400028: //RootNode
+    2300000: book
+    2300002: book1
+    2300004: computer
+    2300006: flowerpot1
+    2300008: keyboard1
+    2300010: keyboard_cord
+    2300012: monitor
+    2300014: mouse
+    2300016: mouse_cord
+    2300018: mouse_pad
+    2300020: plant1:flowerpot:flowerpot2:leafyTwig3Main
+    2300022: plant1:flowerpot:flowerpot5:leafyTwig3Leaf
+    3300000: book
+    3300002: book1
+    3300004: computer
+    3300006: flowerpot1
+    3300008: keyboard1
+    3300010: keyboard_cord
+    3300012: monitor
+    3300014: mouse
+    3300016: mouse_cord
+    3300018: mouse_pad
+    3300020: plant1:flowerpot:flowerpot2:leafyTwig3Main
+    3300022: plant1:flowerpot:flowerpot5:leafyTwig3Leaf
+    4300000: book1
+    4300002: book
+    4300004: mouse
+    4300006: mouse_cord
+    4300008: flowerpot1
+    4300010: mouse_pad
+    4300012: keyboard_cord
+    4300014: keyboard1
+    4300016: computer
+    4300018: monitor
+    4300020: plant1:flowerpot:flowerpot2:leafyTwig3Main
+    4300022: plant1:flowerpot:flowerpot5:leafyTwig3Leaf
+    6400000: book
+    6400002: book1
+    6400004: computer
+    6400006: flowerpot1
+    6400008: keyboard1
+    6400010: keyboard_cord
+    6400012: monitor
+    6400014: mouse
+    6400016: mouse_cord
+    6400018: mouse_pad
+    6400020: plant1:flowerpot:flowerpot2:leafyTwig3Main
+    6400022: plant1:flowerpot:flowerpot5:leafyTwig3Leaf
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .0549999997
+    meshCompression: 0
+    addColliders: 1
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 

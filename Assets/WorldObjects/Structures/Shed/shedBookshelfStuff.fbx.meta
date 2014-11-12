@@ -1,0 +1,904 @@
+fileFormatVersion: 2
+guid: f01c76aa5ea4ce546b5bcf2f8ff013d4
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: book10
+    100002: book10 1
+    100004: book10 2
+    100006: book10 3
+    100008: book11
+    100010: book11 1
+    100012: book11 2
+    100014: book11 3
+    100016: book11 4
+    100018: book11 5
+    100020: book11 6
+    100022: book11 7
+    100024: book12
+    100026: book12 1
+    100028: book12 2
+    100030: book12 3
+    100032: book12 4
+    100034: book12 5
+    100036: book12 6
+    100038: book12 7
+    100040: book13
+    100042: book13 1
+    100044: book13 2
+    100046: book13 3
+    100048: book13 4
+    100050: book13 5
+    100052: book13 6
+    100054: book13 7
+    100056: book13 8
+    100058: book14
+    100060: book14 1
+    100062: book14 2
+    100064: book14 3
+    100066: book15
+    100068: book16
+    100070: book17
+    100072: book18
+    100074: book19
+    100076: book2
+    100078: book2 1
+    100080: book2 2
+    100082: book20
+    100084: book21
+    100086: book22
+    100088: book23
+    100090: book24
+    100092: book25
+    100094: book26
+    100096: book27
+    100098: book28
+    100100: book29
+    100102: book3
+    100104: book3 1
+    100106: book3 2
+    100108: book3 3
+    100110: book3 4
+    100112: book3 5
+    100114: book3 6
+    100116: book3 7
+    100118: book30
+    100120: book31
+    100122: book32
+    100124: book4
+    100126: book4 1
+    100128: book4 2
+    100130: book4 3
+    100132: book4 4
+    100134: book4 5
+    100136: book4 6
+    100138: book5
+    100140: book5 1
+    100142: book5 2
+    100144: book5 3
+    100146: book5 4
+    100148: book5 5
+    100150: book5 6
+    100152: book5 7
+    100154: book5 8
+    100156: book6
+    100158: book6 1
+    100160: book6 2
+    100162: book6 3
+    100164: book6 4
+    100166: book6 5
+    100168: book6 6
+    100170: book6 7
+    100172: book7
+    100174: book7 1
+    100176: book7 2
+    100178: book7 3
+    100180: book7 4
+    100182: book7 5
+    100184: book7 6
+    100186: book7 7
+    100188: book7 8
+    100190: book8
+    100192: book8 1
+    100194: book8 2
+    100196: book8 3
+    100198: book8 4
+    100200: book8 5
+    100202: book8 6
+    100204: book8 7
+    100206: book8 8
+    100208: book9
+    100210: book9 1
+    100212: book9 2
+    100214: book9 3
+    100216: book9 4
+    100218: book9 5
+    100220: book9 6
+    100222: book9 7
+    100224: book9 8
+    100226: book9 9
+    100228: Books
+    100230: Books 1
+    100232: Books 2
+    100234: Books1
+    100236: Books1 1
+    100238: Books1 2
+    100240: Books2
+    100242: Books2 1
+    100244: Books2 2
+    100246: Books3
+    100248: bookshelfbooks
+    100250: bookshelfbooks1
+    100252: bookshelfbooks2
+    100254: flowerplant:Bookshelf
+    100256: flowerplant:hyacinth1Flower
+    100258: flowerplant:hyacinth1Leaf
+    100260: flowerplant:hyacinth1Main
+    100262: flowerplant:hyacinth1MeshGroup
+    100264: flowerplant:plant_2
+    100266: flowerpot2
+    100268: flowerpot3
+    100270: flowerpot4
+    100272: flowerpot:book11
+    100274: flowerpot:book12
+    100276: flowerpot:book13
+    100278: flowerpot:book3
+    100280: flowerpot:book4
+    100282: flowerpot:book5
+    100284: flowerpot:book6
+    100286: flowerpot:book7
+    100288: flowerpot:book8
+    100290: flowerpot:book9
+    100292: hyacinth1MeshGroup
+    100294: plant_2
+    100296: plant_3
+    100298: //RootNode
+    100300: strokeHyacinth1
+    100302: topshelf
+    100304: topshelf1
+    100306: vineplant:Bookshelf
+    100308: vineplant:plant_3
+    100310: vineplant:vineLeafy1Leaf
+    100312: vineplant:vineLeafy1Main
+    100314: vineplant:vineLeafy1MeshGroup
+    400000: book10
+    400002: book10 1
+    400004: book10 2
+    400006: book10 3
+    400008: book11
+    400010: book11 1
+    400012: book11 2
+    400014: book11 3
+    400016: book11 4
+    400018: book11 5
+    400020: book11 6
+    400022: book11 7
+    400024: book12
+    400026: book12 1
+    400028: book12 2
+    400030: book12 3
+    400032: book12 4
+    400034: book12 5
+    400036: book12 6
+    400038: book12 7
+    400040: book13
+    400042: book13 1
+    400044: book13 2
+    400046: book13 3
+    400048: book13 4
+    400050: book13 5
+    400052: book13 6
+    400054: book13 7
+    400056: book13 8
+    400058: book14
+    400060: book14 1
+    400062: book14 2
+    400064: book14 3
+    400066: book15
+    400068: book16
+    400070: book17
+    400072: book18
+    400074: book19
+    400076: book2
+    400078: book2 1
+    400080: book2 2
+    400082: book20
+    400084: book21
+    400086: book22
+    400088: book23
+    400090: book24
+    400092: book25
+    400094: book26
+    400096: book27
+    400098: book28
+    400100: book29
+    400102: book3
+    400104: book3 1
+    400106: book3 2
+    400108: book3 3
+    400110: book3 4
+    400112: book3 5
+    400114: book3 6
+    400116: book3 7
+    400118: book30
+    400120: book31
+    400122: book32
+    400124: book4
+    400126: book4 1
+    400128: book4 2
+    400130: book4 3
+    400132: book4 4
+    400134: book4 5
+    400136: book4 6
+    400138: book5
+    400140: book5 1
+    400142: book5 2
+    400144: book5 3
+    400146: book5 4
+    400148: book5 5
+    400150: book5 6
+    400152: book5 7
+    400154: book5 8
+    400156: book6
+    400158: book6 1
+    400160: book6 2
+    400162: book6 3
+    400164: book6 4
+    400166: book6 5
+    400168: book6 6
+    400170: book6 7
+    400172: book7
+    400174: book7 1
+    400176: book7 2
+    400178: book7 3
+    400180: book7 4
+    400182: book7 5
+    400184: book7 6
+    400186: book7 7
+    400188: book7 8
+    400190: book8
+    400192: book8 1
+    400194: book8 2
+    400196: book8 3
+    400198: book8 4
+    400200: book8 5
+    400202: book8 6
+    400204: book8 7
+    400206: book8 8
+    400208: book9
+    400210: book9 1
+    400212: book9 2
+    400214: book9 3
+    400216: book9 4
+    400218: book9 5
+    400220: book9 6
+    400222: book9 7
+    400224: book9 8
+    400226: book9 9
+    400228: Books
+    400230: Books 1
+    400232: Books 2
+    400234: Books1
+    400236: Books1 1
+    400238: Books1 2
+    400240: Books2
+    400242: Books2 1
+    400244: Books2 2
+    400246: Books3
+    400248: bookshelfbooks
+    400250: bookshelfbooks1
+    400252: bookshelfbooks2
+    400254: flowerplant:Bookshelf
+    400256: flowerplant:hyacinth1Flower
+    400258: flowerplant:hyacinth1Leaf
+    400260: flowerplant:hyacinth1Main
+    400262: flowerplant:hyacinth1MeshGroup
+    400264: flowerplant:plant_2
+    400266: flowerpot2
+    400268: flowerpot3
+    400270: flowerpot4
+    400272: flowerpot:book11
+    400274: flowerpot:book12
+    400276: flowerpot:book13
+    400278: flowerpot:book3
+    400280: flowerpot:book4
+    400282: flowerpot:book5
+    400284: flowerpot:book6
+    400286: flowerpot:book7
+    400288: flowerpot:book8
+    400290: flowerpot:book9
+    400292: hyacinth1MeshGroup
+    400294: plant_2
+    400296: plant_3
+    400298: //RootNode
+    400300: strokeHyacinth1
+    400302: topshelf
+    400304: topshelf1
+    400306: vineplant:Bookshelf
+    400308: vineplant:plant_3
+    400310: vineplant:vineLeafy1Leaf
+    400312: vineplant:vineLeafy1Main
+    400314: vineplant:vineLeafy1MeshGroup
+    2300000: book10
+    2300002: book10 1
+    2300004: book10 2
+    2300006: book10 3
+    2300008: book11
+    2300010: book11 1
+    2300012: book11 2
+    2300014: book11 3
+    2300016: book11 4
+    2300018: book11 5
+    2300020: book11 6
+    2300022: book11 7
+    2300024: book12
+    2300026: book12 1
+    2300028: book12 2
+    2300030: book12 3
+    2300032: book12 4
+    2300034: book12 5
+    2300036: book12 6
+    2300038: book12 7
+    2300040: book13
+    2300042: book13 1
+    2300044: book13 2
+    2300046: book13 3
+    2300048: book13 4
+    2300050: book13 5
+    2300052: book13 6
+    2300054: book13 7
+    2300056: book13 8
+    2300058: book14
+    2300060: book14 1
+    2300062: book14 2
+    2300064: book14 3
+    2300066: book15
+    2300068: book16
+    2300070: book17
+    2300072: book18
+    2300074: book19
+    2300076: book2
+    2300078: book2 1
+    2300080: book2 2
+    2300082: book20
+    2300084: book21
+    2300086: book22
+    2300088: book23
+    2300090: book24
+    2300092: book25
+    2300094: book26
+    2300096: book27
+    2300098: book28
+    2300100: book29
+    2300102: book3
+    2300104: book3 1
+    2300106: book3 2
+    2300108: book3 3
+    2300110: book3 4
+    2300112: book3 5
+    2300114: book3 6
+    2300116: book3 7
+    2300118: book30
+    2300120: book31
+    2300122: book32
+    2300124: book4
+    2300126: book4 1
+    2300128: book4 2
+    2300130: book4 3
+    2300132: book4 4
+    2300134: book4 5
+    2300136: book4 6
+    2300138: book5
+    2300140: book5 1
+    2300142: book5 2
+    2300144: book5 3
+    2300146: book5 4
+    2300148: book5 5
+    2300150: book5 6
+    2300152: book5 7
+    2300154: book5 8
+    2300156: book6
+    2300158: book6 1
+    2300160: book6 2
+    2300162: book6 3
+    2300164: book6 4
+    2300166: book6 5
+    2300168: book6 6
+    2300170: book6 7
+    2300172: book7
+    2300174: book7 1
+    2300176: book7 2
+    2300178: book7 3
+    2300180: book7 4
+    2300182: book7 5
+    2300184: book7 6
+    2300186: book7 7
+    2300188: book7 8
+    2300190: book8
+    2300192: book8 1
+    2300194: book8 2
+    2300196: book8 3
+    2300198: book8 4
+    2300200: book8 5
+    2300202: book8 6
+    2300204: book8 7
+    2300206: book8 8
+    2300208: book9
+    2300210: book9 1
+    2300212: book9 2
+    2300214: book9 3
+    2300216: book9 4
+    2300218: book9 5
+    2300220: book9 6
+    2300222: book9 7
+    2300224: book9 8
+    2300226: book9 9
+    2300228: flowerplant:hyacinth1Flower
+    2300230: flowerplant:hyacinth1Leaf
+    2300232: flowerplant:hyacinth1Main
+    2300234: flowerpot2
+    2300236: flowerpot3
+    2300238: flowerpot4
+    2300240: flowerpot:book11
+    2300242: flowerpot:book12
+    2300244: flowerpot:book13
+    2300246: flowerpot:book3
+    2300248: flowerpot:book4
+    2300250: flowerpot:book5
+    2300252: flowerpot:book6
+    2300254: flowerpot:book7
+    2300256: flowerpot:book8
+    2300258: flowerpot:book9
+    2300260: vineplant:vineLeafy1Leaf
+    2300262: vineplant:vineLeafy1Main
+    3300000: book10
+    3300002: book10 1
+    3300004: book10 2
+    3300006: book10 3
+    3300008: book11
+    3300010: book11 1
+    3300012: book11 2
+    3300014: book11 3
+    3300016: book11 4
+    3300018: book11 5
+    3300020: book11 6
+    3300022: book11 7
+    3300024: book12
+    3300026: book12 1
+    3300028: book12 2
+    3300030: book12 3
+    3300032: book12 4
+    3300034: book12 5
+    3300036: book12 6
+    3300038: book12 7
+    3300040: book13
+    3300042: book13 1
+    3300044: book13 2
+    3300046: book13 3
+    3300048: book13 4
+    3300050: book13 5
+    3300052: book13 6
+    3300054: book13 7
+    3300056: book13 8
+    3300058: book14
+    3300060: book14 1
+    3300062: book14 2
+    3300064: book14 3
+    3300066: book15
+    3300068: book16
+    3300070: book17
+    3300072: book18
+    3300074: book19
+    3300076: book2
+    3300078: book2 1
+    3300080: book2 2
+    3300082: book20
+    3300084: book21
+    3300086: book22
+    3300088: book23
+    3300090: book24
+    3300092: book25
+    3300094: book26
+    3300096: book27
+    3300098: book28
+    3300100: book29
+    3300102: book3
+    3300104: book3 1
+    3300106: book3 2
+    3300108: book3 3
+    3300110: book3 4
+    3300112: book3 5
+    3300114: book3 6
+    3300116: book3 7
+    3300118: book30
+    3300120: book31
+    3300122: book32
+    3300124: book4
+    3300126: book4 1
+    3300128: book4 2
+    3300130: book4 3
+    3300132: book4 4
+    3300134: book4 5
+    3300136: book4 6
+    3300138: book5
+    3300140: book5 1
+    3300142: book5 2
+    3300144: book5 3
+    3300146: book5 4
+    3300148: book5 5
+    3300150: book5 6
+    3300152: book5 7
+    3300154: book5 8
+    3300156: book6
+    3300158: book6 1
+    3300160: book6 2
+    3300162: book6 3
+    3300164: book6 4
+    3300166: book6 5
+    3300168: book6 6
+    3300170: book6 7
+    3300172: book7
+    3300174: book7 1
+    3300176: book7 2
+    3300178: book7 3
+    3300180: book7 4
+    3300182: book7 5
+    3300184: book7 6
+    3300186: book7 7
+    3300188: book7 8
+    3300190: book8
+    3300192: book8 1
+    3300194: book8 2
+    3300196: book8 3
+    3300198: book8 4
+    3300200: book8 5
+    3300202: book8 6
+    3300204: book8 7
+    3300206: book8 8
+    3300208: book9
+    3300210: book9 1
+    3300212: book9 2
+    3300214: book9 3
+    3300216: book9 4
+    3300218: book9 5
+    3300220: book9 6
+    3300222: book9 7
+    3300224: book9 8
+    3300226: book9 9
+    3300228: flowerplant:hyacinth1Flower
+    3300230: flowerplant:hyacinth1Leaf
+    3300232: flowerplant:hyacinth1Main
+    3300234: flowerpot2
+    3300236: flowerpot3
+    3300238: flowerpot4
+    3300240: flowerpot:book11
+    3300242: flowerpot:book12
+    3300244: flowerpot:book13
+    3300246: flowerpot:book3
+    3300248: flowerpot:book4
+    3300250: flowerpot:book5
+    3300252: flowerpot:book6
+    3300254: flowerpot:book7
+    3300256: flowerpot:book8
+    3300258: flowerpot:book9
+    3300260: vineplant:vineLeafy1Leaf
+    3300262: vineplant:vineLeafy1Main
+    4300000: flowerpot4
+    4300002: vineplant:vineLeafy1Main
+    4300004: vineplant:vineLeafy1Leaf
+    4300006: flowerpot2
+    4300008: flowerplant:hyacinth1Main
+    4300010: flowerplant:hyacinth1Leaf
+    4300012: flowerplant:hyacinth1Flower
+    4300014: flowerpot3
+    4300016: book25
+    4300018: book26
+    4300020: book27
+    4300022: book28
+    4300024: book29
+    4300026: book30
+    4300028: book31
+    4300030: book32
+    4300032: book9
+    4300034: book8
+    4300036: book7
+    4300038: book5
+    4300040: book3
+    4300042: book2
+    4300044: book16
+    4300046: book22
+    4300048: book13
+    4300050: book12
+    4300052: book11
+    4300054: book9
+    4300056: book8
+    4300058: book7
+    4300060: book6
+    4300062: book5
+    4300064: book14
+    4300066: book17
+    4300068: book13
+    4300070: book12
+    4300072: book11
+    4300074: book10
+    4300076: book9
+    4300078: book8
+    4300080: book7
+    4300082: book6
+    4300084: book5
+    4300086: book4
+    4300088: book3
+    4300090: book13
+    4300092: book12
+    4300094: book11
+    4300096: book10
+    4300098: book9
+    4300100: book8
+    4300102: book7
+    4300104: book6
+    4300106: book5
+    4300108: book4
+    4300110: book3
+    4300112: book18
+    4300114: book19
+    4300116: book20
+    4300118: book21
+    4300120: book23
+    4300122: book24
+    4300124: book13
+    4300126: book12
+    4300128: book11
+    4300130: book9
+    4300132: book8
+    4300134: book7
+    4300136: book6
+    4300138: book5
+    4300140: book4
+    4300142: book3
+    4300144: book14
+    4300146: book15
+    4300148: book2
+    4300150: book13
+    4300152: book12
+    4300154: book11
+    4300156: book9
+    4300158: book8
+    4300160: book7
+    4300162: book6
+    4300164: book5
+    4300166: book4
+    4300168: book3
+    4300170: book14
+    4300172: book13
+    4300174: book12
+    4300176: book11
+    4300178: book10
+    4300180: book9
+    4300182: book8
+    4300184: book7
+    4300186: book6
+    4300188: book5
+    4300190: book4
+    4300192: book3
+    4300194: flowerpot:book13
+    4300196: flowerpot:book12
+    4300198: flowerpot:book11
+    4300200: flowerpot:book9
+    4300202: flowerpot:book8
+    4300204: flowerpot:book7
+    4300206: flowerpot:book6
+    4300208: flowerpot:book5
+    4300210: flowerpot:book4
+    4300212: flowerpot:book3
+    4300214: book9
+    4300216: book13
+    4300218: book2
+    4300220: book13
+    4300222: book12
+    4300224: book11
+    4300226: book9
+    4300228: book8
+    4300230: book7
+    4300232: book6
+    4300234: book5
+    4300236: book4
+    4300238: book3
+    4300240: book14
+    4300242: book13
+    4300244: book12
+    4300246: book11
+    4300248: book10
+    4300250: book9
+    4300252: book8
+    4300254: book7
+    4300256: book6
+    4300258: book5
+    4300260: book4
+    4300262: book3
+    6400000: book10
+    6400002: book10 1
+    6400004: book10 2
+    6400006: book10 3
+    6400008: book11
+    6400010: book11 1
+    6400012: book11 2
+    6400014: book11 3
+    6400016: book11 4
+    6400018: book11 5
+    6400020: book11 6
+    6400022: book11 7
+    6400024: book12
+    6400026: book12 1
+    6400028: book12 2
+    6400030: book12 3
+    6400032: book12 4
+    6400034: book12 5
+    6400036: book12 6
+    6400038: book12 7
+    6400040: book13
+    6400042: book13 1
+    6400044: book13 2
+    6400046: book13 3
+    6400048: book13 4
+    6400050: book13 5
+    6400052: book13 6
+    6400054: book13 7
+    6400056: book13 8
+    6400058: book14
+    6400060: book14 1
+    6400062: book14 2
+    6400064: book14 3
+    6400066: book15
+    6400068: book16
+    6400070: book17
+    6400072: book18
+    6400074: book19
+    6400076: book2
+    6400078: book2 1
+    6400080: book2 2
+    6400082: book20
+    6400084: book21
+    6400086: book22
+    6400088: book23
+    6400090: book24
+    6400092: book25
+    6400094: book26
+    6400096: book27
+    6400098: book28
+    6400100: book29
+    6400102: book3
+    6400104: book3 1
+    6400106: book3 2
+    6400108: book3 3
+    6400110: book3 4
+    6400112: book3 5
+    6400114: book3 6
+    6400116: book3 7
+    6400118: book30
+    6400120: book31
+    6400122: book32
+    6400124: book4
+    6400126: book4 1
+    6400128: book4 2
+    6400130: book4 3
+    6400132: book4 4
+    6400134: book4 5
+    6400136: book4 6
+    6400138: book5
+    6400140: book5 1
+    6400142: book5 2
+    6400144: book5 3
+    6400146: book5 4
+    6400148: book5 5
+    6400150: book5 6
+    6400152: book5 7
+    6400154: book5 8
+    6400156: book6
+    6400158: book6 1
+    6400160: book6 2
+    6400162: book6 3
+    6400164: book6 4
+    6400166: book6 5
+    6400168: book6 6
+    6400170: book6 7
+    6400172: book7
+    6400174: book7 1
+    6400176: book7 2
+    6400178: book7 3
+    6400180: book7 4
+    6400182: book7 5
+    6400184: book7 6
+    6400186: book7 7
+    6400188: book7 8
+    6400190: book8
+    6400192: book8 1
+    6400194: book8 2
+    6400196: book8 3
+    6400198: book8 4
+    6400200: book8 5
+    6400202: book8 6
+    6400204: book8 7
+    6400206: book8 8
+    6400208: book9
+    6400210: book9 1
+    6400212: book9 2
+    6400214: book9 3
+    6400216: book9 4
+    6400218: book9 5
+    6400220: book9 6
+    6400222: book9 7
+    6400224: book9 8
+    6400226: book9 9
+    6400228: flowerplant:hyacinth1Flower
+    6400230: flowerplant:hyacinth1Leaf
+    6400232: flowerplant:hyacinth1Main
+    6400234: flowerpot2
+    6400236: flowerpot3
+    6400238: flowerpot4
+    6400240: flowerpot:book11
+    6400242: flowerpot:book12
+    6400244: flowerpot:book13
+    6400246: flowerpot:book3
+    6400248: flowerpot:book4
+    6400250: flowerpot:book5
+    6400252: flowerpot:book6
+    6400254: flowerpot:book7
+    6400256: flowerpot:book8
+    6400258: flowerpot:book9
+    6400260: vineplant:vineLeafy1Leaf
+    6400262: vineplant:vineLeafy1Main
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .0549999997
+    meshCompression: 0
+    addColliders: 1
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
