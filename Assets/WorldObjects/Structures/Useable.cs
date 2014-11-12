@@ -41,10 +41,15 @@ public class Useable : MonoBehaviour
 				//Dig the dirt
 				this.gameObject.GetComponent<dirtStuff>().Dig();
             }
-            else if (type == UseableType.GATE || type == UseableType.ATTICBOWL)
+            else if (type == UseableType.GATE)
             {
-                //ends game
-                Application.LoadLevel("MainMenu");
+                //Run the escape function inside the Player script
+                GameObject.Find("Player").GetComponent<Player>().Escape();
+            }
+            else if(type == UseableType.ATTICBOWL)
+            {
+                //Run the escape function inside the Player script
+                GameObject.Find("Player").GetComponent<Player>().Experiment();
             }
             else if (type == UseableType.LIGHT)
             {
