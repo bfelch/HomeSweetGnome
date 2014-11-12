@@ -33,6 +33,7 @@ public class Player : MonoBehaviour
     public BoxCollider box;
     public CharacterController controllerBox;
     private float fadeIn = 0;
+    private bool switchFade = false;
 
 	public GameObject activeTarget; //The item being looked at
 
@@ -277,7 +278,19 @@ public class Player : MonoBehaviour
 
 			StartCoroutine(WaitToReload(5.0F));
 		}
+        if(other.name == "AtticStairs")
+        {
+            this.GetComponent<CharacterController>().slopeLimit = 85;
+        }
 	}
+
+    void OnTriggerExit(Collider other)
+    {
+        if (this.GetComponent<CharacterController>().slopeLimit == 85)
+        {
+            this.GetComponent<CharacterController>().slopeLimit = 45;
+        }
+    }
 
 	IEnumerator WaitToReload(float waitTime)
 	{
@@ -287,4 +300,29 @@ public class Player : MonoBehaviour
 		//Load the main menu
 		Application.LoadLevel ("MainMenu");
 	}
+
+    public void flashFade()
+    {
+        if (switchFade)
+        {
+            Color changing = new Color(GUI.color.r, GUI.color.g, GUI.color.b, fadeIn);
+            //set the new color
+            GUI.color = changing;
+            //update the alpha value
+            fadeIn += .7f * Time.deltaTime;
+            if (fadeIn > 1)
+                switchFade = false;
+        }
+        else if (!switchFade)
+        {
+            Color changing = new Color(GUI.color.r, GUI.color.g, GUI.color.b, fadeIn);
+            //set the new color
+            GUI.color = changing;
+            //update the alpha value
+            fadeIn -= .7f * Time.deltaTime;
+
+            if (fadeIn < 0)
+                switchFade = true;
+        }
+    }
 }

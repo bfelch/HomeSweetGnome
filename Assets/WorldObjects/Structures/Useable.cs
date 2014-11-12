@@ -41,7 +41,7 @@ public class Useable : MonoBehaviour
 				//Dig the dirt
 				this.gameObject.GetComponent<dirtStuff>().Dig();
             }
-            else if (type == UseableType.GATE)
+            else if (type == UseableType.GATE || type == UseableType.ATTICBOWL)
             {
                 //ends game
                 Application.LoadLevel("MainMenu");
@@ -84,4 +84,4 @@ public class Useable : MonoBehaviour
     }
 }
 
-public enum UseableType { DOOR, DIRT, GATE, LIGHT, CHAND, ELEVATOR };
+public enum UseableType { DOOR, DIRT, GATE, LIGHT, CHAND, ELEVATOR, ATTICBOWL };

@@ -52,6 +52,10 @@ public class PlayerInteractions : MonoBehaviour
             mouseLook.enabled = false;
             cameraLook.enabled = false;
         }
+        if(Input.GetKeyDown(KeyCode.LeftAlt))
+        {
+            GameObject.Find("TempPlayerLight").GetComponent<Light>().enabled = !GameObject.Find("TempPlayerLight").GetComponent<Light>().enabled;
+        }
     }
 
     void OnGUI()
@@ -88,14 +92,27 @@ public class PlayerInteractions : MonoBehaviour
         }
         else
         {
-            if (canHover && activeTarget != null && !st.tutorial)
+            GUI.backgroundColor = Color.clear;
+            if (canHover && activeTarget != null && !st.tutorial && !notUseable)
             {
-                //Display item name
-                GUI.Box(new Rect(Screen.width / 2 - 100, Screen.height / 2 - 100, 100, 30), activeTarget.name);
+                //Strip target name
+                string targetName = activeTarget.name;
+                string improvedName = "";
+                for (int i = 0; i < targetName.Length; i++ )
+                {
+                    if(char.IsUpper(targetName[i]) && i != 0)
+                    {
+                        improvedName += " ";
+                    }
+                    improvedName += targetName[i];
+                }
+                    this.GetComponent<Player>().flashFade();
+                    //Display item name
+                    GUI.Box(new Rect(5, 5, 250, 30), improvedName);
             }
             else if (notUseable && activeTarget != null)
             {
-                GUI.backgroundColor = Color.clear;
+                this.GetComponent<Player>().flashFade();
                 GUI.Box(new Rect(5, 5, 300, 30), "You need the " + GUIString + " to continue.");
             }
 
