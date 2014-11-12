@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
     //time player can sprint
     public float sprintTime;
     public float maxSprintTime;
+    private float cameraYPos;
     public bool playerSlept;
 	public bool playerFell;
     public GUIText deathTextSleep;
@@ -53,6 +54,7 @@ public class Player : MonoBehaviour
 		readyToPush = true;
 
         yHeight = box.size.y;
+        cameraYPos = Camera.main.transform.localPosition.y;
 
         deathTextSleep = GameObject.Find("DeathTextSleep").guiText;
         deathTextSleep.enabled = false;
@@ -134,6 +136,11 @@ public class Player : MonoBehaviour
                 restTime = 0;
                 breathe = true;
             }
+        }
+        if (Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            Vector3 pos = Camera.main.transform.localPosition;
+            Camera.main.transform.localPosition = new Vector3(pos.x, cameraYPos, pos.z);
         }
     }
 
