@@ -259,8 +259,6 @@ public class Player : MonoBehaviour
         }
     }
 
-<<<<<<< HEAD
-=======
     public void Escape()
     {
         playerEscaped = true;
@@ -275,7 +273,6 @@ public class Player : MonoBehaviour
         StartCoroutine(WaitToReload(5.0F));
     }
 
->>>>>>> origin/master
 
     void OnGUI()
     {
