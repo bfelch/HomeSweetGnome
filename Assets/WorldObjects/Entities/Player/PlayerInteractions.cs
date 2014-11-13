@@ -108,7 +108,7 @@ public class PlayerInteractions : MonoBehaviour
                 }
                     this.GetComponent<Player>().flashFade();
                     //Display item name
-                    GUI.Box(new Rect(5, 5, 250, 30), improvedName);
+                    GUI.Box(new Rect(Screen.width - Screen.width / 2, Screen.height - Screen.height / 2, 250, 30), improvedName);
             }
             else if (notUseable && activeTarget != null)
             {
@@ -236,7 +236,7 @@ public class PlayerInteractions : MonoBehaviour
                     //rotate the gnome so it's facing you
                     gnome.transform.eulerAngles = new Vector3(gnome.transform.eulerAngles.x, 346, gnome.transform.eulerAngles.z);
                     //set it's position on the floor
-                    gnome.transform.localPosition = new Vector3(3.894336f, 1.053835f, 0.2515474f);
+                    gnome.transform.localPosition = new Vector3(-75.78156f, 39.829f, 98.48463f);
                     //enable the nav mesh and the gnome script
                     gnome.GetComponent<NavMeshAgent>().enabled = true;
                     gnome.GetComponent<Gnome>().enabled = true;

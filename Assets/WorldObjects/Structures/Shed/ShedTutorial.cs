@@ -91,8 +91,8 @@ public class ShedTutorial : MonoBehaviour {
                 //flash the text
                 this.GetComponent<Player>().flashFade();
                 //display instructions
-                GUI.Box(new Rect(5, 5, 300, 40),
-                "Use 'WASD' to move, use the 'MOUSE' to look. \n Use 'SHIFT' to sprint. Use 'CTRL' to crouch");
+                GUI.Box(new Rect(5, 5, 320, 60),
+                "Use 'WASD' to move, use the 'MOUSE' to look. \nUse 'SHIFT' to sprint. Use 'CTRL' to crouch \nUse 'R' to close your eyes, use 'F' to hold them open.");
 
 
                 //once timer reaches 0, switch interaction to one

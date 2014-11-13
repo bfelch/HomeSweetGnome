@@ -34,6 +34,8 @@ public class Player : MonoBehaviour
     public BoxCollider box;
     public CharacterController controllerBox;
     private float fadeIn = 0;
+    private float pauseFadeTime = 4;
+    private bool pauseFade = false;
     private bool switchFade = false;
 
 	public GameObject activeTarget; //The item being looked at
@@ -247,6 +249,7 @@ public class Player : MonoBehaviour
         }
     }
 
+
     void OnGUI()
     {
         if (playerSlept)
@@ -310,15 +313,29 @@ public class Player : MonoBehaviour
 
     public void flashFade()
     {
-        if (switchFade)
+        if(pauseFade)
+        {
+            pauseFadeTime -= Time.deltaTime;
+            if(pauseFadeTime < 0)
+            {
+                pauseFade = false;
+                pauseFadeTime = 4;
+            }
+
+        }
+        
+        else if (switchFade)
         {
             Color changing = new Color(GUI.color.r, GUI.color.g, GUI.color.b, fadeIn);
             //set the new color
             GUI.color = changing;
             //update the alpha value
-            fadeIn += .7f * Time.deltaTime;
+            fadeIn += 1f * Time.deltaTime;
             if (fadeIn > 1)
+            {
                 switchFade = false;
+                pauseFade = true;
+            }
         }
         else if (!switchFade)
         {
@@ -326,7 +343,7 @@ public class Player : MonoBehaviour
             //set the new color
             GUI.color = changing;
             //update the alpha value
-            fadeIn -= .7f * Time.deltaTime;
+            fadeIn -= 1f * Time.deltaTime;
 
             if (fadeIn < 0)
                 switchFade = true;

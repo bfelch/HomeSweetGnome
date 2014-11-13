@@ -30,7 +30,7 @@ public class Blink : MonoBehaviour
     private float maxBlinkDisplayTimer = 3f;
     private float blinkDisplayTimer = 0f;
     public Texture2D blinkDisplay;
-
+    private bool holdEyes = false;
 
     // Use this for initialization
     void Start()
@@ -49,6 +49,7 @@ public class Blink : MonoBehaviour
             topLid.animation.Play("OpeningUpperBlink");
             bottomLid.animation.Play("OpeningBottomBlink");
         }
+
     }
 
     // Update is called once per frame
@@ -69,6 +70,15 @@ public class Blink : MonoBehaviour
             {
                 FallAsleep();
             }
+        }
+
+        if(Input.GetKey(KeyCode.R))
+        {
+            ShutEyes();
+        }
+        if (Input.GetKeyUp(KeyCode.R))
+        {
+            OpenShutEyes();
         }
     }
 
@@ -134,6 +144,25 @@ public class Blink : MonoBehaviour
 
     }
 
+    void ShutEyes()
+    {
+        if(!holdEyes)
+        {
+            topLid.animation.Play("CloseEyeTop");
+            bottomLid.animation.Play("CloseBottomEye");
+            holdEyes = true;
+        }
+        blinkTimer = 5;
+
+    }
+
+    void OpenShutEyes()
+    {
+        topLid.animation.Play("OpenEyeTop");
+        bottomLid.animation.Play("OpenBottomEye");
+        holdEyes = false;
+
+    }
     void FallAsleep()
     {
         if (!topLid.animation.isPlaying)
