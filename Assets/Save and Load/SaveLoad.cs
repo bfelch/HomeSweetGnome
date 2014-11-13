@@ -145,6 +145,9 @@ public class SaveLoad : MonoBehaviour
             data.consumables[n, 1] = consumables[n].transform.position.y;
             data.consumables[n, 2] = consumables[n].transform.position.z;
         }
+
+        //save time played
+        data.timePlayed = player.GetComponent<PlayerInteractions>().timePlayed + Time.timeSinceLevelLoad;
     }
 
     public void loadGameValues(Game data)
@@ -227,6 +230,9 @@ public class SaveLoad : MonoBehaviour
                 Destroy(GameObject.Find(consumables[h].name));
             }
         }
+
+        //load time played
+        player.GetComponent<PlayerInteractions>().timePlayed = data.timePlayed;
 
     }
 

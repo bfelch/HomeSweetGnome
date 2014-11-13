@@ -18,8 +18,12 @@ public class Player : MonoBehaviour
     private float cameraYPos;
     public bool playerSlept;
 	public bool playerFell;
+    public bool playerEscaped;
+    public bool experimentComplete;
     public GUIText deathTextSleep;
 	public GUIText deathTextFall;
+    public GUIText winTextEscaped;
+    public GUIText winTextExperiment;
     private Animation blinkBottom;
     private Animation blinkTop;
     public CharacterMotor charMotor;
@@ -63,6 +67,12 @@ public class Player : MonoBehaviour
 
 		deathTextFall = GameObject.Find("DeathTextFall").guiText;
 		deathTextFall.enabled = false;
+
+        winTextEscaped = GameObject.Find("WinTextEscape").guiText;
+        winTextEscaped.enabled = false;
+
+        winTextExperiment = GameObject.Find("WinTextExperiment").guiText;
+        winTextExperiment.enabled = false;
 
         AudioSource[] aSources = GetComponentsInChildren<AudioSource>(); //Grab all the audio sources on this object
         Debug.Log(aSources.Length);
@@ -249,31 +259,72 @@ public class Player : MonoBehaviour
         }
     }
 
+<<<<<<< HEAD
+=======
+    public void Escape()
+    {
+        playerEscaped = true;
+
+        StartCoroutine(WaitToReload(5.0F));
+    }
+
+    public void Experiment()
+    {
+        experimentComplete = true;
+
+        StartCoroutine(WaitToReload(5.0F));
+    }
+
+>>>>>>> origin/master
 
     void OnGUI()
     {
+        if (experimentComplete)
+        {
+
+            //create a new color with the changed alpha value
+            Color changing = new Color(winTextExperiment.color.r, winTextExperiment.color.g, winTextExperiment.color.b, fadeIn);
+            winTextExperiment.enabled = true;
+
+            //set the new color
+            winTextExperiment.color = changing;
+            //update the alpha value
+            fadeIn += .1f * Time.deltaTime;
+        }
+
+        if(playerEscaped)
+        {
+
+            //create a new color with the changed alpha value
+            Color changing = new Color(winTextEscaped.color.r, winTextEscaped.color.g, winTextEscaped.color.b, fadeIn);
+            winTextEscaped.enabled = true;
+
+            //set the new color
+            winTextEscaped.color = changing;
+            //update the alpha value
+            fadeIn += .1f * Time.deltaTime;
+        }
+
         if (playerSlept)
         {
-            deathTextSleep.enabled = true;
-            //find the GUI Text for death by sleep
-            GUIText sleepDeath = GameObject.Find("DeathTextSleep").GetComponent<GUIText>();
             //create a new color with the changed alpha value
-            Color changing = new Color(sleepDeath.color.r, sleepDeath.color.g, sleepDeath.color.b, fadeIn);
+            Color changing = new Color(deathTextSleep.color.r, deathTextSleep.color.g, deathTextSleep.color.b, fadeIn);
+            deathTextSleep.enabled = true;
+
             //set the new color
-            sleepDeath.color = changing;
+            deathTextSleep.color = changing;
             //update the alpha value
             fadeIn += .1f*Time.deltaTime;
         }
 
 		if(playerFell)
 		{
-			deathTextFall.enabled = true;
-            //find the GUI Text for death by fall
-            GUIText fallDeath = GameObject.Find("DeathTextFall").GetComponent<GUIText>();
             //create a new color with the changed alpha value
-            Color changing = new Color(fallDeath.color.r, fallDeath.color.g, fallDeath.color.b, fadeIn);
+            Color changing = new Color(deathTextFall.color.r, deathTextFall.color.g, deathTextFall.color.b, fadeIn);
+            deathTextFall.enabled = true;
+
             //set the new color
-            fallDeath.color = changing;
+            deathTextFall.color = changing;
             //update the alpha value
             fadeIn += .1f * Time.deltaTime;
             

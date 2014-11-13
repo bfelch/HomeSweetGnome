@@ -8,6 +8,9 @@ public class PlayerInteractions : MonoBehaviour
     private ShedTutorial st;
     private string GUIString;
 
+    //duration of play
+    public float timePlayed;
+
     public GameObject activeTarget; //The item being looked at
     public bool canHover = false; //Show the item name being look at?
     public bool notUseable = false;
@@ -62,11 +65,18 @@ public class PlayerInteractions : MonoBehaviour
     {
         GUI.color = Color.white;
         GUI.backgroundColor = Color.white;
+        Debug.Log("time played: " + (int)(timePlayed + Time.timeSinceLevelLoad));
 
         if (pause)
         {
             GUI.BeginGroup(new Rect(Screen.width / 2 - 150, 100, 300, 250));
             //GUI.Box(new Rect(0, 0,200, 250), "");
+            int second = (int)(timePlayed + Time.timeSinceLevelLoad);
+            int minute = second / 60;
+            int hour = minute / 60;
+            second %= 60;
+            GUI.skin.box.alignment = TextAnchor.MiddleCenter;
+            GUI.Box(new Rect(55, 50, 180, 40), "Time Played\n" + hour.ToString("00") + ":" + minute.ToString("00") + ":" + second.ToString("00"));
 
             if (GUI.Button(new Rect(55, 100, 180, 40), "Resume"))
             {
