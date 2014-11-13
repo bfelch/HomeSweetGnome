@@ -3,8 +3,8 @@ using System.Collections;
 
 public class Gargoyle : MonoBehaviour 
 {
-	public float rotateSpeed = 0.2f; //How fast the spotlight rotates
-	private float switchTimer = 0.0f;
+	public float rotateSpeed = 3.0F; //How fast the spotlight rotates
+	private float switchTimer = 0.0F;
 	public float switchTime = 8.0f; //How long before the spotlight switches directions
 	private bool lookRight = false; //Direction of the spotlight
 	private GameObject player; //Player game object
@@ -28,7 +28,7 @@ public class Gargoyle : MonoBehaviour
 	void Start () 
 	{
 		player = GameObject.FindGameObjectWithTag("Player");
-		eyeLight = transform.Find ("Spotlight").gameObject;
+		eyeLight = transform.Find("Head/Spotlight").gameObject;
 		shakeScript = player.GetComponentInChildren<cameraShake>();
 	}
 	
@@ -66,11 +66,11 @@ public class Gargoyle : MonoBehaviour
 		
 		if(lookRight == true)
 		{
-			transform.Rotate(Vector3.up * rotateSpeed);
+			transform.Find("Head").transform.Rotate(Vector3.up * rotateSpeed * Time.deltaTime);
 		}
 		else
 		{
-			transform.Rotate(Vector3.down * rotateSpeed);
+			transform.Find("Head").transform.Rotate(Vector3.down * rotateSpeed * Time.deltaTime);
 		}
 	}
 	
@@ -82,13 +82,13 @@ public class Gargoyle : MonoBehaviour
 			if(smooth)
 			{
 				// Look at and dampen the rotation
-				Quaternion rotation = Quaternion.LookRotation(target.position - transform.position);
-				transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * damping);
+				Quaternion rotation = Quaternion.LookRotation(target.position - transform.Find("Head").transform.position);
+				transform.Find("Head").transform.rotation = Quaternion.Slerp(transform.Find("Head").transform.rotation, rotation, Time.deltaTime * damping);
 			}
 			else
 			{
 				// Just lookat
-				transform.LookAt(target);
+				transform.Find("Head").transform.LookAt(target);
 			}
 		}
 		
@@ -111,12 +111,11 @@ public class Gargoyle : MonoBehaviour
 		RaycastHit hit;
 		Debug.DrawRay(transform.position, transform.forward * 20, Color.white);
 		
-		if(Physics.Raycast(transform.position, transform.forward, out hit, 20, enemyMask))
+		if(Physics.Raycast(transform.Find("Head").transform.position, transform.Find("Head").transform.forward, out hit, 20, enemyMask))
 		{
 			activeTarget = hit.collider.gameObject; //Store item being looked at
-			Debug.Log(activeTarget.name);
 			
-			//Is the item close and a pick up?
+			//Is the object the player?
 			if(activeTarget.tag == "Player")
 			{
 				//Reset time lost
@@ -136,7 +135,7 @@ public class Gargoyle : MonoBehaviour
 		}
 		
 		//Is the player far enough away or behind another object?
-		if(Vector3.Distance (target.position, transform.position) >= 20.0F || targetLost)
+		if(Vector3.Distance(target.position, transform.Find("Head").transform.position) >= 20.0F || targetLost)
 		{
 			//Fix player speed
 			player.GetComponent<Player>().charMotor.movement.maxForwardSpeed = 6;
@@ -157,9 +156,9 @@ public class Gargoyle : MonoBehaviour
 	
 	void Adjust()
 	{
-		transform.rotation = Quaternion.Lerp(transform.rotation, initialRot, Time.deltaTime * 2);
+		transform.Find("Head").transform.rotation = Quaternion.Lerp(transform.Find("Head").transform.rotation, initialRot, Time.deltaTime * 2);
 		
-		if(transform.rotation == initialRot)
+		if(transform.Find("Head").transform.rotation == initialRot)
 		{
 			adjusting = false;
 		}
@@ -175,7 +174,7 @@ public class Gargoyle : MonoBehaviour
 			target = other.gameObject.transform;
 			
 			//Store starting rotation
-			initialRot = transform.rotation;
+			initialRot = transform.Find("Head").transform.rotation;
 			
 			//Trigger the cameraShake
 			shakeScript.CameraShake();

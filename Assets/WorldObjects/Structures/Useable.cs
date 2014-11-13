@@ -41,7 +41,7 @@ public class Useable : MonoBehaviour
 				//Dig the dirt
 				this.gameObject.GetComponent<dirtStuff>().Dig();
             }
-            else if (type == UseableType.GATE)
+			else if (type == UseableType.GATE || type == UseableType.BOAT)
             {
                 //Run the escape function inside the Player script
                 GameObject.Find("Player").GetComponent<Player>().Escape();
@@ -89,4 +89,4 @@ public class Useable : MonoBehaviour
     }
 }
 
-public enum UseableType { DOOR, DIRT, GATE, LIGHT, CHAND, ELEVATOR, ATTICBOWL };
+public enum UseableType { DOOR, DIRT, GATE, LIGHT, CHAND, ELEVATOR, ATTICBOWL, BOAT};

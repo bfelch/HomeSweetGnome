@@ -42,6 +42,8 @@ public class Player : MonoBehaviour
     private bool pauseFade = false;
     private bool switchFade = false;
 
+	public float pushPower = 1.0F;
+
 	public GameObject activeTarget; //The item being looked at
 
     // Use this for initialization
@@ -185,6 +187,34 @@ public class Player : MonoBehaviour
             this.transform.position = new Vector3(pos.x, pos.y + yHeight / 3, pos.z);
         }
     }
+
+	void OnControllerColliderHit(ControllerColliderHit hit) 
+	{
+		//Only push gargoyles
+		if(hit.gameObject.tag == "Gargoyle")
+		{
+			//Get the rigidbody
+			Rigidbody body = hit.collider.attachedRigidbody;
+			
+			//Make sure there is a body and it is kinematic
+			if (body == null || body.isKinematic)
+			{
+				return;
+			}
+			
+			//Don't want to push down
+			if (hit.moveDirection.y < -0.3F)
+			{
+				return;
+			}
+			
+			//Get push direction opposite of the player
+			Vector3 pushDir = new Vector3(hit.moveDirection.x, 0, hit.moveDirection.z);
+			//Push
+			body.velocity = pushDir * pushPower;
+		}
+	}
+
 
 	IEnumerator PushTimer(float waitTime, GameObject target)
 	{

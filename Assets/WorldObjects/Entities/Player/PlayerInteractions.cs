@@ -65,7 +65,6 @@ public class PlayerInteractions : MonoBehaviour
     {
         GUI.color = Color.white;
         GUI.backgroundColor = Color.white;
-        Debug.Log("time played: " + (int)(timePlayed + Time.timeSinceLevelLoad));
 
         if (pause)
         {
