@@ -15,7 +15,6 @@ public class Player : MonoBehaviour
     //time player can sprint
     public float sprintTime;
     public float maxSprintTime;
-    private float cameraYPos;
     public bool playerSlept;
 	public bool playerFell;
     public bool playerEscaped;
@@ -36,7 +35,7 @@ public class Player : MonoBehaviour
 	private bool readyToPush;
     private float yHeight;
     public BoxCollider box;
-    public CharacterController controllerBox;
+    public CharacterController controller;
     private float fadeIn = 0;
     private float pauseFadeTime = 4;
     private bool pauseFade = false;
@@ -45,6 +44,9 @@ public class Player : MonoBehaviour
 	public float pushPower = 1.0F;
 
 	public GameObject activeTarget; //The item being looked at
+
+    //if player just landed or has been on ground
+    private bool landed;
 
     // Use this for initialization
     void Start()
@@ -62,7 +64,6 @@ public class Player : MonoBehaviour
 		readyToPush = true;
 
         yHeight = box.size.y;
-        cameraYPos = Camera.main.transform.localPosition.y;
 
         deathTextSleep = GameObject.Find("DeathTextSleep").guiText;
         deathTextSleep.enabled = false;
@@ -98,10 +99,13 @@ public class Player : MonoBehaviour
             Application.Quit();
         }
 
-        Sanity();
-        Sprint();
-        Crouch();
-		Push();
+        if (!this.gameObject.animation.IsPlaying("OpeningCut")) {
+            Sanity();
+            Walk();
+            Sprint();
+            Crouch();
+            Push();
+        }
     }
 
     //Note: Bug: enemies will not pathfind close enough to you to actually register the collision.
@@ -113,21 +117,39 @@ public class Player : MonoBehaviour
         }
     }
 
+    void Walk() {
+        if (!this.gameObject.animation.IsPlaying("Landing")) {
+            if (!Input.GetKey(KeyCode.LeftShift) && (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))) {
+                //play walk animation
+                this.gameObject.animation.Play("Walk");
+            }
+        }
+
+        if (controller.isGrounded) {
+            if (!landed) {
+                landed = true;
+                this.gameObject.animation.Play("Landing");
+            }
+        } else {
+            landed = false;
+        }
+    }
+
     void Sprint()
     {
         if (sprintTime > 0)
         {
             //listent for shift press
-            if (Input.GetKey(KeyCode.LeftShift))
+            if (Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.W))
             {
                 //make player faster
                 charMotor.movement.maxForwardSpeed = 12;
                 sprintTime -= Time.deltaTime;
                 //play sprint animation
-                this.gameObject.animation.Play("Sprint");
-            }
-            else if (sprintTime <= maxSprintTime)
-            {
+                if (!this.gameObject.animation.IsPlaying("Landing")) {
+                    this.gameObject.animation.Play("Sprint");
+                }
+            } else if (sprintTime <= maxSprintTime) {
                 //recharge sprint time
                 charMotor.movement.maxForwardSpeed = 6;
                 sprintTime += Time.deltaTime;
@@ -151,11 +173,6 @@ public class Player : MonoBehaviour
                 breathe = true;
             }
         }
-        if (Input.GetKeyUp(KeyCode.LeftShift))
-        {
-            Vector3 pos = Camera.main.transform.localPosition;
-            Camera.main.transform.localPosition = new Vector3(pos.x, cameraYPos, pos.z);
-        }
     }
 
     void Crouch()
@@ -167,7 +184,7 @@ public class Player : MonoBehaviour
             charMotor.movement.maxForwardSpeed = 3;
             //alter size
             box.size = new Vector3(1, yHeight / 2, 1);
-            controllerBox.height = yHeight / 2;
+            controller.height = yHeight / 2;
             //alter camera position
             Vector3 pos = Camera.main.transform.position;
             Camera.main.transform.position = new Vector3(pos.x, pos.y - .5f, pos.z);
@@ -178,7 +195,7 @@ public class Player : MonoBehaviour
             crouching = false;
             //alter size
             box.size = new Vector3(1, yHeight, 1);
-            controllerBox.height = yHeight;
+            controller.height = yHeight;
             //alter camera position
             Vector3 pos = Camera.main.transform.position;
             Camera.main.transform.position = new Vector3(pos.x, pos.y + .5f, pos.z);
