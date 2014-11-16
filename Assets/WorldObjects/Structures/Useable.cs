@@ -41,7 +41,12 @@ public class Useable : MonoBehaviour
 				//Dig the dirt
 				this.gameObject.GetComponent<dirtStuff>().Dig();
             }
-			else if (type == UseableType.GATE || type == UseableType.BOAT)
+			else if (type == UseableType.GATE)
+            {
+                GameObject.Find("FrontGate").GetComponent<Animation>().Play("OpenFrontGate");
+                //Run the escape function inside the Player script
+            }
+            else if (type == UseableType.BOAT)
             {
                 //Run the escape function inside the Player script
                 GameObject.Find("Player").GetComponent<Player>().Escape();

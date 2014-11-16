@@ -309,8 +309,7 @@ public class Player : MonoBehaviour
     public void Escape()
     {
         playerEscaped = true;
-
-        StartCoroutine(WaitToReload(5.0F));
+        StartCoroutine(WaitToReload(7.0F));
     }
 
     public void Experiment()
@@ -325,11 +324,10 @@ public class Player : MonoBehaviour
     {
         if (experimentComplete)
         {
-
             //create a new color with the changed alpha value
             Color changing = new Color(winTextExperiment.color.r, winTextExperiment.color.g, winTextExperiment.color.b, fadeIn);
+            
             winTextExperiment.enabled = true;
-
             //set the new color
             winTextExperiment.color = changing;
             //update the alpha value
@@ -338,11 +336,10 @@ public class Player : MonoBehaviour
 
         if(playerEscaped)
         {
-
             //create a new color with the changed alpha value
             Color changing = new Color(winTextEscaped.color.r, winTextEscaped.color.g, winTextEscaped.color.b, fadeIn);
             winTextEscaped.enabled = true;
-
+            GetComponent<FadeToBlack>().enabled = true;
             //set the new color
             winTextEscaped.color = changing;
             //update the alpha value
@@ -386,6 +383,10 @@ public class Player : MonoBehaviour
         if(other.name == "AtticStairs")
         {
             this.GetComponent<CharacterController>().slopeLimit = 85;
+        }
+        if(other.name == "GateEndGame")
+        {
+            Escape();
         }
 	}
 
