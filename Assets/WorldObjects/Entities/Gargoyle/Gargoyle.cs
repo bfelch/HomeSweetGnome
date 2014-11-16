@@ -8,6 +8,8 @@ public class Gargoyle : MonoBehaviour
 	public float switchTime = 8.0f; //How long before the spotlight switches directions
 	private bool lookRight = false; //Direction of the spotlight
 	private GameObject player; //Player game object
+	private GameObject playerTop; //Player game object
+	private GameObject playerBottom; //Player game object
 	private bool screeching = false; //Is the gargoyle screeching?
 	private bool adjusting = false; //Gargoyle is adjusting
 	
@@ -20,6 +22,12 @@ public class Gargoyle : MonoBehaviour
 	private GameObject activeTarget; //The object being looked at
 	private bool targetLost = false; //Is the play within view?
 	private float timeLost = 0.0F; //Counter to break line of sight
+	private bool checkLos = false; //Player is in light; check line of sight
+
+	private Vector3 fwdTop; //Direction to top part of player
+	private float distanceTop; //Distance to top part of player
+	private Vector3 fwdBottom;  //Direction to bottom part of player
+	private float distanceBottom; //Distance to bottom part of player
 	
 	private GameObject eyeLight; //To change eye light color
 	private cameraShake shakeScript; //Script to shake camera
@@ -28,7 +36,9 @@ public class Gargoyle : MonoBehaviour
 	void Start () 
 	{
 		player = GameObject.FindGameObjectWithTag("Player");
-		eyeLight = transform.Find("Head/Spotlight").gameObject;
+		playerTop = GameObject.Find ("/Entities/Player/Top");
+		playerBottom = GameObject.Find ("/Entities/Player/Bottom");
+		eyeLight = transform.Find("Spotlight").gameObject;
 		shakeScript = player.GetComponentInChildren<cameraShake>();
 	}
 	
@@ -54,6 +64,56 @@ public class Gargoyle : MonoBehaviour
 	//Looks back and forth
 	void LookAround()
 	{
+		if(checkLos)
+		{
+			//Enemy layer mask
+			int enemyLayer = 9;
+			int enemyMask = 1 << enemyLayer;
+			
+			//Invert bitmask to only ignore this layer
+			enemyMask = ~enemyMask;
+
+			fwdTop = (playerTop.transform.position - transform.position).normalized;
+			distanceTop = Vector3.Distance(playerTop.transform.position, transform.position);
+
+			fwdBottom = (playerBottom.transform.position - transform.position).normalized;
+			distanceBottom = Vector3.Distance(playerBottom.transform.position, transform.position);
+
+			RaycastHit hit;
+			Debug.DrawRay(transform.position, fwdTop * (distanceTop + 0.1F), Color.red);
+			Debug.DrawRay(transform.position, fwdBottom * (distanceBottom + 0.1F), Color.red);
+
+			//Double raycast
+			if(Physics.Raycast(transform.position, fwdTop, out hit, distanceTop + 0.1F, enemyMask)
+			   || Physics.Raycast(transform.position, fwdBottom, out hit, distanceBottom + 0.1F, enemyMask))
+			//If one true, screech
+			{
+				activeTarget = hit.collider.gameObject; //Store item being looked at
+				
+				//Is the object the player?
+				if(activeTarget.tag == "Player")
+				{
+					//Grab players transform
+					target = player.transform;
+					
+					//Store starting rotation
+					initialRot = transform.rotation;
+					
+					//Trigger the cameraShake
+					shakeScript.CameraShake();
+					
+					//Start screeching
+					screeching = true;
+					
+					//Change color red
+					eyeLight.light.color = Color.red;
+					
+					//Play screech sound
+					audio.PlayOneShot(screechSound);
+				}
+			}
+		}
+
 		if(switchTimer > switchTime)
 		{
 			switchTimer = 0;
@@ -66,11 +126,11 @@ public class Gargoyle : MonoBehaviour
 		
 		if(lookRight == true)
 		{
-			transform.Find("Head").transform.Rotate(Vector3.up * rotateSpeed * Time.deltaTime);
+			transform.Rotate(Vector3.up * rotateSpeed * Time.deltaTime);
 		}
 		else
 		{
-			transform.Find("Head").transform.Rotate(Vector3.down * rotateSpeed * Time.deltaTime);
+			transform.Rotate(Vector3.down * rotateSpeed * Time.deltaTime);
 		}
 	}
 	
@@ -82,13 +142,13 @@ public class Gargoyle : MonoBehaviour
 			if(smooth)
 			{
 				// Look at and dampen the rotation
-				Quaternion rotation = Quaternion.LookRotation(target.position - transform.Find("Head").transform.position);
-				transform.Find("Head").transform.rotation = Quaternion.Slerp(transform.Find("Head").transform.rotation, rotation, Time.deltaTime * damping);
+				Quaternion rotation = Quaternion.LookRotation(target.position - transform.position);
+				transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * damping);
 			}
 			else
 			{
 				// Just lookat
-				transform.Find("Head").transform.LookAt(target);
+				transform.LookAt(target);
 			}
 		}
 		
@@ -111,7 +171,7 @@ public class Gargoyle : MonoBehaviour
 		RaycastHit hit;
 		Debug.DrawRay(transform.position, transform.forward * 20, Color.white);
 		
-		if(Physics.Raycast(transform.Find("Head").transform.position, transform.Find("Head").transform.forward, out hit, 20, enemyMask))
+		if(Physics.Raycast(transform.position, transform.forward, out hit, 20, enemyMask))
 		{
 			activeTarget = hit.collider.gameObject; //Store item being looked at
 			
@@ -135,7 +195,7 @@ public class Gargoyle : MonoBehaviour
 		}
 		
 		//Is the player far enough away or behind another object?
-		if(Vector3.Distance(target.position, transform.Find("Head").transform.position) >= 20.0F || targetLost)
+		if(Vector3.Distance(target.position, transform.position) >= 20.0F || targetLost)
 		{
 			//Fix player speed
 			player.GetComponent<Player>().charMotor.movement.maxForwardSpeed = 6;
@@ -156,9 +216,9 @@ public class Gargoyle : MonoBehaviour
 	
 	void Adjust()
 	{
-		transform.Find("Head").transform.rotation = Quaternion.Lerp(transform.Find("Head").transform.rotation, initialRot, Time.deltaTime * 2);
+		transform.rotation = Quaternion.Lerp(transform.rotation, initialRot, Time.deltaTime * 2);
 		
-		if(transform.Find("Head").transform.rotation == initialRot)
+		if(transform.rotation == initialRot)
 		{
 			adjusting = false;
 		}
@@ -168,25 +228,19 @@ public class Gargoyle : MonoBehaviour
 	void OnTriggerEnter(Collider other)
 	{
 		//Is the object the player?
-		if(other.gameObject == player && !adjusting && !screeching)
+		if(other.gameObject == player)
 		{   
-			//Grab players transform
-			target = other.gameObject.transform;
-			
-			//Store starting rotation
-			initialRot = transform.Find("Head").transform.rotation;
-			
-			//Trigger the cameraShake
-			shakeScript.CameraShake();
-			
-			//Start screeching
-			screeching = true;
-			
-			//Change color red
-			eyeLight.light.color = Color.red;
-			
-			//Play screech sound
-			audio.PlayOneShot(screechSound);
+			checkLos = true;
+		}
+	}
+
+	//Has an object exited the spotlight?
+	void OnTriggerExit(Collider other)
+	{
+		//Is the object the player?
+		if(other.gameObject == player)
+		{  
+			checkLos = false;
 		}
 	}
 }

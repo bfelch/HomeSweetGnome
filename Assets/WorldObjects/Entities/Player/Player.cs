@@ -187,7 +187,7 @@ public class Player : MonoBehaviour
             controller.height = yHeight / 2;
             //alter camera position
             Vector3 pos = Camera.main.transform.position;
-            Camera.main.transform.position = new Vector3(pos.x, pos.y - .5f, pos.z);
+            //Camera.main.transform.position = new Vector3(pos.x, pos.y - .5f, pos.z);
         }
         //listen for key up
         else if (Input.GetKeyUp(KeyCode.LeftControl) || Input.GetKeyUp(KeyCode.LeftCommand))
@@ -265,7 +265,6 @@ public class Player : MonoBehaviour
 
 				if(activeTarget.tag == "Enemy" && activeTarget.GetComponent<Gnome>().gnomeLevel == 1)
 				{
-					Debug.Log (activeTarget.GetComponent<Gnome>().gnomeLevel);
 					readyToPush = false;
 					activeTarget.GetComponent<Gnome>().pushed = true;
 
@@ -281,6 +280,12 @@ public class Player : MonoBehaviour
 
 					//Apply a force in the direction of the push
 					activeTarget.rigidbody.AddForce((activeTarget.transform.position - this.transform.position).normalized * 6, ForceMode.Impulse);
+				}
+
+				if(activeTarget.tag == "Gargoyle")
+				{
+					//Apply a force in the direction of the push
+					activeTarget.transform.parent.rigidbody.AddForce((activeTarget.transform.position - this.transform.position).normalized * 8, ForceMode.Impulse);
 				}
 			}
 		}
