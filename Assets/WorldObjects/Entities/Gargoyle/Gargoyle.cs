@@ -99,8 +99,11 @@ public class Gargoyle : MonoBehaviour
 					//Store starting rotation
 					initialRot = transform.rotation;
 					
-					//Trigger the cameraShake
-					shakeScript.CameraShake();
+					//Trigger the camera shake
+					shakeScript.StartShake();
+
+					//On screen damage warning
+					player.GetComponent<GUIDamage>().enterCollider = true;
 					
 					//Start screeching
 					screeching = true;
@@ -159,7 +162,9 @@ public class Gargoyle : MonoBehaviour
 		player.GetComponent<Player>().sanity -= 0.1f;
 		
 		//Decrease the players speed
-		player.GetComponent<Player>().charMotor.movement.maxForwardSpeed = 3;
+		player.GetComponent<Player>().charMotor.movement.maxForwardSpeed = 3.0F;
+		player.GetComponent<Player>().charMotor.movement.maxSidewaysSpeed = 3.0F;
+		player.GetComponent<Player>().charMotor.movement.maxBackwardsSpeed = 3.0F;
 		
 		//Enemy layer mask
 		int enemyLayer = 9;
@@ -168,10 +173,20 @@ public class Gargoyle : MonoBehaviour
 		//Invert bitmask to only ignore this layer
 		enemyMask = ~enemyMask;		
 		
-		RaycastHit hit;
-		Debug.DrawRay(transform.position, transform.forward * 20, Color.white);
+		fwdTop = (playerTop.transform.position - transform.position).normalized;
+		distanceTop = Vector3.Distance(playerTop.transform.position, transform.position);
 		
-		if(Physics.Raycast(transform.position, transform.forward, out hit, 20, enemyMask))
+		fwdBottom = (playerBottom.transform.position - transform.position).normalized;
+		distanceBottom = Vector3.Distance(playerBottom.transform.position, transform.position);
+		
+		RaycastHit hit;
+
+		Debug.DrawRay(transform.position, fwdTop * (distanceTop + 0.1F), Color.red);
+		Debug.DrawRay(transform.position, fwdBottom * (distanceBottom + 0.1F), Color.red);
+		
+		//Double raycast
+		if(Physics.Raycast(transform.position, fwdTop, out hit, distanceTop + 0.1F, enemyMask)
+		   || Physics.Raycast(transform.position, fwdBottom, out hit, distanceBottom + 0.1F, enemyMask))
 		{
 			activeTarget = hit.collider.gameObject; //Store item being looked at
 			
@@ -186,7 +201,7 @@ public class Gargoyle : MonoBehaviour
 				//Increase time lost
 				timeLost += 1.0F * Time.deltaTime;
 				
-				if(timeLost >= 1.0F)
+				if(timeLost >= 0.5F)
 				{
 					//Player not in line of sight
 					targetLost = true;
@@ -198,10 +213,18 @@ public class Gargoyle : MonoBehaviour
 		if(Vector3.Distance(target.position, transform.position) >= 20.0F || targetLost)
 		{
 			//Fix player speed
-			player.GetComponent<Player>().charMotor.movement.maxForwardSpeed = 6;
+			player.GetComponent<Player>().charMotor.movement.maxForwardSpeed = 6.0F;
+			player.GetComponent<Player>().charMotor.movement.maxSidewaysSpeed = 6.0F;
+			player.GetComponent<Player>().charMotor.movement.maxBackwardsSpeed = 6.0F;
 			
 			//Remove the blur
 			//player.GetComponentInChildren<BlurEffect> ().enabled = false;
+
+			//On screen damage warning
+			player.GetComponent<GUIDamage>().enterCollider = false;
+
+			//Trigger the cameraShake
+			shakeScript.EndShake();
 			
 			//Change gargoyle light color
 			eyeLight.light.color = Color.yellow;

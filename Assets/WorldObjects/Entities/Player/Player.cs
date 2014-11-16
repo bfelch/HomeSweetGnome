@@ -99,7 +99,8 @@ public class Player : MonoBehaviour
             Application.Quit();
         }
 
-        if (!this.gameObject.animation.IsPlaying("OpeningCut")) {
+        if (!this.gameObject.animation.IsPlaying("OpeningCut")) 
+		{
             Sanity();
             Walk();
             Sprint();
@@ -111,26 +112,32 @@ public class Player : MonoBehaviour
     //Note: Bug: enemies will not pathfind close enough to you to actually register the collision.
     void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.tag.Equals("Enemy") && other.gameObject.name != "GnomeShed")
+        if (other.gameObject.tag.Equals("Gnome") && other.gameObject.name != "GnomeShed")
         {
             sanity -= 0.2f;
         }
     }
 
     void Walk() {
-        if (!this.gameObject.animation.IsPlaying("Landing")) {
-            if (!Input.GetKey(KeyCode.LeftShift) && (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))) {
+        if (!this.gameObject.animation.IsPlaying("Landing")) 
+		{
+            if (!Input.GetKey(KeyCode.LeftShift) && (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))) 
+			{
                 //play walk animation
                 this.gameObject.animation.Play("Walk");
             }
         }
 
-        if (controller.isGrounded) {
-            if (!landed) {
+        if (controller.isGrounded) 
+		{
+            if (!landed) 
+			{
                 landed = true;
                 this.gameObject.animation.Play("Landing");
             }
-        } else {
+        } 
+		else 
+		{
             landed = false;
         }
     }
@@ -181,7 +188,9 @@ public class Player : MonoBehaviour
         if((Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.LeftCommand)) && !crouching){
             crouching = true;
             //alter speed
-            charMotor.movement.maxForwardSpeed = 3;
+			charMotor.movement.maxForwardSpeed = 3.0F;
+			charMotor.movement.maxSidewaysSpeed = 3.0F;
+			charMotor.movement.maxBackwardsSpeed = 3.0F;
             //alter size
             box.size = new Vector3(1, yHeight / 2, 1);
             controller.height = yHeight / 2;
@@ -204,34 +213,6 @@ public class Player : MonoBehaviour
             this.transform.position = new Vector3(pos.x, pos.y + yHeight / 3, pos.z);
         }
     }
-
-	void OnControllerColliderHit(ControllerColliderHit hit) 
-	{
-		//Only push gargoyles
-		if(hit.gameObject.tag == "Gargoyle")
-		{
-			//Get the rigidbody
-			Rigidbody body = hit.collider.attachedRigidbody;
-			
-			//Make sure there is a body and it is kinematic
-			if (body == null || body.isKinematic)
-			{
-				return;
-			}
-			
-			//Don't want to push down
-			if (hit.moveDirection.y < -0.3F)
-			{
-				return;
-			}
-			
-			//Get push direction opposite of the player
-			Vector3 pushDir = new Vector3(hit.moveDirection.x, 0, hit.moveDirection.z);
-			//Push
-			body.velocity = pushDir * pushPower;
-		}
-	}
-
 
 	IEnumerator PushTimer(float waitTime, GameObject target)
 	{

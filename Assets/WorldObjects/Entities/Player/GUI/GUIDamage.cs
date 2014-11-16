@@ -23,7 +23,10 @@ public class GUIDamage : MonoBehaviour
     public void OnTriggerExit(Collider col)
     {
         //if we leave the enemy's trigger, set enterCollider to false
-        enterCollider = false;
+		if(col.gameObject.tag == "Enemy")
+		{
+        	enterCollider = false;
+		}
     }
 	
 	// Update is called once per frame
