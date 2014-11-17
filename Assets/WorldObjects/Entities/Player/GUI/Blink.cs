@@ -75,10 +75,12 @@ public class Blink : MonoBehaviour
         if(Input.GetKey(KeyCode.R))
         {
             ShutEyes();
+            blink = true;
         }
         if (Input.GetKeyUp(KeyCode.R))
         {
             OpenShutEyes();
+            blink = false;
         }
     }
 

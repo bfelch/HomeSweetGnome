@@ -31,7 +31,7 @@ public class GnomeParent : MonoBehaviour
         playerSanityMax = target.GetComponent<Player>().maxSanity;
 
         //get all the gnomes
-        gnomes = GameObject.FindGameObjectsWithTag("Enemy");
+        gnomes = GameObject.FindGameObjectsWithTag("Gnome");
 
         //get the blink component from the player
         blink = target.GetComponent<Blink>();

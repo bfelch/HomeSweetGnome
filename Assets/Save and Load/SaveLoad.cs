@@ -70,7 +70,7 @@ public class SaveLoad : MonoBehaviour
     public void saveGameValues(Game data)
     {
         //retreive all the objects that need data saved from the scene
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Gnome");
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         GameObject[] pickUps = GameObject.FindGameObjectsWithTag("PickUp");
         GameObject[] useable = GameObject.FindGameObjectsWithTag("Useable");
@@ -153,7 +153,7 @@ public class SaveLoad : MonoBehaviour
     public void loadGameValues(Game data)
     {
         //retreive all the objects that need data loaded into them
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Gnome");
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         GameObject[] pickUps = GameObject.FindGameObjectsWithTag("PickUp");
         GameObject[] useable = GameObject.FindGameObjectsWithTag("Useable");

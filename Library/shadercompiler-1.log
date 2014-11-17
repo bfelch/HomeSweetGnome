@@ -1,5 +1,5 @@
 Base path: C:/Program Files (x86)/Unity/Editor/Data
-Pipe name: \\.\pipe\UnityShaderCompiler-1-6140
+Pipe name: \\.\pipe\UnityShaderCompiler-1-5640
 Cmd: getPlatforms
 Cmd: preprocess
   insize=9613 outsize=2432 ok=1
@@ -145,3 +145,91 @@ Cmd: preprocess
   insize=5533 outsize=943 ok=1
 Cmd: preprocess
   insize=1808 outsize=713 ok=1
+Cmd: preprocess
+  insize=2933 outsize=203 ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=2950 outsize=673 kw=DIRECTIONAL_SHAFTS LIGHT_ON_SCREEN ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=2950 outsize=5125 kw=DIRECTIONAL_SHAFTS LIGHT_ON_SCREEN ok=1
+Cmd: preprocess
+  insize=889 outsize=229 ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=921 outsize=738 kw= ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=921 outsize=1396 kw= ok=1
+Cmd: preprocess
+  insize=6730 outsize=291 ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=6544 outsize=770 kw=DIRECTIONAL_SHAFTS LIGHT_ON_SCREEN SHOW_SAMPLES_OFF QUAD_SHAFTS ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=6544 outsize=8164 kw=DIRECTIONAL_SHAFTS LIGHT_ON_SCREEN SHOW_SAMPLES_OFF QUAD_SHAFTS ok=1
+Cmd: preprocess
+  insize=586 outsize=194 ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=665 outsize=1136 kw= ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=665 outsize=713 kw= ok=1
+Cmd: preprocess
+  insize=678 outsize=208 ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=745 outsize=1550 kw= ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=745 outsize=510 kw= ok=1
+Cmd: preprocess
+  insize=2926 outsize=568 ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=2462 outsize=665 kw= ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=2462 outsize=4524 kw= ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=422 outsize=665 kw= ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=422 outsize=510 kw= ok=1
+Cmd: preprocess
+  insize=4254 outsize=230 ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=4197 outsize=665 kw=COLORED_ON ATTENUATION_CURVE_ON COOKIE_TEX_ON DIRECTIONAL_SHAFTS ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=4197 outsize=5629 kw=COLORED_ON ATTENUATION_CURVE_ON COOKIE_TEX_ON DIRECTIONAL_SHAFTS ok=1
+Cmd: preprocess
+  insize=1228 outsize=198 ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=1282 outsize=665 kw= ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=1282 outsize=2395 kw= ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=4197 outsize=665 kw=DIRECTIONAL_SHAFTS COOKIE_TEX_OFF ATTENUATION_CURVE_OFF COLORED_OFF ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=4197 outsize=5402 kw=DIRECTIONAL_SHAFTS COOKIE_TEX_OFF ATTENUATION_CURVE_OFF COLORED_OFF ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=2950 outsize=673 kw=SPOT_SHAFTS LIGHT_ON_SCREEN ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=2950 outsize=6442 kw=SPOT_SHAFTS LIGHT_ON_SCREEN ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=4197 outsize=665 kw=SPOT_SHAFTS COOKIE_TEX_OFF ATTENUATION_CURVE_OFF COLORED_OFF ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=4197 outsize=7498 kw=SPOT_SHAFTS COOKIE_TEX_OFF ATTENUATION_CURVE_OFF COLORED_OFF ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=6544 outsize=1103 kw=SPOT_SHAFTS LIGHT_ON_SCREEN SHOW_SAMPLES_OFF FRUSTUM_SHAFTS ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=6544 outsize=9700 kw=SPOT_SHAFTS LIGHT_ON_SCREEN SHOW_SAMPLES_OFF FRUSTUM_SHAFTS ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=2950 outsize=673 kw=SPOT_SHAFTS LIGHT_OFF_SCREEN ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=2950 outsize=8050 kw=SPOT_SHAFTS LIGHT_OFF_SCREEN ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=6544 outsize=770 kw=SPOT_SHAFTS SHOW_SAMPLES_OFF QUAD_SHAFTS LIGHT_OFF_SCREEN ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=6544 outsize=11000 kw=SPOT_SHAFTS SHOW_SAMPLES_OFF QUAD_SHAFTS LIGHT_OFF_SCREEN ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=4197 outsize=665 kw=COLORED_ON SPOT_SHAFTS COOKIE_TEX_OFF ATTENUATION_CURVE_OFF ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=4197 outsize=7701 kw=COLORED_ON SPOT_SHAFTS COOKIE_TEX_OFF ATTENUATION_CURVE_OFF ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=6544 outsize=1103 kw=SPOT_SHAFTS SHOW_SAMPLES_OFF FRUSTUM_SHAFTS LIGHT_OFF_SCREEN ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=6544 outsize=11276 kw=SPOT_SHAFTS SHOW_SAMPLES_OFF FRUSTUM_SHAFTS LIGHT_OFF_SCREEN ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=6544 outsize=770 kw=SPOT_SHAFTS LIGHT_ON_SCREEN SHOW_SAMPLES_OFF QUAD_SHAFTS ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=6544 outsize=9423 kw=SPOT_SHAFTS LIGHT_ON_SCREEN SHOW_SAMPLES_OFF QUAD_SHAFTS ok=1
