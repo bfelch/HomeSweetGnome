@@ -10,6 +10,11 @@ public class Node : MonoBehaviour {
     //list of items that cannot spawn in this node
     public List<GameObject> restrictedItems;
 
+    public bool boatItems;
+    public bool atticItems;
+    public bool gateItems;
+    public bool miscItems;
+
 	// Use this for initialization
 	void Start () {
         hasItem = false;
@@ -39,5 +44,22 @@ public class Node : MonoBehaviour {
         //sets position of parameter to this node
         item.transform.position = this.transform.position;
         hasItem = true;
+    }
+
+    public bool IsValidItem(Item item)
+    {
+        switch (item.type)
+        {
+            case ItemType.BOAT:
+                return boatItems;
+            case ItemType.ATTIC:
+                return atticItems;
+            case ItemType.GATE:
+                return gateItems;
+            case ItemType.MISC:
+                return miscItems;
+        }
+
+        return false;
     }
 }

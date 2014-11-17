@@ -16,18 +16,21 @@ public class NodeWrapper : MonoBehaviour
         //if starting new game, spawns items
         if (newGame) 
 		{
-            foreach (Item item in itemList) 
-			{
-                //for each item, find empty node that allows item
-                Node node;
-                do 
-				{
-                    int index = Random.Range(0, nodeList.Count);
-                    node = nodeList[index];
-                } while (node.hasItem || node.IsRestrictedItem(item.gameObject));
+            foreach (Item item in itemList)
+            {
+                if (item.type != ItemType.NONE)
+                {
+                    //for each item, find empty node that allows item
+                    Node node;
+                    do
+                    {
+                        int index = Random.Range(0, nodeList.Count);
+                        node = nodeList[index];
+                    } while (node.hasItem || !node.IsValidItem(item));
 
-                //set node's item
-                node.GiveItem(item.gameObject);
+                    //set node's item
+                    node.GiveItem(item.gameObject);
+                }
             }
         }
 	}
