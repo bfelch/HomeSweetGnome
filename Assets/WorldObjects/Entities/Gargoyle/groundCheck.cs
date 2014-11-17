@@ -28,19 +28,50 @@ public class groundCheck : MonoBehaviour
 		{
 			if(falling == true)
 			{
-				//Emit shatter effect
-				Instantiate(shatterEffect, new Vector3(transform.position.x, transform.position.y - 0.8F, transform.position.z), shatterEffect.transform.rotation);
-
-				//Delete gargoyle
-				Destroy(transform.parent.gameObject);
-			}
-			else
-			{
-				//Do nothing
+				BreakApart();
 			}
 		}
 	}
 
+	//Shatters the gargoyle when pushed and spawns the gargoyle head pickup
+	void BreakApart()
+	{
+		//Emit shatter effect
+		Instantiate(shatterEffect, new Vector3(transform.position.x, transform.position.y - 0.8F, transform.position.z), shatterEffect.transform.rotation);
+		
+		//Get the gargoyle head game object
+		GameObject gargoyleHead = transform.parent.Find("GargoyleHead").gameObject;
+		
+		//Remove gargoyle script component
+		Destroy (gargoyleHead.GetComponent<Gargoyle>());
+		
+		//Remove children
+		foreach(Transform child in gargoyleHead.transform)
+		{
+			Destroy(child.gameObject);
+		}
+		
+		//Remove audio source component
+		Destroy(gargoyleHead.GetComponent<AudioSource>());
+		
+		//Apply physics to the head
+		gargoyleHead.GetComponent<Rigidbody>().isKinematic = false;
+		gargoyleHead.GetComponent<Rigidbody>().useGravity = true;
+		
+		//Add useable script
+		gargoyleHead.AddComponent<Item>();
+		
+		//Change tag
+		gargoyleHead.tag = "PickUp";
+		
+		//Move head to item list
+		gargoyleHead.transform.parent = GameObject.Find("Items").transform;
+		
+		//Delete gargoyle
+		Destroy(transform.parent.gameObject);
+	}
+
+	//Checks if gargyole is on the ground
 	bool IsGrounded() 
 	{
 		//Enemy layer mask

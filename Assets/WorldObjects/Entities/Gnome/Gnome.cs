@@ -33,6 +33,9 @@ public class Gnome : MonoBehaviour
 	//Shatter Effect Prefab
 	public GameObject shatterEffect;
 
+	//Gnome Eye prefab
+	public GameObject gnomeEye;
+
     void Start()
     {
         QualitySettings.antiAliasing = 4;
@@ -60,11 +63,14 @@ public class Gnome : MonoBehaviour
         else
         {
             //if not on screen, trapped, or pushed
-            if (!SeenByPlayer() && !trapped && !pushed) {
-                if (TargetInRange()) {
+            if (!SeenByPlayer() && !trapped && !pushed) 
+			{
+                if (TargetInRange()) 
+				{
                     //if player in range
                     FollowPlayer();
-                } else {
+                } else 
+				{
                     //if player not in range
                     Wander();
                 }
@@ -84,10 +90,12 @@ public class Gnome : MonoBehaviour
         lastKnownLocation = target.transform.position;
         //set destination
         agent.SetDestination(lastKnownLocation);
-        if (targetBlink.blink) {
+        if (targetBlink.blink) 
+		{
             //if player is blinking move super fast
             agent.speed = blinkSpeed;
-        } else {
+        } else 
+		{
             //move at normal speed
             agent.speed = moveSpeed;
         }
@@ -197,12 +205,28 @@ public class Gnome : MonoBehaviour
 		readyToSpawn = false;
 	}
 
+	void BreakApart()
+	{
+		//Emit particle effect at shatter location
+		Instantiate(shatterEffect, new Vector3(transform.position.x, transform.position.y - 0.8F, transform.position.z), shatterEffect.transform.rotation);
+		
+		//Spawn the gnome eye
+		GameObject gnomeEyeClone = (GameObject)Instantiate(gnomeEye, new Vector3(transform.position.x, transform.position.y + 0.2F, transform.position.z), gnomeEye.transform.rotation);
+
+		//Change the name
+		gnomeEyeClone.name = "GnomeEye";
+
+		//Move head to item list
+		gnomeEyeClone.transform.parent = GameObject.Find ("Items").transform;
+
+		//Crush the gnome
+		Destroy(this.gameObject);
+	}
+
     void OnTriggerEnter(Collider other)
 	{
 		if(other.name == "DirtTrap")
 		{
-            Debug.Log("Trapped");
-
             //Gnome is trapped
             trapped = true;
 
@@ -218,11 +242,8 @@ public class Gnome : MonoBehaviour
 		}
         else if(other.tag == "DropTrap")
         {
-			//Emit particle effect at shatter location
-			Instantiate(shatterEffect, new Vector3(transform.position.x, transform.position.y - 0.8F, transform.position.z), shatterEffect.transform.rotation);
-
-            //Crush the gnome
-            Destroy(this.gameObject);
+			//Break the gnome
+			BreakApart();
         }
 	}
 }
