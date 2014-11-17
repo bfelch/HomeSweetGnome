@@ -7,6 +7,8 @@ public class Item : MonoBehaviour {
     //stored name
     public string name;
 
+    public ItemType type;
+
 	// Use this for initialization
 	void Start () {
         name = this.gameObject.name;
@@ -17,3 +19,5 @@ public class Item : MonoBehaviour {
 	
 	}
 }
+
+public enum ItemType { BOAT, ATTIC, GATE, MISC, NONE };
