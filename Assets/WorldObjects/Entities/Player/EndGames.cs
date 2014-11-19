@@ -85,7 +85,7 @@ public class EndGames : MonoBehaviour {
             //set the new color
             winTextEscaped.color = changing;
             //update the alpha value
-            fadeIn += .03f * Time.deltaTime;
+            fadeIn += .1f * Time.deltaTime;
         }
 
         if (playerSlept)

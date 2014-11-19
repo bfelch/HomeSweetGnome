@@ -32,6 +32,7 @@ public class PlayerInteractions : MonoBehaviour
     public Texture2D crosshair;
 
     private bool pause;
+    private Font bark;
 
     void Start()
     {
@@ -39,6 +40,7 @@ public class PlayerInteractions : MonoBehaviour
         ToggleGUI(showGUI);
         st = gameObject.GetComponent<ShedTutorial>();
         outline = Resources.Load("Outline") as Material;
+        bark = GetComponent<Player>().bark;
     }
 
     void Update()
@@ -65,7 +67,7 @@ public class PlayerInteractions : MonoBehaviour
     {
         GUI.color = Color.white;
         GUI.backgroundColor = Color.white;
-
+        GUI.skin.font = bark;
         if (pause)
         {
             GUI.BeginGroup(new Rect(Screen.width / 2 - 150, 100, 300, 250));
@@ -117,12 +119,12 @@ public class PlayerInteractions : MonoBehaviour
                 }
                     this.GetComponent<Player>().flashFade();
                     //Display item name
-                    GUI.Box(new Rect(Screen.width - Screen.width / 2, Screen.height - Screen.height / 2, 250, 30), improvedName);
+                    GUI.Box(new Rect(0, Screen.height - Screen.height / 2 + 150, Screen.width, 30), improvedName);
             }
             else if (notUseable && activeTarget != null)
             {
                 this.GetComponent<Player>().flashFade();
-                GUI.Box(new Rect(5, 5, 300, 30), "You need the " + GUIString + " to continue.");
+                GUI.Box(new Rect(0, Screen.height - Screen.height / 2 + 150, Screen.width, 30), "You need the " + GUIString + " to continue.");
             }
 
             if (!showGUI)
