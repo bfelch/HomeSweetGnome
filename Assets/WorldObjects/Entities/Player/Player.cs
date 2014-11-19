@@ -9,25 +9,14 @@ public class Player : MonoBehaviour
     public float maxSanity;
     public float minSanity;
     float healthBarLength;
-    //time until can sprint
-    private float restTime;
-    private float maxRestTime;
-    //time player can sprint
-    public float sprintTime;
-    public float maxSprintTime;
     private Animation blinkBottom;
     private Animation blinkTop;
-    public CharacterMotor charMotor;
 
     public AudioSource audio1;
     public AudioSource audio2;
     public bool breathe = true; //To check whether to play the heavyBreathing sound
 
-    private bool crouching;
 	private bool readyToPush;
-    private float yHeight;
-    public BoxCollider box;
-    public CharacterController controller;
     private float fadeIn = 0;
     private float pauseFadeTime = 4;
     private bool pauseFade = false;
@@ -36,6 +25,8 @@ public class Player : MonoBehaviour
 	public float pushPower = 1.0F;
 
 	public GameObject activeTarget; //The item being looked at
+
+    public CharacterMotor charMotor;
 
     //if player just landed or has been on ground
     private bool landed;
@@ -48,13 +39,8 @@ public class Player : MonoBehaviour
         sanity = 100;
         maxSanity = 100;
         minSanity = 0;
-        restTime = 0;
-        maxRestTime = 3.7f;
-        sprintTime = maxSprintTime = 5f;
 
 		readyToPush = true;
-
-        yHeight = box.size.y;
 
         AudioSource[] aSources = GetComponentsInChildren<AudioSource>(); //Grab all the audio sources on this object
         Debug.Log(aSources.Length);
@@ -81,9 +67,9 @@ public class Player : MonoBehaviour
         if (!this.gameObject.animation.IsPlaying("OpeningCut")) 
 		{
             Sanity();
-            Walk();
-            Sprint();
-            Crouch();
+            //Walk();
+            //Sprint();
+            //Crouch();
             Push();
         }
     }
@@ -97,7 +83,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    void Walk() {
+    /*void Walk() {
         if (!this.gameObject.animation.IsPlaying("Landing")) 
 		{
             if (!Input.GetKey(KeyCode.LeftShift) && (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))) 
@@ -159,39 +145,7 @@ public class Player : MonoBehaviour
                 breathe = true;
             }
         }
-    }
-
-    void Crouch()
-    {
-        //listen for button press if not already crouching
-        if((Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.LeftCommand)) && !crouching){
-            crouching = true;
-            //alter speed
-			charMotor.movement.maxForwardSpeed = 3.0F;
-			charMotor.movement.maxSidewaysSpeed = 3.0F;
-			charMotor.movement.maxBackwardsSpeed = 3.0F;
-            //alter size
-            box.size = new Vector3(1, yHeight / 2, 1);
-            controller.height = yHeight / 2;
-            //alter camera position
-            Vector3 pos = Camera.main.transform.position;
-            //Camera.main.transform.position = new Vector3(pos.x, pos.y - .5f, pos.z);
-        }
-        //listen for key up
-        else if (Input.GetKeyUp(KeyCode.LeftControl) || Input.GetKeyUp(KeyCode.LeftCommand))
-        {
-            crouching = false;
-            //alter size
-            box.size = new Vector3(1, yHeight, 1);
-            controller.height = yHeight;
-            //alter camera position
-            Vector3 pos = Camera.main.transform.position;
-            Camera.main.transform.position = new Vector3(pos.x, pos.y + .5f, pos.z);
-            //move player up to prevent falling through items
-            pos = this.transform.position;
-            this.transform.position = new Vector3(pos.x, pos.y + yHeight / 3, pos.z);
-        }
-    }
+    }*/
 
 	IEnumerator PushTimer(float waitTime, GameObject target)
 	{
