@@ -14,7 +14,7 @@ public class FadeToBlack : MonoBehaviour {
         if (timer >= 0)
         {
                 //decrease the damageTimer
-                timer -= 3 * Time.deltaTime;
+                timer -= 2.5f * Time.deltaTime;
 
         }
       

@@ -30,6 +30,7 @@ public class Player : MonoBehaviour
 
     //if player just landed or has been on ground
     private bool landed;
+    public Font bark;
 
     // Use this for initialization
     void Start()
