@@ -43,18 +43,19 @@ public class Useable : MonoBehaviour
             }
 			else if (type == UseableType.GATE)
             {
+                GameObject.Find("Player").GetComponent<Animation>().Play("GateEnding");
                 GameObject.Find("FrontGate").GetComponent<Animation>().Play("OpenFrontGate");
                 //Run the escape function inside the Player script
             }
             else if (type == UseableType.BOAT)
             {
                 //Run the escape function inside the Player script
-                GameObject.Find("Player").GetComponent<Player>().Escape();
+                GameObject.Find("Player").GetComponent<EndGames>().Escape();
             }
             else if(type == UseableType.ATTICBOWL)
             {
                 //Run the escape function inside the Player script
-                GameObject.Find("Player").GetComponent<Player>().Experiment();
+                GameObject.Find("Player").GetComponent<EndGames>().Experiment();
             }
             else if (type == UseableType.LIGHT)
             {

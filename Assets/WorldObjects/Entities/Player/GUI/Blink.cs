@@ -57,7 +57,7 @@ public class Blink : MonoBehaviour
     {
         //get the player sanity values
         playerSanity = gameObject.GetComponent<Player>().sanity;
-        playerSlept = gameObject.GetComponent<Player>().playerSlept;
+        playerSlept = gameObject.GetComponent<EndGames>().playerSlept;
 
         if (!playerSlept)
         {

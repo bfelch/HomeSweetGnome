@@ -40,8 +40,8 @@ public class heartBeat : MonoBehaviour
 	void Update () 
 	{
 		//get the death variables from player
-		deathFall = GameObject.Find("Player").GetComponent<Player>().playerFell;
-		deathSleep = GameObject.Find("Player").GetComponent<Player>().playerSlept;
+		deathFall = GameObject.Find("Player").GetComponent<EndGames>().playerFell;
+		deathSleep = GameObject.Find("Player").GetComponent<EndGames>().playerSlept;
 
 		if(!deathFall && !deathSleep)
 		{
