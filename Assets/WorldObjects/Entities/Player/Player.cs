@@ -83,31 +83,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    /*void Walk() {
-        if (!this.gameObject.animation.IsPlaying("Landing")) 
-		{
-            if (!Input.GetKey(KeyCode.LeftShift) && (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))) 
-			{
-                //play walk animation
-                this.gameObject.animation.Play("Walk");
-            }
-        }
-
-        if (controller.isGrounded) 
-		{
-            if (!landed) 
-			{
-                landed = true;
-                this.gameObject.animation.Play("Landing");
-            }
-        } 
-		else 
-		{
-            landed = false;
-        }
-    }
-
-    void Sprint()
+    /*void Sprint()
     {
         if (sprintTime > 0)
         {

@@ -6,10 +6,6 @@ public class PlayerMovement : MonoBehaviour {
     //current state of player
     public PlayerState state;
 
-    //current rest timer and max value
-    private float restTime;
-    private float maxRestTime;
-
     //current sprint timer and max value
     private float sprintTime;
     private float maxSprintTime;
@@ -31,15 +27,17 @@ public class PlayerMovement : MonoBehaviour {
     public bool crouching;
     public bool sprinting;
 
+    //used to play breathing sound
+    private bool breathing;
+    public AudioSource breathingSound;
+
     //player motor and controller
     public CharacterMotor motor;
     public CharacterController controller;
 
 	// Use this for initialization
 	void Start () {
-        //set timers
-        restTime = 0;
-        maxRestTime = 3.7f;
+        //set timer
         sprintTime = 5f;
         maxSprintTime = 5f;
 
@@ -50,10 +48,27 @@ public class PlayerMovement : MonoBehaviour {
         //set player camera heights
         cameraStandHeight = camera.transform.localPosition.y;
         cameraCrouchHeight = 0.40857f;
+        
+        AudioSource[] aSources = GetComponentsInChildren<AudioSource>();
+        breathingSound = aSources[1];
 	}
 	
 	// Update is called once per frame
-	void Update () {
+    void Update() {
+        //recharge sprint if not trying to sprint
+        if (!Input.GetKey(KeyCode.LeftShift) && !Input.GetKey(KeyCode.W) && sprintTime < maxSprintTime) {
+            sprintTime += Time.deltaTime;
+        }
+
+        //if cannot sprint, start breathing sound
+        if (sprintTime < 0) {
+            if (breathing) {
+                breathing = false;
+
+                breathingSound.Play();
+            }
+        }
+
         switch (state) {
             case PlayerState.WAKE:
                 Wake();
@@ -103,7 +118,6 @@ public class PlayerMovement : MonoBehaviour {
     void Walk() {
         if (!walking) {
             SetMovementSpeed(6f);
-            Debug.Log("Set speed");
         }
 
         this.gameObject.animation.Play("Walk");
@@ -149,10 +163,22 @@ public class PlayerMovement : MonoBehaviour {
         }
 
         if (Input.GetKey(KeyCode.W)) {
-            //if moving forward, play animation and update timer
-            this.gameObject.animation.Play("Sprint");
+            if (sprintTime > 0) {
+                //if moving forward, play animation and update timer
+                this.gameObject.animation.Play("Sprint");
+
+                sprintTime -= Time.deltaTime;
+            } else {
+                //if timer under 0, change state
+                state = PlayerState.STAND;
+
+                breathing = true;
+            }
         } else {
-            //if not moving, update timer
+            //if not moving, change state
+            state = PlayerState.STAND;
+
+            breathing = true;
         }
 
         if (Falling()) {
@@ -161,6 +187,8 @@ public class PlayerMovement : MonoBehaviour {
         } else if (!Sprinting()) {
             //if not sprinting, change state
             state = PlayerState.STAND;
+
+            breathing = true;
         }
     }
 
@@ -188,7 +216,7 @@ public class PlayerMovement : MonoBehaviour {
     }
 
     bool Sprinting() {
-        return (Input.GetKey(KeyCode.LeftShift));
+        return (Input.GetKey(KeyCode.LeftShift) && sprintTime > 0);
     }
 
     bool Moving() {

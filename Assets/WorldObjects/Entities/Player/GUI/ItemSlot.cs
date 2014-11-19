@@ -26,6 +26,16 @@ public class ItemSlot : MonoBehaviour {
             if (heldItem != null)
             {
                 GUI.Box(box, heldItem.name);
+
+                if (Input.GetMouseButtonUp(1)) {
+                    heldItem.gameObject.SetActive(true);
+
+                    Vector3 pos = transform.position;
+
+                    heldItem.transform.position = new Vector3(pos.x, pos.y - 2.5f, pos.z);
+
+                    heldItem = null;
+                }
             }
             else
             {
