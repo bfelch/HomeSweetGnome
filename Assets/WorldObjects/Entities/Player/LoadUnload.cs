@@ -11,7 +11,14 @@ public class LoadUnload : MonoBehaviour {
 	    inHedge = new GameObject[]{GameObject.Find("Dock"), GameObject.Find("EstateWall"), GameObject.Find("Greenhouse"), GameObject.Find("shedModel"), GameObject.Find("Mansion")};
 	    inTunnels = new GameObject[] {GameObject.Find("EstateWall"), GameObject.Find("shedModel"), GameObject.Find("Greenhouse"), GameObject.Find("Hedgemaze"), GameObject.Find("Mansion")};
         inShed = new GameObject[] {GameObject.Find("Greenhouse"), GameObject.Find("Hedgemaze"), GameObject.Find("Mansion"), GameObject.Find("Dock")};
- 
+
+
+        for (int i = 0; i < inShed.Length; i++)
+        {
+            inShed[i].SetActive(false);
+        }
+
+
     }
 	
 	// Update is called once per frame
