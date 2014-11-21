@@ -49,8 +49,10 @@ public class Useable : MonoBehaviour
             }
             else if (type == UseableType.BOAT)
             {
+                GameObject.Find("Player").transform.parent = GameObject.Find("Boat").transform;
+                GameObject.Find("Boat").GetComponent<Animation>().Play("DriveBoat");
                 //Run the escape function inside the Player script
-                GameObject.Find("Player").GetComponent<EndGames>().Escape();
+                //GameObject.Find("Player").GetComponent<EndGames>().Escape();
             }
             else if(type == UseableType.ATTICBOWL)
             {
