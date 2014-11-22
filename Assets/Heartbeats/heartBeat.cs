@@ -25,7 +25,6 @@ public class heartBeat : MonoBehaviour
 		guiDamageScript = GameObject.Find ("Player").GetComponent<GUIDamage> ();
 
 		AudioSource[] aSources = GetComponents<AudioSource>(); //Grab all the audio sources on this object
-		Debug.Log(aSources.Length);
 		beat1 = aSources[0];
 		beat2 = aSources[1];
 		beat3 = aSources[2];

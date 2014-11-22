@@ -12,8 +12,8 @@ public class Player : MonoBehaviour
     private Animation blinkBottom;
     private Animation blinkTop;
 
-    public AudioSource audio1;
-    public AudioSource audio2;
+    public AudioSource bgMusic;
+    public AudioSource breathSound;
     public bool breathe = true; //To check whether to play the heavyBreathing sound
 
 	private bool readyToPush;
@@ -32,6 +32,11 @@ public class Player : MonoBehaviour
     private bool landed;
     public Font bark;
 
+	//Step sounds
+	private AudioSource grassStep;
+	private AudioSource woodStep;
+	private string floorType;
+
     // Use this for initialization
     void Start()
     {
@@ -43,10 +48,13 @@ public class Player : MonoBehaviour
 
 		readyToPush = true;
 
-        AudioSource[] aSources = GetComponentsInChildren<AudioSource>(); //Grab all the audio sources on this object
-        Debug.Log(aSources.Length);
-        audio1 = aSources[0];
-        audio2 = aSources[1];
+        AudioSource[] playerSounds = transform.Find("Graphics").GetComponents<AudioSource>(); //Grab the audio sources on the graphics child
+        bgMusic = playerSounds[0];
+        breathSound = playerSounds[1];
+
+		AudioSource[] stepSounds = GetComponents<AudioSource>(); //Grab the audio sources on the player parent
+		grassStep = stepSounds[0];
+		woodStep = stepSounds[1];
 
         if(PlayerPrefs.GetInt("LoadGame") == 1)
         {
@@ -57,7 +65,6 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         //temporary close game screen
         if (Input.GetKey(KeyCode.LeftAlt))
         {
@@ -125,9 +132,7 @@ public class Player : MonoBehaviour
     }*/
 
 	IEnumerator PushTimer(float waitTime, GameObject target)
-	{
-		Debug.Log("Push Timer Started");
-		
+	{	
 		//Wait spawn time
 		yield return new WaitForSeconds(waitTime);
 
@@ -143,14 +148,15 @@ public class Player : MonoBehaviour
 
 			//Player layer mask
 			int playerLayer = 8;
-			int playerMask = 1 << playerLayer;
+			int triggerLayer = 10;
+			LayerMask ignoreMask = 1 << playerLayer | 1 << triggerLayer;
 			
 			//Invert bitmask to only ignore this layer
-			playerMask = ~playerMask;
+			ignoreMask = ~ignoreMask;
 			
 			RaycastHit hit;
 			
-			if (Physics.Raycast(cam.position, cam.forward, out hit, 5, playerMask))
+			if (Physics.Raycast(cam.position, cam.forward, out hit, 5, ignoreMask))
 			{
 				activeTarget = hit.collider.gameObject; //Store item being looked at
 
@@ -221,6 +227,17 @@ public class Player : MonoBehaviour
         }
     }
 
+	void OnControllerColliderHit(ControllerColliderHit hit)
+	{
+		//Exit if collision has no tag
+		if(hit.collider.tag == null)
+		{
+			return;
+		}
+
+		floorType = hit.collider.tag;
+	}
+
 	IEnumerator WaitToReload(float waitTime)
 	{
 		//Wait before loading the main menu
@@ -268,4 +285,42 @@ public class Player : MonoBehaviour
                 switchFade = true;
         }
     }
+
+	void PlayStepSound()
+	{
+		switch(floorType)
+		{
+			case "Structure":
+				//Play wood step
+				woodStep.volume = 0.4F;
+				woodStep.pitch = 0.9F + 0.2F * Random.value;
+				woodStep.Play();
+				break;
+			case "Environment":
+				//Play grass step
+				grassStep.volume = 0.4F;
+				grassStep.pitch = 0.9F + 0.2F * Random.value;
+				grassStep.Play();
+				break;
+		}
+	}
+
+	void PlayJumpSound()
+	{
+		switch(floorType)
+		{
+			case "Structure":
+				//Play wood step
+				woodStep.volume = 1.0F;
+				woodStep.pitch = 0.4F + 0.2F * Random.value;
+				woodStep.Play();
+				break;
+			case "Environment":
+				//Play grass step
+				grassStep.volume = 1.0F;
+				grassStep.pitch = 0.4F + 0.2F * Random.value;
+				grassStep.Play();
+				break;
+		}
+	}
 }

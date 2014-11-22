@@ -141,15 +141,16 @@ public class PlayerInteractions : MonoBehaviour
 
 		//Player layer mask
 		int playerLayer = 8;
-		int playerMask = 1 << playerLayer;
+		int triggerLayer = 10;
+		LayerMask ignoreMask = 1 << playerLayer | 1 << triggerLayer;
 
         //Invert bitmask to only ignore this layer
-        playerMask = ~playerMask;
+        ignoreMask = ~ignoreMask;
 
 		RaycastHit hit;
 		Debug.DrawRay(cam.position, cam.forward * 5, Color.white);
 
-        if (Physics.Raycast(cam.position, cam.forward, out hit, 5, playerMask))
+        if (Physics.Raycast(cam.position, cam.forward, out hit, 5, ignoreMask))
         {
             activeTarget = hit.collider.gameObject; //Store item being looked at
 
@@ -302,7 +303,7 @@ public class PlayerInteractions : MonoBehaviour
         if(col.gameObject.name == "ExitTutorial")
         {
             GameObject.Find("Weather").GetComponent<weatherScript>().start = true; //Start changing the weather randomly
-            GetComponent<Player>().audio1.Play(); //Start playing background music
+            GetComponent<Player>().bgMusic.Play(); //Start playing background music
             st.tutorial = false;
         }
     }
