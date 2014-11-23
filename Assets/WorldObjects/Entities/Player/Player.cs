@@ -288,6 +288,7 @@ public class Player : MonoBehaviour
 
 	void PlayStepSound()
 	{
+		Debug.Log ("Stepping");
 		switch(floorType)
 		{
 			case "Structure":
@@ -296,7 +297,7 @@ public class Player : MonoBehaviour
 				woodStep.pitch = 0.9F + 0.2F * Random.value;
 				woodStep.Play();
 				break;
-			case "Environment":
+			case "Outside":
 				//Play grass step
 				grassStep.volume = 0.4F;
 				grassStep.pitch = 0.9F + 0.2F * Random.value;
@@ -315,7 +316,7 @@ public class Player : MonoBehaviour
 				woodStep.pitch = 0.4F + 0.2F * Random.value;
 				woodStep.Play();
 				break;
-			case "Environment":
+			case "Outside":
 				//Play grass step
 				grassStep.volume = 1.0F;
 				grassStep.pitch = 0.4F + 0.2F * Random.value;
