@@ -43,11 +43,11 @@ public class PlayerMovement : MonoBehaviour {
 
         //set player collider heights
         boxStandHeight = box.size.y;
-        boxCrouchHeight = 1.5f;
+        boxCrouchHeight = 1.125f;
 
         //set player camera heights
         cameraStandHeight = camera.transform.localPosition.y;
-        cameraCrouchHeight = 0.40857f;
+        cameraCrouchHeight = 0.30857f;
         
         AudioSource[] aSources = GetComponentsInChildren<AudioSource>();
         breathingSound = aSources[1];
@@ -56,7 +56,7 @@ public class PlayerMovement : MonoBehaviour {
 	// Update is called once per frame
     void Update() {
         //recharge sprint if not trying to sprint
-        if (!Input.GetKey(KeyCode.LeftShift) && !Input.GetKey(KeyCode.W) && sprintTime < maxSprintTime) {
+        if (!Input.GetKey(KeyCode.LeftShift) && sprintTime < maxSprintTime) {
             sprintTime += Time.deltaTime;
         }
 
