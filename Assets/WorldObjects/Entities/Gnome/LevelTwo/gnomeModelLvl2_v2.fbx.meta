@@ -1,16 +1,13 @@
 fileFormatVersion: 2
-guid: 27c5aa243f9486143832f451dae7a0e1
+guid: 82d1c3b359086f74384ccd9d01de5161
 ModelImporter:
   serializedVersion: 16
   fileIDToRecycleName:
     100000: //RootNode
-    100002: Hedgemaze_Resized
     400000: //RootNode
-    400002: Hedgemaze_Resized
-    2300000: Hedgemaze_Resized
-    3300000: Hedgemaze_Resized
-    4300000: Hedgemaze_Resized
-    6400000: Hedgemaze_Resized
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: gnomeLvl2
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -33,7 +30,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: .0549999997
     meshCompression: 0
-    addColliders: 1
+    addColliders: 0
     importBlendShapes: 1
     swapUVChannels: 0
     generateSecondaryUV: 0

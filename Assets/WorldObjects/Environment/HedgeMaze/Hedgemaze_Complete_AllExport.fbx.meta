@@ -1,0 +1,118 @@
+fileFormatVersion: 2
+guid: 6f7503903795a0f4690ebc4022a4d8d9
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: ArmForest_CombinedMesh
+    100002: GroundExtension
+    100004: //RootNode
+    100006: Hedgemaze_Resized
+    100008: Stilt
+    100010: Stilt1
+    100012: Stilt2
+    100014: Stilt3
+    100016: Stilt4
+    100018: Stilt5
+    100020: Stilts
+    400000: ArmForest_CombinedMesh
+    400002: GroundExtension
+    400004: //RootNode
+    400006: Hedgemaze_Resized
+    400008: Stilt
+    400010: Stilt1
+    400012: Stilt2
+    400014: Stilt3
+    400016: Stilt4
+    400018: Stilt5
+    400020: Stilts
+    2300000: ArmForest_CombinedMesh
+    2300002: GroundExtension
+    2300004: Hedgemaze_Resized
+    2300006: Stilt
+    2300008: Stilt1
+    2300010: Stilt2
+    2300012: Stilt3
+    2300014: Stilt4
+    2300016: Stilt5
+    3300000: ArmForest_CombinedMesh
+    3300002: GroundExtension
+    3300004: Hedgemaze_Resized
+    3300006: Stilt
+    3300008: Stilt1
+    3300010: Stilt2
+    3300012: Stilt3
+    3300014: Stilt4
+    3300016: Stilt5
+    4300000: Hedgemaze_Resized
+    4300002: ArmForest_CombinedMesh
+    4300004: GroundExtension
+    4300006: Stilt
+    4300008: Stilt1
+    4300010: Stilt2
+    4300012: Stilt3
+    4300014: Stilt4
+    4300016: Stilt5
+    6400000: ArmForest_CombinedMesh
+    6400002: GroundExtension
+    6400004: Hedgemaze_Resized
+    6400006: Stilt
+    6400008: Stilt1
+    6400010: Stilt2
+    6400012: Stilt3
+    6400014: Stilt4
+    6400016: Stilt5
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .0549999997
+    meshCompression: 0
+    addColliders: 1
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
