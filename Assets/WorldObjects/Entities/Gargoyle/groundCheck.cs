@@ -63,6 +63,9 @@ public class groundCheck : MonoBehaviour
 		
 		//Change tag
 		gargoyleHead.tag = "PickUp";
+
+		//Change item type
+		gargoyleHead.GetComponent<Item> ().type = ItemType.ATTIC;
 		
 		//Move head to item list
 		gargoyleHead.transform.parent = GameObject.Find("Items").transform;

@@ -49,8 +49,8 @@ public class PlayerMovement : MonoBehaviour {
         cameraStandHeight = camera.transform.localPosition.y;
         cameraCrouchHeight = 0.30857f;
         
-        AudioSource[] aSources = GetComponentsInChildren<AudioSource>();
-        breathingSound = aSources[1];
+		AudioSource[] playerSounds = transform.Find("Graphics").GetComponents<AudioSource>(); //Grab the audio sources on the graphics child
+		breathingSound = playerSounds[1];;
 	}
 	
 	// Update is called once per frame
