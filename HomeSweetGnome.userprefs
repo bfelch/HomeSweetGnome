@@ -1,12 +1,10 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\WorldObjects\Entities\Player\Player.cs">
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="..\..\My Documents\BritishFloristOfLove\Assets\Scripts\ParticleEnable.cs">
     <Files>
-      <File FileName="Assets\WorldObjects\Entities\Player\Player.cs" Line="320" Column="27" />
-      <File FileName="Assets\Heartbeats\heartBeat.cs" Line="123" Column="1" />
-      <File FileName="Assets\WorldObjects\Entities\Player\PlayerInteractions.cs" Line="145" Column="44" />
-      <File FileName="Assets\WorldObjects\Environment\Lightning\weatherScript.cs" Line="108" Column="1" />
-      <File FileName="Assets\WorldObjects\Entities\Gargoyle\Gargoyle.cs" Line="175" Column="12" />
+      <File FileName="Assets\WorldObjects\Entities\Player\Player.cs" Line="237" Column="1" />
+      <File FileName="..\..\My Documents\BritishFloristOfLove\Assets\Scripts\Smack.cs" Line="24" Column="4" />
+      <File FileName="..\..\My Documents\BritishFloristOfLove\Assets\Scripts\ParticleEnable.cs" Line="14" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
