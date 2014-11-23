@@ -153,6 +153,7 @@ public class Blink : MonoBehaviour
             topLid.animation.Play("CloseEyeTop");
             bottomLid.animation.Play("CloseBottomEye");
             holdEyes = true;
+            blink = true;
         }
         blinkTimer = 5;
 
@@ -163,6 +164,7 @@ public class Blink : MonoBehaviour
         topLid.animation.Play("OpenEyeTop");
         bottomLid.animation.Play("OpenBottomEye");
         holdEyes = false;
+        blink = false;
 
     }
     void FallAsleep()
