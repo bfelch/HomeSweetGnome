@@ -23,7 +23,6 @@ public class elevatorStuff : MonoBehaviour
 
                 if (transform.localPosition.y <= -41.4F)
                 {
-                    Debug.Log("Stop Down");
                     activate = false;
                 }
             }
@@ -33,7 +32,6 @@ public class elevatorStuff : MonoBehaviour
 
                 if (transform.localPosition.y >= -23.7F)
                 {
-                    Debug.Log("Stop Up");
                     activate = false;
                 }
             }
