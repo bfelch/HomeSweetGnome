@@ -21,7 +21,7 @@ public class elevatorStuff : MonoBehaviour
             {
                 transform.Translate(Vector3.down * 3 * Time.deltaTime);
 
-                if (transform.localPosition.y <= -42.8F)
+                if (transform.localPosition.y <= -41.4F)
                 {
                     Debug.Log("Stop Down");
                     activate = false;
@@ -31,7 +31,7 @@ public class elevatorStuff : MonoBehaviour
             {
                 transform.Translate(Vector3.up * 3 * Time.deltaTime);
 
-                if (transform.localPosition.y >= -22.8F)
+                if (transform.localPosition.y >= -23.7F)
                 {
                     Debug.Log("Stop Up");
                     activate = false;
