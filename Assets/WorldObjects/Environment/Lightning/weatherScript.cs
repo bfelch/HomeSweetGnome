@@ -23,15 +23,14 @@ public class weatherScript : MonoBehaviour
 
     lightningFlash lightningScript;
 
-    float rainVolume = 0.5F;
+    float rainVolume = 0.07F;
     bool rainFadeIn = false;
     bool rainFadeOut = false;
+	public bool change = true;
 
 	float oldWeatherTime = 0.0F;
 	float newWeatherTime = 60.0F; //How often to change weather
-	int weatherType = 0; //What's the weather?
-
-    public bool start = false;
+	public int weatherType = 0; //What's the weather?
 
 	// Use this for initialization
 	void Start () 
@@ -58,22 +57,22 @@ public class weatherScript : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
-        if(start)
+        if(change)
         {
-            checkWeatherTime();
+            checkWeather();
+		}
 
-            if (rainFadeIn == true)
-            {
-                AudioFadeIn();
-            }
-            else if (rainFadeOut == true)
-            {
-                AudioFadeOut();
-            }
-        }
+	    if (rainFadeIn == true)
+	    {
+	        AudioFadeIn();
+	    }
+	    else if (rainFadeOut == true)
+	    {
+	        AudioFadeOut();
+	    }
 	}
 
-	void checkWeatherTime()
+	void checkWeather()
 	{
 		//Random time for distant lightning
 		if(Time.time > oldTime + newTime)
@@ -137,11 +136,33 @@ public class weatherScript : MonoBehaviour
 		}
 	}
 
+	public void StopWeather()
+	{
+		Debug.Log("Stopping");
+
+		//Turn off weather
+		for(int i = 0; i < weather.Length; i++)
+		{
+			weather[i].particleSystem.enableEmission = false;
+		}
+		
+		lightningScript.enabled = false;
+
+		rainFadeOut = true;
+		change = false;
+	}
+
+	public void StartWeather()
+	{
+		Debug.Log("Starting");
+		change = true;
+	}
+
     void AudioFadeIn()
     {
-        if (rainVolume < 0.3F)
+        if (rainVolume < 0.07F)
         {
-            rainVolume += 0.05F * Time.deltaTime;
+            rainVolume += 0.02F * Time.deltaTime;
             rain.audio.volume = rainVolume;
         }
         else
@@ -154,7 +175,7 @@ public class weatherScript : MonoBehaviour
     {
         if (rainVolume > 0.0F)
         {
-            rainVolume -= 0.05F * Time.deltaTime;
+            rainVolume -= 0.02F * Time.deltaTime;
             rain.audio.volume = rainVolume;
         }
         else

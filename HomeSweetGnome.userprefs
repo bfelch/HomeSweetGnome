@@ -1,6 +1,12 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Moonlight.cs">
+    <Files>
+      <File FileName="Assets\Moonlight.cs" Line="25" Column="19" />
+      <File FileName="Assets\WorldObjects\Environment\Lightning\weatherScript.cs" Line="126" Column="7" />
+      <File FileName="Assets\WorldObjects\Entities\Player\LoadUnload.cs" Line="50" Column="60" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

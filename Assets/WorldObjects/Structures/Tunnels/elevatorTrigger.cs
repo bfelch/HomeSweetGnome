@@ -18,7 +18,6 @@ public class elevatorTrigger : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Hell");
         if (other.tag == "Player")
         {
             other.gameObject.transform.parent = GameObject.Find("Elevator").transform;
