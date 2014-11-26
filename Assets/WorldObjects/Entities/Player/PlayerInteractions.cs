@@ -52,6 +52,9 @@ public class PlayerInteractions : MonoBehaviour
             pause = true;
             Screen.showCursor = true;
             Screen.lockCursor = false;
+            this.GetComponent<PlayerMovement>().enabled = false;
+            this.GetComponent<Player>().enabled = false;
+            ToggleGUI(false);
             Time.timeScale = 0.0f;
 
             mouseLook.enabled = false;
@@ -83,6 +86,8 @@ public class PlayerInteractions : MonoBehaviour
             {
                 Screen.showCursor = false;
                 Screen.lockCursor = true;
+                this.GetComponent<PlayerMovement>().enabled = true;
+                this.GetComponent<Player>().enabled = true;
                 Time.timeScale = 1.0f;
                 mouseLook.enabled = true;
                 cameraLook.enabled = true;
@@ -311,7 +316,7 @@ public class PlayerInteractions : MonoBehaviour
     void GUIControl()
     {
         //listen for Q being pressed
-        if (Input.GetKeyUp(KeyCode.Q))
+        if (Input.GetKeyUp(KeyCode.Q) && !pause)
         {
             ToggleGUI(!showGUI);
         }
