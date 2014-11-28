@@ -79,14 +79,15 @@ public class groundCheck : MonoBehaviour
 	{
 		//Enemy layer mask
 		int enemyLayer = 9;
-		int enemyMask = 1 << enemyLayer;
+		int invisibleLayer = 10;
+		int ignoreMask = 1 << enemyLayer | 1 << invisibleLayer;
 		
 		//Invert bitmask to only ignore this layer
-		enemyMask = ~enemyMask;
+		ignoreMask = ~ignoreMask;
 
-		if(Physics.Raycast(transform.position, Vector3.down, distToGround + 0.1F, enemyMask)
-		   || Physics.Raycast(new Vector3(transform.position.x, transform.position.y, transform.position.z + distToEdge), Vector3.down, distToGround + 0.1F, enemyMask)
-		   || Physics.Raycast(new Vector3(transform.position.x, transform.position.y, transform.position.z - distToEdge), Vector3.down, distToGround + 0.1F, enemyMask))
+		if(Physics.Raycast(transform.position, Vector3.down, distToGround + 0.1F, ignoreMask)
+		   || Physics.Raycast(new Vector3(transform.position.x, transform.position.y, transform.position.z + distToEdge), Vector3.down, distToGround + 0.1F, ignoreMask)
+		   || Physics.Raycast(new Vector3(transform.position.x, transform.position.y, transform.position.z - distToEdge), Vector3.down, distToGround + 0.1F, ignoreMask))
 		{
 			//Grounded
 			return true;

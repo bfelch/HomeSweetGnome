@@ -142,12 +142,11 @@ public class PlayerInteractions : MonoBehaviour
     void itemAction()
     {
 		Transform cam = Camera.main.transform;
-        //Vector3 fwd = transform.TransformDirection(Vector3.forward);
 
 		//Player layer mask
 		int playerLayer = 8;
-		int triggerLayer = 10;
-		LayerMask ignoreMask = 1 << playerLayer | 1 << triggerLayer;
+		int invisibleLayer = 10;
+		LayerMask ignoreMask = 1 << playerLayer | 1 << invisibleLayer;
 
         //Invert bitmask to only ignore this layer
         ignoreMask = ~ignoreMask;
@@ -158,6 +157,7 @@ public class PlayerInteractions : MonoBehaviour
         if (Physics.Raycast(cam.position, cam.forward, out hit, 5, ignoreMask))
         {
             activeTarget = hit.collider.gameObject; //Store item being looked at
+			Debug.Log(activeTarget);
 
             //Is the item close and a pick up?
             if (activeTarget.tag == "PickUp")

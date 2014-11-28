@@ -148,8 +148,8 @@ public class Player : MonoBehaviour
 
 			//Player layer mask
 			int playerLayer = 8;
-			int triggerLayer = 10;
-			LayerMask ignoreMask = 1 << playerLayer | 1 << triggerLayer;
+			int invisibleLayer = 10;
+			LayerMask ignoreMask = 1 << playerLayer | 1 << invisibleLayer;
 			
 			//Invert bitmask to only ignore this layer
 			ignoreMask = ~ignoreMask;

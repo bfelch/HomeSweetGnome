@@ -68,10 +68,11 @@ public class Gargoyle : MonoBehaviour
 		{
 			//Enemy layer mask
 			int enemyLayer = 9;
-			int enemyMask = 1 << enemyLayer;
+			int invisibleLayer = 10;
+			int ignoreMask = 1 << enemyLayer | 1 << invisibleLayer;
 			
 			//Invert bitmask to only ignore this layer
-			enemyMask = ~enemyMask;
+			ignoreMask = ~ignoreMask;
 
 			fwdTop = (playerTop.transform.position - transform.position).normalized;
 			distanceTop = Vector3.Distance(playerTop.transform.position, transform.position);
@@ -80,12 +81,12 @@ public class Gargoyle : MonoBehaviour
 			distanceBottom = Vector3.Distance(playerBottom.transform.position, transform.position);
 
 			RaycastHit hit;
-			Debug.DrawRay(transform.position, fwdTop * (distanceTop + 0.1F), Color.red);
-			Debug.DrawRay(transform.position, fwdBottom * (distanceBottom + 0.1F), Color.red);
+			//Debug.DrawRay(transform.position, fwdTop * (distanceTop + 0.1F), Color.red);
+			//Debug.DrawRay(transform.position, fwdBottom * (distanceBottom + 0.1F), Color.red);
 
 			//Double raycast
-			if(Physics.Raycast(transform.position, fwdTop, out hit, distanceTop + 0.1F, enemyMask)
-			   || Physics.Raycast(transform.position, fwdBottom, out hit, distanceBottom + 0.1F, enemyMask))
+			if(Physics.Raycast(transform.position, fwdTop, out hit, distanceTop + 0.1F, ignoreMask)
+			   || Physics.Raycast(transform.position, fwdBottom, out hit, distanceBottom + 0.1F, ignoreMask))
 			//If one true, screech
 			{
 				activeTarget = hit.collider.gameObject; //Store item being looked at
@@ -168,10 +169,11 @@ public class Gargoyle : MonoBehaviour
 		
 		//Enemy layer mask
 		int enemyLayer = 9;
-		int enemyMask = 1 << enemyLayer;
+		int invisibleLayer = 10;
+		int ignoreMask = 1 << enemyLayer | 1 << invisibleLayer;
 		
 		//Invert bitmask to only ignore this layer
-		enemyMask = ~enemyMask;		
+		ignoreMask = ~ignoreMask;		
 		
 		fwdTop = (playerTop.transform.position - transform.position).normalized;
 		distanceTop = Vector3.Distance(playerTop.transform.position, transform.position);
@@ -180,13 +182,12 @@ public class Gargoyle : MonoBehaviour
 		distanceBottom = Vector3.Distance(playerBottom.transform.position, transform.position);
 		
 		RaycastHit hit;
-
-		Debug.DrawRay(transform.position, fwdTop * (distanceTop + 0.1F), Color.red);
-		Debug.DrawRay(transform.position, fwdBottom * (distanceBottom + 0.1F), Color.red);
+		//Debug.DrawRay(transform.position, fwdTop * (distanceTop + 0.1F), Color.red);
+		//Debug.DrawRay(transform.position, fwdBottom * (distanceBottom + 0.1F), Color.red);
 		
 		//Double raycast
-		if(Physics.Raycast(transform.position, fwdTop, out hit, distanceTop + 0.1F, enemyMask)
-		   || Physics.Raycast(transform.position, fwdBottom, out hit, distanceBottom + 0.1F, enemyMask))
+		if(Physics.Raycast(transform.position, fwdTop, out hit, distanceTop + 0.1F, ignoreMask)
+		   || Physics.Raycast(transform.position, fwdBottom, out hit, distanceBottom + 0.1F, ignoreMask))
 		{
 			activeTarget = hit.collider.gameObject; //Store item being looked at
 			
