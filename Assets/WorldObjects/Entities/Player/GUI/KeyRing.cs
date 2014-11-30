@@ -23,6 +23,7 @@ public class KeyRing : MonoBehaviour {
 	
 	}
 
+    /*
     void OnGUI()
     {
         //show key count
@@ -32,6 +33,7 @@ public class KeyRing : MonoBehaviour {
             GUI.Box(box, "Keys: " + keys.Count);
         }
     }
+    */
 
     public void AddKey(Item key)
     {

@@ -104,7 +104,55 @@ public class PlayerInteractions : MonoBehaviour
             }
 
             //layout end
-            GUI.EndGroup(); 
+            GUI.EndGroup();
+        } else if (showGUI) {
+            RaycastHit hit;
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            float distance = 1f;
+            int playerUILayer = 11;
+            int layerMask = 1 << playerUILayer;
+
+            if (Physics.Raycast(ray, out hit, distance, layerMask)) {
+                GUISlot guiSlot = hit.collider.gameObject.GetComponent<GUISlot>();
+
+                if (guiSlot.isKeyRing) {
+                    KeyRing ring = guiSlot.GetComponent<KeyRing>();
+
+                    Rect box = new Rect(Input.mousePosition.x, Screen.height - Input.mousePosition.y, 100, 30);
+                    GUI.Box(box, "Keys: " + ring.keys.Count);
+                } else if (guiSlot.isEnergyBar) {
+                    EnergyBar bar = guiSlot.GetComponent<EnergyBar>();
+
+                    Rect box = new Rect(Input.mousePosition.x, Screen.height - Input.mousePosition.y, 150, 30);
+                    GUI.Box(box, "Energy: " + (int)bar.player.sanity + " / " + (int)bar.player.maxSanity);
+                } else {
+                    ItemSlot slot = guiSlot.GetComponent<ItemSlot>();
+
+                    Rect box = new Rect(Input.mousePosition.x, Screen.height - Input.mousePosition.y, 100, 30);
+                    if (slot.heldItem != null) {
+                        GUI.Box(box, slot.heldItem.name);
+
+                        if (Input.GetMouseButtonUp(1)) {
+                            slot.heldItem.gameObject.SetActive(true);
+
+                            Vector3 pos = transform.position;
+
+                            slot.heldItem.transform.position = new Vector3(pos.x, pos.y - 2.5f, pos.z);
+
+                            slot.heldItem = null;
+                        }
+                    } else {
+                        GUI.Box(box, "Empty");
+                    }
+                }
+
+                /*KeyItem key = hit.collider.gameObject.GetComponent<KeyItem>();
+
+                if (key != null) {
+                    Rect box = new Rect(Input.mousePosition.x, Screen.height - Input.mousePosition.y, 100, 30);
+                    GUI.Box(box, key.name);
+                }*/
+            }
         }
         else
         {

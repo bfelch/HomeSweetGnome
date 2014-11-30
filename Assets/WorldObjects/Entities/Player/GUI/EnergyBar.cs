@@ -33,6 +33,7 @@ public class EnergyBar : MonoBehaviour {
         }
 	}
 
+    /*
     void OnGUI() {
         //displays remaining energy and max energy
         if (gui.hovering) {
@@ -40,4 +41,5 @@ public class EnergyBar : MonoBehaviour {
             GUI.Box(box, "Energy: " + (int)player.sanity + " / " + (int)player.maxSanity);
         }
     }
+    */
 }

@@ -17,7 +17,7 @@ public class ItemSlot : MonoBehaviour {
 	
 	}
 
-    void OnGUI()
+    /*void OnGUI()
     {
         if (gui.hovering)
         {
@@ -43,6 +43,7 @@ public class ItemSlot : MonoBehaviour {
             }
         }
     }
+    */
 
     public bool AddItem(Item item)
     {

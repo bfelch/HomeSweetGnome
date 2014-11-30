@@ -17,6 +17,7 @@ public class KeyItem : MonoBehaviour {
 
     }
 
+    /*
     void OnGUI() {
         //if hovering, show key name
         if (hovering) {
@@ -24,6 +25,7 @@ public class KeyItem : MonoBehaviour {
             GUI.Box(box, this.name);
         }
     }
+    */
 
     void OnMouseEnter() {
         ToggleKeyHover(true);

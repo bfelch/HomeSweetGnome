@@ -95,7 +95,7 @@ public class GUISlot : MonoBehaviour
         ToggleSlotHover(false);
     }
 
-    void OnMouseEnter()
+    /*void OnMouseEnter()
     {
         ToggleSlotHover(true);
     }
@@ -104,6 +104,7 @@ public class GUISlot : MonoBehaviour
     {
         ToggleSlotHover(false);
     }
+    */
 
     void ToggleSlotHover(bool hovering) {
         this.hovering = hovering;
