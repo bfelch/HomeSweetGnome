@@ -52,7 +52,6 @@ public class GnomeParent : MonoBehaviour
         playerSanityMax = target.GetComponent<Player>().maxSanity;
         //calculate sanity percentage
         float sanityPercentage = playerSanity / playerSanityMax;
-
         //check if the sanity is below 50%
         if(sanityPercentage < .5 && modelNumber != 2)
         {

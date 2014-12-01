@@ -15,6 +15,8 @@ public class EndGames : MonoBehaviour {
     private float pauseFadeTime = 4;
     private bool pauseFade = false;
     private bool switchFade = false;
+    private float time = 0;
+    private bool gotTime = false;
 	// Use this for initialization
 	void Start () {
         deathTextSleep = GameObject.Find("DeathTextSleep").guiText;
@@ -31,11 +33,11 @@ public class EndGames : MonoBehaviour {
 
         playerSlept = false;
         playerFell = false;
+        time = GetComponent<PlayerInteractions>().timePlayed;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
 	}
 
 
@@ -51,13 +53,14 @@ public class EndGames : MonoBehaviour {
     public void Escape()
     {
         playerEscaped = true;
+        GetTime();
         StartCoroutine(WaitToReload(7.0F));
     }
 
     public void Experiment()
     {
         experimentComplete = true;
-
+        GetTime();
         StartCoroutine(WaitToReload(5.0F));
     }
 
@@ -66,6 +69,10 @@ public class EndGames : MonoBehaviour {
     {
         if (experimentComplete)
         {
+            int second = (int)time;
+            int minute = second / 60;
+            int hour = minute / 60;
+            winTextExperiment.text = "Experiment Success! \n You completed the experiment in " + hour.ToString("00") + ":" + minute.ToString("00") + ":" + second.ToString("00");
             //create a new color with the changed alpha value
             Color changing = new Color(winTextExperiment.color.r, winTextExperiment.color.g, winTextExperiment.color.b, fadeIn);
 
@@ -78,6 +85,12 @@ public class EndGames : MonoBehaviour {
 
         if (playerEscaped)
         {
+
+            int second = (int)time;
+            int minute = second / 60;
+            int hour = minute / 60;
+            winTextEscaped.text = "You escaped. \n You made it out in " + hour.ToString("00") + ":" + minute.ToString("00") + ":" + second.ToString("00");
+
             //create a new color with the changed alpha value
             Color changing = new Color(winTextEscaped.color.r, winTextEscaped.color.g, winTextEscaped.color.b, fadeIn);
             winTextEscaped.enabled = true;
@@ -90,6 +103,12 @@ public class EndGames : MonoBehaviour {
 
         if (playerSlept)
         {
+
+            int second = (int)time;
+            int minute = second / 60;
+            int hour = minute / 60;
+            deathTextSleep.text = "You fell asleep... \n You stayed awake for " + hour.ToString("00") + ":" + minute.ToString("00") + ":" + second.ToString("00");
+
             //create a new color with the changed alpha value
             Color changing = new Color(deathTextSleep.color.r, deathTextSleep.color.g, deathTextSleep.color.b, fadeIn);
             deathTextSleep.enabled = true;
@@ -102,6 +121,12 @@ public class EndGames : MonoBehaviour {
 
         if (playerFell)
         {
+
+            int second = (int)time;
+            int minute = second / 60;
+            int hour = minute / 60;
+            deathTextFall.text = "You fell to your death... \n You lasted for " + hour.ToString("00") + ":" + minute.ToString("00") + ":" + second.ToString("00");
+
             //create a new color with the changed alpha value
             Color changing = new Color(deathTextFall.color.r, deathTextFall.color.g, deathTextFall.color.b, fadeIn);
             deathTextFall.enabled = true;
@@ -126,5 +151,15 @@ public class EndGames : MonoBehaviour {
         {
             Escape();
         }
+    }
+
+    void GetTime()
+    {
+        //if(!gotTime)
+        {
+            gotTime = true;
+            time = (int)(time + Time.timeSinceLevelLoad);
+        }
+
     }
 }

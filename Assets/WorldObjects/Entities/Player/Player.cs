@@ -160,7 +160,7 @@ public class Player : MonoBehaviour
 			{
 				activeTarget = hit.collider.gameObject; //Store item being looked at
 
-				if(activeTarget.tag == "Gnome" && activeTarget.GetComponent<Gnome>().gnomeLevel == 1)
+				if(activeTarget.tag == "Gnome" && activeTarget.GetComponent<Gnome>().gnomeLevel == 1 && activeTarget.name != "GnomeShed")
 				{
 					readyToPush = false;
 					activeTarget.GetComponent<Gnome>().pushed = true;

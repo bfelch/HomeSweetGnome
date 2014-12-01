@@ -28,7 +28,7 @@ public class PlayerInteractions : MonoBehaviour
 
     //reference to gui
     public GUIWrapper playerGUI;
-
+    private float lightingValue;
     public Texture2D crosshair;
 
     private bool pause;
@@ -73,7 +73,7 @@ public class PlayerInteractions : MonoBehaviour
         GUI.skin.font = bark;
         if (pause)
         {
-            GUI.BeginGroup(new Rect(Screen.width / 2 - 150, 100, 300, 250));
+            GUI.BeginGroup(new Rect(Screen.width / 2 - 150, 20, 300, Screen.height));
             //GUI.Box(new Rect(0, 0,200, 250), "");
             int second = (int)(timePlayed + Time.timeSinceLevelLoad);
             int minute = second / 60;
@@ -81,8 +81,12 @@ public class PlayerInteractions : MonoBehaviour
             second %= 60;
             GUI.skin.box.alignment = TextAnchor.MiddleCenter;
             GUI.Box(new Rect(55, 50, 180, 40), "Time Played\n" + hour.ToString("00") + ":" + minute.ToString("00") + ":" + second.ToString("00"));
-
-            if (GUI.Button(new Rect(55, 100, 180, 40), "Resume"))
+            GUI.backgroundColor = Color.clear;
+            GUI.Box(new Rect(55, 90, 180, 30), "Adjust Lighting");
+            GUI.backgroundColor = Color.white;
+            lightingValue = GUI.HorizontalSlider(new Rect(55, 120, 180, 10), lightingValue, 0, .1f);
+            GameObject.Find("DebugLight").GetComponent<Light>().intensity = lightingValue;
+            if (GUI.Button(new Rect(55, 140, 180, 40), "Resume"))
             {
                 Screen.showCursor = false;
                 Screen.lockCursor = true;
@@ -93,12 +97,12 @@ public class PlayerInteractions : MonoBehaviour
                 cameraLook.enabled = true;
                 pause = false;
             }
-            if (GUI.Button( new Rect(55, 150, 180, 40), "Main Menu"))
+            if (GUI.Button( new Rect(55, 190, 180, 40), "Main Menu"))
             {
                 GameObject.Find("Save").GetComponent<SaveLoad>().Save();
                 Application.LoadLevel("MainMenu");
             }
-            if (GUI.Button(new Rect(55, 200, 180, 40), "Quit"))
+            if (GUI.Button(new Rect(55, 240, 180, 40), "Quit"))
             {
                 Application.Quit();
             }
@@ -292,16 +296,12 @@ public class PlayerInteractions : MonoBehaviour
                 {
                     //get the gnome in the shed
                     GameObject gnome = GameObject.Find("GnomeShed");
-                    //set the nav mesh agent to be false
-                    gnome.GetComponent<NavMeshAgent>().enabled = false;
-                    //set the gnome scirpt to false
-                    gnome.GetComponent<Gnome>().enabled = false;
                     //play the drop and laugh audio
                     gnome.GetComponent<AudioSource>().Play();
                     //rotate the gnome so it's facing you
                     gnome.transform.eulerAngles = new Vector3(gnome.transform.eulerAngles.x, 346, gnome.transform.eulerAngles.z);
                     //set it's position on the floor
-                    gnome.transform.localPosition = new Vector3(-75.78156f, 39.829f, 98.48463f);
+                    gnome.transform.localPosition = new Vector3(-76.30657f, 39.7061f, 99.21371f);
                     //enable the nav mesh and the gnome script
                     gnome.GetComponent<NavMeshAgent>().enabled = true;
                     gnome.GetComponent<Gnome>().enabled = true;
