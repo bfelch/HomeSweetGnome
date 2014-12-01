@@ -1,10 +1,11 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Moonlight.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\WorldObjects\Entities\Gnome\Gnome.cs">
     <Files>
-      <File FileName="Assets\Moonlight.cs" Line="25" Column="19" />
-      <File FileName="Assets\WorldObjects\Environment\Lightning\weatherScript.cs" Line="126" Column="7" />
-      <File FileName="Assets\WorldObjects\Entities\Player\LoadUnload.cs" Line="50" Column="60" />
+      <File FileName="Assets\WorldObjects\Entities\Gnome\Gnome.cs" Line="238" Column="4" />
+      <File FileName="Assets\Moonlight.cs" Line="29" Column="20" />
+      <File FileName="Assets\WorldObjects\Environment\Lightning\weatherScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\WorldObjects\Entities\Player\LoadUnload.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -67,12 +67,14 @@ public class Gnome : MonoBehaviour
 			{
                 if (TargetInRange()) 
 				{
-                    //if player in range
-                    FollowPlayer();
-                } else 
+					//if player in range
+					FollowPlayer();
+
+                } 
+				else 
 				{
                     //if player not in range
-                    Wander();
+                    //Wander();
                 }
             }
             else
@@ -90,6 +92,9 @@ public class Gnome : MonoBehaviour
         lastKnownLocation = target.transform.position;
         //set destination
         agent.SetDestination(lastKnownLocation);
+
+		Debug.Log (target.transform.position + agent.destination);
+
         if (targetBlink.blink) 
 		{
             //if player is blinking move super fast
@@ -209,9 +214,31 @@ public class Gnome : MonoBehaviour
 	{
 		//Emit particle effect at shatter location
 		Instantiate(shatterEffect, new Vector3(transform.position.x, transform.position.y - 0.8F, transform.position.z), shatterEffect.transform.rotation);
+
+		//Random position inside a circle of size 2
+		Vector2 newPosition = Random.insideUnitCircle * 2;
+		
+		//Make sure the dirt pile doesn't spawn over the hole
+		if(newPosition.x > 0)
+		{
+			newPosition.x = newPosition.x + 2;
+		}
+		else
+		{
+			newPosition.x = newPosition.x - 2;
+		}
+		
+		if(newPosition.y > 0)
+		{
+			newPosition.y = newPosition.y + 2;
+		}
+		else
+		{
+			newPosition.y = newPosition.y - 2;
+		}
 		
 		//Spawn the gnome eye
-		GameObject gnomeEyeClone = (GameObject)Instantiate(gnomeEye, new Vector3(transform.position.x, transform.position.y + 0.2F, transform.position.z), gnomeEye.transform.rotation);
+		GameObject gnomeEyeClone = (GameObject)Instantiate(gnomeEye, new Vector3(transform.position.x + newPosition.x, transform.position.y + 0.2F, transform.position.z + newPosition.y), gnomeEye.transform.rotation);
 
 		//Change the name
 		gnomeEyeClone.name = "GnomeEye";
