@@ -209,7 +209,6 @@ public class PlayerInteractions : MonoBehaviour
         if (Physics.Raycast(cam.position, cam.forward, out hit, 5, ignoreMask))
         {
             activeTarget = hit.collider.gameObject; //Store item being looked at
-			Debug.Log(activeTarget);
 
             //Is the item close and a pick up?
             if (activeTarget.tag == "PickUp")

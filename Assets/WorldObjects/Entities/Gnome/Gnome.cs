@@ -93,8 +93,6 @@ public class Gnome : MonoBehaviour
         //set destination
         agent.SetDestination(lastKnownLocation);
 
-		Debug.Log (target.transform.position + agent.destination);
-
         if (targetBlink.blink) 
 		{
             //if player is blinking move super fast

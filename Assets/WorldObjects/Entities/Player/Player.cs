@@ -292,7 +292,6 @@ public class Player : MonoBehaviour
 
 	void PlayStepSound()
 	{
-		Debug.Log ("Stepping");
 		switch(floorType)
 		{
 			case "Structure":
