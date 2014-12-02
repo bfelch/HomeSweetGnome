@@ -1,21 +1,27 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/*
+ * Description: This script handles the transition of the moonlight while in certain areas
+*/
 public class Moonlight : MonoBehaviour 
 {
-	private float lightIntensity = 1.0F;
-	public bool lightFadeIn = false;
-	public bool lightFadeOut = false;
+	private float lightIntensity = 1.0F; //Starting moonlight intensity
+	private float maxIntensity = 1.0F; //Max moonlight intensity
+	private float minIntensity = 0.0F; //Min moonlight intensity
+	public bool lightFadeIn = false; //Light is fading in
+	public bool lightFadeOut = false; //Light is fading out
 
-	// Use this for initialization
-	void Start () 
+	//Use this for initialization
+	void Start() 
 	{
 	
 	}
 	
-	// Update is called once per frame
-	void Update () 
+	//Update is called once per frame
+	void Update() 
 	{
+		//Check if the light needs to fade in or out
 		if(lightFadeIn == true)
 		{
 			LightFadeIn();
@@ -28,7 +34,8 @@ public class Moonlight : MonoBehaviour
 
 	void LightFadeIn()
 	{
-		if(lightIntensity < 1.0F)
+		//Increase intensity till max
+		if(lightIntensity < maxIntensity)
 		{
 			lightIntensity += 0.5F * Time.deltaTime;
 			this.light.intensity = lightIntensity;
@@ -41,7 +48,8 @@ public class Moonlight : MonoBehaviour
 
 	void LightFadeOut()
 	{
-		if(lightIntensity > 0.0F)
+		//Decrease intensity till min
+		if(lightIntensity > minIntensity)
 		{
 			lightIntensity -= 0.5F * Time.deltaTime;
 			this.light.intensity = lightIntensity;

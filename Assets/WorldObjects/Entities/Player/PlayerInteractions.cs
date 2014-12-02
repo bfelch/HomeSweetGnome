@@ -354,7 +354,7 @@ public class PlayerInteractions : MonoBehaviour
         //First time exiting shed trigger
         if(col.gameObject.name == "ExitTutorial")
         {
-            GameObject.Find("Weather").GetComponent<weatherScript>().change = true; //Start changing the weather randomly
+            GameObject.Find("Weather").GetComponent<weatherScript>().changeWeather = true; //Start changing the weather randomly
             GetComponent<Player>().bgMusic.Play(); //Start playing background music
             st.tutorial = false;
         }

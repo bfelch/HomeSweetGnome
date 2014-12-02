@@ -1,101 +1,178 @@
 using UnityEngine;
 using System.Collections;
 
+/*
+ * Description: This script handles dynamically loading and unloading of objects within the game world
+*/
 public class LoadUnload : MonoBehaviour 
 {
-    private GameObject[] inHedge;
-    private GameObject[] inTunnels;
-    private GameObject[] inShed;
+	private GameObject[] inHedge; //Objects to be disabled while in the hedgemaze
+	private GameObject[] inTunnels; //Objects to be disabled while in the tunnels
+	private GameObject[] inShed; //Objects to be disabled while in the shed
 
-	private bool tunnelLoaded = false;
+	private bool tunnelLoaded = false; //Flag to check if tunnel is loaded
+	private bool hedgeLoaded = false; //Flag to check if hedge is loaded
+	private bool shedLoaded = true; //Flag to check if shed if loaded
 
-	public weatherScript weather;
-	public Moonlight moonlight;
+	public weatherScript weather; //Weather script
+	public Moonlight moonlight; //Moonlight script
 
 	// Use this for initialization
-	void Start () {
-	    inHedge = new GameObject[]{GameObject.Find("Dock"), GameObject.Find("EstateWall"), GameObject.Find("Greenhouse"), GameObject.Find("shedModel")};
-		inTunnels = new GameObject[] {GameObject.Find("EstateWall"), GameObject.Find("Shed"), GameObject.Find("Greenhouse"), GameObject.Find("Hedgemaze")};
-        inShed = new GameObject[] {GameObject.Find("Greenhouse"), GameObject.Find("Hedgemaze"), GameObject.Find("Dock")};
+	void Start() 
+	{
+		//Get objects to be disabled while in the hedgemaze
+		inHedge = new GameObject[] 
+		{
+			GameObject.Find ("Dock"),
+			GameObject.Find ("EstateWall"),
+			GameObject.Find ("Greenhouse"),
+			GameObject.Find ("shedModel")
+		};
+		//Get objects to be disabled while in the tunnels
+		inTunnels = new GameObject[] 
+		{
+			GameObject.Find ("EstateWall"),
+			GameObject.Find ("Shed"),
+			GameObject.Find ("Greenhouse"),
+			GameObject.Find ("Hedgemaze")
+		};
+		//Get objects to be disabled while in the shed
+		inShed = new GameObject[] 
+		{
+			GameObject.Find ("Greenhouse"),
+			GameObject.Find ("Hedgemaze"),
+			GameObject.Find ("Dock")
+		};
 
+		//Player starts inside the shed
         for (int i = 0; i < inShed.Length; i++)
         {
             inShed[i].SetActive(false);
         }
     }
 	
-	// Update is called once per frame
-	void Update () {
+	//Update is called once per frame
+	void Update () 
+	{
 	
 	}
 
     void OnTriggerEnter(Collider col)
     {
-        if(col.name == "HedgeUnload")
+		//Hedge Load
+        if(col.name == "HedgeLoad" && hedgeLoaded == false)
         {
+			//Add hedge objects
+
+			//Remove non-hedge objects
             for (int i = 0; i < inHedge.Length; i++)
             {
                 inHedge[i].SetActive(false);
             }
+
+			hedgeLoaded = true; //Hedge is loaded
         }
 
-        if(col.name == "HedgeLoad")
+		//Hedge Unload
+        if(col.name == "HedgeUnload" && hedgeLoaded == true)
         {
+			//Remove hedge objects
+
+			//Add non-hedge objects
             for (int i = 0; i < inHedge.Length; i++)
             {
                 inHedge[i].SetActive(true);
             }
+
+			hedgeLoaded = false; //Hedge is not loaded
         }
 
-        if (col.name == "TunnelUnload" && tunnelLoaded == false)
+		//Tunnel Load (Entrance)
+		if (col.name == "TunnelLoadEntrance" && tunnelLoaded == false)
+		{
+			//Add tunnel objects
+
+			//Remove non-tunnel objects
+			for (int i = 0; i < inTunnels.Length; i++)
+			{
+				inTunnels[i].SetActive(false);
+			}
+
+			weather.StopWeather(); //Stop weather
+
+			moonlight.lightFadeIn = false; //Light is only fading out
+			moonlight.lightFadeOut = true; //Remove moonlight
+
+			tunnelLoaded = true; //Tunnel is loaded
+		}
+
+		//Tunnel Unload (Entrance)
+        if (col.name == "TunnelUnloadEntrance" && tunnelLoaded == true)
         {
-			Debug.Log("Unload");
-            for (int i = 0; i < inTunnels.Length; i++)
-            {
-                inTunnels[i].SetActive(false);
-            }
+			//Remove tunnel objects
 
-			tunnelLoaded = true;
-
-			//No weather
-			weather.StopWeather();
-
-			//Change lighting
-			moonlight.lightFadeOut = true;
-        }
-
-        if (col.name == "TunnelLoad" && tunnelLoaded == true)
-        {
-			Debug.Log("Load");
+			//Add non-tunnel objects
             for (int i = 0; i < inTunnels.Length; i++)
             {
                 inTunnels[i].SetActive(true);
             }
 
-			tunnelLoaded = false;
+			weather.StartWeather(); //Start weather
 
-			//Weather
-			weather.StartWeather();
-			
-			//Change lighting
-			moonlight.lightFadeIn = true;
+			moonlight.lightFadeOut = false; //Light is only fading in
+			moonlight.lightFadeIn = true; //Add moonlight
+
+			tunnelLoaded = false; //Tunnel is not loaded
         }
 
-        if (col.name == "ShedUnload")
+		//Tunnel Load (Exit)
+		if (col.name == "TunnelLoadExit" && tunnelLoaded == false)
+		{	
+			weather.StopWeather(); //Weather
+
+			moonlight.lightFadeIn = false; //Light is only fading out
+			moonlight.lightFadeOut = true; //Remove moonlight
+
+			tunnelLoaded = true; //Tunnel is loaded
+		}
+
+		//Tunnel Unload (Exit)
+		if (col.name == "TunnelUnloadExit" && tunnelLoaded == true)
+		{
+			weather.StartWeather(); //Start weather
+
+			moonlight.lightFadeOut = false; //Light is only fading in
+			moonlight.lightFadeIn = true; //Add moonlight
+
+			tunnelLoaded = false; //Tunnel is not loaded
+		}
+
+		//Shed Load
+        if (col.name == "ShedLoad" && shedLoaded == false)
         {
+			//Add shed objects
+
+			//Remove non-shed objects
             for (int i = 0; i < inShed.Length; i++)
             {
                 inShed[i].SetActive(false);
             }
+
+			shedLoaded = true; //Shed is loaded
         }
 
-        if (col.name == "ShedLoad")
+		//Shed Unload
+        if (col.name == "ShedUnload" && shedLoaded == true)
         {
+			//Remove shed objects
+
+			//Add non-shed objects
             for (int i = 0; i < inShed.Length; i++)
             {
                 inShed[i].SetActive(true);
             }
-        }
 
+			shedLoaded = false; //Shed is not loaded
+        }
     }
 }
