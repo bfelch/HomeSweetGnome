@@ -10,6 +10,8 @@ public class SaveLoad : MonoBehaviour
     private bool saving = false;
     //display time for saving notification
     private int displayTime = 300;
+    public static bool loaded = false;
+    public static bool savingStatus = false;
 
     //this method saves the values into playerInfo.dat
     public void Save()
@@ -47,6 +49,7 @@ public class SaveLoad : MonoBehaviour
 
             //apply the loaded game values to the scene
             loadGameValues(data);
+            GameObject.Find("Player").GetComponent<ShedTutorial>().enabled = false;
         }
         else
         {
@@ -58,7 +61,7 @@ public class SaveLoad : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         //did we enter a save trigger?
-        if (gameObject.name == "Save")
+        if (gameObject.name == "Save" && other.name == "Player")
         {
             //save the game
             Save();
@@ -69,6 +72,7 @@ public class SaveLoad : MonoBehaviour
     }
     public void saveGameValues(Game data)
     {
+        savingStatus = true;
         //retreive all the objects that need data saved from the scene
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Gnome");
         GameObject player = GameObject.FindGameObjectWithTag("Player");
@@ -148,6 +152,7 @@ public class SaveLoad : MonoBehaviour
 
         //save time played
         data.timePlayed = player.GetComponent<PlayerInteractions>().timePlayed + Time.timeSinceLevelLoad;
+        savingStatus = false;
     }
 
     public void loadGameValues(Game data)
@@ -233,7 +238,7 @@ public class SaveLoad : MonoBehaviour
 
         //load time played
         player.GetComponent<PlayerInteractions>().timePlayed = data.timePlayed;
-
+        loaded = true;
     }
 
     void OnGUI()

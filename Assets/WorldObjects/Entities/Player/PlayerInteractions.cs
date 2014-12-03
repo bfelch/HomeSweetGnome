@@ -29,9 +29,13 @@ public class PlayerInteractions : MonoBehaviour
     //reference to gui
     public GUIWrapper playerGUI;
     private float lightingValue;
+    private float xSens=10;
+    private float ySens=10;
     public Texture2D crosshair;
 
+    private bool optionsMenu = false;
     private bool pause;
+    private bool pauseMenu;
     private Font bark;
 
     void Start()
@@ -50,6 +54,7 @@ public class PlayerInteractions : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Escape))
         {
             pause = true;
+            pauseMenu = true;
             Screen.showCursor = true;
             Screen.lockCursor = false;
             this.GetComponent<PlayerMovement>().enabled = false;
@@ -71,8 +76,10 @@ public class PlayerInteractions : MonoBehaviour
         GUI.color = Color.white;
         GUI.backgroundColor = Color.white;
         GUI.skin.font = bark;
-        if (pause)
+        if (pause && pauseMenu)
         {
+            mouseLook.enabled = false;
+            cameraLook.enabled = false;
             GUI.BeginGroup(new Rect(Screen.width / 2 - 150, 20, 300, Screen.height));
             //GUI.Box(new Rect(0, 0,200, 250), "");
             int second = (int)(timePlayed + Time.timeSinceLevelLoad);
@@ -81,12 +88,7 @@ public class PlayerInteractions : MonoBehaviour
             second %= 60;
             GUI.skin.box.alignment = TextAnchor.MiddleCenter;
             GUI.Box(new Rect(55, 50, 180, 40), "Time Played\n" + hour.ToString("00") + ":" + minute.ToString("00") + ":" + second.ToString("00"));
-            GUI.backgroundColor = Color.clear;
-            GUI.Box(new Rect(55, 90, 180, 30), "Adjust Lighting");
-            GUI.backgroundColor = Color.white;
-            lightingValue = GUI.HorizontalSlider(new Rect(55, 120, 180, 10), lightingValue, 0, .1f);
-            GameObject.Find("DebugLight").GetComponent<Light>().intensity = lightingValue;
-            if (GUI.Button(new Rect(55, 140, 180, 40), "Resume"))
+            if (GUI.Button(new Rect(55, 100, 180, 40), "Resume"))
             {
                 Screen.showCursor = false;
                 Screen.lockCursor = true;
@@ -97,46 +99,91 @@ public class PlayerInteractions : MonoBehaviour
                 cameraLook.enabled = true;
                 pause = false;
             }
-            if (GUI.Button( new Rect(55, 190, 180, 40), "Main Menu"))
+            if (GUI.Button(new Rect(55, 150, 180, 40), "Options"))
+            {
+                optionsMenu = true;
+                pauseMenu = false;
+            }
+            if (GUI.Button( new Rect(55, 200, 180, 40), "Main Menu"))
             {
                 GameObject.Find("Save").GetComponent<SaveLoad>().Save();
                 Application.LoadLevel("MainMenu");
             }
-            if (GUI.Button(new Rect(55, 240, 180, 40), "Quit"))
+            if (GUI.Button(new Rect(55, 250, 180, 40), "Quit"))
             {
                 Application.Quit();
             }
 
             //layout end
             GUI.EndGroup();
-        } else if (showGUI) {
+        }
+        if (optionsMenu && pause)
+        {
+            GUI.BeginGroup(new Rect(Screen.width / 2 - 150, 20, 300, Screen.height));
+            GUI.backgroundColor = Color.clear;
+            GUI.Box(new Rect(55, 90, 180, 30), "Adjust Lighting");
+            GUI.backgroundColor = Color.white;
+            lightingValue = GUI.HorizontalSlider(new Rect(55, 120, 180, 10), lightingValue, 0, .1f);
+            GameObject.Find("DebugLight").GetComponent<Light>().intensity = lightingValue;
+
+            GUI.backgroundColor = Color.clear;
+            GUI.Box(new Rect(55, 130, 180, 30), "Adjust X Sensitivity");
+            GUI.backgroundColor = Color.white;
+            xSens = GUI.HorizontalSlider(new Rect(55, 160, 180, 10), xSens, 2, 15);
+            GameObject.Find("Player").GetComponent<MouseLook>().sensitivityX = xSens;
+
+            GUI.backgroundColor = Color.clear;
+            GUI.Box(new Rect(55, 170, 180, 30), "Adjust Y Sensitivity");
+            GUI.backgroundColor = Color.white;
+            ySens = GUI.HorizontalSlider(new Rect(55, 200, 180, 10), ySens, 2, 15);
+            GameObject.Find("Main Camera").GetComponent<MouseLook>().sensitivityY = ySens;
+
+            if (GUI.Button(new Rect(55, 220, 180, 40), "Back"))
+            {
+                optionsMenu = false;
+                pauseMenu = true;
+            }
+
+            //layout end
+            GUI.EndGroup();
+        }
+        else if (showGUI)
+        {
             RaycastHit hit;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             float distance = 1f;
             int playerUILayer = 11;
             int layerMask = 1 << playerUILayer;
 
-            if (Physics.Raycast(ray, out hit, distance, layerMask)) {
+            if (Physics.Raycast(ray, out hit, distance, layerMask))
+            {
                 GUISlot guiSlot = hit.collider.gameObject.GetComponent<GUISlot>();
 
-                if (guiSlot.isKeyRing) {
+                if (guiSlot.isKeyRing)
+                {
                     KeyRing ring = guiSlot.GetComponent<KeyRing>();
 
                     Rect box = new Rect(Input.mousePosition.x, Screen.height - Input.mousePosition.y, 100, 30);
                     GUI.Box(box, "Keys: " + ring.keys.Count);
-                } else if (guiSlot.isEnergyBar) {
+                }
+                else if (guiSlot.isEnergyBar)
+                {
                     EnergyBar bar = guiSlot.GetComponent<EnergyBar>();
 
                     Rect box = new Rect(Input.mousePosition.x, Screen.height - Input.mousePosition.y, 150, 30);
                     GUI.Box(box, "Energy: " + (int)bar.player.sanity + " / " + (int)bar.player.maxSanity);
-                } else {
+                }
+                else
+                {
                     ItemSlot slot = guiSlot.GetComponent<ItemSlot>();
 
                     Rect box = new Rect(Input.mousePosition.x, Screen.height - Input.mousePosition.y, 100, 30);
-                    if (slot.heldItem != null) {
+                    if (slot.heldItem != null)
+                    {
                         GUI.Box(box, slot.heldItem.name);
 
-                        if (Input.GetMouseButtonUp(1)) {
+                        if (Input.GetMouseButtonUp(1))
+                        {
                             slot.heldItem.gameObject.SetActive(true);
 
                             Vector3 pos = transform.position;
@@ -145,7 +192,9 @@ public class PlayerInteractions : MonoBehaviour
 
                             slot.heldItem = null;
                         }
-                    } else {
+                    }
+                    else
+                    {
                         GUI.Box(box, "Empty");
                     }
                 }
@@ -166,17 +215,17 @@ public class PlayerInteractions : MonoBehaviour
                 //Strip target name
                 string targetName = activeTarget.name;
                 string improvedName = "";
-                for (int i = 0; i < targetName.Length; i++ )
+                for (int i = 0; i < targetName.Length; i++)
                 {
-                    if(char.IsUpper(targetName[i]) && i != 0)
+                    if (char.IsUpper(targetName[i]) && i != 0)
                     {
                         improvedName += " ";
                     }
                     improvedName += targetName[i];
                 }
-                    this.GetComponent<Player>().flashFade();
-                    //Display item name
-                    GUI.Box(new Rect(0, Screen.height - Screen.height / 2 + 150, Screen.width, 30), improvedName);
+                this.GetComponent<Player>().flashFade();
+                //Display item name
+                GUI.Box(new Rect(0, Screen.height - Screen.height / 2 + 150, Screen.width, 30), improvedName);
             }
             else if (notUseable && activeTarget != null)
             {
@@ -230,7 +279,7 @@ public class PlayerInteractions : MonoBehaviour
                 lastActiveTarget = activeTarget;
             }
             //Is the item close and useable?
-            else if (activeTarget.tag == "Useable")
+            else if (activeTarget.tag == "Useable" || activeTarget.name == "RightFrontGate" || activeTarget.name == "LeftFrontGate")
             {
                 Useable targetUseable = activeTarget.GetComponent<Useable>();
                 UseItem(targetUseable); //Use it
