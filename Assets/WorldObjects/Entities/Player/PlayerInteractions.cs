@@ -53,17 +53,29 @@ public class PlayerInteractions : MonoBehaviour
         GUIControl();
         if(Input.GetKeyDown(KeyCode.Escape))
         {
-            pause = true;
-            pauseMenu = true;
-            Screen.showCursor = true;
-            Screen.lockCursor = false;
-            this.GetComponent<PlayerMovement>().enabled = false;
-            this.GetComponent<Player>().enabled = false;
-            ToggleGUI(false);
-            Time.timeScale = 0.0f;
+           if(!pause)
+           { 
+                pause = true;
+                pauseMenu = true;
+                this.GetComponent<PlayerMovement>().enabled = false;
+                this.GetComponent<Player>().enabled = false;
+                ToggleGUI(false);
+                Screen.lockCursor = false;
+                Time.timeScale = 0.0f;
 
-            mouseLook.enabled = false;
-            cameraLook.enabled = false;
+                mouseLook.enabled = false;
+                cameraLook.enabled = false;
+            }
+           else
+           {
+               Screen.lockCursor = true;
+               this.GetComponent<PlayerMovement>().enabled = true;
+               this.GetComponent<Player>().enabled = true;
+               Time.timeScale = 1.0f;
+               mouseLook.enabled = true;
+               cameraLook.enabled = true;
+               pause = false;
+           }
         }
         if(Input.GetKeyDown(KeyCode.LeftAlt))
         {
@@ -90,7 +102,6 @@ public class PlayerInteractions : MonoBehaviour
             GUI.Box(new Rect(55, 50, 180, 40), "Time Played\n" + hour.ToString("00") + ":" + minute.ToString("00") + ":" + second.ToString("00"));
             if (GUI.Button(new Rect(55, 100, 180, 40), "Resume"))
             {
-                Screen.showCursor = false;
                 Screen.lockCursor = true;
                 this.GetComponent<PlayerMovement>().enabled = true;
                 this.GetComponent<Player>().enabled = true;

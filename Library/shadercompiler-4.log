@@ -1,92 +1,12 @@
 Base path: C:/Program Files (x86)/Unity/Editor/Data
-Pipe name: \\.\pipe\UnityShaderCompiler-4-2136
+Pipe name: \\.\pipe\UnityShaderCompiler-4-2960
 Cmd: getPlatforms
 Cmd: compileSnippet
-  api=8 type=0 insize=5928 outsize=4477 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_OFF DIRLIGHTMAP_OFF ok=1
+  api=0 type=1 insize=912 outsize=200 kw= ok=1
 Cmd: compileSnippet
-  api=8 type=0 insize=5928 outsize=5046 kw=DIRECTIONAL SHADOWS_SCREEN LIGHTMAP_OFF DIRLIGHTMAP_OFF ok=1
+  api=8 type=0 insize=867 outsize=1560 kw= ok=1
 Cmd: compileSnippet
-  api=8 type=0 insize=5928 outsize=3332 kw=DIRECTIONAL SHADOWS_SCREEN LIGHTMAP_ON DIRLIGHTMAP_ON ok=1
-Cmd: compileSnippet
-  api=8 type=0 insize=5928 outsize=7817 kw=DIRECTIONAL SHADOWS_SCREEN LIGHTMAP_OFF DIRLIGHTMAP_OFF VERTEXLIGHT_ON ok=1
-Cmd: compileSnippet
-  api=0 type=1 insize=5928 outsize=1270 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_ON DIRLIGHTMAP_OFF ok=1
-Cmd: compileSnippet
-  api=1 type=1 insize=5928 outsize=1168 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_ON DIRLIGHTMAP_ON ok=1
-Cmd: compileSnippet
-  api=0 type=1 insize=5928 outsize=1438 kw=DIRECTIONAL SHADOWS_SCREEN LIGHTMAP_ON DIRLIGHTMAP_ON ok=1
-Cmd: compileSnippet
-  api=1 type=0 insize=3848 outsize=513 kw=POINT ok=1
-Cmd: compileSnippet
-  api=0 type=0 insize=3848 outsize=1049 kw=DIRECTIONAL_COOKIE ok=1
-Cmd: compileSnippet
-  api=1 type=1 insize=3848 outsize=610 kw=DIRECTIONAL ok=1
-Cmd: compileSnippet
-  api=8 type=1 insize=3848 outsize=4493 kw=SPOT ok=1
-Cmd: compileSnippet
-  api=8 type=1 insize=3848 outsize=4079 kw=POINT_COOKIE ok=1
-Cmd: compileSnippet
-  api=8 type=1 insize=3848 outsize=3535 kw=DIRECTIONAL_COOKIE ok=1
-Cmd: compileSnippet
-  api=1 type=1 insize=3272 outsize=118 kw= ok=1
-Cmd: compileSnippet
-  api=0 type=0 insize=5589 outsize=1129 kw=LIGHTMAP_ON DIRLIGHTMAP_OFF HDR_LIGHT_PREPASS_OFF ok=1
-Cmd: compileSnippet
-  api=1 type=0 insize=5589 outsize=769 kw=LIGHTMAP_OFF DIRLIGHTMAP_OFF HDR_LIGHT_PREPASS_ON ok=1
-Cmd: compileSnippet
-  api=0 type=0 insize=5589 outsize=806 kw=LIGHTMAP_ON DIRLIGHTMAP_ON HDR_LIGHT_PREPASS_ON ok=1
-Cmd: compileSnippet
-  api=0 type=1 insize=5589 outsize=1312 kw=LIGHTMAP_OFF DIRLIGHTMAP_OFF HDR_LIGHT_PREPASS_OFF ok=1
-Cmd: compileSnippet
-  api=1 type=1 insize=5589 outsize=1262 kw=LIGHTMAP_ON DIRLIGHTMAP_ON HDR_LIGHT_PREPASS_OFF ok=1
-Cmd: compileSnippet
-  api=1 type=1 insize=5589 outsize=1416 kw=LIGHTMAP_ON DIRLIGHTMAP_OFF HDR_LIGHT_PREPASS_ON ok=1
-Cmd: compileSnippet
-  api=1 type=1 insize=5589 outsize=1207 kw=LIGHTMAP_ON DIRLIGHTMAP_ON HDR_LIGHT_PREPASS_ON ok=1
-Cmd: compileSnippet
-  api=0 type=0 insize=2950 outsize=4042 kw=DIRECTIONAL_SHAFTS LIGHT_OFF_SCREEN ok=1
-Cmd: compileSnippet
-  api=0 type=1 insize=2950 outsize=6 kw=LIGHT_ON_SCREEN SPOT_SHAFTS ok=1
-Cmd: compileSnippet
-  api=1 type=0 insize=6544 outsize=179 kw=LIGHT_ON_SCREEN DIRECTIONAL_SHAFTS SHOW_SAMPLES_OFF QUAD_SHAFTS ok=1
-Cmd: compileSnippet
-  api=1 type=0 insize=6544 outsize=179 kw=LIGHT_ON_SCREEN DIRECTIONAL_SHAFTS QUAD_SHAFTS SHOW_SAMPLES_ON ok=1
-Cmd: compileSnippet
-  api=0 type=0 insize=6544 outsize=6679 kw=LIGHT_ON_SCREEN SPOT_SHAFTS FRUSTUM_SHAFTS SHOW_SAMPLES_ON ok=1
-Cmd: compileSnippet
-  api=4 type=0 insize=6544 outsize=1103 kw=DIRECTIONAL_SHAFTS LIGHT_OFF_SCREEN SHOW_SAMPLES_OFF FRUSTUM_SHAFTS ok=1
-Cmd: compileSnippet
-  api=0 type=0 insize=6544 outsize=7360 kw=SPOT_SHAFTS LIGHT_OFF_SCREEN QUAD_SHAFTS SHOW_SAMPLES_ON ok=1
-Cmd: compileSnippet
-  api=1 type=1 insize=6544 outsize=3006 kw=LIGHT_ON_SCREEN DIRECTIONAL_SHAFTS SHOW_SAMPLES_OFF QUAD_SHAFTS ok=1
-Cmd: compileSnippet
-  api=0 type=1 insize=6544 outsize=6 kw=LIGHT_ON_SCREEN SPOT_SHAFTS QUAD_SHAFTS SHOW_SAMPLES_ON ok=1
-Cmd: compileSnippet
-  api=4 type=1 insize=6544 outsize=9960 kw=DIRECTIONAL_SHAFTS LIGHT_OFF_SCREEN SHOW_SAMPLES_OFF FRUSTUM_SHAFTS ok=1
-Cmd: compileSnippet
-  api=1 type=1 insize=665 outsize=71 kw= ok=1
-Cmd: compileSnippet
-  api=0 type=0 insize=2462 outsize=3268 kw= ok=1
-Cmd: compileSnippet
-  api=0 type=0 insize=422 outsize=441 kw= ok=1
-Cmd: compileSnippet
-  api=0 type=0 insize=4197 outsize=3930 kw=DIRECTIONAL_SHAFTS COLORED_ON ATTENUATION_CURVE_ON COOKIE_TEX_ON ok=1
-Cmd: compileSnippet
-  api=1 type=0 insize=4197 outsize=162 kw=SPOT_SHAFTS COLORED_ON ATTENUATION_CURVE_ON COOKIE_TEX_OFF ok=1
-Cmd: compileSnippet
-  api=1 type=0 insize=4197 outsize=162 kw=DIRECTIONAL_SHAFTS COLORED_ON COOKIE_TEX_ON ATTENUATION_CURVE_OFF ok=1
-Cmd: compileSnippet
-  api=4 type=0 insize=4197 outsize=665 kw=SPOT_SHAFTS ATTENUATION_CURVE_ON COOKIE_TEX_ON COLORED_OFF ok=1
-Cmd: compileSnippet
-  api=0 type=0 insize=4197 outsize=3714 kw=DIRECTIONAL_SHAFTS COOKIE_TEX_ON ATTENUATION_CURVE_OFF COLORED_OFF ok=1
-Cmd: compileSnippet
-  api=4 type=1 insize=4197 outsize=7449 kw=SPOT_SHAFTS COLORED_ON ATTENUATION_CURVE_ON COOKIE_TEX_ON ok=1
-Cmd: compileSnippet
-  api=0 type=1 insize=4197 outsize=6 kw=SPOT_SHAFTS COLORED_ON COOKIE_TEX_OFF ATTENUATION_CURVE_OFF ok=1
-Cmd: compileSnippet
-  api=4 type=1 insize=4197 outsize=5426 kw=DIRECTIONAL_SHAFTS ATTENUATION_CURVE_ON COOKIE_TEX_ON COLORED_OFF ok=1
-Cmd: compileSnippet
-  api=4 type=1 insize=4197 outsize=7270 kw=SPOT_SHAFTS COOKIE_TEX_ON ATTENUATION_CURVE_OFF COLORED_OFF ok=1
+  api=8 type=1 insize=867 outsize=837 kw= ok=1
 Unhandled exception: Readfile from pipe failed. GLE=The pipe has been ended.
 
 
