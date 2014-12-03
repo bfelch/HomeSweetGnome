@@ -3,8 +3,12 @@ using System.Collections;
 
 public class menuMouse : MonoBehaviour 
 {
+    private menuCam menuAnim;
+
 	void Start()
 	{
+        menuAnim = GameObject.Find("Main Camera").GetComponent<menuCam>();
+
 		renderer.material.color = Color.gray;
 	}
 
@@ -27,15 +31,26 @@ public class menuMouse : MonoBehaviour
         }
         else if (this.gameObject.name == ("Options"))
         {
-            Debug.Log("Options Clicked");
+            menuAnim.OptionsTransition();
         }
         else if (this.gameObject.name == ("Credits"))
         {
-            Debug.Log("Credits Clicked");
+            menuAnim.CreditsTransition();
         }
         else if (this.gameObject.name == ("Quit"))
         {
             Application.Quit();
+        }
+        else if (this.gameObject.name == ("Back"))
+        {
+            if(menuAnim.currentMenu == 2)
+            {
+                menuAnim.OptionsTransition();
+            }
+            else if (menuAnim.currentMenu == 3)
+            {
+                menuAnim.CreditsTransition();
+            }
         }
     }
 	
