@@ -28,7 +28,7 @@ public class PlayerInteractions : MonoBehaviour
 
     //reference to gui
     public GUIWrapper playerGUI;
-    private float lightingValue;
+    private float lightingValue = .1f;
     private float xSens=10;
     private float ySens=10;
     public Texture2D crosshair;
@@ -123,7 +123,7 @@ public class PlayerInteractions : MonoBehaviour
             GUI.backgroundColor = Color.clear;
             GUI.Box(new Rect(55, 90, 180, 30), "Adjust Lighting");
             GUI.backgroundColor = Color.white;
-            lightingValue = GUI.HorizontalSlider(new Rect(55, 120, 180, 10), lightingValue, 0, .1f);
+            lightingValue = GUI.HorizontalSlider(new Rect(55, 120, 180, 10), lightingValue, 0, .2f);
             GameObject.Find("DebugLight").GetComponent<Light>().intensity = lightingValue;
 
             GUI.backgroundColor = Color.clear;
@@ -235,7 +235,7 @@ public class PlayerInteractions : MonoBehaviour
 
             if (!showGUI)
             {
-                GUI.DrawTexture(new Rect(Screen.width / 2, Screen.height / 2, crosshair.width, crosshair.height), crosshair);
+                GUI.Box(new Rect(Screen.width / 2-10, Screen.height / 2-10, 20, 20), "+");
             }
         }
     }
