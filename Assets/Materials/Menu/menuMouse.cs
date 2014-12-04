@@ -10,6 +10,11 @@ public class menuMouse : MonoBehaviour
         menuAnim = GameObject.Find("Main Camera").GetComponent<menuCam>();
 
 		renderer.material.color = Color.gray;
+
+		//Ensure game is not frozen
+		Time.timeScale = 1.0F;
+		//Show mouse
+		Screen.lockCursor = false;
 	}
 
 	void OnMouseDown()
@@ -21,13 +26,13 @@ public class menuMouse : MonoBehaviour
     {
         if (this.gameObject.name == ("NewGame"))
         {
-            Application.LoadLevel("HomeSweetGnome");
-            PlayerPrefs.SetInt("LoadGame", 0);
+			PlayerPrefs.SetInt("LoadGame", 0);
+			menuAnim.PlayTransition();
         }
         else if (this.gameObject.name == ("Continue"))
         {
-            PlayerPrefs.SetInt("LoadGame", 1);
-            Application.LoadLevel("HomeSweetGnome");
+			PlayerPrefs.SetInt("LoadGame", 1);
+			menuAnim.LoadTransition();
         }
         else if (this.gameObject.name == ("Options"))
         {

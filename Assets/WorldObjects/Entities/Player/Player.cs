@@ -142,7 +142,7 @@ public class Player : MonoBehaviour
 
 	void Push()
 	{
-		if (Input.GetMouseButtonDown(0) && readyToPush)
+		if (Input.GetMouseButtonDown(0))
 		{
 			Transform cam = Camera.main.transform;
 
@@ -160,13 +160,13 @@ public class Player : MonoBehaviour
 			{
 				activeTarget = hit.collider.gameObject; //Store item being looked at
 
-				if(activeTarget.tag == "Gnome" && activeTarget.GetComponent<Gnome>().gnomeLevel == 1 && activeTarget.name != "GnomeShed")
+				if(activeTarget.tag == "Gnome" && activeTarget.GetComponent<Gnome>().gnomeLevel == 1 && activeTarget.GetComponent<Gnome>().pushed == false && activeTarget.name != "GnomeShed")
 				{
-					readyToPush = false;
+					//Gnome is pushed
 					activeTarget.GetComponent<Gnome>().pushed = true;
 
-					//Start push timer
-					StartCoroutine(PushTimer(10.0F, activeTarget));
+					//Start push timer on gnome
+					StartCoroutine(activeTarget.GetComponent<Gnome>().SpawnTimer(10.0F));
 
 					//Disable NavMeshAgent
 					activeTarget.GetComponent<NavMeshAgent>().enabled = false;
@@ -177,6 +177,9 @@ public class Player : MonoBehaviour
 
 					//Apply a force in the direction of the push
 					activeTarget.rigidbody.AddForce((activeTarget.transform.position - this.transform.position).normalized * 6, ForceMode.Impulse);
+
+					//Reduce player's energy by 5
+					sanity -= 5.0F;
 				}
 
 				if(activeTarget.tag == "Gargoyle")
@@ -194,7 +197,7 @@ public class Player : MonoBehaviour
 
     void Sanity()
     {
-        sanity -= .002f;
+        sanity -= .001f;
         if (sanity < 0)
         {
             this.GetComponent<EndGames>().playerSlept = true;

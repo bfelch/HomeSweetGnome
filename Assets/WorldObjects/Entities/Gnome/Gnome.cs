@@ -157,7 +157,7 @@ public class Gnome : MonoBehaviour
         return true;
     }
 
-    IEnumerator SpawnTimer(float waitTime)
+    public IEnumerator SpawnTimer(float waitTime)
     {
         Debug.Log("Spawner Timer Started");
 
@@ -216,7 +216,7 @@ public class Gnome : MonoBehaviour
 		//Random position inside a circle of size 2
 		Vector2 newPosition = Random.insideUnitCircle * 2;
 		
-		//Make sure the dirt pile doesn't spawn over the hole
+		//Make sure the eye doesn't spawn under the chand
 		if(newPosition.x > 0)
 		{
 			newPosition.x = newPosition.x + 2;

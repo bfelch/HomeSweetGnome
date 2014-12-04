@@ -65,6 +65,57 @@ public class menuCam : MonoBehaviour
         }
     }
 
+	public IEnumerator GameStartTimer(float waitTime)
+	{	
+		//Wait spawn time
+		yield return new WaitForSeconds(waitTime);
+		
+		//Start Game
+		Application.LoadLevel("HomeSweetGnome");
+	}
+
+	public void PlayTransition()
+	{
+		if(camMoving == false)
+		{
+			if(currentMenu == 1)
+			{
+				keyText.guiText.enabled = false; //Hide GUI text
+
+				animation["mainToShed"].speed = 1.0f; //Play animation fowards
+				animation["mainToShed"].time = 0; //Start from beginning of animation
+				cam.animation.Play("mainToShed"); //Play
+				GameObject.Find("FrontGate").GetComponent<Animation>().Play("OpenFrontGate");
+
+				camMoving = true; //Cam is moving
+
+				//Load the game after animation length
+				StartCoroutine(GameStartTimer(animation["mainToShed"].length));
+			}
+		}
+	}
+
+	public void LoadTransition()
+	{
+		if(camMoving == false)
+		{
+			if(currentMenu == 1)
+			{
+				keyText.guiText.enabled = false; //Hide GUI text
+				
+				animation["mainQuick"].speed = 1.0f; //Play animation fowards
+				animation["mainQuick"].time = 0; //Start from beginning of animation
+				cam.animation.Play("mainQuick"); //Play
+				GameObject.Find("FrontGate").GetComponent<Animation>().Play("OpenFrontGate");
+				
+				camMoving = true; //Cam is moving
+				
+				//Load the game after animation length
+				StartCoroutine(GameStartTimer(animation["mainQuick"].length));
+			}
+		}
+	}
+
     public void OptionsTransition()
     {
         if(camMoving == false)
