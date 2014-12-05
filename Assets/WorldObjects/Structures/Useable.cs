@@ -69,7 +69,6 @@ public class Useable : MonoBehaviour
             else if (type == UseableType.LIGHT)
             {
                 //toggles light
-                Debug.Log("Light");
                 gameObject.GetComponent<Light>().enabled = !gameObject.GetComponent<Light>().enabled;
             }
             else if (type == UseableType.CHAND)

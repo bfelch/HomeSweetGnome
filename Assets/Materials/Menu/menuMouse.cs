@@ -34,9 +34,9 @@ public class menuMouse : MonoBehaviour
 			PlayerPrefs.SetInt("LoadGame", 1);
 			menuAnim.LoadTransition();
         }
-        else if (this.gameObject.name == ("Options"))
+        else if (this.gameObject.name == ("Leaderboards"))
         {
-            menuAnim.OptionsTransition();
+			menuAnim.LeaderboardsTransition();
         }
         else if (this.gameObject.name == ("Credits"))
         {
@@ -50,7 +50,7 @@ public class menuMouse : MonoBehaviour
         {
             if(menuAnim.currentMenu == 2)
             {
-                menuAnim.OptionsTransition();
+				menuAnim.LeaderboardsTransition();
             }
             else if (menuAnim.currentMenu == 3)
             {

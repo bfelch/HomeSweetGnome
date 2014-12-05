@@ -15,7 +15,7 @@ public class menuCam : MonoBehaviour
 	{
         //Check is all animations are done playing
 		if( !animation.IsPlaying("titleToMain") &&
-            !animation.IsPlaying("mainToOptions") &&
+		    !animation.IsPlaying("mainToLeaderboards") &&
             !animation.IsPlaying("mainToCredits"))
 		{
 			camMoving = false; //Cam is not moving
@@ -30,7 +30,7 @@ public class menuCam : MonoBehaviour
 		}
         else if(Input.GetKey(KeyCode.RightArrow) && currentMenu == 1)
         {
-            OptionsTransition();
+			LeaderboardsTransition();
         }
         else if(Input.GetKey(KeyCode.LeftArrow) && currentMenu == 1)
         {
@@ -38,7 +38,7 @@ public class menuCam : MonoBehaviour
         }
         else if (Input.GetKey(KeyCode.LeftArrow) && currentMenu == 2)
         {
-            OptionsTransition();
+			LeaderboardsTransition();
         }
         else if (Input.GetKey(KeyCode.RightArrow) && currentMenu == 3)
         {
@@ -60,7 +60,7 @@ public class menuCam : MonoBehaviour
 
                 camMoving = true; //Cam is moving
                 currentMenu = 1; //Set current menu index
-                keyText.guiText.text = "[Left Arrow] Credits || [Right Arrow] Options"; //Set new GUI text
+				keyText.guiText.text = "[Left Arrow] Credits || [Right Arrow] Leaderboards"; //Set new GUI text
             }
         }
     }
@@ -116,16 +116,16 @@ public class menuCam : MonoBehaviour
 		}
 	}
 
-    public void OptionsTransition()
+	public void LeaderboardsTransition()
     {
         if(camMoving == false)
         {
             if(currentMenu == 1)
             {
                 keyText.guiText.enabled = false; //Hide GUI text
-                animation["mainToOptions"].speed = 1.0f; //Play animation fowards
-                animation["mainToOptions"].time = 0; //Start from beginning of animation
-                cam.animation.Play("mainToOptions"); //Play
+				animation["mainToLeaderboards"].speed = 1.0f; //Play animation fowards
+				animation["mainToLeaderboards"].time = 0; //Start from beginning of animation
+				cam.animation.Play("mainToLeaderboards"); //Play
 
                 camMoving = true; //Cam is moving
                 currentMenu = 2; //Set current menu index
@@ -134,13 +134,13 @@ public class menuCam : MonoBehaviour
             else if(currentMenu == 2)
             {
                 keyText.guiText.enabled = false; //Hide GUI text
-                animation["mainToOptions"].speed = -1.0f; //Play animation backwards
-                animation["mainToOptions"].time = animation["mainToOptions"].length; ; //Start from end of animation
-                cam.animation.Play("mainToOptions"); //Play
+				animation["mainToLeaderboards"].speed = -1.0f; //Play animation backwards
+				animation["mainToLeaderboards"].time = animation["mainToLeaderboards"].length; ; //Start from end of animation
+				cam.animation.Play("mainToLeaderboards"); //Play
 
                 camMoving = true; //Cam is moving
                 currentMenu = 1; //Set current menu index
-                keyText.guiText.text = "[Left Arrow] Credits || [Right Arrow] Options"; //Set new GUI text
+				keyText.guiText.text = "[Left Arrow] Credits || [Right Arrow] Leaderboards"; //Set new GUI text
             }
         }
     }
@@ -169,7 +169,7 @@ public class menuCam : MonoBehaviour
 
                 camMoving = true; //Cam is moving
                 currentMenu = 1; //Set current menu index
-                keyText.guiText.text = "[Left Arrow] Credits || [Right Arrow] Options"; //Set new GUI text
+				keyText.guiText.text = "[Left Arrow] Credits || [Right Arrow] Leaderboards"; //Set new GUI text
             }
         }
     }
