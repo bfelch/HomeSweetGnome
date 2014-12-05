@@ -76,6 +76,7 @@
      <Compile Include="Assets\WorldObjects\Entities\Player\GUI\ItemSlot.cs" />
      <Compile Include="Assets\WorldObjects\Entities\Player\GUI\KeyItem.cs" />
      <Compile Include="Assets\WorldObjects\Entities\Player\GUI\KeyRing.cs" />
+     <Compile Include="Assets\WorldObjects\Entities\Player\GUI\TheActualKey.cs" />
      <Compile Include="Assets\WorldObjects\Entities\Player\LoadUnload.cs" />
      <Compile Include="Assets\WorldObjects\Entities\Player\Player.cs" />
      <Compile Include="Assets\WorldObjects\Entities\Player\PlayerInteractions.cs" />

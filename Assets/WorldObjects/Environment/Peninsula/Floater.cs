@@ -9,7 +9,7 @@ public class Floater : MonoBehaviour {
 	
     void Update()
     {
-        Debug.Log(boat.transform.position.y);
+        //Debug.Log(boat.transform.position.y);
 
         if (boat.transform.position.y > -23)
         {
