@@ -9,7 +9,6 @@ public class KeyItem : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
 	}
 	
 	// Update is called once per frame
@@ -33,10 +32,6 @@ public class KeyItem : MonoBehaviour {
 
     void OnMouseExit() {
         ToggleKeyHover(false);
-    }
-
-    void OnCollisionEnter() {
-        //rigidbody.velocity *= .3f;
     }
 
     void ToggleKeyHover(bool hovering) {
