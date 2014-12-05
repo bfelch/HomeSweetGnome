@@ -12,6 +12,8 @@ public class SaveLoad : MonoBehaviour
     private int displayTime = 300;
     public static bool loaded = false;
     public static bool savingStatus = false;
+    public static float[] leaderboardTimes;
+    public static string[] leaderboardNames;
 
     //this method saves the values into playerInfo.dat
     public void Save()
@@ -30,6 +32,59 @@ public class SaveLoad : MonoBehaviour
         bf.Serialize(file, data);
         //close the file
         file.Close();
+    }
+    public static void saveLeaderboard()
+    {       
+        BinaryFormatter bf = new BinaryFormatter();
+        FileStream file;
+        PlayerInteractions player = GameObject.Find("Player").GetComponent<PlayerInteractions>();
+        Leaderboard leader;
+
+        if (File.Exists(Application.persistentDataPath + "/leaderboards.dat"))
+        {
+            file = File.Open(Application.persistentDataPath + "/leaderboards.dat", FileMode.OpenOrCreate);
+            leader = (Leaderboard)bf.Deserialize(file);
+
+            int index = -1;
+            for (int i = 0; i < leader.times.Length; i++)
+            {
+                if(leader.times[i] < player.timePlayed)
+                {
+                    index = i;
+                    break;
+                }
+            }
+
+            if (index != -1)
+            {
+                for (int i = 0; i < leader.times.Length; i++)
+                {
+                    if (i >= index && i != leader.times.Length - 1)
+                    {
+                        leader.times[i] = leader.times[i + 1];
+                        leader.names[i] = leader.names[i + 1];
+                    }
+
+                }
+                leader.times[index] = player.timePlayed;
+                leader.names[index] = player.playerName;
+
+                bf.Serialize(file, leader);
+                player.playerName = "NotOnLeaderboard";
+            }       
+        }
+        else 
+        {
+            file = File.Create(Application.persistentDataPath + "/leaderboards.dat");
+            leader = new Leaderboard();
+
+            leader.times = new float[5];
+            leader.times[0] = player.timePlayed;
+
+        }
+
+        file.Close();
+        
     }
 
     public void Load()
@@ -58,6 +113,23 @@ public class SaveLoad : MonoBehaviour
         }
     }
 
+    public static void loadLeaderboards()
+    {
+        BinaryFormatter bf = new BinaryFormatter();
+        FileStream file;
+        PlayerInteractions player = GameObject.Find("Player").GetComponent<PlayerInteractions>();
+        Leaderboard leader;
+
+        if (File.Exists(Application.persistentDataPath + "/leaderboards.dat"))
+        {
+            file = File.Open(Application.persistentDataPath + "/leaderboards.dat", FileMode.Open);
+            leader = (Leaderboard)bf.Deserialize(file);
+            leaderboardNames = leader.names;
+            leaderboardTimes = leader.times;
+            file.Close();                
+        }
+    }
+    
     void OnTriggerEnter(Collider other)
     {
         //did we enter a save trigger?

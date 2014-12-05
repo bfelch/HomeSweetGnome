@@ -11,12 +11,17 @@ public class EndGames : MonoBehaviour {
     public bool playerFell;
     public bool playerEscaped;
     public bool experimentComplete;
+    public bool enterName = false;
+    public bool showLeaderboards = false;
     private float fadeIn = 0;
     private float pauseFadeTime = 4;
     private bool pauseFade = false;
     private bool switchFade = false;
     private float time = 0;
     private bool gotTime = false;
+    public static GameObject[] dockGnomes;
+    public PlayerInteractions playerInt;
+
 	// Use this for initialization
 	void Start () {
         deathTextSleep = GameObject.Find("DeathTextSleep").guiText;
@@ -34,6 +39,13 @@ public class EndGames : MonoBehaviour {
         playerSlept = false;
         playerFell = false;
         time = GetComponent<PlayerInteractions>().timePlayed;
+        dockGnomes = new GameObject[] { GameObject.Find("DockGnome1"), GameObject.Find("DockGnome2"), GameObject.Find("DockGnome3") };
+        for (int i = 0; i < dockGnomes.Length; i++)
+        {
+            dockGnomes[i].SetActive(false);
+        }
+
+        playerInt = GameObject.Find("Player").GetComponent<PlayerInteractions>();
 	}
 	
 	// Update is called once per frame
@@ -46,8 +58,9 @@ public class EndGames : MonoBehaviour {
         //Wait before loading the main menu
         yield return new WaitForSeconds(waitTime);
 
+        enterName = true;
         //Load the main menu
-        Application.LoadLevel("MainMenu");
+        //Application.LoadLevel("MainMenu");
     }
 
     public void Escape()
@@ -135,7 +148,46 @@ public class EndGames : MonoBehaviour {
             deathTextFall.color = changing;
             //update the alpha value
             fadeIn += .1f * Time.deltaTime;
+        }
 
+        if(enterName)
+        {
+            Screen.lockCursor = false;
+            GUI.backgroundColor = Color.clear;
+            GUI.Box(new Rect(55, 160, 180, 30), "Please Enter Your Name:");
+            GUI.backgroundColor = Color.white;
+
+            GUI.TextField(new Rect(55, 200, 180, 40), playerInt.playerName);
+            if (GUI.Button(new Rect(55, 250, 250, 30), "Submit"))
+            {
+                SaveLoad.saveLeaderboard();
+                showLeaderboards = true;
+                enterName = false;
+            }
+        }
+        if (showLeaderboards)
+        {
+            GUI.Box(new Rect(55, 100, 180, 30), "Leaderboards");
+            SaveLoad.loadLeaderboards();
+
+            int height = 140;
+            for (int i = 0; i < 5; i++ )
+            {
+                GUI.Box(new Rect(55, height, 180, 30), (i+1) + ". " + SaveLoad.leaderboardNames[i] + " - " + getTimeString(SaveLoad.leaderboardTimes[i]));
+                height += 30;
+            }
+
+            if (playerInt.playerName == "NotOnLeaderboard")
+            {
+                GUI.Box(new Rect(55, 200, 180, 50), "Unfortunately, you didn't make it onto the leaderboards. \n Better luck next time!");
+
+            }
+            if (GUI.Button(new Rect(55, 260, 250, 30), "Main Menu"))
+            {
+                showLeaderboards = false;
+                enterName = false;
+                Application.LoadLevel("MainMenu");
+            }
         }
     }
 
@@ -161,5 +213,15 @@ public class EndGames : MonoBehaviour {
             time = (int)(time + Time.timeSinceLevelLoad);
         }
 
+    }
+
+    string getTimeString(float time)
+    {
+
+        int second = (int)time;
+        int minute = second / 60;
+        int hour = minute / 60;
+
+        return hour.ToString("00") + ":" + minute.ToString("00") + ":" + second.ToString("00");
     }
 }

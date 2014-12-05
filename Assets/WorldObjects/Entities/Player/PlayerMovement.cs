@@ -26,7 +26,7 @@ public class PlayerMovement : MonoBehaviour {
     public bool walking;
     public bool crouching;
     public bool sprinting;
-
+    public bool canCrouch = true;
     //used to play breathing sound
     private bool breathing;
     public AudioSource breathingSound;
@@ -138,22 +138,33 @@ public class PlayerMovement : MonoBehaviour {
     }
 
     void Crouch() {
-        if (!crouching) {
-            SetMovementSpeed(3f);
+        if (canCrouch)
+        {
+            if (!crouching)
+            {
+                SetMovementSpeed(3f);
 
-            SetCrouch(true);
+                SetCrouch(true);
+            }
+
+            if (Falling())
+            {
+                //if falling, change state
+                state = PlayerState.FALL;
+
+                SetCrouch(false);
+            }
+            else if (!Crouching())
+            {
+                //if not crouching, change state
+                state = PlayerState.STAND;
+
+                SetCrouch(false);
+            }
         }
-
-        if (Falling()) {
-            //if falling, change state
-            state = PlayerState.FALL;
-
-            SetCrouch(false);
-        } else if (!Crouching()) {
-            //if not crouching, change state
+        else
+        {
             state = PlayerState.STAND;
-
-            SetCrouch(false);
         }
     }
 
@@ -253,6 +264,18 @@ public class PlayerMovement : MonoBehaviour {
             Vector3 playerPos = gameObject.transform.position;
             gameObject.transform.position = new Vector3(playerPos.x, playerPos.y - 1f, playerPos.z);
         }
+    }
+
+    void OnTriggerEnter(Collider col)
+    {
+        if (col.name == "PoolNoCrouch")
+            canCrouch = false;
+    }
+
+    void OnTriggerExit(Collider col)
+    {
+        if (col.name == "PoolNoCrouch")
+            canCrouch = true;
     }
 }
 

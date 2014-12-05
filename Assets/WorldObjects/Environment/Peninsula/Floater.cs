@@ -5,7 +5,23 @@ public class Floater : MonoBehaviour {
 	public float waterLevel, floatHeight;
 	public Vector3 buoyancyCentreOffset;
 	public float bounceDamp;
+    public GameObject boat;
 	
+    void Update()
+    {
+        Debug.Log(boat.transform.position.y);
+
+        if (boat.transform.position.y > -23)
+        {
+            boat.transform.position = new Vector3(boat.transform.position.x, -23f, boat.transform.position.z);
+        }
+        if (boat.transform.position.y < -25)
+        {
+            boat.transform.position = new Vector3(boat.transform.position.x, -25f, boat.transform.position.z);
+        }
+
+       
+    }
 	
 
 	void FixedUpdate () {

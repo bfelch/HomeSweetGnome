@@ -10,6 +10,7 @@ public class PlayerInteractions : MonoBehaviour
 
     //duration of play
     public float timePlayed;
+    public string playerName = "d";
 
     public GameObject activeTarget; //The item being looked at
     public bool canHover = false; //Show the item name being look at?

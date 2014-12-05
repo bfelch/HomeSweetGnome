@@ -17,7 +17,7 @@ public class Useable : MonoBehaviour
 	// Use this for initialization
 	void Start () 
     {
-	
+
 	}
 	
 	// Update is called once per frame
@@ -56,6 +56,10 @@ public class Useable : MonoBehaviour
                 boat.GetComponent<Animation>().Play("BoatDrive");
                 //Run the escape function inside the Player script
                 player.GetComponent<EndGames>().Escape();
+                for(int i = 0; i < EndGames.dockGnomes.Length; i++)
+                {
+                    EndGames.dockGnomes[i].SetActive(true);
+                }
             }
             else if(type == UseableType.ATTICBOWL)
             {
