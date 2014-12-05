@@ -13,7 +13,6 @@ public class Gnome : MonoBehaviour
     public float sightRange;
     //Movement speed
     public float moveSpeed;
-    private float blinkSpeed;
     //Wander speed
     public float wanderSpeed;
 
@@ -42,7 +41,6 @@ public class Gnome : MonoBehaviour
         target = GameObject.Find("Player");
         targetBlink = target.GetComponent<Blink>();
         agent = gameObject.GetComponent<NavMeshAgent>();
-        blinkSpeed = float.MaxValue;
         dirtSpawner = GameObject.Find("DirtSpawner");
     }
 
@@ -92,16 +90,8 @@ public class Gnome : MonoBehaviour
         lastKnownLocation = target.transform.position;
         //set destination
         agent.SetDestination(lastKnownLocation);
-
-        if (targetBlink.blink) 
-		{
-            //if player is blinking move super fast
-            agent.speed = blinkSpeed;
-        } else 
-		{
-            //move at normal speed
-            agent.speed = moveSpeed;
-        }
+        //move at normal speed
+        agent.speed = moveSpeed;
     }
 
     private void Wander()

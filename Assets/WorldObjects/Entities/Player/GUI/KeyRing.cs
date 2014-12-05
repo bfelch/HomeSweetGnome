@@ -10,17 +10,23 @@ public class KeyRing : MonoBehaviour {
     //reference to gui slot
     public GUISlot gui;
 
+    private int debugkeys;
+
 	// Use this for initialization
 	void Start () {
         //activate keys on ring if player has them
         foreach (KeyItem key in keysOnRing) {
             key.gameObject.SetActive(false);
         }
+
+        debugkeys = 0;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
+        if (Input.GetKeyUp(KeyCode.K) && debugkeys < keysOnRing.Count) {
+            keysOnRing[debugkeys++].gameObject.SetActive(true);
+        }
 	}
 
     /*

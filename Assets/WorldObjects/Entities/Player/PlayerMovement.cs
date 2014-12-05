@@ -30,6 +30,7 @@ public class PlayerMovement : MonoBehaviour {
     //used to play breathing sound
     private bool breathing;
     public AudioSource breathingSound;
+    public bool recharging;
 
     //player motor and controller
     public CharacterMotor motor;
@@ -67,6 +68,10 @@ public class PlayerMovement : MonoBehaviour {
 
                 breathingSound.Play();
             }
+        }
+
+        if (!breathingSound.isPlaying) {
+            recharging = false;
         }
 
         switch (state) {
@@ -184,12 +189,14 @@ public class PlayerMovement : MonoBehaviour {
                 state = PlayerState.STAND;
 
                 breathing = true;
+                recharging = true;
             }
         } else {
             //if not moving, change state
             state = PlayerState.STAND;
 
             breathing = true;
+            recharging = true;
         }
 
         if (Falling()) {
@@ -200,6 +207,7 @@ public class PlayerMovement : MonoBehaviour {
             state = PlayerState.STAND;
 
             breathing = true;
+            recharging = true;
         }
     }
 
@@ -227,7 +235,7 @@ public class PlayerMovement : MonoBehaviour {
     }
 
     bool Sprinting() {
-        return (Input.GetKey(KeyCode.LeftShift) && sprintTime > 0);
+        return (Input.GetKey(KeyCode.LeftShift) && sprintTime > 0 && !recharging);
     }
 
     bool Moving() {
