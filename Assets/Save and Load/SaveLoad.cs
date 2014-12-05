@@ -64,11 +64,12 @@ public class SaveLoad : MonoBehaviour
             Debug.Log(index);
             if (index != -1)
             {
-                int i = leaderboardTimes.Length - 2;
+                int i = leaderboardTimes.Length - 1;
                 while(i != index)
                 {
-                    leaderboardTimes[i - 1] = leaderboardTimes[i];
-                    leaderboardNames[i - 1] = leaderboardNames[i];
+                    leaderboardTimes[i] = leaderboardTimes[i-1];
+                    leaderboardNames[i] = leaderboardNames[i-1];
+                    i--;
                 }
 
                 leaderboardTimes[index] = player.timePlayed;
