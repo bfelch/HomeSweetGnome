@@ -94,6 +94,12 @@ public class SaveLoad : MonoBehaviour
             leader.times = new float[5];
             leader.times[0] = player.timePlayed;
             leader.names = new string[5];
+
+            for(int i = 0; i < leader.names.Length; i++)
+            {
+                leader.names[i] = "Empty";
+            }
+
             leader.names[0] = PlayerInteractions.playerName;
             bf.Serialize(file, leader);
         }
@@ -132,7 +138,7 @@ public class SaveLoad : MonoBehaviour
     {
         BinaryFormatter bf = new BinaryFormatter();
         FileStream file;
-        PlayerInteractions player = GameObject.Find("Player").GetComponent<PlayerInteractions>();
+        //PlayerInteractions player = GameObject.Find("Player").GetComponent<PlayerInteractions>();
         Leaderboard leader;
 
         if (File.Exists(Application.persistentDataPath + "/leaderboards.dat"))
@@ -143,7 +149,7 @@ public class SaveLoad : MonoBehaviour
             Debug.Log(leaderboardNames);
             leaderboardTimes = leader.times;
             Debug.Log(leaderboardTimes);
-            file.Close();                
+            file.Close();
         }
     }
     

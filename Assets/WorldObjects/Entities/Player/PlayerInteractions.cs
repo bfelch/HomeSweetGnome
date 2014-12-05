@@ -408,11 +408,6 @@ public class PlayerInteractions : MonoBehaviour
 
     void OnTriggerEnter(Collider col)
     {
-        if(col.gameObject.name == "EndGame")
-        {
-            Application.LoadLevel("MainMenu"); //should be player win screen
-        }
-
         //First time exiting shed trigger
         if(col.gameObject.name == "ExitTutorial" && st.tutorial)
         {

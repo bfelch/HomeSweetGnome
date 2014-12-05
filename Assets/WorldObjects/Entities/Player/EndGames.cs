@@ -187,7 +187,6 @@ public class EndGames : MonoBehaviour {
             if (PlayerInteractions.playerName == "NotOnLeaderboard")
             {
                 GUI.Box(new Rect(0, 200, 500, 50), "Unfortunately, you didn't make it onto the leaderboards. \n Better luck next time!");
-
             }
             if (GUI.Button(new Rect(150, 250, 200, 30), "Main Menu"))
             {
@@ -224,9 +223,8 @@ public class EndGames : MonoBehaviour {
 
     }
 
-    string getTimeString(float time)
+    public static string getTimeString(float time)
     {
-
         int second = (int)time;
         int minute = second / 60;
         int hour = minute / 60;

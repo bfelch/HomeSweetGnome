@@ -6,12 +6,33 @@ public class menuCam : MonoBehaviour
 	public GameObject cam;
 	public GameObject keyText;
 
+    private GameObject startMenu;
+    private GameObject mainMenu;
+    private GameObject leaderMenu;
+    private GameObject creditsMenu;
+
 	public int currentMenu = 0; //Menu index
 	private bool camMoving = false;
 
 	private int buttonIndex = 0; //Button index
 
-	void Update()
+    void Awake()
+    {
+        startMenu = GameObject.Find("Start Menu");
+        mainMenu = GameObject.Find("Main Menu");
+        leaderMenu = GameObject.Find("Leaderboards Menu");
+        creditsMenu = GameObject.Find("Credits Menu");
+    }
+
+	void Start()
+    {
+        startMenu.SetActive(true);
+        mainMenu.SetActive(false);
+        leaderMenu.SetActive(false);
+        creditsMenu.SetActive(false);
+    }
+
+    void Update()
 	{
         //Check is all animations are done playing
 		if( !animation.IsPlaying("titleToMain") &&
@@ -52,6 +73,9 @@ public class menuCam : MonoBehaviour
         {
             if (currentMenu == 0)
             {
+                //Display appropriate menu
+                mainMenu.SetActive(true);
+
                 keyText.guiText.enabled = false; //Hide GUI text
 
                 animation["titleToMain"].speed = 1.0f; //Play animation fowards
@@ -60,6 +84,7 @@ public class menuCam : MonoBehaviour
 
                 camMoving = true; //Cam is moving
                 currentMenu = 1; //Set current menu index
+
 				keyText.guiText.text = "[Left Arrow] Credits || [Right Arrow] Leaderboards"; //Set new GUI text
             }
         }
@@ -80,6 +105,9 @@ public class menuCam : MonoBehaviour
 		{
 			if(currentMenu == 1)
 			{
+                //Display appropriate menu
+                mainMenu.SetActive(false);
+
 				keyText.guiText.enabled = false; //Hide GUI text
 
 				animation["mainToShed"].speed = 1.0f; //Play animation fowards
@@ -101,6 +129,9 @@ public class menuCam : MonoBehaviour
 		{
 			if(currentMenu == 1)
 			{
+                //Display appropriate menu
+                mainMenu.SetActive(false);
+
 				keyText.guiText.enabled = false; //Hide GUI text
 				
 				animation["mainQuick"].speed = 1.0f; //Play animation fowards
@@ -122,6 +153,10 @@ public class menuCam : MonoBehaviour
         {
             if(currentMenu == 1)
             {
+                //Display appropriate menu
+                mainMenu.SetActive(false);
+                leaderMenu.SetActive(true);
+
                 keyText.guiText.enabled = false; //Hide GUI text
 				animation["mainToLeaderboards"].speed = 1.0f; //Play animation fowards
 				animation["mainToLeaderboards"].time = 0; //Start from beginning of animation
@@ -133,6 +168,10 @@ public class menuCam : MonoBehaviour
             }
             else if(currentMenu == 2)
             {
+                //Display appropriate menu
+                leaderMenu.SetActive(false);
+                mainMenu.SetActive(true);
+
                 keyText.guiText.enabled = false; //Hide GUI text
 				animation["mainToLeaderboards"].speed = -1.0f; //Play animation backwards
 				animation["mainToLeaderboards"].time = animation["mainToLeaderboards"].length; ; //Start from end of animation
@@ -151,6 +190,10 @@ public class menuCam : MonoBehaviour
         {
             if(currentMenu == 1)
             {
+                //Display appropriate menu
+                mainMenu.SetActive(false);
+                creditsMenu.SetActive(true);
+
                 keyText.guiText.enabled = false; //Hide GUI text
                 animation["mainToCredits"].speed = 1.0f; //Play animation fowards
                 animation["mainToCredits"].time = 0; //Start from beginning of animation
@@ -162,6 +205,10 @@ public class menuCam : MonoBehaviour
             }
             else if(currentMenu == 3)
             {
+                //Display appropriate menu
+                creditsMenu.SetActive(false);
+                mainMenu.SetActive(true);
+
                 keyText.guiText.enabled = false; //Hide GUI text
                 animation["mainToCredits"].speed = -1.0f; //Play animation backwards
                 animation["mainToCredits"].time = animation["mainToCredits"].length; ; //Start from end of animation

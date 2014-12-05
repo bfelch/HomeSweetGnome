@@ -1,15 +1,23 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class menuMouse : MonoBehaviour 
 {
     private menuCam menuAnim;
 
+    void Awake()
+    {
+        //Set leaderboard text
+        SaveLoad.loadLeaderboards();
+        DisplayLeaderboards();
+    }
+
 	void Start()
 	{
         menuAnim = GameObject.Find("Main Camera").GetComponent<menuCam>();
 
-		renderer.material.color = Color.gray;
+        renderer.material.color = new Color32(222, 219, 212, 255);
 
 		//Ensure game is not frozen
 		Time.timeScale = 1.0F;
@@ -17,9 +25,17 @@ public class menuMouse : MonoBehaviour
 		Screen.lockCursor = false;
 	}
 
+    void DisplayLeaderboards()
+    {
+        for (int i = 0; i < 5; i++)
+        {
+            GameObject.Find((i+1).ToString()).GetComponent<TextMesh>().text = (i + 1) + ". " + SaveLoad.leaderboardNames[i] + " - " + EndGames.getTimeString(SaveLoad.leaderboardTimes[i]);
+        }
+    }
+
 	void OnMouseDown()
 	{
-        renderer.material.color = Color.red;
+        renderer.material.color = new Color32(151, 146, 132, 255);
 	}
 
     void OnMouseUp()
@@ -61,11 +77,11 @@ public class menuMouse : MonoBehaviour
 	
 	void OnMouseEnter()
 	{
-		renderer.material.color = Color.white;
+        renderer.material.color = new Color32(191, 187, 179, 255);
 	}
 	
 	void OnMouseExit()
 	{
-		renderer.material.color = Color.gray;
+        renderer.material.color = new Color32(222, 219, 212, 255);
 	}
 }

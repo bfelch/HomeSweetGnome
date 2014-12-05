@@ -11,5 +11,4 @@ public class Leaderboard
     //store all the gnome rotations
     [SerializeField]
     public string[] names;
-
 }
