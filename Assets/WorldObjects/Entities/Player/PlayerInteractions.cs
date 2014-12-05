@@ -10,7 +10,7 @@ public class PlayerInteractions : MonoBehaviour
 
     //duration of play
     public float timePlayed;
-    public string playerName = "d";
+    public static string playerName = "";
 
     public GameObject activeTarget; //The item being looked at
     public bool canHover = false; //Show the item name being look at?
@@ -26,6 +26,7 @@ public class PlayerInteractions : MonoBehaviour
     private Material outline;
     //is gui active
     public bool showGUI;
+    public bool removePlus = false;
 
     //reference to gui
     public GUIWrapper playerGUI;
@@ -245,7 +246,7 @@ public class PlayerInteractions : MonoBehaviour
                 GUI.Box(new Rect(0, Screen.height - Screen.height / 2 + 150, Screen.width, 30), "You need the " + GUIString + " to continue.");
             }
 
-            if (!showGUI)
+            if (!showGUI && !removePlus)
             {
                 GUI.Box(new Rect(Screen.width / 2-10, Screen.height / 2-10, 20, 20), "+");
             }

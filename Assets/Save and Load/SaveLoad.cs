@@ -42,36 +42,48 @@ public class SaveLoad : MonoBehaviour
 
         if (File.Exists(Application.persistentDataPath + "/leaderboards.dat"))
         {
-            file = File.Open(Application.persistentDataPath + "/leaderboards.dat", FileMode.OpenOrCreate);
+            file = File.Open(Application.persistentDataPath + "/leaderboards.dat", FileMode.Open);
             leader = (Leaderboard)bf.Deserialize(file);
 
+            leaderboardTimes = leader.times;
+            leaderboardNames = leader.names;
+            file.Close();
+
+            file = File.Create(Application.persistentDataPath + "/leaderboards.dat");
+            leader = new Leaderboard();
+            
             int index = -1;
-            for (int i = 0; i < leader.times.Length; i++)
+            for (int i = 0; i < leaderboardTimes.Length; i++)
             {
-                if(leader.times[i] < player.timePlayed)
+                if (leaderboardTimes[i] > player.timePlayed || leaderboardTimes[i] == 0)
                 {
                     index = i;
                     break;
                 }
             }
-
+            Debug.Log(index);
             if (index != -1)
             {
-                for (int i = 0; i < leader.times.Length; i++)
+                int i = leaderboardTimes.Length - 2;
+                while(i != index)
                 {
-                    if (i >= index && i != leader.times.Length - 1)
-                    {
-                        leader.times[i] = leader.times[i + 1];
-                        leader.names[i] = leader.names[i + 1];
-                    }
-
+                    leaderboardTimes[i - 1] = leaderboardTimes[i];
+                    leaderboardNames[i - 1] = leaderboardNames[i];
                 }
-                leader.times[index] = player.timePlayed;
-                leader.names[index] = player.playerName;
 
-                bf.Serialize(file, leader);
-                player.playerName = "NotOnLeaderboard";
-            }       
+                leaderboardTimes[index] = player.timePlayed;
+                leaderboardNames[index] = PlayerInteractions.playerName;
+            }
+            else
+            {
+                PlayerInteractions.playerName = "NotOnLeaderboard";
+            }
+
+            leader.times = leaderboardTimes;
+            leader.names = leaderboardNames;
+            bf.Serialize(file, leader);
+
+            
         }
         else 
         {
@@ -80,7 +92,9 @@ public class SaveLoad : MonoBehaviour
 
             leader.times = new float[5];
             leader.times[0] = player.timePlayed;
-
+            leader.names = new string[5];
+            leader.names[0] = PlayerInteractions.playerName;
+            bf.Serialize(file, leader);
         }
 
         file.Close();
@@ -125,7 +139,9 @@ public class SaveLoad : MonoBehaviour
             file = File.Open(Application.persistentDataPath + "/leaderboards.dat", FileMode.Open);
             leader = (Leaderboard)bf.Deserialize(file);
             leaderboardNames = leader.names;
+            Debug.Log(leaderboardNames);
             leaderboardTimes = leader.times;
+            Debug.Log(leaderboardTimes);
             file.Close();                
         }
     }

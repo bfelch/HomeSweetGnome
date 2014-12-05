@@ -67,7 +67,7 @@ public class EndGames : MonoBehaviour {
     {
         playerEscaped = true;
         GetTime();
-        StartCoroutine(WaitToReload(7.0F));
+        StartCoroutine(WaitToReload(8.0F));
     }
 
     public void Experiment()
@@ -152,42 +152,50 @@ public class EndGames : MonoBehaviour {
 
         if(enterName)
         {
+            playerInt.removePlus = true;
+            GUI.skin.box.alignment = TextAnchor.UpperCenter;
+            GUI.BeginGroup(new Rect(Screen.width / 2 - 200, Screen.height/2 - 60, 400, Screen.height));
             Screen.lockCursor = false;
             GUI.backgroundColor = Color.clear;
-            GUI.Box(new Rect(55, 160, 180, 30), "Please Enter Your Name:");
+            GUI.Box(new Rect(0,0, 400, 30), "Please Enter Your Name:");
             GUI.backgroundColor = Color.white;
 
-            GUI.TextField(new Rect(55, 200, 180, 40), playerInt.playerName);
-            if (GUI.Button(new Rect(55, 250, 250, 30), "Submit"))
+            PlayerInteractions.playerName = GUI.TextField(new Rect(100, 40, 200, 40), PlayerInteractions.playerName, 15);
+
+            if (GUI.Button(new Rect(100, 90, 200, 30), "Submit"))
             {
                 SaveLoad.saveLeaderboard();
                 showLeaderboards = true;
                 enterName = false;
             }
+            GUI.EndGroup();
         }
         if (showLeaderboards)
         {
-            GUI.Box(new Rect(55, 100, 180, 30), "Leaderboards");
+            GUI.skin.box.alignment = TextAnchor.UpperCenter;
+            GUI.BeginGroup(new Rect(Screen.width / 2 - 250, Screen.height/2 - 125, 500, Screen.height));
+            GUI.Box(new Rect(0,0, 500, 30), "Leaderboards");
             SaveLoad.loadLeaderboards();
-
-            int height = 140;
+            
+            int height = 40;
             for (int i = 0; i < 5; i++ )
             {
-                GUI.Box(new Rect(55, height, 180, 30), (i+1) + ". " + SaveLoad.leaderboardNames[i] + " - " + getTimeString(SaveLoad.leaderboardTimes[i]));
+                GUI.Box(new Rect(0, height, 500, 30), (i + 1) + ". " + SaveLoad.leaderboardNames[i] + " - " + getTimeString(SaveLoad.leaderboardTimes[i]));
                 height += 30;
             }
 
-            if (playerInt.playerName == "NotOnLeaderboard")
+            if (PlayerInteractions.playerName == "NotOnLeaderboard")
             {
-                GUI.Box(new Rect(55, 200, 180, 50), "Unfortunately, you didn't make it onto the leaderboards. \n Better luck next time!");
+                GUI.Box(new Rect(0, 200, 500, 50), "Unfortunately, you didn't make it onto the leaderboards. \n Better luck next time!");
 
             }
-            if (GUI.Button(new Rect(55, 260, 250, 30), "Main Menu"))
+            if (GUI.Button(new Rect(150, 250, 200, 30), "Main Menu"))
             {
                 showLeaderboards = false;
                 enterName = false;
                 Application.LoadLevel("MainMenu");
             }
+            GUI.EndGroup();
         }
     }
 
@@ -205,12 +213,13 @@ public class EndGames : MonoBehaviour {
         }
     }
 
-    void GetTime()
+    public void GetTime()
     {
         //if(!gotTime)
         {
             gotTime = true;
             time = (int)(time + Time.timeSinceLevelLoad);
+            playerInt.timePlayed = time;
         }
 
     }
