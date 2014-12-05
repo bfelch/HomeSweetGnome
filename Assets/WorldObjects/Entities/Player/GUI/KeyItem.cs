@@ -35,6 +35,10 @@ public class KeyItem : MonoBehaviour {
         ToggleKeyHover(false);
     }
 
+    void OnCollisionEnter() {
+        //rigidbody.velocity *= .3f;
+    }
+
     void ToggleKeyHover(bool hovering) {
         this.hovering = hovering;
 
