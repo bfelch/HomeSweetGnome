@@ -27,6 +27,7 @@ public class PlayerInteractions : MonoBehaviour
     //is gui active
     public bool showGUI;
     public bool removePlus = false;
+    private bool lookingAtGnome = false;
 
     //reference to gui
     public GUIWrapper playerGUI;
@@ -236,13 +237,18 @@ public class PlayerInteractions : MonoBehaviour
                     }
                     improvedName += targetName[i];
                 }
-                this.GetComponent<Player>().flashFade();
+                //this.GetComponent<Player>().flashFade();
                 //Display item name
                 GUI.Box(new Rect(0, Screen.height - Screen.height / 2 + 150, Screen.width, 30), improvedName);
             }
+            else if(lookingAtGnome && Gnome.gnomeLevel == 1)
+            {
+                GUI.Box(new Rect(0, Screen.height - Screen.height / 2 + 150, Screen.width, 50), "Press 'E' to push a gnome. \n WARNING: This will do you harm.");
+
+            }
             else if (notUseable && activeTarget != null)
             {
-                this.GetComponent<Player>().flashFade();
+               // this.GetComponent<Player>().flashFade();
                 GUI.Box(new Rect(0, Screen.height - Screen.height / 2 + 150, Screen.width, 30), "You need the " + GUIString + " to continue.");
             }
 
@@ -315,6 +321,10 @@ public class PlayerInteractions : MonoBehaviour
                 lastActiveTarget = activeTarget;
 
             }
+            else if(activeTarget.tag == "Gnome")
+            {
+                lookingAtGnome = true;
+            }
             else if(lastActiveTarget != null && lastActiveTarget != activeTarget)
             {
                 //get the mesh renderer
@@ -335,11 +345,14 @@ public class PlayerInteractions : MonoBehaviour
                 //Check this (might not be needed)
                 canHover = false; //Hide item name
                 notUseable = false;
+                lookingAtGnome = false;
             }
         }
         else 
         {
             canHover = false;
+            lookingAtGnome = false;
+
         }
     }
 
@@ -359,6 +372,8 @@ public class PlayerInteractions : MonoBehaviour
                     GameObject gnome = GameObject.Find("GnomeShed");
                     //play the drop and laugh audio
                     gnome.GetComponent<AudioSource>().Play();
+                    gnome.GetComponent<NavMeshAgent>().enabled = false;
+                    gnome.GetComponent<Gnome>().enabled = false;
                     //rotate the gnome so it's facing you
                     gnome.transform.eulerAngles = new Vector3(gnome.transform.eulerAngles.x, 346, gnome.transform.eulerAngles.z);
                     //set it's position on the floor

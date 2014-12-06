@@ -37,7 +37,7 @@ public class ShedTutorial : MonoBehaviour {
             //check if we are at the second interaction and are not hovering over anything
             if (interaction == 2 && !pi.canHover)
             {
-                this.GetComponent<Player>().flashFade();
+                //this.GetComponent<Player>().flashFade();
                 //show GUI box to display to open the GUI
                 GUI.Box(new Rect(0, Screen.height - Screen.height / 2 + 150, Screen.width, 30),
                 "Press 'Q' to open user & close interface.");
@@ -61,7 +61,7 @@ public class ShedTutorial : MonoBehaviour {
                 //check if the active target is a pick up
                 if (pi.activeTarget.tag == "PickUp")
                 {
-                    this.GetComponent<Player>().flashFade();
+                   // this.GetComponent<Player>().flashFade();
                     //Display item name with instructions
                     GUI.Box(new Rect(0, Screen.height - Screen.height/2 + 150, Screen.width, 30),
                     "Press 'E' to pick up the " + improvedName);
@@ -69,7 +69,7 @@ public class ShedTutorial : MonoBehaviour {
                 //check if the active target is a useable object
                 else if (pi.activeTarget.tag == "Useable")
                 {
-                    this.GetComponent<Player>().flashFade();
+                    //this.GetComponent<Player>().flashFade();
                     //Display item name with instructions
                     GUI.Box(new Rect(0, Screen.height - Screen.height / 2 + 150, Screen.width, 30),
                     "Press 'E' to use the " + improvedName);
@@ -77,7 +77,7 @@ public class ShedTutorial : MonoBehaviour {
                 //check if the active target is a consumable object
                 else if (pi.activeTarget.tag == "Consumable")
                 {
-                    this.GetComponent<Player>().flashFade();
+                    //this.GetComponent<Player>().flashFade();
                     //Display item name with instructions
                     GUI.Box(new Rect(0, Screen.height - Screen.height / 2 + 150, Screen.width, 30),
                     "Press 'E' to consume the " + improvedName);
@@ -92,7 +92,7 @@ public class ShedTutorial : MonoBehaviour {
                 //start the display timer
                 startTimer = startTimer - Time.deltaTime;
                 //flash the text
-                this.GetComponent<Player>().flashFade();
+                //this.GetComponent<Player>().flashFade();
                 //display instructions
                 GUI.Box(new Rect(0, Screen.height - Screen.height / 2+100, Screen.width, 150),
                 "Use 'WASD' to move, use the 'MOUSE' to look. \nUse 'SHIFT' to sprint. Use 'CTRL' to crouch \nUse 'R' to close your eyes, use 'F' to hold them open.");

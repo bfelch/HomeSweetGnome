@@ -68,7 +68,7 @@ public class GnomeParent : MonoBehaviour
                 //set the level2 gnome parent to be the Gnome parent
                 thisModel.transform.parent = transform;
                 //update the gnome level
-				thisModel.GetComponent<Gnome>().gnomeLevel = 2;
+				Gnome.gnomeLevel = 2;
                 //destroy the level 1 gnome
                 Destroy(gnomes[i]);
                 //set the value in the gnomes array to be the level 2 gnome
@@ -94,7 +94,7 @@ public class GnomeParent : MonoBehaviour
                 //set the level 1 gnome parent to be the Gnome parent
                 thisModel.transform.parent = transform;
                 //update the gnome leve
-				thisModel.GetComponent<Gnome>().gnomeLevel = 1;
+				Gnome.gnomeLevel = 1;
                 //destroy the level 2 gnome
                 Destroy(gnomes[i].gameObject);
                 //set the value in the gnomes array to be the level 1 gnome

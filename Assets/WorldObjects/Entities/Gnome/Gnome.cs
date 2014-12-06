@@ -24,7 +24,7 @@ public class Gnome : MonoBehaviour
     public bool readyToSpawn = false;
 	public bool pushed = false;
 
-	public int gnomeLevel = 1;
+	public static int gnomeLevel = 1;
 
     //Dirt Spawner object
     public GameObject dirtSpawner;
@@ -138,7 +138,8 @@ public class Gnome : MonoBehaviour
         isSeen = (viewportX >= lowBound && viewportX <= highBound);
         isSeen = isSeen && (viewportY >= lowBound && viewportY <= highBound);
         isSeen = isSeen && viewportZ > zBound;
-        isSeen = isSeen && !targetBlink.blink;
+        if(this.name != "GnomeShed")
+            isSeen = isSeen && !targetBlink.blink;
         return isSeen;
     }
 
