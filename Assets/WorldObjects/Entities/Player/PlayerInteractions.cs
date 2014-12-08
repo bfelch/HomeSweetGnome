@@ -133,26 +133,42 @@ public class PlayerInteractions : MonoBehaviour
         }
         if (optionsMenu && pause)
         {
-            GUI.BeginGroup(new Rect(Screen.width / 2 - 150, 20, 300, Screen.height));
+            int sliderPos = 170;
+            int controlPos = 0;
+
+            GUI.BeginGroup(new Rect(Screen.width / 2 - 150, 20, 360, Screen.height));
             GUI.backgroundColor = Color.clear;
-            GUI.Box(new Rect(55, 90, 180, 30), "Adjust Lighting");
+            GUI.Box(new Rect(sliderPos, 90, 180, 30), "Adjust Lighting");
             GUI.backgroundColor = Color.white;
-            lightingValue = GUI.HorizontalSlider(new Rect(55, 120, 180, 10), lightingValue, 0, .2f);
+            lightingValue = GUI.HorizontalSlider(new Rect(sliderPos, 120, 180, 10), lightingValue, 0, .2f);
             GameObject.Find("DebugLight").GetComponent<Light>().intensity = lightingValue;
 
             GUI.backgroundColor = Color.clear;
-            GUI.Box(new Rect(55, 130, 180, 30), "Adjust X Sensitivity");
+            GUI.Box(new Rect(sliderPos, 130, 180, 30), "Adjust X Sensitivity");
             GUI.backgroundColor = Color.white;
-            xSens = GUI.HorizontalSlider(new Rect(55, 160, 180, 10), xSens, 2, 15);
+            xSens = GUI.HorizontalSlider(new Rect(sliderPos, 160, 180, 10), xSens, 2, 15);
             GameObject.Find("Player").GetComponent<MouseLook>().sensitivityX = xSens;
 
             GUI.backgroundColor = Color.clear;
-            GUI.Box(new Rect(55, 170, 180, 30), "Adjust Y Sensitivity");
+            GUI.Box(new Rect(sliderPos, 170, 180, 30), "Adjust Y Sensitivity");
             GUI.backgroundColor = Color.white;
-            ySens = GUI.HorizontalSlider(new Rect(55, 200, 180, 10), ySens, 2, 15);
+            ySens = GUI.HorizontalSlider(new Rect(sliderPos, 200, 180, 10), ySens, 2, 15);
             GameObject.Find("Main Camera").GetComponent<MouseLook>().sensitivityY = ySens;
 
-            if (GUI.Button(new Rect(55, 220, 180, 40), "Back"))
+            GUI.backgroundColor = Color.clear;
+            GUI.skin.box.alignment = TextAnchor.MiddleLeft;
+
+            GUI.Box(new Rect(controlPos, 90, 180, 25), "WASD - Move");
+            GUI.Box(new Rect(controlPos, 110, 180, 25), "Q - Inventory");
+            GUI.Box(new Rect(controlPos, 130, 180, 25), "E - Interact");
+            GUI.Box(new Rect(controlPos, 150, 180, 25), "R - Blink");
+            GUI.Box(new Rect(controlPos, 170, 180, 25), "F - Eyes Open");
+            GUI.Box(new Rect(controlPos, 190, 180, 25), "Left Click - Push");
+
+            GUI.backgroundColor = Color.white;
+            GUI.skin.box.alignment = TextAnchor.MiddleCenter;
+
+            if (GUI.Button(new Rect(55, 230, 180, 40), "Back"))
             {
                 optionsMenu = false;
                 pauseMenu = true;
@@ -167,58 +183,53 @@ public class PlayerInteractions : MonoBehaviour
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             float distance = 1f;
             int playerUILayer = 11;
-            int layerMask = 1 << playerUILayer;
+            int playerUIKeyLayer = 12;
+            LayerMask layerMask = 1 << playerUILayer | 1 << playerUIKeyLayer;
+
+            //layerMask = ~layerMask;
 
             if (Physics.Raycast(ray, out hit, distance, layerMask))
             {
                 GUISlot guiSlot = hit.collider.gameObject.GetComponent<GUISlot>();
+                KeyItem keyItem = hit.collider.gameObject.GetComponent<KeyItem>();
 
-                if (guiSlot.isKeyRing)
-                {
-                    KeyRing ring = guiSlot.GetComponent<KeyRing>();
-
+                if (keyItem) {
                     Rect box = new Rect(Input.mousePosition.x, Screen.height - Input.mousePosition.y, 100, 30);
-                    GUI.Box(box, "Keys: " + ring.keys.Count);
-                }
-                else if (guiSlot.isEnergyBar)
-                {
-                    EnergyBar bar = guiSlot.GetComponent<EnergyBar>();
+                    GUI.Box(box, keyItem.name);
+                } else {
+                    if (guiSlot.isKeyRing) {
+                        KeyRing ring = guiSlot.GetComponent<KeyRing>();
 
-                    Rect box = new Rect(Input.mousePosition.x, Screen.height - Input.mousePosition.y, 150, 30);
-                    GUI.Box(box, "Energy: " + (int)bar.player.sanity + " / " + (int)bar.player.maxSanity);
-                }
-                else
-                {
-                    ItemSlot slot = guiSlot.GetComponent<ItemSlot>();
+                        Rect box = new Rect(Input.mousePosition.x, Screen.height - Input.mousePosition.y, 100, 30);
+                        GUI.Box(box, "Keys: " + ring.keys.Count);
+                    } else if (guiSlot.isEnergyBar) {
+                        EnergyBar bar = guiSlot.GetComponent<EnergyBar>();
 
-                    Rect box = new Rect(Input.mousePosition.x, Screen.height - Input.mousePosition.y, 100, 30);
-                    if (slot.heldItem != null)
-                    {
-                        GUI.Box(box, slot.heldItem.name);
+                        Rect box = new Rect(Input.mousePosition.x, Screen.height - Input.mousePosition.y, 150, 30);
+                        GUI.Box(box, "Energy: " + (int)bar.player.sanity + " / " + (int)bar.player.maxSanity);
+                    } else {
+                        ItemSlot slot = guiSlot.GetComponent<ItemSlot>();
 
-                        if (Input.GetMouseButtonUp(1))
-                        {
-                            slot.heldItem.gameObject.SetActive(true);
+                        Rect box = new Rect(Input.mousePosition.x, Screen.height - Input.mousePosition.y, 100, 25);
+                        if (slot.heldItem != null) {
+                            box.width *= 1.5f;
+                            box.height *= 2;
+                            GUI.Box(box, slot.heldItem.name + "\nDrop (Right Click)");
 
-                            Vector3 pos = transform.position;
+                            if (Input.GetMouseButtonUp(1)) {
+                                slot.heldItem.gameObject.SetActive(true);
 
-                            slot.heldItem.transform.position = new Vector3(pos.x, pos.y - 2.5f, pos.z);
+                                Vector3 pos = transform.position;
 
-                            slot.heldItem = null;
+                                slot.heldItem.transform.position = new Vector3(pos.x, pos.y - 2.5f, pos.z);
+
+                                slot.heldItem = null;
+                            }
+                        } else {
+                            GUI.Box(box, "Empty");
                         }
                     }
-                    else
-                    {
-                        GUI.Box(box, "Empty");
-                    }
                 }
-
-                /*KeyItem key = hit.collider.gameObject.GetComponent<KeyItem>();
-
-                if (key != null) {
-                    Rect box = new Rect(Input.mousePosition.x, Screen.height - Input.mousePosition.y, 100, 30);
-                    GUI.Box(box, key.name);
-                }*/
             }
         }
         else

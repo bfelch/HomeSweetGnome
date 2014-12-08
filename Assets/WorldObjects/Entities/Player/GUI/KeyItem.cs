@@ -15,33 +15,4 @@ public class KeyItem : MonoBehaviour {
 	void Update () {
 
     }
-
-    /*
-    void OnGUI() {
-        //if hovering, show key name
-        if (hovering) {
-            Rect box = new Rect(Input.mousePosition.x, Screen.height - Input.mousePosition.y, 100, 30);
-            GUI.Box(box, this.name);
-        }
-    }
-    */
-
-    void OnMouseEnter() {
-        ToggleKeyHover(true);
-    }
-
-    void OnMouseExit() {
-        ToggleKeyHover(false);
-    }
-
-    void ToggleKeyHover(bool hovering) {
-        this.hovering = hovering;
-
-        //set material based on hover
-        if (this.hovering) {
-            this.renderer.material.color = Color.red;
-        } else {
-            this.renderer.material.color = Color.white;
-        }
-    }
 }

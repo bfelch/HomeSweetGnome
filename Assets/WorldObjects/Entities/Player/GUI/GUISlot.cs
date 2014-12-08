@@ -16,7 +16,6 @@ public class GUISlot : MonoBehaviour
     //rotation direction
     private bool clockwise;
 
-    public bool hovering;
     public bool isKeyRing;
     public bool isEnergyBar;
 
@@ -26,7 +25,6 @@ public class GUISlot : MonoBehaviour
         //sets bounds
         lowerBound = 360f - rotationBound;
         upperBound = rotationBound;
-        hovering = false;
     }
 
     // Update is called once per frame
@@ -91,29 +89,6 @@ public class GUISlot : MonoBehaviour
         } else {
             //set default rotation for all other slots
             transform.Rotate(new Vector3(0, startRotation, 0));
-        }
-        ToggleSlotHover(false);
-    }
-
-    /*void OnMouseEnter()
-    {
-        ToggleSlotHover(true);
-    }
-
-    void OnMouseExit()
-    {
-        ToggleSlotHover(false);
-    }
-    */
-
-    void ToggleSlotHover(bool hovering) {
-        this.hovering = hovering;
-
-        //set material in relation to hover
-        if (this.hovering && this.renderer.material.color != Color.red) {
-            this.renderer.material.color = Color.red;
-        } else if (!this.hovering && this.renderer.material.color != Color.white) {
-            this.renderer.material.color = Color.white;
         }
     }
 }
