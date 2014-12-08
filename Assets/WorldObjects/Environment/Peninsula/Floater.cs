@@ -9,8 +9,6 @@ public class Floater : MonoBehaviour {
 	
     void Update()
     {
-        //Debug.Log(boat.transform.position.y);
-
         if (boat.transform.position.y > -23)
         {
             boat.transform.position = new Vector3(boat.transform.position.x, -23f, boat.transform.position.z);

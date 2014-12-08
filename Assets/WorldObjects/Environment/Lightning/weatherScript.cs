@@ -31,7 +31,7 @@ public class weatherScript : MonoBehaviour
 	public bool changeWeather = false; //Tutorial
 
 	float oldWeatherTime = 0.0F;
-	float newWeatherTime = 10.0F; //How often to change weather
+	float newWeatherTime = 20.0F; //How often to change weather
 	public int weatherType = 0; //What's the weather?
 
 	// Use this for initialization
@@ -62,7 +62,6 @@ public class weatherScript : MonoBehaviour
 	{
 		if(changeWeather)
 		{
-			Debug.Log("Checking: " + changeWeather);
 			CheckWeather();
 		}
 
@@ -100,13 +99,11 @@ public class weatherScript : MonoBehaviour
 			oldWeatherTime = Time.time;
 			weatherType = Random.Range(0, 3); //Pick random weather
 			newWeather = true;
-			Debug.Log("Neq weather que'd");
 		}
 	}
 
 	void ChangeWeather()
 	{
-		Debug.Log ("Changing");
 		//Turn off weather
 		for(int i = 0; i < weather.Length; i++)
 		{

@@ -6,13 +6,6 @@ public class menuMouse : MonoBehaviour
 {
     private menuCam menuAnim;
 
-    void Awake()
-    {
-        //Set leaderboard text
-        SaveLoad.loadLeaderboards();
-        DisplayLeaderboards();
-    }
-
 	void Start()
 	{
         menuAnim = GameObject.Find("Main Camera").GetComponent<menuCam>();
@@ -24,14 +17,6 @@ public class menuMouse : MonoBehaviour
 		//Show mouse
 		Screen.lockCursor = false;
 	}
-
-    void DisplayLeaderboards()
-    {
-        for (int i = 0; i < 5; i++)
-        {
-            GameObject.Find((i+1).ToString()).GetComponent<TextMesh>().text = (i + 1) + ". " + SaveLoad.leaderboardNames[i] + " - " + EndGames.getTimeString(SaveLoad.leaderboardTimes[i]);
-        }
-    }
 
 	void OnMouseDown()
 	{
@@ -73,6 +58,8 @@ public class menuMouse : MonoBehaviour
                 menuAnim.CreditsTransition();
             }
         }
+
+		renderer.material.color = new Color32(222, 219, 212, 255);
     }
 	
 	void OnMouseEnter()

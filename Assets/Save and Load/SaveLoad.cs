@@ -33,16 +33,16 @@ public class SaveLoad : MonoBehaviour
         //close the file
         file.Close();
     }
+
     public static void saveLeaderboard()
     {       
         BinaryFormatter bf = new BinaryFormatter();
-        FileStream file;
+		FileStream file = File.Open(Application.persistentDataPath + "/leaderboards.dat", FileMode.Open);
         PlayerInteractions player = GameObject.Find("Player").GetComponent<PlayerInteractions>();
         Leaderboard leader;
 
         if (File.Exists(Application.persistentDataPath + "/leaderboards.dat"))
         {
-            file = File.Open(Application.persistentDataPath + "/leaderboards.dat", FileMode.Open);
             leader = (Leaderboard)bf.Deserialize(file);
 
             leaderboardTimes = leader.times;
@@ -61,7 +61,7 @@ public class SaveLoad : MonoBehaviour
                     break;
                 }
             }
-            Debug.Log(index);
+
             if (index != -1)
             {
                 int i = leaderboardTimes.Length - 1;
@@ -83,30 +83,40 @@ public class SaveLoad : MonoBehaviour
             leader.times = leaderboardTimes;
             leader.names = leaderboardNames;
             bf.Serialize(file, leader);
-
-            
-        }
-        else 
-        {
-            file = File.Create(Application.persistentDataPath + "/leaderboards.dat");
-            leader = new Leaderboard();
-
-            leader.times = new float[5];
-            leader.times[0] = player.timePlayed;
-            leader.names = new string[5];
-
-            for(int i = 0; i < leader.names.Length; i++)
-            {
-                leader.names[i] = "Empty";
-            }
-
-            leader.names[0] = PlayerInteractions.playerName;
-            bf.Serialize(file, leader);
-        }
+		}
+		else
+		{
+			Debug.LogError("Leaderboard file doesn't exist");
+		}
 
         file.Close();
-        
     }
+
+	public static void CreateLeaderboard()
+	{
+		BinaryFormatter bf = new BinaryFormatter();
+		FileStream file;
+		//PlayerInteractions player = GameObject.Find("Player").GetComponent<PlayerInteractions>();
+		Leaderboard leader;
+
+		file = File.Create(Application.persistentDataPath + "/leaderboards.dat");
+		leader = new Leaderboard();
+		
+		leader.times = new float[5];
+		//leader.times[0] = player.timePlayed;
+		leader.names = new string[5];
+		
+		for(int i = 0; i < leader.names.Length; i++)
+		{
+			leader.names[i] = "Empty";
+			leader.times[i] = 0.0F;
+		}
+		
+		//leader.names[0] = PlayerInteractions.playerName;
+		bf.Serialize(file, leader);
+
+		file.Close ();
+	}
 
     public void Load()
     {
@@ -146,9 +156,7 @@ public class SaveLoad : MonoBehaviour
             file = File.Open(Application.persistentDataPath + "/leaderboards.dat", FileMode.Open);
             leader = (Leaderboard)bf.Deserialize(file);
             leaderboardNames = leader.names;
-            Debug.Log(leaderboardNames);
             leaderboardTimes = leader.times;
-            Debug.Log(leaderboardTimes);
             file.Close();
         }
     }

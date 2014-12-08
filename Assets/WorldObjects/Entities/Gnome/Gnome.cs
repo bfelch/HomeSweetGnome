@@ -150,8 +150,6 @@ public class Gnome : MonoBehaviour
 
     public IEnumerator SpawnTimer(float waitTime)
     {
-        Debug.Log("Spawner Timer Started");
-
         //Wait spawn time
         yield return new WaitForSeconds(waitTime);
 
@@ -160,8 +158,6 @@ public class Gnome : MonoBehaviour
 
     void Climb()
     {
-        Debug.Log("Climbed");
-
         //Gnome is no longer trapped
         trapped = false;
 

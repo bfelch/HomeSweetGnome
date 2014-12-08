@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.IO;
 
 public class menuCam : MonoBehaviour 
 {
@@ -22,7 +23,28 @@ public class menuCam : MonoBehaviour
         mainMenu = GameObject.Find("Main Menu");
         leaderMenu = GameObject.Find("Leaderboards Menu");
         creditsMenu = GameObject.Find("Credits Menu");
+
+		//Set leaderboard text
+		if (File.Exists(Application.persistentDataPath + "/leaderboards.dat"))
+		{
+			SaveLoad.loadLeaderboards();
+		}
+		else
+		{
+			SaveLoad.CreateLeaderboard();
+			SaveLoad.loadLeaderboards();
+		}
+		
+		DisplayLeaderboards();
     }
+
+	void DisplayLeaderboards()
+	{
+		for (int i = 0; i < 5; i++)
+		{
+			GameObject.Find((i+1).ToString()).GetComponent<TextMesh>().text = (i + 1) + ". " + SaveLoad.leaderboardNames[i] + " - " + EndGames.getTimeString(SaveLoad.leaderboardTimes[i]);
+		}
+	}
 
 	void Start()
     {
