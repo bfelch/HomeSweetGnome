@@ -45,16 +45,17 @@ public class LoadUnload : MonoBehaviour
 		};
 
 		//Player starts inside the shed
+		/*
         for (int i = 0; i < inShed.Length; i++)
         {
             inShed[i].SetActive(false);
-        }
+        }*/
     }
 	
 	//Update is called once per frame
 	void Update () 
 	{
-	
+
 	}
 
     void OnTriggerEnter(Collider col)
@@ -65,10 +66,12 @@ public class LoadUnload : MonoBehaviour
 			//Add hedge objects
 
 			//Remove non-hedge objects
+			/*
             for (int i = 0; i < inHedge.Length; i++)
             {
                 inHedge[i].SetActive(false);
             }
+            */
 
 			hedgeLoaded = true; //Hedge is loaded
         }
@@ -79,10 +82,12 @@ public class LoadUnload : MonoBehaviour
 			//Remove hedge objects
 
 			//Add non-hedge objects
+			/*
             for (int i = 0; i < inHedge.Length; i++)
             {
                 inHedge[i].SetActive(true);
             }
+            */
 
 			hedgeLoaded = false; //Hedge is not loaded
         }
@@ -93,10 +98,12 @@ public class LoadUnload : MonoBehaviour
 			//Add tunnel objects
 
 			//Remove non-tunnel objects
+			/*
 			for (int i = 0; i < inTunnels.Length; i++)
 			{
 				inTunnels[i].SetActive(false);
 			}
+			*/
 
 			weather.StopWeather(); //Stop weather
 
@@ -112,10 +119,12 @@ public class LoadUnload : MonoBehaviour
 			//Remove tunnel objects
 
 			//Add non-tunnel objects
+			/*
             for (int i = 0; i < inTunnels.Length; i++)
             {
                 inTunnels[i].SetActive(true);
             }
+            */
 
 			weather.StartWeather(); //Start weather
 
@@ -153,10 +162,12 @@ public class LoadUnload : MonoBehaviour
 			//Add shed objects
 
 			//Remove non-shed objects
+			/*
             for (int i = 0; i < inShed.Length; i++)
             {
                 inShed[i].SetActive(false);
             }
+            */
 
 			shedLoaded = true; //Shed is loaded
         }
@@ -167,10 +178,12 @@ public class LoadUnload : MonoBehaviour
 			//Remove shed objects
 
 			//Add non-shed objects
+			/*
             for (int i = 0; i < inShed.Length; i++)
             {
                 inShed[i].SetActive(true);
             }
+            */
 
 			shedLoaded = false; //Shed is not loaded
         }
