@@ -136,6 +136,7 @@ public class SaveLoad : MonoBehaviour
             //apply the loaded game values to the scene
             loadGameValues(data);
             GameObject.Find("Player").GetComponent<ShedTutorial>().enabled = false;
+            GameObject.Find("Nodes").GetComponent<NodeWrapper>().newGame = false;
         }
         else
         {
