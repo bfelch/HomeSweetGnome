@@ -221,7 +221,7 @@ public class PlayerInteractions : MonoBehaviour
 
                                 Vector3 pos = transform.position;
 
-                                slot.heldItem.transform.position = new Vector3(pos.x, pos.y - 2.5f, pos.z);
+                                slot.heldItem.transform.position = pos + Camera.main.transform.forward;
 
                                 slot.heldItem = null;
                             }

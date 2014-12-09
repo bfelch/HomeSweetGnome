@@ -22,6 +22,10 @@ public class EndGames : MonoBehaviour {
     public static GameObject[] dockGnomes;
     public PlayerInteractions playerInt;
 
+    private int experimentColorFade = 0;
+    public GameObject lightWind;
+    public Material sunnySky;
+
 	// Use this for initialization
 	void Start () {
         deathTextSleep = GameObject.Find("DeathTextSleep").guiText;
@@ -50,6 +54,13 @@ public class EndGames : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if (experimentComplete) {
+            Light light = GameObject.Find("Moonlight").GetComponent<Light>();
+
+            light.color = Color.Lerp(new Color(.16f, .16f, .2f, 1f), Color.white, experimentColorFade / 500f);
+
+            experimentColorFade++;
+        }
 	}
 
 
@@ -74,6 +85,40 @@ public class EndGames : MonoBehaviour {
     {
         experimentComplete = true;
         GetTime();
+
+        GameObject lightRain = GameObject.Find("Light Rain");
+        GameObject heavyRain = GameObject.Find("Heavy Rain");
+        GameObject rain = GameObject.Find("Rain");
+
+        lightRain.particleSystem.Stop();
+        heavyRain.particleSystem.Stop();
+
+        while (rain.audio.volume > 0) {
+            rain.audio.volume -= .1f;
+        }
+
+        rain.audio.Stop();
+
+        Skybox skybox = Camera.main.gameObject.AddComponent<Skybox>();
+        skybox.material = sunnySky;
+
+        GameObject weather = GameObject.Find("Weather");
+        weather.SetActive(false);
+
+        GameObject gnomes = GameObject.Find("Gnomes");
+        GameObject gargoyles = GameObject.Find("Gargoyles");
+        gnomes.SetActive(false);
+        gargoyles.SetActive(false);
+        lightWind.SetActive(true);
+
+        AudioSource eerie = GameObject.Find("Graphics").GetComponents<AudioSource>()[0];
+
+        while (eerie.volume > 0) {
+            eerie.volume -= .1f;
+        }
+
+        eerie.Stop();
+
         StartCoroutine(WaitToReload(5.0F));
     }
 

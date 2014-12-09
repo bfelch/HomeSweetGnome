@@ -24,9 +24,9 @@ public class KeyRing : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKeyUp(KeyCode.K) && debugkeys < keysOnRing.Count) {
+        /*if (Input.GetKeyUp(KeyCode.K) && debugkeys < keysOnRing.Count) {
             keysOnRing[debugkeys++].gameObject.SetActive(true);
-        }
+        }*/
 	}
 
     /*
