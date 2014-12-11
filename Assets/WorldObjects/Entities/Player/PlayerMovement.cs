@@ -29,7 +29,6 @@ public class PlayerMovement : MonoBehaviour {
     public bool canCrouch = true;
     //used to play breathing sound
     private bool breathing;
-    public AudioSource breathingSound;
     public bool recharging;
 
     //player motor and controller
@@ -49,9 +48,6 @@ public class PlayerMovement : MonoBehaviour {
         //set player camera heights
         cameraStandHeight = camera.transform.localPosition.y;
         cameraCrouchHeight = 0.30857f;
-        
-		AudioSource[] playerSounds = transform.Find("Graphics").GetComponents<AudioSource>(); //Grab the audio sources on the graphics child
-		breathingSound = playerSounds[1];;
 	}
 	
 	// Update is called once per frame
@@ -66,11 +62,11 @@ public class PlayerMovement : MonoBehaviour {
             if (breathing) {
                 breathing = false;
 
-                breathingSound.Play();
+                GetComponent<Player>().breathingSound.Play();
             }
         }
 
-        if (!breathingSound.isPlaying) {
+		if (!GetComponent<Player>().breathingSound.isPlaying) {
             recharging = false;
         }
 

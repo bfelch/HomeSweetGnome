@@ -12,9 +12,11 @@ public class Player : MonoBehaviour
     private Animation blinkBottom;
     private Animation blinkTop;
 
-    public AudioSource bgMusic;
-    public AudioSource breathSound;
-    public bool breathe = true; //To check whether to play the heavyBreathing sound
+    //public AudioSource bgMusic;
+    public AudioSource breathingSound;
+	public AudioSource keyPickUpSound;
+	public AudioSource itemPickUpSound;
+	public AudioSource itemDropSound;
 
 	private bool readyToPush;
     private float fadeIn = 0;
@@ -48,11 +50,14 @@ public class Player : MonoBehaviour
 
 		readyToPush = true;
 
-        AudioSource[] playerSounds = transform.Find("Graphics").GetComponents<AudioSource>(); //Grab the audio sources on the graphics child
-        bgMusic = playerSounds[0];
-        breathSound = playerSounds[1];
+        AudioSource[] playerSounds = transform.Find("PlayerSounds").GetComponents<AudioSource>(); //Grab the audio sources on the graphics child
+        //bgMusic = playerSounds[0];
+        breathingSound = playerSounds[0];
+		keyPickUpSound = playerSounds[1];
+		itemPickUpSound = playerSounds[2];
+		itemDropSound = playerSounds[3];
 
-		AudioSource[] stepSounds = GetComponents<AudioSource>(); //Grab the audio sources on the player parent
+		AudioSource[] stepSounds = transform.Find("StepSoundController").GetComponents<AudioSource>(); //Grab the audio sources on the player parent
 		grassStep = stepSounds[0];
 		woodStep = stepSounds[1];
 

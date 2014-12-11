@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -51,6 +51,14 @@ public class Useable : MonoBehaviour
             {
                 GameObject player = GameObject.Find("Player");
                 GameObject boat = GameObject.Find("Boat");
+				GameObject motor = GameObject.Find("BoatMotor");
+
+				AudioSource sound;
+				AudioClip boatMotorSound = GameObject.Find("BoatSounds").GetComponent<BoatSounds>().boatMotorSound.clip;
+
+				sound = GameObject.Find("LightFlash").GetComponent<lightningFlash>().PlayClipAt(boatMotorSound, motor.transform.position);
+				StartCoroutine(SoundController.FadeAudio(12.0F, SoundController.Fade.Out, sound));
+
                 player.transform.parent = boat.transform;
                 player.GetComponent<Animation>().Play("BoatEnding");
                 boat.GetComponent<Animation>().Play("BoatDrive");
@@ -63,8 +71,11 @@ public class Useable : MonoBehaviour
             }
             else if(type == UseableType.ATTICBOWL)
             {
+				GameObject player = GameObject.Find("Player");
+				GameObject.Find("MixingBowl").GetComponent<AudioSource>().Play();
+
                 //Run the escape function inside the Player script
-                GameObject.Find("Player").GetComponent<EndGames>().Experiment();
+                player.GetComponent<EndGames>().Experiment();
             }
             else if (type == UseableType.LIGHT)
             {

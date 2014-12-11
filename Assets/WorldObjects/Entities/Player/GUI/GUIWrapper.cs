@@ -21,6 +21,7 @@ public class GUIWrapper : MonoBehaviour {
         //add key to key ring
         if (item.isKey)
         {
+			GameObject.Find("Player").GetComponent<Player>().keyPickUpSound.Play();
             keyRing.AddKey(item);
             return true;
         }
@@ -32,6 +33,7 @@ public class GUIWrapper : MonoBehaviour {
                 //if added, stop looking
                 if (slot.AddItem(item))
                 {
+					GameObject.Find("Player").GetComponent<Player>().itemPickUpSound.Play();
                     return true;
                 }
             }

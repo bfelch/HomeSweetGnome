@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -63,15 +63,12 @@ public class EndGames : MonoBehaviour {
         }
 	}
 
-
     IEnumerator WaitToReload(float waitTime)
     {
         //Wait before loading the main menu
         yield return new WaitForSeconds(waitTime);
 
         enterName = true;
-        //Load the main menu
-        //Application.LoadLevel("MainMenu");
     }
 
     public void Escape()
@@ -93,11 +90,7 @@ public class EndGames : MonoBehaviour {
         lightRain.particleSystem.Stop();
         heavyRain.particleSystem.Stop();
 
-        while (rain.audio.volume > 0) {
-            rain.audio.volume -= .1f;
-        }
-
-        rain.audio.Stop();
+		StartCoroutine(SoundController.FadeAudio(10.0F, SoundController.Fade.Out, rain.audio));
 
         Skybox skybox = Camera.main.gameObject.AddComponent<Skybox>();
         skybox.material = sunnySky;
@@ -107,17 +100,19 @@ public class EndGames : MonoBehaviour {
 
         GameObject gnomes = GameObject.Find("Gnomes");
         GameObject gargoyles = GameObject.Find("Gargoyles");
-        gnomes.SetActive(false);
+
+		gnomes.SetActive(false);
         gargoyles.SetActive(false);
         lightWind.SetActive(true);
 
-        AudioSource eerie = GameObject.Find("Graphics").GetComponents<AudioSource>()[0];
+        AudioSource eerie = GameObject.Find("SoundController").GetComponents<AudioSource>()[0];
+		AudioSource birdSound = GameObject.Find("SoundController").GetComponents<AudioSource>()[1];
 
-        while (eerie.volume > 0) {
-            eerie.volume -= .1f;
-        }
+		StartCoroutine(SoundController.FadeAudio(2.0F, SoundController.Fade.Out, eerie));
 
-        eerie.Stop();
+		birdSound.Play();
+		StartCoroutine(SoundController.FadeAudio(12.0F, SoundController.Fade.In, birdSound));
+		Debug.Log ("Hello");
 
         StartCoroutine(WaitToReload(5.0F));
     }

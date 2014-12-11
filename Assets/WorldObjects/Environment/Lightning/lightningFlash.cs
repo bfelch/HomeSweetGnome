@@ -114,7 +114,7 @@ public class lightningFlash : MonoBehaviour
 		}
 	}
 
-    AudioSource PlayClipAt(AudioClip clip, Vector3 pos)
+    public AudioSource PlayClipAt(AudioClip clip, Vector3 pos)
     {
         GameObject tempSound = new GameObject("TempSound"); // create the temp object
         tempSound.transform.position = pos; // set its position

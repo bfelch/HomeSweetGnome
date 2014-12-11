@@ -217,6 +217,9 @@ public class PlayerInteractions : MonoBehaviour
                             GUI.Box(box, slot.heldItem.name + "\nDrop (Right Click)");
 
                             if (Input.GetMouseButtonUp(1)) {
+
+								GameObject.Find("Player").GetComponent<Player>().itemDropSound.Play();
+
                                 slot.heldItem.gameObject.SetActive(true);
 
                                 Vector3 pos = transform.position;
@@ -438,7 +441,7 @@ public class PlayerInteractions : MonoBehaviour
         if(col.gameObject.name == "ExitTutorial" && st.tutorial)
         {
             GameObject.Find("Weather").GetComponent<weatherScript>().changeWeather = true; //Start changing the weather randomly
-            GetComponent<Player>().bgMusic.Play(); //Start playing background music
+			GameObject.Find("SoundController").GetComponent<SoundController>().eerieSound.Play(); //Start playing background music
             st.tutorial = false;
         }
     }
