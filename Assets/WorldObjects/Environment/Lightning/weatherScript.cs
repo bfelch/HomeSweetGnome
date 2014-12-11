@@ -8,7 +8,7 @@ public class weatherScript : MonoBehaviour
     public GameObject farLightning3;
     public GameObject farLightning4;
 	public GameObject rain;
-	public GameObject fog;
+	//public GameObject fog;
 	public GameObject lightRain;
 	public GameObject heavyRain;
 
