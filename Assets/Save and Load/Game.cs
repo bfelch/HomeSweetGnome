@@ -37,6 +37,12 @@ public class Game
     [SerializeField]
     //store all the consumables
     public float[,] consumables;
+    [SerializeField]
+    //store all the consumables
+    public float[,] pickUps;
+    [SerializeField]
+    //store all the consumables
+    public string[] pickUpNames;
 
     [SerializeField]
     public float timePlayed;

@@ -254,6 +254,18 @@ public class SaveLoad : MonoBehaviour
             data.consumables[n, 2] = consumables[n].transform.position.z;
         }
 
+        //create new array to hold the consumables
+        data.pickUps = new float[pickUps.Length, 3];
+        data.pickUpNames = new string[pickUps.Length];
+        //save all the consumable's locations
+        for (int n = 0; n < pickUps.Length; n++)
+        {
+            data.pickUps[n, 0] = pickUps[n].transform.position.x;
+            data.pickUps[n, 1] = pickUps[n].transform.position.y;
+            data.pickUps[n, 2] = pickUps[n].transform.position.z;
+            data.pickUpNames[n] = pickUps[n].name;
+        }
+
         //save time played
         data.timePlayed = player.GetComponent<PlayerInteractions>().timePlayed + Time.timeSinceLevelLoad;
         savingStatus = false;
@@ -338,6 +350,15 @@ public class SaveLoad : MonoBehaviour
             {
                 Destroy(GameObject.Find(consumables[h].name));
             }
+        }
+
+        pickUps = GameObject.FindGameObjectsWithTag("PickUp");
+        //load the pickUps
+        for (int h = 0; h < pickUps.Length; h++)
+        {
+ 
+            pickUps[h].transform.position = new Vector3(data.pickUps[h, 0], data.pickUps[h, 1], data.pickUps[h, 2]);
+
         }
 
         //load time played

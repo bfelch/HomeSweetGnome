@@ -1,0 +1,120 @@
+fileFormatVersion: 2
+guid: f479ed57e4663ec49810cc2b3f89b1bb
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: Base
+    100002: BATHROOM
+    100004: //RootNode
+    100006: Door_Handle
+    100008: Glass
+    100010: Glass_Door
+    100012: Handle
+    100014: Headrest
+    100016: Shower
+    100018: Shower_Bases
+    100020: Shower_Door
+    100022: ShowerHandle
+    100024: Toilet
+    100026: Toilet 1
+    400000: Base
+    400002: BATHROOM
+    400004: //RootNode
+    400006: Door_Handle
+    400008: Glass
+    400010: Glass_Door
+    400012: Handle
+    400014: Headrest
+    400016: Shower
+    400018: Shower_Bases
+    400020: Shower_Door
+    400022: ShowerHandle
+    400024: Toilet
+    400026: Toilet 1
+    2300000: Base
+    2300002: Door_Handle
+    2300004: Glass
+    2300006: Glass_Door
+    2300008: Handle
+    2300010: Headrest
+    2300012: Shower_Bases
+    2300014: Toilet 1
+    3300000: Base
+    3300002: Door_Handle
+    3300004: Glass
+    3300006: Glass_Door
+    3300008: Handle
+    3300010: Headrest
+    3300012: Shower_Bases
+    3300014: Toilet 1
+    4300000: Glass
+    4300002: Door_Handle
+    4300004: Glass_Door
+    4300006: Base
+    4300008: Handle
+    4300010: Shower_Bases
+    4300012: Headrest
+    4300014: Toilet
+    6400000: Base
+    6400002: Door_Handle
+    6400004: Glass
+    6400006: Glass_Door
+    6400008: Handle
+    6400010: Headrest
+    6400012: Shower_Bases
+    6400014: Toilet 1
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .0549999997
+    meshCompression: 0
+    addColliders: 1
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
