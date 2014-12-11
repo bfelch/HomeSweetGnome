@@ -1,5 +1,5 @@
 Base path: C:/Program Files (x86)/Unity/Editor/Data
-Pipe name: \\.\pipe\UnityShaderCompiler-1-4144
+Pipe name: \\.\pipe\UnityShaderCompiler-1-5952
 Cmd: getPlatforms
 Cmd: preprocess
   insize=9613 outsize=2432 ok=1
@@ -31,10 +31,6 @@ Cmd: preprocess
   insize=889 outsize=229 ok=1
 Cmd: preprocess
   insize=6766 outsize=327 ok=1
-Cmd: compileSnippet
-  api=4 type=0 insize=6544 outsize=770 kw=LIGHT_ON_SCREEN DIRECTIONAL_SHAFTS SHOW_SAMPLES_OFF QUAD_SHAFTS ok=1
-Cmd: compileSnippet
-  api=4 type=1 insize=6544 outsize=8164 kw=LIGHT_ON_SCREEN DIRECTIONAL_SHAFTS SHOW_SAMPLES_OFF QUAD_SHAFTS ok=1
 Cmd: preprocess
   insize=1303 outsize=429 ok=1
 Cmd: preprocess
@@ -167,19 +163,3 @@ Cmd: preprocess
   insize=5533 outsize=943 ok=1
 Cmd: preprocess
   insize=1808 outsize=713 ok=1
-Cmd: compileSnippet
-  api=4 type=0 insize=6544 outsize=1103 kw=LIGHT_ON_SCREEN SPOT_SHAFTS SHOW_SAMPLES_OFF FRUSTUM_SHAFTS ok=1
-Cmd: compileSnippet
-  api=4 type=1 insize=6544 outsize=9700 kw=LIGHT_ON_SCREEN SPOT_SHAFTS SHOW_SAMPLES_OFF FRUSTUM_SHAFTS ok=1
-Cmd: compileSnippet
-  api=4 type=0 insize=6544 outsize=1103 kw=SPOT_SHAFTS LIGHT_OFF_SCREEN SHOW_SAMPLES_OFF FRUSTUM_SHAFTS ok=1
-Cmd: compileSnippet
-  api=4 type=1 insize=6544 outsize=11276 kw=SPOT_SHAFTS LIGHT_OFF_SCREEN SHOW_SAMPLES_OFF FRUSTUM_SHAFTS ok=1
-Cmd: compileSnippet
-  api=4 type=0 insize=6544 outsize=770 kw=SPOT_SHAFTS LIGHT_OFF_SCREEN SHOW_SAMPLES_OFF QUAD_SHAFTS ok=1
-Cmd: compileSnippet
-  api=4 type=1 insize=6544 outsize=11000 kw=SPOT_SHAFTS LIGHT_OFF_SCREEN SHOW_SAMPLES_OFF QUAD_SHAFTS ok=1
-Cmd: compileSnippet
-  api=4 type=0 insize=6544 outsize=770 kw=LIGHT_ON_SCREEN SPOT_SHAFTS SHOW_SAMPLES_OFF QUAD_SHAFTS ok=1
-Cmd: compileSnippet
-  api=4 type=1 insize=6544 outsize=9423 kw=LIGHT_ON_SCREEN SPOT_SHAFTS SHOW_SAMPLES_OFF QUAD_SHAFTS ok=1

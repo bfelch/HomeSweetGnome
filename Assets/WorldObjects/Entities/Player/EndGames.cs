@@ -13,6 +13,7 @@ public class EndGames : MonoBehaviour {
     public bool experimentComplete;
     public bool enterName = false;
     public bool showLeaderboards = false;
+    public bool experimentWin = false;
     private float fadeIn = 0;
     private float pauseFadeTime = 4;
     private bool pauseFade = false;
@@ -25,6 +26,12 @@ public class EndGames : MonoBehaviour {
     private int experimentColorFade = 0;
     public GameObject lightWind;
     public Material sunnySky;
+
+    //horizontal look
+    public MouseLook mouseLook;
+    //vertical look
+    public MouseLook cameraLook;
+    
 
 	// Use this for initialization
 	void Start () {
@@ -67,8 +74,19 @@ public class EndGames : MonoBehaviour {
     {
         //Wait before loading the main menu
         yield return new WaitForSeconds(waitTime);
-
         enterName = true;
+
+    }
+    IEnumerator ExperimentWin(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+        experimentComplete = false;
+        experimentWin = true;
+        enterName = true;
+        mouseLook.enabled = false;
+        cameraLook.enabled = false;
+        
+
     }
 
     public void Escape()
@@ -114,7 +132,8 @@ public class EndGames : MonoBehaviour {
 		StartCoroutine(SoundController.FadeAudio(12.0F, SoundController.Fade.In, birdSound));
 		Debug.Log ("Hello");
 
-        StartCoroutine(WaitToReload(5.0F));
+        StartCoroutine(ExperimentWin(5.0F));
+
     }
 
 
@@ -135,7 +154,8 @@ public class EndGames : MonoBehaviour {
             //update the alpha value
             fadeIn += .1f * Time.deltaTime;
         }
-
+        else
+            winTextExperiment.enabled = false;
         if (playerEscaped)
         {
 
@@ -228,13 +248,30 @@ public class EndGames : MonoBehaviour {
             {
                 GUI.Box(new Rect(0, 200, 500, 50), "Unfortunately, you didn't make it onto the leaderboards. \n Better luck next time!");
             }
-            if (GUI.Button(new Rect(150, 250, 200, 30), "Main Menu"))
+            if (!experimentWin)
             {
-                showLeaderboards = false;
-                enterName = false;
-                Application.LoadLevel("MainMenu");
+                if (GUI.Button(new Rect(150, 250, 200, 30), "Main Menu"))
+                {
+                    showLeaderboards = false;
+                    enterName = false;
+                    Application.LoadLevel("MainMenu");
+                }
             }
+            else
+            {
+                if (GUI.Button(new Rect(150, 250, 200, 30), "Play On"))
+                {
+                    showLeaderboards = false;
+                    enterName = false;
+                    mouseLook.enabled = true;
+                    cameraLook.enabled = true;
+                }
+                
+            }
+
             GUI.EndGroup();
+
+            
         }
     }
 
