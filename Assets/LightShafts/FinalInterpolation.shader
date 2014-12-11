@@ -7,6 +7,7 @@ Subshader {
 	ZTest [_ZTest]
 	Cull Back
 	Blend One SrcAlpha
+	//Blend SrcAlpha OneMinusSrcAlpha
 
 	Pass {
 CGPROGRAM

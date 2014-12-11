@@ -233,6 +233,8 @@ public partial class LightShafts : MonoBehaviour
 			m_SpotMeshFar = m_SpotFar;
 			m_SpotMeshAngle = l.spotAngle;
 			m_SpotMeshRange = l.range;
+            m_SpotMesh = GetComponent<MeshFilter>().mesh;
+            //m_SpotMesh = null;
 		}
 	}
 
