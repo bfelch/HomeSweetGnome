@@ -194,7 +194,7 @@ public class Player : MonoBehaviour
 					activeTarget.transform.parent.rigidbody.GetComponent<Rigidbody>().useGravity = true;
 
 					//Apply a force in the direction of the push
-					activeTarget.transform.parent.rigidbody.AddForce((activeTarget.transform.position - this.transform.position).normalized * 8, ForceMode.Impulse);
+					activeTarget.transform.parent.rigidbody.AddForce((activeTarget.transform.position - this.transform.position).normalized * 4, ForceMode.Impulse);
 				}
 			}
 		}

@@ -22,6 +22,7 @@ public class groundCheck : MonoBehaviour
 	{
 		if(!IsGrounded())
 		{
+			Debug.Log("Falling");
 			falling = true;
 		}
 		else
@@ -48,7 +49,10 @@ public class groundCheck : MonoBehaviour
 		//Remove children
 		foreach(Transform child in gargoyleHead.transform)
 		{
-			Destroy(child.gameObject);
+			if(child.gameObject.name != "GargoyleHeadGraphics")
+			{
+				Destroy(child.gameObject);
+			}
 		}
 		
 		//Remove audio source component
@@ -85,9 +89,12 @@ public class groundCheck : MonoBehaviour
 		//Invert bitmask to only ignore this layer
 		ignoreMask = ~ignoreMask;
 
-		if(Physics.Raycast(transform.position, Vector3.down, distToGround + 0.1F, ignoreMask)
-		   || Physics.Raycast(new Vector3(transform.position.x, transform.position.y, transform.position.z + distToEdge), Vector3.down, distToGround + 0.1F, ignoreMask)
-		   || Physics.Raycast(new Vector3(transform.position.x, transform.position.y, transform.position.z - distToEdge), Vector3.down, distToGround + 0.1F, ignoreMask))
+		Debug.DrawRay(transform.position, Vector3.down * (distToGround + 5.1F), Color.red);
+		//Debug.DrawRay(new Vector3(transform.position.x, transform.position.y, transform.position.z + distToEdge), Vector3.down * (distToGround + 0.1F), Color.red);
+
+		if(Physics.Raycast(transform.position, Vector3.down, distToGround + 2.1F, ignoreMask)
+		   || Physics.Raycast(new Vector3(transform.position.x, transform.position.y, transform.position.z + distToEdge), Vector3.down, distToGround + 2.1F, ignoreMask)
+		   || Physics.Raycast(new Vector3(transform.position.x, transform.position.y, transform.position.z - distToEdge), Vector3.down, distToGround + 2.1F, ignoreMask))
 		{
 			//Grounded
 			return true;

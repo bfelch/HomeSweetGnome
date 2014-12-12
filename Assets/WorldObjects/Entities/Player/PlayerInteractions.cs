@@ -295,8 +295,16 @@ public class PlayerInteractions : MonoBehaviour
             //Is the item close and a pick up?
             if (activeTarget.tag == "PickUp")
             {
+				MeshRenderer currentMesh;
                 //get the mesh renderer
-                MeshRenderer currentMesh = activeTarget.GetComponent<MeshRenderer>();
+				if(activeTarget.gameObject.name == "GargoyleHead")
+				{
+					currentMesh = activeTarget.GetComponentInChildren<MeshRenderer>();
+				}
+                else
+				{
+					currentMesh = activeTarget.GetComponent<MeshRenderer>();
+				}
                 //save the current mesh material
                 Material current = currentMesh.material;
                 //create new array of materials of size 2
