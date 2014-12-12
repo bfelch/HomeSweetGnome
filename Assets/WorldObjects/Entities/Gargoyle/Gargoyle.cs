@@ -81,8 +81,8 @@ public class Gargoyle : MonoBehaviour
 			distanceBottom = Vector3.Distance(playerBottom.transform.position, transform.position);
 
 			RaycastHit hit;
-			//Debug.DrawRay(transform.position, fwdTop * (distanceTop + 0.1F), Color.red);
-			//Debug.DrawRay(transform.position, fwdBottom * (distanceBottom + 0.1F), Color.red);
+			Debug.DrawRay(transform.position, fwdTop * (distanceTop + 0.1F), Color.red);
+			Debug.DrawRay(transform.position, fwdBottom * (distanceBottom + 0.1F), Color.red);
 
 			//Double raycast
 			if(Physics.Raycast(transform.position, fwdTop, out hit, distanceTop + 0.1F, ignoreMask)
@@ -157,7 +157,7 @@ public class Gargoyle : MonoBehaviour
 		}
 		
 		//Blur the player's camera view
-		//player.GetComponentInChildren<BlurEffect>().enabled = true;
+		player.GetComponentInChildren<BlurEffect>().enabled = true;
 		
 		//Decreases the player's energy
 		player.GetComponent<Player>().sanity -= 0.1f;
@@ -182,8 +182,8 @@ public class Gargoyle : MonoBehaviour
 		distanceBottom = Vector3.Distance(playerBottom.transform.position, transform.position);
 		
 		RaycastHit hit;
-		//Debug.DrawRay(transform.position, fwdTop * (distanceTop + 0.1F), Color.red);
-		//Debug.DrawRay(transform.position, fwdBottom * (distanceBottom + 0.1F), Color.red);
+		Debug.DrawRay(transform.position, fwdTop * (distanceTop + 0.1F), Color.red);
+		Debug.DrawRay(transform.position, fwdBottom * (distanceBottom + 0.1F), Color.red);
 		
 		//Double raycast
 		if(Physics.Raycast(transform.position, fwdTop, out hit, distanceTop + 0.1F, ignoreMask)
@@ -219,7 +219,7 @@ public class Gargoyle : MonoBehaviour
 			player.GetComponent<Player>().charMotor.movement.maxBackwardsSpeed = 6.0F;
 			
 			//Remove the blur
-			//player.GetComponentInChildren<BlurEffect> ().enabled = false;
+			player.GetComponentInChildren<BlurEffect> ().enabled = false;
 
 			//On screen damage warning
 			player.GetComponent<GUIDamage>().enterCollider = false;
