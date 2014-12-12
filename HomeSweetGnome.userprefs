@@ -1,8 +1,13 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\WorldObjects\Entities\Gargoyle\Gargoyle.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\WorldObjects\Entities\Player\PlayerInteractions.cs">
     <Files>
-      <File FileName="Assets\WorldObjects\Entities\Gargoyle\Gargoyle.cs" Line="104" Column="31" />
+      <File FileName="Assets\WorldObjects\Entities\Gargoyle\Gargoyle.cs" Line="84" Column="4" />
+      <File FileName="Assets\Save and Load\SaveLoad.cs" Line="360" Column="1" />
+      <File FileName="Assets\WorldObjects\Entities\Gargoyle\groundCheck.cs" Line="55" Column="5" />
+      <File FileName="Assets\WorldObjects\Entities\Player\Player.cs" Line="197" Column="129" />
+      <File FileName="Assets\LightShafts\LightShafts.Resources.cs" Line="236" Column="1" />
+      <File FileName="Assets\WorldObjects\Entities\Player\PlayerInteractions.cs" Line="355" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
