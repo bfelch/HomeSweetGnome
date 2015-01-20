@@ -13,10 +13,12 @@ public class Useable : MonoBehaviour
 
     public bool chandDropped = false;
     public bool activate = false;
+    public static GUIWrapper gui;
 
 	// Use this for initialization
 	void Start () 
     {
+        playerGUI = GameObject.Find("Player").GetComponent<PlayerInteractions>().playerGUI;
 
 	}
 	
@@ -45,6 +47,13 @@ public class Useable : MonoBehaviour
             {
                 GameObject.Find("Player").GetComponent<Animation>().Play("GateEnding");
                 GameObject.Find("FrontGate").GetComponent<Animation>().Play("OpenFrontGate");
+                GameObject[] gnomes = GameObject.FindGameObjectsWithTag("Gnome");
+                for (int i = 0; i < gnomes.Length; i++)
+                {
+                    gnomes[i].GetComponent<Gnome>().enabled = false;
+                    gnomes[i].GetComponent<NavMeshAgent>().enabled = false;
+
+                }
                 //Run the escape function inside the Player script
             }
             else if (type == UseableType.BOAT)

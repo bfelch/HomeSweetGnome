@@ -40,6 +40,7 @@ public class PlayerInteractions : MonoBehaviour
     private bool pause;
     private bool pauseMenu;
     private Font bark;
+    private EndGames endgame;
 
     void Start()
     {
@@ -48,13 +49,14 @@ public class PlayerInteractions : MonoBehaviour
         st = gameObject.GetComponent<ShedTutorial>();
         outline = Resources.Load("Outline") as Material;
         bark = GetComponent<Player>().bark;
+        endgame = GetComponent<EndGames>();
     }
 
     void Update()
     {
         itemAction();
         GUIControl();
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if(Input.GetKeyDown(KeyCode.Escape) && !this.gameObject.animation.IsPlaying("OpeningCut") && !endgame.playerEscaped && !endgame.playerSlept && !endgame.playerFell)
         {
            if(!pause)
            { 
@@ -78,6 +80,7 @@ public class PlayerInteractions : MonoBehaviour
                mouseLook.enabled = true;
                cameraLook.enabled = true;
                pause = false;
+               optionsMenu = false;
            }
         }
         if(Input.GetKeyDown(KeyCode.LeftAlt))

@@ -6,9 +6,9 @@ using System.Collections;
 */
 public class LoadUnload : MonoBehaviour 
 {
-	private GameObject[] inHedge; //Objects to be disabled while in the hedgemaze
-	private GameObject[] inTunnels; //Objects to be disabled while in the tunnels
-	private GameObject[] inShed; //Objects to be disabled while in the shed
+	private string[] inHedge; //Objects to be disabled while in the hedgemaze
+	private string[] inTunnels; //Objects to be disabled while in the tunnels
+	private string[] inShed; //Objects to be disabled while in the shed
 
 	private bool tunnelLoaded = false; //Flag to check if tunnel is loaded
 	private bool hedgeLoaded = false; //Flag to check if hedge is loaded
@@ -21,35 +21,39 @@ public class LoadUnload : MonoBehaviour
 	void Start() 
 	{
 		//Get objects to be disabled while in the hedgemaze
-		inHedge = new GameObject[] 
+		inHedge = new string[] 
 		{
-			GameObject.Find ("Dock"),
-			GameObject.Find ("EstateWall"),
-			GameObject.Find ("Greenhouse"),
-			GameObject.Find ("shedModel")
+			"Dock",
+			"EstateWall",
+			"Greenhouse",
+			"Shed",
+            "Mansion"
 		};
 		//Get objects to be disabled while in the tunnels
-		inTunnels = new GameObject[] 
+		inTunnels = new string[] 
 		{
-			GameObject.Find ("EstateWall"),
-			GameObject.Find ("Shed"),
-			GameObject.Find ("Greenhouse"),
-			GameObject.Find ("Hedgemaze")
+			"EstateWall",
+			"Shed",
+			"Greenhouse",
+			"Hedgemaze",
+            "Mansion"
 		};
 		//Get objects to be disabled while in the shed
-		inShed = new GameObject[] 
+		inShed = new string[] 
 		{
-			GameObject.Find ("Greenhouse"),
-			GameObject.Find ("Hedgemaze"),
-			GameObject.Find ("Dock")
+			"Greenhouse",
+			"Hedgemaze",
+			"Dock",
+            "Mansion"
 		};
 
+        //Instantiate(Resources.Load("Structures/Mansion"));
 		//Player starts inside the shed
-		/*
+		
         for (int i = 0; i < inShed.Length; i++)
         {
-            inShed[i].SetActive(false);
-        }*/
+            Destroy(GameObject.Find(inShed[i])); 
+        }
     }
 	
 	//Update is called once per frame
@@ -66,14 +70,14 @@ public class LoadUnload : MonoBehaviour
 			//Add hedge objects
 
 			//Remove non-hedge objects
-			/*
+            
             for (int i = 0; i < inHedge.Length; i++)
             {
-                inHedge[i].SetActive(false);
+                Destroy(GameObject.Find(inHedge[i]));
             }
-            */
+            
 
-			hedgeLoaded = true; //Hedge is loaded
+            hedgeLoaded = true; //Hedge is loaded
         }
 
 		//Hedge Unload
@@ -82,14 +86,16 @@ public class LoadUnload : MonoBehaviour
 			//Remove hedge objects
 
 			//Add non-hedge objects
-			/*
+            
             for (int i = 0; i < inHedge.Length; i++)
             {
-                inHedge[i].SetActive(true);
+                GameObject go = Instantiate(Resources.Load("Structures/" + inHedge[i])) as GameObject;
+                go.transform.parent = GameObject.Find("Structures").transform;
+                go.name = inHedge[i];
             }
-            */
+            
 
-			hedgeLoaded = false; //Hedge is not loaded
+            hedgeLoaded = false; //Hedge is not loaded
         }
 
 		//Tunnel Load (Entrance)
@@ -98,14 +104,14 @@ public class LoadUnload : MonoBehaviour
 			//Add tunnel objects
 
 			//Remove non-tunnel objects
-			/*
-			for (int i = 0; i < inTunnels.Length; i++)
-			{
-				inTunnels[i].SetActive(false);
-			}
-			*/
+            
+            for (int i = 0; i < inTunnels.Length; i++)
+            {
+                Destroy(GameObject.Find(inTunnels[i]));
+            }
+            
 
-			weather.StopWeather(); //Stop weather
+            weather.StopWeather(); //Stop weather
 
 			moonlight.lightFadeIn = false; //Light is only fading out
 			moonlight.lightFadeOut = true; //Remove moonlight
@@ -119,14 +125,16 @@ public class LoadUnload : MonoBehaviour
 			//Remove tunnel objects
 
 			//Add non-tunnel objects
-			/*
+            
             for (int i = 0; i < inTunnels.Length; i++)
             {
-                inTunnels[i].SetActive(true);
+                GameObject go = Instantiate(Resources.Load("Structures/" + inTunnels[i])) as GameObject;
+                go.transform.parent = GameObject.Find("Structures").transform;
+                go.name = inTunnels[i];
             }
-            */
+            
 
-			weather.StartWeather(); //Start weather
+            weather.StartWeather(); //Start weather
 
 			moonlight.lightFadeOut = false; //Light is only fading in
 			moonlight.lightFadeIn = true; //Add moonlight
@@ -162,14 +170,14 @@ public class LoadUnload : MonoBehaviour
 			//Add shed objects
 
 			//Remove non-shed objects
-			/*
+            
             for (int i = 0; i < inShed.Length; i++)
             {
-                inShed[i].SetActive(false);
+                Destroy(GameObject.Find(inShed[i]));
             }
-            */
+            
 
-			shedLoaded = true; //Shed is loaded
+            shedLoaded = true; //Shed is loaded
         }
 
 		//Shed Unload
@@ -178,14 +186,16 @@ public class LoadUnload : MonoBehaviour
 			//Remove shed objects
 
 			//Add non-shed objects
-			/*
+            
             for (int i = 0; i < inShed.Length; i++)
             {
-                inShed[i].SetActive(true);
+                GameObject go = Instantiate(Resources.Load("Structures/"+ inShed[i])) as GameObject;
+                go.transform.parent = GameObject.Find("Structures").transform;
+                go.name = inShed[i];
             }
-            */
+            
 
-			shedLoaded = false; //Shed is not loaded
+            shedLoaded = false; //Shed is not loaded
         }
     }
 }

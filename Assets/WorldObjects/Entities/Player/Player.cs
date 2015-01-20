@@ -203,10 +203,10 @@ public class Player : MonoBehaviour
     void Sanity()
     {
         sanity -= .001f;
-        if (sanity < 0)
+        if (sanity < 0 && !this.GetComponent<EndGames>().playerSlept)
         {
             this.GetComponent<EndGames>().playerSlept = true;
-
+            this.GetComponent<EndGames>().GetTime();
 			StartCoroutine(WaitToReload(5.0F));
         }
 

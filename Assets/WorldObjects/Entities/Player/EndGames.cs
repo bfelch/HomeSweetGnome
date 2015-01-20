@@ -77,6 +77,15 @@ public class EndGames : MonoBehaviour {
         enterName = true;
 
     }
+
+    IEnumerator WaitToReloadMenu(float waitTime)
+    {
+        //Wait before loading the main menu
+        yield return new WaitForSeconds(waitTime);
+
+        //Load the main menu
+        Application.LoadLevel("MainMenu");
+    }
     IEnumerator ExperimentWin(float waitTime)
     {
         yield return new WaitForSeconds(waitTime);
@@ -190,6 +199,8 @@ public class EndGames : MonoBehaviour {
             deathTextSleep.color = changing;
             //update the alpha value
             fadeIn += .1f * Time.deltaTime;
+
+
         }
 
         if (playerFell)
@@ -280,8 +291,8 @@ public class EndGames : MonoBehaviour {
         if (other.tag == "Fall")
         {
             playerFell = true;
-
-            StartCoroutine(WaitToReload(5.0F));
+            this.GetComponent<EndGames>().GetTime();
+            StartCoroutine(WaitToReloadMenu(5.0F));
         }
         if (other.name == "GateEndGame")
         {
