@@ -160,7 +160,6 @@ public class weatherScript : MonoBehaviour
 		}
 		
 		lightningScript.enabled = false;
-
 		rainFadeIn = false;
 		rainFadeOut = true;
 		weatherOn = false;
@@ -170,6 +169,7 @@ public class weatherScript : MonoBehaviour
 	{
 		newWeather = true;
 		weatherOn = true;
+
 	}
 
     void AudioFadeIn()

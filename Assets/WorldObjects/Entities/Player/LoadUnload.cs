@@ -6,13 +6,21 @@ using System.Collections;
 */
 public class LoadUnload : MonoBehaviour 
 {
-	private string[] inHedge; //Objects to be disabled while in the hedgemaze
-	private string[] inTunnels; //Objects to be disabled while in the tunnels
-	private string[] inShed; //Objects to be disabled while in the shed
+	private string[][] shedTrigger; //Objects to be disabled while in the hedgemaze
+	private string[][] hedgeTrigger; //Objects to be disabled while in the tunnels
+	private string[][] greenTrigger; //Objects to be disabled while in the shed
+    private string[][] mansionGreen; //Objects to be disabled while in the shed
+    private string[][] mansionHedge; //Objects to be disabled while in the shed
+    private string[][] tunnelsTrigger; //Objects to be disabled while in the shed
 
-	private bool tunnelLoaded = false; //Flag to check if tunnel is loaded
-	private bool hedgeLoaded = false; //Flag to check if hedge is loaded
-	private bool shedLoaded = true; //Flag to check if shed if loaded
+    private bool shedTrigSwitch = false;
+    private bool shedTrigExit = false;
+    private bool hedgeTrigSwitch = false;
+    private bool greenTrigSwitch = false;
+    private bool manGreenTrigSwitch = false;
+    private bool manHedgeTrigSwitch = false;
+    private bool tunnelsTrigSwitch = false;
+    private bool tunnelsTrigExit = false;
 
 	public weatherScript weather; //Weather script
 	public Moonlight moonlight; //Moonlight script
@@ -20,182 +28,316 @@ public class LoadUnload : MonoBehaviour
 	// Use this for initialization
 	void Start() 
 	{
-		//Get objects to be disabled while in the hedgemaze
-		inHedge = new string[] 
+        
+        shedTrigger = new string[][]
 		{
-			"Dock",
-			"EstateWall",
-			"Greenhouse",
-			"Shed",
-            "Mansion"
-		};
-		//Get objects to be disabled while in the tunnels
-		inTunnels = new string[] 
-		{
-			"EstateWall",
-			"Shed",
-			"Greenhouse",
-			"Hedgemaze",
-            "Mansion"
-		};
-		//Get objects to be disabled while in the shed
-		inShed = new string[] 
-		{
-			"Greenhouse",
-			"Hedgemaze",
-			"Dock",
-            "Mansion"
+			new string[]{
+                "Dock",
+			    "Greenhouse",
+                "Mansion",
+                "Hedgemaze"
+            },
+            new string[]{
+                "Shed",
+                "EstateWall"
+            },
+            new string[]{
+                "Greenhouse",
+                "Hedgemaze",
+                "Mansion"
+            }
+
 		};
 
-        //Instantiate(Resources.Load("Structures/Mansion"));
-		//Player starts inside the shed
-		
-        for (int i = 0; i < inShed.Length; i++)
-        {
-            Destroy(GameObject.Find(inShed[i])); 
-        }
+        //Get objects to be disabled while in the hedgemaze
+        hedgeTrigger = new string[][]
+		{
+			new string[]{
+                "Dock",
+			    "EstateWall",
+			    "Greenhouse",
+			    "Shed",
+                "Mansion"
+            },
+            new string[]
+            {
+                "Greenhouse",
+                "Mansion"
+            },
+		};
+
+        greenTrigger = new string[][] 
+		{
+			new string[] 
+		    {
+                "Dock",
+			    "EstateWall",
+			    "Hedgemaze",
+			    "Shed"
+            },
+            new string[] 
+		    {
+                "Hedgemaze"
+            }
+		};
+
+		//Get objects to be disabled while in the tunnels
+        mansionGreen = new string[][]
+		{
+			new string[]
+            {
+                "EstateWall",
+			    "Shed",
+			    "Hedgemaze",
+                "Dock"
+            },
+            new string[]
+            {
+                "Hedgemaze"
+            }
+		};
+ 
+		//Get objects to be disabled while in the shed
+        mansionHedge = new string[][]
+		{
+			new string[]
+            {
+                "Greenhouse",
+			    "EstateWall",
+			    "Dock",
+                "Shed"
+            },
+            new string[]
+            {
+                "Greenhouse"
+            }
+		};
+
+        tunnelsTrigger = new string[][] 
+		{
+			new string[]
+            {
+                "Greenhouse",
+                "Mansion",
+                "Hedgemaze",
+                "Shed",
+                "EstateWall"
+            },
+            new string[]
+            {
+                "Greenhouse",
+                "Mansion",
+                "Hedgemaze"
+            },
+            new string[]
+            {
+                "Dock"
+            },
+		};
+
+       
     }
 	
 	//Update is called once per frame
 	void Update () 
 	{
+        if(shedTrigSwitch)
+        {
+            destroyStructures(shedTrigger[0]);
+            shedTrigSwitch = false;
+        }
+        if (hedgeTrigSwitch)
+        {
+            destroyStructures(hedgeTrigger[0]);
+            hedgeTrigSwitch = false;
+        }
+        if (greenTrigSwitch)
+        {
+            destroyStructures(greenTrigger[0]);
+            greenTrigSwitch = false;
+        }
+        if (manGreenTrigSwitch)
+        {
+            destroyStructures(mansionGreen[0]);
+            manGreenTrigSwitch = false;
+        }
+        if (manHedgeTrigSwitch)
+        {
+            destroyStructures(mansionHedge[0]);
+            manHedgeTrigSwitch = false;
+        }
+        if (tunnelsTrigSwitch)
+        {
+            destroyStructures(tunnelsTrigger[0]);
+            tunnelsTrigSwitch = false;
+
+            GameObject go = Instantiate(Resources.Load("Structures/" + tunnelsTrigger[2][0])) as GameObject;
+            go.transform.parent = GameObject.Find("Structures").transform;
+            go.name = tunnelsTrigger[2][0];
+        }
+        if (shedTrigExit)
+        {
+            destroyStructures(shedTrigger[1]);
+            shedTrigExit = false;
+        }
+        if (tunnelsTrigExit)
+        {
+            destroyStructures(tunnelsTrigger[2]);
+            tunnelsTrigExit = false;
+        }
 
 	}
 
     void OnTriggerEnter(Collider col)
     {
 		//Hedge Load
-        if(col.name == "HedgeLoad" && hedgeLoaded == false)
+        if (col.name == "ShedTrigger")
         {
-			//Add hedge objects
+            //Remove non-hedge objects
+            shedTrigSwitch = true;
 
-			//Remove non-hedge objects
-            
-            for (int i = 0; i < inHedge.Length; i++)
-            {
-                Destroy(GameObject.Find(inHedge[i]));
-            }
-            
-
-            hedgeLoaded = true; //Hedge is loaded
         }
-
-		//Hedge Unload
-        if(col.name == "HedgeUnload" && hedgeLoaded == true)
+        if (col.name == "HedgeTrigger")
         {
-			//Remove hedge objects
-
-			//Add non-hedge objects
-            
-            for (int i = 0; i < inHedge.Length; i++)
-            {
-                GameObject go = Instantiate(Resources.Load("Structures/" + inHedge[i])) as GameObject;
-                go.transform.parent = GameObject.Find("Structures").transform;
-                go.name = inHedge[i];
-            }
-            
-
-            hedgeLoaded = false; //Hedge is not loaded
+            //Remove non-hedge objects
+            hedgeTrigSwitch = true;
+        }
+        if (col.name == "GreenTrigger")
+        {
+            //Remove non-hedge objects
+            greenTrigSwitch = true;
+        }
+        if (col.name == "MansionGreen")
+        {
+            //Remove non-hedge objects
+            manGreenTrigSwitch = true;
+        }
+        if (col.name == "MansionHedge")
+        {
+            //Remove non-hedge objects
+            manHedgeTrigSwitch = true;
+        }
+        if(col.name == "TunnelsTrigger")
+        {
+    		//Remove non-hedge objects
+            tunnelsTrigSwitch = true;
         }
 
 		//Tunnel Load (Entrance)
-		if (col.name == "TunnelLoadEntrance" && tunnelLoaded == false)
+		if (col.name == "TunnelLoadEntrance")
 		{
-			//Add tunnel objects
-
-			//Remove non-tunnel objects
-            
-            for (int i = 0; i < inTunnels.Length; i++)
-            {
-                Destroy(GameObject.Find(inTunnels[i]));
-            }
-            
 
             weather.StopWeather(); //Stop weather
 
 			moonlight.lightFadeIn = false; //Light is only fading out
 			moonlight.lightFadeOut = true; //Remove moonlight
+            GameObject.Find("Main Camera").GetComponent<GlobalFog>().enabled = false;
 
-			tunnelLoaded = true; //Tunnel is loaded
 		}
 
 		//Tunnel Unload (Entrance)
-        if (col.name == "TunnelUnloadEntrance" && tunnelLoaded == true)
+        if (col.name == "TunnelUnloadEntrance")
         {
-			//Remove tunnel objects
-
-			//Add non-tunnel objects
-            
-            for (int i = 0; i < inTunnels.Length; i++)
-            {
-                GameObject go = Instantiate(Resources.Load("Structures/" + inTunnels[i])) as GameObject;
-                go.transform.parent = GameObject.Find("Structures").transform;
-                go.name = inTunnels[i];
-            }
-            
 
             weather.StartWeather(); //Start weather
 
 			moonlight.lightFadeOut = false; //Light is only fading in
 			moonlight.lightFadeIn = true; //Add moonlight
+            GameObject.Find("Main Camera").GetComponent<GlobalFog>().enabled = true;
 
-			tunnelLoaded = false; //Tunnel is not loaded
         }
 
 		//Tunnel Load (Exit)
-		if (col.name == "TunnelLoadExit" && tunnelLoaded == false)
+		if (col.name == "TunnelLoadExit")
 		{	
 			weather.StopWeather(); //Weather
 
 			moonlight.lightFadeIn = false; //Light is only fading out
 			moonlight.lightFadeOut = true; //Remove moonlight
+            GameObject.Find("Main Camera").GetComponent<GlobalFog>().enabled = false;
 
-			tunnelLoaded = true; //Tunnel is loaded
+
 		}
 
 		//Tunnel Unload (Exit)
-		if (col.name == "TunnelUnloadExit" && tunnelLoaded == true)
+		if (col.name == "TunnelUnloadExit")
 		{
 			weather.StartWeather(); //Start weather
 
 			moonlight.lightFadeOut = false; //Light is only fading in
 			moonlight.lightFadeIn = true; //Add moonlight
+            GameObject.Find("Main Camera").GetComponent<GlobalFog>().enabled = true;
 
-			tunnelLoaded = false; //Tunnel is not loaded
 		}
 
-		//Shed Load
-        if (col.name == "ShedLoad" && shedLoaded == false)
+    }
+
+    void OnTriggerExit(Collider col)
+    {
+        if (col.name == "ShedTrigger")
         {
-			//Add shed objects
-
-			//Remove non-shed objects
-            
-            for (int i = 0; i < inShed.Length; i++)
-            {
-                Destroy(GameObject.Find(inShed[i]));
-            }
-            
-
-            shedLoaded = true; //Shed is loaded
-        }
-
-		//Shed Unload
-        if (col.name == "ShedUnload" && shedLoaded == true)
-        {
-			//Remove shed objects
-
-			//Add non-shed objects
-            
-            for (int i = 0; i < inShed.Length; i++)
-            {
-                GameObject go = Instantiate(Resources.Load("Structures/"+ inShed[i])) as GameObject;
+            for (int i = 0; i < shedTrigger[2].Length; i++)
+            { 
+                GameObject go = Instantiate(Resources.Load("Structures/" + shedTrigger[2][i])) as GameObject;
                 go.transform.parent = GameObject.Find("Structures").transform;
-                go.name = inShed[i];
+                go.name = shedTrigger[2][i];
             }
-            
-
-            shedLoaded = false; //Shed is not loaded
+            shedTrigExit = true;
         }
+
+        if (col.name == "HedgeTrigger")
+        {
+            for (int i = 0; i < hedgeTrigger[1].Length; i++)
+            {
+                GameObject go = Instantiate(Resources.Load("Structures/" + hedgeTrigger[1][i])) as GameObject;
+                go.transform.parent = GameObject.Find("Structures").transform;
+                go.name = hedgeTrigger[1][i];
+            }
+        }
+        if (col.name == "GreenTrigger")
+        {
+            for (int i = 0; i < greenTrigger[1].Length; i++)
+            {
+                GameObject go = Instantiate(Resources.Load("Structures/" + greenTrigger[1][i])) as GameObject;
+                go.transform.parent = GameObject.Find("Structures").transform;
+                go.name = greenTrigger[1][i];
+            }
+        }
+        if (col.name == "MansionGreen")
+        {
+            for (int i = 0; i < mansionGreen[1].Length; i++)
+            {
+                GameObject go = Instantiate(Resources.Load("Structures/" + mansionGreen[1][i])) as GameObject;
+                go.transform.parent = GameObject.Find("Structures").transform;
+                go.name = mansionGreen[1][i];
+            }
+        }
+        if (col.name == "MansionHedge")
+        {
+            for (int i = 0; i < mansionHedge[1].Length; i++)
+            {
+                GameObject go = Instantiate(Resources.Load("Structures/" + mansionHedge[1][i])) as GameObject;
+                go.transform.parent = GameObject.Find("Structures").transform;
+                go.name = mansionHedge[1][i];
+            }
+        }
+        if (col.name == "TunnelsTrigger")
+        {
+            for (int i = 0; i < tunnelsTrigger[1].Length; i++)
+            {
+                GameObject go = Instantiate(Resources.Load("Structures/" + tunnelsTrigger[1][i])) as GameObject;
+                go.transform.parent = GameObject.Find("Structures").transform;
+                go.name = tunnelsTrigger[1][i];
+            }
+            tunnelsTrigExit = true;
+        }
+    }
+    void destroyStructures(string[] structs)
+    {
+        for (int i = 0; i < structs.Length; i++)
+        {
+            Destroy(GameObject.Find(structs[i]));
+        }
+
     }
 }

@@ -18,7 +18,11 @@ public class Useable : MonoBehaviour
 	// Use this for initialization
 	void Start () 
     {
-        playerGUI = GameObject.Find("Player").GetComponent<PlayerInteractions>().playerGUI;
+        try
+        {
+            playerGUI = GameObject.Find("Player").GetComponent<PlayerInteractions>().playerGUI;
+        }
+        catch{}
 
 	}
 	
