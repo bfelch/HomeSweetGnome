@@ -18,6 +18,7 @@ public class SaveLoad : MonoBehaviour
     //this method saves the values into playerInfo.dat
     public void Save()
     {
+        LoadUnload.showEverything();
         //create new binary formatter
         BinaryFormatter bf = new BinaryFormatter();
         //create new filestream
@@ -32,6 +33,9 @@ public class SaveLoad : MonoBehaviour
         bf.Serialize(file, data);
         //close the file
         file.Close();
+        LoadUnload.checkTrigger = true;
+       
+
     }
 
     public static void saveLeaderboard()
@@ -143,6 +147,7 @@ public class SaveLoad : MonoBehaviour
             //display if the file could not be loaded
             Debug.LogError("Couldn't Load File.");
         }
+
     }
 
     public static void loadLeaderboards()
@@ -235,10 +240,15 @@ public class SaveLoad : MonoBehaviour
         //store all the useable's locations and rotations into the arrays
         for (int m = 0; m < useable.Length; m++)
         {
+         
             data.useableLocations[m, 0] = useable[m].transform.position.x;
             data.useableLocations[m, 1] = useable[m].transform.position.y;
             data.useableLocations[m, 2] = useable[m].transform.position.z;
 
+            if(useable[m].name == "ShedDoor")
+            {
+                Debug.Log(useable[m].transform.localPosition.y);
+            }
             data.useableRotations[m, 0] = useable[m].transform.rotation.x;
             data.useableRotations[m, 1] = useable[m].transform.rotation.y;
             data.useableRotations[m, 2] = useable[m].transform.rotation.z;
@@ -364,6 +374,10 @@ public class SaveLoad : MonoBehaviour
         //load time played
         player.GetComponent<PlayerInteractions>().timePlayed = data.timePlayed;
         loaded = true;
+
+        LoadUnload.iAmLoaded = true;
+        Debug.Log(LoadUnload.iAmLoaded);
+
     }
 
     void OnGUI()

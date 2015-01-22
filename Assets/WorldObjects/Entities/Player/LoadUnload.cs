@@ -12,6 +12,7 @@ public class LoadUnload : MonoBehaviour
     private string[][] mansionGreen; //Objects to be disabled while in the shed
     private string[][] mansionHedge; //Objects to be disabled while in the shed
     private string[][] tunnelsTrigger; //Objects to be disabled while in the shed
+    private static string[] all;
 
     private bool shedTrigSwitch = false;
     private bool shedTrigExit = false;
@@ -22,13 +23,32 @@ public class LoadUnload : MonoBehaviour
     private bool tunnelsTrigSwitch = false;
     private bool tunnelsTrigExit = false;
 
+    public static bool checkTrigger = false;
+    public static bool iAmLoaded = false;
+
 	public weatherScript weather; //Weather script
 	public Moonlight moonlight; //Moonlight script
 
 	// Use this for initialization
 	void Start() 
 	{
-        
+
+        if (PlayerPrefs.GetInt("LoadGame") != 1)
+        {
+            iAmLoaded = true;
+        }
+
+        all = new string[]
+        {
+            "Mansion",
+            "Greenhouse",
+            "Hedgemaze",
+            "Dock",
+            "Shed",
+            "EstateWall"
+
+        };
+
         shedTrigger = new string[][]
 		{
 			new string[]{
@@ -143,8 +163,22 @@ public class LoadUnload : MonoBehaviour
 	{
         if(shedTrigSwitch)
         {
+            //Issue here with loading
             destroyStructures(shedTrigger[0]);
             shedTrigSwitch = false;
+
+            
+            for (int i = 0; i < shedTrigger[1].Length; i++)
+            {
+                if (GameObject.Find(shedTrigger[1][i]) == null)
+                {
+                    GameObject go = Instantiate(Resources.Load("Structures/" + shedTrigger[1][i])) as GameObject;
+                    go.transform.parent = GameObject.Find("Structures").transform;
+                    go.name = shedTrigger[1][i];
+                    Debug.Log(go.name);
+                }
+            }
+
         }
         if (hedgeTrigSwitch)
         {
@@ -190,88 +224,129 @@ public class LoadUnload : MonoBehaviour
 
     void OnTriggerEnter(Collider col)
     {
-		//Hedge Load
-        if (col.name == "ShedTrigger")
+        if (iAmLoaded)
         {
-            //Remove non-hedge objects
-            shedTrigSwitch = true;
+            //Hedge Load
+            if (col.name == "ShedTrigger")
+            {
+                //Remove non-hedge objects
+                shedTrigSwitch = true;
+            }
+            if (col.name == "HedgeTrigger")
+            {
+                //Remove non-hedge objects
+                hedgeTrigSwitch = true;
+            }
+            if (col.name == "GreenTrigger")
+            {
+                //Remove non-hedge objects
+                greenTrigSwitch = true;
+            }
+            if (col.name == "MansionGreen")
+            {
+                //Remove non-hedge objects
+                manGreenTrigSwitch = true;
+            }
+            if (col.name == "MansionHedge")
+            {
+                //Remove non-hedge objects
+                manHedgeTrigSwitch = true;
+            }
+            if (col.name == "TunnelsTrigger")
+            {
+                //Remove non-hedge objects
+                tunnelsTrigSwitch = true;
+            }
 
+            //Tunnel Load (Entrance)
+            if (col.name == "TunnelLoadEntrance")
+            {
+
+                weather.StopWeather(); //Stop weather
+
+                moonlight.lightFadeIn = false; //Light is only fading out
+                moonlight.lightFadeOut = true; //Remove moonlight
+                GameObject.Find("Main Camera").GetComponent<GlobalFog>().enabled = false;
+
+            }
+
+            //Tunnel Unload (Entrance)
+            if (col.name == "TunnelUnloadEntrance")
+            {
+
+                weather.StartWeather(); //Start weather
+
+                moonlight.lightFadeOut = false; //Light is only fading in
+                moonlight.lightFadeIn = true; //Add moonlight
+                GameObject.Find("Main Camera").GetComponent<GlobalFog>().enabled = true;
+
+            }
+
+            //Tunnel Load (Exit)
+            if (col.name == "TunnelLoadExit")
+            {
+                weather.StopWeather(); //Weather
+
+                moonlight.lightFadeIn = false; //Light is only fading out
+                moonlight.lightFadeOut = true; //Remove moonlight
+                GameObject.Find("Main Camera").GetComponent<GlobalFog>().enabled = false;
+
+
+            }
+
+            //Tunnel Unload (Exit)
+            if (col.name == "TunnelUnloadExit")
+            {
+                weather.StartWeather(); //Start weather
+
+                moonlight.lightFadeOut = false; //Light is only fading in
+                moonlight.lightFadeIn = true; //Add moonlight
+                GameObject.Find("Main Camera").GetComponent<GlobalFog>().enabled = true;
+
+            }
         }
-        if (col.name == "HedgeTrigger")
-        {
-            //Remove non-hedge objects
-            hedgeTrigSwitch = true;
-        }
-        if (col.name == "GreenTrigger")
-        {
-            //Remove non-hedge objects
-            greenTrigSwitch = true;
-        }
-        if (col.name == "MansionGreen")
-        {
-            //Remove non-hedge objects
-            manGreenTrigSwitch = true;
-        }
-        if (col.name == "MansionHedge")
-        {
-            //Remove non-hedge objects
-            manHedgeTrigSwitch = true;
-        }
-        if(col.name == "TunnelsTrigger")
-        {
-    		//Remove non-hedge objects
-            tunnelsTrigSwitch = true;
-        }
-
-		//Tunnel Load (Entrance)
-		if (col.name == "TunnelLoadEntrance")
-		{
-
-            weather.StopWeather(); //Stop weather
-
-			moonlight.lightFadeIn = false; //Light is only fading out
-			moonlight.lightFadeOut = true; //Remove moonlight
-            GameObject.Find("Main Camera").GetComponent<GlobalFog>().enabled = false;
-
-		}
-
-		//Tunnel Unload (Entrance)
-        if (col.name == "TunnelUnloadEntrance")
-        {
-
-            weather.StartWeather(); //Start weather
-
-			moonlight.lightFadeOut = false; //Light is only fading in
-			moonlight.lightFadeIn = true; //Add moonlight
-            GameObject.Find("Main Camera").GetComponent<GlobalFog>().enabled = true;
-
-        }
-
-		//Tunnel Load (Exit)
-		if (col.name == "TunnelLoadExit")
-		{	
-			weather.StopWeather(); //Weather
-
-			moonlight.lightFadeIn = false; //Light is only fading out
-			moonlight.lightFadeOut = true; //Remove moonlight
-            GameObject.Find("Main Camera").GetComponent<GlobalFog>().enabled = false;
-
-
-		}
-
-		//Tunnel Unload (Exit)
-		if (col.name == "TunnelUnloadExit")
-		{
-			weather.StartWeather(); //Start weather
-
-			moonlight.lightFadeOut = false; //Light is only fading in
-			moonlight.lightFadeIn = true; //Add moonlight
-            GameObject.Find("Main Camera").GetComponent<GlobalFog>().enabled = true;
-
-		}
-
     }
 
+    void OnTriggerStay(Collider col)
+    {
+        if (checkTrigger && iAmLoaded)
+        {
+            //Hedge Load
+            if (col.name == "ShedTrigger")
+            {
+                //Remove non-hedge objects
+                shedTrigSwitch = true;
+
+            }
+            if (col.name == "HedgeTrigger")
+            {
+                //Remove non-hedge objects
+                hedgeTrigSwitch = true;
+            }
+            if (col.name == "GreenTrigger")
+            {
+                //Remove non-hedge objects
+                greenTrigSwitch = true;
+            }
+            if (col.name == "MansionGreen")
+            {
+                //Remove non-hedge objects
+                manGreenTrigSwitch = true;
+            }
+            if (col.name == "MansionHedge")
+            {
+                //Remove non-hedge objects
+                manHedgeTrigSwitch = true;
+            }
+            if (col.name == "TunnelsTrigger")
+            {
+                //Remove non-hedge objects
+                tunnelsTrigSwitch = true;
+            }
+
+            checkTrigger = false;
+        }
+    }
     void OnTriggerExit(Collider col)
     {
         if (col.name == "ShedTrigger")
@@ -339,5 +414,18 @@ public class LoadUnload : MonoBehaviour
             Destroy(GameObject.Find(structs[i]));
         }
 
+    }
+
+    public static void showEverything()
+    {
+        for (int i = 0; i < all.Length; i++)
+        {
+            if (GameObject.Find(all[i]) == null)
+            {
+                GameObject go = Instantiate(Resources.Load("Structures/" + all[i])) as GameObject;
+                go.transform.parent = GameObject.Find("Structures").transform;
+                go.name = all[i];
+            }
+        }
     }
 }
