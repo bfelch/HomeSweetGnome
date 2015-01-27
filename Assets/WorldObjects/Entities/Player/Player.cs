@@ -63,19 +63,18 @@ public class Player : MonoBehaviour
 
         if(PlayerPrefs.GetInt("LoadGame") == 1)
         {
-            GameObject.Find("Save").GetComponent<SaveLoad>().Load();
+            this.GetComponent<SaveLoad>().Load();
+        }
+        else
+        {
+            this.GetComponent<LoadUnload>().enabled = true;
+            LoadUnload.iAmLoaded = true;
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-        //temporary close game screen
-        if (Input.GetKey(KeyCode.LeftAlt))
-        {
-            GameObject.Find("Save").GetComponent<SaveLoad>().Save();
-            Application.Quit();
-        }
 
         if (!this.gameObject.animation.IsPlaying("OpeningCut")) 
 		{

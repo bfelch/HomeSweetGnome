@@ -123,8 +123,8 @@ public class PlayerInteractions : MonoBehaviour
             }
             if (GUI.Button( new Rect(55, 200, 180, 40), "Main Menu"))
             {
-                GameObject.Find("Save").GetComponent<SaveLoad>().Save();
-                Application.LoadLevel("MainMenu");
+                LoadUnload.showEverything();
+                this.GetComponent<SaveLoad>().Save(true);
             }
             if (GUI.Button(new Rect(55, 250, 180, 40), "Quit"))
             {
@@ -491,4 +491,6 @@ public class PlayerInteractions : MonoBehaviour
         cameraLook.enabled = !showGUI;
         Screen.lockCursor = !showGUI;
     }
+
+
 }

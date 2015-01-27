@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
+using System;
 
 public class SaveLoad : MonoBehaviour
 {
@@ -16,7 +17,7 @@ public class SaveLoad : MonoBehaviour
     public static string[] leaderboardNames;
 
     //this method saves the values into playerInfo.dat
-    public void Save()
+    public void Save(bool menu)
     {
         LoadUnload.showEverything();
         //create new binary formatter
@@ -33,9 +34,11 @@ public class SaveLoad : MonoBehaviour
         bf.Serialize(file, data);
         //close the file
         file.Close();
-        LoadUnload.checkTrigger = true;
-       
 
+        if (menu)
+        {
+            Application.LoadLevel("MainMenu");
+        }
     }
 
     public static void saveLeaderboard()
@@ -173,7 +176,7 @@ public class SaveLoad : MonoBehaviour
         if (gameObject.name == "Save" && other.name == "Player")
         {
             //save the game
-            Save();
+            Save(false);
             //set saving to true
             saving = true;
         }
@@ -187,6 +190,7 @@ public class SaveLoad : MonoBehaviour
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         GameObject[] pickUps = GameObject.FindGameObjectsWithTag("PickUp");
         GameObject[] useable = GameObject.FindGameObjectsWithTag("Useable");
+        Array.Sort(useable, CompareObNames);
         GameObject[] consumables = GameObject.FindGameObjectsWithTag("Consumable");
         ItemSlot[] held = GameObject.Find("Player").GetComponent<PlayerInteractions>().playerGUI.slots;
         KeyRing keyRing = GameObject.Find("Player").GetComponent<PlayerInteractions>().playerGUI.keyRing;
@@ -245,10 +249,6 @@ public class SaveLoad : MonoBehaviour
             data.useableLocations[m, 1] = useable[m].transform.position.y;
             data.useableLocations[m, 2] = useable[m].transform.position.z;
 
-            if(useable[m].name == "ShedDoor")
-            {
-                Debug.Log(useable[m].transform.localPosition.y);
-            }
             data.useableRotations[m, 0] = useable[m].transform.rotation.x;
             data.useableRotations[m, 1] = useable[m].transform.rotation.y;
             data.useableRotations[m, 2] = useable[m].transform.rotation.z;
@@ -279,6 +279,9 @@ public class SaveLoad : MonoBehaviour
         //save time played
         data.timePlayed = player.GetComponent<PlayerInteractions>().timePlayed + Time.timeSinceLevelLoad;
         savingStatus = false;
+
+        LoadUnload.checkTrigger = true;
+
     }
 
     public void loadGameValues(Game data)
@@ -288,6 +291,7 @@ public class SaveLoad : MonoBehaviour
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         GameObject[] pickUps = GameObject.FindGameObjectsWithTag("PickUp");
         GameObject[] useable = GameObject.FindGameObjectsWithTag("Useable");
+        Array.Sort(useable, CompareObNames);
         GameObject[] consumables = GameObject.FindGameObjectsWithTag("Consumable");
         ItemSlot[] held = GameObject.Find("Player").GetComponent<PlayerInteractions>().playerGUI.slots;
         KeyRing keyRing = GameObject.Find("Player").GetComponent<PlayerInteractions>().playerGUI.keyRing;
@@ -339,7 +343,15 @@ public class SaveLoad : MonoBehaviour
         {
             useable[m].transform.position = new Vector3(data.useableLocations[m, 0], data.useableLocations[m, 1], data.useableLocations[m, 2]);
             useable[m].transform.rotation = new Quaternion(data.useableRotations[m, 0], data.useableRotations[m, 1], data.useableRotations[m, 2], data.useableRotations[m, 3]);
-   
+            if (m == 0)
+            {
+                Debug.Log("First While Loading: " + useable[m].name);
+            }
+            if (useable[m].name == "ShedDoor")
+            {
+                Debug.Log("Shed Door Position While Loading: " + useable[m].transform.localPosition.y);
+                Debug.Log("Loaded Number: " + m);
+            }
         }
 
         //load the consumables
@@ -376,7 +388,9 @@ public class SaveLoad : MonoBehaviour
         loaded = true;
 
         LoadUnload.iAmLoaded = true;
-        Debug.Log(LoadUnload.iAmLoaded);
+
+        GameObject.Find("Player").GetComponent<LoadUnload>().enabled = true;
+        LoadUnload.checkTrigger = true;
 
     }
 
@@ -400,6 +414,11 @@ public class SaveLoad : MonoBehaviour
                 displayTime--;
             }
         }
+    }
+
+    int CompareObNames(GameObject x, GameObject y)
+    {
+        return x.name.CompareTo(y.name);
     }
 
 

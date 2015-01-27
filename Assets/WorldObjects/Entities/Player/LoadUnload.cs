@@ -175,7 +175,6 @@ public class LoadUnload : MonoBehaviour
                     GameObject go = Instantiate(Resources.Load("Structures/" + shedTrigger[1][i])) as GameObject;
                     go.transform.parent = GameObject.Find("Structures").transform;
                     go.name = shedTrigger[1][i];
-                    Debug.Log(go.name);
                 }
             }
 
@@ -309,7 +308,7 @@ public class LoadUnload : MonoBehaviour
 
     void OnTriggerStay(Collider col)
     {
-        if (checkTrigger && iAmLoaded)
+        if (checkTrigger)
         {
             //Hedge Load
             if (col.name == "ShedTrigger")
