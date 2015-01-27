@@ -35,6 +35,9 @@ public class Gnome : MonoBehaviour
 	//Gnome Eye prefab
 	public GameObject gnomeEye;
 
+    //Starting location of gnome
+    private Vector3 startLocation;
+
     void Start()
     {
         QualitySettings.antiAliasing = 4;
@@ -42,6 +45,7 @@ public class Gnome : MonoBehaviour
         targetBlink = target.GetComponent<Blink>();
         agent = gameObject.GetComponent<NavMeshAgent>();
         dirtSpawner = GameObject.Find("DirtSpawner");
+        startLocation = this.transform.position;
     }
 
     void Update()
@@ -72,6 +76,7 @@ public class Gnome : MonoBehaviour
 				else 
 				{
                     //if player not in range
+                    GoHome();
                     //Wander();
                 }
             }
@@ -92,6 +97,17 @@ public class Gnome : MonoBehaviour
         agent.SetDestination(lastKnownLocation);
         //move at normal speed
         agent.speed = moveSpeed;
+    }
+
+    private void GoHome()
+    {
+        if (Vector3.Distance(transform.position, startLocation) > sightRange * 1.5)
+        {
+            //start moving back to start location
+            agent.SetDestination(startLocation);
+            //move at normal speed
+            agent.speed = moveSpeed;
+        }
     }
 
     private void Wander()
