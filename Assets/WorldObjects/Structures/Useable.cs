@@ -10,8 +10,7 @@ public class Useable : MonoBehaviour
     public List<Item> requiredItems;
     //reference to player gui
     public GUIWrapper playerGUI;
-
-    public bool chandDropped = false;
+	
     public bool activate = false;
     public static GUIWrapper gui;
 
@@ -42,10 +41,10 @@ public class Useable : MonoBehaviour
                 //opens door
                 this.gameObject.GetComponent<DoorInteraction>().DoorKeyOpen();
             }
-            else if (type == UseableType.DIRT)
+            else if (type == UseableType.DIRTTRAP)
             {
 				//Dig the dirt
-				this.gameObject.GetComponent<dirtStuff>().Dig();
+				this.gameObject.GetComponent<scrDirtTrap>().Dig();
             }
 			else if (type == UseableType.GATE)
             {
@@ -69,7 +68,7 @@ public class Useable : MonoBehaviour
 				AudioSource sound;
 				AudioClip boatMotorSound = GameObject.Find("BoatSounds").GetComponent<BoatSounds>().boatMotorSound.clip;
 
-				sound = GameObject.Find("LightFlash").GetComponent<lightningFlash>().PlayClipAt(boatMotorSound, motor.transform.position);
+				sound = GameObject.Find("LightFlash").GetComponent<scrLightFlash>().PlayClipAt(boatMotorSound, motor.transform.position);
 				StartCoroutine(SoundController.FadeAudio(12.0F, SoundController.Fade.Out, sound));
 
                 player.transform.parent = boat.transform;
@@ -92,20 +91,13 @@ public class Useable : MonoBehaviour
             }
             else if (type == UseableType.LIGHT)
             {
-                //toggles light
+                //Toggles light
                 gameObject.GetComponent<Light>().enabled = !gameObject.GetComponent<Light>().enabled;
             }
-            else if (type == UseableType.CHAND)
+            else if (type == UseableType.DROPTRAP)
             {
-                //One time trap
-                chandDropped = true;
-
-                //Drop the chandelier
-                GameObject.Find("Chandelier").GetComponent<Rigidbody>().isKinematic = false;
-                GameObject.Find("Chandelier").GetComponent<Rigidbody>().useGravity = true;
-
-                //Enable trigger only when falling
-                GameObject.Find("Chandelier").GetComponentInChildren<chandStuff>().dropping = true;
+				//Drop the trap
+				this.gameObject.GetComponent<scrDropTrap>().Drop();
             }
             else if (type == UseableType.ELEVATOR)
             {
@@ -127,4 +119,4 @@ public class Useable : MonoBehaviour
     }
 }
 
-public enum UseableType { DOOR, DIRT, GATE, LIGHT, CHAND, ELEVATOR, ATTICBOWL, BOAT};
+public enum UseableType { DOOR, DIRTTRAP, GATE, LIGHT, DROPTRAP, ELEVATOR, ATTICBOWL, BOAT};

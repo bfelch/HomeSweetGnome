@@ -82,13 +82,13 @@
      <Compile Include="Assets\WorldObjects\Entities\Player\Player.cs" />
      <Compile Include="Assets\WorldObjects\Entities\Player\PlayerInteractions.cs" />
      <Compile Include="Assets\WorldObjects\Entities\Player\PlayerMovement.cs" />
-     <Compile Include="Assets\WorldObjects\Environment\Lightning\lightningFlash.cs" />
+     <Compile Include="Assets\WorldObjects\Environment\Lightning\scrLightFlash.cs" />
      <Compile Include="Assets\WorldObjects\Environment\Lightning\weatherScript.cs" />
      <Compile Include="Assets\WorldObjects\Environment\Peninsula\Floater.cs" />
      <Compile Include="Assets\WorldObjects\Environment\Rain\followPlayer.cs" />
-     <Compile Include="Assets\WorldObjects\Environment\Traps\chandStuff.cs" />
-     <Compile Include="Assets\WorldObjects\Environment\Traps\dirtStuff.cs" />
      <Compile Include="Assets\WorldObjects\Environment\Traps\particleDeleter.cs" />
+     <Compile Include="Assets\WorldObjects\Environment\Traps\scrDirtTrap.cs" />
+     <Compile Include="Assets\WorldObjects\Environment\Traps\scrDropTrap.cs" />
      <Compile Include="Assets\WorldObjects\Items\Item.cs" />
      <Compile Include="Assets\WorldObjects\Items\Nodes\Node.cs" />
      <Compile Include="Assets\WorldObjects\Items\Nodes\NodeWrapper.cs" />

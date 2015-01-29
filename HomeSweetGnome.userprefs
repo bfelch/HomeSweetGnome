@@ -1,12 +1,6 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\WorldObjects\Entities\Gargoyle\groundCheck.cs">
-    <Files>
-      <File FileName="Assets\WorldObjects\Entities\Gargoyle\Gargoyle.cs" Line="84" Column="4" />
-      <File FileName="Assets\WorldObjects\Entities\Gargoyle\groundCheck.cs" Line="55" Column="5" />
-      <File FileName="Assets\Heartbeats\scrHeartbeat.cs" Line="6" Column="33" />
-    </Files>
-  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

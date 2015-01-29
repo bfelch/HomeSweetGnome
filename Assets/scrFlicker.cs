@@ -1,14 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-/* This script can be attached to any light to make it flicker.
+/* 
+ * This script can be attached to any light to make it flicker.
  * The game object name must be specified.
- */
+*/
 public class scrFlicker : MonoBehaviour 
 {
 	private float prevFlickerTime = 0.0f; //Used to calculate next light flicker
 	private float nextFlickerTime = 10.0f; //When the light will flicker next
-	private int flicker = 0; //Flicker counter. (flicker 3 times out of 10)
+	private int flicker = 0; //Flicker counter (flicker 3 times out of 10)
 
     private int pattern; //Integer to pick a unique flicker pattern
     private int[][] patterns = {new int[]{1,5,8}, new int[]{2,5,7}, new int[]{3,5,8}}; //Flicker patterns
@@ -32,7 +33,7 @@ public class scrFlicker : MonoBehaviour
 			nextFlickerTime = Random.Range(5, 15); //Set next flicker time
 
 		    pattern = Random.Range(0,3); //Pick a flicker pattern
-            InvokeRepeating("Flicker", 1.0F, 0.1F); //Start flicker pattern
+            InvokeRepeating("Flicker", 1.0F, 0.1F); //Start flicker sequence
 		}
 	}
 
@@ -62,7 +63,7 @@ public class scrFlicker : MonoBehaviour
             }
         }
 
-		flicker++; //Increase flicker count
+		flicker++; //Increase flicker counter
 
 		//Is the flicker counter at 10? (Reset)
 		if(flicker >= 10)

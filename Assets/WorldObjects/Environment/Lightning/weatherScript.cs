@@ -21,7 +21,7 @@ public class weatherScript : MonoBehaviour
 	float oldTime = 0.0F;
 	float newTime = 2.0F;
 
-    lightningFlash lightningScript;
+    scrLightFlash lightningScript;
 
     float rainVolume = 0.07F;
     bool rainFadeIn = false;
@@ -54,7 +54,7 @@ public class weatherScript : MonoBehaviour
 		heavyRain = GameObject.Find("Heavy Rain");
         rain = GameObject.Find("Rain");
 
-        lightningScript = GameObject.Find("LightFlash").GetComponent<lightningFlash>();
+        lightningScript = GameObject.Find("LightFlash").GetComponent<scrLightFlash>();
 	}
 	
 	//Update is called once per frame

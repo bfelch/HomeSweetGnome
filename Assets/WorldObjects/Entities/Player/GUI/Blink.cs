@@ -112,12 +112,7 @@ public class Blink : MonoBehaviour
 
         topLidSlug.transform.position = new Vector3(topLid.transform.position.x, topLid.transform.position.y - (1 - (playerSanity / playerSanityMax)) * topLidDiff, topLid.transform.position.z);
         bottomLidSlug.transform.position = new Vector3(bottomLid.transform.position.x, bottomLid.transform.position.y + (1-(playerSanity / playerSanityMax)) * bottomLidDiff, bottomLid.transform.position.z);
-
-        Debug.Log("Position Top: " + topLidSlug.transform.position);
-        Debug.Log("Position Bottom: " + bottomLidSlug.transform.position);
-
-
-
+		
         //decrease the blink timer
         blinkTimer -= Time.deltaTime;
 
