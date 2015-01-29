@@ -39,17 +39,16 @@
 	<Reference Include="System.Core" />
 	<Reference Include="System.Xml.Linq" />
 	<Reference Include="UnityEngine">
-	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>C:/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>C:/Editor/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\BoatSounds.cs" />
      <Compile Include="Assets\EventScript.cs" />
-     <Compile Include="Assets\FlickerScript.cs" />
-     <Compile Include="Assets\Heartbeats\heartBeat.cs" />
+     <Compile Include="Assets\Heartbeats\scrHeartbeat.cs" />
      <Compile Include="Assets\LightShafts\LightShafts.Resources.cs" />
      <Compile Include="Assets\LightShafts\LightShafts.Utils.cs" />
      <Compile Include="Assets\LightShafts\LightShafts.cs" />
@@ -98,6 +97,7 @@
      <Compile Include="Assets\WorldObjects\Structures\Tunnels\elevatorStuff.cs" />
      <Compile Include="Assets\WorldObjects\Structures\Tunnels\elevatorTrigger.cs" />
      <Compile Include="Assets\WorldObjects\Structures\Useable.cs" />
+     <Compile Include="Assets\scrFlicker.cs" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\BlendOneOne.shader" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\NoiseEffectShaderRGB.shader" />
      <None Include="Assets\WorldObjects\Environment\Peninsula\Materials\trans.shader" />
@@ -184,7 +184,7 @@
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\BlurAndFlares.shader" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\BlendForBloom.shader" />
  <Reference Include="UnityEngine.UI">
- <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
+ <HintPath>C:/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>
