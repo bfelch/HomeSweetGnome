@@ -402,7 +402,7 @@ public class PlayerInteractions : MonoBehaviour
                     //rotate the gnome so it's facing you
                     gnome.transform.eulerAngles = new Vector3(gnome.transform.eulerAngles.x, 346, gnome.transform.eulerAngles.z);
                     //set it's position on the floor
-                    gnome.transform.localPosition = new Vector3(-76.30657f, 39.7061f, 99.21371f);
+                    gnome.transform.position = new Vector3(-76.15f, 12.45f, 98.71f);
                     //enable the nav mesh and the gnome script
                     gnome.GetComponent<NavMeshAgent>().enabled = true;
                     gnome.GetComponent<Gnome>().enabled = true;

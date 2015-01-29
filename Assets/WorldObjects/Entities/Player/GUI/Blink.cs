@@ -5,6 +5,8 @@ public class Blink : MonoBehaviour
 {
     public GameObject topLid;
     public GameObject bottomLid;
+    public GameObject topLidSlug;
+    public GameObject bottomLidSlug;
     public GameObject player;
 
     //how long between heach blink
@@ -22,6 +24,7 @@ public class Blink : MonoBehaviour
 
     //am I showing the GUI
     private bool showGUI = false;
+    private bool refind = true;
 
     //need player health and max health to adjust blink speed
     private float playerSanity;
@@ -32,12 +35,21 @@ public class Blink : MonoBehaviour
     public Texture2D blinkDisplay;
     private bool holdEyes = false;
 
+    private float topLidY;
+    private float bottomLidY;
+
+    private float topLidDiff = .24821f;
+    private float bottomLidDiff = .2255691f;
     // Use this for initialization
     void Start()
     {
         //get lids and players health
         topLid = GameObject.Find("UpperEyeLid");
         bottomLid = GameObject.Find("LowerEyeLid");
+        topLidSlug = GameObject.Find("UpperSlugLid");
+        bottomLidSlug = GameObject.Find("LowerSlugLid");
+        topLidY = topLidSlug.transform.position.y;
+        bottomLidY = bottomLidSlug.transform.position.y;
         player = GameObject.Find("Player");
         playerSanity = gameObject.GetComponent<Player>().sanity;
         playerSanityMax = gameObject.GetComponent<Player>().maxSanity;
@@ -58,6 +70,7 @@ public class Blink : MonoBehaviour
         //get the player sanity values
         playerSanity = gameObject.GetComponent<Player>().sanity;
         playerSlept = gameObject.GetComponent<EndGames>().playerSlept;
+
 
         if (!playerSlept)
         {
@@ -89,6 +102,21 @@ public class Blink : MonoBehaviour
         //adjust the speed depending on player's health
         topLid.animation["BlinkTopNew"].speed = ((playerSanity + 5) / playerSanityMax);
         bottomLid.animation["BlinkBottomNew"].speed = ((playerSanity + 5) / playerSanityMax);
+
+        if (refind)
+        {
+            topLidY = topLidSlug.transform.position.y;
+            bottomLidY = bottomLidSlug.transform.position.y;
+            refind = false;
+        }
+
+        topLidSlug.transform.position = new Vector3(topLid.transform.position.x, topLid.transform.position.y - (1 - (playerSanity / playerSanityMax)) * topLidDiff, topLid.transform.position.z);
+        bottomLidSlug.transform.position = new Vector3(bottomLid.transform.position.x, bottomLid.transform.position.y + (1-(playerSanity / playerSanityMax)) * bottomLidDiff, bottomLid.transform.position.z);
+
+        Debug.Log("Position Top: " + topLidSlug.transform.position);
+        Debug.Log("Position Bottom: " + bottomLidSlug.transform.position);
+
+
 
         //decrease the blink timer
         blinkTimer -= Time.deltaTime;
