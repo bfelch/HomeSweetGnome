@@ -149,10 +149,11 @@ public class LoadUnload : MonoBehaviour
                 "Mansion",
                 "Hedgemaze"
             },
+
             new string[]
             {
                 "Dock"
-            },
+            }
 		};
 
        
@@ -207,6 +208,12 @@ public class LoadUnload : MonoBehaviour
             GameObject go = Instantiate(Resources.Load("Structures/" + tunnelsTrigger[2][0])) as GameObject;
             go.transform.parent = GameObject.Find("Structures").transform;
             go.name = tunnelsTrigger[2][0];
+
+            GameObject.Find("DockGnome1").SetActive(false);
+            GameObject.Find("DockGnome2").SetActive(false);
+            GameObject.Find("DockGnome3").SetActive(false);
+
+
         }
         if (shedTrigExit)
         {
