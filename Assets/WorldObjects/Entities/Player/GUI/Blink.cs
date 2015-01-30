@@ -35,8 +35,9 @@ public class Blink : MonoBehaviour
     public Texture2D blinkDisplay;
     private bool holdEyes = false;
 
-    private float topLidY;
-    private float bottomLidY;
+    private Vector3 topLidSlugPos;
+    private Vector3 bottomLidSlugPos;
+    private float slugPosModifier = .2f;
 
     private float topLidDiff = .24821f;
     private float bottomLidDiff = .2255691f;
@@ -48,8 +49,8 @@ public class Blink : MonoBehaviour
         bottomLid = GameObject.Find("LowerEyeLid");
         topLidSlug = GameObject.Find("UpperSlugLid");
         bottomLidSlug = GameObject.Find("LowerSlugLid");
-        topLidY = topLidSlug.transform.position.y;
-        bottomLidY = bottomLidSlug.transform.position.y;
+        topLidSlugPos = topLidSlug.transform.localPosition;
+        bottomLidSlugPos = bottomLidSlug.transform.localPosition;
         player = GameObject.Find("Player");
         playerSanity = gameObject.GetComponent<Player>().sanity;
         playerSanityMax = gameObject.GetComponent<Player>().maxSanity;
@@ -105,13 +106,19 @@ public class Blink : MonoBehaviour
 
         if (refind)
         {
-            topLidY = topLidSlug.transform.position.y;
-            bottomLidY = bottomLidSlug.transform.position.y;
+            topLidSlugPos = topLidSlug.transform.localPosition;
+            bottomLidSlugPos = bottomLidSlug.transform.localPosition;
             refind = false;
         }
 
-        topLidSlug.transform.position = new Vector3(topLid.transform.position.x, topLid.transform.position.y - (1 - (playerSanity / playerSanityMax)) * topLidDiff, topLid.transform.position.z);
-        bottomLidSlug.transform.position = new Vector3(bottomLid.transform.position.x, bottomLid.transform.position.y + (1-(playerSanity / playerSanityMax)) * bottomLidDiff, bottomLid.transform.position.z);
+        Vector3 curTopSlugPos = topLidSlugPos;
+        curTopSlugPos.y -= (1 - (playerSanity / playerSanityMax)) * slugPosModifier;
+
+        Vector3 curBottomSlugPos = bottomLidSlugPos;
+        curBottomSlugPos.y += (1 - (playerSanity / playerSanityMax)) * slugPosModifier;
+
+        topLidSlug.transform.localPosition = curTopSlugPos;
+        bottomLidSlug.transform.localPosition = curBottomSlugPos;
 		
         //decrease the blink timer
         blinkTimer -= Time.deltaTime;
