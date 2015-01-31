@@ -97,7 +97,7 @@ public class Useable : MonoBehaviour
             else if (type == UseableType.DROPTRAP)
             {
 				//Drop the trap
-				this.gameObject.GetComponent<scrDropTrap>().Drop();
+				transform.parent.Find("DropTrap").gameObject.GetComponent<scrDropTrap>().Drop();
             }
             else if (type == UseableType.ELEVATOR)
             {

@@ -1,12 +1,14 @@
 using UnityEngine;
 using System.Collections;
 
-public class Floater : MonoBehaviour {
+public class Floater : MonoBehaviour 
+{
 	public float waterLevel, floatHeight;
 	public Vector3 buoyancyCentreOffset;
 	public float bounceDamp;
     public GameObject boat;
-	
+
+	/*
     void Update()
     {
         if (boat.transform.position.y > -23)
@@ -17,16 +19,15 @@ public class Floater : MonoBehaviour {
         {
             boat.transform.position = new Vector3(boat.transform.position.x, -25f, boat.transform.position.z);
         }
-
-       
-    }
-	
-
-	void FixedUpdate () {
+    }*/
+    
+	void FixedUpdate () 
+	{
 		Vector3 actionPoint = transform.position + transform.TransformDirection(buoyancyCentreOffset);
 		float forceFactor = 1f - ((actionPoint.y - waterLevel) / floatHeight);
 		
-		if (forceFactor > 0f) {
+		if (forceFactor > 0f) 
+		{
 			Vector3 uplift = -Physics.gravity * (forceFactor - rigidbody.velocity.y * bounceDamp);
 			rigidbody.AddForceAtPosition(uplift, actionPoint);
 		}

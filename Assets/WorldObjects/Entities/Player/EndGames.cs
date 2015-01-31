@@ -132,8 +132,8 @@ public class EndGames : MonoBehaviour {
         gargoyles.SetActive(false);
         lightWind.SetActive(true);
 
-        AudioSource eerie = GameObject.Find("SoundController").GetComponents<AudioSource>()[0];
-		AudioSource birdSound = GameObject.Find("SoundController").GetComponents<AudioSource>()[1];
+        AudioSource eerie = GameObject.Find("GlobalSoundController").GetComponents<AudioSource>()[0];
+		AudioSource birdSound = GameObject.Find("GlobalSoundController").GetComponents<AudioSource>()[1];
 
 		StartCoroutine(SoundController.FadeAudio(2.0F, SoundController.Fade.Out, eerie));
 

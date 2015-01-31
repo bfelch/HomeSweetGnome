@@ -144,7 +144,7 @@ public class PlayerInteractions : MonoBehaviour
             GUI.Box(new Rect(sliderPos, 90, 180, 30), "Adjust Lighting");
             GUI.backgroundColor = Color.white;
             lightingValue = GUI.HorizontalSlider(new Rect(sliderPos, 120, 180, 10), lightingValue, 0, .2f);
-            GameObject.Find("DebugLight").GetComponent<Light>().intensity = lightingValue;
+            GameObject.Find("ContrastLight").GetComponent<Light>().intensity = lightingValue;
 
             GUI.backgroundColor = Color.clear;
             GUI.Box(new Rect(sliderPos, 130, 180, 30), "Adjust X Sensitivity");
@@ -452,7 +452,7 @@ public class PlayerInteractions : MonoBehaviour
         if(col.gameObject.name == "ExitTutorial" && st.tutorial)
         {
             GameObject.Find("Weather").GetComponent<weatherScript>().changeWeather = true; //Start changing the weather randomly
-			GameObject.Find("SoundController").GetComponent<SoundController>().eerieSound.Play(); //Start playing background music
+			GameObject.Find("GlobalSoundController").GetComponent<SoundController>().eerieSound.Play(); //Start playing background music
             st.tutorial = false;
         }
     }
