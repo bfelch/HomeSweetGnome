@@ -63,7 +63,7 @@ public class Useable : MonoBehaviour
             {
                 GameObject player = GameObject.Find("Player");
                 GameObject boat = GameObject.Find("Boat");
-				GameObject motor = GameObject.Find("BoatMotor");
+				GameObject motor = GameObject.Find("Motor");
 
 				AudioSource sound;
 				AudioClip boatMotorSound = GameObject.Find("BoatSounds").GetComponent<BoatSounds>().boatMotorSound.clip;
@@ -71,15 +71,15 @@ public class Useable : MonoBehaviour
 				sound = GameObject.Find("LightFlash").GetComponent<scrLightFlash>().PlayClipAt(boatMotorSound, motor.transform.position);
 				StartCoroutine(SoundController.FadeAudio(12.0F, SoundController.Fade.Out, sound));
 
-                player.transform.parent = boat.transform;
-                player.GetComponent<Animation>().Play("BoatEnding");
-                boat.GetComponent<Animation>().Play("BoatDrive");
+               // player.transform.parent = boat.transform;
+               // player.GetComponent<Animation>().Play("BoatEnding");
+                //boat.GetComponent<Animation>().Play("BoatEnding");
                 //Run the escape function inside the Player script
                 player.GetComponent<EndGames>().Escape();
-                for(int i = 0; i < EndGames.dockGnomes.Length; i++)
-                {
-                    EndGames.dockGnomes[i].SetActive(true);
-                }
+                //for(int i = 0; i < EndGames.dockGnomes.Length; i++)
+                //{
+                    //EndGames.dockGnomes[i].SetActive(true);
+                //}
             }
             else if(type == UseableType.ATTICBOWL)
             {

@@ -204,14 +204,29 @@ public class LoadUnload : MonoBehaviour
         {
             destroyStructures(tunnelsTrigger[0]);
             tunnelsTrigSwitch = false;
+            if (GameObject.Find(tunnelsTrigger[2][0]) == null)
+            {
+                GameObject go = Instantiate(Resources.Load("Structures/" + tunnelsTrigger[2][0])) as GameObject;
+                go.transform.parent = GameObject.Find("Structures").transform;
+                go.name = tunnelsTrigger[2][0];
 
-            GameObject go = Instantiate(Resources.Load("Structures/" + tunnelsTrigger[2][0])) as GameObject;
-            go.transform.parent = GameObject.Find("Structures").transform;
-            go.name = tunnelsTrigger[2][0];
+                GameObject.Find("DockGnome1").SetActive(false);
+                GameObject.Find("DockGnome2").SetActive(false);
+                GameObject.Find("DockGnome3").SetActive(false);
+            }
+            else
+            {
+                Destroy(GameObject.Find("Dock"));
+                GameObject go = Instantiate(Resources.Load("Structures/" + tunnelsTrigger[2][0])) as GameObject;
+                go.transform.parent = GameObject.Find("Structures").transform;
+                go.name = tunnelsTrigger[2][0];
 
-            GameObject.Find("DockGnome1").SetActive(false);
-            GameObject.Find("DockGnome2").SetActive(false);
-            GameObject.Find("DockGnome3").SetActive(false);
+                GameObject.Find("DockGnome1").SetActive(false);
+                GameObject.Find("DockGnome2").SetActive(false);
+                GameObject.Find("DockGnome3").SetActive(false);
+            }
+
+            
 
 
         }
