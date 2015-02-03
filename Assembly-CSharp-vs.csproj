@@ -83,6 +83,7 @@
      <Compile Include="Assets\WorldObjects\Entities\Player\PlayerInteractions.cs" />
      <Compile Include="Assets\WorldObjects\Entities\Player\PlayerMovement.cs" />
      <Compile Include="Assets\WorldObjects\Environment\Fog\AlphaSortedGlobalFog.cs" />
+     <Compile Include="Assets\WorldObjects\Environment\HedgeMaze\HedgemazeGate.cs" />
      <Compile Include="Assets\WorldObjects\Environment\Lightning\scrLightFlash.cs" />
      <Compile Include="Assets\WorldObjects\Environment\Lightning\weatherScript.cs" />
      <Compile Include="Assets\WorldObjects\Environment\Peninsula\Floater.cs" />
