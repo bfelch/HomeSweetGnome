@@ -228,6 +228,7 @@ public class PlayerInteractions : MonoBehaviour
                                 Vector3 pos = transform.position;
 
                                 slot.heldItem.transform.position = pos + Camera.main.transform.forward;
+                                slot.heldItem.gameObject.GetComponent<Rigidbody>().isKinematic = false;
 
                                 slot.heldItem = null;
                             }

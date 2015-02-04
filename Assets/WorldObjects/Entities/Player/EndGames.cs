@@ -63,9 +63,9 @@ public class EndGames : MonoBehaviour {
 	void Update () {
         if (experimentComplete) {
             Light light = GameObject.Find("Moonlight").GetComponent<Light>();
-
+            GlobalFog fog = GameObject.Find("Main Camera").GetComponent<GlobalFog>();
             light.color = Color.Lerp(new Color(.16f, .16f, .2f, 1f), Color.white, experimentColorFade / 500f);
-
+            fog.globalDensity = Mathf.Lerp(.7f, 0f, experimentColorFade / 300f);
             experimentColorFade++;
         }
 	}
