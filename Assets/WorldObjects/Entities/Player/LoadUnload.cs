@@ -164,7 +164,6 @@ public class LoadUnload : MonoBehaviour
 	{
         if(shedTrigSwitch)
         {
-            //Issue here with loading
             destroyStructures(shedTrigger[0]);
             shedTrigSwitch = false;
 
@@ -373,10 +372,13 @@ public class LoadUnload : MonoBehaviour
         if (col.name == "ShedTrigger")
         {
             for (int i = 0; i < shedTrigger[2].Length; i++)
-            { 
-                GameObject go = Instantiate(Resources.Load("Structures/" + shedTrigger[2][i])) as GameObject;
-                go.transform.parent = GameObject.Find("Structures").transform;
-                go.name = shedTrigger[2][i];
+            {
+                if (GameObject.Find(shedTrigger[2][i]) == null)
+                {
+                    GameObject go = Instantiate(Resources.Load("Structures/" + shedTrigger[2][i])) as GameObject;
+                    go.transform.parent = GameObject.Find("Structures").transform;
+                    go.name = shedTrigger[2][i];
+                }
             }
             shedTrigExit = true;
         }
@@ -385,45 +387,60 @@ public class LoadUnload : MonoBehaviour
         {
             for (int i = 0; i < hedgeTrigger[1].Length; i++)
             {
-                GameObject go = Instantiate(Resources.Load("Structures/" + hedgeTrigger[1][i])) as GameObject;
-                go.transform.parent = GameObject.Find("Structures").transform;
-                go.name = hedgeTrigger[1][i];
+                if (GameObject.Find(hedgeTrigger[1][i]) == null)
+                {
+                    GameObject go = Instantiate(Resources.Load("Structures/" + hedgeTrigger[1][i])) as GameObject;
+                    go.transform.parent = GameObject.Find("Structures").transform;
+                    go.name = hedgeTrigger[1][i];
+                }
             }
         }
         if (col.name == "GreenTrigger")
         {
             for (int i = 0; i < greenTrigger[1].Length; i++)
             {
-                GameObject go = Instantiate(Resources.Load("Structures/" + greenTrigger[1][i])) as GameObject;
-                go.transform.parent = GameObject.Find("Structures").transform;
-                go.name = greenTrigger[1][i];
+                if (GameObject.Find(greenTrigger[1][i]) == null)
+                {
+                    GameObject go = Instantiate(Resources.Load("Structures/" + greenTrigger[1][i])) as GameObject;
+                    go.transform.parent = GameObject.Find("Structures").transform;
+                    go.name = greenTrigger[1][i];
+                }
             }
         }
         if (col.name == "MansionGreen")
         {
             for (int i = 0; i < mansionGreen[1].Length; i++)
             {
-                GameObject go = Instantiate(Resources.Load("Structures/" + mansionGreen[1][i])) as GameObject;
-                go.transform.parent = GameObject.Find("Structures").transform;
-                go.name = mansionGreen[1][i];
+                if (GameObject.Find(mansionGreen[1][i]) == null)
+                {
+                    GameObject go = Instantiate(Resources.Load("Structures/" + mansionGreen[1][i])) as GameObject;
+                    go.transform.parent = GameObject.Find("Structures").transform;
+                    go.name = mansionGreen[1][i];
+                }
             }
         }
         if (col.name == "MansionHedge")
         {
             for (int i = 0; i < mansionHedge[1].Length; i++)
             {
-                GameObject go = Instantiate(Resources.Load("Structures/" + mansionHedge[1][i])) as GameObject;
-                go.transform.parent = GameObject.Find("Structures").transform;
-                go.name = mansionHedge[1][i];
+                if (GameObject.Find(mansionHedge[1][i]) == null)
+                {
+                    GameObject go = Instantiate(Resources.Load("Structures/" + mansionHedge[1][i])) as GameObject;
+                    go.transform.parent = GameObject.Find("Structures").transform;
+                    go.name = mansionHedge[1][i];
+                }
             }
         }
         if (col.name == "TunnelsTrigger")
         {
             for (int i = 0; i < tunnelsTrigger[1].Length; i++)
             {
-                GameObject go = Instantiate(Resources.Load("Structures/" + tunnelsTrigger[1][i])) as GameObject;
-                go.transform.parent = GameObject.Find("Structures").transform;
-                go.name = tunnelsTrigger[1][i];
+                if (GameObject.Find(tunnelsTrigger[1][i]) == null)
+                {
+                    GameObject go = Instantiate(Resources.Load("Structures/" + tunnelsTrigger[1][i])) as GameObject;
+                    go.transform.parent = GameObject.Find("Structures").transform;
+                    go.name = tunnelsTrigger[1][i];
+                }
             }
             tunnelsTrigExit = true;
         }
