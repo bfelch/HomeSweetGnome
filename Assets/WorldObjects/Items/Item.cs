@@ -18,6 +18,11 @@ public class Item : MonoBehaviour {
 	void Update () {
 	
 	}
+
+    void OnCollisionEnter(Collision col)
+    {
+        this.GetComponent<Rigidbody>().isKinematic = true;
+    }
 }
 
 public enum ItemType { BOAT, ATTIC, GATE, MISC, NONE };

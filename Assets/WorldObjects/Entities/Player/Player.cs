@@ -67,7 +67,8 @@ public class Player : MonoBehaviour
         }
         else
         {
-            this.GetComponent<LoadUnload>().enabled = true;
+            StartCoroutine(WaitToLoad(3.0F));
+            //this.GetComponent<LoadUnload>().enabled = true;
             LoadUnload.iAmLoaded = true;
         }
 
@@ -87,6 +88,7 @@ public class Player : MonoBehaviour
             //Crouch();
             Push();
         }
+        
     }
 
     //Note: Bug: enemies will not pathfind close enough to you to actually register the collision.
@@ -260,6 +262,16 @@ public class Player : MonoBehaviour
 		//Load the main menu
 		Application.LoadLevel ("MainMenu");
 	}
+
+    IEnumerator WaitToLoad(float waitTime)
+    {
+        //Wait before loading the main menu
+        yield return new WaitForSeconds(waitTime);
+
+        //Enable loading and uloading
+        this.GetComponent<LoadUnload>().enabled = true;
+
+    }
 
     public void flashFade()
     {

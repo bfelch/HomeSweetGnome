@@ -20,8 +20,9 @@ public class HedgemazeGate : MonoBehaviour
     {
         if(col.name == "Player")
         {
-			gate.animation["HedgeGateOpen"].speed = 1.0f; //Play animation fowards
-			gate.animation["HedgeGateOpen"].time = 0; //Start from beginning of animation
+            Debug.Log("in player");
+			gate.animation["HedgeGateOpen"].speed = 2f; //Play animation fowards
+			//gate.animation["HedgeGateOpen"].time = 0; //Start from beginning of animation
             gate.Play("HedgeGateOpen");
         }
     }
@@ -30,8 +31,12 @@ public class HedgemazeGate : MonoBehaviour
     {
         if (col.name == "Player")
         {
-			gate.animation["HedgeGateOpen"].speed = -1.0f; //Play animation backwards
-			gate.animation["HedgeGateOpen"].time = gate.animation["HedgeGateOpen"].length;; //Start from beginning of animation
+			gate.animation["HedgeGateOpen"].speed = -2f; //Play animation backwards
+            if (!gate.animation.IsPlaying("HedgeGateOpen"))
+            {
+                gate.animation["HedgeGateOpen"].time = gate.animation["HedgeGateOpen"].length;
+           }
+			//gate.animation["HedgeGateOpen"].time = gate.animation["HedgeGateOpen"].length; //Start from beginning of animation
 			gate.Play("HedgeGateOpen");
         }
     }
