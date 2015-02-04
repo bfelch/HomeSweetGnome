@@ -1,45 +1,38 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class HedgemazeGate : MonoBehaviour {
+public class HedgemazeGate : MonoBehaviour 
+{
+    Animation gate; //The animator component
 
-    Animator gate;
-	// Use this for initialization
-	void Start () {
-        gate = GameObject.Find("HedgemazeGate").GetComponent<Animator>();
+	void Start()
+	{
+		gate = GetComponent<Animation>();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+
+	//Calls when object is enabled or set to active
+	void OnEnable()
+	{
+		//gate = GetComponent<Animator>();
 	}
 
     void OnTriggerEnter(Collider col)
     {
-        Debug.Log("should be opening");
-        if(col.name == "OpenGate")
+        if(col.name == "Player")
         {
-            gate.recorderStartTime = 1;
-            gate.recorderStopTime = 90;
-            gate.Play("Open");
- 
+			gate.animation["HedgeGateOpen"].speed = 1.0f; //Play animation fowards
+			gate.animation["HedgeGateOpen"].time = 0; //Start from beginning of animation
+            gate.Play("HedgeGateOpen");
         }
-
-
     }
 
     void OnTriggerExit(Collider col)
     {
-        Debug.Log("should be closing");
-
-        if (col.name == "OpenGate")
+        if (col.name == "Player")
         {
-            gate.recorderStartTime = 90;
-            gate.recorderStopTime = 1;
-            gate.Play("Open");
-
+			gate.animation["HedgeGateOpen"].speed = -1.0f; //Play animation backwards
+			gate.animation["HedgeGateOpen"].time = gate.animation["HedgeGateOpen"].length;; //Start from beginning of animation
+			gate.Play("HedgeGateOpen");
         }
-
-
     }
 }

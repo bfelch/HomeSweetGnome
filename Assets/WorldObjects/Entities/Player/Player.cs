@@ -70,6 +70,9 @@ public class Player : MonoBehaviour
             this.GetComponent<LoadUnload>().enabled = true;
             LoadUnload.iAmLoaded = true;
         }
+
+		//Ensure game is not frozen
+		Time.timeScale = 1.0F;
     }
 
     // Update is called once per frame

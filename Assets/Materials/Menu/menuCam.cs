@@ -233,7 +233,7 @@ public class menuCam : MonoBehaviour
 
                 keyText.guiText.enabled = false; //Hide GUI text
                 animation["mainToCredits"].speed = -1.0f; //Play animation backwards
-                animation["mainToCredits"].time = animation["mainToCredits"].length; ; //Start from end of animation
+                animation["mainToCredits"].time = animation["mainToCredits"].length; //Start from end of animation
                 cam.animation.Play("mainToCredits"); //Play
 
                 camMoving = true; //Cam is moving

@@ -62,8 +62,9 @@ ModelImporter:
     400054: Jnt_R_Half_01
     400056: Root_01
     4300000: Gate4
-    7400000: Take 001
+    7400000: HedgeGateOpen
     9500000: //RootNode
+    11100000: //RootNode
     13700000: Gate4
   materials:
     importMaterials: 1
@@ -80,7 +81,91 @@ ModelImporter:
     animationScaleError: .5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: HedgeGateOpen
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 90
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Gate4
+        weight: 1
+      - path: Root_01
+        weight: 1
+      - path: Root_01/Jnt_L_Half_01
+        weight: 1
+      - path: Root_01/Jnt_L_Half_01/Jnt_Gate_L_A_01
+        weight: 1
+      - path: Root_01/Jnt_L_Half_01/Jnt_Gate_L_A_01/be_Gate_L_A_01
+        weight: 1
+      - path: Root_01/Jnt_L_Half_01/Jnt_Gate_L_B_01
+        weight: 1
+      - path: Root_01/Jnt_L_Half_01/Jnt_Gate_L_B_01/be_Gate_L_B_01
+        weight: 1
+      - path: Root_01/Jnt_L_Half_01/Jnt_Gate_L_C_01
+        weight: 1
+      - path: Root_01/Jnt_L_Half_01/Jnt_Gate_L_C_01/be_Gate_L_C_01
+        weight: 1
+      - path: Root_01/Jnt_L_Half_01/Jnt_Gate_L_D_01
+        weight: 1
+      - path: Root_01/Jnt_L_Half_01/Jnt_Gate_L_D_01/be_Gate_L_D_01
+        weight: 1
+      - path: Root_01/Jnt_L_Half_01/Jnt_Gate_L_E_01
+        weight: 1
+      - path: Root_01/Jnt_L_Half_01/Jnt_Gate_L_E_01/be_Gate_L_E_01
+        weight: 1
+      - path: Root_01/Jnt_L_Half_01/Jnt_Gate_L_F_01
+        weight: 1
+      - path: Root_01/Jnt_L_Half_01/Jnt_Gate_L_F_01/be_Gate_L_F_01
+        weight: 1
+      - path: Root_01/Jnt_R_Half_01
+        weight: 1
+      - path: Root_01/Jnt_R_Half_01/Jnt_Gate_R_A_01
+        weight: 1
+      - path: Root_01/Jnt_R_Half_01/Jnt_Gate_R_A_01/be_Gate_R_A_01
+        weight: 1
+      - path: Root_01/Jnt_R_Half_01/Jnt_Gate_R_B_01
+        weight: 1
+      - path: Root_01/Jnt_R_Half_01/Jnt_Gate_R_B_01/be_Gate_R_B_01
+        weight: 1
+      - path: Root_01/Jnt_R_Half_01/Jnt_Gate_R_C_01
+        weight: 1
+      - path: Root_01/Jnt_R_Half_01/Jnt_Gate_R_C_01/be_Gate_R_C_01
+        weight: 1
+      - path: Root_01/Jnt_R_Half_01/Jnt_Gate_R_D_01
+        weight: 1
+      - path: Root_01/Jnt_R_Half_01/Jnt_Gate_R_D_01/be_Gate_R_D_01
+        weight: 1
+      - path: Root_01/Jnt_R_Half_01/Jnt_Gate_R_E_01
+        weight: 1
+      - path: Root_01/Jnt_R_Half_01/Jnt_Gate_R_E_01/be_Gate_R_E_01
+        weight: 1
+      - path: Root_01/Jnt_R_Half_01/Jnt_Gate_R_F_01
+        weight: 1
+      - path: Root_01/Jnt_R_Half_01/Jnt_Gate_R_F_01/be_Gate_R_F_01
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
     isReadable: 1
   meshes:
     lODScreenPercentages: []
@@ -116,6 +201,6 @@ ModelImporter:
     feetSpacing: 0
     rootMotionBoneName: 
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 1
   additionalBone: 0
   userData: 
