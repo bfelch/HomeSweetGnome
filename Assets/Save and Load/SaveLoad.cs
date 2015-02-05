@@ -345,12 +345,12 @@ public class SaveLoad : MonoBehaviour
             useable[m].transform.rotation = new Quaternion(data.useableRotations[m, 0], data.useableRotations[m, 1], data.useableRotations[m, 2], data.useableRotations[m, 3]);
             if (m == 0)
             {
-                Debug.Log("First While Loading: " + useable[m].name);
+                //Debug.Log("First While Loading: " + useable[m].name);
             }
             if (useable[m].name == "ShedDoor")
             {
-                Debug.Log("Shed Door Position While Loading: " + useable[m].transform.localPosition.y);
-                Debug.Log("Loaded Number: " + m);
+                //Debug.Log("Shed Door Position While Loading: " + useable[m].transform.localPosition.y);
+                //Debug.Log("Loaded Number: " + m);
             }
         }
 

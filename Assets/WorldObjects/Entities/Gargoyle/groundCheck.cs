@@ -14,7 +14,7 @@ public class groundCheck : MonoBehaviour
 		//Get distance to ground
 		distToGround = collider.bounds.extents.y;
 		//Get distance to sides
-		distToEdge = collider.bounds.extents.x;
+		//distToEdge = collider.bounds.extents.x;
 	}
 	
 	// Update is called once per frame
@@ -22,7 +22,6 @@ public class groundCheck : MonoBehaviour
 	{
 		if(!IsGrounded())
 		{
-			Debug.Log("Falling");
 			falling = true;
 		}
 		else
@@ -39,17 +38,20 @@ public class groundCheck : MonoBehaviour
 	{
 		//Emit shatter effect
 		Instantiate(shatterEffect, new Vector3(transform.position.x, transform.position.y - 0.8F, transform.position.z), shatterEffect.transform.rotation);
-		
+
+		Debug.Log (transform.parent.gameObject.name);
+
 		//Get the gargoyle head game object
-		GameObject gargoyleHead = transform.parent.Find("GargoyleHead").gameObject;
+		GameObject gargoyleHead = transform.parent.Find("Head").gameObject;
+		GameObject gargoyleHeadItem = transform.parent.Find("GargoyleHead").gameObject;
 		
 		//Remove gargoyle script component
-		Destroy (gargoyleHead.GetComponent<Gargoyle>());
+		Destroy(gargoyleHead.GetComponent<Gargoyle>());
 		
 		//Remove children
 		foreach(Transform child in gargoyleHead.transform)
 		{
-			if(child.gameObject.name != "GargoyleHeadGraphics")
+			if(child.gameObject.name != "GargoyleHead")
 			{
 				Destroy(child.gameObject);
 			}
@@ -59,20 +61,17 @@ public class groundCheck : MonoBehaviour
 		Destroy(gargoyleHead.GetComponent<AudioSource>());
 		
 		//Apply physics to the head
-		gargoyleHead.GetComponent<Rigidbody>().isKinematic = false;
-		gargoyleHead.GetComponent<Rigidbody>().useGravity = true;
+		gargoyleHeadItem.GetComponent<Rigidbody>().isKinematic = false;
+		gargoyleHeadItem.GetComponent<Rigidbody>().useGravity = true;
 		
-		//Add useable script
-		gargoyleHead.AddComponent<Item>();
+		//Enable useable script
+		gargoyleHeadItem.GetComponent<Item>().enabled = true;;
 		
 		//Change tag
-		gargoyleHead.tag = "PickUp";
-
-		//Change item type
-		gargoyleHead.GetComponent<Item> ().type = ItemType.ATTIC;
+		gargoyleHeadItem.tag = "PickUp";
 		
 		//Move head to item list
-		gargoyleHead.transform.parent = GameObject.Find("Items").transform;
+		gargoyleHeadItem.transform.parent = GameObject.Find("Items").transform;
 		
 		//Delete gargoyle
 		Destroy(transform.parent.gameObject);
@@ -89,8 +88,10 @@ public class groundCheck : MonoBehaviour
 		//Invert bitmask to only ignore this layer
 		ignoreMask = ~ignoreMask;
 
-		Debug.DrawRay(transform.position, Vector3.down * (distToGround + 5.1F), Color.red);
+		Debug.Log (transform);
+		Debug.DrawRay (transform.position, Vector3.down * (distToGround + 0.1F), Color.cyan);
 		//Debug.DrawRay(new Vector3(transform.position.x, transform.position.y, transform.position.z + distToEdge), Vector3.down * (distToGround + 0.1F), Color.red);
+		//Debug.DrawRay(new Vector3(transform.position.x, transform.position.y, transform.position.z - distToEdge), Vector3.down * (distToGround + 0.1F), Color.red);
 
 		if(Physics.Raycast(transform.position, Vector3.down, distToGround + 2.1F, ignoreMask)
 		   || Physics.Raycast(new Vector3(transform.position.x, transform.position.y, transform.position.z + distToEdge), Vector3.down, distToGround + 2.1F, ignoreMask)

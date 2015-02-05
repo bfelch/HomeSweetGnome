@@ -90,7 +90,7 @@ public class Gargoyle : MonoBehaviour
 			//If one true, screech
 			{
 				activeTarget = hit.collider.gameObject; //Store item being looked at
-				
+
 				//Is the object the player?
 				if(activeTarget.tag == "Player")
 				{
@@ -219,7 +219,7 @@ public class Gargoyle : MonoBehaviour
 			player.GetComponent<Player>().charMotor.movement.maxBackwardsSpeed = 6.0F;
 			
 			//Remove the blur
-			player.GetComponentInChildren<BlurEffect> ().enabled = false;
+			player.GetComponentInChildren<BlurEffect>().enabled = false;
 
 			//On screen damage warning
 			player.GetComponent<GUIDamage>().enterCollider = false;
@@ -228,7 +228,7 @@ public class Gargoyle : MonoBehaviour
 			shakeScript.EndShake();
 			
 			//Change gargoyle light color
-			eyeLight.light.color = Color.yellow;
+			eyeLight.light.color = Color.white;
 			
 			//No longer alerted, adjust to normal scouting rotation
 			timeLost = 0.0F;
