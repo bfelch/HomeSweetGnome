@@ -184,6 +184,7 @@ public class SaveLoad : MonoBehaviour
     }
     public void saveGameValues(Game data)
     {
+        Debug.Log("Saving");
         savingStatus = true;
         //retreive all the objects that need data saved from the scene
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Gnome");
@@ -296,6 +297,17 @@ public class SaveLoad : MonoBehaviour
         ItemSlot[] held = GameObject.Find("Player").GetComponent<PlayerInteractions>().playerGUI.slots;
         KeyRing keyRing = GameObject.Find("Player").GetComponent<PlayerInteractions>().playerGUI.keyRing;
 
+        if (data.gnomeLocations.GetLength(0) != enemies.Length)
+        {
+            int lengthDiff = enemies.Length - data.gnomeLocations.GetLength(0);
+            for(int i = 0; i < lengthDiff; i++)
+            {
+                DestroyImmediate(enemies[i]);
+            }
+            enemies = GameObject.FindGameObjectsWithTag("Gnome");
+
+        
+        }
         //loop through the enemies(gnomes)
         for (int k = 0; k < enemies.Length; k++)
         {
@@ -323,9 +335,18 @@ public class SaveLoad : MonoBehaviour
             //if their was an item, set the item in the GUI and remove it from the scene
             else
             {
-                held[i].heldItem = GameObject.Find(data.heldItems[i]).GetComponent<Item>();
-                held[i].heldItem.name = data.heldItems[i];
-                GameObject.Find(data.heldItems[i]).SetActive(false);
+                Debug.Log(data.heldItems[i]);
+                if (data.heldItems[i] != "GargoyleHead")
+                {
+                    held[i].heldItem = GameObject.Find(data.heldItems[i]).GetComponent<Item>();
+                    held[i].heldItem.name = data.heldItems[i];
+                    GameObject.Find(data.heldItems[i]).SetActive(false);
+                }
+                else
+                {
+                    Destroy(GameObject.Find("Gargoyle"));
+                    held[i].heldItem.name = data.heldItems[i];
+                }
             }
         }
 

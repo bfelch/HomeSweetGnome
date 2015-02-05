@@ -57,7 +57,7 @@ public class GnomeParent : MonoBehaviour
         {
             //set the model number to 2
             modelNumber = 2;
-
+            gnomes = GameObject.FindGameObjectsWithTag("Gnome");
             //loop through the gnomes to change all their model
             for (int i = 0; i < gnomes.Length; i++)
             {
@@ -84,6 +84,7 @@ public class GnomeParent : MonoBehaviour
         {
             //set the model number to 2
             modelNumber = 1;
+            gnomes = GameObject.FindGameObjectsWithTag("Gnome");
             //loop through the gnomes to change all their model
             for (int i = 0; i < gnomes.Length; i++)
             {

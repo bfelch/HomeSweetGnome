@@ -139,7 +139,6 @@ public class EndGames : MonoBehaviour {
 
 		birdSound.Play();
 		StartCoroutine(SoundController.FadeAudio(12.0F, SoundController.Fade.In, birdSound));
-		Debug.Log ("Hello");
 
         StartCoroutine(ExperimentWin(5.0F));
 
@@ -151,9 +150,7 @@ public class EndGames : MonoBehaviour {
         if (experimentComplete)
         {
             int second = (int)time;
-            int minute = second / 60;
-            int hour = minute / 60;
-            winTextExperiment.text = "Experiment Success! \n You completed the experiment in " + hour.ToString("00") + ":" + minute.ToString("00") + ":" + second.ToString("00");
+            winTextExperiment.text = "Experiment Success! \n You completed the experiment in " + getTimeString(second);
             //create a new color with the changed alpha value
             Color changing = new Color(winTextExperiment.color.r, winTextExperiment.color.g, winTextExperiment.color.b, fadeIn);
 
@@ -169,9 +166,7 @@ public class EndGames : MonoBehaviour {
         {
 
             int second = (int)time;
-            int minute = second / 60;
-            int hour = minute / 60;
-            winTextEscaped.text = "You escaped. \n You made it out in " + hour.ToString("00") + ":" + minute.ToString("00") + ":" + second.ToString("00");
+            winTextEscaped.text = "You escaped. \n You made it out in " + getTimeString(second);
 
             //create a new color with the changed alpha value
             Color changing = new Color(winTextEscaped.color.r, winTextEscaped.color.g, winTextEscaped.color.b, fadeIn);
@@ -187,9 +182,7 @@ public class EndGames : MonoBehaviour {
         {
 
             int second = (int)time;
-            int minute = second / 60;
-            int hour = minute / 60;
-            deathTextSleep.text = "You fell asleep... \n You stayed awake for " + hour.ToString("00") + ":" + minute.ToString("00") + ":" + second.ToString("00");
+            deathTextSleep.text = "You fell asleep... \n You stayed awake for " + getTimeString(second);
 
             //create a new color with the changed alpha value
             Color changing = new Color(deathTextSleep.color.r, deathTextSleep.color.g, deathTextSleep.color.b, fadeIn);
@@ -207,9 +200,8 @@ public class EndGames : MonoBehaviour {
         {
 
             int second = (int)time;
-            int minute = second / 60;
-            int hour = minute / 60;
-            deathTextFall.text = "You fell to your death... \n You lasted for " + hour.ToString("00") + ":" + minute.ToString("00") + ":" + second.ToString("00");
+           
+            deathTextFall.text = "You fell to your death... \n You lasted for " + getTimeString(second);
 
             //create a new color with the changed alpha value
             Color changing = new Color(deathTextFall.color.r, deathTextFall.color.g, deathTextFall.color.b, fadeIn);
@@ -316,6 +308,7 @@ public class EndGames : MonoBehaviour {
         int second = (int)time;
         int minute = second / 60;
         int hour = minute / 60;
+        second = second % 60;
 
         return hour.ToString("00") + ":" + minute.ToString("00") + ":" + second.ToString("00");
     }

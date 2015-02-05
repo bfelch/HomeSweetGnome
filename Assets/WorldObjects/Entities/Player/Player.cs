@@ -64,6 +64,7 @@ public class Player : MonoBehaviour
         if(PlayerPrefs.GetInt("LoadGame") == 1)
         {
             this.GetComponent<SaveLoad>().Load();
+            this.GetComponent<ShedTutorial>().tutorial = false;
         }
         else
         {

@@ -217,7 +217,7 @@ public class PlayerInteractions : MonoBehaviour
                         if (slot.heldItem != null) {
                             box.width *= 1.5f;
                             box.height *= 2;
-                            GUI.Box(box, slot.heldItem.name + "\nDrop (Right Click)");
+                            GUI.Box(box, getImprovedName(slot.heldItem.name) + "\nDrop (Right Click)");
 
                             if (Input.GetMouseButtonUp(1)) {
 
@@ -246,18 +246,8 @@ public class PlayerInteractions : MonoBehaviour
             {
                 //Strip target name
                 string targetName = activeTarget.name;
-                string improvedName = "";
-                for (int i = 0; i < targetName.Length; i++)
-                {
-                    if (char.IsUpper(targetName[i]) && i != 0)
-                    {
-                        improvedName += " ";
-                    }
-                    improvedName += targetName[i];
-                }
-                //this.GetComponent<Player>().flashFade();
                 //Display item name
-                GUI.Box(new Rect(0, Screen.height - Screen.height / 2 + 150, Screen.width, 30), improvedName);
+                GUI.Box(new Rect(0, Screen.height - Screen.height / 2 + 150, Screen.width, 30), getImprovedName(targetName));
             }
             else if(lookingAtGnome && Gnome.gnomeLevel == 1)
             {
@@ -491,6 +481,21 @@ public class PlayerInteractions : MonoBehaviour
         mouseLook.enabled = !showGUI;
         cameraLook.enabled = !showGUI;
         Screen.lockCursor = !showGUI;
+    }
+
+    string getImprovedName(string targetName)
+    {
+        string improvedName = "";
+        for (int i = 0; i < targetName.Length; i++)
+        {
+            if (char.IsUpper(targetName[i]) && i != 0)
+            {
+                improvedName += " ";
+            }
+            improvedName += targetName[i];
+        }
+
+        return improvedName;
     }
 
 

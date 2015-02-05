@@ -39,7 +39,7 @@ public class groundCheck : MonoBehaviour
 		//Emit shatter effect
 		Instantiate(shatterEffect, new Vector3(transform.position.x, transform.position.y - 0.8F, transform.position.z), shatterEffect.transform.rotation);
 
-		Debug.Log (transform.parent.gameObject.name);
+		//Debug.Log (transform.parent.gameObject.name);
 
 		//Get the gargoyle head game object
 		GameObject gargoyleHead = transform.parent.Find("Head").gameObject;
@@ -88,7 +88,7 @@ public class groundCheck : MonoBehaviour
 		//Invert bitmask to only ignore this layer
 		ignoreMask = ~ignoreMask;
 
-		Debug.Log (transform);
+		//Debug.Log (transform);
 		Debug.DrawRay (transform.position, Vector3.down * (distToGround + 0.1F), Color.cyan);
 		//Debug.DrawRay(new Vector3(transform.position.x, transform.position.y, transform.position.z + distToEdge), Vector3.down * (distToGround + 0.1F), Color.red);
 		//Debug.DrawRay(new Vector3(transform.position.x, transform.position.y, transform.position.z - distToEdge), Vector3.down * (distToGround + 0.1F), Color.red);
