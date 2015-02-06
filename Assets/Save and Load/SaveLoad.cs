@@ -214,15 +214,14 @@ public class SaveLoad : MonoBehaviour
             data.gnomeRotations[k, 3] = enemies[k].transform.rotation.w;
         }
 
-
         data.gargoyleLocations = new float[gargoyles.Length/6,3];
         for (int k = 0; k < gargoyles.Length; k++)
         {
             if (gargoyles[k].name == "Gargoyle")
             {
-                data.gargoyleLocations[k, 0] = gargoyles[k].transform.position.x;
-                data.gargoyleLocations[k, 1] = gargoyles[k].transform.position.y;
-                data.gargoyleLocations[k, 2] = gargoyles[k].transform.position.z;
+                data.gargoyleLocations[k/6, 0] = gargoyles[k/6].transform.position.x;
+                data.gargoyleLocations[k/6, 1] = gargoyles[k/6].transform.position.y;
+                data.gargoyleLocations[k/6, 2] = gargoyles[k/6].transform.position.z;
             }
         }
 
@@ -344,6 +343,7 @@ public class SaveLoad : MonoBehaviour
                 if (gargoyles[i].name == "Body")
                 {
                     gargoyles[i].GetComponent<groundCheck>().BreakApart(false);
+                    i = (6-(i % 6)) + i;
                 }
 
             }
@@ -355,7 +355,7 @@ public class SaveLoad : MonoBehaviour
             if (gargoyles[k].name == "Gargoyle")
             {
                 //move the garoyles into position
-                //gargoyles[k].transform.position = new Vector3(data.gargoyleLocations[k, 0], data.gargoyleLocations[k, 1], data.gargoyleLocations[k, 2]);
+                gargoyles[k/6].transform.position = new Vector3(data.gargoyleLocations[k/6, 0], data.gargoyleLocations[k/6, 1], data.gargoyleLocations[k/6, 2]);
             }
         }
         //position the player
