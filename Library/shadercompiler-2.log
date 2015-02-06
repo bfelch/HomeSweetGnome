@@ -1,14 +1,80 @@
-Base path: C:/Program Files (x86)/Unity/Editor/Data
-Pipe name: \\.\pipe\UnityShaderCompiler-2-7756
+Base path: C:/Editor/Data
+Pipe name: \\.\pipe\UnityShaderCompiler-2-2668
 Cmd: getPlatforms
 Cmd: compileSnippet
-  api=1 type=0 insize=912 outsize=145 kw= ok=1
+  api=0 type=0 insize=912 outsize=365 kw= ok=1
 Cmd: compileSnippet
-  api=0 type=1 insize=912 outsize=200 kw= ok=1
+  api=0 type=0 insize=867 outsize=365 kw= ok=1
 Cmd: compileSnippet
-  api=1 type=0 insize=867 outsize=145 kw= ok=1
+  api=0 type=0 insize=5928 outsize=711 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_ON DIRLIGHTMAP_OFF ok=1
 Cmd: compileSnippet
-  api=8 type=1 insize=867 outsize=837 kw= ok=1
+  api=0 type=1 insize=5928 outsize=1342 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_OFF DIRLIGHTMAP_OFF ok=1
+Cmd: compileSnippet
+  api=0 type=0 insize=3848 outsize=834 kw=DIRECTIONAL ok=1
+Cmd: compileSnippet
+  api=0 type=1 insize=3848 outsize=737 kw=DIRECTIONAL ok=1
+Cmd: compileSnippet
+  api=0 type=1 insize=3272 outsize=159 kw= ok=1
+Cmd: compileSnippet
+  api=0 type=0 insize=5589 outsize=1179 kw=LIGHTMAP_OFF DIRLIGHTMAP_OFF HDR_LIGHT_PREPASS_ON ok=1
+Cmd: compileSnippet
+  api=0 type=0 insize=2950 outsize=3270 kw=LIGHT_ON_SCREEN DIRECTIONAL_SHAFTS ok=1
+Cmd: compileSnippet
+  api=0 type=1 insize=3359 outsize=944 kw=WATER_REFLECTIVE ok=1
+Cmd: compileSnippet
+  api=0 type=0 insize=6544 outsize=6352 kw=LIGHT_ON_SCREEN SPOT_SHAFTS SHOW_SAMPLES_OFF FRUSTUM_SHAFTS ok=1
+Cmd: compileSnippet
+  api=1 type=0 insize=6544 outsize=179 kw=DIRECTIONAL_SHAFTS LIGHT_OFF_SCREEN SHOW_SAMPLES_OFF QUAD_SHAFTS ok=1
+Cmd: compileSnippet
+  api=0 type=0 insize=6544 outsize=7025 kw=SPOT_SHAFTS LIGHT_OFF_SCREEN SHOW_SAMPLES_OFF QUAD_SHAFTS ok=1
+Cmd: compileSnippet
+  api=0 type=0 insize=6544 outsize=7444 kw=SPOT_SHAFTS LIGHT_OFF_SCREEN FRUSTUM_SHAFTS SHOW_SAMPLES_ON ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=6544 outsize=8383 kw=LIGHT_ON_SCREEN DIRECTIONAL_SHAFTS SHOW_SAMPLES_OFF FRUSTUM_SHAFTS ok=1
+Cmd: compileSnippet
+  api=0 type=1 insize=6544 outsize=6 kw=SPOT_SHAFTS LIGHT_OFF_SCREEN SHOW_SAMPLES_OFF FRUSTUM_SHAFTS ok=1
+Cmd: compileSnippet
+  api=1 type=1 insize=6544 outsize=4469 kw=SPOT_SHAFTS LIGHT_OFF_SCREEN SHOW_SAMPLES_OFF FRUSTUM_SHAFTS ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=6544 outsize=10268 kw=DIRECTIONAL_SHAFTS LIGHT_OFF_SCREEN QUAD_SHAFTS SHOW_SAMPLES_ON ok=1
+Cmd: compileSnippet
+  api=0 type=0 insize=10220 outsize=6263 kw=WATER_SIMPLE WATER_VERTEX_DISPLACEMENT_ON WATER_EDGEBLEND_ON ok=1
+Cmd: compileSnippet
+  api=0 type=1 insize=10220 outsize=6 kw=WATER_REFLECTIVE WATER_VERTEX_DISPLACEMENT_OFF WATER_EDGEBLEND_OFF ok=1
+Cmd: compileSnippet
+  api=0 type=0 insize=10224 outsize=2850 kw=WATER_REFLECTIVE WATER_VERTEX_DISPLACEMENT_OFF WATER_EDGEBLEND_ON ok=1
+Cmd: compileSnippet
+  api=0 type=1 insize=10224 outsize=6 kw=WATER_REFLECTIVE WATER_VERTEX_DISPLACEMENT_ON WATER_EDGEBLEND_ON ok=1
+Cmd: compileSnippet
+  api=0 type=1 insize=10224 outsize=6 kw=WATER_REFLECTIVE WATER_VERTEX_DISPLACEMENT_OFF WATER_EDGEBLEND_OFF ok=1
+Cmd: compileSnippet
+  api=1 type=0 insize=2934 outsize=437 kw= ok=1
+Cmd: compileSnippet
+  api=0 type=1 insize=2925 outsize=505 kw= ok=1
+Cmd: compileSnippet
+  api=1 type=1 insize=2924 outsize=391 kw= ok=1
+Cmd: compileSnippet
+  api=1 type=1 insize=2936 outsize=553 kw= ok=1
+Cmd: compileSnippet
+  api=0 type=0 insize=422 outsize=441 kw= ok=1
+Cmd: compileSnippet
+  api=0 type=0 insize=4197 outsize=3930 kw=DIRECTIONAL_SHAFTS COLORED_ON ATTENUATION_CURVE_ON COOKIE_TEX_ON ok=1
+Cmd: compileSnippet
+  api=0 type=0 insize=4197 outsize=3843 kw=DIRECTIONAL_SHAFTS ATTENUATION_CURVE_ON COOKIE_TEX_OFF COLORED_OFF ok=1
+Cmd: compileSnippet
+  api=0 type=1 insize=4197 outsize=6 kw=DIRECTIONAL_SHAFTS COLORED_ON ATTENUATION_CURVE_ON COOKIE_TEX_ON ok=1
+Cmd: compileSnippet
+  api=0 type=1 insize=4197 outsize=6 kw=DIRECTIONAL_SHAFTS COLORED_ON COOKIE_TEX_OFF ATTENUATION_CURVE_OFF ok=1
+Cmd: compileSnippet
+  api=0 type=1 insize=4197 outsize=6 kw=DIRECTIONAL_SHAFTS ATTENUATION_CURVE_ON COOKIE_TEX_OFF COLORED_OFF ok=1
+Cmd: compileSnippet
+  api=0 type=1 insize=4197 outsize=6 kw=DIRECTIONAL_SHAFTS COOKIE_TEX_OFF ATTENUATION_CURVE_OFF COLORED_OFF ok=1
+Cmd: compileSnippet
+  api=1 type=0 insize=1014 outsize=542 kw= ok=1
+Cmd: compileSnippet
+  api=0 type=1 insize=1282 outsize=6 kw= ok=1
+Cmd: compileSnippet
+  api=0 type=0 insize=925 outsize=635 kw= ok=1
 Unhandled exception: Readfile from pipe failed. GLE=The pipe has been ended.
 
 

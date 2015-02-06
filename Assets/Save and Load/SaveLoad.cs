@@ -215,7 +215,7 @@ public class SaveLoad : MonoBehaviour
         }
 
 
-        data.gargoyleLocations = new float[gargoyles.Length/3,3];
+        data.gargoyleLocations = new float[gargoyles.Length/6,3];
         for (int k = 0; k < gargoyles.Length; k++)
         {
             if (gargoyles[k].name == "Gargoyle")
@@ -334,10 +334,11 @@ public class SaveLoad : MonoBehaviour
 
         }
 
-        if (data.gargoyleLocations.GetLength(0) != gargoyles.Length/3)
+        if (data.gargoyleLocations.GetLength(0) != gargoyles.Length/6)
         {
             int lengthDiff = gargoyles.Length - data.gargoyleLocations.GetLength(0);
-            Debug.Log(lengthDiff);
+            //Debug.Log(lengthDiff);
+			Debug.Log(gargoyles.Length/6 - data.gargoyleLocations.GetLength(0));
             for (int i = 0; i < lengthDiff; i++)
             {
                 if (gargoyles[i].name == "Body")

@@ -41,12 +41,10 @@ public class groundCheck : MonoBehaviour
         {
             Instantiate(shatterEffect, new Vector3(transform.position.x, transform.position.y - 0.8F, transform.position.z), shatterEffect.transform.rotation);
         }
-            Debug.Log("breaking");
-		//Debug.Log (transform.parent.gameObject.name);
 
 		//Get the gargoyle head game object
 		GameObject gargoyleHead = transform.parent.Find("Head").gameObject;
-		GameObject gargoyleHeadItem = transform.parent.Find("GargoyleHead").gameObject;
+		GameObject gargoyleHeadItem = transform.parent.Find("Head/GargoyleHead").gameObject;
 		
 		//Remove gargoyle script component
         DestroyImmediate(gargoyleHead.GetComponent<Gargoyle>());
@@ -68,7 +66,7 @@ public class groundCheck : MonoBehaviour
 		gargoyleHeadItem.GetComponent<Rigidbody>().useGravity = true;
 		
 		//Enable useable script
-		gargoyleHeadItem.GetComponent<Item>().enabled = true;;
+		gargoyleHeadItem.GetComponent<Item>().enabled = true;
 		
 		//Change tag
 		gargoyleHeadItem.tag = "PickUp";
