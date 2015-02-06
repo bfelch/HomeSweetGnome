@@ -28,17 +28,20 @@ public class groundCheck : MonoBehaviour
 		{
 			if(falling == true)
 			{
-				BreakApart();
+				BreakApart(true);
 			}
 		}
 	}
 
 	//Shatters the gargoyle when pushed and spawns the gargoyle head pickup
-	void BreakApart()
+	public void BreakApart(bool shatter)
 	{
 		//Emit shatter effect
-		Instantiate(shatterEffect, new Vector3(transform.position.x, transform.position.y - 0.8F, transform.position.z), shatterEffect.transform.rotation);
-
+        if (shatter)
+        {
+            Instantiate(shatterEffect, new Vector3(transform.position.x, transform.position.y - 0.8F, transform.position.z), shatterEffect.transform.rotation);
+        }
+            Debug.Log("breaking");
 		//Debug.Log (transform.parent.gameObject.name);
 
 		//Get the gargoyle head game object
@@ -46,19 +49,19 @@ public class groundCheck : MonoBehaviour
 		GameObject gargoyleHeadItem = transform.parent.Find("GargoyleHead").gameObject;
 		
 		//Remove gargoyle script component
-		Destroy(gargoyleHead.GetComponent<Gargoyle>());
+        DestroyImmediate(gargoyleHead.GetComponent<Gargoyle>());
 		
 		//Remove children
 		foreach(Transform child in gargoyleHead.transform)
 		{
 			if(child.gameObject.name != "GargoyleHead")
 			{
-				Destroy(child.gameObject);
+                DestroyImmediate(child.gameObject);
 			}
 		}
 		
 		//Remove audio source component
-		Destroy(gargoyleHead.GetComponent<AudioSource>());
+        DestroyImmediate(gargoyleHead.GetComponent<AudioSource>());
 		
 		//Apply physics to the head
 		gargoyleHeadItem.GetComponent<Rigidbody>().isKinematic = false;
@@ -74,7 +77,7 @@ public class groundCheck : MonoBehaviour
 		gargoyleHeadItem.transform.parent = GameObject.Find("Items").transform;
 		
 		//Delete gargoyle
-		Destroy(transform.parent.gameObject);
+		DestroyImmediate(transform.parent.gameObject);
 	}
 
 	//Checks if gargyole is on the ground

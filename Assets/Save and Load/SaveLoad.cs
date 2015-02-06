@@ -188,6 +188,7 @@ public class SaveLoad : MonoBehaviour
         savingStatus = true;
         //retreive all the objects that need data saved from the scene
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Gnome");
+        GameObject[] gargoyles = GameObject.FindGameObjectsWithTag("Gargoyle");
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         GameObject[] pickUps = GameObject.FindGameObjectsWithTag("PickUp");
         GameObject[] useable = GameObject.FindGameObjectsWithTag("Useable");
@@ -211,6 +212,18 @@ public class SaveLoad : MonoBehaviour
             data.gnomeRotations[k, 1] = enemies[k].transform.rotation.y;
             data.gnomeRotations[k, 2] = enemies[k].transform.rotation.z;
             data.gnomeRotations[k, 3] = enemies[k].transform.rotation.w;
+        }
+
+
+        data.gargoyleLocations = new float[gargoyles.Length/3,3];
+        for (int k = 0; k < gargoyles.Length; k++)
+        {
+            if (gargoyles[k].name == "Gargoyle")
+            {
+                data.gargoyleLocations[k, 0] = gargoyles[k].transform.position.x;
+                data.gargoyleLocations[k, 1] = gargoyles[k].transform.position.y;
+                data.gargoyleLocations[k, 2] = gargoyles[k].transform.position.z;
+            }
         }
 
         //store the player location, rotation, and health
@@ -289,6 +302,7 @@ public class SaveLoad : MonoBehaviour
     {
         //retreive all the objects that need data loaded into them
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Gnome");
+        GameObject[] gargoyles = GameObject.FindGameObjectsWithTag("Gargoyle");
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         GameObject[] pickUps = GameObject.FindGameObjectsWithTag("PickUp");
         GameObject[] useable = GameObject.FindGameObjectsWithTag("Useable");
@@ -306,7 +320,6 @@ public class SaveLoad : MonoBehaviour
             }
             enemies = GameObject.FindGameObjectsWithTag("Gnome");
 
-        
         }
         //loop through the enemies(gnomes)
         for (int k = 0; k < enemies.Length; k++)
@@ -319,6 +332,30 @@ public class SaveLoad : MonoBehaviour
             //re-enable the nav mesh agent on the gnomes
             enemies[k].GetComponent<NavMeshAgent>().enabled = true;
 
+        }
+
+        if (data.gargoyleLocations.GetLength(0) != gargoyles.Length/3)
+        {
+            int lengthDiff = gargoyles.Length - data.gargoyleLocations.GetLength(0);
+            Debug.Log(lengthDiff);
+            for (int i = 0; i < lengthDiff; i++)
+            {
+                if (gargoyles[i].name == "Body")
+                {
+                    gargoyles[i].GetComponent<groundCheck>().BreakApart(false);
+                }
+
+            }
+            gargoyles = GameObject.FindGameObjectsWithTag("Gargoyle");
+
+        }
+        for (int k = 0; k < gargoyles.Length; k++)
+        {
+            if (gargoyles[k].name == "Gargoyle")
+            {
+                //move the garoyles into position
+                //gargoyles[k].transform.position = new Vector3(data.gargoyleLocations[k, 0], data.gargoyleLocations[k, 1], data.gargoyleLocations[k, 2]);
+            }
         }
         //position the player
         player.transform.position = new Vector3(data.playerLocation[0], data.playerLocation[1], data.playerLocation[2]);
@@ -336,17 +373,12 @@ public class SaveLoad : MonoBehaviour
             else
             {
                 Debug.Log(data.heldItems[i]);
-                if (data.heldItems[i] != "GargoyleHead")
-                {
+
                     held[i].heldItem = GameObject.Find(data.heldItems[i]).GetComponent<Item>();
                     held[i].heldItem.name = data.heldItems[i];
                     GameObject.Find(data.heldItems[i]).SetActive(false);
-                }
-                else
-                {
-                    Destroy(GameObject.Find("Gargoyle"));
-                    held[i].heldItem.name = data.heldItems[i];
-                }
+                
+
             }
         }
 

@@ -12,6 +12,9 @@ public class Game
     [SerializeField]
     public float[,] gnomeRotations;
 
+    [SerializeField]
+    public float[,] gargoyleLocations;
+
     //store the player's location
     [SerializeField]
     public float[] playerLocation;
