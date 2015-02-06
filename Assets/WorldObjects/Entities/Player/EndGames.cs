@@ -32,11 +32,11 @@ public class EndGames : MonoBehaviour {
     //vertical look
     public MouseLook cameraLook;
 
-	public static Dictionary<string, GameObject> allPickUps = new Dictionary<string, GameObject>();
+	public static Dictionary<string, GameObject> allPickUps;
     
 	void Awake()
 	{
-		getAllItems ();
+			getAllItems ();
 	}
 	// Use this for initialization
 	void Start () {
@@ -322,6 +322,7 @@ public class EndGames : MonoBehaviour {
 
 	public static void getAllItems()
 	{
+		allPickUps = new Dictionary<string, GameObject>();
 		GameObject[] pickUps = GameObject.FindGameObjectsWithTag ("PickUp");
 		for (int i = 0; i < pickUps.Length; i++) 
 		{
