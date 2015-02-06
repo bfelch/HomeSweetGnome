@@ -13,7 +13,7 @@ public class Useable : MonoBehaviour
 	
     public bool activate = false;
     public static GUIWrapper gui;
-
+	
 	// Use this for initialization
 	void Start () 
     {
@@ -22,6 +22,33 @@ public class Useable : MonoBehaviour
             playerGUI = GameObject.Find("Player").GetComponent<PlayerInteractions>().playerGUI;
         }
         catch{}
+
+		if(this.gameObject.name == "LeftGateLock" || this.gameObject.name == "RightGateLock")
+		{
+			requiredItems[0] = EndGames.allPickUps["GateKeyOne"].GetComponent<Item>();
+			requiredItems[1] = EndGames.allPickUps["GateKeyTwo"].GetComponent<Item>();
+		    requiredItems[2] = EndGames.allPickUps["GateKeyThree"].GetComponent<Item>();
+			requiredItems[3] = EndGames.allPickUps["GateKeyFour"].GetComponent<Item>();
+		}
+		else if(this.gameObject.name == "MotorHatch")
+		{
+			requiredItems[0] = EndGames.allPickUps["BoatKeys"].GetComponent<Item>();
+			requiredItems[1] = EndGames.allPickUps["Fuel"].GetComponent<Item>();
+			requiredItems[2] = EndGames.allPickUps["SparkPlug"].GetComponent<Item>();
+			requiredItems[3] = EndGames.allPickUps["Wrench"].GetComponent<Item>();
+		}
+		else if(this.gameObject.name == "MixingBowl")
+		{
+			requiredItems[0] = EndGames.allPickUps["SmallSapling"].GetComponent<Item>();
+			requiredItems[1] = EndGames.allPickUps["Bone"].GetComponent<Item>();
+			requiredItems[2] = EndGames.allPickUps["AlchemyBook"].GetComponent<Item>();
+			requiredItems[3] = EndGames.allPickUps["Bone"].GetComponent<Item>();
+			requiredItems[4] = EndGames.allPickUps["Bone"].GetComponent<Item>();
+		}
+		else
+		{
+			//do nothing
+		}
 
 	}
 	

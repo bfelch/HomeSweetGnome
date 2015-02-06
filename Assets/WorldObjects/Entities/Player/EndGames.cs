@@ -31,8 +31,13 @@ public class EndGames : MonoBehaviour {
     public MouseLook mouseLook;
     //vertical look
     public MouseLook cameraLook;
-    
 
+	public static Dictionary<string, GameObject> allPickUps = new Dictionary<string, GameObject>();
+    
+	void Awake()
+	{
+		getAllItems ();
+	}
 	// Use this for initialization
 	void Start () {
         deathTextSleep = GameObject.Find("DeathTextSleep").guiText;
@@ -69,6 +74,8 @@ public class EndGames : MonoBehaviour {
             experimentColorFade++;
         }
 	}
+
+
 
     IEnumerator WaitToReload(float waitTime)
     {
@@ -312,4 +319,14 @@ public class EndGames : MonoBehaviour {
 
         return hour.ToString("00") + ":" + minute.ToString("00") + ":" + second.ToString("00");
     }
+
+	public static void getAllItems()
+	{
+		GameObject[] pickUps = GameObject.FindGameObjectsWithTag ("PickUp");
+		for (int i = 0; i < pickUps.Length; i++) 
+		{
+			Debug.Log (pickUps[i].name);
+			allPickUps.Add(pickUps[i].name, pickUps[i]);
+		}
+	}
 }

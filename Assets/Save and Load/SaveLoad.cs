@@ -186,6 +186,7 @@ public class SaveLoad : MonoBehaviour
     {
         Debug.Log("Saving");
         savingStatus = true;
+
         //retreive all the objects that need data saved from the scene
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Gnome");
         GameObject[] gargoyles = GameObject.FindGameObjectsWithTag("Gargoyle");
@@ -299,6 +300,8 @@ public class SaveLoad : MonoBehaviour
 
     public void loadGameValues(Game data)
     {
+
+
         //retreive all the objects that need data loaded into them
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Gnome");
         GameObject[] gargoyles = GameObject.FindGameObjectsWithTag("Gargoyle");
@@ -309,6 +312,8 @@ public class SaveLoad : MonoBehaviour
         GameObject[] consumables = GameObject.FindGameObjectsWithTag("Consumable");
         ItemSlot[] held = GameObject.Find("Player").GetComponent<PlayerInteractions>().playerGUI.slots;
         KeyRing keyRing = GameObject.Find("Player").GetComponent<PlayerInteractions>().playerGUI.keyRing;
+
+		//EndGames.getAllItems(pickUps);
 
         if (data.gnomeLocations.GetLength(0) != enemies.Length)
         {

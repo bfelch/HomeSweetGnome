@@ -10,12 +10,14 @@ public class Item : MonoBehaviour {
     public ItemType type;
 
 	// Use this for initialization
-	void Start () {
+	void Start () 
+	{
         name = this.gameObject.name;
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update () 
+	{
 	
 	}
 

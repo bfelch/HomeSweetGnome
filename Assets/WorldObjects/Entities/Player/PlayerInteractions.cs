@@ -314,7 +314,7 @@ public class PlayerInteractions : MonoBehaviour
                 lastActiveTarget = activeTarget;
             }
             //Is the item close and useable?
-            else if (activeTarget.tag == "Useable" || activeTarget.name == "RightFrontGate" || activeTarget.name == "LeftFrontGate")
+            else if (activeTarget.tag == "Useable" || activeTarget.name == "RightGateLock" || activeTarget.name == "LeftGateLock")
             {
                 Useable targetUseable = activeTarget.GetComponent<Useable>();
                 UseItem(targetUseable); //Use it
