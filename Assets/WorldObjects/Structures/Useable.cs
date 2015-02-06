@@ -119,4 +119,4 @@ public class Useable : MonoBehaviour
     }
 }
 
-public enum UseableType { DOOR, DIRTTRAP, GATE, LIGHT, DROPTRAP, ELEVATOR, ATTICBOWL, BOAT};
+public enum UseableType {DOOR, DIRTTRAP, GATE, LIGHT, DROPTRAP, ELEVATOR, ATTICBOWL, BOAT};

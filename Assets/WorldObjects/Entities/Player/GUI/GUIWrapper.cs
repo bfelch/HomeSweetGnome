@@ -46,6 +46,7 @@ public class GUIWrapper : MonoBehaviour {
     {
         //number of required items
         int numRequiredItems = items.Count;
+		Debug.Log ("Total: " + items.Count);
 
         //if any slot has a required item, decrease number of required items
         foreach (ItemSlot slot in slots)
@@ -53,6 +54,7 @@ public class GUIWrapper : MonoBehaviour {
             if (items.Contains(slot.heldItem))
             {
                 numRequiredItems--;
+				Debug.Log ("in: " + numRequiredItems);
             }
         }
 
@@ -62,8 +64,11 @@ public class GUIWrapper : MonoBehaviour {
             if (items.Contains(key))
             {
                 numRequiredItems--;
+				Debug.Log ("inkey: " + numRequiredItems);
             }
         }
+
+		Debug.Log ("out: " + numRequiredItems);
 
         //if number of required items is <= 0, player has all required items
         if (numRequiredItems <= 0)
