@@ -152,7 +152,7 @@ public class Player : MonoBehaviour
 
 	void Push()
 	{
-		if (Input.GetMouseButtonDown(0))
+		if (Input.GetKeyDown(KeyCode.E))
 		{
 			Transform cam = Camera.main.transform;
 

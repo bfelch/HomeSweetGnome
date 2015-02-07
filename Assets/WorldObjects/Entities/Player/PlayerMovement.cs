@@ -38,8 +38,8 @@ public class PlayerMovement : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         //set timer
-        sprintTime = 5f;
-        maxSprintTime = 5f;
+        sprintTime = 10f;
+        maxSprintTime = 10f;
 
         //set player collider heights
         boxStandHeight = box.size.y;

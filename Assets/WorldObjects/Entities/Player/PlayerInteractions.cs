@@ -28,7 +28,7 @@ public class PlayerInteractions : MonoBehaviour
     public bool showGUI;
     public bool removePlus = false;
     private bool lookingAtGnome = false;
-
+    private bool lookingAtGargoyle = false;
     //reference to gui
     public GUIWrapper playerGUI;
     private float lightingValue = .1f;
@@ -254,6 +254,11 @@ public class PlayerInteractions : MonoBehaviour
                 GUI.Box(new Rect(0, Screen.height - Screen.height / 2 + 150, Screen.width, 50), "Press 'E' to push a gnome. \n WARNING: This will do you harm.");
 
             }
+            else if (lookingAtGargoyle)
+            {
+                GUI.Box(new Rect(0, Screen.height - Screen.height / 2 + 150, Screen.width, 50), "Press 'E' to push the gargoyle.");
+
+            }
             else if (notUseable && activeTarget != null)
             {
                // this.GetComponent<Player>().flashFade();
@@ -341,6 +346,10 @@ public class PlayerInteractions : MonoBehaviour
             {
                 lookingAtGnome = true;
             }
+            else if (activeTarget.tag == "Gargoyle")
+            {
+                lookingAtGargoyle = true;
+            }
             else if(lastActiveTarget != null && lastActiveTarget != activeTarget)
             {
                 //get the mesh renderer
@@ -362,12 +371,14 @@ public class PlayerInteractions : MonoBehaviour
                 canHover = false; //Hide item name
                 notUseable = false;
                 lookingAtGnome = false;
+                lookingAtGargoyle = false;
             }
         }
         else 
         {
             canHover = false;
             lookingAtGnome = false;
+            lookingAtGargoyle = false;
 
         }
     }
