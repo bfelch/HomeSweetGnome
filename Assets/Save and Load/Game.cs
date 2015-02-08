@@ -38,6 +38,9 @@ public class Game
     //store all the useable's locations
     public float[,] useableLocations;
     [SerializeField]
+    //store all the traps's locations
+    public string[] traps;
+    [SerializeField]
     //store all the consumables
     public float[,] consumables;
     [SerializeField]

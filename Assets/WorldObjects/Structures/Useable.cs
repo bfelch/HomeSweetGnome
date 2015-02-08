@@ -45,6 +45,10 @@ public class Useable : MonoBehaviour
 			requiredItems[3] = EndGames.allPickUps["Bone"].GetComponent<Item>();
 			requiredItems[4] = EndGames.allPickUps["Bone"].GetComponent<Item>();
 		}
+        else if (this.gameObject.name == "ShedDoor")
+        {
+            requiredItems[0] = EndGames.allPickUps["ShedKey"].GetComponent<Item>();
+        }
 		else
 		{
 			//do nothing

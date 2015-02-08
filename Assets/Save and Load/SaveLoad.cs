@@ -184,7 +184,7 @@ public class SaveLoad : MonoBehaviour
     }
     public void saveGameValues(Game data)
     {
-        Debug.Log("Saving");
+
         savingStatus = true;
 
         //retreive all the objects that need data saved from the scene
@@ -193,6 +193,8 @@ public class SaveLoad : MonoBehaviour
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         GameObject[] pickUps = GameObject.FindGameObjectsWithTag("PickUp");
         GameObject[] useable = GameObject.FindGameObjectsWithTag("Useable");
+        Array.Sort(useable, CompareObNames);
+        GameObject[] traps = GameObject.FindGameObjectsWithTag("Trap");
         Array.Sort(useable, CompareObNames);
         GameObject[] consumables = GameObject.FindGameObjectsWithTag("Consumable");
         ItemSlot[] held = GameObject.Find("Player").GetComponent<PlayerInteractions>().playerGUI.slots;
@@ -278,6 +280,12 @@ public class SaveLoad : MonoBehaviour
             data.consumables[n, 2] = consumables[n].transform.position.z;
         }
 
+        data.traps = new string[traps.Length];
+        for (int h = 0; h < traps.Length; h++)
+        {
+            data.traps[h] = traps[h].name;
+        }
+
         //create new array to hold the consumables
         data.pickUps = new float[pickUps.Length, 3];
         data.pickUpNames = new string[pickUps.Length];
@@ -309,6 +317,8 @@ public class SaveLoad : MonoBehaviour
         GameObject[] pickUps = GameObject.FindGameObjectsWithTag("PickUp");
         GameObject[] useable = GameObject.FindGameObjectsWithTag("Useable");
         Array.Sort(useable, CompareObNames);
+        GameObject[] traps = GameObject.FindGameObjectsWithTag("Trap");
+        Array.Sort(traps, CompareObNames);
         GameObject[] consumables = GameObject.FindGameObjectsWithTag("Consumable");
         ItemSlot[] held = GameObject.Find("Player").GetComponent<PlayerInteractions>().playerGUI.slots;
         KeyRing keyRing = GameObject.Find("Player").GetComponent<PlayerInteractions>().playerGUI.keyRing;
@@ -400,19 +410,35 @@ public class SaveLoad : MonoBehaviour
         //set the useable's position and rotation
         for (int m = 0; m < useable.Length; m++)
         {
+
             useable[m].transform.position = new Vector3(data.useableLocations[m, 0], data.useableLocations[m, 1], data.useableLocations[m, 2]);
             useable[m].transform.rotation = new Quaternion(data.useableRotations[m, 0], data.useableRotations[m, 1], data.useableRotations[m, 2], data.useableRotations[m, 3]);
-            if (m == 0)
-            {
-                //Debug.Log("First While Loading: " + useable[m].name);
-            }
-            if (useable[m].name == "ShedDoor")
-            {
-                //Debug.Log("Shed Door Position While Loading: " + useable[m].transform.localPosition.y);
-                //Debug.Log("Loaded Number: " + m);
-            }
+
         }
 
+        //load the traps
+        for (int h = 0; h < traps.Length; h++)
+        {
+            //checks whether the consumable was consumed or not
+            bool notfound = false;
+            for (int n = 0; n < data.traps.Length; n++)
+            {
+                //if the consumable wasn't consumed, make sure it is in the game world
+                if (data.traps[n] == traps[h].name)
+                {
+                    notfound = true;
+                }
+            }
+            //if the consumable was not found in the list, remove it from the game world
+            if (!notfound)
+            {
+                Destroy(GameObject.Find(traps[h].name));
+                if(traps[h].name.Contains("Dirt"))
+                {
+                    GameObject.Find("DirtTrap").collider.enabled = true;
+                }
+            }
+        }
         //load the consumables
         for (int h = 0; h < consumables.Length; h++)
         {

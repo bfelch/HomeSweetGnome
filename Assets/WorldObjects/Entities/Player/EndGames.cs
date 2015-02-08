@@ -326,7 +326,6 @@ public class EndGames : MonoBehaviour {
 		GameObject[] pickUps = GameObject.FindGameObjectsWithTag ("PickUp");
 		for (int i = 0; i < pickUps.Length; i++) 
 		{
-			Debug.Log (pickUps[i].name);
 			allPickUps.Add(pickUps[i].name, pickUps[i]);
 		}
 	}

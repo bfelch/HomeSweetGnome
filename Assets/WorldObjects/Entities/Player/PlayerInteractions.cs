@@ -249,7 +249,7 @@ public class PlayerInteractions : MonoBehaviour
                 //Display item name
                 GUI.Box(new Rect(0, Screen.height - Screen.height / 2 + 150, Screen.width, 30), getImprovedName(targetName));
             }
-            else if(lookingAtGnome && Gnome.gnomeLevel == 1)
+            else if(lookingAtGnome && Gnome.gnomeLevel == 1 && activeTarget.name != "GnomeShed")
             {
                 GUI.Box(new Rect(0, Screen.height - Screen.height / 2 + 150, Screen.width, 50), "Press 'E' to push a gnome. \n WARNING: This will do you harm.");
 
@@ -319,7 +319,7 @@ public class PlayerInteractions : MonoBehaviour
                 lastActiveTarget = activeTarget;
             }
             //Is the item close and useable?
-            else if (activeTarget.tag == "Useable" || activeTarget.name == "RightGateLock" || activeTarget.name == "LeftGateLock")
+            else if (activeTarget.tag == "Useable" || activeTarget.name == "RightGateLock" || activeTarget.name == "LeftGateLock" || activeTarget.tag == "Trap")
             {
                 Useable targetUseable = activeTarget.GetComponent<Useable>();
                 UseItem(targetUseable); //Use it
