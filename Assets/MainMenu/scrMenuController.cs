@@ -2,10 +2,11 @@
 using System.Collections;
 using System.IO;
 
-public class menuCam : MonoBehaviour 
+/* Controller for main menu.  (Handles menu transitions) */
+public class scrMenuController : MonoBehaviour 
 {
-	public GameObject cam;
-	public GameObject keyText;
+	public GameObject mainCam; //The main camera
+	public GameObject keyText; //Onscreen key text
 
     private GameObject startMenu;
     private GameObject mainMenu;
@@ -102,7 +103,7 @@ public class menuCam : MonoBehaviour
 
                 animation["titleToMain"].speed = 1.0f; //Play animation fowards
                 animation["titleToMain"].time = 0; //Start from beginning of animation
-                cam.animation.Play("titleToMain"); //Play
+                mainCam.animation.Play("titleToMain"); //Play
 
                 camMoving = true; //Cam is moving
                 currentMenu = 1; //Set current menu index
@@ -134,7 +135,7 @@ public class menuCam : MonoBehaviour
 
 				animation["mainToShed"].speed = 1.0f; //Play animation fowards
 				animation["mainToShed"].time = 0; //Start from beginning of animation
-				cam.animation.Play("mainToShed"); //Play
+				mainCam.animation.Play("mainToShed"); //Play
 				GameObject.Find("FrontGate").GetComponent<Animation>().Play("OpenFrontGate");
 
 				camMoving = true; //Cam is moving
@@ -158,7 +159,7 @@ public class menuCam : MonoBehaviour
 				
 				animation["mainQuick"].speed = 1.0f; //Play animation fowards
 				animation["mainQuick"].time = 0; //Start from beginning of animation
-				cam.animation.Play("mainQuick"); //Play
+				mainCam.animation.Play("mainQuick"); //Play
 				GameObject.Find("FrontGate").GetComponent<Animation>().Play("OpenFrontGate");
 				
 				camMoving = true; //Cam is moving
@@ -182,7 +183,7 @@ public class menuCam : MonoBehaviour
                 keyText.guiText.enabled = false; //Hide GUI text
 				animation["mainToLeaderboards"].speed = 1.0f; //Play animation fowards
 				animation["mainToLeaderboards"].time = 0; //Start from beginning of animation
-				cam.animation.Play("mainToLeaderboards"); //Play
+				mainCam.animation.Play("mainToLeaderboards"); //Play
 
                 camMoving = true; //Cam is moving
                 currentMenu = 2; //Set current menu index
@@ -197,7 +198,7 @@ public class menuCam : MonoBehaviour
                 keyText.guiText.enabled = false; //Hide GUI text
 				animation["mainToLeaderboards"].speed = -1.0f; //Play animation backwards
 				animation["mainToLeaderboards"].time = animation["mainToLeaderboards"].length; ; //Start from end of animation
-				cam.animation.Play("mainToLeaderboards"); //Play
+				mainCam.animation.Play("mainToLeaderboards"); //Play
 
                 camMoving = true; //Cam is moving
                 currentMenu = 1; //Set current menu index
@@ -219,7 +220,7 @@ public class menuCam : MonoBehaviour
                 keyText.guiText.enabled = false; //Hide GUI text
                 animation["mainToCredits"].speed = 1.0f; //Play animation fowards
                 animation["mainToCredits"].time = 0; //Start from beginning of animation
-                cam.animation.Play("mainToCredits"); //Play
+                mainCam.animation.Play("mainToCredits"); //Play
 
                 camMoving = true; //Cam is moving
                 currentMenu = 3; //Set current menu index
@@ -234,7 +235,7 @@ public class menuCam : MonoBehaviour
                 keyText.guiText.enabled = false; //Hide GUI text
                 animation["mainToCredits"].speed = -1.0f; //Play animation backwards
                 animation["mainToCredits"].time = animation["mainToCredits"].length; //Start from end of animation
-                cam.animation.Play("mainToCredits"); //Play
+                mainCam.animation.Play("mainToCredits"); //Play
 
                 camMoving = true; //Cam is moving
                 currentMenu = 1; //Set current menu index

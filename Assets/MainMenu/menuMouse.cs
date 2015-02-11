@@ -4,16 +4,20 @@ using System.Collections.Generic;
 
 public class menuMouse : MonoBehaviour 
 {
-    private menuCam menuAnim;
+    private scrMenuController menuController; //Menu controller script
+	public Color32 defaultColor;
 
+	//Runs on start
 	void Start()
 	{
-        menuAnim = GameObject.Find("Main Camera").GetComponent<menuCam>();
+		//Get menu controller script
+        menuController = GameObject.Find("Main Camera").GetComponent<scrMenuController>();
 
         renderer.material.color = new Color32(222, 219, 212, 255);
 
 		//Ensure game is not frozen
 		Time.timeScale = 1.0F;
+
 		//Show mouse
 		Screen.lockCursor = false;
 	}
@@ -28,20 +32,20 @@ public class menuMouse : MonoBehaviour
         if (this.gameObject.name == ("NewGame"))
         {
 			PlayerPrefs.SetInt("LoadGame", 0);
-			menuAnim.PlayTransition();
+			menuController.PlayTransition();
         }
         else if (this.gameObject.name == ("Continue"))
         {
 			PlayerPrefs.SetInt("LoadGame", 1);
-			menuAnim.LoadTransition();
+			menuController.LoadTransition();
         }
         else if (this.gameObject.name == ("Leaderboards"))
         {
-			menuAnim.LeaderboardsTransition();
+			menuController.LeaderboardsTransition();
         }
         else if (this.gameObject.name == ("Credits"))
         {
-            menuAnim.CreditsTransition();
+            menuController.CreditsTransition();
         }
         else if (this.gameObject.name == ("Quit"))
         {
@@ -49,13 +53,13 @@ public class menuMouse : MonoBehaviour
         }
         else if (this.gameObject.name == ("Back"))
         {
-            if(menuAnim.currentMenu == 2)
+            if(menuController.currentMenu == 2)
             {
-				menuAnim.LeaderboardsTransition();
+				menuController.LeaderboardsTransition();
             }
-            else if (menuAnim.currentMenu == 3)
+            else if (menuController.currentMenu == 3)
             {
-                menuAnim.CreditsTransition();
+                menuController.CreditsTransition();
             }
         }
 
