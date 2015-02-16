@@ -35,12 +35,17 @@ public class Blink : MonoBehaviour
     public Texture2D blinkDisplay;
     private bool holdEyes = false;
 
+	private bool holdEyesOpen = false;
+
     private Vector3 topLidSlugPos;
     private Vector3 bottomLidSlugPos;
     private float slugPosModifier = .2f;
 
     private float topLidDiff = .24821f;
     private float bottomLidDiff = .2255691f;
+
+	private float tempPlayerSanity;
+
     // Use this for initialization
     void Start()
     {
@@ -111,14 +116,17 @@ public class Blink : MonoBehaviour
             refind = false;
         }
 
-        Vector3 curTopSlugPos = topLidSlugPos;
-        curTopSlugPos.y -= (1 - (playerSanity / playerSanityMax)) * slugPosModifier;
+		if(!holdEyesOpen)
+		{
+	        Vector3 curTopSlugPos = topLidSlugPos;
+	        curTopSlugPos.y -= (1 - (playerSanity / playerSanityMax)) * slugPosModifier;
 
-        Vector3 curBottomSlugPos = bottomLidSlugPos;
-        curBottomSlugPos.y += (1 - (playerSanity / playerSanityMax)) * slugPosModifier;
+	        Vector3 curBottomSlugPos = bottomLidSlugPos;
+	        curBottomSlugPos.y += (1 - (playerSanity / playerSanityMax)) * slugPosModifier;
 
-        topLidSlug.transform.localPosition = curTopSlugPos;
-        bottomLidSlug.transform.localPosition = curBottomSlugPos;
+	        topLidSlug.transform.localPosition = curTopSlugPos;
+	        bottomLidSlug.transform.localPosition = curBottomSlugPos;
+		}
 		
         //decrease the blink timer
         blinkTimer -= Time.deltaTime;
@@ -152,12 +160,37 @@ public class Blink : MonoBehaviour
                 rechargeBlink = false;
             }
         }
-        //am I holding my eyes open and my blink is recharged?
-        if (Input.GetKey(KeyCode.F) && !rechargeBlink)
+        
+        if(Input.GetKeyDown(KeyCode.F))
         {
+			tempPlayerSanity = playerSanity;
+			holdEyesOpen = true;
+		}
+		if(Input.GetKeyUp(KeyCode.F))
+		{
+			holdEyesOpen = false;
+		}
+
+		//am I holding my eyes open and my blink is recharged?
+		if (Input.GetKey(KeyCode.F) && !rechargeBlink)
+		{
             //are we greater than 0
             if (openTimer > 0)
             {
+				if(topLidSlugPos.y < 0.3479996F)
+				{
+					tempPlayerSanity += 0.02F;
+					Debug.Log(topLidSlugPos.y);
+					Vector3 curTopSlugPos = topLidSlugPos;
+					curTopSlugPos.y += (1 - (tempPlayerSanity / playerSanityMax)) * slugPosModifier;
+					
+					Vector3 curBottomSlugPos = bottomLidSlugPos;
+					curBottomSlugPos.y -= (1 - (tempPlayerSanity / playerSanityMax)) * slugPosModifier;
+
+					topLidSlug.transform.localPosition = curTopSlugPos;
+					bottomLidSlug.transform.localPosition = curBottomSlugPos;
+				}
+
                 //decrease from the openTimer
                 openTimer -= Time.deltaTime;
                 //set blinkTimer to 5 to keep from blinking
@@ -172,8 +205,7 @@ public class Blink : MonoBehaviour
                 rechargeBlink = true;
                 blinkDisplayTimer = maxBlinkDisplayTimer;
             }
-        }
-
+		}
     }
 
     void ShutEyes()
@@ -186,7 +218,6 @@ public class Blink : MonoBehaviour
             blink = true;
         }
         blinkTimer = 5;
-
     }
 
     void OpenShutEyes()
@@ -195,8 +226,8 @@ public class Blink : MonoBehaviour
         bottomLid.animation.Play("OpenBottomEye");
         holdEyes = false;
         blink = false;
-
     }
+
     void FallAsleep()
     {
         if (!topLid.animation.isPlaying)
