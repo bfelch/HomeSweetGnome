@@ -58,6 +58,7 @@ public class Blink : MonoBehaviour
         bottomLidSlugPos = bottomLidSlug.transform.localPosition;
         player = GameObject.Find("Player");
         playerSanity = gameObject.GetComponent<Player>().sanity;
+		tempPlayerSanity = playerSanity;
         playerSanityMax = gameObject.GetComponent<Player>().maxSanity;
 
         //if the game was loaded, do not playing opening scene
@@ -118,14 +119,30 @@ public class Blink : MonoBehaviour
 
 		if(!holdEyesOpen)
 		{
-	        Vector3 curTopSlugPos = topLidSlugPos;
-	        curTopSlugPos.y -= (1 - (playerSanity / playerSanityMax)) * slugPosModifier;
+			if(tempPlayerSanity > playerSanity)
+			{
+				tempPlayerSanity -= 1.0F;
 
-	        Vector3 curBottomSlugPos = bottomLidSlugPos;
-	        curBottomSlugPos.y += (1 - (playerSanity / playerSanityMax)) * slugPosModifier;
+		        Vector3 curTopSlugPos = topLidSlugPos;
+		        curTopSlugPos.y -= (1 - (tempPlayerSanity / playerSanityMax)) * slugPosModifier;
 
-	        topLidSlug.transform.localPosition = curTopSlugPos;
-	        bottomLidSlug.transform.localPosition = curBottomSlugPos;
+		        Vector3 curBottomSlugPos = bottomLidSlugPos;
+		        curBottomSlugPos.y += (1 - (tempPlayerSanity / playerSanityMax)) * slugPosModifier;
+
+		        topLidSlug.transform.localPosition = curTopSlugPos;
+		        bottomLidSlug.transform.localPosition = curBottomSlugPos;
+			}
+			else
+			{
+				Vector3 curTopSlugPos = topLidSlugPos;
+				curTopSlugPos.y -= (1 - (playerSanity / playerSanityMax)) * slugPosModifier;
+				
+				Vector3 curBottomSlugPos = bottomLidSlugPos;
+				curBottomSlugPos.y += (1 - (playerSanity / playerSanityMax)) * slugPosModifier;
+				
+				topLidSlug.transform.localPosition = curTopSlugPos;
+				bottomLidSlug.transform.localPosition = curBottomSlugPos;
+			}
 		}
 		
         //decrease the blink timer
@@ -161,9 +178,17 @@ public class Blink : MonoBehaviour
             }
         }
         
-        if(Input.GetKeyDown(KeyCode.F))
+        if(Input.GetKeyDown(KeyCode.F) && !rechargeBlink)
         {
-			tempPlayerSanity = playerSanity;
+			if(tempPlayerSanity >= playerSanity)
+			{
+				//do nothing
+			}
+			else
+			{
+				tempPlayerSanity = playerSanity;
+			}
+
 			holdEyesOpen = true;
 		}
 		if(Input.GetKeyUp(KeyCode.F))
@@ -177,15 +202,14 @@ public class Blink : MonoBehaviour
             //are we greater than 0
             if (openTimer > 0)
             {
-				if(topLidSlugPos.y < 0.3479996F)
+				if(tempPlayerSanity < 100)
 				{
-					tempPlayerSanity += 0.02F;
-					Debug.Log(topLidSlugPos.y);
+					tempPlayerSanity += 1.0F;
 					Vector3 curTopSlugPos = topLidSlugPos;
-					curTopSlugPos.y += (1 - (tempPlayerSanity / playerSanityMax)) * slugPosModifier;
+					curTopSlugPos.y -= (1 - (tempPlayerSanity / playerSanityMax)) * slugPosModifier;
 					
 					Vector3 curBottomSlugPos = bottomLidSlugPos;
-					curBottomSlugPos.y -= (1 - (tempPlayerSanity / playerSanityMax)) * slugPosModifier;
+					curBottomSlugPos.y += (1 - (tempPlayerSanity / playerSanityMax)) * slugPosModifier;
 
 					topLidSlug.transform.localPosition = curTopSlugPos;
 					bottomLidSlug.transform.localPosition = curBottomSlugPos;
@@ -202,6 +226,7 @@ public class Blink : MonoBehaviour
                 //blink
                 topLid.animation.Play("BlinkTopNew");
                 bottomLid.animation.Play("BlinkBottomNew");
+				holdEyesOpen = false;
                 rechargeBlink = true;
                 blinkDisplayTimer = maxBlinkDisplayTimer;
             }
