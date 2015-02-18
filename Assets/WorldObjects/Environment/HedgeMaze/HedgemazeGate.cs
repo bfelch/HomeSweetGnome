@@ -3,25 +3,18 @@ using System.Collections;
 
 public class HedgemazeGate : MonoBehaviour 
 {
-    Animation gate; //The animator component
+    Animation gate; //The animation component
 
 	void Start()
 	{
 		gate = GetComponent<Animation>();
 	}
 
-	//Calls when object is enabled or set to active
-	void OnEnable()
-	{
-		//gate = GetComponent<Animator>();
-	}
-
     void OnTriggerEnter(Collider col)
     {
         if(col.name == "Player")
         {
-            Debug.Log("in player");
-			gate.animation["HedgeGateOpen"].speed = 2f; //Play animation fowards
+			gate.animation["HedgeGateOpen"].speed = 3.0F; //Play animation fowards
 			//gate.animation["HedgeGateOpen"].time = 0; //Start from beginning of animation
             gate.Play("HedgeGateOpen");
         }
@@ -31,7 +24,7 @@ public class HedgemazeGate : MonoBehaviour
     {
         if (col.name == "Player")
         {
-			gate.animation["HedgeGateOpen"].speed = -2f; //Play animation backwards
+			gate.animation["HedgeGateOpen"].speed = -3.0F; //Play animation backwards
             if (!gate.animation.IsPlaying("HedgeGateOpen"))
             {
                 gate.animation["HedgeGateOpen"].time = gate.animation["HedgeGateOpen"].length;
