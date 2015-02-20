@@ -7,8 +7,8 @@ using System.Collections;
 */
 public class scrLightFlash : MonoBehaviour 
 {
-	public GameObject dir1; //Directional light 1
-	public GameObject dir2; //Directional light 2
+	public GameObject flash2; //Directional light 1
+	public GameObject flash3; //Directional light 2
 
 	public AudioClip lightningStrike; //Lightning strike sound
 
@@ -26,8 +26,8 @@ public class scrLightFlash : MonoBehaviour
 	void Start () 
 	{
 		//Get the other two directional lights
-		dir1 = GameObject.Find("Dir1");
-		dir2 = GameObject.Find("Dir2");
+		flash2 = GameObject.Find("LightFlash2");
+		flash3 = GameObject.Find("LightFlash3");
 	}
 	
 	//Update is called once per frame
@@ -63,10 +63,10 @@ public class scrLightFlash : MonoBehaviour
 					light.intensity = 0.7F;
 					break;
 				case 1:
-					dir1.light.intensity = 0.7F;
+					flash2.light.intensity = 0.7F;
 					break;
 				case 2:
-					dir2.light.intensity = 0.07F;
+					flash2.light.intensity = 0.07F;
 					break;
 				default:
 					//Do nothing
@@ -82,10 +82,10 @@ public class scrLightFlash : MonoBehaviour
 					light.intensity = 0;
 					break;
 				case 1:
-					dir1.light.intensity = 0;
+					flash2.light.intensity = 0;
 					break;
 				case 2:
-					dir2.light.intensity = 0;
+					flash2.light.intensity = 0;
 					break;
 				default:
 					//Do nothing
@@ -105,10 +105,10 @@ public class scrLightFlash : MonoBehaviour
 				sound = PlayClipAt(lightningStrike, light.transform.position);
 				break;
 			case 1:
-				sound = PlayClipAt(lightningStrike, dir1.transform.position);
+				sound = PlayClipAt(lightningStrike, flash2.transform.position);
 				break;
 			case 2:
-				sound = PlayClipAt(lightningStrike, dir2.transform.position);
+				sound = PlayClipAt(lightningStrike, flash2.transform.position);
 				break;
 			default:
 				//Do nothing

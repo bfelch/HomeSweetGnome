@@ -1,6 +1,11 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\WorldObjects\Environment\Lightning\weatherScript.cs">
+    <Files>
+      <File FileName="Assets\WorldObjects\Environment\Lightning\scrLightFlash.cs" Line="138" Column="1" />
+      <File FileName="Assets\WorldObjects\Environment\Lightning\weatherScript.cs" Line="57" Column="40" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

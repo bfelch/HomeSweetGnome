@@ -45,16 +45,16 @@ public class weatherScript : MonoBehaviour
 			weather[i].particleSystem.enableEmission = true;
 		}
 
-		farLightning1 = GameObject.Find("FarLightning1");
-        farLightning2 = GameObject.Find("FarLightning2");
-        farLightning3 = GameObject.Find("FarLightning3");
-        farLightning4 = GameObject.Find("FarLightning4");
+		//farLightning1 = GameObject.Find("FarLightning1");
+        //farLightning2 = GameObject.Find("FarLightning2");
+        //farLightning3 = GameObject.Find("FarLightning3");
+        //farLightning4 = GameObject.Find("FarLightning4");
 		//fog = GameObject.Find("Fog");
 		lightRain = GameObject.Find ("Light Rain");
-		heavyRain = GameObject.Find("Heavy Rain");
+		//heavyRain = GameObject.Find("Heavy Rain");
         rain = GameObject.Find("Rain");
 
-        lightningScript = GameObject.Find("LightFlash").GetComponent<scrLightFlash>();
+        lightningScript = GameObject.Find("LightFlash1").GetComponent<scrLightFlash>();
 	}
 	
 	//Update is called once per frame
@@ -124,11 +124,11 @@ public class weatherScript : MonoBehaviour
 			//Thunderstorm
 			case 1:
 				lightRain.particleSystem.enableEmission = true;
-	            heavyRain.particleSystem.enableEmission = true;
-	            farLightning1.particleSystem.enableEmission = true;
-	            farLightning2.particleSystem.enableEmission = true;
-	            farLightning3.particleSystem.enableEmission = true;
-	            farLightning4.particleSystem.enableEmission = true;
+	            //heavyRain.particleSystem.enableEmission = true;
+	            //farLightning1.particleSystem.enableEmission = true;
+	            //farLightning2.particleSystem.enableEmission = true;
+	            //farLightning3.particleSystem.enableEmission = true;
+	            //farLightning4.particleSystem.enableEmission = true;
 	            lightningScript.enabled = true;
 	            rainFadeIn = true;
 				break;
