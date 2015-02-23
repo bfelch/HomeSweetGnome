@@ -228,17 +228,16 @@ public class Player : MonoBehaviour
 
 	void OnTriggerEnter(Collider other)
 	{
-
-        if(other.name == "AtticStairs")
+        if(other.name == "AtticLadder" || other.name == "GarageLadder")
         {
-            this.GetComponent<CharacterController>().slopeLimit = 85;
+            this.GetComponent<CharacterController>().slopeLimit = 180;
+			this.
         }
-
 	}
 
     void OnTriggerExit(Collider other)
     {
-        if (this.GetComponent<CharacterController>().slopeLimit == 85)
+        if (this.GetComponent<CharacterController>().slopeLimit == 180)
         {
             this.GetComponent<CharacterController>().slopeLimit = 45;
         }

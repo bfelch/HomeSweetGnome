@@ -87,10 +87,10 @@ public class weatherScript : MonoBehaviour
 		{
 			oldTime = Time.time;
 			rate = Random.Range(minRate, maxRate);
-			farLightning1.particleSystem.emissionRate = rate;
-            farLightning2.particleSystem.emissionRate = rate;
-            farLightning3.particleSystem.emissionRate = rate;
-            farLightning4.particleSystem.emissionRate = rate;
+			//farLightning1.particleSystem.emissionRate = rate;
+            //farLightning2.particleSystem.emissionRate = rate;
+            //farLightning3.particleSystem.emissionRate = rate;
+            //farLightning4.particleSystem.emissionRate = rate;
 		}
 		
 		//Change weather?

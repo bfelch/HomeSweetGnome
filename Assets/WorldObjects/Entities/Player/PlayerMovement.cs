@@ -171,7 +171,7 @@ public class PlayerMovement : MonoBehaviour {
 
     void Sprint() {
         if (!sprinting) {
-            SetMovementSpeed(12f);
+            SetMovementSpeed(24f);
         }
 
         if (Input.GetKey(KeyCode.W)) {
