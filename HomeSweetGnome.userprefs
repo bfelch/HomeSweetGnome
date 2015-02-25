@@ -1,14 +1,11 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\WorldObjects\Structures\Useable.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\WorldObjects\Entities\Gargoyle\cameraShake.cs">
     <Files>
-      <File FileName="Assets\WorldObjects\Structures\Useable.cs" Line="30" Column="13" />
-      <File FileName="Assets\scrBook.cs" Line="6" Column="23" />
-      <File FileName="Assets\WorldObjects\Entities\Player\PlayerInteractions.cs" Line="7" Column="34" />
-      <File FileName="Assets\WorldObjects\Entities\Gnome\Gnome.cs" Line="5" Column="2" />
-      <File FileName="Assets\scrDarkness.cs" Line="7" Column="2" />
-      <File FileName="Assets\WorldObjects\Entities\Player\Player.cs" Line="8" Column="25" />
-      <File FileName="Assets\ReverseNormals.cs" Line="7" Column="2" />
+      <File FileName="Assets\scrDarkness.cs" Line="17" Column="3" />
+      <File FileName="Assets\WorldObjects\Environment\Lightning\weatherScript.cs" Line="49" Column="43" />
+      <File FileName="Assets\WorldObjects\Entities\Gargoyle\cameraShake.cs" Line="7" Column="35" />
+      <File FileName="Assets\Standard Assets\Image Effects (Pro Only)\GlobalFog.js" Line="8" Column="8" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
