@@ -64,7 +64,6 @@ public class GUIWrapper : MonoBehaviour {
             if (items.Contains(key))
             {
                 numRequiredItems--;
-				Debug.Log ("inkey: " + numRequiredItems);
             }
         }
 

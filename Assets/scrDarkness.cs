@@ -4,7 +4,7 @@ using System.Collections;
 public class scrDarkness : MonoBehaviour 
 {
 	bool eventStarted = false;
-	GameObject[] lights;
+	GameObject[] lights; 
 
 	// Use this for initialization
 	void Start () 
@@ -37,10 +37,10 @@ public class scrDarkness : MonoBehaviour
 		}
 
 		weatherScript weather = GameObject.Find ("Weather").GetComponent<weatherScript>();
-		weather.enabled = false;
+		weather.StopWeather();
 
 		RenderSettings.ambientLight = Color.black;
 
-		GameObject.Find ("MainCamera").GetComponent<GlobalFog> ().enabled = false;
+		(Camera.main.GetComponent("GlobalFog") as MonoBehaviour).enabled = false;
 	}
 }

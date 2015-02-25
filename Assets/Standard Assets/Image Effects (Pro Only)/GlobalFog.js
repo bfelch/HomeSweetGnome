@@ -5,7 +5,7 @@
 @script RequireComponent (Camera)
 @script AddComponentMenu ("Image Effects/Rendering/Global Fog")
 
-public class GlobalFog extends PostEffectsBase {
+class GlobalFog extends PostEffectsBase {
 	
 	enum FogMode {
 		AbsoluteYAndDistance = 0,
