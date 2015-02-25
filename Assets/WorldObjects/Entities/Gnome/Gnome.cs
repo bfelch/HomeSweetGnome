@@ -19,8 +19,12 @@ public class Gnome : MonoBehaviour
     //Last known location of target
     private Vector3 lastKnownLocation;
 
-    //Is the gnome trapped?
-    public bool trapped = false;
+    //Is the gnome fallen?
+    public bool fallen = false;
+
+	//Is the gnome trapped
+	public bool trapped = false;
+
     public bool readyToSpawn = false;
 	public bool pushed = false;
 
@@ -53,7 +57,7 @@ public class Gnome : MonoBehaviour
 		//Climb or Stand when the player is not looking
         if(readyToSpawn && !SeenByPlayer())
         {
-			if(trapped && gnomeLevel == 2)
+			if(fallen && gnomeLevel == 2)
 			{
             	Climb();
 			}
@@ -64,8 +68,8 @@ public class Gnome : MonoBehaviour
         }
         else
         {
-            //if not on screen, trapped, or pushed
-            if (!SeenByPlayer() && !trapped && !pushed) 
+            //if not on screen, fallen, or pushed
+            if (!SeenByPlayer() && !fallen && !pushed && !trapped) 
 			{
                 if (TargetInRange()) 
 				{
@@ -174,8 +178,8 @@ public class Gnome : MonoBehaviour
 
     void Climb()
     {
-        //Gnome is no longer trapped
-        trapped = false;
+        //Gnome is no longer fallen
+        fallen = false;
 
         //Set position
         transform.position = dirtSpawner.transform.position;
@@ -255,8 +259,8 @@ public class Gnome : MonoBehaviour
 	{
 		if(other.name == "DirtTrap")
 		{
-            //Gnome is trapped
-            trapped = true;
+            //Gnome is fallen
+            fallen = true;
 
 			//Disable NavMeshAgent
             GetComponent<NavMeshAgent>().enabled = false;
@@ -267,6 +271,18 @@ public class Gnome : MonoBehaviour
 
             //Set spawn timer
             StartCoroutine(SpawnTimer(5.0F));
+		}
+		else if(other.name == "CircleTrap")
+		{	
+			//Gnome is trapped
+			trapped = true;
+
+			//Disable NavMeshAgent
+			GetComponent<NavMeshAgent>().enabled = false;
+			
+			//Make the gnome fall
+			rigidbody.isKinematic = false;
+			rigidbody.useGravity = true;
 		}
         else if(other.tag == "DropTrap")
         {

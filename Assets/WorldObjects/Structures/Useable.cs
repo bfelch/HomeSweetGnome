@@ -41,9 +41,8 @@ public class Useable : MonoBehaviour
 		{
 			requiredItems[0] = EndGames.allPickUps["SmallSapling"].GetComponent<Item>();
 			requiredItems[1] = EndGames.allPickUps["Bone"].GetComponent<Item>();
-			requiredItems[2] = EndGames.allPickUps["AlchemyBook"].GetComponent<Item>();
+			requiredItems[2] = EndGames.allPickUps["Bone"].GetComponent<Item>();
 			requiredItems[3] = EndGames.allPickUps["Bone"].GetComponent<Item>();
-			requiredItems[4] = EndGames.allPickUps["Bone"].GetComponent<Item>();
 		}
         else if (this.gameObject.name == "ShedDoor")
         {
@@ -134,6 +133,10 @@ public class Useable : MonoBehaviour
             {
                 GameObject.Find("Elevator").GetComponent<elevatorStuff>().Activate();
             }
+			else if (type == UseableType.BOOK)
+			{
+				this.gameObject.GetComponent<scrBook>().ToggleBook();
+			}
             return "";
         }
 
@@ -150,4 +153,4 @@ public class Useable : MonoBehaviour
     }
 }
 
-public enum UseableType {DOOR, DIRTTRAP, GATE, LIGHT, DROPTRAP, ELEVATOR, ATTICBOWL, BOAT};
+public enum UseableType {DOOR, DIRTTRAP, GATE, LIGHT, DROPTRAP, ELEVATOR, ATTICBOWL, BOAT, BOOK};

@@ -1,0 +1,274 @@
+fileFormatVersion: 2
+guid: 62b234d6d81336046b28e341fe89fef0
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: Arm_RiggedAsset:Arm_Mesh
+    100002: Arm_RiggedAsset:Arm_Skeleton
+    100004: Arm_RiggedAsset:Arm_TOTAL
+    100006: Arm_RiggedAsset:be_Middle_01
+    100008: Arm_RiggedAsset:be_Pinky_01
+    100010: Arm_RiggedAsset:be_Pointer_01
+    100012: Arm_RiggedAsset:be_Ring_01
+    100014: Arm_RiggedAsset:be_Thumb_01
+    100016: Arm_RiggedAsset:CTRL_Root
+    100018: Arm_RiggedAsset:CTRL_Wrist
+    100020: Arm_RiggedAsset:CTRLs_Fingers
+    100022: Arm_RiggedAsset:CTRLs_Middle
+    100024: Arm_RiggedAsset:CTRLs_Pinky
+    100026: Arm_RiggedAsset:CTRLs_Pointer
+    100028: Arm_RiggedAsset:CTRLs_Ring
+    100030: Arm_RiggedAsset:CTRLs_Thumb
+    100032: Arm_RiggedAsset:curve1
+    100034: Arm_RiggedAsset:curve1 1
+    100036: Arm_RiggedAsset:curve1 10
+    100038: Arm_RiggedAsset:curve1 11
+    100040: Arm_RiggedAsset:curve1 12
+    100042: Arm_RiggedAsset:curve1 13
+    100044: Arm_RiggedAsset:curve1 14
+    100046: Arm_RiggedAsset:curve1 15
+    100048: Arm_RiggedAsset:curve1 16
+    100050: Arm_RiggedAsset:curve1 17
+    100052: Arm_RiggedAsset:curve1 18
+    100054: Arm_RiggedAsset:curve1 2
+    100056: Arm_RiggedAsset:curve1 3
+    100058: Arm_RiggedAsset:curve1 4
+    100060: Arm_RiggedAsset:curve1 5
+    100062: Arm_RiggedAsset:curve1 6
+    100064: Arm_RiggedAsset:curve1 7
+    100066: Arm_RiggedAsset:curve1 8
+    100068: Arm_RiggedAsset:curve1 9
+    100070: Arm_RiggedAsset:group11
+    100072: Arm_RiggedAsset:group12
+    100074: Arm_RiggedAsset:group14
+    100076: Arm_RiggedAsset:group16
+    100078: Arm_RiggedAsset:group17
+    100080: Arm_RiggedAsset:group18
+    100082: Arm_RiggedAsset:group19
+    100084: Arm_RiggedAsset:group2
+    100086: Arm_RiggedAsset:group20
+    100088: Arm_RiggedAsset:group3
+    100090: Arm_RiggedAsset:group5
+    100092: Arm_RiggedAsset:group6
+    100094: Arm_RiggedAsset:group8
+    100096: Arm_RiggedAsset:group9
+    100098: Arm_RiggedAsset:Jnt_ArmBase_01
+    100100: Arm_RiggedAsset:Jnt_ArmChain_a01
+    100102: Arm_RiggedAsset:Jnt_ArmChain_b01
+    100104: Arm_RiggedAsset:Jnt_ArmChain_c01
+    100106: Arm_RiggedAsset:Jnt_Middle_a01
+    100108: Arm_RiggedAsset:Jnt_Middle_b01
+    100110: Arm_RiggedAsset:Jnt_Middle_c01
+    100112: Arm_RiggedAsset:Jnt_Palm_01
+    100114: Arm_RiggedAsset:Jnt_Pinky_a01
+    100116: Arm_RiggedAsset:Jnt_Pinky_b01
+    100118: Arm_RiggedAsset:Jnt_Pinky_c01
+    100120: Arm_RiggedAsset:Jnt_Pointer_a01
+    100122: Arm_RiggedAsset:Jnt_Pointer_b01
+    100124: Arm_RiggedAsset:Jnt_Pointer_c01
+    100126: Arm_RiggedAsset:Jnt_Ring_a01
+    100128: Arm_RiggedAsset:Jnt_Ring_b01
+    100130: Arm_RiggedAsset:Jnt_Ring_c01
+    100132: Arm_RiggedAsset:Jnt_Thumb_a01
+    100134: Arm_RiggedAsset:Jnt_Thumb_b01
+    100136: Arm_RiggedAsset:Jnt_Wrist_01
+    100138: BlackBook_1
+    100140: bookcase
+    100142: Bookshelf_Books
+    100144: chair
+    100146: ClownClock2:Base
+    100148: ClownClock2:ClownClock
+    100150: ClownClock2:Head
+    100152: ClownClock2:Readout_Plane
+    100154: desk
+    100156: lamp03
+    100158: pCube1
+    100160: rug
+    100162: ScatteredBooks
+    100164: //RootNode
+    100166: TanBook_1
+    100168: TanBook_2
+    400000: Arm_RiggedAsset:Arm_Mesh
+    400002: Arm_RiggedAsset:Arm_Skeleton
+    400004: Arm_RiggedAsset:Arm_TOTAL
+    400006: Arm_RiggedAsset:be_Middle_01
+    400008: Arm_RiggedAsset:be_Pinky_01
+    400010: Arm_RiggedAsset:be_Pointer_01
+    400012: Arm_RiggedAsset:be_Ring_01
+    400014: Arm_RiggedAsset:be_Thumb_01
+    400016: Arm_RiggedAsset:CTRL_Root
+    400018: Arm_RiggedAsset:CTRL_Wrist
+    400020: Arm_RiggedAsset:CTRLs_Fingers
+    400022: Arm_RiggedAsset:CTRLs_Middle
+    400024: Arm_RiggedAsset:CTRLs_Pinky
+    400026: Arm_RiggedAsset:CTRLs_Pointer
+    400028: Arm_RiggedAsset:CTRLs_Ring
+    400030: Arm_RiggedAsset:CTRLs_Thumb
+    400032: Arm_RiggedAsset:curve1
+    400034: Arm_RiggedAsset:curve1 1
+    400036: Arm_RiggedAsset:curve1 10
+    400038: Arm_RiggedAsset:curve1 11
+    400040: Arm_RiggedAsset:curve1 12
+    400042: Arm_RiggedAsset:curve1 13
+    400044: Arm_RiggedAsset:curve1 14
+    400046: Arm_RiggedAsset:curve1 15
+    400048: Arm_RiggedAsset:curve1 16
+    400050: Arm_RiggedAsset:curve1 17
+    400052: Arm_RiggedAsset:curve1 18
+    400054: Arm_RiggedAsset:curve1 2
+    400056: Arm_RiggedAsset:curve1 3
+    400058: Arm_RiggedAsset:curve1 4
+    400060: Arm_RiggedAsset:curve1 5
+    400062: Arm_RiggedAsset:curve1 6
+    400064: Arm_RiggedAsset:curve1 7
+    400066: Arm_RiggedAsset:curve1 8
+    400068: Arm_RiggedAsset:curve1 9
+    400070: Arm_RiggedAsset:group11
+    400072: Arm_RiggedAsset:group12
+    400074: Arm_RiggedAsset:group14
+    400076: Arm_RiggedAsset:group16
+    400078: Arm_RiggedAsset:group17
+    400080: Arm_RiggedAsset:group18
+    400082: Arm_RiggedAsset:group19
+    400084: Arm_RiggedAsset:group2
+    400086: Arm_RiggedAsset:group20
+    400088: Arm_RiggedAsset:group3
+    400090: Arm_RiggedAsset:group5
+    400092: Arm_RiggedAsset:group6
+    400094: Arm_RiggedAsset:group8
+    400096: Arm_RiggedAsset:group9
+    400098: Arm_RiggedAsset:Jnt_ArmBase_01
+    400100: Arm_RiggedAsset:Jnt_ArmChain_a01
+    400102: Arm_RiggedAsset:Jnt_ArmChain_b01
+    400104: Arm_RiggedAsset:Jnt_ArmChain_c01
+    400106: Arm_RiggedAsset:Jnt_Middle_a01
+    400108: Arm_RiggedAsset:Jnt_Middle_b01
+    400110: Arm_RiggedAsset:Jnt_Middle_c01
+    400112: Arm_RiggedAsset:Jnt_Palm_01
+    400114: Arm_RiggedAsset:Jnt_Pinky_a01
+    400116: Arm_RiggedAsset:Jnt_Pinky_b01
+    400118: Arm_RiggedAsset:Jnt_Pinky_c01
+    400120: Arm_RiggedAsset:Jnt_Pointer_a01
+    400122: Arm_RiggedAsset:Jnt_Pointer_b01
+    400124: Arm_RiggedAsset:Jnt_Pointer_c01
+    400126: Arm_RiggedAsset:Jnt_Ring_a01
+    400128: Arm_RiggedAsset:Jnt_Ring_b01
+    400130: Arm_RiggedAsset:Jnt_Ring_c01
+    400132: Arm_RiggedAsset:Jnt_Thumb_a01
+    400134: Arm_RiggedAsset:Jnt_Thumb_b01
+    400136: Arm_RiggedAsset:Jnt_Wrist_01
+    400138: BlackBook_1
+    400140: bookcase
+    400142: Bookshelf_Books
+    400144: chair
+    400146: ClownClock2:Base
+    400148: ClownClock2:ClownClock
+    400150: ClownClock2:Head
+    400152: ClownClock2:Readout_Plane
+    400154: desk
+    400156: lamp03
+    400158: pCube1
+    400160: rug
+    400162: ScatteredBooks
+    400164: //RootNode
+    400166: TanBook_1
+    400168: TanBook_2
+    2300000: BlackBook_1
+    2300002: bookcase
+    2300004: Bookshelf_Books
+    2300006: chair
+    2300008: ClownClock2:Base
+    2300010: ClownClock2:Head
+    2300012: ClownClock2:Readout_Plane
+    2300014: desk
+    2300016: lamp03
+    2300018: pCube1
+    2300020: rug
+    2300022: ScatteredBooks
+    2300024: TanBook_1
+    2300026: TanBook_2
+    3300000: BlackBook_1
+    3300002: bookcase
+    3300004: Bookshelf_Books
+    3300006: chair
+    3300008: ClownClock2:Base
+    3300010: ClownClock2:Head
+    3300012: ClownClock2:Readout_Plane
+    3300014: desk
+    3300016: lamp03
+    3300018: pCube1
+    3300020: rug
+    3300022: ScatteredBooks
+    3300024: TanBook_1
+    3300026: TanBook_2
+    4300000: rug
+    4300002: desk
+    4300004: bookcase
+    4300006: Bookshelf_Books
+    4300008: ScatteredBooks
+    4300010: chair
+    4300012: lamp03
+    4300014: pCube1
+    4300016: TanBook_1
+    4300018: TanBook_2
+    4300020: BlackBook_1
+    4300022: ClownClock2:Head
+    4300024: ClownClock2:Base
+    4300026: ClownClock2:Readout_Plane
+    4300028: Arm_RiggedAsset:Arm_Mesh
+    9500000: //RootNode
+    13700000: Arm_RiggedAsset:Arm_Mesh
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .0549999997
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 

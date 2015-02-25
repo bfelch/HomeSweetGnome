@@ -39,10 +39,10 @@
 	<Reference Include="System.Core" />
 	<Reference Include="System.Xml.Linq" />
 	<Reference Include="UnityEngine">
-	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>C:/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>C:/Editor/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
@@ -50,6 +50,7 @@
      <Compile Include="Assets\MainMenu\scrFollow.cs" />
      <Compile Include="Assets\MainMenu\scrMenuController.cs" />
      <Compile Include="Assets\Moonlight.cs" />
+     <Compile Include="Assets\ReverseNormals.cs" />
      <Compile Include="Assets\SaveLoad\Game.cs" />
      <Compile Include="Assets\SaveLoad\Leaderboard.cs" />
      <Compile Include="Assets\SaveLoad\SaveLoad.cs" />
@@ -96,6 +97,8 @@
      <Compile Include="Assets\WorldObjects\Structures\Tunnels\elevatorStuff.cs" />
      <Compile Include="Assets\WorldObjects\Structures\Tunnels\elevatorTrigger.cs" />
      <Compile Include="Assets\WorldObjects\Structures\Useable.cs" />
+     <Compile Include="Assets\scrBook.cs" />
+     <Compile Include="Assets\scrDarkness.cs" />
      <Compile Include="Assets\scrFlicker.cs" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\BlendOneOne.shader" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\NoiseEffectShaderRGB.shader" />
@@ -175,7 +178,7 @@
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\BlurAndFlares.shader" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\BlendForBloom.shader" />
  <Reference Include="UnityEngine.UI">
- <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
+ <HintPath>C:/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>

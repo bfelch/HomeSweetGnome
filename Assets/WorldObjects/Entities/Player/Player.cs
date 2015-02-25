@@ -230,14 +230,17 @@ public class Player : MonoBehaviour
 	{
         if(other.name == "AtticLadder" || other.name == "GarageLadder")
         {
-            this.GetComponent<CharacterController>().slopeLimit = 180;
-			this.
+            this.GetComponent<CharacterController>().slopeLimit = 90;
         }
+		else if(other.name == "DarknessTrigger")
+		{
+			GameObject.Find ("Darkness").GetComponent<scrDarkness>().DarknessEvent();
+		}
 	}
 
     void OnTriggerExit(Collider other)
     {
-        if (this.GetComponent<CharacterController>().slopeLimit == 180)
+        if (this.GetComponent<CharacterController>().slopeLimit == 90)
         {
             this.GetComponent<CharacterController>().slopeLimit = 45;
         }
