@@ -123,7 +123,7 @@ public class PlayerInteractions : MonoBehaviour
             }
             if (GUI.Button( new Rect(55, 200, 180, 40), "Main Menu"))
             {
-                LoadUnload.showEverything();
+                //LoadUnload.showEverything();
                 this.GetComponent<SaveLoad>().Save(true);
             }
             if (GUI.Button(new Rect(55, 250, 180, 40), "Quit"))

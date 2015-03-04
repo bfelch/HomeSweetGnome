@@ -32,7 +32,7 @@ public class LoadUnload : MonoBehaviour
 	// Use this for initialization
 	void Start() 
 	{
-
+		/*
         if (PlayerPrefs.GetInt("LoadGame") != 1)
         {
             iAmLoaded = true;
@@ -155,13 +155,14 @@ public class LoadUnload : MonoBehaviour
                 "Dock"
             }
 		};
-
+		*/
        
     }
 	
 	//Update is called once per frame
 	void Update () 
 	{
+		/*
         if(shedTrigSwitch)
         {
             destroyStructures(shedTrigger[0]);
@@ -239,7 +240,7 @@ public class LoadUnload : MonoBehaviour
             destroyStructures(tunnelsTrigger[2]);
             tunnelsTrigExit = false;
         }
-
+		*/
 	}
 
     void OnTriggerEnter(Collider col)
@@ -367,6 +368,8 @@ public class LoadUnload : MonoBehaviour
             checkTrigger = false;
         }
     }
+
+	/*
     void OnTriggerExit(Collider col)
     {
         if (col.name == "ShedTrigger")
@@ -445,6 +448,7 @@ public class LoadUnload : MonoBehaviour
             tunnelsTrigExit = true;
         }
     }
+
     void destroyStructures(string[] structs)
     {
         for (int i = 0; i < structs.Length; i++)
@@ -465,5 +469,5 @@ public class LoadUnload : MonoBehaviour
                 go.name = all[i];
             }
         }
-    }
+    }*/
 }

@@ -130,7 +130,6 @@ public class Gnome : MonoBehaviour
             agent.SetDestination(hit.position);
             agent.speed = wanderSpeed;
         }
-
     }
 
     private bool TargetInRange() 
@@ -274,6 +273,7 @@ public class Gnome : MonoBehaviour
 		}
 		else if(other.name == "CircleTrap")
 		{	
+
 			//Gnome is trapped
 			trapped = true;
 

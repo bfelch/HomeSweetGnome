@@ -19,7 +19,7 @@ public class SaveLoad : MonoBehaviour
     //this method saves the values into playerInfo.dat
     public void Save(bool menu)
     {
-        LoadUnload.showEverything();
+        //LoadUnload.showEverything();
         //create new binary formatter
         BinaryFormatter bf = new BinaryFormatter();
         //create new filestream
