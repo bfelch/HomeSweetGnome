@@ -217,14 +217,14 @@ public class SaveLoad : MonoBehaviour
             data.gnomeRotations[k, 3] = enemies[k].transform.rotation.w;
         }
 
-        data.gargoyleLocations = new float[gargoyles.Length/6,3];
+        data.gargoyleLocations = new float[gargoyles.Length/4,3];
         for (int k = 0; k < gargoyles.Length; k++)
         {
             if (gargoyles[k].name == "Gargoyle")
             {
-                data.gargoyleLocations[k/6, 0] = gargoyles[k/6].transform.position.x;
-                data.gargoyleLocations[k/6, 1] = gargoyles[k/6].transform.position.y;
-                data.gargoyleLocations[k/6, 2] = gargoyles[k/6].transform.position.z;
+                data.gargoyleLocations[k/4, 0] = gargoyles[k/4].transform.position.x;
+                data.gargoyleLocations[k/4, 1] = gargoyles[k/4].transform.position.y;
+                data.gargoyleLocations[k/4, 2] = gargoyles[k/4].transform.position.z;
             }
         }
 
@@ -348,17 +348,15 @@ public class SaveLoad : MonoBehaviour
 
         }
 
-        if (data.gargoyleLocations.GetLength(0) != gargoyles.Length/6)
+        if (data.gargoyleLocations.GetLength(0) != gargoyles.Length/4)
         {
             int lengthDiff = gargoyles.Length - data.gargoyleLocations.GetLength(0);
-            //Debug.Log(lengthDiff);
-			Debug.Log(gargoyles.Length/6 - data.gargoyleLocations.GetLength(0));
             for (int i = 0; i < lengthDiff; i++)
             {
                 if (gargoyles[i].name == "Body")
                 {
                     gargoyles[i].GetComponent<groundCheck>().BreakApart(false);
-                    i = (6-(i % 6)) + i;
+                    i = (4-(i % 4)) + i;
                 }
 
             }
@@ -370,7 +368,7 @@ public class SaveLoad : MonoBehaviour
             if (gargoyles[k].name == "Gargoyle")
             {
                 //move the garoyles into position
-                gargoyles[k/6].transform.position = new Vector3(data.gargoyleLocations[k/6, 0], data.gargoyleLocations[k/6, 1], data.gargoyleLocations[k/6, 2]);
+                gargoyles[k/4].transform.position = new Vector3(data.gargoyleLocations[k/4, 0], data.gargoyleLocations[k/4, 1], data.gargoyleLocations[k/4, 2]);
             }
         }
         //position the player
