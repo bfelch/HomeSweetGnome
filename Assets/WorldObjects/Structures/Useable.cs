@@ -123,6 +123,10 @@ public class Useable : MonoBehaviour
             {
                 //Toggles light
                 gameObject.GetComponent<Light>().enabled = !gameObject.GetComponent<Light>().enabled;
+				if(this.gameObject.name == "ChandelierLight")
+				{
+					GameObject.Find("gnomeTrapCircle").GetComponent<MeshRenderer>().enabled = true;
+				}
             }
             else if (type == UseableType.DROPTRAP)
             {
