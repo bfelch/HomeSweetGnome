@@ -15,6 +15,10 @@ public class scrDarkness : MonoBehaviour
 	void Start () 
 	{
 		lights = GameObject.FindGameObjectsWithTag("Light");
+
+		//Chandelier Light Switch Indicator
+		GameObject.Find ("ChandelierSwitch").GetComponent<Useable> ().chandReady = true;
+		//Player turns on Chand (Some Sparks)
 	}
 	
 	// Update is called once per frame

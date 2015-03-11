@@ -13,6 +13,9 @@ public class Useable : MonoBehaviour
 	
     public bool activate = false;
     public static GUIWrapper gui;
+
+	public bool chandReady = false;
+	private bool chandOn = false; //For one time chandelier light event
 	
 	// Use this for initialization
 	void Start () 
@@ -121,8 +124,18 @@ public class Useable : MonoBehaviour
             }
             else if (type == UseableType.LIGHT)
             {
-                //Toggles light
-                gameObject.GetComponent<Light>().enabled = !gameObject.GetComponent<Light>().enabled;
+				if(this.gameObject.name == "ChandelierSwitch" && chandOn == false && chandReady == true)
+				{
+					chandOn = true;
+					gameObject.GetComponent<Light>().enabled = true;
+					GameObject.Find("gnomeTrapCircle").GetComponent<MeshRenderer>().enabled = true;
+					Debug.Log (GameObject.Find ("gnomeTrapCircle").name);
+				}
+				else if(this.gameObject.name != "ChandelierSwitch")
+				{
+					//Toggles light
+					gameObject.GetComponent<Light>().enabled = !gameObject.GetComponent<Light>().enabled;
+				}
             }
             else if (type == UseableType.DROPTRAP)
             {
@@ -135,7 +148,10 @@ public class Useable : MonoBehaviour
             }
 			else if (type == UseableType.BOOK)
 			{
-				this.gameObject.GetComponent<scrBook>().ToggleBook();
+				if(this.gameObject.GetComponent<scrBook>().bookOpen == false)
+				{
+					this.gameObject.GetComponent<scrBook>().OpenBook();
+				}
 			}
             return "";
         }

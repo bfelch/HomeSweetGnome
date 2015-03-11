@@ -3,7 +3,7 @@ using System.Collections;
 
 public class scrBook : MonoBehaviour 
 {
-	public bool showBook;
+	public bool showBook = false;
 	public bool notUseable = false;
 	//player movement
 	public CharacterMotor charMotor;
@@ -14,39 +14,55 @@ public class scrBook : MonoBehaviour
 
 	public GameObject book;
 	public GameObject darkness;
+	public bool darkReady = true;
+	public bool bookOpen = false;
 
 	// Use this for initialization
 	void Start () 
 	{
-		showBook = true;
-		ToggleBook();
+		//showBook = true;
+		//ToggleBook();
 	}
 
 	void Update()
 	{
-		if(showBook)
+		if(Input.GetKeyUp(KeyCode.E) && bookOpen)
 		{
-			if(Input.GetKeyUp(KeyCode.F))
-			{
-				//enable darkness scripted event
-				darkness.SetActive(true);
-
-				ToggleBook();
-			}
+			CloseBook();
 		}
 	}
 
-	public void ToggleBook()
+	public void OpenBook()
 	{
-		showBook = !showBook;
-
+		bookOpen = true;
 		//activate/deactivate book
-		book.SetActive(showBook);
+		book.SetActive(true);
 		
 		//toggle movements, looking, cursor
-		charMotor.enabled = !showBook;
-		mouseLook.enabled = !showBook;
-		cameraLook.enabled = !showBook;
-		Screen.lockCursor = !showBook;
+		charMotor.enabled = false;
+		mouseLook.enabled = false;
+		cameraLook.enabled = false;
+		Screen.lockCursor = false;
+
+		//For one time darkness event
+		if(darkReady)
+		{
+			darkReady = false;
+			//enable darkness scripted event
+			darkness.SetActive(true);
+		}
+	}
+
+	public void CloseBook()
+	{
+		bookOpen = false;
+		//activate/deactivate book
+		book.SetActive(false);
+		
+		//toggle movements, looking, cursor
+		charMotor.enabled = true;
+		mouseLook.enabled = true;
+		cameraLook.enabled = true;
+		Screen.lockCursor = true;
 	}
 }
