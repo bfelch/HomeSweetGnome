@@ -70,7 +70,7 @@ public class scrDarkness : MonoBehaviour
 	{
 		foreach(GameObject light in lights)
 		{
-			if(this.gameObject.name == "Lamp")
+			if(this.gameObject.name == "Lamp" || this.gameObject.name == "ShedLight")
 			{
 				light.GetComponentInChildren<Light>().enabled = false;
 			}
@@ -91,7 +91,7 @@ public class scrDarkness : MonoBehaviour
 	{
 		foreach(GameObject light in lights)
 		{
-			if(this.gameObject.name == "Lamp")
+			if(this.gameObject.name == "Lamp" || this.gameObject.name == "ShedLight")
 			{
 				light.GetComponentInChildren<Light>().enabled = true;
 			}

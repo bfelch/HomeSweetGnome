@@ -124,14 +124,28 @@ public class Useable : MonoBehaviour
             }
             else if (type == UseableType.LIGHT)
             {
-				Debug.Log(chandOn + " " + chandReady);
 				if(this.gameObject.name == "ChandelierSwitch" && chandOn == false && chandReady == true)
 				{
 					chandOn = true;
 					gameObject.GetComponent<Light>().enabled = true;
 					GameObject.Find("gnomeTrapCircle").GetComponent<MeshRenderer>().enabled = true;
 				}
-				else if(this.gameObject.name != "ChandelierSwitch")
+				else if(this.gameObject.name == "ShedLight")
+				{
+					gameObject.GetComponent<Light>().enabled = !gameObject.GetComponent<Light>().enabled;
+
+					//Only flicker when turning on
+					if(gameObject.GetComponent<Light>().enabled == true)
+					{
+						gameObject.GetComponent<scrFlicker>().oneTimeFlicker();
+					}
+					else
+					{
+						this.renderer.material = this.gameObject.GetComponent<scrFlicker>().matLightOff; //Switch material
+						(GetComponent("Halo") as Behaviour).enabled = false; //Disable halo
+					}
+				}
+				else if(this.gameObject.name != "ChandelierSwitch" || this.gameObject.name != "ShedLight" )
 				{
 					//Toggles light
 					gameObject.GetComponent<Light>().enabled = !gameObject.GetComponent<Light>().enabled;

@@ -408,7 +408,6 @@ public class PlayerInteractions : MonoBehaviour
                     //enable the nav mesh and the gnome script
                     gnome.GetComponent<NavMeshAgent>().enabled = true;
                     gnome.GetComponent<Gnome>().enabled = true;
-
                 }
                 activeTarget.SetActive(false);
             }

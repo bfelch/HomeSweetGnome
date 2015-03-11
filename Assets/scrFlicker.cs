@@ -20,7 +20,10 @@ public class scrFlicker : MonoBehaviour
 	//Update is called once per frame
 	void Update () 
 	{
-        checkFlickerTime();
+		if (gameObject.name != "ShedLight")
+		{
+        	checkFlickerTime();
+		}
 	}
 
 	//Checks flicker timer
@@ -37,6 +40,12 @@ public class scrFlicker : MonoBehaviour
 		}
 	}
 
+	public void oneTimeFlicker()
+	{
+		pattern = Random.Range(0,3); //Pick a flicker pattern
+		InvokeRepeating("Flicker", 0.2F, 0.1F); //Start flicker sequence
+	}
+
 	//Flickers the light
 	void Flicker()
 	{
@@ -44,7 +53,7 @@ public class scrFlicker : MonoBehaviour
         if(System.Array.IndexOf(patterns[pattern], flicker) >= 0)
         {
 			//Is this game object a Lightbulb?
-            if(this.gameObject.name == "LightBulb")
+			if(this.gameObject.name == "LightBulb" || this.gameObject.name == "ShedLight")
             {
                 this.light.enabled = false; //Disable light
                 this.renderer.material = matLightOff; //Switch material
@@ -55,7 +64,7 @@ public class scrFlicker : MonoBehaviour
         else
         {
 			//Is this game object a Lightbulb?
-            if(this.gameObject.name == "LightBulb")
+			if(this.gameObject.name == "LightBulb" || this.gameObject.name == "ShedLight")
             {
                 this.light.enabled = true; //Enable light
                 this.renderer.material = matLightOn; //Switch material
