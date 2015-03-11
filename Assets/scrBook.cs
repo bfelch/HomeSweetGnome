@@ -14,14 +14,13 @@ public class scrBook : MonoBehaviour
 
 	public GameObject book;
 	public GameObject darkness;
-	public bool darkReady = true;
+	private bool darkReady = true;
 	public bool bookOpen = false;
 
 	// Use this for initialization
 	void Start () 
 	{
-		//showBook = true;
-		//ToggleBook();
+
 	}
 
 	void Update()
@@ -34,7 +33,8 @@ public class scrBook : MonoBehaviour
 
 	public void OpenBook()
 	{
-		bookOpen = true;
+		StartCoroutine(BookTimer(0.2F));
+
 		//activate/deactivate book
 		book.SetActive(true);
 		
@@ -64,5 +64,13 @@ public class scrBook : MonoBehaviour
 		mouseLook.enabled = true;
 		cameraLook.enabled = true;
 		Screen.lockCursor = true;
+	}
+
+	public IEnumerator BookTimer(float waitTime)
+	{
+		//Wait time
+		yield return new WaitForSeconds(waitTime);
+		
+		bookOpen = true;
 	}
 }

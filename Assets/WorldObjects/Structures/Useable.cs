@@ -124,12 +124,12 @@ public class Useable : MonoBehaviour
             }
             else if (type == UseableType.LIGHT)
             {
+				Debug.Log(chandOn + " " + chandReady);
 				if(this.gameObject.name == "ChandelierSwitch" && chandOn == false && chandReady == true)
 				{
 					chandOn = true;
 					gameObject.GetComponent<Light>().enabled = true;
 					GameObject.Find("gnomeTrapCircle").GetComponent<MeshRenderer>().enabled = true;
-					Debug.Log (GameObject.Find ("gnomeTrapCircle").name);
 				}
 				else if(this.gameObject.name != "ChandelierSwitch")
 				{

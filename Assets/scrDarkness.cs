@@ -17,7 +17,9 @@ public class scrDarkness : MonoBehaviour
 		lights = GameObject.FindGameObjectsWithTag("Light");
 
 		//Chandelier Light Switch Indicator
-		GameObject.Find ("ChandelierSwitch").GetComponent<Useable> ().chandReady = true;
+		GameObject.Find ("ChandelierSwitch").GetComponent<Useable>().chandReady = true;
+		this.gameObject.GetComponent<MeshCollider> ().enabled = true;
+		this.gameObject.GetComponent<MeshCollider> ().enabled = false;
 		//Player turns on Chand (Some Sparks)
 	}
 	
@@ -47,7 +49,6 @@ public class scrDarkness : MonoBehaviour
 
 	public void EndDarkEvent()
 	{
-		Debug.Log ("End");
 		transform.GetComponent<MeshCollider>().enabled = false;
 		frontDoor1.SetActive(true);
 		frontDoor2.SetActive(true);
@@ -69,7 +70,14 @@ public class scrDarkness : MonoBehaviour
 	{
 		foreach(GameObject light in lights)
 		{
-			light.GetComponent<Light>().enabled = false;
+			if(this.gameObject.name == "Lamp")
+			{
+				light.GetComponentInChildren<Light>().enabled = false;
+			}
+			else
+			{
+				light.GetComponent<Light>().enabled = false;
+			}
 		}
 
 		weatherScript weather = GameObject.Find ("Weather").GetComponent<weatherScript>();
@@ -83,7 +91,14 @@ public class scrDarkness : MonoBehaviour
 	{
 		foreach(GameObject light in lights)
 		{
-			light.GetComponent<Light>().enabled = true;
+			if(this.gameObject.name == "Lamp")
+			{
+				light.GetComponentInChildren<Light>().enabled = true;
+			}
+			else
+			{
+				light.GetComponent<Light>().enabled = true;
+			}
 		}
 		
 		weatherScript weather = GameObject.Find ("Weather").GetComponent<weatherScript>();
