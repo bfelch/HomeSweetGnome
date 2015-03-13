@@ -398,14 +398,7 @@ public class PlayerInteractions : MonoBehaviour
                     //get the gnome in the shed
                     GameObject gnome = GameObject.Find("GnomeShed");
                     //play the drop and laugh audio
-                    gnome.GetComponent<AudioSource>().Play();
-                    gnome.GetComponent<NavMeshAgent>().enabled = false;
-                    gnome.GetComponent<Gnome>().enabled = false;
-                    //rotate the gnome so it's facing you
-                    gnome.transform.eulerAngles = new Vector3(gnome.transform.eulerAngles.x, 346, gnome.transform.eulerAngles.z);
-                    //set it's position on the floor
-                    gnome.transform.position = new Vector3(-76.15f, 12.45f, 98.71f);
-                    //enable the nav mesh and the gnome script
+                    //gnome.GetComponent<AudioSource>().Play();
                     gnome.GetComponent<NavMeshAgent>().enabled = true;
                     gnome.GetComponent<Gnome>().enabled = true;
                 }

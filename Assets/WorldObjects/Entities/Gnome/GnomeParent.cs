@@ -61,18 +61,26 @@ public class GnomeParent : MonoBehaviour
             //loop through the gnomes to change all their model
             for (int i = 0; i < gnomes.Length; i++)
             {
-                //save the current position of the gnome
-                Vector3 newPos = new Vector3(gnomes[i].transform.position.x, gnomes[i].transform.position.y, gnomes[i].transform.position.z);
-                //create the level 2 gnome with the same position as the level one gnome
-                GameObject thisModel = Instantiate(gnomeLvl2, newPos, gnomes[i].transform.rotation) as GameObject;
-                //set the level2 gnome parent to be the Gnome parent
-                thisModel.transform.parent = transform;
-                //update the gnome level
-				Gnome.gnomeLevel = 2;
-                //destroy the level 1 gnome
-                Destroy(gnomes[i]);
-                //set the value in the gnomes array to be the level 2 gnome
-                gnomes[i] = thisModel;
+				if(this.gameObject.name == "GnomeShed")
+				{
+					//DO NOTHING
+				}
+				else
+				{
+					//save the current position of the gnome
+					Vector3 newPos = new Vector3(gnomes[i].transform.position.x, gnomes[i].transform.position.y, gnomes[i].transform.position.z);
+					//create the level 2 gnome with the same position as the level one gnome
+					GameObject thisModel = Instantiate(gnomeLvl2, newPos, gnomes[i].transform.rotation) as GameObject;
+					thisModel.gameObject.name = "GnomeLvl2";
+					//set the level2 gnome parent to be the Gnome parent
+					thisModel.transform.parent = transform;
+					//update the gnome level
+					Gnome.gnomeLevel = 2;
+					//destroy the level 1 gnome
+					Destroy(gnomes[i]);
+					//set the value in the gnomes array to be the level 2 gnome
+					gnomes[i] = thisModel;
+				}
             }
             //blink if model is changing
             blink.blinkTimer = 0;

@@ -42,6 +42,8 @@ public class Gnome : MonoBehaviour
     //Starting location of gnome
     private Vector3 startLocation;
 
+	Animation walkAnim; //The animation component
+
     void Start()
     {
         QualitySettings.antiAliasing = 4;
@@ -50,6 +52,8 @@ public class Gnome : MonoBehaviour
         agent = gameObject.GetComponent<NavMeshAgent>();
         dirtSpawner = GameObject.Find("DirtSpawner");
         startLocation = this.transform.position;
+
+		walkAnim = GetComponent<Animation>();
     }
 
     void Update()
@@ -86,6 +90,11 @@ public class Gnome : MonoBehaviour
             }
             else
             {
+				if(this.gameObject.name == "GnomeLvl2")
+				{
+					walkAnim.animation["GnomeWalk"].speed = 0.0F; //Play animation fowards
+				}
+
                 //prevent movement
                 agent.speed = 0;
             }
@@ -95,6 +104,16 @@ public class Gnome : MonoBehaviour
 
     private void FollowPlayer()
     {
+		if(this.gameObject.name == "GnomeLvl2")
+		{
+			walkAnim.animation["GnomeWalk"].speed = 1.0F; //Play animation fowards
+
+			if(!walkAnim.animation.IsPlaying("GnomeWalk"))
+			{
+				walkAnim.Play();
+			}
+		}
+
         //set last know location of player
         lastKnownLocation = target.transform.position;
         //set destination
@@ -105,6 +124,12 @@ public class Gnome : MonoBehaviour
 
     private void GoHome()
     {
+		if(this.gameObject.name == "GnomeLvl2")
+		{
+			//Debug.Log("animate2");
+			walkAnim.animation["GnomeWalk"].speed = 1.0F; //Play animation fowards
+		}
+
         if (Vector3.Distance(transform.position, startLocation) > sightRange * 1.5)
         {
             //start moving back to start location
@@ -114,6 +139,7 @@ public class Gnome : MonoBehaviour
         }
     }
 
+	/*
     private void Wander()
     {
         //if done with current path
@@ -131,6 +157,7 @@ public class Gnome : MonoBehaviour
             agent.speed = wanderSpeed;
         }
     }
+    */
 
     private bool TargetInRange() 
     {
@@ -271,6 +298,16 @@ public class Gnome : MonoBehaviour
             //Set spawn timer
             StartCoroutine(SpawnTimer(5.0F));
 		}
+		else if(other.name == "FallCollider")
+		{
+			//Disable NavMeshAgent
+			GetComponent<NavMeshAgent>().enabled = false;
+			GetComponent<Gnome>().enabled = false;
+			
+			//Make the gnome fall
+			rigidbody.isKinematic = false;
+			rigidbody.useGravity = true;
+		}
 		else if(other.name == "CircleTrap")
 		{	
 
@@ -278,6 +315,7 @@ public class Gnome : MonoBehaviour
 			trapped = true;
 
 			//Disable NavMeshAgent
+			GetComponent<Gnome>().enabled = false;
 			GetComponent<NavMeshAgent>().enabled = false;
 			
 			//Make the gnome fall
