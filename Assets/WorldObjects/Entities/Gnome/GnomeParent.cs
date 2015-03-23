@@ -53,7 +53,7 @@ public class GnomeParent : MonoBehaviour
         //calculate sanity percentage
         float sanityPercentage = playerSanity / playerSanityMax;
         //check if the sanity is below 50%
-        if(sanityPercentage < .5 && modelNumber != 2)
+        if(sanityPercentage < .4 && modelNumber != 2)
         {
             //set the model number to 2
             modelNumber = 2;
@@ -63,7 +63,7 @@ public class GnomeParent : MonoBehaviour
             {
 				if(this.gameObject.name == "GnomeShed")
 				{
-					//DO NOTHING
+					//TODO
 				}
 				else
 				{
