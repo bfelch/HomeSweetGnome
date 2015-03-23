@@ -1,31 +1,47 @@
 fileFormatVersion: 2
-guid: 1e0b67a2ee888b148ac9330d73f27774
+guid: 4d951c4d203783a49a4676ec0ba44142
 ModelImporter:
   serializedVersion: 16
   fileIDToRecycleName:
-    100000: CounterSculptureMesh
-    100002: Jnt_HelixPair_01
-    100004: Jnt_MoveJoint_Parent_01
-    100006: Jnt_Orb_Bot_01
-    100008: Jnt_Orb_Center_01
-    100010: Jnt_Orb_Parent_01
-    100012: Jnt_Orb_Top_01
-    100014: Root_01
-    100016: //RootNode
-    400000: CounterSculptureMesh
-    400002: Jnt_HelixPair_01
-    400004: Jnt_MoveJoint_Parent_01
-    400006: Jnt_Orb_Bot_01
-    400008: Jnt_Orb_Center_01
-    400010: Jnt_Orb_Parent_01
-    400012: Jnt_Orb_Top_01
-    400014: Root_01
-    400016: //RootNode
-    4300000: CounterSculptureMesh
-    7400000: Helix
+    100000: Jnt_Block_A_01
+    100002: Jnt_Block_B_01
+    100004: Jnt_Block_C_01
+    100006: Jnt_Block_D_01
+    100008: Jnt_Block_E_01
+    100010: Jnt_Block_F_01
+    100012: Jnt_Block_G_01
+    100014: Jnt_Ring_A_01
+    100016: Jnt_Ring_B_01
+    100018: Jnt_Ring_C_01
+    100020: Jnt_Ring_D_01
+    100022: Jnt_Ring_E_01
+    100024: Jnt_Ring_F_01
+    100026: Jnt_Rings_01
+    100028: Root_01
+    100030: //RootNode
+    100032: Statue_RingsAtopBlocks_Mesh
+    400000: Jnt_Block_A_01
+    400002: Jnt_Block_B_01
+    400004: Jnt_Block_C_01
+    400006: Jnt_Block_D_01
+    400008: Jnt_Block_E_01
+    400010: Jnt_Block_F_01
+    400012: Jnt_Block_G_01
+    400014: Jnt_Ring_A_01
+    400016: Jnt_Ring_B_01
+    400018: Jnt_Ring_C_01
+    400020: Jnt_Ring_D_01
+    400022: Jnt_Ring_E_01
+    400024: Jnt_Ring_F_01
+    400026: Jnt_Rings_01
+    400028: Root_01
+    400030: //RootNode
+    400032: Statue_RingsAtopBlocks_Mesh
+    4300000: Statue_RingsAtopBlocks_Mesh
+    7400000: StatueSpin
     9500000: //RootNode
     11100000: //RootNode
-    13700000: CounterSculptureMesh
+    13700000: Statue_RingsAtopBlocks_Mesh
   materials:
     importMaterials: 1
     materialName: 0
@@ -43,10 +59,10 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: Helix
+      name: StatueSpin
       takeName: Take 001
       firstFrame: 1
-      lastFrame: 240
+      lastFrame: 600
       wrapMode: 2
       orientationOffsetY: 0
       level: 0
@@ -68,21 +84,37 @@ ModelImporter:
       transformMask:
       - path: 
         weight: 1
-      - path: CounterSculptureMesh
-        weight: 1
       - path: Root_01
         weight: 1
-      - path: Root_01/Jnt_MoveJoint_Parent_01
+      - path: Root_01/Jnt_Block_A_01
         weight: 1
-      - path: Root_01/Jnt_MoveJoint_Parent_01/Jnt_HelixPair_01
+      - path: Root_01/Jnt_Block_A_01/Jnt_Block_B_01
         weight: 1
-      - path: Root_01/Jnt_MoveJoint_Parent_01/Jnt_Orb_Parent_01
+      - path: Root_01/Jnt_Block_A_01/Jnt_Block_B_01/Jnt_Block_C_01
         weight: 1
-      - path: Root_01/Jnt_MoveJoint_Parent_01/Jnt_Orb_Parent_01/Jnt_Orb_Bot_01
+      - path: Root_01/Jnt_Block_A_01/Jnt_Block_B_01/Jnt_Block_C_01/Jnt_Block_D_01
         weight: 1
-      - path: Root_01/Jnt_MoveJoint_Parent_01/Jnt_Orb_Parent_01/Jnt_Orb_Center_01
+      - path: Root_01/Jnt_Block_A_01/Jnt_Block_B_01/Jnt_Block_C_01/Jnt_Block_D_01/Jnt_Block_E_01
         weight: 1
-      - path: Root_01/Jnt_MoveJoint_Parent_01/Jnt_Orb_Parent_01/Jnt_Orb_Top_01
+      - path: Root_01/Jnt_Block_A_01/Jnt_Block_B_01/Jnt_Block_C_01/Jnt_Block_D_01/Jnt_Block_E_01/Jnt_Block_F_01
+        weight: 1
+      - path: Root_01/Jnt_Block_A_01/Jnt_Block_B_01/Jnt_Block_C_01/Jnt_Block_D_01/Jnt_Block_E_01/Jnt_Block_F_01/Jnt_Block_G_01
+        weight: 1
+      - path: Root_01/Jnt_Rings_01
+        weight: 1
+      - path: Root_01/Jnt_Rings_01/Jnt_Ring_A_01
+        weight: 1
+      - path: Root_01/Jnt_Rings_01/Jnt_Ring_B_01
+        weight: 1
+      - path: Root_01/Jnt_Rings_01/Jnt_Ring_C_01
+        weight: 1
+      - path: Root_01/Jnt_Rings_01/Jnt_Ring_D_01
+        weight: 1
+      - path: Root_01/Jnt_Rings_01/Jnt_Ring_E_01
+        weight: 1
+      - path: Root_01/Jnt_Rings_01/Jnt_Ring_F_01
+        weight: 1
+      - path: Statue_RingsAtopBlocks_Mesh
         weight: 1
       maskType: 0
       maskSource: {instanceID: 0}

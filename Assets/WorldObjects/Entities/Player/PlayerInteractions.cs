@@ -47,7 +47,7 @@ public class PlayerInteractions : MonoBehaviour
         //sets gui start
         ToggleGUI(showGUI);
         st = gameObject.GetComponent<ShedTutorial>();
-        outline = Resources.Load("Outline") as Material;
+        outline = Resources.Load("Outline2") as Material;
         bark = GetComponent<Player>().bark;
         endgame = GetComponent<EndGames>();
     }
@@ -287,32 +287,16 @@ public class PlayerInteractions : MonoBehaviour
 		RaycastHit hit;
 		Debug.DrawRay(cam.position, cam.forward * 5, Color.white);
 
-        if (Physics.Raycast(cam.position, cam.forward, out hit, 5, ignoreMask))
+        if(Physics.Raycast(cam.position, cam.forward, out hit, 5, ignoreMask))
         {
             activeTarget = hit.collider.gameObject; //Store item being looked at
 
             //Is the item close and a pick up?
             if (activeTarget.tag == "PickUp")
             {
-				MeshRenderer currentMesh;
-                //get the mesh renderer
-				if(activeTarget.gameObject.name == "GargoyleHead")
-				{
-					currentMesh = activeTarget.GetComponentInChildren<MeshRenderer>();
-				}
-                else
-				{
-					currentMesh = activeTarget.GetComponent<MeshRenderer>();
-				}
-                //save the current mesh material
-                Material current = currentMesh.material;
-                //create new array of materials of size 2
-                Material[] mats = new Material[2];
-                //set materials to the current one and the outline
-                mats[0] = current;
-                mats[1] = outline;
-                //set the materials to the currentMesh
-                currentMesh.materials = mats; 
+				//Highlight the object white
+				GameObject.Find("Highlighter").GetComponent<scrHighlightController>().HightlightWhite(activeTarget);
+
                 Item targetItem = activeTarget.GetComponent<Item>();
                 PickUp(targetItem); //Pick it up
                 //set the lastActiveTarget to this activeTarget
@@ -326,17 +310,9 @@ public class PlayerInteractions : MonoBehaviour
             }
             else if (activeTarget.tag == "Consumable")
             {
-                //get the mesh renderer
-                MeshRenderer currentMesh = activeTarget.GetComponent<MeshRenderer>();
-                //save the current mesh material
-                Material current = currentMesh.material;
-                //create new array of materials of size 2
-                Material[] mats = new Material[2];
-                //set materials to the current one and the outline
-                mats[0] = current;
-                mats[1] = outline;
-                //set the materials to the currentMesh
-                currentMesh.materials = mats;
+				//Highlight the object white
+				GameObject.Find("Highlighter").GetComponent<scrHighlightController>().HightlightWhite(activeTarget);
+
                 Consume();
                 //set the lastActiveTarget to this activeTarget
                 lastActiveTarget = activeTarget;
@@ -352,16 +328,8 @@ public class PlayerInteractions : MonoBehaviour
             }
             else if(lastActiveTarget != null && lastActiveTarget != activeTarget)
             {
-                //get the mesh renderer
-                MeshRenderer currentMesh = lastActiveTarget.GetComponent<MeshRenderer>();
-                //save the first material
-                Material current = currentMesh.materials[0];
-                //create new array of materials of size 1
-                Material[] mats = new Material[1];
-                //set the material 
-                mats[0] = current;
-                //set the material to the current mehs
-                currentMesh.materials = mats;
+				//Highlight the object white
+				GameObject.Find("Highlighter").GetComponent<scrHighlightController>().Unhighlight(lastActiveTarget);
                 //set the lastActiveTarget to null
                 lastActiveTarget = null;
             }

@@ -55,13 +55,6 @@ public class Useable : MonoBehaviour
 		{
 			//do nothing
 		}
-
-	}
-	
-	// Update is called once per frame
-	void Update () 
-    {
-	
 	}
 
     public string Interact()
@@ -129,6 +122,13 @@ public class Useable : MonoBehaviour
 					chandOn = true;
 					gameObject.GetComponent<Light>().enabled = true;
 					GameObject.Find("gnomeTrapCircle").GetComponent<MeshRenderer>().enabled = true;
+
+					//enable darkness scripted event
+					GameObject.Find("Darkness").GetComponent<scrDarkness>().PrepareEvent();
+
+					//Unhighlight Chand Switch
+					GameObject chandSwitch = GameObject.Find ("ChandSwitch");
+
 				}
 				else if(this.gameObject.name == "ShedLight")
 				{
@@ -145,7 +145,7 @@ public class Useable : MonoBehaviour
 						(GetComponent("Halo") as Behaviour).enabled = false; //Disable halo
 					}
 				}
-				else if(this.gameObject.name != "ChandelierSwitch" || this.gameObject.name != "ShedLight" )
+				else if(this.gameObject.name != "ChandelierSwitch" && this.gameObject.name != "ShedLight" )
 				{
 					//Toggles light
 					gameObject.GetComponent<Light>().enabled = !gameObject.GetComponent<Light>().enabled;

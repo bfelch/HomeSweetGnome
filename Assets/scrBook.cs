@@ -13,14 +13,14 @@ public class scrBook : MonoBehaviour
 	public MouseLook cameraLook;
 
 	public GameObject book;
-	public GameObject darkness;
 	private bool darkReady = true;
 	public bool bookOpen = false;
 
-	// Use this for initialization
-	void Start () 
-	{
+	private Material outline;
 
+	void Start()
+	{
+		GameObject.Find("Highlighter").GetComponent<scrHighlightController>().HighlightOrange(this.gameObject);
 	}
 
 	void Update()
@@ -48,8 +48,17 @@ public class scrBook : MonoBehaviour
 		if(darkReady)
 		{
 			darkReady = false;
-			//enable darkness scripted event
-			darkness.SetActive(true);
+
+			//Chandelier Light Switch Indicator
+			GameObject.Find("ChandelierSwitch").GetComponent<Useable>().chandReady = true;
+
+			//Unhighlight Book
+			GameObject.Find("Highlighter").GetComponent<scrHighlightController>().Unhighlight(this.gameObject);
+
+			//Get ChandSwitch object
+			GameObject chandSwitch = GameObject.Find ("ChandSwitch");
+			//Highlight Chandellier Switch
+			GameObject.Find("Highlighter").GetComponent<scrHighlightController>().HighlightOrange(chandSwitch);
 		}
 	}
 

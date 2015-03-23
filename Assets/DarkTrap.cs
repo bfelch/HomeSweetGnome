@@ -7,7 +7,7 @@ public class DarkTrap : MonoBehaviour
 
 	void OnTriggerEnter(Collider other)
 	{
-		if(other.name == "DarkGnome(Clone)" || other.name == "GnomeLvl2(Clone)")
+		if(other.name == "DarkGnome(Clone)" || other.name == "GnomeLvl2")
 		{
 			gnomesTrapped++;
 		}

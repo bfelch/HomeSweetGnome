@@ -4,29 +4,44 @@ using System.Collections;
 public class scrDarkness : MonoBehaviour 
 {
 	bool eventStarted = false;
+	bool eventOver = false;
 	GameObject[] lights;
+	private GameObject darkChild;
+	public GameObject chandTrap;
 	public GameObject darknessSpawner1;
 	public GameObject darknessSpawner2;
-	public GameObject gnome;
+	public GameObject gnome1;
+	public GameObject gnome2;
 	public GameObject frontDoor1;
 	public GameObject frontDoor2;
 
-	// Use this for initialization
-	void Start () 
+	void Start()
+	{
+		StartCoroutine(DelayedStart(5.0F));
+	}
+
+	public IEnumerator DelayedStart(float waitTime)
+	{
+		//Wait spawn time
+		yield return new WaitForSeconds(waitTime);
+
+		//darkChild = transform.Find("DarknessTrigger").gameObject;
+
+		GetComponent<MeshCollider>().enabled = true;
+		GetComponent<MeshCollider>().enabled = false;
+		//this.gameObject.GetComponent<MeshCollider> ().enabled = false;
+		
+		GetComponentInChildren<SphereCollider>().enabled = true;
+		GetComponentInChildren<SphereCollider>().enabled = false;
+	}
+
+	public void PrepareEvent()
 	{
 		lights = GameObject.FindGameObjectsWithTag("Light");
 
-		//Chandelier Light Switch Indicator
-		GameObject.Find ("ChandelierSwitch").GetComponent<Useable>().chandReady = true;
-		this.gameObject.GetComponent<MeshCollider> ().enabled = true;
-		this.gameObject.GetComponent<MeshCollider> ().enabled = false;
+		//Trigger
+		GetComponentInChildren<SphereCollider>().enabled = true;
 		//Player turns on Chand (Some Sparks)
-	}
-	
-	// Update is called once per frame
-	void Update () 
-	{
-		
 	}
 
 	public void DarknessEvent()
@@ -37,14 +52,13 @@ public class scrDarkness : MonoBehaviour
 			transform.GetComponent<MeshCollider>().enabled = true;
 			frontDoor1.SetActive(false);
 			frontDoor2.SetActive(false);
-			transform.Find("DarknessTrigger").GetComponent<SphereCollider>().enabled = false;
 			TurnOffLights();
+
+			//Play the laugh sound
+			GetComponent<AudioSource>().Play();
+
+			StartCoroutine(EventTimer(5.0F));
 		}
-
-		//Play the laugh sound
-		GetComponent<AudioSource>().Play();
-
-		StartCoroutine(EventTimer(5.0F));
 	}
 
 	public void EndDarkEvent()
@@ -53,6 +67,8 @@ public class scrDarkness : MonoBehaviour
 		frontDoor1.SetActive(true);
 		frontDoor2.SetActive(true);
 		TurnOnLights();
+
+		eventOver = true;
 	}
 
 	public IEnumerator EventTimer(float waitTime)
@@ -60,9 +76,26 @@ public class scrDarkness : MonoBehaviour
 		//Wait spawn time
 		yield return new WaitForSeconds(waitTime);
 
+		//Get player object
+		GameObject player = GameObject.Find("Player");
+
+		//retrieve current player sanity values
+		float playerSanity = player.GetComponent<Player>().sanity;
+		float playerSanityMax = player.GetComponent<Player>().maxSanity;
+		//calculate sanity percentage
+		float sanityPercentage = playerSanity / playerSanityMax;
+
 		//Spawn Gnomes
-		Instantiate(gnome, darknessSpawner1.transform.position, Quaternion.identity);
-		Instantiate(gnome, darknessSpawner2.transform.position, Quaternion.identity);
+		if(sanityPercentage > 0.4F)
+		{
+			Instantiate(gnome1, darknessSpawner1.transform.position, Quaternion.identity);
+			Instantiate(gnome1, darknessSpawner2.transform.position, Quaternion.identity);
+		}
+		else
+		{
+			Instantiate(gnome2, darknessSpawner1.transform.position, Quaternion.identity);
+			Instantiate(gnome2, darknessSpawner2.transform.position, Quaternion.identity);
+		}
 	}
 
 	//Turn off all lights
@@ -105,5 +138,24 @@ public class scrDarkness : MonoBehaviour
 		weather.StartWeather();
 		
 		RenderSettings.ambientLight =  new Color32(62, 64, 73, 255);
+	}
+
+	void OnTriggerEnter(Collider other)
+	{
+		if(other.gameObject.name == "Player")
+		{
+			DarknessEvent();
+		}
+	}
+
+	void OnTriggerExit(Collider other)
+	{
+		//Drop the trap
+		if(other.gameObject.name == "Player" && eventOver == true)
+		{
+			chandTrap.GetComponent<scrDropTrap>().Drop();
+
+			GetComponentInChildren<SphereCollider>().enabled = false;
+		}
 	}
 }

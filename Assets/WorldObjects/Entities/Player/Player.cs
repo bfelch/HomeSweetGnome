@@ -84,62 +84,18 @@ public class Player : MonoBehaviour
         if (!this.gameObject.animation.IsPlaying("OpeningCut")) 
 		{
             Sanity();
-            //Walk();
-            //Sprint();
-            //Crouch();
             Push();
         }
         
     }
 
-    //Note: Bug: enemies will not pathfind close enough to you to actually register the collision.
     void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.tag.Equals("Gnome") && other.gameObject.name != "GnomeShed")
+        if (other.gameObject.tag.Equals("Gnome") && other.gameObject.name != "GnomeShed" && other.gameObject.GetComponent<Gnome>().enabled == true)
         {
             sanity -= 0.2f;
         }
     }
-
-    /*void Sprint()
-    {
-        if (sprintTime > 0)
-        {
-            //listent for shift press
-            if (Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.W))
-            {
-                //make player faster
-                charMotor.movement.maxForwardSpeed = 12;
-                sprintTime -= Time.deltaTime;
-                //play sprint animation
-                if (!this.gameObject.animation.IsPlaying("Landing")) {
-                    this.gameObject.animation.Play("Sprint");
-                }
-            } else if (sprintTime <= maxSprintTime) {
-                //recharge sprint time
-                charMotor.movement.maxForwardSpeed = 6;
-                sprintTime += Time.deltaTime;
-            }
-        }
-        else
-        {
-            if (breathe)
-            {
-                breathe = false;
-                audio2.Play();
-            }
-
-            charMotor.movement.maxForwardSpeed = 6;
-            restTime += Time.deltaTime;
-            this.gameObject.animation.Stop("Sprint");
-            if (restTime >= maxRestTime)
-            {
-                sprintTime = 5.0F;
-                restTime = 0;
-                breathe = true;
-            }
-        }
-    }*/
 
 	IEnumerator PushTimer(float waitTime, GameObject target)
 	{	
@@ -207,15 +163,16 @@ public class Player : MonoBehaviour
 
     void Sanity()
     {
+		//Debug.Log ("Sanity: " + sanity);
         sanity -= .001f;
-        if (sanity < 0 && !this.GetComponent<EndGames>().playerSlept)
+        if (sanity <= 0 && !this.GetComponent<EndGames>().playerSlept)
         {
             this.GetComponent<EndGames>().playerSlept = true;
             this.GetComponent<EndGames>().GetTime();
 			StartCoroutine(WaitToReload(5.0F));
         }
 
-        if (sanity > maxSanity)
+        if(sanity > maxSanity)
         {
             sanity = maxSanity;
         }
@@ -232,10 +189,6 @@ public class Player : MonoBehaviour
         {
             this.GetComponent<CharacterController>().slopeLimit = 90;
         }
-		else if(other.name == "DarknessTrigger")
-		{
-			GameObject.Find ("Darkness").GetComponent<scrDarkness>().DarknessEvent();
-		}
 	}
 
     void OnTriggerExit(Collider other)

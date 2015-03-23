@@ -85,7 +85,6 @@ public class Gnome : MonoBehaviour
 				{
                     //if player not in range
                     GoHome();
-                    //Wander();
                 }
             }
             else
@@ -138,26 +137,6 @@ public class Gnome : MonoBehaviour
             agent.speed = moveSpeed;
         }
     }
-
-	/*
-    private void Wander()
-    {
-        //if done with current path
-        if (agent.pathStatus == NavMeshPathStatus.PathComplete || agent.pathStatus == NavMeshPathStatus.PathInvalid)
-        {
-            //find new destination
-            float targetX = Random.Range(transform.position.x - (sightRange / 2), transform.position.x + (sightRange / 2));
-            float targetZ = Random.Range(transform.position.z - (sightRange / 2), transform.position.z + (sightRange / 2));
-            Vector3 targetPos = new Vector3(targetX, 0, targetZ);
-
-            NavMeshHit hit;
-            NavMesh.SamplePosition(transform.position + targetPos, out hit, sightRange, 1);
-
-            agent.SetDestination(hit.position);
-            agent.speed = wanderSpeed;
-        }
-    }
-    */
 
     private bool TargetInRange() 
     {
@@ -310,17 +289,18 @@ public class Gnome : MonoBehaviour
 		}
 		else if(other.name == "CircleTrap")
 		{	
-
 			//Gnome is trapped
 			trapped = true;
 
 			//Disable NavMeshAgent
 			GetComponent<Gnome>().enabled = false;
 			GetComponent<NavMeshAgent>().enabled = false;
-			
+
+			//gameObject.tag = "";
+
 			//Make the gnome fall
-			rigidbody.isKinematic = false;
-			rigidbody.useGravity = true;
+			//rigidbody.isKinematic = false;
+			//rigidbody.useGravity = true;
 		}
         else if(other.tag == "DropTrap")
         {
