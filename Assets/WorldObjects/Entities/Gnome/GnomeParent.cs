@@ -35,7 +35,6 @@ public class GnomeParent : MonoBehaviour
 
         //get the blink component from the player
         blink = target.GetComponent<Blink>();
-
 	}
 	
 	// Update is called once per frame
@@ -67,8 +66,18 @@ public class GnomeParent : MonoBehaviour
 				}
 				else
 				{
-					//save the current position of the gnome
-					Vector3 newPos = new Vector3(gnomes[i].transform.position.x, gnomes[i].transform.position.y, gnomes[i].transform.position.z);
+					Vector3 newPos;
+					//Set position of gnome
+					if(gnomes[i].GetComponent<Gnome>().fallen == true)
+					{
+						newPos = gnomes[i].GetComponent<Gnome>().spawnPosition;
+
+						Debug.Log (newPos);
+					}
+					else
+					{
+						newPos = new Vector3(gnomes[i].transform.position.x, gnomes[i].transform.position.y, gnomes[i].transform.position.z);;
+					}
 					//create the level 2 gnome with the same position as the level one gnome
 					GameObject thisModel = Instantiate(gnomeLvl2, newPos, gnomes[i].transform.rotation) as GameObject;
 					thisModel.gameObject.name = "GnomeLvl2";
@@ -100,6 +109,7 @@ public class GnomeParent : MonoBehaviour
                 Vector3 newPos = new Vector3(gnomes[i].transform.position.x, gnomes[i].transform.position.y, gnomes[i].transform.position.z);
                 //create the level 1 gnome with the same position as the level 2 gnome
                 GameObject thisModel = Instantiate(gnomeLvl1, newPos, gnomes[i].transform.rotation) as GameObject;
+				thisModel.gameObject.name = "GnomeLvl1";
                 //set the level 1 gnome parent to be the Gnome parent
                 thisModel.transform.parent = transform;
                 //update the gnome leve

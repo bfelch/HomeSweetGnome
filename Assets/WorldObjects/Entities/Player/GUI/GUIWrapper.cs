@@ -54,7 +54,6 @@ public class GUIWrapper : MonoBehaviour {
             if (items.Contains(slot.heldItem))
             {
                 numRequiredItems--;
-				Debug.Log ("in: " + numRequiredItems);
             }
         }
 

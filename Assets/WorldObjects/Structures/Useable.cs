@@ -120,6 +120,7 @@ public class Useable : MonoBehaviour
 				if(this.gameObject.name == "ChandelierSwitch" && chandOn == false && chandReady == true)
 				{
 					chandOn = true;
+
 					gameObject.GetComponent<Light>().enabled = true;
 					GameObject.Find("gnomeTrapCircle").GetComponent<MeshRenderer>().enabled = true;
 
@@ -127,7 +128,8 @@ public class Useable : MonoBehaviour
 					GameObject.Find("Darkness").GetComponent<scrDarkness>().PrepareEvent();
 
 					//Unhighlight Chand Switch
-					GameObject chandSwitch = GameObject.Find ("ChandSwitch");
+					GameObject chandSwitch = GameObject.Find("ChandSwitch");
+					GameObject.Find("Highlighter").GetComponent<scrHighlightController>().Unhighlight(chandSwitch);
 
 				}
 				else if(this.gameObject.name == "ShedLight")

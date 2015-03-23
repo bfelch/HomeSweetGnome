@@ -31,7 +31,12 @@ public class Gnome : MonoBehaviour
 	public static int gnomeLevel = 1;
 
     //Dirt Spawner object
-    public GameObject dirtSpawner;
+    private GameObject dirtSpawner1;
+	private GameObject dirtSpawner2;
+	private GameObject dirtSpawner3;
+	private GameObject dirtSpawner4;
+
+	public Vector3 spawnPosition;
 
 	//Shatter Effect Prefab
 	public GameObject shatterEffect;
@@ -42,6 +47,8 @@ public class Gnome : MonoBehaviour
     //Starting location of gnome
     private Vector3 startLocation;
 
+	private string trapName;
+
 	Animation walkAnim; //The animation component
 
     void Start()
@@ -50,7 +57,12 @@ public class Gnome : MonoBehaviour
         target = GameObject.Find("Player");
         targetBlink = target.GetComponent<Blink>();
         agent = gameObject.GetComponent<NavMeshAgent>();
-        dirtSpawner = GameObject.Find("DirtSpawner");
+
+        dirtSpawner1 = GameObject.Find("TrapSpawner1");
+		dirtSpawner2 = GameObject.Find("TrapSpawner2");
+		dirtSpawner3 = GameObject.Find("TrapSpawner3");
+		dirtSpawner4 = GameObject.Find("TrapSpawner4");
+
         startLocation = this.transform.position;
 
 		walkAnim = GetComponent<Animation>();
@@ -186,15 +198,15 @@ public class Gnome : MonoBehaviour
         //Gnome is no longer fallen
         fallen = false;
 
-        //Set position
-        transform.position = dirtSpawner.transform.position;
+		/*
+		transform.position = spawnPosition;
 
         //Enable NavMeshAgent
         GetComponent<NavMeshAgent>().enabled = true;
 
         //Make the gnome kinematic again
         rigidbody.isKinematic = true;
-        rigidbody.useGravity = false;
+        rigidbody.useGravity = false;*/
 
         readyToSpawn = false;
     }
@@ -264,6 +276,26 @@ public class Gnome : MonoBehaviour
 	{
 		if(other.name == "DirtTrap")
 		{
+			trapName = other.transform.parent.name;
+
+			//Save spawn position
+			if(trapName == "DirtTrap1")
+			{
+				spawnPosition = dirtSpawner1.transform.position;
+			}
+			else if(trapName == "DirtTrap2")
+			{
+				spawnPosition = dirtSpawner2.transform.position;
+			}
+			else if(trapName == "DirtTrap3")
+			{
+				spawnPosition = dirtSpawner3.transform.position;
+			}
+			else if(trapName == "DirtTrap4")
+			{
+				spawnPosition = dirtSpawner4.transform.position;
+			}
+
             //Gnome is fallen
             fallen = true;
 
@@ -295,8 +327,6 @@ public class Gnome : MonoBehaviour
 			//Disable NavMeshAgent
 			GetComponent<Gnome>().enabled = false;
 			GetComponent<NavMeshAgent>().enabled = false;
-
-			//gameObject.tag = "";
 
 			//Make the gnome fall
 			//rigidbody.isKinematic = false;

@@ -48,11 +48,11 @@ public class scrDirtTrap : MonoBehaviour
 		//Hole is dug
 		if(timesToDig <= 0)
 		{
+			//Enable the trap trigger
+			transform.parent.Find("DirtTrap").GetComponent<SphereCollider>().enabled = true;
+
 			//Destroy Dirt object
 			Destroy(this.gameObject);
-
-			//Enable the trap trigger
-			GameObject.Find("DirtTrap").collider.enabled = true;
 		}
 	}
 }

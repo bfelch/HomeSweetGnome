@@ -16,10 +16,16 @@ public class scrBook : MonoBehaviour
 	private bool darkReady = true;
 	public bool bookOpen = false;
 
-	private Material outline;
-
 	void Start()
 	{
+		StartCoroutine(DelayedStart(2.0F));
+	}
+
+	public IEnumerator DelayedStart(float waitTime)
+	{
+		//Wait spawn time
+		yield return new WaitForSeconds(waitTime);
+		
 		GameObject.Find("Highlighter").GetComponent<scrHighlightController>().HighlightOrange(this.gameObject);
 	}
 
