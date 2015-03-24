@@ -2,7 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class GUIWrapper : MonoBehaviour {
+public class GUIWrapper : MonoBehaviour 
+{
     //references to all slots
     public ItemSlot[] slots;
     //reference to key ring
@@ -10,11 +11,23 @@ public class GUIWrapper : MonoBehaviour {
     //reference to energy bar
     public EnergyBar energyBar;
 
-    void Start() {
-    }
+	//Gui Materials
+	public Material shovelMat;
+	public Material boneMat;
+	public Material saplingMat;
+	public Material eyeMat;
+	public Material fuelMat;
+	public Material sparkMat;
+	public Material screwMat;
+	public Material headMat;
+	public Material boatKeysMat;
 
-    void Update() {
-    }
+	//Gui Objects
+	public GameObject objTopLeft;
+	public GameObject objTopCenter;
+	public GameObject objTopRight;
+	public GameObject objBotLeft;
+	public GameObject objBotRight;
 
     public bool AddToSlot(Item item)
     {
@@ -28,11 +41,44 @@ public class GUIWrapper : MonoBehaviour {
         else
         {
             //add item to first empty slot
-            foreach (ItemSlot slot in slots)
+            foreach(ItemSlot slot in slots)
             {
+				GameObject target = objTopLeft;
+
                 //if added, stop looking
-                if (slot.AddItem(item))
+                if(slot.AddItem(item))
                 {
+					switch(item.name)
+					{
+						case "Shovel":
+							slot.renderer.material = shovelMat;
+							break;
+						case "Bone":
+							slot.renderer.material = boneMat;
+							break;
+						case "SmallSapling":
+							slot.renderer.material = saplingMat;
+							break;
+						case "GnomeEye":
+							slot.renderer.material = eyeMat;
+							break;
+						case "GargoyleHead":
+							slot.renderer.material = headMat;
+							break;
+						case "Fuel":
+							slot.renderer.material = fuelMat;
+							break;
+						case "SparkPlug":
+							slot.renderer.material = sparkMat;
+							break;
+						case "Screwdriver":
+							slot.renderer.material = screwMat;
+							break;
+						case "BoatKeys":
+							slot.renderer.material = boatKeysMat;
+							break;
+					}
+					
 					GameObject.Find("Player").GetComponent<Player>().itemPickUpSound.Play();
                     return true;
                 }

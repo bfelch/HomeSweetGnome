@@ -42,6 +42,8 @@ public class PlayerInteractions : MonoBehaviour
     private Font bark;
     private EndGames endgame;
 
+	public Material defaultMat;
+
     void Start()
     {
         //sets gui start
@@ -230,6 +232,7 @@ public class PlayerInteractions : MonoBehaviour
                                 slot.heldItem.transform.position = pos + Camera.main.transform.forward;
                                 slot.heldItem.gameObject.GetComponent<Rigidbody>().isKinematic = false;
 
+								slot.renderer.material = defaultMat;
                                 slot.heldItem = null;
                             }
                         } else {

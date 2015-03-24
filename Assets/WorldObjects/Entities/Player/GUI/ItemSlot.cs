@@ -8,7 +8,8 @@ public class ItemSlot : MonoBehaviour {
     public GUISlot gui;
 
 	// Use this for initialization
-	void Start () {
+	void Start () 
+	{
         heldItem = null;
 	}
 	
@@ -22,6 +23,7 @@ public class ItemSlot : MonoBehaviour {
         //if no item in slot, add it
         if (heldItem == null)
         {
+
             heldItem = item;
             return true;
         }

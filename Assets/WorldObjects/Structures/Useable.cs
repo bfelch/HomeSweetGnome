@@ -38,7 +38,7 @@ public class Useable : MonoBehaviour
 			requiredItems[0] = EndGames.allPickUps["BoatKeys"].GetComponent<Item>();
 			requiredItems[1] = EndGames.allPickUps["Fuel"].GetComponent<Item>();
 			requiredItems[2] = EndGames.allPickUps["SparkPlug"].GetComponent<Item>();
-			requiredItems[3] = EndGames.allPickUps["Wrench"].GetComponent<Item>();
+			requiredItems[3] = EndGames.allPickUps["Screwdriver"].GetComponent<Item>();
 		}
 		else if(this.gameObject.name == "MixingBowl")
 		{
