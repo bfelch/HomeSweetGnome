@@ -43,8 +43,8 @@ public class Useable : MonoBehaviour
 		else if(this.gameObject.name == "MixingBowl")
 		{
 			requiredItems[0] = EndGames.allPickUps["SmallSapling"].GetComponent<Item>();
-			requiredItems[1] = EndGames.allPickUps["Bone"].GetComponent<Item>();
-			requiredItems[2] = EndGames.allPickUps["Bone"].GetComponent<Item>();
+			requiredItems[1] = EndGames.allPickUps["GnomeEye"].GetComponent<Item>();
+			requiredItems[2] = EndGames.allPickUps["GargoyleHead"].GetComponent<Item>();
 			requiredItems[3] = EndGames.allPickUps["Bone"].GetComponent<Item>();
 		}
         else if (this.gameObject.name == "ShedDoor")

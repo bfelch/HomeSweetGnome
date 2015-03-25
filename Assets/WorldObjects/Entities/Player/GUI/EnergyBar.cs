@@ -7,32 +7,32 @@ public class EnergyBar : MonoBehaviour {
     //reference to player
     public Player player;
     //reference to meter
-    public GameObject sanityMeter;
-
-	// Use this for initialization
-	void Start () {
-	
-	}
+    public GameObject meterToScale;
+	public GameObject sanityMeter;
 	
 	// Update is called once per frame
-	void Update () {
+	void Update () 
+	{
         //checks if object is active
-        if (this.gameObject.activeSelf) {
+        if (this.gameObject.activeSelf) 
+		{
             //alters scale relative to health
-            sanityMeter.transform.localScale = new Vector3(.9f, .95f * player.sanity / player.maxSanity, 1);
+            meterToScale.transform.localScale = new Vector3(1, 1 * player.sanity / player.maxSanity, 1);
 
             //alters color relative to health
             float sanity = player.sanity / player.maxSanity;
 
             if (sanity > .6f) 
 			{
-                sanityMeter.renderer.material.color = Color.green;
-            } else if (sanity > .3f) 
+				sanityMeter.renderer.material.color = new Color32(0,255, 0, 30);
+            } 
+			else if (sanity > .3f) 
 			{
-                sanityMeter.renderer.material.color = Color.yellow;
-            } else 
+				sanityMeter.renderer.material.color = new Color32(255,255, 0, 30);
+            } 
+			else 
 			{
-                sanityMeter.renderer.material.color = Color.red;
+				sanityMeter.renderer.material.color = new Color32(255,0, 0, 30);
             }
         }
 	}

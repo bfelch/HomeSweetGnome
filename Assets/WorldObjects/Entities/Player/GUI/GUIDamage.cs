@@ -13,7 +13,7 @@ public class GUIDamage : MonoBehaviour
     public void OnTriggerEnter(Collider col)
     {
         //check if we are in the enemy trigger
-        if (col.gameObject.tag == "Gnome" && col.gameObject.name != "GnomeShed" && col.gameObject.GetComponent<Gnome>().enabled == true)
+		if (col.gameObject.tag == "Gnome" && col.gameObject.name != "GnomeShed" && col.gameObject.GetComponent<Gnome>().enabled == true && col.gameObject.GetComponent<Gnome>().pushed == false)
         {
             //set enter collider equal to true because we are hitting an enemy
             enterCollider = true;

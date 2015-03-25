@@ -91,7 +91,7 @@ public class Player : MonoBehaviour
 
     void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.tag == "Gnome" && other.gameObject.name != "GnomeShed" && other.gameObject.GetComponent<Gnome>().enabled == true)
+        if (other.gameObject.tag == "Gnome" && other.gameObject.name != "GnomeShed" && other.gameObject.GetComponent<Gnome>().enabled == true  && other.gameObject.GetComponent<Gnome>().pushed == false)
         {
             sanity -= 0.2f;
         }
