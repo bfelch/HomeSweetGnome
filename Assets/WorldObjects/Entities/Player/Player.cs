@@ -208,6 +208,7 @@ public class Player : MonoBehaviour
 		}
 
 		floorType = hit.collider.tag;
+		Debug.Log (floorType);
 	}
 
 	IEnumerator WaitToReload(float waitTime)

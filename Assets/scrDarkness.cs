@@ -50,8 +50,8 @@ public class scrDarkness : MonoBehaviour
 		{
 			eventStarted = true;
 			transform.GetComponent<MeshCollider>().enabled = true;
-			frontDoor1.SetActive(false);
-			frontDoor2.SetActive(false);
+			//frontDoor1.SetActive(false);
+			//frontDoor2.SetActive(false);
 			TurnOffLights();
 
 			//Play the laugh sound
@@ -64,8 +64,8 @@ public class scrDarkness : MonoBehaviour
 	public void EndDarkEvent()
 	{
 		transform.GetComponent<MeshCollider>().enabled = false;
-		frontDoor1.SetActive(true);
-		frontDoor2.SetActive(true);
+		//frontDoor1.SetActive(true);
+		//frontDoor2.SetActive(true);
 		TurnOnLights();
 
 		eventOver = true;

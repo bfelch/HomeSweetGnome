@@ -204,7 +204,7 @@ public class Blink : MonoBehaviour
             {
 				if(tempPlayerSanity < 100)
 				{
-					tempPlayerSanity += 1.0F;
+					tempPlayerSanity += 3.0F;
 					Vector3 curTopSlugPos = topLidSlugPos;
 					curTopSlugPos.y -= (1 - (tempPlayerSanity / playerSanityMax)) * slugPosModifier;
 					

@@ -287,7 +287,6 @@ public class LoadUnload : MonoBehaviour
 
                 moonlight.lightFadeIn = false; //Light is only fading out
                 moonlight.lightFadeOut = true; //Remove moonlight
-                GameObject.Find("Main Camera").GetComponent<GlobalFog>().enabled = false;
 
             }
 
@@ -299,7 +298,6 @@ public class LoadUnload : MonoBehaviour
 
                 moonlight.lightFadeOut = false; //Light is only fading in
                 moonlight.lightFadeIn = true; //Add moonlight
-                GameObject.Find("Main Camera").GetComponent<GlobalFog>().enabled = true;
 
             }
 
@@ -310,7 +308,6 @@ public class LoadUnload : MonoBehaviour
 
                 moonlight.lightFadeIn = false; //Light is only fading out
                 moonlight.lightFadeOut = true; //Remove moonlight
-                GameObject.Find("Main Camera").GetComponent<GlobalFog>().enabled = false;
 
 
             }
@@ -322,7 +319,6 @@ public class LoadUnload : MonoBehaviour
 
                 moonlight.lightFadeOut = false; //Light is only fading in
                 moonlight.lightFadeIn = true; //Add moonlight
-                GameObject.Find("Main Camera").GetComponent<GlobalFog>().enabled = true;
 
             }
         }

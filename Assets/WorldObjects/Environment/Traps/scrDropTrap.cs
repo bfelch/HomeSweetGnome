@@ -40,6 +40,9 @@ public class scrDropTrap : MonoBehaviour
 	        dropping = false; //No longer dropping
 			transform.parent.Find("DropTrap/Trigger").gameObject.collider.enabled = false; //Crushing trigger disabled while not dropping
 
+			//Remove gnome circle
+			GameObject.Find("gnomeTrapCircle").renderer.enabled = false;
+
 			//Temporary destory (Shatter? Fade away? Broken Model?)
 			Destroy(this.gameObject);
 		}
