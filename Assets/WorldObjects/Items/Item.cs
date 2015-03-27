@@ -23,7 +23,10 @@ public class Item : MonoBehaviour {
 
     void OnCollisionEnter(Collision col)
     {
-        this.GetComponent<Rigidbody>().isKinematic = true;
+		if(col.gameObject.name != "ItemHolder")
+		{
+        	this.GetComponent<Rigidbody>().isKinematic = true;
+		}
     }
 }
 

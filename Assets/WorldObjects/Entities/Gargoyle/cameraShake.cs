@@ -5,9 +5,9 @@ using System.Collections;
 public class cameraShake : MonoBehaviour 
 {
 	private float shakeSpeed = 20.0F;
-	private Vector3 shakeRange = new Vector3(0.4F, 0.4F, 0);
+	private Vector3 shakeRange = new Vector3(2.0F, 2.0F, 0);
 	
-	private bool shake = false;
+	public bool shake = false;
 	
 	private Vector3 originalPos;
 	

@@ -11,6 +11,8 @@ public class scrHighlightController : MonoBehaviour
 	{
 		outline1 = Resources.Load("Outline1") as Material;
 		outline2 = Resources.Load("Outline2") as Material;
+
+		StartCoroutine(DelayedStart(2.0F));
 	}
 
 	public void HighlightOrange(GameObject objToHightlight)
@@ -63,5 +65,16 @@ public class scrHighlightController : MonoBehaviour
 		mats[0] = current;
 		//set the material to the current mats
 		currentMesh.materials = mats;
+	}
+	
+	public IEnumerator DelayedStart(float waitTime)
+	{
+		//Wait spawn time
+		yield return new WaitForSeconds(waitTime);
+		
+		GameObject.Find("Highlighter").GetComponent<scrHighlightController>().HighlightOrange(GameObject.Find("LeftGateLock"));
+		GameObject.Find("Highlighter").GetComponent<scrHighlightController>().HighlightOrange(GameObject.Find("RightGateLock"));
+
+		GameObject.Find("Highlighter").GetComponent<scrHighlightController>().HighlightOrange(GameObject.Find("MotorHatch"));
 	}
 }

@@ -38,8 +38,8 @@ public class PlayerMovement : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         //set timer
-        sprintTime = 10f;
-        maxSprintTime = 10f;
+        sprintTime = 6.0F;
+        maxSprintTime = 6.0F;
 
         //set player collider heights
         boxStandHeight = box.size.y;
@@ -117,29 +117,42 @@ public class PlayerMovement : MonoBehaviour {
     }
 
     void Walk() {
-        if (!walking) {
+        if (!walking) 
+		{
+			//Walking speed
             SetMovementSpeed(6f);
         }
 
-        this.gameObject.animation.Play("Walk");
+		if(GameObject.Find("Main Camera").GetComponent<cameraShake>().shake == false)
+		{
+        	this.gameObject.animation.Play("Walk");
+		}
 
-        if (Falling()) {
+        if (Falling()) 
+		{
             //if falling, change state
             state = PlayerState.FALL;
-        } else if (Crouching()) {
+        } 
+		else if (Crouching()) 
+		{
             //if crouching, change state
             state = PlayerState.CROUCH;
-        } else if (Sprinting()) {
+        } 
+		else if (Sprinting()) 
+		{
             //if sprinting, change state
             state = PlayerState.SPRINT;
-        } else if (!Moving()) {
+        } 
+		else if (!Moving()) 
+		{
             //if not moving, change state
             state = PlayerState.STAND;
         }
     }
 
-    void Crouch() {
-        if (canCrouch)
+    void Crouch() 
+	{
+        if(canCrouch)
         {
             if (!crouching)
             {
@@ -169,25 +182,36 @@ public class PlayerMovement : MonoBehaviour {
         }
     }
 
-    void Sprint() {
-        if (!sprinting) {
-            SetMovementSpeed(24.0F);
+    void Sprint() 
+	{
+        if(!sprinting) 
+		{
+			//Sprint speed
+            SetMovementSpeed(12.0F);
         }
 
-        if (Input.GetKey(KeyCode.W)) {
-            if (sprintTime > 0) {
+        if (Input.GetKey(KeyCode.W)) 
+		{
+            if (sprintTime > 0) 
+			{
                 //if moving forward, play animation and update timer
-                this.gameObject.animation.Play("Sprint");
+				if(GameObject.Find("Main Camera").GetComponent<cameraShake>().shake == false)
+				{
+                	this.gameObject.animation.Play("Sprint");
+				}
 
                 sprintTime -= Time.deltaTime;
-            } else {
+            } 
+			else 
+			{
                 //if timer under 0, change state
                 state = PlayerState.STAND;
 
                 breathing = true;
                 recharging = true;
             }
-        } else {
+        } else 
+		{
             //if not moving, change state
             state = PlayerState.STAND;
 
@@ -195,10 +219,13 @@ public class PlayerMovement : MonoBehaviour {
             recharging = true;
         }
 
-        if (Falling()) {
+        if (Falling()) 
+		{
             //if falling, change state
             state = PlayerState.FALL;
-        } else if (!Sprinting()) {
+        } 
+		else if(!Sprinting()) 
+		{
             //if not sprinting, change state
             state = PlayerState.STAND;
 
@@ -208,11 +235,15 @@ public class PlayerMovement : MonoBehaviour {
     }
 
     void Fall() {
-        if (motor.IsGrounded()) {
+        if (motor.IsGrounded()) 
+		{
             //if hit ground, change state
             state = PlayerState.STAND;
 
-            this.gameObject.animation.Play("Landing");
+			if(GameObject.Find("Main Camera").GetComponent<cameraShake>().shake == false)
+			{
+            	this.gameObject.animation.Play("Landing");
+			}
         }
     }
 

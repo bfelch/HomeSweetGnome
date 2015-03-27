@@ -80,21 +80,12 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         if (!this.gameObject.animation.IsPlaying("OpeningCut")) 
 		{
             Sanity();
             Push();
         }
         
-    }
-
-    void OnTriggerStay(Collider other)
-    {
-        if (other.gameObject.tag == "Gnome" && other.gameObject.name != "GnomeShed" && other.gameObject.GetComponent<Gnome>().enabled == true  && other.gameObject.GetComponent<Gnome>().pushed == false)
-        {
-            sanity -= 0.2f;
-        }
     }
 
 	IEnumerator PushTimer(float waitTime, GameObject target)
@@ -126,7 +117,11 @@ public class Player : MonoBehaviour
 			{
 				activeTarget = hit.collider.gameObject; //Store item being looked at
 
-				if(activeTarget.tag == "Gnome" && Gnome.gnomeLevel == 1 && activeTarget.GetComponent<Gnome>().pushed == false && activeTarget.name != "GnomeShed")
+				if(activeTarget.tag == "Gnome" 
+				   && Gnome.gnomeLevel == 1 
+				   && activeTarget.GetComponent<Gnome>().pushed == false 
+				   && activeTarget.name != "GnomeShed"
+				   && activeTarget.GetComponent<Gnome>().fallen == false)
 				{
 					//Gnome is pushed
 					activeTarget.GetComponent<Gnome>().pushed = true;
@@ -163,8 +158,8 @@ public class Player : MonoBehaviour
 
     void Sanity()
     {
-		//Debug.Log ("Sanity: " + sanity);
         sanity -= .001f;
+
         if (sanity <= 0 && !this.GetComponent<EndGames>().playerSlept)
         {
             this.GetComponent<EndGames>().playerSlept = true;
@@ -189,6 +184,27 @@ public class Player : MonoBehaviour
         {
             this.GetComponent<CharacterController>().slopeLimit = 90;
         }
+
+		if(other.gameObject.tag == "Gnome" 
+		   && other.gameObject.name != "GnomeShed" 
+		   && other.gameObject.GetComponent<Gnome>().enabled == true  
+		   && other.gameObject.GetComponent<Gnome>().pushed == false 
+		   && other.gameObject.GetComponent<Gnome>().fallen == false)
+		{
+			other.gameObject.GetComponent<Gnome>().touchingPlayer = true;
+		}
+	}
+
+	void OnTriggerStay(Collider other)
+	{
+		if (other.gameObject.tag == "Gnome" 
+		    && other.gameObject.name != "GnomeShed" 
+		    && other.gameObject.GetComponent<Gnome>().enabled == true 
+		    && other.gameObject.GetComponent<Gnome>().pushed == false
+		    && other.gameObject.GetComponent<Gnome>().fallen == false)
+		{
+			sanity -= 0.2f;
+		}
 	}
 
     void OnTriggerExit(Collider other)
@@ -197,6 +213,15 @@ public class Player : MonoBehaviour
         {
             this.GetComponent<CharacterController>().slopeLimit = 45;
         }
+
+		if(other.gameObject.tag == "Gnome" 
+		   && other.gameObject.name != "GnomeShed" 
+		   && other.gameObject.GetComponent<Gnome>().enabled == true  
+		   && other.gameObject.GetComponent<Gnome>().pushed == false 
+		   && other.gameObject.GetComponent<Gnome>().fallen == false)
+		{
+			other.gameObject.GetComponent<Gnome>().touchingPlayer = false;
+		}
     }
 
 	void OnControllerColliderHit(ControllerColliderHit hit)
@@ -208,7 +233,6 @@ public class Player : MonoBehaviour
 		}
 
 		floorType = hit.collider.tag;
-		Debug.Log (floorType);
 	}
 
 	IEnumerator WaitToReload(float waitTime)

@@ -7,7 +7,6 @@ public class Gnome : MonoBehaviour
     public NavMeshAgent agent;
     //Target in world
     public GameObject target;
-    public Blink targetBlink;
 
     //Range at which will follow target
     public float sightRange;
@@ -41,21 +40,19 @@ public class Gnome : MonoBehaviour
 	//Shatter Effect Prefab
 	public GameObject shatterEffect;
 
-	//Gnome Eye prefab
-	public GameObject gnomeEye;
-
     //Starting location of gnome
     private Vector3 startLocation;
 
 	private string trapName;
 
-	Animation walkAnim; //The animation component
+	public bool touchingPlayer = false;
+
+	private Animation walkAnim; //The animation component
 
     void Start()
     {
         QualitySettings.antiAliasing = 4;
         target = GameObject.Find("Player");
-        targetBlink = target.GetComponent<Blink>();
         agent = gameObject.GetComponent<NavMeshAgent>();
 
         dirtSpawner1 = GameObject.Find("TrapSpawner1");
@@ -85,13 +82,12 @@ public class Gnome : MonoBehaviour
         else
         {
             //if not on screen, fallen, or pushed
-            if (!SeenByPlayer() && !fallen && !pushed && !trapped) 
+            if (!SeenByPlayer() && !fallen && !pushed && !trapped && !touchingPlayer) 
 			{
                 if (TargetInRange()) 
 				{
 					//if player in range
 					FollowPlayer();
-
                 } 
 				else 
 				{
@@ -110,7 +106,6 @@ public class Gnome : MonoBehaviour
                 agent.speed = 0;
             }
         }
-
     }
 
     private void FollowPlayer()
@@ -176,7 +171,9 @@ public class Gnome : MonoBehaviour
         isSeen = isSeen && (viewportY >= lowBound && viewportY <= highBound);
         isSeen = isSeen && viewportZ > zBound;
         if(this.name != "GnomeShed")
-            isSeen = isSeen && !targetBlink.blink;
+		{
+			isSeen = isSeen && !GameObject.Find("Player").GetComponent<Blink>().blink;
+		}
         return isSeen;
     }
 
@@ -236,37 +233,6 @@ public class Gnome : MonoBehaviour
 	{
 		//Emit particle effect at shatter location
 		Instantiate(shatterEffect, new Vector3(transform.position.x, transform.position.y - 0.8F, transform.position.z), shatterEffect.transform.rotation);
-
-		//Random position inside a circle of size 2
-		Vector2 newPosition = Random.insideUnitCircle * 2;
-		
-		//Make sure the eye doesn't spawn under the chand
-		if(newPosition.x > 0)
-		{
-			newPosition.x = newPosition.x + 2;
-		}
-		else
-		{
-			newPosition.x = newPosition.x - 2;
-		}
-		
-		if(newPosition.y > 0)
-		{
-			newPosition.y = newPosition.y + 2;
-		}
-		else
-		{
-			newPosition.y = newPosition.y - 2;
-		}
-		
-		//Spawn the gnome eye
-		GameObject gnomeEyeClone = (GameObject)Instantiate(gnomeEye, new Vector3(transform.position.x + newPosition.x, transform.position.y + 0.2F, transform.position.z + newPosition.y), gnomeEye.transform.rotation);
-
-		//Change the name
-		gnomeEyeClone.name = "GnomeEye";
-
-		//Move head to item list
-		gnomeEyeClone.transform.parent = GameObject.Find ("Items").transform;
 
 		//Crush the gnome
 		Destroy(this.gameObject);
@@ -337,5 +303,18 @@ public class Gnome : MonoBehaviour
 			//Break the gnome
 			BreakApart();
         }
+	}
+
+	void OnCollisionEnter(Collision col)
+	{
+		if(this.gameObject.name == "GnomeShed")
+		{
+			if(col.gameObject.tag == "Structure")
+			{
+				audio.volume = 0.6F;
+				audio.pitch = 0.4F + 0.2F * Random.value;
+				audio.Play();
+			}
+		}
 	}
 }

@@ -355,7 +355,7 @@ public class SaveLoad : MonoBehaviour
             {
                 if (gargoyles[i].name == "Body")
                 {
-                    gargoyles[i].GetComponent<groundCheck>().BreakApart(false);
+                    //gargoyles[i].GetComponent<groundCheck>().BreakApart(false);
                     i = (4-(i % 4)) + i;
                 }
 

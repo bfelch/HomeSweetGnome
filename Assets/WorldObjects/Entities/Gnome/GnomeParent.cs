@@ -71,8 +71,6 @@ public class GnomeParent : MonoBehaviour
 					if(gnomes[i].GetComponent<Gnome>().fallen == true)
 					{
 						newPos = gnomes[i].GetComponent<Gnome>().spawnPosition;
-
-						Debug.Log (newPos);
 					}
 					else
 					{

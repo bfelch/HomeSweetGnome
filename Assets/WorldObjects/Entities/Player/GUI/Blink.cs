@@ -95,21 +95,17 @@ public class Blink : MonoBehaviour
         if(Input.GetKey(KeyCode.R))
         {
             ShutEyes();
-            blink = true;
+			blink = true;
+			//StartCoroutine("BlinkDelay", 0.3F);
         }
         if (Input.GetKeyUp(KeyCode.R))
         {
             OpenShutEyes();
-            blink = false;
         }
     }
 
     public void BlinkMechanics()
     {
-        //adjust the speed depending on player's health
-        topLid.animation["BlinkTopNew"].speed = ((playerSanity + 5) / playerSanityMax);
-        bottomLid.animation["BlinkBottomNew"].speed = ((playerSanity + 5) / playerSanityMax);
-
         if (refind)
         {
             topLidSlugPos = topLidSlug.transform.localPosition;
@@ -152,9 +148,16 @@ public class Blink : MonoBehaviour
         if (blinkTimer <= 0)
         {
             blinkTimer = 5.08f;
+
+			//adjust the speed depending on player's health
+			topLid.animation["BlinkTopNew"].speed = ((playerSanity + 5) / playerSanityMax);
+			bottomLid.animation["BlinkBottomNew"].speed = ((playerSanity + 5) / playerSanityMax);
+
             topLid.animation.Play("BlinkTopNew");
             bottomLid.animation.Play("BlinkBottomNew");
-            blink = true;
+
+			//StartCoroutine("BlinkDelay", 0.1F);
+			blink = true;
         }
 
         //set blink to false right after blinking and keep it false
@@ -240,7 +243,6 @@ public class Blink : MonoBehaviour
             topLid.animation.Play("CloseEyeTop");
             bottomLid.animation.Play("CloseBottomEye");
             holdEyes = true;
-            blink = true;
         }
         blinkTimer = 5;
     }
@@ -250,6 +252,8 @@ public class Blink : MonoBehaviour
         topLid.animation.Play("OpenEyeTop");
         bottomLid.animation.Play("OpenBottomEye");
         holdEyes = false;
+
+		StopCoroutine("BlinkDelay");
         blink = false;
     }
 
@@ -288,4 +292,11 @@ public class Blink : MonoBehaviour
             GUI.color = original;
         }
     }
+
+	IEnumerator BlinkDelay(float waitTime)
+	{
+		yield return new WaitForSeconds(waitTime);
+
+		blink = true;
+	}
 }

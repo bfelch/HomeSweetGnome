@@ -10,6 +10,9 @@ public class scrDropTrap : MonoBehaviour
     public bool dropping = false; //Is the drop trap falling?
 	public bool dropped = false; //Has the drop trap been activated yet?
 
+	//Gnome eye object
+	public GameObject gnomeEye;
+
 	//Calls when drop trap interaction button is pressed
 	public void Drop()
 	{
@@ -42,6 +45,9 @@ public class scrDropTrap : MonoBehaviour
 
 			//Remove gnome circle
 			GameObject.Find("gnomeTrapCircle").renderer.enabled = false;
+			
+			//Spawn the gnome eye
+			gnomeEye.transform.position = new Vector3 (transform.position.x, transform.position.y, transform.position.z);
 
 			//Temporary destory (Shatter? Fade away? Broken Model?)
 			Destroy(this.gameObject);

@@ -31,6 +31,10 @@ public class Gargoyle : MonoBehaviour
 	
 	private GameObject eyeLight; //To change eye light color
 	private cameraShake shakeScript; //Script to shake camera
+
+	public GameObject eye1;
+	public GameObject eye2;
+	public GameObject mouth;
 	
 	// Use this for initialization
 	void Start () 
@@ -104,13 +108,16 @@ public class Gargoyle : MonoBehaviour
 					shakeScript.StartShake();
 
 					//On screen damage warning
-					player.GetComponent<GUIDamage>().enterCollider = true;
+					//player.GetComponent<GUIDamage>().enterCollider = true;
 					
 					//Start screeching
 					screeching = true;
 					
 					//Change color red
 					eyeLight.light.color = Color.red;
+					eye1.light.color = Color.red;
+					eye2.light.color = Color.red;
+					mouth.light.color = Color.red;
 					
 					//Play screech sound
 					audio.PlayOneShot(screechSound);
@@ -160,7 +167,7 @@ public class Gargoyle : MonoBehaviour
 		player.GetComponentInChildren<BlurEffect>().enabled = true;
 		
 		//Decreases the player's energy
-		player.GetComponent<Player>().sanity -= 0.1f;
+		player.GetComponent<Player>().sanity -= 0.05f;
 		
 		//Decrease the players speed
 		player.GetComponent<Player>().charMotor.movement.maxForwardSpeed = 3.0F;
@@ -229,6 +236,9 @@ public class Gargoyle : MonoBehaviour
 			
 			//Change gargoyle light color
 			eyeLight.light.color = Color.white;
+			eye1.light.color = Color.white;
+			eye2.light.color = Color.white;
+			mouth.light.color = Color.white;
 			
 			//No longer alerted, adjust to normal scouting rotation
 			timeLost = 0.0F;

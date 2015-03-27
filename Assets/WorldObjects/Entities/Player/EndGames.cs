@@ -24,8 +24,8 @@ public class EndGames : MonoBehaviour {
     public PlayerInteractions playerInt;
 
     private int experimentColorFade = 0;
-    public GameObject lightWind;
     public Material sunnySky;
+	public GameObject wind;
 
     //horizontal look
     public MouseLook mouseLook;
@@ -68,9 +68,9 @@ public class EndGames : MonoBehaviour {
 	void Update () {
         if (experimentComplete) {
             Light light = GameObject.Find("Moonlight").GetComponent<Light>();
-            GlobalFog fog = GameObject.Find("Main Camera").GetComponent<GlobalFog>();
+            //GlobalFog fog = GameObject.Find("Main Camera").GetComponent<GlobalFog>();
             light.color = Color.Lerp(new Color(.16f, .16f, .2f, 1f), Color.white, experimentColorFade / 500f);
-            fog.globalDensity = Mathf.Lerp(.7f, 0f, experimentColorFade / 300f);
+            //fog.globalDensity = Mathf.Lerp(.7f, 0f, experimentColorFade / 300f);
             experimentColorFade++;
         }
 	}
@@ -137,7 +137,7 @@ public class EndGames : MonoBehaviour {
 
 		gnomes.SetActive(false);
         gargoyles.SetActive(false);
-        lightWind.SetActive(true);
+        wind.SetActive(false);
 
         AudioSource eerie = GameObject.Find("GlobalSoundController").GetComponents<AudioSource>()[0];
 		AudioSource birdSound = GameObject.Find("GlobalSoundController").GetComponents<AudioSource>()[1];

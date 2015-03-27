@@ -94,7 +94,7 @@ public class Useable : MonoBehaviour
 				AudioSource sound;
 				AudioClip boatMotorSound = GameObject.Find("BoatSounds").GetComponent<BoatSounds>().boatMotorSound.clip;
 
-				sound = GameObject.Find("LightFlash").GetComponent<scrLightFlash>().PlayClipAt(boatMotorSound, motor.transform.position);
+				sound = GameObject.Find("LightFlash1").GetComponent<scrLightFlash>().PlayClipAt(boatMotorSound, motor.transform.position);
 				StartCoroutine(SoundController.FadeAudio(12.0F, SoundController.Fade.Out, sound));
 
                // player.transform.parent = boat.transform;

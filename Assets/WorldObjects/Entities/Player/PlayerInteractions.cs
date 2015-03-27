@@ -252,9 +252,13 @@ public class PlayerInteractions : MonoBehaviour
                 //Display item name
                 GUI.Box(new Rect(0, Screen.height - Screen.height / 2 + 150, Screen.width, 30), getImprovedName(targetName));
             }
-            else if(lookingAtGnome && Gnome.gnomeLevel == 1 && activeTarget.name != "GnomeShed")
+            else if(lookingAtGnome 
+			        && Gnome.gnomeLevel == 1 
+			        && activeTarget.name != "GnomeShed"
+			        && activeTarget.GetComponent<Gnome>().fallen == false
+			        && activeTarget.GetComponent<Gnome>().pushed == false)
             {
-                GUI.Box(new Rect(0, Screen.height - Screen.height / 2 + 150, Screen.width, 50), "Press 'E' to push a gnome. \n WARNING: This will do you harm.");
+                GUI.Box(new Rect(0, Screen.height - Screen.height / 2 + 150, Screen.width, 50), "Press 'E' to push a gnome. \n WARNING: This will do you harm, but temporarily disable the gnome.");
 
             }
             else if (lookingAtGargoyle)
@@ -265,7 +269,10 @@ public class PlayerInteractions : MonoBehaviour
             else if (notUseable && activeTarget != null)
             {
                // this.GetComponent<Player>().flashFade();
-                GUI.Box(new Rect(0, Screen.height - Screen.height / 2 + 150, Screen.width, 30), "You need the " + GUIString + " to continue.");
+				if(activeTarget.name != "MixingBowl")
+				{
+                	GUI.Box(new Rect(0, Screen.height - Screen.height / 2 + 150, Screen.width, 30), "You need the " + GUIString + " to continue.");
+				}
             }
 
             if (!showGUI && !removePlus)
@@ -385,6 +392,17 @@ public class PlayerInteractions : MonoBehaviour
         //Pressing the E (Interact) key?
         if (Input.GetKeyUp(KeyCode.E))
         {
+			if(activeTarget.name == "RightGateLock" || activeTarget.name == "LeftGateLock")
+			{
+				GameObject.Find("Highlighter").GetComponent<scrHighlightController>().Unhighlight(GameObject.Find("LeftGateLock"));
+				GameObject.Find("Highlighter").GetComponent<scrHighlightController>().Unhighlight(GameObject.Find("RightGateLock"));
+			}
+
+			if(activeTarget.name == "MotorHatch")
+			{
+				GameObject.Find("Highlighter").GetComponent<scrHighlightController>().Unhighlight(GameObject.Find("MotorHatch"));
+			}
+
             if(targetUseable.Interact() != "")
             {
                 notUseable = true;
