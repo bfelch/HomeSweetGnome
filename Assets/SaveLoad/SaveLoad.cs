@@ -244,6 +244,7 @@ public class SaveLoad : MonoBehaviour
             }
             else
                 data.heldItems[i] = null;
+				Debug.Log("1");
         }
 
         //create new array to hold all the keys
@@ -382,7 +383,10 @@ public class SaveLoad : MonoBehaviour
         {
             //if there was no item, set it to null
             if (data.heldItems[i] == null)
+			{
                 held[i].heldItem = null;
+				Debug.Log("2");
+			}
             //if their was an item, set the item in the GUI and remove it from the scene
             else
             {

@@ -42,9 +42,7 @@ public class GUIWrapper : MonoBehaviour
         {
             //add item to first empty slot
             foreach(ItemSlot slot in slots)
-            {
-				GameObject target = objTopLeft;
-
+			{
                 //if added, stop looking
                 if(slot.AddItem(item))
                 {

@@ -44,15 +44,25 @@ public class PlayerInteractions : MonoBehaviour
 
 	public Material defaultMat;
 
+	static public int slotCounter;
+
     void Start()
     {
-        //sets gui start
-        ToggleGUI(showGUI);
-        st = gameObject.GetComponent<ShedTutorial>();
-        outline = Resources.Load("Outline2") as Material;
-        bark = GetComponent<Player>().bark;
-        endgame = GetComponent<EndGames>();
+		StartCoroutine(DelayedStart());
     }
+
+	public IEnumerator DelayedStart()
+	{
+		//Wait spawn time
+		yield return new WaitForEndOfFrame();
+		
+		//sets gui start
+		ToggleGUI(showGUI);
+		st = gameObject.GetComponent<ShedTutorial>();
+		outline = Resources.Load("Outline2") as Material;
+		bark = GetComponent<Player>().bark;
+		endgame = GetComponent<EndGames>();
+	}
 
     void Update()
     {
@@ -89,6 +99,18 @@ public class PlayerInteractions : MonoBehaviour
         {
             GameObject.Find("TempPlayerLight").GetComponent<Light>().enabled = !GameObject.Find("TempPlayerLight").GetComponent<Light>().enabled;
         }
+
+		//CHEATS!
+		if(Input.GetKeyDown(KeyCode.Alpha7))
+		{
+			//Dock Teleport
+			transform.position = new Vector3(81.74F, -20.22F, 51.01F);
+		}
+		if(Input.GetKeyDown(KeyCode.Alpha8))
+		{
+			//Attic Teleport
+			transform.position = new Vector3(3.46F, 50.04F, -22.84F);
+		}
     }
 
     void OnGUI()
@@ -220,7 +242,7 @@ public class PlayerInteractions : MonoBehaviour
                             box.width *= 1.5f;
                             box.height *= 2;
                             GUI.Box(box, getImprovedName(slot.heldItem.name) + "\nDrop (Right Click)");
-
+						
                             if (Input.GetMouseButtonUp(1)) {
 
 								GameObject.Find("Player").GetComponent<Player>().itemDropSound.Play();
@@ -234,6 +256,7 @@ public class PlayerInteractions : MonoBehaviour
 
 								slot.renderer.material = defaultMat;
                                 slot.heldItem = null;
+								Debug.Log("4");
                             }
                         } else {
                             GUI.Box(box, "Empty");

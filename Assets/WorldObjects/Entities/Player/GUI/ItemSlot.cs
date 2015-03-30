@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ItemSlot : MonoBehaviour {
+public class ItemSlot : MonoBehaviour 
+{
     //reference to held item
     public Item heldItem;
     //reference to the gui slot
@@ -11,10 +12,13 @@ public class ItemSlot : MonoBehaviour {
 	void Start () 
 	{
         heldItem = null;
+		PlayerInteractions.slotCounter++;
+		Debug.Log(gui.name);
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update () 
+	{
 	
 	}
 
@@ -23,8 +27,9 @@ public class ItemSlot : MonoBehaviour {
         //if no item in slot, add it
         if (heldItem == null)
         {
-
             heldItem = item;
+			Debug.Log(heldItem);
+			Debug.Log(gui.name);
             return true;
         }
 
