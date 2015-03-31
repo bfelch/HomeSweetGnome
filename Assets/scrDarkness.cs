@@ -37,8 +37,6 @@ public class scrDarkness : MonoBehaviour
 
 	public void PrepareEvent()
 	{
-		lights = GameObject.FindGameObjectsWithTag("Light");
-
 		//Trigger
 		GetComponentInChildren<SphereCollider>().enabled = true;
 		//Player turns on Chand (Some Sparks)
@@ -101,6 +99,8 @@ public class scrDarkness : MonoBehaviour
 	//Turn off all lights
 	void TurnOffLights()
 	{
+		lights = GameObject.FindGameObjectsWithTag("Light");
+
 		foreach(GameObject light in lights)
 		{
 			if(this.gameObject.name == "Lamp" || this.gameObject.name == "ShedLight")
@@ -122,6 +122,8 @@ public class scrDarkness : MonoBehaviour
 	//Turn on all lights
 	void TurnOnLights()
 	{
+		lights = GameObject.FindGameObjectsWithTag("Light");
+
 		foreach(GameObject light in lights)
 		{
 			if(this.gameObject.name == "Lamp" || this.gameObject.name == "ShedLight")

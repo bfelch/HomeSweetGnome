@@ -442,6 +442,8 @@ public class PlayerInteractions : MonoBehaviour
         //Pressing the E (Interact) key?
         if (Input.GetKeyUp(KeyCode.E))
         {
+			GameObject.Find("Player").GetComponent<Player>().itemEatSound.Play();
+
             Destroy(activeTarget); //Remove item
 
             if (activeTarget.name == "EnergyBar")

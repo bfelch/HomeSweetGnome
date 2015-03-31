@@ -17,6 +17,8 @@ public class Player : MonoBehaviour
 	public AudioSource keyPickUpSound;
 	public AudioSource itemPickUpSound;
 	public AudioSource itemDropSound;
+	public AudioSource itemEatSound;
+	public AudioSource hurtSound;
 
 	private bool readyToPush;
     private float fadeIn = 0;
@@ -37,6 +39,11 @@ public class Player : MonoBehaviour
 	//Step sounds
 	private AudioSource grassStep;
 	private AudioSource woodStep;
+	private AudioSource carpetStep;
+	private AudioSource concreteStep;
+	private AudioSource waterStep;
+	private AudioSource dirtStep;
+
 	private string floorType;
 
     // Use this for initialization
@@ -51,15 +58,20 @@ public class Player : MonoBehaviour
 		readyToPush = true;
 
         AudioSource[] playerSounds = transform.Find("PlayerSounds").GetComponents<AudioSource>(); //Grab the audio sources on the graphics child
-        //bgMusic = playerSounds[0];
         breathingSound = playerSounds[0];
 		keyPickUpSound = playerSounds[1];
 		itemPickUpSound = playerSounds[2];
 		itemDropSound = playerSounds[3];
+		itemEatSound = playerSounds[4];
+		hurtSound = playerSounds[5];
 
 		AudioSource[] stepSounds = transform.Find("StepSoundController").GetComponents<AudioSource>(); //Grab the audio sources on the player parent
 		grassStep = stepSounds[0];
 		woodStep = stepSounds[1];
+		carpetStep = stepSounds[2];
+		concreteStep = stepSounds[3];
+		waterStep = stepSounds[4];
+		//dirtStep = stepSounds[5];
 
         if(PlayerPrefs.GetInt("LoadGame") == 1)
         {
@@ -123,6 +135,12 @@ public class Player : MonoBehaviour
 				   && activeTarget.name != "GnomeShed"
 				   && activeTarget.GetComponent<Gnome>().fallen == false)
 				{
+					//Play damage sound
+					hurtSound.Play();
+
+					//Flicker damage GUI
+					GetComponent<GUIDamage>().damageTimer = 0.0F;
+
 					//Gnome is pushed
 					activeTarget.GetComponent<Gnome>().pushed = true;
 
@@ -297,18 +315,44 @@ public class Player : MonoBehaviour
 	{
 		switch(floorType)
 		{
-			case "Structure":
+			case "Wood":
 				//Play wood step
 				woodStep.volume = 0.4F;
 				woodStep.pitch = 0.9F + 0.2F * Random.value;
 				woodStep.Play();
 				break;
-			case "Outside":
+			case "Grass":
 				//Play grass step
 				grassStep.volume = 0.4F;
 				grassStep.pitch = 0.9F + 0.2F * Random.value;
 				grassStep.Play();
 				break;
+			case "Carpet":
+				//Play carpet step
+				carpetStep.volume = 0.6F;
+				carpetStep.pitch = 0.9F + 0.2F * Random.value;
+				carpetStep.Play();
+				break;
+			case "Concrete":
+				//Play concrete step
+				concreteStep.volume = 0.05F;
+				concreteStep.pitch = 1.1F + 0.2F * Random.value;
+				concreteStep.Play();
+				break;
+			case "Water":
+				//Play concrete step
+				waterStep.volume = 0.1F;
+				waterStep.pitch = 0.9F + 0.2F * Random.value;
+				waterStep.Play();
+				break;
+			/*
+			case "Dirt":
+				//Play concrete step
+				dirtStep.volume = 0.4F;
+				dirtStep.pitch = 0.9F + 0.2F * Random.value;
+				dirtStep.Play();
+				break;
+			*/
 		}
 	}
 
@@ -316,18 +360,44 @@ public class Player : MonoBehaviour
 	{
 		switch(floorType)
 		{
-			case "Structure":
+			case "Wood":
 				//Play wood step
 				woodStep.volume = 1.0F;
 				woodStep.pitch = 0.4F + 0.2F * Random.value;
 				woodStep.Play();
 				break;
-			case "Outside":
+			case "Grass":
 				//Play grass step
 				grassStep.volume = 1.0F;
 				grassStep.pitch = 0.4F + 0.2F * Random.value;
 				grassStep.Play();
 				break;
+			case "Carpet":
+				//Play grass step
+				carpetStep.volume = 1.0F;
+				carpetStep.pitch = 0.4F + 0.2F * Random.value;
+				carpetStep.Play();
+				break;
+			case "Concrete":
+				//Play concrete step
+				concreteStep.volume = 0.4F;
+				concreteStep.pitch = 0.5F + 0.2F * Random.value;
+				concreteStep.Play();
+				break;
+			case "Water":
+				//Play concrete step
+				waterStep.volume = 0.8F;
+				waterStep.pitch = 0.4F + 0.2F * Random.value;
+				waterStep.Play();
+				break;
+			/*
+			case "Dirt":
+				//Play concrete step
+				dirtStep.volume = 1.0F;
+				dirtStep.pitch = 0.4F + 0.2F * Random.value;
+				dirtStep.Play();
+				break;
+			*/
 		}
 	}
 }

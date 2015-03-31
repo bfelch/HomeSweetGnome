@@ -1,16 +1,6 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\WorldObjects\Entities\Player\PlayerInteractions.cs">
-    <Files>
-      <File FileName="Assets\WorldObjects\Entities\Player\GUI\GUIWrapper.cs" Line="11" Column="30" />
-      <File FileName="Assets\WorldObjects\Entities\Player\GUI\ItemSlot.cs" Line="17" Column="3" />
-      <File FileName="Assets\WorldObjects\Entities\Player\PlayerInteractions.cs" Line="51" Column="31" />
-      <File FileName="Assets\SaveLoad\SaveLoad.cs" Line="374" Column="10" />
-      <File FileName="Assets\WorldObjects\Entities\Player\GUI\GUISlot.cs" Line="15" Column="2" />
-      <File FileName="Assets\WorldObjects\Entities\Player\Player.cs" Line="25" Column="37" />
-      <File FileName="Assets\scrBook.cs" Line="21" Column="3" />
-    </Files>
-  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

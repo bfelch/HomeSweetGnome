@@ -18,7 +18,7 @@ public class scrHeartbeat : MonoBehaviour
 	private AudioSource beat2; 
 	private AudioSource beat3;
 	private AudioSource beat4;
-	private AudioSource beat5;
+	public AudioSource beat5;
 	private AudioSource beat6;
 	private AudioSource beat7;
 	private AudioSource beat8; //Fastest hearbeat

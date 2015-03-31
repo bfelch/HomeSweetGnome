@@ -275,16 +275,6 @@ public class Gnome : MonoBehaviour
             //Set spawn timer
             StartCoroutine(SpawnTimer(5.0F));
 		}
-		else if(other.name == "FallCollider")
-		{
-			//Disable NavMeshAgent
-			GetComponent<NavMeshAgent>().enabled = false;
-			GetComponent<Gnome>().enabled = false;
-			
-			//Make the gnome fall
-			rigidbody.isKinematic = false;
-			rigidbody.useGravity = true;
-		}
 		else if(other.name == "CircleTrap")
 		{	
 			//Gnome is trapped
@@ -305,11 +295,25 @@ public class Gnome : MonoBehaviour
         }
 	}
 
+	void OnTriggerStay(Collider other)
+	{
+		if(other.name == "FallCollider")
+		{
+			//Disable NavMeshAgent
+			GetComponent<NavMeshAgent>().enabled = false;
+			GetComponent<Gnome>().enabled = false;
+			
+			//Make the gnome fall
+			rigidbody.isKinematic = false;
+			rigidbody.useGravity = true;
+		}
+	}
+
 	void OnCollisionEnter(Collision col)
 	{
 		if(this.gameObject.name == "GnomeShed")
 		{
-			if(col.gameObject.tag == "Structure")
+			if(col.gameObject.tag == "Wood")
 			{
 				audio.volume = 0.6F;
 				audio.pitch = 0.4F + 0.2F * Random.value;
