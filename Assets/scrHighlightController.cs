@@ -3,19 +3,27 @@ using System.Collections;
 
 public class scrHighlightController : MonoBehaviour 
 {
-	Material outline1;
-	Material outline2;
+	public static Material outline1;
+	public static Material outline2;
+	public static Material outlinePurple;
+	public static Material outlineBlue;
+	public static Material outlineGreen;
+	public static Material outlineRed;
 
 	// Use this for initialization
 	void Start () 
 	{
 		outline1 = Resources.Load("Outline1") as Material;
 		outline2 = Resources.Load("Outline2") as Material;
+		outlinePurple = Resources.Load("OutlinePurple") as Material;
+		outlineBlue = Resources.Load("OutlineBlue") as Material;
+		outlineGreen = Resources.Load("OutlineGreen") as Material;
+		outlineRed = Resources.Load("OutlineRed") as Material;
 
 		StartCoroutine(DelayedStart(2.0F));
 	}
 
-	public void HighlightOrange(GameObject objToHightlight)
+	public void Highlight(GameObject objToHightlight, Material mat)
 	{
 		//Get objects mesh renderer
 		MeshRenderer currentMesh = objToHightlight.GetComponent<MeshRenderer>();
@@ -25,7 +33,7 @@ public class scrHighlightController : MonoBehaviour
 		Material[] mats = new Material[2];
 		//Set materials to the current one and the outline
 		mats[0] = currentMat;
-		mats[1] = outline1;
+		mats[1] = mat;
 		//set the materials to the currentMesh
 		currentMesh.materials = mats;
 	}
@@ -71,10 +79,12 @@ public class scrHighlightController : MonoBehaviour
 	{
 		//Wait spawn time
 		yield return new WaitForSeconds(waitTime);
-		
-		GameObject.Find("Highlighter").GetComponent<scrHighlightController>().HighlightOrange(GameObject.Find("LeftGateLock"));
-		GameObject.Find("Highlighter").GetComponent<scrHighlightController>().HighlightOrange(GameObject.Find("RightGateLock"));
 
-		GameObject.Find("Highlighter").GetComponent<scrHighlightController>().HighlightOrange(GameObject.Find("MotorHatch"));
+		this.Highlight(GameObject.Find("PurpleKeyhole"), outlinePurple);
+		this.Highlight(GameObject.Find("BlueKeyhole"), outlineBlue);
+		this.Highlight(GameObject.Find("GreenKeyhole"), outlineGreen);
+		this.Highlight(GameObject.Find("RedKeyhole"), outlineRed);
+
+		this.Highlight(GameObject.Find("MotorHatch"), outline2);
 	}
 }

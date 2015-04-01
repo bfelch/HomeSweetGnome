@@ -16,6 +16,8 @@ public class scrBook : MonoBehaviour
 	private bool darkReady = true;
 	public bool bookOpen = false;
 
+
+
 	void Start()
 	{
 		StartCoroutine(DelayedStart(2.0F));
@@ -26,7 +28,7 @@ public class scrBook : MonoBehaviour
 		//Wait spawn time
 		yield return new WaitForSeconds(waitTime);
 		
-		GameObject.Find("Highlighter").GetComponent<scrHighlightController>().HighlightOrange(this.gameObject);
+		GameObject.Find("Highlighter").GetComponent<scrHighlightController>().Highlight(this.gameObject, scrHighlightController.outline2);
 	}
 
 	void Update()
@@ -64,7 +66,7 @@ public class scrBook : MonoBehaviour
 			//Get ChandSwitch object
 			GameObject chandSwitch = GameObject.Find ("ChandSwitch");
 			//Highlight Chandellier Switch
-			GameObject.Find("Highlighter").GetComponent<scrHighlightController>().HighlightOrange(chandSwitch);
+			GameObject.Find("Highlighter").GetComponent<scrHighlightController>().Highlight(chandSwitch, scrHighlightController.outline2);
 		}
 	}
 

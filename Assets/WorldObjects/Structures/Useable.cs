@@ -16,6 +16,7 @@ public class Useable : MonoBehaviour
 
 	public bool chandReady = false;
 	private bool chandOn = false; //For one time chandelier light event
+	private static bool[] keys = {false, false, false, false};
 	
 	// Use this for initialization
 	void Start () 
@@ -72,19 +73,31 @@ public class Useable : MonoBehaviour
 				//Dig the dirt
 				this.gameObject.GetComponent<scrDirtTrap>().Dig();
             }
-			else if (type == UseableType.GATE)
+			else if (type == UseableType.GATEKEYONE)
             {
-                GameObject.Find("Player").GetComponent<Animation>().Play("GateEnding");
-                GameObject.Find("FrontGate").GetComponent<Animation>().Play("OpenFrontGate");
-                GameObject[] gnomes = GameObject.FindGameObjectsWithTag("Gnome");
-                for (int i = 0; i < gnomes.Length; i++)
-                {
-                    gnomes[i].GetComponent<Gnome>().enabled = false;
-                    gnomes[i].GetComponent<NavMeshAgent>().enabled = false;
-
-                }
-                //Run the escape function inside the Player script
+				keys[0] = true;
+				GameObject.Find("Highlighter").GetComponent<scrHighlightController>().Unhighlight(this.gameObject);
+				Debug.Log("1");
+                /*Script to put key in hole */
             }
+			else if (type == UseableType.GATEKEYTWO)
+			{
+				keys[1] = true;
+				GameObject.Find("Highlighter").GetComponent<scrHighlightController>().Unhighlight(this.gameObject);
+				Debug.Log("2");
+			}
+			else if (type == UseableType.GATEKEYTHREE)
+			{
+				keys[2] = true;
+				GameObject.Find("Highlighter").GetComponent<scrHighlightController>().Unhighlight(this.gameObject);
+				Debug.Log("3");
+			}
+			else if (type == UseableType.GATEKEYFOUR)
+			{
+				keys[3] = true;
+				GameObject.Find("Highlighter").GetComponent<scrHighlightController>().Unhighlight(this.gameObject);
+				Debug.Log("4");
+			}
             else if (type == UseableType.BOAT)
             {
                 GameObject player = GameObject.Find("Player");
@@ -169,6 +182,23 @@ public class Useable : MonoBehaviour
 					this.gameObject.GetComponent<scrBook>().OpenBook();
 				}
 			}
+
+			if(checkGateKeys())
+			{
+				Debug.Log("Check");
+				GameObject.Find("Player").GetComponent<Animation>().Play("GateEnding");
+				GameObject.Find("FrontGate").GetComponent<Animation>().Play("OpenFrontGate");
+				GameObject[] gnomes = GameObject.FindGameObjectsWithTag("Gnome");
+				GameObject.Find ("Player").GetComponent<PlayerMovement>().enabled = false;
+				for (int i = 0; i < gnomes.Length; i++)
+				{
+					gnomes[i].GetComponent<Gnome>().enabled = false;
+					gnomes[i].GetComponent<NavMeshAgent>().enabled = false;
+				}
+				GameObject player = GameObject.Find("Player");
+
+				player.GetComponent<EndGames>().Escape();
+			}
             return "";
         }
 
@@ -183,6 +213,18 @@ public class Useable : MonoBehaviour
         }
         return items;
     }
+
+	public bool checkGateKeys()
+	{
+		for(int i = 0; i < keys.Length; i++)
+		{
+			Debug.Log(keys[i]);
+
+			if(keys[i] == false)
+				return false;
+		}
+		return true;
+	}
 }
 
-public enum UseableType {DOOR, DIRTTRAP, GATE, LIGHT, DROPTRAP, ELEVATOR, ATTICBOWL, BOAT, BOOK};
+public enum UseableType {DOOR, DIRTTRAP, GATEKEYONE, GATEKEYTWO, GATEKEYTHREE, GATEKEYFOUR, LIGHT, DROPTRAP, ELEVATOR, ATTICBOWL, BOAT, BOOK};
