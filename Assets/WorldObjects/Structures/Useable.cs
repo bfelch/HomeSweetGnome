@@ -17,6 +17,12 @@ public class Useable : MonoBehaviour
 	public bool chandReady = false;
 	private bool chandOn = false; //For one time chandelier light event
 	private static bool[] keys = {false, false, false, false};
+
+	private scrHighlightController highlighter;
+
+	private static bool hatchOpen = false;
+	private static bool motorRepaired = false;
+	private static bool fuelFilled = false;
 	
 	// Use this for initialization
 	void Start () 
@@ -27,6 +33,8 @@ public class Useable : MonoBehaviour
         }
         catch{}
 
+		highlighter = GameObject.Find ("Highlighter").GetComponent<scrHighlightController> ();
+		/*
 		if(this.gameObject.name == "LeftGateLock" || this.gameObject.name == "RightGateLock")
 		{
 			requiredItems[0] = EndGames.allPickUps["GateKeyOne"].GetComponent<Item>();
@@ -55,7 +63,7 @@ public class Useable : MonoBehaviour
 		else
 		{
 			//do nothing
-		}
+		}*/
 	}
 
     public string Interact()
@@ -76,7 +84,7 @@ public class Useable : MonoBehaviour
 			else if(type == UseableType.GATEKEYONE)
 			{
 				keys[0] = true;
-				GameObject.Find("Highlighter").GetComponent<scrHighlightController>().Unhighlight(this.gameObject);
+				highlighter.Unhighlight(this.gameObject);
 
 			
 				GameObject keyOne = Instantiate(Resources.Load("Keys/KeyOne"), Vector3.zero, Quaternion.identity) as GameObject;
@@ -86,11 +94,6 @@ public class Useable : MonoBehaviour
 				keyOne.transform.localEulerAngles = new Vector3(0f, 255f, 90);
 				keyOne.transform.localScale = new Vector3(.75f,.75f,.75f);
 
-				Debug.Log (playerGUI);
-				Debug.Log (playerGUI.keyRing);
-				Debug.Log (this.requiredItems[0]);
-				Debug.Log (this.requiredItems[0].GetComponent<Item>());
-
 				playerGUI.keyRing.RemoveKey(this.requiredItems[0].GetComponent<Item>());
                 TurnKeys.turnKeyOne = true;
 
@@ -99,7 +102,7 @@ public class Useable : MonoBehaviour
 			else if (type == UseableType.GATEKEYTWO)
 			{
 				keys[1] = true;
-				GameObject.Find("Highlighter").GetComponent<scrHighlightController>().Unhighlight(this.gameObject);
+				highlighter.Unhighlight(this.gameObject);
 				Debug.Log("2");
 				
 				GameObject keyTwo = Instantiate(Resources.Load("Keys/KeyTwo"), Vector3.zero, Quaternion.identity) as GameObject;
@@ -115,7 +118,7 @@ public class Useable : MonoBehaviour
 			else if (type == UseableType.GATEKEYTHREE)
 			{
 				keys[2] = true;
-				GameObject.Find("Highlighter").GetComponent<scrHighlightController>().Unhighlight(this.gameObject);
+				highlighter.Unhighlight(this.gameObject);
 				Debug.Log("3");
 				
 				GameObject keyThree = Instantiate(Resources.Load("Keys/KeyThree"), Vector3.zero, Quaternion.identity) as GameObject;
@@ -130,40 +133,92 @@ public class Useable : MonoBehaviour
 			else if (type == UseableType.GATEKEYFOUR)
 			{
 				keys[3] = true;
-				GameObject.Find("Highlighter").GetComponent<scrHighlightController>().Unhighlight(this.gameObject);
+				highlighter.Unhighlight(this.gameObject);
 				Debug.Log("4");
 				
 				GameObject keyFour = Instantiate(Resources.Load("Keys/KeyFour"), Vector3.zero, Quaternion.identity) as GameObject;
                 keyFour.name = "KeyFour";
-                keyFour.transform.localPosition = new Vector3(-39.9612f, 12.0049f, 132.7619f);
+				keyFour.transform.localPosition = new Vector3(-39.9951f, 12.0084f, 132.7619f);
 				keyFour.transform.localEulerAngles = new Vector3(0f, 258, 90);
 				keyFour.transform.localScale = new Vector3(.75f,.75f,.75f);
 
 				playerGUI.keyRing.RemoveKey(this.requiredItems[0].GetComponent<Item>());
                 TurnKeys.turnKeyFour = true;
 			}
-            else if (type == UseableType.BOAT)
+            else if (type == UseableType.B_HATCH)
             {
-                GameObject player = GameObject.Find("Player");
-                GameObject boat = GameObject.Find("Boat");
-				GameObject motor = GameObject.Find("Motor");
+				if(!hatchOpen)
+				{
+					//Unhighlight hatch
+					highlighter.Unhighlight(this.gameObject);
 
+					//Play openHatch animation
+					transform.parent.gameObject.animation.Play();
+
+					//Highlight motor
+					highlighter.Highlight(GameObject.Find("Motor"), scrHighlightController.outline2);
+
+					hatchOpen = true;
+					Debug.Log("Hatch Open: " + hatchOpen);
+				}
+			}
+			else if (type == UseableType.B_MOTOR && hatchOpen)
+			{
+				Debug.Log(motorRepaired);
+				if(!motorRepaired)
+				{
+					//Unhighlight motor
+					highlighter.Unhighlight(this.gameObject);
+
+					//Play fix sound
+
+					//Highlight fuel cap
+					highlighter.Highlight(GameObject.Find ("FuelCap"), scrHighlightController.outline2);
+
+					motorRepaired = true;
+					Debug.Log("Motor Repaired: " + motorRepaired);
+				}
+			}
+			else if (type == UseableType.B_FUEL && motorRepaired == true)
+			{
+				if(!fuelFilled)
+				{
+					//Unhighlight fuel
+					highlighter.Unhighlight(this.gameObject);
+
+					//Play fill sound
+
+					//Highlight boat ignition
+					highlighter.Highlight(GameObject.Find ("Ignition"), scrHighlightController.outline2);
+
+					fuelFilled = true;
+				}
+			}
+			else if (type == UseableType.B_IGNITION && fuelFilled == true)
+			{
+				//Unhighlight ignition
+				highlighter.Unhighlight(this.gameObject);
+
+				GameObject player = GameObject.Find("Player");
+				GameObject boat = GameObject.Find("Boat");
+				GameObject motor = GameObject.Find("Motor");
+				
 				AudioSource sound;
 				AudioClip boatMotorSound = GameObject.Find("BoatSounds").GetComponent<BoatSounds>().boatMotorSound.clip;
-
+				
 				sound = GameObject.Find("LightFlash1").GetComponent<scrLightFlash>().PlayClipAt(boatMotorSound, motor.transform.position);
 				StartCoroutine(SoundController.FadeAudio(12.0F, SoundController.Fade.Out, sound));
-
-               // player.transform.parent = boat.transform;
-               // player.GetComponent<Animation>().Play("BoatEnding");
-                //boat.GetComponent<Animation>().Play("BoatEnding");
-                //Run the escape function inside the Player script
-                player.GetComponent<EndGames>().Escape();
-                //for(int i = 0; i < EndGames.dockGnomes.Length; i++)
-                //{
-                    //EndGames.dockGnomes[i].SetActive(true);
-                //}
-            }
+				
+				// player.transform.parent = boat.transform;
+				// player.GetComponent<Animation>().Play("BoatEnding");
+				//boat.GetComponent<Animation>().Play("BoatEnding");
+				//Run the escape function inside the Player script
+				player.GetComponent<EndGames>().Escape();
+				//for(int i = 0; i < EndGames.dockGnomes.Length; i++)
+				//{
+				//EndGames.dockGnomes[i].SetActive(true);
+				//}
+			}
             else if(type == UseableType.ATTICBOWL)
             {
 				GameObject player = GameObject.Find("Player");
@@ -186,7 +241,7 @@ public class Useable : MonoBehaviour
 
 					//Unhighlight Chand Switch
 					GameObject chandSwitch = GameObject.Find("ChandSwitch");
-					GameObject.Find("Highlighter").GetComponent<scrHighlightController>().Unhighlight(chandSwitch);
+						highlighter.Unhighlight(chandSwitch);
 
 				}
 				else if(this.gameObject.name == "ShedLight")
@@ -229,7 +284,6 @@ public class Useable : MonoBehaviour
 
 			if(checkGateKeys())
 			{
-				Debug.Log("Check");
 				GameObject.Find("Player").GetComponent<Animation>().Play("GateEnding");
 				GameObject.Find("FrontGate").GetComponent<Animation>().Play("OpenFrontGate");
 				GameObject[] gnomes = GameObject.FindGameObjectsWithTag("Gnome");
@@ -249,6 +303,7 @@ public class Useable : MonoBehaviour
 
 				player.GetComponent<EndGames>().Escape();
 			}
+
             return "";
         }
 
@@ -268,8 +323,6 @@ public class Useable : MonoBehaviour
 	{
 		for(int i = 0; i < keys.Length; i++)
 		{
-			Debug.Log(keys[i]);
-
 			if(keys[i] == false)
 				return false;
 		}
@@ -277,4 +330,4 @@ public class Useable : MonoBehaviour
 	}
 }
 
-public enum UseableType {DOOR, DIRTTRAP, GATEKEYONE, GATEKEYTWO, GATEKEYTHREE, GATEKEYFOUR, LIGHT, DROPTRAP, ELEVATOR, ATTICBOWL, BOAT, BOOK};
+public enum UseableType {DOOR, DIRTTRAP, GATEKEYONE, GATEKEYTWO, GATEKEYTHREE, GATEKEYFOUR, LIGHT, DROPTRAP, ELEVATOR, ATTICBOWL, B_HATCH, B_MOTOR, B_FUEL, B_IGNITION, BOOK};

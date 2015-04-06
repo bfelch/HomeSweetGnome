@@ -332,7 +332,7 @@ public class PlayerInteractions : MonoBehaviour
             if (activeTarget.tag == "PickUp")
             {
 				//Highlight the object white
-				GameObject.Find("Highlighter").GetComponent<scrHighlightController>().HightlightWhite(activeTarget);
+				GameObject.Find("Highlighter").GetComponent<scrHighlightController>().Highlight(activeTarget, scrHighlightController.outline1);
 
                 Item targetItem = activeTarget.GetComponent<Item>();
                 PickUp(targetItem); //Pick it up
@@ -348,7 +348,7 @@ public class PlayerInteractions : MonoBehaviour
             else if (activeTarget.tag == "Consumable")
             {
 				//Highlight the object white
-				GameObject.Find("Highlighter").GetComponent<scrHighlightController>().HightlightWhite(activeTarget);
+				GameObject.Find("Highlighter").GetComponent<scrHighlightController>().Highlight(activeTarget, scrHighlightController.outline1);
 
                 Consume();
                 //set the lastActiveTarget to this activeTarget

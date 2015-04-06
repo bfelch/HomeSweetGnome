@@ -13,14 +13,27 @@ public class scrHighlightController : MonoBehaviour
 	// Use this for initialization
 	void Start () 
 	{
-		outline1 = Resources.Load("Outline1") as Material;
-		outline2 = Resources.Load("Outline2") as Material;
+		outline1 = Resources.Load("Outline1") as Material; //White
+		outline2 = Resources.Load("Outline2") as Material; //Yellow
 		outlinePurple = Resources.Load("OutlinePurple") as Material;
 		outlineBlue = Resources.Load("OutlineBlue") as Material;
 		outlineGreen = Resources.Load("OutlineGreen") as Material;
 		outlineRed = Resources.Load("OutlineRed") as Material;
 
 		StartCoroutine(DelayedStart(2.0F));
+	}
+
+	public IEnumerator DelayedStart(float waitTime)
+	{
+		//Wait spawn time
+		yield return new WaitForSeconds(waitTime);
+		
+		this.Highlight(GameObject.Find("PurpleKeyhole"), outlinePurple);
+		this.Highlight(GameObject.Find("BlueKeyhole"), outlineBlue);
+		this.Highlight(GameObject.Find("GreenKeyhole"), outlineGreen);
+		this.Highlight(GameObject.Find("RedKeyhole"), outlineRed);
+		
+		this.Highlight(GameObject.Find("MotorHatch"), outline2);
 	}
 
 	public void Highlight(GameObject objToHightlight, Material mat)
@@ -73,18 +86,5 @@ public class scrHighlightController : MonoBehaviour
 		mats[0] = current;
 		//set the material to the current mats
 		currentMesh.materials = mats;
-	}
-	
-	public IEnumerator DelayedStart(float waitTime)
-	{
-		//Wait spawn time
-		yield return new WaitForSeconds(waitTime);
-
-		this.Highlight(GameObject.Find("PurpleKeyhole"), outlinePurple);
-		this.Highlight(GameObject.Find("BlueKeyhole"), outlineBlue);
-		this.Highlight(GameObject.Find("GreenKeyhole"), outlineGreen);
-		this.Highlight(GameObject.Find("RedKeyhole"), outlineRed);
-
-		this.Highlight(GameObject.Find("MotorHatch"), outline2);
 	}
 }
