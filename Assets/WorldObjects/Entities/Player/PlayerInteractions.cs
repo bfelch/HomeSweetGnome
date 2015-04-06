@@ -46,6 +46,9 @@ public class PlayerInteractions : MonoBehaviour
 
 	static public int slotCounter;
 
+    private bool displayWarningMsg = true;
+    private bool waitToDisableWarningMsg = false;
+
     void Start()
     {
 		StartCoroutine(DelayedStart());
@@ -279,10 +282,11 @@ public class PlayerInteractions : MonoBehaviour
 			        && Gnome.gnomeLevel == 1 
 			        && activeTarget.name != "GnomeShed"
 			        && activeTarget.GetComponent<Gnome>().fallen == false
-			        && activeTarget.GetComponent<Gnome>().pushed == false)
+			        && activeTarget.GetComponent<Gnome>().pushed == false
+                    && displayWarningMsg)
             {
                 GUI.Box(new Rect(0, Screen.height - Screen.height / 2 + 150, Screen.width, 50), "Press 'E' to push a gnome. \n WARNING: This will do you harm, but temporarily disable the gnome.");
-
+                waitToDisableWarningMsg = true;
             }
             else if (lookingAtGargoyle)
             {
@@ -368,6 +372,8 @@ public class PlayerInteractions : MonoBehaviour
             }
             else
             {
+                if (waitToDisableWarningMsg)
+                    displayWarningMsg = false;
                 //Check this (might not be needed)
                 canHover = false; //Hide item name
                 notUseable = false;
@@ -377,6 +383,8 @@ public class PlayerInteractions : MonoBehaviour
         }
         else 
         {
+            if (waitToDisableWarningMsg)
+                displayWarningMsg = false;
             canHover = false;
             lookingAtGnome = false;
             lookingAtGargoyle = false;
