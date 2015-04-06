@@ -81,6 +81,7 @@ public class Useable : MonoBehaviour
 			
 				GameObject keyOne = Instantiate(Resources.Load("Keys/KeyOne"), Vector3.zero, Quaternion.identity) as GameObject;
 				//keyOne.transform.parent = GameObject.Find ("LeftGateLock").transform;
+                keyOne.name = "KeyOne";
 				keyOne.transform.localPosition = new Vector3 (-42.8533f, 12.008f, 132.1556f);
 				keyOne.transform.localEulerAngles = new Vector3(0f, 255f, 90);
 				keyOne.transform.localScale = new Vector3(.75f,.75f,.75f);
@@ -91,6 +92,7 @@ public class Useable : MonoBehaviour
 				Debug.Log (this.requiredItems[0].GetComponent<Item>());
 
 				playerGUI.keyRing.RemoveKey(this.requiredItems[0].GetComponent<Item>());
+                TurnKeys.turnKeyOne = true;
 
 			/*Script to put key in hole */
 			}
@@ -101,12 +103,14 @@ public class Useable : MonoBehaviour
 				Debug.Log("2");
 				
 				GameObject keyTwo = Instantiate(Resources.Load("Keys/KeyTwo"), Vector3.zero, Quaternion.identity) as GameObject;
+                keyTwo.name = "KeyTwo";
 				//keyTwo.transform.parent = GameObject.Find ("LeftGateLock").transform;
 				keyTwo.transform.localPosition = new Vector3 (-42.60429f, 12.007f, 132.2303f);
 				keyTwo.transform.localEulerAngles = new Vector3(0f, 255f, 90);
 				keyTwo.transform.localScale = new Vector3(.75f,.75f,.75f);
 
 				playerGUI.keyRing.RemoveKey(this.requiredItems[0].GetComponent<Item>());
+                TurnKeys.turnKeyTwo = true;
 			}
 			else if (type == UseableType.GATEKEYTHREE)
 			{
@@ -115,11 +119,13 @@ public class Useable : MonoBehaviour
 				Debug.Log("3");
 				
 				GameObject keyThree = Instantiate(Resources.Load("Keys/KeyThree"), Vector3.zero, Quaternion.identity) as GameObject;
-				keyThree.transform.localPosition = new Vector3 (-40.2736f, 12.0194f, 132.755f);
+                keyThree.name = "KeyThree";
+                keyThree.transform.localPosition = new Vector3 (-40.2736f, 12.0194f, 132.755f);
 				keyThree.transform.localEulerAngles = new Vector3(0f, 258, 90);
 				keyThree.transform.localScale = new Vector3(.75f,.75f,.75f);
 
 				playerGUI.keyRing.RemoveKey(this.requiredItems[0].GetComponent<Item>());
+                TurnKeys.turnKeyThree = true;
 			}
 			else if (type == UseableType.GATEKEYFOUR)
 			{
@@ -128,11 +134,13 @@ public class Useable : MonoBehaviour
 				Debug.Log("4");
 				
 				GameObject keyFour = Instantiate(Resources.Load("Keys/KeyFour"), Vector3.zero, Quaternion.identity) as GameObject;
-				keyFour.transform.localPosition = new Vector3 (-39.998f, 12.0428f, 132.755f);
+                keyFour.name = "KeyFour";
+                keyFour.transform.localPosition = new Vector3(-39.9612f, 12.0049f, 132.7619f);
 				keyFour.transform.localEulerAngles = new Vector3(0f, 258, 90);
 				keyFour.transform.localScale = new Vector3(.75f,.75f,.75f);
 
 				playerGUI.keyRing.RemoveKey(this.requiredItems[0].GetComponent<Item>());
+                TurnKeys.turnKeyFour = true;
 			}
             else if (type == UseableType.BOAT)
             {
@@ -226,6 +234,12 @@ public class Useable : MonoBehaviour
 				GameObject.Find("FrontGate").GetComponent<Animation>().Play("OpenFrontGate");
 				GameObject[] gnomes = GameObject.FindGameObjectsWithTag("Gnome");
 				GameObject.Find ("Player").GetComponent<PlayerMovement>().enabled = false;
+
+                GameObject.Find("KeyOne").SetActive(false);
+                GameObject.Find("KeyTwo").SetActive(false);
+                GameObject.Find("KeyThree").SetActive(false);
+                GameObject.Find("KeyFour").SetActive(false);
+
 				for (int i = 0; i < gnomes.Length; i++)
 				{
 					gnomes[i].GetComponent<Gnome>().enabled = false;

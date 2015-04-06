@@ -39,10 +39,10 @@
 	<Reference Include="System.Core" />
 	<Reference Include="System.Xml.Linq" />
 	<Reference Include="UnityEngine">
-	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>D:/Program Files/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>D:/Program Files/Editor/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
@@ -94,6 +94,7 @@
      <Compile Include="Assets\WorldObjects\Items\Nodes\NodeWrapper.cs" />
      <Compile Include="Assets\WorldObjects\Structures\Dock\Boat\BoatSounds.cs" />
      <Compile Include="Assets\WorldObjects\Structures\Door\DoorInteraction.cs" />
+     <Compile Include="Assets\WorldObjects\Structures\Gate &amp; Wall\TurnKeys.cs" />
      <Compile Include="Assets\WorldObjects\Structures\Shed\ShedTutorial.cs" />
      <Compile Include="Assets\WorldObjects\Structures\Tunnels\elevatorStuff.cs" />
      <Compile Include="Assets\WorldObjects\Structures\Tunnels\elevatorTrigger.cs" />
@@ -182,7 +183,7 @@
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\BlurAndFlares.shader" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\BlendForBloom.shader" />
  <Reference Include="UnityEngine.UI">
- <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
+ <HintPath>D:/Program Files/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>
