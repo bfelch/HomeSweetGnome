@@ -13,7 +13,7 @@ public class ItemSlot : MonoBehaviour
 	{
         heldItem = null;
 		PlayerInteractions.slotCounter++;
-		Debug.Log(gui.name);
+
 	}
 	
 	// Update is called once per frame

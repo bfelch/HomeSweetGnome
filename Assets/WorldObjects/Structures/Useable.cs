@@ -88,7 +88,9 @@ public class Useable : MonoBehaviour
 
 			
 				GameObject keyOne = Instantiate(Resources.Load("Keys/KeyOne"), Vector3.zero, Quaternion.identity) as GameObject;
-				//keyOne.transform.parent = GameObject.Find ("LeftGateLock").transform;
+                keyOne.GetComponent<AudioSource>().Play();
+
+                //keyOne.transform.parent = GameObject.Find ("LeftGateLock").transform;
                 keyOne.name = "KeyOne";
 				keyOne.transform.localPosition = new Vector3 (-42.8533f, 12.008f, 132.1556f);
 				keyOne.transform.localEulerAngles = new Vector3(0f, 255f, 90);
@@ -103,11 +105,11 @@ public class Useable : MonoBehaviour
 			{
 				keys[1] = true;
 				highlighter.Unhighlight(this.gameObject);
-				Debug.Log("2");
 				
 				GameObject keyTwo = Instantiate(Resources.Load("Keys/KeyTwo"), Vector3.zero, Quaternion.identity) as GameObject;
                 keyTwo.name = "KeyTwo";
-				//keyTwo.transform.parent = GameObject.Find ("LeftGateLock").transform;
+                keyTwo.GetComponent<AudioSource>().Play();
+                //keyTwo.transform.parent = GameObject.Find ("LeftGateLock").transform;
 				keyTwo.transform.localPosition = new Vector3 (-42.60429f, 12.007f, 132.2303f);
 				keyTwo.transform.localEulerAngles = new Vector3(0f, 255f, 90);
 				keyTwo.transform.localScale = new Vector3(.75f,.75f,.75f);
@@ -122,6 +124,7 @@ public class Useable : MonoBehaviour
 				Debug.Log("3");
 				
 				GameObject keyThree = Instantiate(Resources.Load("Keys/KeyThree"), Vector3.zero, Quaternion.identity) as GameObject;
+                keyThree.GetComponent<AudioSource>().Play();
                 keyThree.name = "KeyThree";
                 keyThree.transform.localPosition = new Vector3 (-40.2736f, 12.0194f, 132.755f);
 				keyThree.transform.localEulerAngles = new Vector3(0f, 258, 90);
@@ -137,6 +140,7 @@ public class Useable : MonoBehaviour
 				Debug.Log("4");
 				
 				GameObject keyFour = Instantiate(Resources.Load("Keys/KeyFour"), Vector3.zero, Quaternion.identity) as GameObject;
+                keyFour.GetComponent<AudioSource>().Play();
                 keyFour.name = "KeyFour";
 				keyFour.transform.localPosition = new Vector3(-39.9951f, 12.0084f, 132.7619f);
 				keyFour.transform.localEulerAngles = new Vector3(0f, 258, 90);
