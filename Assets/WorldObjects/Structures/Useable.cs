@@ -295,7 +295,13 @@ public class Useable : MonoBehaviour
 					this.gameObject.GetComponent<scrBook>().OpenBook();
 				}
 			}
-
+			else if (type == UseableType.JOURNAL)
+			{
+				if(this.gameObject.GetComponent<scrJournal>().journalOpen == false)
+				{
+					this.gameObject.GetComponent<scrJournal>().OpenJournalPage();
+				}
+			}
 			if(checkGateKeys())
 			{
 				GameObject.Find("Player").GetComponent<Animation>().Play("GateEnding");
@@ -344,4 +350,4 @@ public class Useable : MonoBehaviour
 	}
 }
 
-public enum UseableType {DOOR, DIRTTRAP, GATEKEYONE, GATEKEYTWO, GATEKEYTHREE, GATEKEYFOUR, LIGHT, DROPTRAP, ELEVATOR, ATTICBOWL, B_HATCH, B_MOTOR, B_FUEL, B_IGNITION, BOOK};
+public enum UseableType {DOOR, DIRTTRAP, GATEKEYONE, GATEKEYTWO, GATEKEYTHREE, GATEKEYFOUR, LIGHT, DROPTRAP, ELEVATOR, ATTICBOWL, B_HATCH, B_MOTOR, B_FUEL, B_IGNITION, BOOK, JOURNAL};
