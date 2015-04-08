@@ -121,7 +121,6 @@ public class Useable : MonoBehaviour
 			{
 				keys[2] = true;
 				highlighter.Unhighlight(this.gameObject);
-				Debug.Log("3");
 				
 				GameObject keyThree = Instantiate(Resources.Load("Keys/KeyThree"), Vector3.zero, Quaternion.identity) as GameObject;
                 keyThree.GetComponent<AudioSource>().Play();
@@ -137,7 +136,6 @@ public class Useable : MonoBehaviour
 			{
 				keys[3] = true;
 				highlighter.Unhighlight(this.gameObject);
-				Debug.Log("4");
 				
 				GameObject keyFour = Instantiate(Resources.Load("Keys/KeyFour"), Vector3.zero, Quaternion.identity) as GameObject;
                 keyFour.GetComponent<AudioSource>().Play();

@@ -55,7 +55,6 @@ public class KeyRing : MonoBehaviour {
 	{
 		//activate key on pickup
 		foreach (KeyItem keyOnRing in keysOnRing) {
-			Debug.Log (keyOnRing.name);
 			if (keyOnRing.key.Equals(key)) {
 				keyOnRing.gameObject.SetActive(false);
 			}

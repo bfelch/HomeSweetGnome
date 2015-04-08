@@ -92,11 +92,10 @@ public class Blink : MonoBehaviour
             }
         }
 
-        if(Input.GetKeyDown(KeyCode.R))
+        if(Input.GetKey(KeyCode.R))
         {
             ShutEyes();
 			//blink = true;
-			StartCoroutine("BlinkDelay", 0.3F);
         }
         if (Input.GetKeyUp(KeyCode.R))
         {
@@ -141,8 +140,7 @@ public class Blink : MonoBehaviour
 			}
 		}
 		
-        //decrease the blink timer
-        blinkTimer -= Time.deltaTime;
+
 
         //once timer hits zero, blink and reset timer
         if (blinkTimer <= 0)
@@ -161,10 +159,14 @@ public class Blink : MonoBehaviour
         }
 
         //set blink to false right after blinking and keep it false
-        if (blinkTimer <= 5.0f)
+        if (blinkTimer < 5.0f)
         {
             blink = false;
+
         }
+
+        //decrease the blink timer
+        blinkTimer -= Time.deltaTime;
     }
 
     void OpenEyes()
@@ -243,6 +245,8 @@ public class Blink : MonoBehaviour
             topLid.animation.Play("CloseEyeTop");
             bottomLid.animation.Play("CloseBottomEye");
             holdEyes = true;
+            StartCoroutine("BlinkDelay", 0.3F);
+
         }
         blinkTimer = 5;
     }
@@ -295,9 +299,7 @@ public class Blink : MonoBehaviour
 
 	IEnumerator BlinkDelay(float waitTime)
 	{
-        Debug.Log("Blink Delay Before");
 		yield return new WaitForSeconds(waitTime);
-        Debug.Log("Blink Delay");
 		blink = true;
 	}
 }

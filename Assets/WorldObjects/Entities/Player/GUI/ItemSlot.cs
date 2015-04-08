@@ -28,8 +28,6 @@ public class ItemSlot : MonoBehaviour
         if (heldItem == null)
         {
             heldItem = item;
-			Debug.Log(heldItem);
-			Debug.Log(gui.name);
             return true;
         }
 
