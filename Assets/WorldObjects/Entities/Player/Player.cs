@@ -19,6 +19,7 @@ public class Player : MonoBehaviour
 	public AudioSource itemDropSound;
 	public AudioSource itemEatSound;
 	public AudioSource hurtSound;
+	public AudioSource digSound;
 
 	private bool readyToPush;
     private float fadeIn = 0;
@@ -64,6 +65,7 @@ public class Player : MonoBehaviour
 		itemDropSound = playerSounds[3];
 		itemEatSound = playerSounds[4];
 		hurtSound = playerSounds[5];
+		digSound = playerSounds[6];
 
 		AudioSource[] stepSounds = transform.Find("StepSoundController").GetComponents<AudioSource>(); //Grab the audio sources on the player parent
 		grassStep = stepSounds[0];
@@ -71,7 +73,7 @@ public class Player : MonoBehaviour
 		carpetStep = stepSounds[2];
 		concreteStep = stepSounds[3];
 		waterStep = stepSounds[4];
-		//dirtStep = stepSounds[5];
+		dirtStep = stepSounds[5];
 
         if(PlayerPrefs.GetInt("LoadGame") == 1)
         {
@@ -143,6 +145,11 @@ public class Player : MonoBehaviour
 
 					//Gnome is pushed
 					activeTarget.GetComponent<Gnome>().pushed = true;
+
+					//Snuff lantern
+					activeTarget.GetComponentInChildren<Light>().enabled = false;
+					GameObject lightBulb = activeTarget.transform.Find("LightBulb").gameObject;
+					(lightBulb.GetComponent("Halo") as Behaviour).enabled = false;
 
 					//Start push timer on gnome
 					StartCoroutine(activeTarget.GetComponent<Gnome>().SpawnTimer(10.0F));
@@ -345,14 +352,12 @@ public class Player : MonoBehaviour
 				waterStep.pitch = 0.9F + 0.2F * Random.value;
 				waterStep.Play();
 				break;
-			/*
 			case "Dirt":
-				//Play concrete step
+				//Play dirt step
 				dirtStep.volume = 0.4F;
 				dirtStep.pitch = 0.9F + 0.2F * Random.value;
 				dirtStep.Play();
 				break;
-			*/
 		}
 	}
 
@@ -390,14 +395,12 @@ public class Player : MonoBehaviour
 				waterStep.pitch = 0.4F + 0.2F * Random.value;
 				waterStep.Play();
 				break;
-			/*
 			case "Dirt":
-				//Play concrete step
+				//Play dirt step
 				dirtStep.volume = 1.0F;
 				dirtStep.pitch = 0.4F + 0.2F * Random.value;
 				dirtStep.Play();
 				break;
-			*/
 		}
 	}
 }

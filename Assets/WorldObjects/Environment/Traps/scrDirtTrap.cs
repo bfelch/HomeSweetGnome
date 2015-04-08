@@ -13,6 +13,9 @@ public class scrDirtTrap : MonoBehaviour
 		//Emit particle effect at dirt location
 		Instantiate(dirtEffect, new Vector3(transform.position.x, transform.position.y - 0.2F, transform.position.z), dirtEffect.transform.rotation);
 
+		//Play dig sound
+		SoundController.PlayClipAt(GameObject.Find("Player").GetComponent<Player>().digSound.clip, this.gameObject.transform.position);
+
 		timesToDig--; //Dirt has to be dug three times
 
 		//Spawn dirt piles around hole

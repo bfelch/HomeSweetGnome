@@ -411,6 +411,7 @@ public class PlayerInteractions : MonoBehaviour
                     gnome.GetComponent<NavMeshAgent>().enabled = true;
                     gnome.GetComponent<Gnome>().enabled = true;
                 }
+
                 activeTarget.SetActive(false);
             }
         }
@@ -423,17 +424,6 @@ public class PlayerInteractions : MonoBehaviour
         //Pressing the E (Interact) key?
         if (Input.GetKeyUp(KeyCode.E))
         {
-			if(activeTarget.name == "RightGateLock" || activeTarget.name == "LeftGateLock")
-			{
-				GameObject.Find("Highlighter").GetComponent<scrHighlightController>().Unhighlight(GameObject.Find("LeftGateLock"));
-				GameObject.Find("Highlighter").GetComponent<scrHighlightController>().Unhighlight(GameObject.Find("RightGateLock"));
-			}
-
-			if(activeTarget.name == "MotorHatch")
-			{
-				GameObject.Find("Highlighter").GetComponent<scrHighlightController>().Unhighlight(GameObject.Find("MotorHatch"));
-			}
-
             if(targetUseable.Interact() != "")
             {
                 notUseable = true;

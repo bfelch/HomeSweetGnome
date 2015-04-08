@@ -30,4 +30,19 @@ public class SoundController : MonoBehaviour
 			yield return new WaitForSeconds(step * Time.deltaTime);
 		}
 	}
+
+	//Custom PlayClipAt method.  Plays desired clip at a desired position
+	public static AudioSource PlayClipAt(AudioClip clip, Vector3 pos)
+	{
+		GameObject tempSound = new GameObject("TempSound"); //Create the temp object
+		tempSound.transform.position = pos; //Set its position
+		AudioSource aSource = tempSound.AddComponent<AudioSource>(); //Add an audio source
+		aSource.clip = clip; //Define the clip
+		
+		//Set other aSource properties here if desired
+		aSource.Play(); //Start the sound
+		aSource.minDistance = 20;
+		Destroy(tempSound, clip.length); //Sestroy object after clip duration
+		return aSource; //Return the AudioSource reference
+	}
 }

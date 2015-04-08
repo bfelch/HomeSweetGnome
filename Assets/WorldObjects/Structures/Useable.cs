@@ -166,60 +166,67 @@ public class Useable : MonoBehaviour
 			}
 			else if (type == UseableType.B_MOTOR && hatchOpen)
 			{
-				Debug.Log(motorRepaired);
 				if(!motorRepaired)
 				{
-					//Unhighlight motor
-					highlighter.Unhighlight(this.gameObject);
+					if(playerGUI.RemoveFromSlot(requiredItems[0]) && playerGUI.RemoveFromSlot(requiredItems[1]))
+					{
+						//Unhighlight motor
+						highlighter.Unhighlight(this.gameObject);
+						
+						//Play fix sound
 
-					//Play fix sound
-
-					//Highlight fuel cap
-					highlighter.Highlight(GameObject.Find ("FuelCap"), scrHighlightController.outline2);
-
-					motorRepaired = true;
-					Debug.Log("Motor Repaired: " + motorRepaired);
+						//Highlight fuel cap
+						highlighter.Highlight(GameObject.Find ("FuelCap"), scrHighlightController.outline2);
+						
+						motorRepaired = true;
+					}
 				}
 			}
 			else if (type == UseableType.B_FUEL && motorRepaired == true)
 			{
 				if(!fuelFilled)
 				{
-					//Unhighlight fuel
-					highlighter.Unhighlight(this.gameObject);
+					if(playerGUI.RemoveFromSlot(requiredItems[0]))
+					{
+						//Unhighlight fuel
+						highlighter.Unhighlight(this.gameObject);
 
-					//Play fill sound
+						//Play fill sound
 
-					//Highlight boat ignition
-					highlighter.Highlight(GameObject.Find ("Ignition"), scrHighlightController.outline2);
+						//Highlight boat ignition
+						highlighter.Highlight(GameObject.Find ("Ignition"), scrHighlightController.outline2);
 
-					fuelFilled = true;
+						fuelFilled = true;
+					}
 				}
 			}
 			else if (type == UseableType.B_IGNITION && fuelFilled == true)
 			{
-				//Unhighlight ignition
-				highlighter.Unhighlight(this.gameObject);
+				if(playerGUI.RemoveFromSlot(requiredItems[0]))
+				{
+					//Unhighlight ignition
+					highlighter.Unhighlight(this.gameObject);
 
-				GameObject player = GameObject.Find("Player");
-				GameObject boat = GameObject.Find("Boat");
-				GameObject motor = GameObject.Find("Motor");
-				
-				AudioSource sound;
-				AudioClip boatMotorSound = GameObject.Find("BoatSounds").GetComponent<BoatSounds>().boatMotorSound.clip;
-				
-				sound = GameObject.Find("LightFlash1").GetComponent<scrLightFlash>().PlayClipAt(boatMotorSound, motor.transform.position);
-				StartCoroutine(SoundController.FadeAudio(12.0F, SoundController.Fade.Out, sound));
-				
-				// player.transform.parent = boat.transform;
-				// player.GetComponent<Animation>().Play("BoatEnding");
-				//boat.GetComponent<Animation>().Play("BoatEnding");
-				//Run the escape function inside the Player script
-				player.GetComponent<EndGames>().Escape();
-				//for(int i = 0; i < EndGames.dockGnomes.Length; i++)
-				//{
-				//EndGames.dockGnomes[i].SetActive(true);
-				//}
+					GameObject player = GameObject.Find("Player");
+					GameObject boat = GameObject.Find("Boat");
+					GameObject motor = GameObject.Find("Motor");
+					
+					AudioSource sound;
+					AudioClip boatMotorSound = GameObject.Find("BoatSounds").GetComponent<BoatSounds>().boatMotorSound.clip;
+					
+					sound = SoundController.PlayClipAt(boatMotorSound, motor.transform.position);
+					StartCoroutine(SoundController.FadeAudio(12.0F, SoundController.Fade.Out, sound));
+					
+					// player.transform.parent = boat.transform;
+					// player.GetComponent<Animation>().Play("BoatEnding");
+					//boat.GetComponent<Animation>().Play("BoatEnding");
+					//Run the escape function inside the Player script
+					player.GetComponent<EndGames>().Escape();
+					//for(int i = 0; i < EndGames.dockGnomes.Length; i++)
+					//{
+					//EndGames.dockGnomes[i].SetActive(true);
+					//}
+				}
 			}
             else if(type == UseableType.ATTICBOWL)
             {
@@ -265,6 +272,11 @@ public class Useable : MonoBehaviour
 				{
 					//Toggles light
 					gameObject.GetComponent<Light>().enabled = !gameObject.GetComponent<Light>().enabled;
+
+					if(this.gameObject.name == "Torch")
+					{
+						gameObject.GetComponent<ParticleSystem>().enableEmission = !gameObject.GetComponent<ParticleSystem>().enableEmission;
+					}
 				}
             }
             else if (type == UseableType.DROPTRAP)

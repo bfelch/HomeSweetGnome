@@ -218,7 +218,12 @@ public class Gnome : MonoBehaviour
 
 		//Set rotation
 		transform.rotation = new Quaternion(0, 0, 0, 0);
-		
+
+		//Light latnern
+		GetComponentInChildren<Light>().enabled = true;
+		GameObject lightBulb = transform.Find("LightBulb").gameObject;
+		(lightBulb.GetComponent("Halo") as Behaviour).enabled = true;
+
 		//Enable NavMeshAgent
 		GetComponent<NavMeshAgent>().enabled = true;
 		

@@ -113,7 +113,9 @@ public class scrDarkness : MonoBehaviour
 			}
 
             if((light.GetComponent("Halo") as Behaviour) != null)
+			{
                 (light.GetComponent("Halo") as Behaviour).enabled = false;
+			}
 		}
 
 		weatherScript weather = GameObject.Find ("Weather").GetComponent<weatherScript>();

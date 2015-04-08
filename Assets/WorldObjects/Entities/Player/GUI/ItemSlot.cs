@@ -15,12 +15,6 @@ public class ItemSlot : MonoBehaviour
 		PlayerInteractions.slotCounter++;
 
 	}
-	
-	// Update is called once per frame
-	void Update () 
-	{
-	
-	}
 
     public bool AddItem(Item item)
     {
@@ -33,4 +27,16 @@ public class ItemSlot : MonoBehaviour
 
         return false;
     }
+
+	public bool RemoveItem(Item item)
+	{
+		//if no item in slot, add it
+		if(heldItem == item)
+		{
+			heldItem = null;
+			return true;
+		}
+		
+		return false;
+	}
 }

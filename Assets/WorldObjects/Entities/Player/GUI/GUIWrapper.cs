@@ -21,6 +21,7 @@ public class GUIWrapper : MonoBehaviour
 	public Material screwMat;
 	public Material headMat;
 	public Material boatKeysMat;
+	public Material defaultMat;
 
 	//Gui Objects
 	public GameObject objTopLeft;
@@ -86,16 +87,36 @@ public class GUIWrapper : MonoBehaviour
         return false;
     }
 
+	public bool RemoveFromSlot(Item item)
+	{
+		//add key to key ring
+		if(item.isKey == false)
+		{
+			//remove item
+			foreach(ItemSlot slot in slots)
+			{
+				//if removed, stop looking
+				if(slot.RemoveItem(item))
+				{
+					slot.renderer.material = defaultMat;
+
+					return true;
+				}
+			}
+		}
+		
+		return false;
+	}
+
     public bool HasItems(List<Item> items)
     {
         //number of required items
         int numRequiredItems = items.Count;
 
-
         //if any slot has a required item, decrease number of required items
         foreach (ItemSlot slot in slots)
         {
-            if (items.Contains(slot.heldItem))
+            if(items.Contains(slot.heldItem))
             {
                 numRequiredItems--;
             }
