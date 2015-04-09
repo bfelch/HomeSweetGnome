@@ -25,10 +25,10 @@ public class Node : MonoBehaviour {
 	
 	}
 
-    public bool IsRestrictedItem(GameObject checkItem){
+    public bool IsRestrictedItem(Item checkItem){
         //checks that item is not in restricted list
         foreach (GameObject item in restrictedItems){
-            if (checkItem.Equals(item)) {
+            if ((checkItem.name).Equals(item.name)) {
                 return true;
             }
         }

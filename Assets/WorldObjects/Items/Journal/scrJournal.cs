@@ -14,7 +14,7 @@ public class scrJournal : MonoBehaviour
 	
 	public GameObject journalPage;
 	
-	public bool journalOpen = false;
+	public static bool journalOpen = false;
 		
 	
 	void Start()
@@ -58,12 +58,15 @@ public class scrJournal : MonoBehaviour
 		StartCoroutine (JournalTimer2 (0.2F));
 		//activate/deactivate book
 		journalPage.SetActive(false);
-		
-		//toggle movements, looking, cursor
-		charMotor.enabled = true;
-		mouseLook.enabled = true;
-		cameraLook.enabled = true;
-		Screen.lockCursor = true;
+
+        if (!PlayerInteractions.showGUI)
+        {
+            //toggle movements, looking, cursor
+            charMotor.enabled = true;
+            mouseLook.enabled = true;
+            cameraLook.enabled = true;
+            Screen.lockCursor = true;
+        }
 	}
 	
 	public IEnumerator JournalTimer(float waitTime)

@@ -45,7 +45,9 @@ public class KeyRing : MonoBehaviour {
     {
         //activate key on pickup
         foreach (KeyItem keyOnRing in keysOnRing) {
+            Debug.Log(key + " " + keyOnRing);
             if (keyOnRing.key.Equals(key)) {
+                Debug.Log("Found Correct Key!");
                 keyOnRing.gameObject.SetActive(true);
             }
         }
@@ -53,6 +55,7 @@ public class KeyRing : MonoBehaviour {
     }
 	public void RemoveKey(Item key)
 	{
+        Debug.Log("Removed?");
 		//activate key on pickup
 		foreach (KeyItem keyOnRing in keysOnRing) {
 			if (keyOnRing.key.Equals(key)) {

@@ -25,7 +25,7 @@ public class PlayerInteractions : MonoBehaviour
 
     private Material outline;
     //is gui active
-    public bool showGUI;
+    public static bool showGUI;
     public bool removePlus = false;
     private bool lookingAtGnome = false;
     private bool lookingAtGargoyle = false;
@@ -51,7 +51,9 @@ public class PlayerInteractions : MonoBehaviour
 
     void Start()
     {
-		StartCoroutine(DelayedStart());
+        showGUI = false;
+        StartCoroutine(DelayedStart());
+        
     }
 
 	public IEnumerator DelayedStart()
@@ -60,7 +62,7 @@ public class PlayerInteractions : MonoBehaviour
 		yield return new WaitForEndOfFrame();
 		
 		//sets gui start
-		ToggleGUI(showGUI);
+		ToggleGUI(false);
 		st = gameObject.GetComponent<ShedTutorial>();
 		outline = Resources.Load("Outline2") as Material;
 		bark = GetComponent<Player>().bark;
@@ -466,7 +468,7 @@ public class PlayerInteractions : MonoBehaviour
     void GUIControl()
     {
         //listen for Q being pressed
-        if (Input.GetKeyUp(KeyCode.Q) && !pause)
+        if (Input.GetKeyUp(KeyCode.Q) && !pause && !this.gameObject.animation.IsPlaying("OpeningCut"))
         {
             ToggleGUI(!showGUI);
         }
@@ -491,11 +493,14 @@ public class PlayerInteractions : MonoBehaviour
             playerGUI.energyBar.gui.ResetRotation();
         }
 
-        //toggle movements, looking, cursor
-        charMotor.enabled = !showGUI;
-        mouseLook.enabled = !showGUI;
-        cameraLook.enabled = !showGUI;
-        Screen.lockCursor = !showGUI;
+        if (!scrJournal.journalOpen && !scrBook.bookOpen)
+        {
+            //toggle movements, looking, cursor
+            charMotor.enabled = !showGUI;
+            mouseLook.enabled = !showGUI;
+            cameraLook.enabled = !showGUI;
+            Screen.lockCursor = !showGUI;
+        }
     }
 
     string getImprovedName(string targetName)

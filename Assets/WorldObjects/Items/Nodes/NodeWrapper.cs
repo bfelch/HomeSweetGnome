@@ -10,6 +10,7 @@ public class NodeWrapper : MonoBehaviour
     public List<Item> itemList;
     public bool newGame;
 
+    private bool onlyOnce = true;
 	// Use this for initialization
 	void Start () 
 	{
@@ -26,7 +27,8 @@ public class NodeWrapper : MonoBehaviour
                     {
                         int index = Random.Range(0, nodeList.Count);
                         node = nodeList[index];
-                    } while (node.hasItem || !node.IsValidItem(item));
+
+                    } while (node.IsRestrictedItem(item) || node.hasItem || !node.IsValidItem(item) );
 
                     //set node's item
                     node.GiveItem(item.gameObject);

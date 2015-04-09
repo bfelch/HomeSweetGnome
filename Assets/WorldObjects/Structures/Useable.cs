@@ -290,14 +290,14 @@ public class Useable : MonoBehaviour
             }
 			else if (type == UseableType.BOOK)
 			{
-				if(this.gameObject.GetComponent<scrBook>().bookOpen == false)
+				if(scrBook.bookOpen == false)
 				{
 					this.gameObject.GetComponent<scrBook>().OpenBook();
 				}
 			}
 			else if (type == UseableType.JOURNAL)
 			{
-				if(this.gameObject.GetComponent<scrJournal>().journalOpen == false)
+				if(scrJournal.journalOpen == false)
 				{
 					this.gameObject.GetComponent<scrJournal>().OpenJournalPage();
 				}

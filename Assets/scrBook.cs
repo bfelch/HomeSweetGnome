@@ -14,7 +14,7 @@ public class scrBook : MonoBehaviour
 
 	public GameObject book;
 	private bool darkReady = true;
-	public bool bookOpen = false;
+	public static bool bookOpen = false;
 
 
 
