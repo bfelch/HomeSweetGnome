@@ -1,6 +1,11 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\WorldObjects\Items\Journal\scrJournal.cs">
+    <Files>
+      <File FileName="Assets\scrHighlightController.cs" Line="14" Column="32" />
+      <File FileName="Assets\WorldObjects\Items\Journal\scrJournal.cs" Line="47" Column="101" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

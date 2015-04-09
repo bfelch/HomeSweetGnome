@@ -27,7 +27,7 @@ public class scrJournal : MonoBehaviour
 		//Wait spawn time
 		yield return new WaitForSeconds(waitTime);
 		
-		GameObject.Find("Highlighter").GetComponent<scrHighlightController>().Highlight(this.gameObject, scrHighlightController.outline2);
+		GameObject.Find("Highlighter").GetComponent<scrHighlightController>().Highlight(this.gameObject, scrHighlightController.outlineLightGray);
 	}
 	
 	void Update()
@@ -35,16 +35,16 @@ public class scrJournal : MonoBehaviour
 		if(Input.GetKeyUp(KeyCode.E) && journalOpen)
 		{
 			CloseJournalPage();
-			Debug.Log ("Close Journal Page");
 		}
 	}
 	
 	public void OpenJournalPage()
 	{
 		StartCoroutine(JournalTimer(0.2F));
-		Debug.Log ("Opening Journal Page");
 		//activate/deactivate book
 		journalPage.SetActive(true);
+
+		GameObject.Find("Highlighter").GetComponent<scrHighlightController>().Unhighlight(this.gameObject);
 		
 		//toggle movements, looking, cursor
 		charMotor.enabled = false;

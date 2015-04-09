@@ -9,6 +9,7 @@ public class scrHighlightController : MonoBehaviour
 	public static Material outlineBlue;
 	public static Material outlineGreen;
 	public static Material outlineRed;
+	public static Material outlineLightGray;
 
 	// Use this for initialization
 	void Start () 
@@ -19,6 +20,7 @@ public class scrHighlightController : MonoBehaviour
 		outlineBlue = Resources.Load("OutlineBlue") as Material;
 		outlineGreen = Resources.Load("OutlineGreen") as Material;
 		outlineRed = Resources.Load("OutlineRed") as Material;
+		outlineLightGray = Resources.Load("OutlineLightGray") as Material;
 
 		StartCoroutine(DelayedStart(2.0F));
 	}
