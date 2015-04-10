@@ -36,6 +36,7 @@ public class scrBook : MonoBehaviour
 		if(Input.GetKeyUp(KeyCode.E) && bookOpen)
 		{
 			CloseBook();
+
 		}
 	}
 
@@ -45,7 +46,8 @@ public class scrBook : MonoBehaviour
 
 		//activate/deactivate book
 		book.SetActive(true);
-		
+        this.GetComponent<AudioSource>().Play();
+
 		//toggle movements, looking, cursor
 		charMotor.enabled = false;
 		mouseLook.enabled = false;
@@ -75,7 +77,8 @@ public class scrBook : MonoBehaviour
 		bookOpen = false;
 		//activate/deactivate book
 		book.SetActive(false);
-		
+        this.GetComponent<AudioSource>().Play();
+
 		//toggle movements, looking, cursor
 		charMotor.enabled = true;
 		mouseLook.enabled = true;

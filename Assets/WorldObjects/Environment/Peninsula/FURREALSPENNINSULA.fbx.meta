@@ -1,0 +1,294 @@
+fileFormatVersion: 2
+guid: 73b60265ffc20d14ba9d364896b31281
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: Bot_Controls
+    100002: Bot_Elevator_Entrance
+    100004: Controls
+    100006: Elevator
+    100008: Elevator_Gates
+    100010: ElevatorControls
+    100012: ElevatorControls1
+    100014: //RootNode
+    100016: Glass
+    100018: Glass 1
+    100020: L_Elevator_Gate
+    100022: L_Elevator_Gate1
+    100024: L_Elevator_Pillar
+    100026: L_Elevator_Pillar1
+    100028: Lantern
+    100030: Lantern1
+    100032: Lever
+    100034: Lever1
+    100036: LightBulb
+    100038: LightBulb 1
+    100040: Lower_Tunnels
+    100042: MansionBaseScene14_Peninsula01
+    100044: MansionBaseScene14_peninsula01
+    100046: pCube13
+    100048: pCube14
+    100050: pCube15
+    100052: pCube16
+    100054: pCube22
+    100056: pCube23
+    100058: pCube24
+    100060: pCube25
+    100062: pCube27
+    100064: pCube27 1
+    100066: polySurface67
+    100068: polySurface68
+    100070: polySurface69
+    100072: polySurface71
+    100074: polySurface74
+    100076: polySurface76
+    100078: polySurface80
+    100080: polySurface82
+    100082: polySurface84
+    100084: R_Elevator_Gate
+    100086: R_Elevator_Gate1
+    100088: R_Elevator_Pillar1
+    100090: R_Elevator_Pillar2
+    100092: Rubble4
+    100094: Stalagmites
+    100096: Top_Elevator_Entrance
+    100098: Trusses2
+    100100: Tunnels1
+    400000: Bot_Controls
+    400002: Bot_Elevator_Entrance
+    400004: Controls
+    400006: Elevator
+    400008: Elevator_Gates
+    400010: ElevatorControls
+    400012: ElevatorControls1
+    400014: //RootNode
+    400016: Glass
+    400018: Glass 1
+    400020: L_Elevator_Gate
+    400022: L_Elevator_Gate1
+    400024: L_Elevator_Pillar
+    400026: L_Elevator_Pillar1
+    400028: Lantern
+    400030: Lantern1
+    400032: Lever
+    400034: Lever1
+    400036: LightBulb
+    400038: LightBulb 1
+    400040: Lower_Tunnels
+    400042: MansionBaseScene14_Peninsula01
+    400044: MansionBaseScene14_peninsula01
+    400046: pCube13
+    400048: pCube14
+    400050: pCube15
+    400052: pCube16
+    400054: pCube22
+    400056: pCube23
+    400058: pCube24
+    400060: pCube25
+    400062: pCube27
+    400064: pCube27 1
+    400066: polySurface67
+    400068: polySurface68
+    400070: polySurface69
+    400072: polySurface71
+    400074: polySurface74
+    400076: polySurface76
+    400078: polySurface80
+    400080: polySurface82
+    400082: polySurface84
+    400084: R_Elevator_Gate
+    400086: R_Elevator_Gate1
+    400088: R_Elevator_Pillar1
+    400090: R_Elevator_Pillar2
+    400092: Rubble4
+    400094: Stalagmites
+    400096: Top_Elevator_Entrance
+    400098: Trusses2
+    400100: Tunnels1
+    2300000: Elevator
+    2300002: ElevatorControls
+    2300004: ElevatorControls1
+    2300006: Glass
+    2300008: Glass 1
+    2300010: L_Elevator_Gate
+    2300012: L_Elevator_Gate1
+    2300014: L_Elevator_Pillar
+    2300016: L_Elevator_Pillar1
+    2300018: Lever
+    2300020: Lever1
+    2300022: LightBulb
+    2300024: LightBulb 1
+    2300026: Lower_Tunnels
+    2300028: pCube13
+    2300030: pCube14
+    2300032: pCube15
+    2300034: pCube16
+    2300036: pCube22
+    2300038: pCube23
+    2300040: pCube24
+    2300042: pCube25
+    2300044: pCube27
+    2300046: pCube27 1
+    2300048: polySurface68
+    2300050: polySurface84
+    2300052: R_Elevator_Gate
+    2300054: R_Elevator_Gate1
+    2300056: R_Elevator_Pillar1
+    2300058: R_Elevator_Pillar2
+    2300060: Rubble4
+    2300062: Trusses2
+    2300064: Tunnels1
+    3300000: Elevator
+    3300002: ElevatorControls
+    3300004: ElevatorControls1
+    3300006: Glass
+    3300008: Glass 1
+    3300010: L_Elevator_Gate
+    3300012: L_Elevator_Gate1
+    3300014: L_Elevator_Pillar
+    3300016: L_Elevator_Pillar1
+    3300018: Lever
+    3300020: Lever1
+    3300022: LightBulb
+    3300024: LightBulb 1
+    3300026: Lower_Tunnels
+    3300028: pCube13
+    3300030: pCube14
+    3300032: pCube15
+    3300034: pCube16
+    3300036: pCube22
+    3300038: pCube23
+    3300040: pCube24
+    3300042: pCube25
+    3300044: pCube27
+    3300046: pCube27 1
+    3300048: polySurface68
+    3300050: polySurface84
+    3300052: R_Elevator_Gate
+    3300054: R_Elevator_Gate1
+    3300056: R_Elevator_Pillar1
+    3300058: R_Elevator_Pillar2
+    3300060: Rubble4
+    3300062: Trusses2
+    3300064: Tunnels1
+    4300000: polySurface84
+    4300002: polySurface68
+    4300004: Lower_Tunnels
+    4300006: Tunnels1
+    4300008: pCube22
+    4300010: pCube23
+    4300012: pCube24
+    4300014: pCube25
+    4300016: pCube13
+    4300018: pCube14
+    4300020: pCube15
+    4300022: pCube16
+    4300024: Rubble4
+    4300026: Elevator
+    4300028: L_Elevator_Pillar
+    4300030: L_Elevator_Gate
+    4300032: R_Elevator_Gate
+    4300034: R_Elevator_Pillar1
+    4300036: L_Elevator_Pillar1
+    4300038: R_Elevator_Pillar2
+    4300040: R_Elevator_Gate1
+    4300042: L_Elevator_Gate1
+    4300044: Trusses2
+    4300046: LightBulb
+    4300048: pCube27
+    4300050: Glass
+    4300052: LightBulb
+    4300054: pCube27
+    4300056: Glass
+    4300058: ElevatorControls1
+    4300060: Lever1
+    4300062: Lever
+    4300064: ElevatorControls
+    6400000: Elevator
+    6400002: ElevatorControls
+    6400004: ElevatorControls1
+    6400006: Glass
+    6400008: Glass 1
+    6400010: L_Elevator_Gate
+    6400012: L_Elevator_Gate1
+    6400014: L_Elevator_Pillar
+    6400016: L_Elevator_Pillar1
+    6400018: Lever
+    6400020: Lever1
+    6400022: LightBulb
+    6400024: LightBulb 1
+    6400026: Lower_Tunnels
+    6400028: pCube13
+    6400030: pCube14
+    6400032: pCube15
+    6400034: pCube16
+    6400036: pCube22
+    6400038: pCube23
+    6400040: pCube24
+    6400042: pCube25
+    6400044: pCube27
+    6400046: pCube27 1
+    6400048: polySurface68
+    6400050: polySurface84
+    6400052: R_Elevator_Gate
+    6400054: R_Elevator_Gate1
+    6400056: R_Elevator_Pillar1
+    6400058: R_Elevator_Pillar2
+    6400060: Rubble4
+    6400062: Trusses2
+    6400064: Tunnels1
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .0549999997
+    meshCompression: 0
+    addColliders: 1
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 

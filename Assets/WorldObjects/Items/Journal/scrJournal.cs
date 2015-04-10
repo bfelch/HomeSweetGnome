@@ -15,7 +15,7 @@ public class scrJournal : MonoBehaviour
 	public GameObject journalPage;
 	
 	public static bool journalOpen = false;
-		
+    private bool closeOnce = false;	
 	
 	void Start()
 	{
@@ -32,9 +32,10 @@ public class scrJournal : MonoBehaviour
 	
 	void Update()
 	{
-		if(Input.GetKeyUp(KeyCode.E) && journalOpen)
+		if(Input.GetKeyDown(KeyCode.E) && journalOpen && closeOnce)
 		{
 			CloseJournalPage();
+            closeOnce = false;
 		}
 	}
 	
@@ -43,6 +44,8 @@ public class scrJournal : MonoBehaviour
 		StartCoroutine(JournalTimer(0.2F));
 		//activate/deactivate book
 		journalPage.SetActive(true);
+        this.GetComponent<AudioSource>().Play();
+        Debug.Log("Playing Open");
 
 		GameObject.Find("Highlighter").GetComponent<scrHighlightController>().Unhighlight(this.gameObject);
 		
@@ -51,13 +54,18 @@ public class scrJournal : MonoBehaviour
 		mouseLook.enabled = false;
 		cameraLook.enabled = false;
 		Screen.lockCursor = false;
+
+        closeOnce = true;
 	}
 	
 	public void CloseJournalPage()
 	{
 		StartCoroutine (JournalTimer2 (0.2F));
+        this.GetComponent<AudioSource>().Play();
+
 		//activate/deactivate book
 		journalPage.SetActive(false);
+        Debug.Log("Playing Close");
 
         if (!PlayerInteractions.showGUI)
         {
@@ -81,7 +89,7 @@ public class scrJournal : MonoBehaviour
 	{
 		//Wait time
 		yield return new WaitForSeconds(waitTime);
-		
+
 		journalOpen = false;
 	}
 }
