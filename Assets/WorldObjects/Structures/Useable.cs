@@ -23,7 +23,7 @@ public class Useable : MonoBehaviour
 	private static bool hatchOpen = false;
 	private static bool motorRepaired = false;
 	private static bool fuelFilled = false;
-	
+
 	// Use this for initialization
 	void Start () 
     {
@@ -34,6 +34,8 @@ public class Useable : MonoBehaviour
         catch{}
 
 		highlighter = GameObject.Find ("Highlighter").GetComponent<scrHighlightController> ();
+
+        
 		/*
 		if(this.gameObject.name == "LeftGateLock" || this.gameObject.name == "RightGateLock")
 		{
@@ -66,6 +68,10 @@ public class Useable : MonoBehaviour
 		}*/
 	}
 
+    void Update()
+    {
+        elevatorStuff.ElevatorDoors();
+    }
     public string Interact()
     {
         //checks that player has all required items
@@ -284,9 +290,22 @@ public class Useable : MonoBehaviour
 				//Drop the trap
 				transform.parent.Find("DropTrap").gameObject.GetComponent<scrDropTrap>().Drop();
             }
-            else if (type == UseableType.ELEVATOR)
+            else if (type == UseableType.ELEVATORTOP)
             {
-                GameObject.Find("Elevator").GetComponent<elevatorStuff>().Activate();
+                elevatorStuff.openTopElevator = true;
+            }
+            else if (type == UseableType.ELEVATORBOTTOM)
+            {
+                if(GameObject.Find("Elevator").transform.localPosition.y > 28)
+                {
+                    elevatorStuff.inElevator = true;
+                    elevatorStuff.direction = true;
+                    elevatorStuff.activate = true;
+                    elevatorStuff.callingDown = true;
+                }
+                else
+                    elevatorStuff.openBottomElevator = true;
+
             }
 			else if (type == UseableType.BOOK)
 			{
@@ -350,4 +369,4 @@ public class Useable : MonoBehaviour
 	}
 }
 
-public enum UseableType {DOOR, DIRTTRAP, GATEKEYONE, GATEKEYTWO, GATEKEYTHREE, GATEKEYFOUR, LIGHT, DROPTRAP, ELEVATOR, ATTICBOWL, B_HATCH, B_MOTOR, B_FUEL, B_IGNITION, BOOK, JOURNAL};
+public enum UseableType {DOOR, DIRTTRAP, GATEKEYONE, GATEKEYTWO, GATEKEYTHREE, GATEKEYFOUR, LIGHT, DROPTRAP, ELEVATORTOP, ATTICBOWL, B_HATCH, B_MOTOR, B_FUEL, B_IGNITION, BOOK, JOURNAL, ELEVATORBOTTOM};

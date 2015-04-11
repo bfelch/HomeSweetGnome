@@ -20,15 +20,10 @@ public class elevatorTrigger : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            other.gameObject.transform.parent = GameObject.Find("Elevator").transform;
+            elevatorStuff.closeBottomElevator = true;
+            elevatorStuff.closeTopElevator = true;
         }
     }
 
-    void OnTriggerExit(Collider other)
-    {
-        if (other.tag == "Player")
-        {
-            other.gameObject.transform.parent = GameObject.Find("Entities").transform;
-        }
-    }
+
 }
