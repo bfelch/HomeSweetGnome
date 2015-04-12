@@ -19,7 +19,7 @@ public class Player : MonoBehaviour
 	public AudioSource itemDropSound;
 	public AudioSource itemEatSound;
 	public AudioSource hurtSound;
-	public AudioSource digSound;
+	public AudioSource gaspSound;
 
 	private bool readyToPush;
     private float fadeIn = 0;
@@ -68,7 +68,7 @@ public class Player : MonoBehaviour
 		itemDropSound = playerSounds[3];
 		itemEatSound = playerSounds[4];
 		hurtSound = playerSounds[5];
-		digSound = playerSounds[6];
+		gaspSound = playerSounds[6];
 
 		AudioSource[] stepSounds = transform.Find("StepSoundController").GetComponents<AudioSource>(); //Grab the audio sources on the player parent
 		grassStep = stepSounds[0];

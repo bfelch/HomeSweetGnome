@@ -36,8 +36,11 @@ public class LookAway : MonoBehaviour
 		playerMove.enabled = false;
 
 		rotation = Quaternion.LookRotation(target.position - transform.position);
+		Debug.Log (rotation);
 		rotation.x = 0.0F;
 		rotation.z = 0.0F;
+
+		//GameObject.Find("Player").GetComponent<Player>().gaspSound.Play();
 
 		dropAnimEventOn = true;
 	}

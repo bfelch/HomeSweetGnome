@@ -280,14 +280,27 @@ public class LoadUnload : MonoBehaviour
             }
 
             //Tunnel Load (Entrance)
-            if (col.name == "TunnelLoadEntrance" || col.name == "WellLoadEntrance")
+            if (col.name == "TunnelLoadEntrance")
             {
                 weather.StopWeather(); //Stop weather
 
                 moonlight.lightFadeIn = false; //Light is only fading out
                 moonlight.lightFadeOut = true; //Remove moonlight
 
+				//Enable Tunnel Gnome Event Version 1
+
             }
+
+			if(col.name == "WellLoadEntrance")
+			{
+				weather.StopWeather(); //Stop weather
+				
+				moonlight.lightFadeIn = false; //Light is only fading out
+				moonlight.lightFadeOut = true; //Remove moonlight
+				
+				//Enable Tunnel Gnome Event Version 2
+
+			}
 
             //Tunnel Unload (Entrance)
             if (col.name == "TunnelUnloadEntrance")

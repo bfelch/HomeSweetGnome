@@ -13,27 +13,33 @@ public class scrDropTrap : MonoBehaviour
 	//Gnome eye object
 	public GameObject gnomeEye;
 
+	public AudioClip chandCrash;
+
 	//Calls when drop trap interaction button is pressed
 	public void Drop()
 	{
-		GameObject.Find("Main Camera").GetComponent<LookAway>().DropAnimationEventStart();
+		//Play Spark Sound
+		GameObject.Find("ChandLight").GetComponent<AudioSource>().Play();
+		GameObject.Find("Sparks").particleSystem.Emit(40);
 
+		StartCoroutine(DelayedDrop(0.6F));
+	}
+
+	public IEnumerator DelayedDrop(float waitTime)
+	{
+		//Wait spawn time
+		yield return new WaitForSeconds(waitTime);
+		
+		GameObject.Find("Player").GetComponent<LookAway>().DropAnimationEventStart();
+		
 		dropped = true; //Trap has been dropped
 		dropping = true; //Trap is dropping
-
+		
+		transform.parent.Find("DropTrap/Trigger").gameObject.collider.enabled = true;
+		
 		//Allows object to fall
 		transform.parent.Find("DropTrap").gameObject.GetComponent<Rigidbody>().isKinematic = false;
 		transform.parent.Find("DropTrap").gameObject.GetComponent<Rigidbody>().useGravity = true;
-	}
-	
-	//Update is called once per frame
-	void Update() 
-    {
-		//Only enable the trigger that crushes gnomes while it is dropping
-        if(dropping)
-        {
-			transform.parent.Find("DropTrap/Trigger").gameObject.collider.enabled = true;
-        }
 	}
 
 	//Detection between triggers
@@ -42,6 +48,8 @@ public class scrDropTrap : MonoBehaviour
 		//Did the drop trap collide with the drop marker?
 		if(other.tag == "DropFloor")
 		{
+			SoundController.PlayClipAt(chandCrash, new Vector3(25.31F, 37.34F, -34.14F));
+
 	        dropping = false; //No longer dropping
 			transform.parent.Find("DropTrap/Trigger").gameObject.collider.enabled = false; //Crushing trigger disabled while not dropping
 
@@ -51,7 +59,7 @@ public class scrDropTrap : MonoBehaviour
 			//Spawn the gnome eye
 			gnomeEye.transform.position = new Vector3 (transform.position.x, transform.position.y, transform.position.z);
 
-			GameObject.Find("Main Camera").GetComponent<LookAway>().DropAnimationEventEnd();
+			GameObject.Find("Player").GetComponent<LookAway>().DropAnimationEventEnd();
 
 			//Temporary destory (Shatter? Fade away? Broken Model?)
 			Destroy(this.gameObject);

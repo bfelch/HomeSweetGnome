@@ -239,6 +239,9 @@ public class Gnome : MonoBehaviour
 		//Emit particle effect at shatter location
 		Instantiate(shatterEffect, new Vector3(transform.position.x, transform.position.y - 0.8F, transform.position.z), shatterEffect.transform.rotation);
 
+		//Play break sound
+		SoundController.PlayClipAt(GameObject.Find ("Gnomes").GetComponent<AudioSource>().clip, transform.position);
+
 		//Crush the gnome
 		Destroy(this.gameObject);
 	}
