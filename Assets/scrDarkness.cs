@@ -15,9 +15,20 @@ public class scrDarkness : MonoBehaviour
 	public GameObject frontDoor1;
 	public GameObject frontDoor2;
 
+	private bool dropOnce = false;
+
 	void Start()
 	{
 		StartCoroutine(DelayedStart(5.0F));
+	}
+
+	void Update()
+	{
+		if(eventOver  && Vector3.Distance(GameObject.Find("Player").transform.position, transform.position) >= 7.0F && !dropOnce)
+		{
+			chandTrap.GetComponent<scrDropTrap>().Drop();
+			dropOnce = true;
+		}
 	}
 
 	public IEnumerator DelayedStart(float waitTime)
@@ -65,6 +76,7 @@ public class scrDarkness : MonoBehaviour
 		//frontDoor1.SetActive(true);
 		//frontDoor2.SetActive(true);
 		TurnOnLights();
+		GetComponentInChildren<SphereCollider>().enabled = false;
 
 		eventOver = true;
 	}
@@ -154,17 +166,6 @@ public class scrDarkness : MonoBehaviour
 		if(other.gameObject.name == "Player")
 		{
 			DarknessEvent();
-		}
-	}
-
-	void OnTriggerExit(Collider other)
-	{
-		//Drop the trap
-		if(other.gameObject.name == "Player" && eventOver == true)
-		{
-			chandTrap.GetComponent<scrDropTrap>().Drop();
-
-			GetComponentInChildren<SphereCollider>().enabled = false;
 		}
 	}
 }

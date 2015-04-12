@@ -7,7 +7,7 @@ using System.Collections;
  */
 public class scrDropTrap : MonoBehaviour 
 {
-    public bool dropping = false; //Is the drop trap falling?
+    public static bool dropping = false; //Is the drop trap falling?
 	public bool dropped = false; //Has the drop trap been activated yet?
 
 	//Gnome eye object
@@ -16,6 +16,8 @@ public class scrDropTrap : MonoBehaviour
 	//Calls when drop trap interaction button is pressed
 	public void Drop()
 	{
+		GameObject.Find("Main Camera").GetComponent<LookAway>().DropAnimationEventStart();
+
 		dropped = true; //Trap has been dropped
 		dropping = true; //Trap is dropping
 
@@ -48,6 +50,8 @@ public class scrDropTrap : MonoBehaviour
 			
 			//Spawn the gnome eye
 			gnomeEye.transform.position = new Vector3 (transform.position.x, transform.position.y, transform.position.z);
+
+			GameObject.Find("Main Camera").GetComponent<LookAway>().DropAnimationEventEnd();
 
 			//Temporary destory (Shatter? Fade away? Broken Model?)
 			Destroy(this.gameObject);

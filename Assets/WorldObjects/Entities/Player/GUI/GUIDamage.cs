@@ -17,7 +17,8 @@ public class GUIDamage : MonoBehaviour
 		    && col.gameObject.name != "GnomeShed" 
 		    && col.gameObject.GetComponent<Gnome>().enabled == true 
 		    && col.gameObject.GetComponent<Gnome>().pushed == false
-		    && col.gameObject.GetComponent<Gnome>().fallen == false)
+		    && col.gameObject.GetComponent<Gnome>().fallen == false
+		    && col.gameObject.GetComponent<Gnome>().trapped == false)
         {
             //set enter collider equal to true because we are hitting an enemy
             enterCollider = true;

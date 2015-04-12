@@ -284,14 +284,6 @@ public class Gnome : MonoBehaviour
 		{	
 			//Gnome is trapped
 			trapped = true;
-
-			//Disable NavMeshAgent
-			GetComponent<Gnome>().enabled = false;
-			GetComponent<NavMeshAgent>().enabled = false;
-
-			//Make the gnome fall
-			//rigidbody.isKinematic = false;
-			//rigidbody.useGravity = true;
 		}
         else if(other.tag == "DropTrap")
         {

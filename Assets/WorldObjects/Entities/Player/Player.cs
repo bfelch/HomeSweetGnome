@@ -221,7 +221,8 @@ public class Player : MonoBehaviour
 		   && other.gameObject.name != "GnomeShed" 
 		   && other.gameObject.GetComponent<Gnome>().enabled == true  
 		   && other.gameObject.GetComponent<Gnome>().pushed == false 
-		   && other.gameObject.GetComponent<Gnome>().fallen == false)
+		   && other.gameObject.GetComponent<Gnome>().fallen == false
+		   && other.gameObject.GetComponent<Gnome>().trapped == false)
 		{
 			other.gameObject.GetComponent<Gnome>().touchingPlayer = true;
 		}
@@ -233,7 +234,8 @@ public class Player : MonoBehaviour
 		    && other.gameObject.name != "GnomeShed" 
 		    && other.gameObject.GetComponent<Gnome>().enabled == true 
 		    && other.gameObject.GetComponent<Gnome>().pushed == false
-		    && other.gameObject.GetComponent<Gnome>().fallen == false)
+		    && other.gameObject.GetComponent<Gnome>().fallen == false
+		    && other.gameObject.GetComponent<Gnome>().trapped == false)
 		{
 			sanity -= 0.2f;
 		}
@@ -250,7 +252,8 @@ public class Player : MonoBehaviour
 		   && other.gameObject.name != "GnomeShed" 
 		   && other.gameObject.GetComponent<Gnome>().enabled == true  
 		   && other.gameObject.GetComponent<Gnome>().pushed == false 
-		   && other.gameObject.GetComponent<Gnome>().fallen == false)
+		   && other.gameObject.GetComponent<Gnome>().fallen == false
+		   && other.gameObject.GetComponent<Gnome>().trapped == false)
 		{
 			other.gameObject.GetComponent<Gnome>().touchingPlayer = false;
 		}

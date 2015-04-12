@@ -7,12 +7,10 @@ public class DarkTrap : MonoBehaviour
 
 	void OnTriggerEnter(Collider other)
 	{
-		if(other.tag == "Gnome")
+		if(other.tag == "Gnome" && !other.GetComponent<Gnome>().trapped)
 		{
-			other.gameObject.tag = null;
+			gnomesTrapped++;
 		}
-
-		gnomesTrapped++;
 
 		if(gnomesTrapped >= 2)
 		{

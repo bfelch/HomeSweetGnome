@@ -74,8 +74,9 @@ public class GnomeParent : MonoBehaviour
 					}
 					else
 					{
-						newPos = new Vector3(gnomes[i].transform.position.x, gnomes[i].transform.position.y, gnomes[i].transform.position.z);;
+						newPos = new Vector3(gnomes[i].transform.position.x, gnomes[i].transform.position.y, gnomes[i].transform.position.z);
 					}
+
 					//create the level 2 gnome with the same position as the level one gnome
 					GameObject thisModel = Instantiate(gnomeLvl2, newPos, gnomes[i].transform.rotation) as GameObject;
 					thisModel.gameObject.name = "GnomeLvl2";
@@ -83,6 +84,10 @@ public class GnomeParent : MonoBehaviour
 					thisModel.transform.parent = transform;
 					//update the gnome level
 					Gnome.gnomeLevel = 2;
+					if(gnomes[i].GetComponent<Gnome>().trapped == true)
+					{
+						thisModel.GetComponent<Gnome>().trapped = true;
+					}
 					//destroy the level 1 gnome
 					Destroy(gnomes[i]);
 					//set the value in the gnomes array to be the level 2 gnome
@@ -92,7 +97,6 @@ public class GnomeParent : MonoBehaviour
             //blink if model is changing
             blink.blinkTimer = 0;
             blink.BlinkMechanics();
-
         }
         //check if the snity is above 50%
         else if (modelNumber != 1 && sanityPercentage > .7)
@@ -110,8 +114,14 @@ public class GnomeParent : MonoBehaviour
 				thisModel.gameObject.name = "GnomeLvl1";
                 //set the level 1 gnome parent to be the Gnome parent
                 thisModel.transform.parent = transform;
-                //update the gnome leve
+				//update the gnome level
 				Gnome.gnomeLevel = 1;
+
+				//Transfer trapped propety
+				if(gnomes[i].GetComponent<Gnome>().trapped == true)
+				{
+					thisModel.GetComponent<Gnome>().trapped = true;
+				}
                 //destroy the level 2 gnome
                 Destroy(gnomes[i].gameObject);
                 //set the value in the gnomes array to be the level 1 gnome
