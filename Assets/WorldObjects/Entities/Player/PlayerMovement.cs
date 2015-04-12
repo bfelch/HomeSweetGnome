@@ -243,7 +243,6 @@ public class PlayerMovement : MonoBehaviour {
 		{
 			if(GameObject.Find("Main Camera").GetComponent<cameraShake>().shake == false)
 			{
-				Debug.Log("play fall");
             	this.gameObject.animation.Play("Landing");
 			}
 

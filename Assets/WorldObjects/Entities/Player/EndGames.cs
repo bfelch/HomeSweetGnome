@@ -212,7 +212,9 @@ public class EndGames : MonoBehaviour {
 
             //create a new color with the changed alpha value
             Color changing = new Color(deathTextFall.color.r, deathTextFall.color.g, deathTextFall.color.b, fadeIn);
+
             deathTextFall.enabled = true;
+            GameObject.Find("Main Camera").GetComponent<ScreenOverlay>().enabled = true;
 
             //set the new color
             deathTextFall.color = changing;

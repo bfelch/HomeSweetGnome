@@ -5,7 +5,7 @@ public class FadeToBlack : MonoBehaviour {
 
     public Texture black;
     public float timer = 20;
-    private float maxTimer = 20;
+    public float maxTimer = 20;
 
 	// Update is called once per frame
 	void Update () 
