@@ -82,15 +82,15 @@ public class elevatorStuff : MonoBehaviour
     {
         if (openTopElevator)
         {
-            topElevatorDoor.transform.localPosition = Vector3.MoveTowards(topElevatorDoor.transform.localPosition, new Vector3(.17f, -1.66f, -.19f), Time.deltaTime * .02f);
+            topElevatorDoor.transform.localPosition = Vector3.MoveTowards(topElevatorDoor.transform.localPosition, new Vector3(.17f, .13f, -.212f), Time.deltaTime * .02f);
             leverTop.transform.localEulerAngles = Vector3.MoveTowards(leverTop.transform.localEulerAngles, new Vector3(0, 19.531f, 40f), Time.deltaTime * 2f);
-            if (topElevatorDoor.transform.localPosition.x >= .155f && !elevatorStuff.inElevator)
+            if (topElevatorDoor.transform.localPosition.x >= .169f && !elevatorStuff.inElevator)
             {
                 openTopElevator = false;
                 elevatorStuff.activate = true;
                 elevatorStuff.direction = true;
             }
-            else if (topElevatorDoor.transform.localPosition.x >= .155f)
+            else if (topElevatorDoor.transform.localPosition.x >= .169f)
             {
                 openTopElevator = false;
                 elevatorStuff.activate = false;
@@ -100,15 +100,15 @@ public class elevatorStuff : MonoBehaviour
         if (closeTopElevator)
         {
             //Debug.Log("close top elevator");
-            topElevatorDoor.transform.localPosition = Vector3.MoveTowards(topElevatorDoor.transform.localPosition, new Vector3(-1.42f, -1.66f, .3805f), Time.deltaTime * .02f);
+            topElevatorDoor.transform.localPosition = Vector3.MoveTowards(topElevatorDoor.transform.localPosition, new Vector3(-1.595f, .01327f, .4454f), Time.deltaTime * .02f);
             leverTop.transform.localEulerAngles = Vector3.MoveTowards(leverTop.transform.localEulerAngles, new Vector3(0, 19.531f, 0f), Time.deltaTime * 2f);
-            if (topElevatorDoor.transform.localPosition.x <= -1.41f && !elevatorStuff.inElevator)
+            if (topElevatorDoor.transform.localPosition.x <= -1.594f && !elevatorStuff.inElevator)
             {
                 closeTopElevator = false;
                 elevatorStuff.activate = true;
                 elevatorStuff.direction = true;
             }
-            else if (topElevatorDoor.transform.localPosition.x <= -1.41f)
+            else if (topElevatorDoor.transform.localPosition.x <= -1.594f)
             {
                 closeTopElevator = false;
             }
@@ -124,7 +124,6 @@ public class elevatorStuff : MonoBehaviour
                 elevatorStuff.callingDown = false;
                 elevatorStuff.direction = false;
                 elevatorStuff.inElevator = false;
-                Debug.Log(elevatorStuff.activate + " " + elevatorStuff.inElevator);
             }
             else if (bottomElevatorDoor.transform.localPosition.x >= 64.19f && !elevatorStuff.inElevator)
             {

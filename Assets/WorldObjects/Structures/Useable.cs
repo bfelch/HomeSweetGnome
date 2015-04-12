@@ -299,7 +299,7 @@ public class Useable : MonoBehaviour
             }
             else if (type == UseableType.ELEVATORBOTTOM)
             {
-                if(GameObject.Find("Elevator").transform.localPosition.y > 28)
+                if(GameObject.Find("ElevatorStructure").transform.localPosition.y > 28)
                 {
                     elevatorStuff.inElevator = true;
                     elevatorStuff.direction = true;
