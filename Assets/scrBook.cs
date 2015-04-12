@@ -62,13 +62,13 @@ public class scrBook : MonoBehaviour
 			//Chandelier Light Switch Indicator
 			GameObject.Find("ChandelierSwitch").GetComponent<Useable>().chandReady = true;
 
+			scrHighlightController highlighter = GameObject.Find("Highlighter").GetComponent<scrHighlightController>();
 			//Unhighlight Book
-			GameObject.Find("Highlighter").GetComponent<scrHighlightController>().Unhighlight(this.gameObject);
+			highlighter.Unhighlight(this.gameObject);
 
-			//Get ChandSwitch object
-			GameObject chandSwitch = GameObject.Find ("ChandSwitch");
 			//Highlight Chandellier Switch
-			GameObject.Find("Highlighter").GetComponent<scrHighlightController>().Highlight(chandSwitch, scrHighlightController.outline2);
+			highlighter.Highlight(GameObject.Find("ChandSwitch"), scrHighlightController.outline2);
+			highlighter.Highlight(GameObject.Find("ChandSwitchBase"), scrHighlightController.outline2);
 		}
 	}
 

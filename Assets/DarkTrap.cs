@@ -9,8 +9,10 @@ public class DarkTrap : MonoBehaviour
 	{
 		if(other.tag == "Gnome")
 		{
-			gnomesTrapped++;
+			other.gameObject.tag = null;
 		}
+
+		gnomesTrapped++;
 
 		if(gnomesTrapped >= 2)
 		{

@@ -42,8 +42,11 @@ public class Player : MonoBehaviour
 	private AudioSource woodStep;
 	private AudioSource carpetStep;
 	private AudioSource concreteStep;
-	private AudioSource waterStep;
 	private AudioSource dirtStep;
+	private AudioSource waterSplash;
+	private AudioSource waterStep1;
+	private AudioSource waterStep2;
+	private AudioSource waterStep3;
 
 	private string floorType;
 
@@ -72,8 +75,11 @@ public class Player : MonoBehaviour
 		woodStep = stepSounds[1];
 		carpetStep = stepSounds[2];
 		concreteStep = stepSounds[3];
-		waterStep = stepSounds[4];
-		dirtStep = stepSounds[5];
+		dirtStep = stepSounds[4];
+		waterSplash = stepSounds[5];
+		waterStep1 = stepSounds[6];
+		waterStep2 = stepSounds[7];
+		waterStep3 = stepSounds[8];
 
         if(PlayerPrefs.GetInt("LoadGame") == 1)
         {
@@ -135,6 +141,7 @@ public class Player : MonoBehaviour
 				   && Gnome.gnomeLevel == 1 
 				   && activeTarget.GetComponent<Gnome>().pushed == false 
 				   && activeTarget.name != "GnomeShed"
+				   && activeTarget.name != "DarkGnome(Clone)"
 				   && activeTarget.GetComponent<Gnome>().fallen == false)
 				{
 					//Play damage sound
@@ -336,7 +343,7 @@ public class Player : MonoBehaviour
 				break;
 			case "Carpet":
 				//Play carpet step
-				carpetStep.volume = 0.6F;
+				carpetStep.volume = 0.8F;
 				carpetStep.pitch = 0.9F + 0.2F * Random.value;
 				carpetStep.Play();
 				break;
@@ -347,10 +354,29 @@ public class Player : MonoBehaviour
 				concreteStep.Play();
 				break;
 			case "Water":
-				//Play concrete step
-				waterStep.volume = 0.1F;
-				waterStep.pitch = 0.9F + 0.2F * Random.value;
-				waterStep.Play();
+				int randNumber = Random.Range(6,9);
+
+				switch(randNumber)
+				{
+					case 6:
+						//Play water step
+						waterStep1.volume = 0.8F;
+						waterStep1.pitch = 0.9F + 0.2F * Random.value;
+						waterStep1.Play();
+						break;
+					case 7:
+						//Play water step
+						waterStep2.volume = 0.8F;
+						waterStep2.pitch = 0.9F + 0.2F * Random.value;
+						waterStep2.Play();
+						break;
+					case 8:
+						//Play water step
+						waterStep3.volume = 0.8F;
+						waterStep3.pitch = 0.9F + 0.2F * Random.value;
+						waterStep3.Play();
+						break;
+				}
 				break;
 			case "Dirt":
 				//Play dirt step
@@ -379,21 +405,21 @@ public class Player : MonoBehaviour
 				break;
 			case "Carpet":
 				//Play grass step
-				carpetStep.volume = 1.0F;
+				carpetStep.volume = 1.4F;
 				carpetStep.pitch = 0.4F + 0.2F * Random.value;
 				carpetStep.Play();
 				break;
 			case "Concrete":
 				//Play concrete step
-				concreteStep.volume = 0.4F;
+				concreteStep.volume = 0.1F;
 				concreteStep.pitch = 0.5F + 0.2F * Random.value;
 				concreteStep.Play();
 				break;
 			case "Water":
-				//Play concrete step
-				waterStep.volume = 0.8F;
-				waterStep.pitch = 0.4F + 0.2F * Random.value;
-				waterStep.Play();
+				//Play water splash
+				waterSplash.volume = 0.8F;
+				waterSplash.pitch = 1.0F + 0.2F * Random.value;
+				waterSplash.Play();
 				break;
 			case "Dirt":
 				//Play dirt step

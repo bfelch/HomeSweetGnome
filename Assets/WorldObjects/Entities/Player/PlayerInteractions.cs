@@ -100,12 +100,18 @@ public class PlayerInteractions : MonoBehaviour
                optionsMenu = false;
            }
         }
-        if(Input.GetKeyDown(KeyCode.LeftAlt))
+
+        if(Input.GetKeyDown(KeyCode.Alpha0))
         {
             GameObject.Find("TempPlayerLight").GetComponent<Light>().enabled = !GameObject.Find("TempPlayerLight").GetComponent<Light>().enabled;
         }
 
 		//CHEATS!
+		if(Input.GetKeyDown(KeyCode.Alpha6))
+		{
+			//Gate Teleport
+			transform.position = new Vector3(-40F, 11.23F, 124.59F);
+		}
 		if(Input.GetKeyDown(KeyCode.Alpha7))
 		{
 			//Dock Teleport

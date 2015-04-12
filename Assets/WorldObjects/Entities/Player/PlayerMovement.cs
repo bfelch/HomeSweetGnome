@@ -101,7 +101,8 @@ public class PlayerMovement : MonoBehaviour {
         }
     }
 
-    void Stand() {
+    void Stand() 
+	{
         SetMovementSpeed(0f);
 
         //do nothing unless state should change
@@ -123,7 +124,8 @@ public class PlayerMovement : MonoBehaviour {
             SetMovementSpeed(6f);
         }
 
-		if(GameObject.Find("Main Camera").GetComponent<cameraShake>().shake == false)
+		if(GameObject.Find("Main Camera").GetComponent<cameraShake>().shake == false
+		   && !this.gameObject.animation.IsPlaying("Landing"))
 		{
         	this.gameObject.animation.Play("Walk");
 		}
@@ -195,7 +197,8 @@ public class PlayerMovement : MonoBehaviour {
             if (sprintTime > 0) 
 			{
                 //if moving forward, play animation and update timer
-				if(GameObject.Find("Main Camera").GetComponent<cameraShake>().shake == false)
+				if(GameObject.Find("Main Camera").GetComponent<cameraShake>().shake == false
+				   && !this.gameObject.animation.IsPlaying("Landing"))
 				{
                 	this.gameObject.animation.Play("Sprint");
 				}
@@ -234,16 +237,18 @@ public class PlayerMovement : MonoBehaviour {
         }
     }
 
-    void Fall() {
+    void Fall() 
+	{
         if (motor.IsGrounded()) 
 		{
-            //if hit ground, change state
-            state = PlayerState.STAND;
-
 			if(GameObject.Find("Main Camera").GetComponent<cameraShake>().shake == false)
 			{
+				Debug.Log("play fall");
             	this.gameObject.animation.Play("Landing");
 			}
+
+			//if hit ground, change state
+			state = PlayerState.STAND;
         }
     }
 
@@ -257,6 +262,16 @@ public class PlayerMovement : MonoBehaviour {
         sprinting = state == PlayerState.SPRINT;
     }
 
+	bool Falling()
+	{
+		if(!motor.IsGrounded()) 
+		{
+			return true;
+		}
+
+		return false;
+	}
+
     bool Crouching() {
         return (Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.LeftCommand));
     }
@@ -269,9 +284,30 @@ public class PlayerMovement : MonoBehaviour {
         return (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D));
     }
 
-    bool Falling() {
-        return (Input.GetKey(KeyCode.Space));
-    }
+	/*
+	bool Falling()
+	{
+		//Player layer mask
+		int playerLayer = 8;
+		int invisibleLayer = 10;
+		int ignoreMask = 1 << playerLayer | 1 << invisibleLayer;
+		
+		//Invert bitmask to only ignore this layer
+		ignoreMask = ~ignoreMask;
+
+		RaycastHit hit;
+		Debug.DrawRay(transform.position, Vector3.down * 2.0F, Color.yellow);
+		if(Physics.Raycast(transform.position, Vector3.down, out hit, 2.0F, ignoreMask))
+		{
+			Debug.Log(hit.collider.name);
+			return false;
+		}
+		else
+		{
+			Debug.Log(hit.collider.name);
+			return true;
+		}
+	}*/
 
     void SetCrouch(bool isCrouching) {
         if (!isCrouching) {
@@ -303,13 +339,13 @@ public class PlayerMovement : MonoBehaviour {
 
     void OnTriggerEnter(Collider col)
     {
-        if (col.name == "PoolNoCrouch")
+        if (col.name == "WaterNoCrouch")
             canCrouch = false;
     }
 
     void OnTriggerExit(Collider col)
     {
-        if (col.name == "PoolNoCrouch")
+        if (col.name == "WaterNoCrouch")
             canCrouch = true;
     }
 }

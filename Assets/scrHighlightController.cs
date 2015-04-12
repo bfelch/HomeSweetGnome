@@ -36,6 +36,9 @@ public class scrHighlightController : MonoBehaviour
 		this.Highlight(GameObject.Find("RedKeyhole"), outlineRed);
 		
 		this.Highlight(GameObject.Find("MotorHatch"), outline2);
+
+		this.Highlight(GameObject.Find("ShedSwitch"), outlineLightGray);
+		this.Highlight(GameObject.Find("ShedSwitchBase"), outlineLightGray);
 	}
 
 	public void Highlight(GameObject objToHightlight, Material mat)

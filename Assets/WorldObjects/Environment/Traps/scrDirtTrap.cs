@@ -4,8 +4,12 @@ using System.Collections;
 public class scrDirtTrap : MonoBehaviour 
 {
 	public GameObject dirtEffect; //Dig particle effect
-	public GameObject dirtPile; //Dirt pile prefab
+	public GameObject dirtPile1; //Dirt pile prefab
+	public GameObject dirtPile2; //Dirt pile prefab
+	public GameObject dirtPile3; //Dirt pile prefab
+
 	private int timesToDig = 3; //Times to dig a pile before it's a hole
+	private int count = 1;
 
 	//Calls when dirt is dug
 	public void Dig()
@@ -18,35 +22,24 @@ public class scrDirtTrap : MonoBehaviour
 
 		timesToDig--; //Dirt has to be dug three times
 
-		//Spawn dirt piles around hole
-		for (int i = 0; i < 3; i++) 
+		//Random position inside a circle of size 3
+		Vector2 newPosition = Random.insideUnitCircle * 2;
+
+		//Place unique dirt piles
+		if(count == 1)
 		{
-			//Random position inside a circle of size 3
-			Vector2 newPosition = Random.insideUnitCircle * 3;
-
-			//Make sure the dirt pile doesn't spawn over the hole
-			if(newPosition.x > 0)
-			{
-				newPosition.x = newPosition.x + 2;
-			}
-			else
-			{
-				newPosition.x = newPosition.x - 2;
-			}
-
-			//Make sure the dirt pile doesn't spawn over the hole
-			if(newPosition.y > 0)
-			{
-				newPosition.y = newPosition.y + 2;
-			}
-			else
-			{
-				newPosition.y = newPosition.y - 2;
-			}
-
-			//Spawn dirt pile prefab
-			Instantiate(dirtPile, new Vector3 (transform.position.x + newPosition.x, transform.position.y + 0.3F, transform.position.z + newPosition.y), dirtPile.transform.rotation);
+			Instantiate(dirtPile1, new Vector3 (transform.position.x + 3.0F, transform.position.y, transform.position.z), dirtPile1.transform.rotation);
 		}
+		else if(count == 2)
+		{
+			Instantiate(dirtPile2, new Vector3 (transform.position.x + 3.0F, transform.position.y, transform.position.z), dirtPile2.transform.rotation);
+		}
+		else
+		{
+			Instantiate(dirtPile3, new Vector3 (transform.position.x + 3.0F, transform.position.y, transform.position.z), dirtPile3.transform.rotation);
+		}
+
+		count++;
 
 		//Hole is dug
 		if(timesToDig <= 0)

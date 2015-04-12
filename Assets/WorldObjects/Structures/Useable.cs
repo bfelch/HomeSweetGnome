@@ -255,8 +255,8 @@ public class Useable : MonoBehaviour
 					GameObject.Find("Darkness").GetComponent<scrDarkness>().PrepareEvent();
 
 					//Unhighlight Chand Switch
-					GameObject chandSwitch = GameObject.Find("ChandSwitch");
-						highlighter.Unhighlight(chandSwitch);
+					highlighter.Unhighlight(GameObject.Find("ChandSwitch"));
+					highlighter.Unhighlight(GameObject.Find("ChandSwitchBase"));
 
 				}
 				else if(this.gameObject.name == "ShedLight")
@@ -273,6 +273,9 @@ public class Useable : MonoBehaviour
 						this.renderer.material = this.gameObject.GetComponent<scrFlicker>().matLightOff; //Switch material
 						(GetComponent("Halo") as Behaviour).enabled = false; //Disable halo
 					}
+
+					highlighter.Unhighlight(GameObject.Find("ShedSwitch"));
+					highlighter.Unhighlight(GameObject.Find("ShedSwitchBase"));
 				}
 				else if(this.gameObject.name != "ChandelierSwitch" && this.gameObject.name != "ShedLight" )
 				{

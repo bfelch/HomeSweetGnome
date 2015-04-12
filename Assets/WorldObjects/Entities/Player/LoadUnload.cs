@@ -280,9 +280,8 @@ public class LoadUnload : MonoBehaviour
             }
 
             //Tunnel Load (Entrance)
-            if (col.name == "TunnelLoadEntrance")
+            if (col.name == "TunnelLoadEntrance" || col.name == "WellLoadEntrance")
             {
-
                 weather.StopWeather(); //Stop weather
 
                 moonlight.lightFadeIn = false; //Light is only fading out
