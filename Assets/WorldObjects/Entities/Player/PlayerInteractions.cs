@@ -48,6 +48,7 @@ public class PlayerInteractions : MonoBehaviour
 
     private bool displayWarningMsg = true;
     private bool waitToDisableWarningMsg = false;
+    private bool waitForCollision = false;
 
     void Start()
     {
@@ -122,6 +123,14 @@ public class PlayerInteractions : MonoBehaviour
 			//Attic Teleport
 			transform.position = new Vector3(3.46F, 50.04F, -22.84F);
 		}
+
+        if(waitForCollision && charMotor.IsGrounded())
+        {
+            GameObject.Find("Player").GetComponent<PlayerMovement>().enabled = !showGUI;
+            GameObject.Find("Player").GetComponent<Player>().enabled = !showGUI;
+            charMotor.enabled = !showGUI;
+            waitForCollision = false;
+        }
     }
 
     void OnGUI()
@@ -144,12 +153,16 @@ public class PlayerInteractions : MonoBehaviour
             if (GUI.Button(new Rect(55, 100, 180, 40), "Resume"))
             {
                 Screen.lockCursor = true;
-                this.GetComponent<PlayerMovement>().enabled = true;
-                this.GetComponent<Player>().enabled = true;
                 Time.timeScale = 1.0f;
-                mouseLook.enabled = true;
-                cameraLook.enabled = true;
+                if (!scrBook.bookOpen && !scrJournal.journalOpen)
+                {
+                    this.GetComponent<PlayerMovement>().enabled = true;
+                    this.GetComponent<Player>().enabled = true;
+                    mouseLook.enabled = true;
+                    cameraLook.enabled = true;
+                }
                 pause = false;
+
             }
             if (GUI.Button(new Rect(55, 150, 180, 40), "Options"))
             {
@@ -502,10 +515,12 @@ public class PlayerInteractions : MonoBehaviour
         if (!scrJournal.journalOpen && !scrBook.bookOpen)
         {
             //toggle movements, looking, cursor
-            charMotor.enabled = !showGUI;
             mouseLook.enabled = !showGUI;
             cameraLook.enabled = !showGUI;
             Screen.lockCursor = !showGUI;
+            waitForCollision = true;
+            //GameObject.Find("Player").GetComponent<PlayerMovement>().enabled = !showGUI;
+            //GameObject.Find("Player").GetComponent<Player>().enabled = !showGUI;
         }
     }
 
@@ -523,6 +538,8 @@ public class PlayerInteractions : MonoBehaviour
 
         return improvedName;
     }
+
+
 
 
 }

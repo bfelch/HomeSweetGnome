@@ -53,6 +53,8 @@ public class scrBook : MonoBehaviour
 		mouseLook.enabled = false;
 		cameraLook.enabled = false;
 		Screen.lockCursor = false;
+        GameObject.Find("Player").GetComponent<PlayerMovement>().enabled = false;
+        GameObject.Find("Player").GetComponent<Player>().enabled = false;
 
 		//For one time darkness event
 		if(darkReady)
@@ -79,11 +81,16 @@ public class scrBook : MonoBehaviour
 		book.SetActive(false);
         this.GetComponent<AudioSource>().Play();
 
-		//toggle movements, looking, cursor
-		charMotor.enabled = true;
-		mouseLook.enabled = true;
-		cameraLook.enabled = true;
-		Screen.lockCursor = true;
+        if (!PlayerInteractions.showGUI)
+        {
+		    //toggle movements, looking, cursor
+		    charMotor.enabled = true;
+		    mouseLook.enabled = true;
+		    cameraLook.enabled = true;
+		    Screen.lockCursor = true;
+            GameObject.Find("Player").GetComponent<PlayerMovement>().enabled = true;
+            GameObject.Find("Player").GetComponent<Player>().enabled = true;
+        }
 	}
 
 	public IEnumerator BookTimer(float waitTime)

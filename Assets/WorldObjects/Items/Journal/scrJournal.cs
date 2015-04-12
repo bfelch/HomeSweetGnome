@@ -54,6 +54,8 @@ public class scrJournal : MonoBehaviour
 		mouseLook.enabled = false;
 		cameraLook.enabled = false;
 		Screen.lockCursor = false;
+        GameObject.Find("Player").GetComponent<PlayerMovement>().enabled = false;
+        GameObject.Find("Player").GetComponent<Player>().enabled = false;
 
         closeOnce = true;
 	}
@@ -74,6 +76,8 @@ public class scrJournal : MonoBehaviour
             mouseLook.enabled = true;
             cameraLook.enabled = true;
             Screen.lockCursor = true;
+            GameObject.Find("Player").GetComponent<PlayerMovement>().enabled = true;
+            GameObject.Find("Player").GetComponent<Player>().enabled = true;
         }
 	}
 	

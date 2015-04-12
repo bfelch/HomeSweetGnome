@@ -95,7 +95,7 @@ public class ShedTutorial : MonoBehaviour {
                 //this.GetComponent<Player>().flashFade();
                 //display instructions
                 GUI.Box(new Rect(0, Screen.height - Screen.height / 2+100, Screen.width, 150),
-                "Use 'WASD' to move, use the 'MOUSE' to look. \nUse 'SHIFT' to sprint. Use 'CTRL' to crouch \nUse 'R' to close your eyes, use 'F' to hold them open.");
+                "Use 'WASD' to move, use the 'MOUSE' to look. \nUse 'SHIFT' to sprint. Use 'CTRL' to crouch \nUse 'R' to close your eyes, use 'F' to hold them open. \n \n *Headphones are recommended for full immersion.*");
 
 
                 //once timer reaches 0, switch interaction to one
