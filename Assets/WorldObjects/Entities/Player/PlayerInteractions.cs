@@ -46,7 +46,7 @@ public class PlayerInteractions : MonoBehaviour
 
 	static public int slotCounter;
 
-    private bool displayWarningMsg = true;
+    public static bool displayWarningMsg = true;
     private bool waitToDisableWarningMsg = false;
     private bool waitForCollision = false;
 
@@ -217,9 +217,9 @@ public class PlayerInteractions : MonoBehaviour
             GUI.Box(new Rect(controlPos, 90, 180, 25), "WASD - Move");
             GUI.Box(new Rect(controlPos, 110, 180, 25), "Q - Inventory");
             GUI.Box(new Rect(controlPos, 130, 180, 25), "E - Interact");
-            GUI.Box(new Rect(controlPos, 150, 180, 25), "R - Blink");
-            GUI.Box(new Rect(controlPos, 170, 180, 25), "F - Eyes Open");
-            GUI.Box(new Rect(controlPos, 190, 180, 25), "Left Click - Push");
+            GUI.Box(new Rect(controlPos, 150, 180, 25), "R - Close Eyes");
+            GUI.Box(new Rect(controlPos, 170, 180, 25), "F - Open Eyes");
+            GUI.Box(new Rect(controlPos, 190, 180, 25), "Shift - Sprint");
 
             GUI.backgroundColor = Color.white;
             GUI.skin.box.alignment = TextAnchor.MiddleCenter;
@@ -306,6 +306,7 @@ public class PlayerInteractions : MonoBehaviour
             else if(lookingAtGnome 
 			        && Gnome.gnomeLevel == 1 
 			        && activeTarget.name != "GnomeShed"
+			        && activeTarget.name != "DarkGnome(Clone)"
 			        && activeTarget.GetComponent<Gnome>().fallen == false
 			        && activeTarget.GetComponent<Gnome>().pushed == false
                     && displayWarningMsg)
@@ -397,8 +398,6 @@ public class PlayerInteractions : MonoBehaviour
             }
             else
             {
-                if (waitToDisableWarningMsg)
-                    displayWarningMsg = false;
                 //Check this (might not be needed)
                 canHover = false; //Hide item name
                 notUseable = false;
@@ -408,8 +407,6 @@ public class PlayerInteractions : MonoBehaviour
         }
         else 
         {
-            if (waitToDisableWarningMsg)
-                displayWarningMsg = false;
             canHover = false;
             lookingAtGnome = false;
             lookingAtGargoyle = false;

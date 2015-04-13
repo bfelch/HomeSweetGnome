@@ -26,7 +26,8 @@ public class PlayerMovement : MonoBehaviour {
     public bool walking;
     public bool crouching;
     public bool sprinting;
-    public bool canCrouch = true;
+    public bool canCrouch = false;
+	public bool canJump = true;
     //used to play breathing sound
     private bool breathing;
     public bool recharging;
@@ -35,8 +36,11 @@ public class PlayerMovement : MonoBehaviour {
     public CharacterMotor motor;
     public CharacterController controller;
 
+	private bool inWater = false;
+
 	// Use this for initialization
-	void Start () {
+	void Start () 
+	{
         //set timer
         sprintTime = 6.0F;
         maxSprintTime = 6.0F;
@@ -48,6 +52,8 @@ public class PlayerMovement : MonoBehaviour {
         //set player camera heights
         cameraStandHeight = camera.transform.localPosition.y;
         cameraCrouchHeight = 0.30857f;
+
+		canCrouch = false;
 	}
 	
 	// Update is called once per frame
@@ -108,9 +114,14 @@ public class PlayerMovement : MonoBehaviour {
         //do nothing unless state should change
         if (Falling()) {
             state = PlayerState.FALL;
-        } else if (Crouching()) {
+        } 
+		/*
+		else if (Crouching()) 
+		{
             state = PlayerState.CROUCH;
-        } else if (Sprinting()) {
+        } 
+        */
+		else if (Sprinting()) {
             state = PlayerState.SPRINT;
         } else if (Moving()) {
             state = PlayerState.WALK;
@@ -121,7 +132,15 @@ public class PlayerMovement : MonoBehaviour {
         if (!walking) 
 		{
 			//Walking speed
-            SetMovementSpeed(6f);
+			if(inWater)
+			{
+
+				SetMovementSpeed(3.0F);
+			}
+			else
+			{
+            	SetMovementSpeed(6f);
+			}
         }
 
 		if(GameObject.Find("Main Camera").GetComponent<cameraShake>().shake == false
@@ -156,6 +175,7 @@ public class PlayerMovement : MonoBehaviour {
 	{
         if(canCrouch)
         {
+			Debug.Log(canCrouch);
             if (!crouching)
             {
                 SetMovementSpeed(3f);
@@ -188,8 +208,15 @@ public class PlayerMovement : MonoBehaviour {
 	{
         if(!sprinting) 
 		{
-			//Sprint speed
-            SetMovementSpeed(12.0F);
+			if(inWater)
+			{
+				SetMovementSpeed(6.0F);
+			}
+			else
+			{
+				//Sprint speed
+	            SetMovementSpeed(12.0F);
+			}
         }
 
         if (Input.GetKey(KeyCode.W)) 
@@ -251,7 +278,8 @@ public class PlayerMovement : MonoBehaviour {
         }
     }
 
-    void SetMovementSpeed(float speed) {
+    void SetMovementSpeed(float speed) 
+	{
         motor.movement.maxForwardSpeed = speed;
         motor.movement.maxSidewaysSpeed = speed;
         motor.movement.maxBackwardsSpeed = speed;
@@ -308,7 +336,8 @@ public class PlayerMovement : MonoBehaviour {
 		}
 	}*/
 
-    void SetCrouch(bool isCrouching) {
+    void SetCrouch(bool isCrouching) 
+	{
         if (!isCrouching) {
             //alter collider height
             box.size = new Vector3(0, boxStandHeight, 0);
@@ -338,14 +367,28 @@ public class PlayerMovement : MonoBehaviour {
 
     void OnTriggerEnter(Collider col)
     {
+		if(col.name == "WaterZone")
+		{
+			inWater = true;
+			SetMovementSpeed(motor.movement.maxForwardSpeed/2);
+		}
         if (col.name == "WaterNoCrouch")
-            canCrouch = false;
+		{
+			motor.jumping.enabled = false;
+		}
     }
 
     void OnTriggerExit(Collider col)
     {
+		if(col.name == "WaterZone")
+		{
+			inWater = false;
+			SetMovementSpeed(motor.movement.maxForwardSpeed*2);
+		}
         if (col.name == "WaterNoCrouch")
-            canCrouch = true;
+		{
+			motor.jumping.enabled = true;
+		}
     }
 }
 

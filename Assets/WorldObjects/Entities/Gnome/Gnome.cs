@@ -21,6 +21,8 @@ public class Gnome : MonoBehaviour
     //Is the gnome fallen?
     public bool fallen = false;
 
+	private bool home = true;
+
 	//Is the gnome trapped
 	public bool trapped = false;
 
@@ -91,8 +93,21 @@ public class Gnome : MonoBehaviour
                 } 
 				else 
 				{
-                    //if player not in range
-                    GoHome();
+					if(!home)
+					{
+	                    //if player not in range
+	                    GoHome();
+					}
+					else
+					{
+						if(this.gameObject.name == "GnomeLvl2")
+						{
+							walkAnim.animation["GnomeWalk"].speed = 0.0F;
+						}
+
+						//prevent movement
+						agent.speed = 0;
+					}
                 }
             }
             else
@@ -120,12 +135,12 @@ public class Gnome : MonoBehaviour
 			}
 		}
 
-        //set last know location of player
-        lastKnownLocation = target.transform.position;
-        //set destination
-        agent.SetDestination(lastKnownLocation);
-        //move at normal speed
-        agent.speed = moveSpeed;
+		//set last know location of player
+		lastKnownLocation = target.transform.position;
+		//set destination
+		agent.SetDestination(lastKnownLocation);
+		//move at normal speed
+		agent.speed = moveSpeed;
     }
 
     private void GoHome()
@@ -136,19 +151,38 @@ public class Gnome : MonoBehaviour
 			walkAnim.animation["GnomeWalk"].speed = 1.0F; //Play animation fowards
 		}
 
+		//start moving back to start location
+		agent.SetDestination(startLocation);
+		//move at normal speed
+		agent.speed = moveSpeed;
+
+		if(Vector3.Distance(agent.transform.position, startLocation) <= 1.0F)
+		{
+			home = true;
+		}
+
+		/*
         if (Vector3.Distance(transform.position, startLocation) > sightRange * 1.5)
         {
             //start moving back to start location
             agent.SetDestination(startLocation);
             //move at normal speed
             agent.speed = moveSpeed;
-        }
+        }*/
     }
 
     private bool TargetInRange() 
     {
         //checks distance between player and gnome
-        return Vector3.Distance(transform.position, target.transform.position) < sightRange;
+		if(Vector3.Distance(transform.position, target.transform.position) < sightRange)
+		{
+			home = false;
+			return true;
+		}
+		else
+		{
+			return false;
+		}
     }
 
     public bool SeenByPlayer()

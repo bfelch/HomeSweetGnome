@@ -13,10 +13,4 @@ public class BoatSounds : MonoBehaviour
 		boatStartSound = boatSounds[0];
 		boatMotorSound = boatSounds[1];
 	}
-	
-	// Update is called once per frame
-	void Update () 
-	{
-	
-	}
 }

@@ -19,7 +19,13 @@ public class elevatorStuff : MonoBehaviour
     private static GameObject leverBottom;
     private static GameObject leverTop;
 
-    private static bool doorIsClosed = true;
+    public static bool doorIsClosed = true;
+
+	private static AudioSource bell1;
+	private static AudioSource bell2;
+	public static bool bell1Played;
+	public static bool bell2Played;
+
 	// Use this for initialization
 	void Start () 
     {
@@ -27,14 +33,21 @@ public class elevatorStuff : MonoBehaviour
         bottomElevatorDoor = GameObject.Find("BottomElevatorDoor");
         leverTop = GameObject.Find("LeverTop");
         leverBottom = GameObject.Find("LeverBottom");
+
+		bell1 = leverTop.GetComponent<AudioSource>();
+		bell2 = leverBottom.GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
 	void Update () 
     {
-        Debug.Log(doorIsClosed);
         if (inElevator && doorIsClosed)
         {
+			if(!GetComponent<AudioSource>().isPlaying)
+			{
+				GetComponent<AudioSource>().Play();
+			}
+
             if (direction)
             {
                 transform.localPosition = Vector3.MoveTowards(transform.localPosition, new Vector3(62.59f, 25.12f, -38.09f), Time.deltaTime*1.7f);
@@ -43,6 +56,7 @@ public class elevatorStuff : MonoBehaviour
                 if (transform.localPosition.y <= 25.2F)
                 {
                     elevatorStuff.openBottomElevator = true;
+					GetComponent<AudioSource>().Stop();
                 }
             }
             else
@@ -52,6 +66,7 @@ public class elevatorStuff : MonoBehaviour
                 if (transform.localPosition.y >= 44.8f)
                 {
                     elevatorStuff.openTopElevator = true;
+					GetComponent<AudioSource>().Stop();
                 }
             }
         }
@@ -61,7 +76,7 @@ public class elevatorStuff : MonoBehaviour
     {
         if (other.tag == "Player" && elevatorStuff.activate)
         {
-            //other.gameObject.transform.parent = GameObject.Find("Elevator").transform;
+            //other.gameObject.transform.parent = GameObject.Find("ElevatorStructure").transform;
 
             //if (other.gameObject.transform.parent == GameObject.Find("Elevator").transform)
             {
@@ -77,7 +92,6 @@ public class elevatorStuff : MonoBehaviour
         if (other.tag == "Player")
         {
             //other.gameObject.transform.parent = GameObject.Find("Entities").transform;
-
         }
     }
 
@@ -85,6 +99,13 @@ public class elevatorStuff : MonoBehaviour
     {
         if (openTopElevator)
         {
+			//Play bell sound
+			if(!bell1Played)
+			{
+				bell1.Play();
+				bell1Played = true;
+			}
+
             topElevatorDoor.transform.localPosition = Vector3.MoveTowards(topElevatorDoor.transform.localPosition, new Vector3(.17f, .13f, -.212f), Time.deltaTime * .02f);
             leverTop.transform.localEulerAngles = Vector3.MoveTowards(leverTop.transform.localEulerAngles, new Vector3(0, 19.531f, 40f), Time.deltaTime * 2f);
             if (topElevatorDoor.transform.localPosition.x >= .169f && !elevatorStuff.inElevator)
@@ -99,7 +120,6 @@ public class elevatorStuff : MonoBehaviour
                 openTopElevator = false;
                 elevatorStuff.activate = false;
                 elevatorStuff.inElevator = false;
-
             }
             doorIsClosed = false;
 
@@ -123,13 +143,22 @@ public class elevatorStuff : MonoBehaviour
             {
                 closeTopElevator = false;
                 if (!closeBottomElevator)
+				{
                     doorIsClosed = true;
+				}
             }
 
 
         }
         if (openBottomElevator)
         {
+			//Play bell sound
+			if(!bell2Played)
+			{
+				bell2.Play();
+				bell2Played = true;
+			}
+
             bottomElevatorDoor.transform.localPosition = Vector3.MoveTowards(bottomElevatorDoor.transform.localPosition, new Vector3(64.21f, 23.39f, -35.76f), Time.deltaTime * .02f);
             leverBottom.transform.localEulerAngles = Vector3.MoveTowards(leverBottom.transform.localEulerAngles, new Vector3(0, 19.531f, 40f), Time.deltaTime * 2f);
             if (elevatorStuff.callingDown && bottomElevatorDoor.transform.localPosition.x >= 64.19f)
@@ -165,13 +194,17 @@ public class elevatorStuff : MonoBehaviour
                 elevatorStuff.activate = true;
                 elevatorStuff.direction = false;
                 if(!closeTopElevator)
+				{
                     doorIsClosed = true;
+				}
             }
             else if (bottomElevatorDoor.transform.localPosition.x <= 62.61f)
             {
                 closeBottomElevator = false;
                 if (!closeTopElevator)
+				{
                     doorIsClosed = true;
+				}
             }
 
         }

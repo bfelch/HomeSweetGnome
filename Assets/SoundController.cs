@@ -9,6 +9,7 @@ public class SoundController : MonoBehaviour
 	public AudioSource eerieSound;
 	public AudioSource birdsSound;
 	public AudioSource violinSound;
+	public AudioSource windyCaveSound;
 	
 	void Start () 
 	{
@@ -16,12 +17,18 @@ public class SoundController : MonoBehaviour
 		eerieSound = bgSounds[0];
 		birdsSound = bgSounds[1];
 		violinSound = bgSounds[2];
+		windyCaveSound = bgSounds[3];
 	}
 	
-	public static IEnumerator FadeAudio (float timer, Fade fadeType, AudioSource aSound) 
+	public static IEnumerator FadeAudio (float timer, Fade fadeType, AudioSource aSound, float max) 
 	{
-		float start = fadeType == Fade.In? 0.0F : 1.0F;
-		float end = fadeType == Fade.In? 1.0F : 0.0F;
+		if(fadeType.ToString().Equals("In"))
+		{
+			aSound.Play();
+		}
+
+		float start = fadeType == Fade.In? 0.0F : max;
+		float end = fadeType == Fade.In? max : 0.0F;
 		float i = 0.0F;
 		float step = 1.0F/timer;
 		
@@ -30,6 +37,11 @@ public class SoundController : MonoBehaviour
 			i += step * Time.deltaTime;
 			aSound.volume = Mathf.Lerp(start, end, i);
 			yield return new WaitForSeconds(step * Time.deltaTime);
+		}
+
+		if(fadeType.ToString().Equals("Out"))
+		{
+			aSound.Stop();
 		}
 	}
 

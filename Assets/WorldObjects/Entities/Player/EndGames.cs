@@ -124,7 +124,7 @@ public class EndGames : MonoBehaviour {
         lightRain.particleSystem.Stop();
         heavyRain.particleSystem.Stop();
 
-		StartCoroutine(SoundController.FadeAudio(10.0F, SoundController.Fade.Out, rain.audio));
+		StartCoroutine(SoundController.FadeAudio(10.0F, SoundController.Fade.Out, rain.audio, 0.07F));
 
         Skybox skybox = Camera.main.gameObject.AddComponent<Skybox>();
         skybox.material = sunnySky;
@@ -142,10 +142,10 @@ public class EndGames : MonoBehaviour {
         AudioSource eerie = GameObject.Find("GlobalSoundController").GetComponents<AudioSource>()[0];
 		AudioSource birdSound = GameObject.Find("GlobalSoundController").GetComponents<AudioSource>()[1];
 
-		StartCoroutine(SoundController.FadeAudio(2.0F, SoundController.Fade.Out, eerie));
+		StartCoroutine(SoundController.FadeAudio(2.0F, SoundController.Fade.Out, eerie, 0.4F));
 
 		birdSound.Play();
-		StartCoroutine(SoundController.FadeAudio(12.0F, SoundController.Fade.In, birdSound));
+		StartCoroutine(SoundController.FadeAudio(12.0F, SoundController.Fade.In, birdSound, 0.2F));
 
         StartCoroutine(ExperimentWin(5.0F));
 

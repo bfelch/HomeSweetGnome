@@ -42,7 +42,6 @@ public class scrFlicker : MonoBehaviour
 
 	public void oneTimeFlicker()
 	{
-		Debug.Log ("one time");
 		pattern = Random.Range(0,3); //Pick a flicker pattern
 		InvokeRepeating("Flicker", 0.2F, 0.1F); //Start flicker sequence
 	}

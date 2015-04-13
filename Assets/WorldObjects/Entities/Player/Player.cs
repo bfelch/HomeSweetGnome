@@ -147,6 +147,8 @@ public class Player : MonoBehaviour
 				   && activeTarget.name != "DarkGnome(Clone)"
 				   && activeTarget.GetComponent<Gnome>().fallen == false)
 				{
+					PlayerInteractions.displayWarningMsg = false;
+
 					//Play damage sound
 					hurtSound.Play();
 
@@ -449,7 +451,7 @@ public class Player : MonoBehaviour
 				break;
 			case "Water":
 				//Play water splash
-				waterSplash.volume = 0.8F;
+				waterSplash.volume = 0.4F;
 				waterSplash.pitch = 1.0F + 0.2F * Random.value;
 				waterSplash.Play();
 				break;

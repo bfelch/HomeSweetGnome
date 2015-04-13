@@ -34,6 +34,8 @@ public class LoadUnload : MonoBehaviour
 	private bool ambientFadeOut= false;
 	private float fadeTimer = 0.0F;
 
+	private bool inTunnels = false;
+
 	// Use this for initialization
 	void Start() 
 	{
@@ -312,8 +314,9 @@ public class LoadUnload : MonoBehaviour
             }
 
             //Tunnel Load (Entrance)
-            if (col.name == "TunnelLoadEntrance")
+            if (col.name == "TunnelLoadEntrance" && !inTunnels)
             {
+				inTunnels = true;
                 weather.StopWeather(); //Stop weather
 
                 moonlight.lightFadeIn = false; //Light is only fading out
@@ -323,11 +326,13 @@ public class LoadUnload : MonoBehaviour
 				fading = true;
 				ambientFadeOut = true;
 
-				StartCoroutine(SoundController.FadeAudio(2.0F, SoundController.Fade.Out, GameObject.Find("GlobalSoundController").GetComponent<SoundController>().eerieSound));
+				StartCoroutine(SoundController.FadeAudio(8.0F, SoundController.Fade.Out, GameObject.Find("GlobalSoundController").GetComponent<SoundController>().eerieSound, 0.4F));
+				StartCoroutine(SoundController.FadeAudio(8.0F, SoundController.Fade.In, GameObject.Find("GlobalSoundController").GetComponent<SoundController>().windyCaveSound, 0.05F));
             }
 
-			if(col.name == "WellLoadEntrance")
+			if(col.name == "WellLoadEntrance" && !inTunnels)
 			{
+				inTunnels = true;
 				weather.StopWeather(); //Stop weather
 				
 				moonlight.lightFadeIn = false; //Light is only fading out
@@ -336,11 +341,15 @@ public class LoadUnload : MonoBehaviour
 				fadeTimer = 0.0F;
 				fading = true;
 				ambientFadeOut = true;
+
+				StartCoroutine(SoundController.FadeAudio(8.0F, SoundController.Fade.Out, GameObject.Find("GlobalSoundController").GetComponent<SoundController>().eerieSound, 0.4F));
+				StartCoroutine(SoundController.FadeAudio(8.0F, SoundController.Fade.In, GameObject.Find("GlobalSoundController").GetComponent<SoundController>().windyCaveSound, 0.05F));
 			}
 
             //Tunnel Unload (Entrance)
-            if (col.name == "TunnelUnloadEntrance")
+            if (col.name == "TunnelUnloadEntrance" && inTunnels)
             {
+				inTunnels = false;
                 weather.StartWeather(); //Start weather
 
                 moonlight.lightFadeOut = false; //Light is only fading in
@@ -349,11 +358,15 @@ public class LoadUnload : MonoBehaviour
 				fadeTimer = 0.0F;
 				fading = true;
 				ambientFadeOut = false;
+
+				StartCoroutine(SoundController.FadeAudio(8.0F, SoundController.Fade.In, GameObject.Find("GlobalSoundController").GetComponent<SoundController>().eerieSound, 0.4F));
+				StartCoroutine(SoundController.FadeAudio(8.0F, SoundController.Fade.Out, GameObject.Find("GlobalSoundController").GetComponent<SoundController>().windyCaveSound, 0.05F));
             }
 
             //Tunnel Load (Exit)
-            if (col.name == "TunnelLoadExit")
+            if (col.name == "TunnelLoadExit" && !inTunnels)
             {
+				inTunnels = true;
                 weather.StopWeather(); //Weather
 
                 moonlight.lightFadeIn = false; //Light is only fading out
@@ -362,11 +375,15 @@ public class LoadUnload : MonoBehaviour
 				fadeTimer = 0.0F;
 				fading = true;
 				ambientFadeOut = true;
+
+				StartCoroutine(SoundController.FadeAudio(8.0F, SoundController.Fade.Out, GameObject.Find("GlobalSoundController").GetComponent<SoundController>().eerieSound, 0.4F));
+				StartCoroutine(SoundController.FadeAudio(8.0F, SoundController.Fade.In, GameObject.Find("GlobalSoundController").GetComponent<SoundController>().windyCaveSound, 0.05F));
             }
 
             //Tunnel Unload (Exit)
-            if (col.name == "TunnelUnloadExit")
+            if (col.name == "TunnelUnloadExit" && inTunnels)
             {
+				inTunnels = false;
                 weather.StartWeather(); //Start weather
 
                 moonlight.lightFadeOut = false; //Light is only fading in
@@ -375,6 +392,9 @@ public class LoadUnload : MonoBehaviour
 				fadeTimer = 0.0F;
 				fading = true;
 				ambientFadeOut = false;
+
+				StartCoroutine(SoundController.FadeAudio(8.0F, SoundController.Fade.In, GameObject.Find("GlobalSoundController").GetComponent<SoundController>().eerieSound, 0.4F));
+				StartCoroutine(SoundController.FadeAudio(8.0F, SoundController.Fade.Out, GameObject.Find("GlobalSoundController").GetComponent<SoundController>().windyCaveSound, 0.05F));
             }
         }
     }

@@ -221,7 +221,7 @@ public class Useable : MonoBehaviour
 					AudioClip boatMotorSound = GameObject.Find("BoatSounds").GetComponent<BoatSounds>().boatMotorSound.clip;
 					
 					sound = SoundController.PlayClipAt(boatMotorSound, motor.transform.position);
-					StartCoroutine(SoundController.FadeAudio(12.0F, SoundController.Fade.Out, sound));
+					StartCoroutine(SoundController.FadeAudio(12.0F, SoundController.Fade.Out, sound, 1.0F));
 					
 					// player.transform.parent = boat.transform;
 					// player.GetComponent<Animation>().Play("BoatEnding");
@@ -295,16 +295,29 @@ public class Useable : MonoBehaviour
             }
             else if (type == UseableType.ELEVATORTOP)
             {
+				if(elevatorStuff.doorIsClosed)
+				{
+					elevatorStuff.bell1Played = false;
+				}
+
                 elevatorStuff.openTopElevator = true;
             }
             else if (type == UseableType.ELEVATORBOTTOM)
             {
+				if(elevatorStuff.doorIsClosed)
+				{
+					elevatorStuff.bell2Played = false;
+				}
+
                 if(GameObject.Find("ElevatorStructure").transform.localPosition.y > 28)
                 {
                     elevatorStuff.inElevator = true;
                     elevatorStuff.direction = true;
                     elevatorStuff.activate = true;
                     elevatorStuff.callingDown = true;
+
+					//Play elevator sound
+					GameObject.Find("ElevatorStructure").GetComponent<AudioSource>().Play();
                 }
                 else
                     elevatorStuff.openBottomElevator = true;
