@@ -18,6 +18,8 @@ public class elevatorStuff : MonoBehaviour
     private static GameObject bottomElevatorDoor;
     private static GameObject leverBottom;
     private static GameObject leverTop;
+
+    private static bool doorIsClosed = true;
 	// Use this for initialization
 	void Start () 
     {
@@ -30,7 +32,8 @@ public class elevatorStuff : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
     {
-        if (inElevator)
+        Debug.Log(doorIsClosed);
+        if (inElevator && doorIsClosed)
         {
             if (direction)
             {
@@ -89,13 +92,18 @@ public class elevatorStuff : MonoBehaviour
                 openTopElevator = false;
                 elevatorStuff.activate = true;
                 elevatorStuff.direction = true;
+
             }
             else if (topElevatorDoor.transform.localPosition.x >= .169f)
             {
                 openTopElevator = false;
                 elevatorStuff.activate = false;
                 elevatorStuff.inElevator = false;
+
             }
+            doorIsClosed = false;
+
+           // Debug.Log(elevatorStuff.doorIsClosed);
         }
         if (closeTopElevator)
         {
@@ -107,11 +115,17 @@ public class elevatorStuff : MonoBehaviour
                 closeTopElevator = false;
                 elevatorStuff.activate = true;
                 elevatorStuff.direction = true;
+                if (!closeBottomElevator)
+                    doorIsClosed = true;
+
             }
             else if (topElevatorDoor.transform.localPosition.x <= -1.594f)
             {
                 closeTopElevator = false;
+                if (!closeBottomElevator)
+                    doorIsClosed = true;
             }
+
 
         }
         if (openBottomElevator)
@@ -137,6 +151,7 @@ public class elevatorStuff : MonoBehaviour
                 elevatorStuff.activate = false;
                 elevatorStuff.inElevator = false;
             }
+            doorIsClosed = false;
 
         }
         if (closeBottomElevator)
@@ -149,10 +164,14 @@ public class elevatorStuff : MonoBehaviour
                 closeBottomElevator = false;
                 elevatorStuff.activate = true;
                 elevatorStuff.direction = false;
+                if(!closeTopElevator)
+                    doorIsClosed = true;
             }
             else if (bottomElevatorDoor.transform.localPosition.x <= 62.61f)
             {
                 closeBottomElevator = false;
+                if (!closeTopElevator)
+                    doorIsClosed = true;
             }
 
         }
