@@ -76,7 +76,7 @@ public class elevatorStuff : MonoBehaviour
     {
         if (other.tag == "Player" && elevatorStuff.activate)
         {
-            //other.gameObject.transform.parent = GameObject.Find("ElevatorStructure").transform;
+            other.gameObject.transform.parent = GameObject.Find("ElevatorStructure").transform;
 
             //if (other.gameObject.transform.parent == GameObject.Find("Elevator").transform)
             {
@@ -91,7 +91,7 @@ public class elevatorStuff : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            //other.gameObject.transform.parent = GameObject.Find("Entities").transform;
+            other.gameObject.transform.parent = GameObject.Find("Entities").transform;
         }
     }
 

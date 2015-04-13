@@ -24,3 +24,5 @@ sysinfo.txt
 *.unityproj
 *.mdb
 *.dll
+*.csproj
+*.unityproj
