@@ -102,11 +102,13 @@ public class PlayerInteractions : MonoBehaviour
            }
         }
 
+        /*
         if(Input.GetKeyDown(KeyCode.Alpha0))
         {
             GameObject.Find("TempPlayerLight").GetComponent<Light>().enabled = !GameObject.Find("TempPlayerLight").GetComponent<Light>().enabled;
         }
-
+        */
+        
 		//CHEATS!
 		if(Input.GetKeyDown(KeyCode.Alpha6))
 		{
@@ -128,6 +130,7 @@ public class PlayerInteractions : MonoBehaviour
 			//Tunnel Teleport
 			transform.position = new Vector3(53.2F, -18.12F, -15.15F);
 		}
+        
 
         if(waitForCollision && charMotor.IsGrounded())
         {

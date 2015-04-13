@@ -309,7 +309,7 @@ public class Useable : MonoBehaviour
 					elevatorStuff.bell2Played = false;
 				}
 
-                if(GameObject.Find("ElevatorStructure").transform.localPosition.y > 28)
+                if(GameObject.Find("ElevatorStructure").transform.localPosition.y > -19)
                 {
                     elevatorStuff.inElevator = true;
                     elevatorStuff.direction = true;

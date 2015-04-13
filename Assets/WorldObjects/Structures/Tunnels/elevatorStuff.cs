@@ -18,6 +18,7 @@ public class elevatorStuff : MonoBehaviour
     private static GameObject bottomElevatorDoor;
     private static GameObject leverBottom;
     private static GameObject leverTop;
+    private GameObject wallGaurd;
 
     public static bool doorIsClosed = true;
 
@@ -33,6 +34,8 @@ public class elevatorStuff : MonoBehaviour
         bottomElevatorDoor = GameObject.Find("BottomElevatorDoor");
         leverTop = GameObject.Find("LeverTop");
         leverBottom = GameObject.Find("LeverBottom");
+        wallGaurd = GameObject.Find("WallGuard");
+        wallGaurd.SetActive(false);
 
 		bell1 = leverTop.GetComponent<AudioSource>();
 		bell2 = leverBottom.GetComponent<AudioSource>();
@@ -50,10 +53,10 @@ public class elevatorStuff : MonoBehaviour
 
             if (direction)
             {
-                transform.localPosition = Vector3.MoveTowards(transform.localPosition, new Vector3(62.59f, 25.12f, -38.09f), Time.deltaTime*1.7f);
+                transform.localPosition = Vector3.MoveTowards(transform.localPosition, new Vector3(0, -19.97f, 0f), Time.deltaTime * 1.7f);
                 //transform.Translate(Vector3.down * 3 * Time.deltaTime);
 
-                if (transform.localPosition.y <= 25.2F)
+                if (transform.localPosition.y <= -19.96F)
                 {
                     elevatorStuff.openBottomElevator = true;
 					GetComponent<AudioSource>().Stop();
@@ -61,15 +64,19 @@ public class elevatorStuff : MonoBehaviour
             }
             else
             {
-                transform.localPosition = Vector3.MoveTowards(transform.localPosition, new Vector3(62.588f, 44.88f, -37.79f), Time.deltaTime * 1.7f);
+                transform.localPosition = Vector3.MoveTowards(transform.localPosition, new Vector3(0f, 0f, 0f), Time.deltaTime * 1.7f);
                 //transform.Translate(Vector3.up * 3 * Time.deltaTime);
-                if (transform.localPosition.y >= 44.8f)
+                if (transform.localPosition.y >= -.01)
                 {
                     elevatorStuff.openTopElevator = true;
 					GetComponent<AudioSource>().Stop();
                 }
             }
+
+            wallGaurd.SetActive(true);
         }
+        else { wallGaurd.SetActive(false); }
+        
 	}
 
     void OnTriggerEnter(Collider other)
@@ -125,7 +132,7 @@ public class elevatorStuff : MonoBehaviour
 
            // Debug.Log(elevatorStuff.doorIsClosed);
         }
-        if (closeTopElevator)
+        else if (closeTopElevator)
         {
             //Debug.Log("close top elevator");
             topElevatorDoor.transform.localPosition = Vector3.MoveTowards(topElevatorDoor.transform.localPosition, new Vector3(-1.595f, .01327f, .4454f), Time.deltaTime * .02f);
@@ -167,23 +174,28 @@ public class elevatorStuff : MonoBehaviour
                 elevatorStuff.callingDown = false;
                 elevatorStuff.direction = false;
                 elevatorStuff.inElevator = false;
+                doorIsClosed = false;
+
             }
             else if (bottomElevatorDoor.transform.localPosition.x >= 64.19f && !elevatorStuff.inElevator)
             {
                 openBottomElevator = false;
                 elevatorStuff.activate = true;
                 elevatorStuff.direction = false;
+                doorIsClosed = false;
+
             }
             else if (bottomElevatorDoor.transform.localPosition.x >= 64.19f)
             {
                 openBottomElevator = false;
                 elevatorStuff.activate = false;
                 elevatorStuff.inElevator = false;
+                doorIsClosed = false;
+
             }
-            doorIsClosed = false;
 
         }
-        if (closeBottomElevator)
+        else if (closeBottomElevator)
         {
             bottomElevatorDoor.transform.localPosition = Vector3.MoveTowards(bottomElevatorDoor.transform.localPosition, new Vector3(62.591f, 23.391f, -35.17f), Time.deltaTime * .02f);
             leverBottom.transform.localEulerAngles = Vector3.MoveTowards(leverBottom.transform.localEulerAngles, new Vector3(0, 19.531f, 0f), Time.deltaTime * 2f);
