@@ -57,7 +57,7 @@ public class scrDropTrap : MonoBehaviour
 			GameObject.Find("gnomeTrapCircle").renderer.enabled = false;
 			
 			//Spawn the gnome eye
-			gnomeEye.transform.position = new Vector3 (transform.position.x, transform.position.y, transform.position.z);
+			gnomeEye.transform.position = new Vector3(25.31F, 37.34F + 0.4F, -34.14F);
 
 			GameObject.Find("Player").GetComponent<LookAway>().DropAnimationEventEnd();
 

@@ -49,6 +49,7 @@ public class Player : MonoBehaviour
 	private AudioSource waterStep3;
 
 	private string floorType;
+	private scrTunnelEvent tunnelEvent;
 
     // Use this for initialization
     void Start()
@@ -95,6 +96,8 @@ public class Player : MonoBehaviour
 
 		//Ensure game is not frozen
 		Time.timeScale = 1.0F;
+
+		tunnelEvent = GameObject.Find("TunnelEvent").GetComponent<scrTunnelEvent>();
     }
 
     // Update is called once per frame
@@ -216,6 +219,32 @@ public class Player : MonoBehaviour
         {
             this.GetComponent<CharacterController>().slopeLimit = 90;
         }
+
+		if(other.name.Equals("TunnelEventSpawn1"))
+		{
+			//Check Tunnel Gnome Event Version 2
+			tunnelEvent.CheckTunnelEvent(2);
+			//Prepare Tunnel Gnome Event Version 2
+			tunnelEvent.PrepareTunnelEvent(1);
+		}
+
+		if(other.name.Equals("TunnelEventSpawn2"))
+		{
+			//Check Tunnel Gnome Event Version 1
+			tunnelEvent.CheckTunnelEvent(1);
+			//Prepare Tunnel Gnome Event Version 2
+			tunnelEvent.PrepareTunnelEvent(2);
+		}
+
+		if(other.name.Equals("TunnelEventDespawn1"))
+		{
+			tunnelEvent.StartTunnelEvent(1);
+		}
+		
+		if(other.name.Equals("TunnelEventDespawn2"))
+		{
+			tunnelEvent.StartTunnelEvent(2);
+		}
 
 		if(other.gameObject.tag == "Gnome" 
 		   && other.gameObject.name != "GnomeShed" 

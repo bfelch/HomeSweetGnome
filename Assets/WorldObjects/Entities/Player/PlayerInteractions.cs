@@ -123,6 +123,11 @@ public class PlayerInteractions : MonoBehaviour
 			//Attic Teleport
 			transform.position = new Vector3(3.46F, 50.04F, -22.84F);
 		}
+		if(Input.GetKeyDown(KeyCode.Alpha9))
+		{
+			//Tunnel Teleport
+			transform.position = new Vector3(53.2F, -18.12F, -15.15F);
+		}
 
         if(waitForCollision && charMotor.IsGrounded())
         {
@@ -280,7 +285,6 @@ public class PlayerInteractions : MonoBehaviour
 
 								slot.renderer.material = defaultMat;
                                 slot.heldItem = null;
-								Debug.Log("4");
                             }
                         } else {
                             GUI.Box(box, "Empty");
@@ -538,8 +542,4 @@ public class PlayerInteractions : MonoBehaviour
 
         return improvedName;
     }
-
-
-
-
 }

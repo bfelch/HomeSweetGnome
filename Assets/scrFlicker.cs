@@ -20,7 +20,7 @@ public class scrFlicker : MonoBehaviour
 	//Update is called once per frame
 	void Update () 
 	{
-		if (gameObject.name != "ShedLight")
+		if (gameObject.name != "ShedLight" && gameObject.name != "Glass")
 		{
         	checkFlickerTime();
 		}
@@ -42,6 +42,7 @@ public class scrFlicker : MonoBehaviour
 
 	public void oneTimeFlicker()
 	{
+		Debug.Log ("one time");
 		pattern = Random.Range(0,3); //Pick a flicker pattern
 		InvokeRepeating("Flicker", 0.2F, 0.1F); //Start flicker sequence
 	}
@@ -59,6 +60,10 @@ public class scrFlicker : MonoBehaviour
                 this.renderer.material = matLightOff; //Switch material
                 (GetComponent("Halo") as Behaviour).enabled = false; //Disable halo
             }
+			else
+			{
+				this.light.enabled = false; //Disable light
+			}
         }
 		// The current flicker is not in the current pattern. (Turn light on)
         else
@@ -70,6 +75,10 @@ public class scrFlicker : MonoBehaviour
                 this.renderer.material = matLightOn; //Switch material
                 (GetComponent("Halo") as Behaviour).enabled = true; //Enable halo
             }
+			else
+			{
+				this.light.enabled = true; //Enable light
+			}
         }
 
 		flicker++; //Increase flicker counter

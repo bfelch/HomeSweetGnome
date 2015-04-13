@@ -158,7 +158,7 @@ public class scrDarkness : MonoBehaviour
 		weatherScript weather = GameObject.Find ("Weather").GetComponent<weatherScript>();
 		weather.StartWeather();
 		
-		RenderSettings.ambientLight =  new Color32(62, 64, 73, 255);
+		RenderSettings.ambientLight =  new Color32(35, 35, 45, 255);
 	}
 
 	void OnTriggerEnter(Collider other)

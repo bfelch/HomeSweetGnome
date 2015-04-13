@@ -32,11 +32,10 @@ public class LookAway : MonoBehaviour
 		//toggle movements, looking, cursor
 		charMotor.enabled = false;
 		mouseLook.enabled = false;
-		cameraLook.enabled = false;
+		cameraLook.enabled = true;
 		playerMove.enabled = false;
 
 		rotation = Quaternion.LookRotation(target.position - transform.position);
-		Debug.Log (rotation);
 		rotation.x = 0.0F;
 		rotation.z = 0.0F;
 

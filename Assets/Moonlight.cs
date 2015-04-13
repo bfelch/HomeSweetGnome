@@ -6,8 +6,8 @@ using System.Collections;
 */
 public class Moonlight : MonoBehaviour 
 {
-	private float lightIntensity = 1.0F; //Starting moonlight intensity
-	private float maxIntensity = 1.0F; //Max moonlight intensity
+	private float lightIntensity = 0.5F; //Starting moonlight intensity
+	private float maxIntensity = 0.5F; //Max moonlight intensity
 	private float minIntensity = 0.0F; //Min moonlight intensity
 	public bool lightFadeIn = false; //Light is fading in
 	public bool lightFadeOut = false; //Light is fading out

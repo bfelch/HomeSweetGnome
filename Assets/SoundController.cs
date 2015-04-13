@@ -8,12 +8,14 @@ public class SoundController : MonoBehaviour
 
 	public AudioSource eerieSound;
 	public AudioSource birdsSound;
+	public AudioSource violinSound;
 	
 	void Start () 
 	{
 		AudioSource[] bgSounds = GetComponents<AudioSource>();
 		eerieSound = bgSounds[0];
 		birdsSound = bgSounds[1];
+		violinSound = bgSounds[2];
 	}
 	
 	public static IEnumerator FadeAudio (float timer, Fade fadeType, AudioSource aSound) 

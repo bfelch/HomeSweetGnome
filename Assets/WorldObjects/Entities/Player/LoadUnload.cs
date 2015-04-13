@@ -29,6 +29,11 @@ public class LoadUnload : MonoBehaviour
 	public weatherScript weather; //Weather script
 	public Moonlight moonlight; //Moonlight script
 
+	public Color[] colors;
+	private bool fading = false;
+	private bool ambientFadeOut= false;
+	private float fadeTimer = 0.0F;
+
 	// Use this for initialization
 	void Start() 
 	{
@@ -162,6 +167,33 @@ public class LoadUnload : MonoBehaviour
 	//Update is called once per frame
 	void Update () 
 	{
+		if(fading)
+		{
+			if(ambientFadeOut)
+			{
+				if (fadeTimer < 1)
+				{
+					RenderSettings.ambientLight = Color.Lerp(colors[0], colors[1], fadeTimer);
+					fadeTimer += Time.deltaTime / 2.0F;
+				}
+				else
+				{
+					fading = false;
+				}
+			}
+			else
+			{
+				if (fadeTimer < 1)
+				{
+					RenderSettings.ambientLight = Color.Lerp(colors[1], colors[0], fadeTimer);
+					fadeTimer += Time.deltaTime / 2.0F;
+				}
+				else
+				{
+					fading = false;
+				}
+			}
+		}
 		/*
         if(shedTrigSwitch)
         {
@@ -287,8 +319,11 @@ public class LoadUnload : MonoBehaviour
                 moonlight.lightFadeIn = false; //Light is only fading out
                 moonlight.lightFadeOut = true; //Remove moonlight
 
-				//Enable Tunnel Gnome Event Version 1
+				fadeTimer = 0.0F;
+				fading = true;
+				ambientFadeOut = true;
 
+				StartCoroutine(SoundController.FadeAudio(2.0F, SoundController.Fade.Out, GameObject.Find("GlobalSoundController").GetComponent<SoundController>().eerieSound));
             }
 
 			if(col.name == "WellLoadEntrance")
@@ -297,20 +332,23 @@ public class LoadUnload : MonoBehaviour
 				
 				moonlight.lightFadeIn = false; //Light is only fading out
 				moonlight.lightFadeOut = true; //Remove moonlight
-				
-				//Enable Tunnel Gnome Event Version 2
 
+				fadeTimer = 0.0F;
+				fading = true;
+				ambientFadeOut = true;
 			}
 
             //Tunnel Unload (Entrance)
             if (col.name == "TunnelUnloadEntrance")
             {
-
                 weather.StartWeather(); //Start weather
 
                 moonlight.lightFadeOut = false; //Light is only fading in
                 moonlight.lightFadeIn = true; //Add moonlight
 
+				fadeTimer = 0.0F;
+				fading = true;
+				ambientFadeOut = false;
             }
 
             //Tunnel Load (Exit)
@@ -321,7 +359,9 @@ public class LoadUnload : MonoBehaviour
                 moonlight.lightFadeIn = false; //Light is only fading out
                 moonlight.lightFadeOut = true; //Remove moonlight
 
-
+				fadeTimer = 0.0F;
+				fading = true;
+				ambientFadeOut = true;
             }
 
             //Tunnel Unload (Exit)
@@ -332,6 +372,9 @@ public class LoadUnload : MonoBehaviour
                 moonlight.lightFadeOut = false; //Light is only fading in
                 moonlight.lightFadeIn = true; //Add moonlight
 
+				fadeTimer = 0.0F;
+				fading = true;
+				ambientFadeOut = false;
             }
         }
     }
