@@ -130,15 +130,6 @@ public class PlayerInteractions : MonoBehaviour
 			//Tunnel Teleport
 			transform.position = new Vector3(53.2F, -18.12F, -15.15F);
 		}
-        
-
-        if(waitForCollision && charMotor.IsGrounded())
-        {
-            GameObject.Find("Player").GetComponent<PlayerMovement>().enabled = !showGUI;
-            GameObject.Find("Player").GetComponent<Player>().enabled = !showGUI;
-            charMotor.enabled = !showGUI;
-            waitForCollision = false;
-        }
     }
 
     void OnGUI()
@@ -522,9 +513,9 @@ public class PlayerInteractions : MonoBehaviour
             mouseLook.enabled = !showGUI;
             cameraLook.enabled = !showGUI;
             Screen.lockCursor = !showGUI;
-            waitForCollision = true;
-            //GameObject.Find("Player").GetComponent<PlayerMovement>().enabled = !showGUI;
-            //GameObject.Find("Player").GetComponent<Player>().enabled = !showGUI;
+			GameObject.Find("Player").GetComponent<PlayerMovement>().enabled = !showGUI;
+			GameObject.Find("Player").GetComponent<Player>().enabled = !showGUI;
+			charMotor.jumping.enabled = !showGUI;
         }
     }
 
