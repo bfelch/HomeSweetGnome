@@ -372,9 +372,11 @@ public class PlayerMovement : MonoBehaviour {
 			inWater = true;
 			SetMovementSpeed(motor.movement.maxForwardSpeed/2);
 		}
-        if (col.name == "WaterNoCrouch")
+        if(col.name == "WaterNoJump")
 		{
+			inWater = true;
 			motor.jumping.enabled = false;
+			SetMovementSpeed(motor.movement.maxForwardSpeed/2);
 		}
     }
 
@@ -385,9 +387,11 @@ public class PlayerMovement : MonoBehaviour {
 			inWater = false;
 			SetMovementSpeed(motor.movement.maxForwardSpeed*2);
 		}
-        if (col.name == "WaterNoCrouch")
+        if (col.name == "WaterNoJump")
 		{
+			inWater = false;
 			motor.jumping.enabled = true;
+			SetMovementSpeed(motor.movement.maxForwardSpeed*2);
 		}
     }
 }

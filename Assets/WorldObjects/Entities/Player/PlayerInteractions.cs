@@ -29,6 +29,7 @@ public class PlayerInteractions : MonoBehaviour
     public bool removePlus = false;
     private bool lookingAtGnome = false;
     private bool lookingAtGargoyle = false;
+	private bool lookingAtDirt = false;
     //reference to gui
     public GUIWrapper playerGUI;
     private float lightingValue = .1f;
@@ -38,7 +39,7 @@ public class PlayerInteractions : MonoBehaviour
 
     private bool optionsMenu = false;
     private bool pause;
-    private bool pauseMenu;
+    public static bool pauseMenu;
     private Font bark;
     private EndGames endgame;
 
@@ -49,6 +50,8 @@ public class PlayerInteractions : MonoBehaviour
     public static bool displayWarningMsg = true;
     private bool waitToDisableWarningMsg = false;
     private bool waitForCollision = false;
+
+	public static bool objectOpened = false;
 
     void Start()
     {
@@ -297,16 +300,22 @@ public class PlayerInteractions : MonoBehaviour
                 //Display item name
                 GUI.Box(new Rect(0, Screen.height - Screen.height / 2 + 150, Screen.width, 30), getImprovedName(targetName));
             }
-            else if(lookingAtGnome 
-			        && Gnome.gnomeLevel == 1 
+            else if(lookingAtGnome
+			        && Gnome.gnomeLevel == 1
 			        && activeTarget.name != "GnomeShed"
 			        && activeTarget.name != "DarkGnome(Clone)"
 			        && activeTarget.GetComponent<Gnome>().fallen == false
-			        && activeTarget.GetComponent<Gnome>().pushed == false
-                    && displayWarningMsg)
+			        && activeTarget.GetComponent<Gnome>().pushed == false)
             {
-                GUI.Box(new Rect(0, Screen.height - Screen.height / 2 + 150, Screen.width, 50), "Press 'E' to push a gnome. \n WARNING: This will do you harm, but temporarily disable the gnome.");
-                waitToDisableWarningMsg = true;
+				if(displayWarningMsg)
+				{
+	                GUI.Box(new Rect(0, Screen.height - Screen.height / 2 + 150, Screen.width, 50), "Press 'E' to push a gnome. \n WARNING: This will do you harm, but temporarily disable the gnome.");
+	                waitToDisableWarningMsg = true;
+				}
+				else
+				{
+					GUI.Box(new Rect(0, Screen.height - Screen.height / 2 + 150, Screen.width, 50), "Push");
+				}
             }
             else if (lookingAtGargoyle)
             {
@@ -320,7 +329,16 @@ public class PlayerInteractions : MonoBehaviour
 				{
                 	GUI.Box(new Rect(0, Screen.height - Screen.height / 2 + 150, Screen.width, 30), "You need the " + GUIString + " to continue.");
 				}
+
+				if(activeTarget.name == "Dirt")
+				{
+					lookingAtDirt = false;
+				}
             }
+			else if(lookingAtDirt)
+			{
+				GUI.Box(new Rect(0, Screen.height - Screen.height / 2 + 150, Screen.width, 50), "Dig");
+			}
 
             if (!showGUI && !removePlus)
             {
@@ -362,6 +380,11 @@ public class PlayerInteractions : MonoBehaviour
             //Is the item close and useable?
             else if (activeTarget.tag == "Useable" || activeTarget.name == "RightGateLock" || activeTarget.name == "LeftGateLock" || activeTarget.tag == "Trap")
             {
+				if(activeTarget.name == "Dirt")
+				{
+					lookingAtDirt = true;
+				}
+
                 Useable targetUseable = activeTarget.GetComponent<Useable>();
                 UseItem(targetUseable); //Use it
             }
@@ -371,9 +394,9 @@ public class PlayerInteractions : MonoBehaviour
 				GameObject.Find("Highlighter").GetComponent<scrHighlightController>().Highlight(activeTarget, scrHighlightController.outline1);
 
                 Consume();
+
                 //set the lastActiveTarget to this activeTarget
                 lastActiveTarget = activeTarget;
-
             }
             else if(activeTarget.tag == "Gnome")
             {
@@ -397,14 +420,23 @@ public class PlayerInteractions : MonoBehaviour
                 notUseable = false;
                 lookingAtGnome = false;
                 lookingAtGargoyle = false;
+				lookingAtDirt = false;
             }
         }
         else 
         {
+			if(lastActiveTarget != null)
+			{
+				//Highlight the object white
+				GameObject.Find("Highlighter").GetComponent<scrHighlightController>().Unhighlight(lastActiveTarget);
+				//set the lastActiveTarget to null
+				lastActiveTarget = null;
+			}
+
             canHover = false;
             lookingAtGnome = false;
             lookingAtGargoyle = false;
-
+			lookingAtDirt = false;
         }
     }
 
@@ -482,7 +514,12 @@ public class PlayerInteractions : MonoBehaviour
     void GUIControl()
     {
         //listen for Q being pressed
-        if (Input.GetKeyUp(KeyCode.Q) && !pause && !this.gameObject.animation.IsPlaying("OpeningCut"))
+        if (Input.GetKeyUp(KeyCode.Q) 
+		    && !pause 
+		    && !this.gameObject.animation.IsPlaying("OpeningCut")
+		    && charMotor.IsGrounded()
+		    && !scrJournal.journalNoGUI
+		    && !scrBook.bookNoGUI)
         {
             ToggleGUI(!showGUI);
         }
@@ -491,32 +528,30 @@ public class PlayerInteractions : MonoBehaviour
     void ToggleGUI(bool activeGUI)
     {
         showGUI = activeGUI;
-        //activate/deactivate gui
-        playerGUI.gameObject.SetActive(showGUI);
+		//activate/deactivate gui
+		playerGUI.gameObject.SetActive(showGUI);
+		
+		if (showGUI && playerGUI.slots != null)
+		{
+			foreach (ItemSlot slot in playerGUI.slots)
+			{
+				//reset rotation for each slot
+				slot.gui.ResetRotation();
+			}
+			
+			//reset rotation for key ring and energy bar
+			playerGUI.keyRing.gui.ResetRotation();
+			playerGUI.energyBar.gui.ResetRotation();
+		}
 
-        if (showGUI && playerGUI.slots != null)
-        {
-            foreach (ItemSlot slot in playerGUI.slots)
-            {
-                //reset rotation for each slot
-                slot.gui.ResetRotation();
-            }
-
-            //reset rotation for key ring and energy bar
-            playerGUI.keyRing.gui.ResetRotation();
-            playerGUI.energyBar.gui.ResetRotation();
-        }
-
-        if (!scrJournal.journalOpen && !scrBook.bookOpen)
-        {
-            //toggle movements, looking, cursor
-            mouseLook.enabled = !showGUI;
-            cameraLook.enabled = !showGUI;
-            Screen.lockCursor = !showGUI;
-			GameObject.Find("Player").GetComponent<PlayerMovement>().enabled = !showGUI;
-			GameObject.Find("Player").GetComponent<Player>().enabled = !showGUI;
-			charMotor.jumping.enabled = !showGUI;
-        }
+	    //toggle movements, looking, cursor
+	    mouseLook.enabled = !showGUI;
+	    cameraLook.enabled = !showGUI;
+	    Screen.lockCursor = !showGUI;
+		GameObject.Find("Player").GetComponent<PlayerMovement>().enabled = !showGUI;
+		//GameObject.Find("Player").GetComponent<Player>().enabled = !showGUI;
+		charMotor.jumping.enabled = !showGUI;
+		charMotor.canControl = !showGUI;
     }
 
     string getImprovedName(string targetName)

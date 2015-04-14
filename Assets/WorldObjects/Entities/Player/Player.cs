@@ -103,12 +103,17 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!this.gameObject.animation.IsPlaying("OpeningCut")) 
+		//Slowly drain energy while game is not paused or during opening cutscene
+        if (!this.gameObject.animation.IsPlaying("OpeningCut") 
+		    && !PlayerInteractions.pauseMenu) 
 		{
             Sanity();
-            Push();
         }
         
+		if (Input.GetKeyDown(KeyCode.E))
+		{
+			Push();
+		}
     }
 
 	IEnumerator PushTimer(float waitTime, GameObject target)
@@ -122,8 +127,6 @@ public class Player : MonoBehaviour
 
 	void Push()
 	{
-		if (Input.GetKeyDown(KeyCode.E))
-		{
 			Transform cam = Camera.main.transform;
 
 			//Player layer mask
@@ -190,7 +193,6 @@ public class Player : MonoBehaviour
 					activeTarget.transform.parent.rigidbody.AddForce((activeTarget.transform.position - this.transform.position).normalized * 4, ForceMode.Impulse);
 				}
 			}
-		}
 	}
 
     void Sanity()

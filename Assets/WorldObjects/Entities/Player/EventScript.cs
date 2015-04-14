@@ -17,7 +17,8 @@ public class EventScript : MonoBehaviour
 
     void Play2DAudio(AudioClip ac)
     {
-        audio.clip= ac;
+        audio.clip = ac;
+		audio.volume = 0.2F;
         audio.Play();
     }
 

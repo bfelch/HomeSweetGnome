@@ -15,6 +15,7 @@ public class scrJournal : MonoBehaviour
 	public GameObject journalPage;
 	
 	public static bool journalOpen = false;
+	public static bool journalNoGUI = false;
     private bool closeOnce = false;	
 	
 	void Start()
@@ -32,7 +33,7 @@ public class scrJournal : MonoBehaviour
 	
 	void Update()
 	{
-		if(Input.GetKeyDown(KeyCode.E) && journalOpen && closeOnce)
+		if(Input.GetKeyUp(KeyCode.E) && journalOpen && closeOnce)
 		{
 			CloseJournalPage();
             closeOnce = false;
@@ -41,6 +42,8 @@ public class scrJournal : MonoBehaviour
 	
 	public void OpenJournalPage()
 	{
+		journalNoGUI = true;
+
 		StartCoroutine(JournalTimer(0.2F));
 		//activate/deactivate book
 		journalPage.SetActive(true);
@@ -50,18 +53,21 @@ public class scrJournal : MonoBehaviour
 		GameObject.Find("Highlighter").GetComponent<scrHighlightController>().Unhighlight(this.gameObject);
 		
 		//toggle movements, looking, cursor
-		charMotor.enabled = false;
 		mouseLook.enabled = false;
 		cameraLook.enabled = false;
 		Screen.lockCursor = false;
         GameObject.Find("Player").GetComponent<PlayerMovement>().enabled = false;
-        GameObject.Find("Player").GetComponent<Player>().enabled = false;
+        //GameObject.Find("Player").GetComponent<Player>().enabled = false;
+		charMotor.canControl = false;
+		charMotor.jumping.enabled = false;
 
         closeOnce = true;
 	}
 	
 	public void CloseJournalPage()
 	{
+		journalNoGUI = false;
+
 		StartCoroutine (JournalTimer2 (0.2F));
         this.GetComponent<AudioSource>().Play();
 
@@ -71,13 +77,15 @@ public class scrJournal : MonoBehaviour
 
         if (!PlayerInteractions.showGUI)
         {
+			Debug.Log("Close Enable");
             //toggle movements, looking, cursor
-            charMotor.enabled = true;
             mouseLook.enabled = true;
             cameraLook.enabled = true;
             Screen.lockCursor = true;
             GameObject.Find("Player").GetComponent<PlayerMovement>().enabled = true;
-            GameObject.Find("Player").GetComponent<Player>().enabled = true;
+            //GameObject.Find("Player").GetComponent<Player>().enabled = true;
+			charMotor.canControl = true;
+			charMotor.jumping.enabled = true;
         }
 	}
 	

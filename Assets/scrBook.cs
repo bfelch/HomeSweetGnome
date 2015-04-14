@@ -15,6 +15,7 @@ public class scrBook : MonoBehaviour
 	public GameObject book;
 	private bool darkReady = true;
 	public static bool bookOpen = false;
+	public static bool bookNoGUI = false;
 
 
 
@@ -36,12 +37,13 @@ public class scrBook : MonoBehaviour
 		if(Input.GetKeyUp(KeyCode.E) && bookOpen)
 		{
 			CloseBook();
-
 		}
 	}
 
 	public void OpenBook()
 	{
+		bookNoGUI = true;
+
 		StartCoroutine(BookTimer(0.2F));
 
 		//activate/deactivate book
@@ -49,12 +51,13 @@ public class scrBook : MonoBehaviour
         this.GetComponent<AudioSource>().Play();
 
 		//toggle movements, looking, cursor
-		charMotor.enabled = false;
 		mouseLook.enabled = false;
 		cameraLook.enabled = false;
 		Screen.lockCursor = false;
         GameObject.Find("Player").GetComponent<PlayerMovement>().enabled = false;
-        GameObject.Find("Player").GetComponent<Player>().enabled = false;
+        //GameObject.Find("Player").GetComponent<Player>().enabled = false;
+		charMotor.canControl = false;
+		charMotor.jumping.enabled = false;
 
 		//For one time darkness event
 		if(darkReady)
@@ -76,6 +79,8 @@ public class scrBook : MonoBehaviour
 
 	public void CloseBook()
 	{
+		bookNoGUI = false;
+
 		bookOpen = false;
 		//activate/deactivate book
 		book.SetActive(false);
@@ -84,12 +89,13 @@ public class scrBook : MonoBehaviour
         if (!PlayerInteractions.showGUI)
         {
 		    //toggle movements, looking, cursor
-		    charMotor.enabled = true;
 		    mouseLook.enabled = true;
 		    cameraLook.enabled = true;
 		    Screen.lockCursor = true;
             GameObject.Find("Player").GetComponent<PlayerMovement>().enabled = true;
-            GameObject.Find("Player").GetComponent<Player>().enabled = true;
+            //GameObject.Find("Player").GetComponent<Player>().enabled = true;
+			charMotor.canControl = true;
+			charMotor.jumping.enabled = true;
         }
 	}
 

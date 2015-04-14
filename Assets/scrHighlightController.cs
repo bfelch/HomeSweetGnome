@@ -41,10 +41,10 @@ public class scrHighlightController : MonoBehaviour
 		this.Highlight(GameObject.Find("ShedSwitchBase"), outlineLightGray);
 	}
 
-	public void Highlight(GameObject objToHightlight, Material mat)
+	public void Highlight(GameObject objToHighlight, Material mat)
 	{
 		//Get objects mesh renderer
-		MeshRenderer currentMesh = objToHightlight.GetComponent<MeshRenderer>();
+		MeshRenderer currentMesh = objToHighlight.GetComponent<MeshRenderer>();
 		//Save current mesh material
 		Material currentMat = currentMesh.material;
 		//Create new array of materials of size 2

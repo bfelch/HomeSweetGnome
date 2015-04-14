@@ -24,6 +24,8 @@ public class Useable : MonoBehaviour
 	private static bool motorRepaired = false;
 	private static bool fuelFilled = false;
 
+	private CharacterMotor charMotor;
+
 	// Use this for initialization
 	void Start () 
     {
@@ -34,7 +36,7 @@ public class Useable : MonoBehaviour
         catch{}
 
 		highlighter = GameObject.Find ("Highlighter").GetComponent<scrHighlightController> ();
-
+		charMotor = GameObject.Find("Player").GetComponent<CharacterMotor>();
         
 		/*
 		if(this.gameObject.name == "LeftGateLock" || this.gameObject.name == "RightGateLock")
@@ -167,7 +169,6 @@ public class Useable : MonoBehaviour
 					highlighter.Highlight(GameObject.Find("Motor"), scrHighlightController.outline2);
 
 					hatchOpen = true;
-					Debug.Log("Hatch Open: " + hatchOpen);
 				}
 			}
 			else if (type == UseableType.B_MOTOR && hatchOpen)
@@ -325,14 +326,18 @@ public class Useable : MonoBehaviour
             }
 			else if (type == UseableType.BOOK)
 			{
-				if(scrBook.bookOpen == false)
+				if(scrBook.bookOpen == false
+				   && !PlayerInteractions.showGUI
+				   && charMotor.IsGrounded())
 				{
 					this.gameObject.GetComponent<scrBook>().OpenBook();
 				}
 			}
 			else if (type == UseableType.JOURNAL)
 			{
-				if(scrJournal.journalOpen == false)
+				if(scrJournal.journalOpen == false
+				   && !PlayerInteractions.showGUI
+				   && charMotor.IsGrounded())
 				{
 					this.gameObject.GetComponent<scrJournal>().OpenJournalPage();
 				}
