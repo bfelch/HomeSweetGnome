@@ -18,7 +18,7 @@ public class elevatorStuff : MonoBehaviour
     private static GameObject bottomElevatorDoor;
     private static GameObject leverBottom;
     private static GameObject leverTop;
-    private GameObject wallGaurd;
+    private static GameObject wallGaurd;
 
     public static bool doorIsClosed = true;
 
@@ -26,6 +26,8 @@ public class elevatorStuff : MonoBehaviour
 	private static AudioSource bell2;
 	public static bool bell1Played;
 	public static bool bell2Played;
+
+    public static bool thePlayerIsInElevator = false;
 
 	// Use this for initialization
 	void Start () 
@@ -46,7 +48,10 @@ public class elevatorStuff : MonoBehaviour
     {
         if (inElevator && doorIsClosed)
         {
-			if(!GetComponent<AudioSource>().isPlaying)
+            if(thePlayerIsInElevator)
+                GameObject.Find("Player").gameObject.transform.parent = GameObject.Find("ElevatorStructure").transform;
+			
+            if(!GetComponent<AudioSource>().isPlaying)
 			{
 				GetComponent<AudioSource>().Play();
 			}
@@ -60,6 +65,9 @@ public class elevatorStuff : MonoBehaviour
                 {
                     elevatorStuff.openBottomElevator = true;
 					GetComponent<AudioSource>().Stop();
+                    thePlayerIsInElevator = false;
+                   // Debug.Log("Out of Elevator?");
+
                 }
             }
             else
@@ -70,26 +78,36 @@ public class elevatorStuff : MonoBehaviour
                 {
                     elevatorStuff.openTopElevator = true;
 					GetComponent<AudioSource>().Stop();
+                    thePlayerIsInElevator = false;
+                    //Debug.Log("Out of Elevator?");
                 }
             }
 
-            wallGaurd.SetActive(true);
+            //wallGaurd.SetActive(true);
         }
-        else { wallGaurd.SetActive(false); }
+        else { 
+            wallGaurd.SetActive(false);
+            if (!thePlayerIsInElevator)
+                GameObject.Find("Player").gameObject.transform.parent = GameObject.Find("Entities").transform;
+        }
         
 	}
 
+    /*
     void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player" && elevatorStuff.activate)
         {
-            other.gameObject.transform.parent = GameObject.Find("ElevatorStructure").transform;
+            //other.gameObject.transform.parent = GameObject.Find("ElevatorStructure").transform;
 
             //if (other.gameObject.transform.parent == GameObject.Find("Elevator").transform)
             {
+                Debug.Log("In Elevator?");
+
                 elevatorStuff.inElevator = true;
                 elevatorStuff.closeBottomElevator = true;
                 elevatorStuff.closeTopElevator = true;
+                thePlayerIsInElevator = true;
             }
         }
     }
@@ -98,14 +116,17 @@ public class elevatorStuff : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            other.gameObject.transform.parent = GameObject.Find("Entities").transform;
+            //thePlayerIsInElevator = false;
+            
         }
     }
+     * */
 
     public static void ElevatorDoors()
     {
         if (openTopElevator)
         {
+            wallGaurd.SetActive(true);
 			//Play bell sound
 			if(!bell1Played)
 			{
@@ -120,6 +141,7 @@ public class elevatorStuff : MonoBehaviour
                 openTopElevator = false;
                 elevatorStuff.activate = true;
                 elevatorStuff.direction = true;
+                wallGaurd.SetActive(false);
 
             }
             else if (topElevatorDoor.transform.localPosition.x >= .169f)
@@ -127,6 +149,7 @@ public class elevatorStuff : MonoBehaviour
                 openTopElevator = false;
                 elevatorStuff.activate = false;
                 elevatorStuff.inElevator = false;
+                wallGaurd.SetActive(false);
             }
             doorIsClosed = false;
 
@@ -134,6 +157,8 @@ public class elevatorStuff : MonoBehaviour
         }
         else if (closeTopElevator)
         {
+            wallGaurd.SetActive(true);
+
             //Debug.Log("close top elevator");
             topElevatorDoor.transform.localPosition = Vector3.MoveTowards(topElevatorDoor.transform.localPosition, new Vector3(-1.595f, .01327f, .4454f), Time.deltaTime * .02f);
             leverTop.transform.localEulerAngles = Vector3.MoveTowards(leverTop.transform.localEulerAngles, new Vector3(0, 19.531f, 0f), Time.deltaTime * 2f);
@@ -155,10 +180,11 @@ public class elevatorStuff : MonoBehaviour
 				}
             }
 
-
         }
         if (openBottomElevator)
         {
+            wallGaurd.SetActive(true);
+
 			//Play bell sound
 			if(!bell2Played)
 			{
@@ -175,6 +201,7 @@ public class elevatorStuff : MonoBehaviour
                 elevatorStuff.direction = false;
                 elevatorStuff.inElevator = false;
                 doorIsClosed = false;
+                wallGaurd.SetActive(false);
 
             }
             else if (bottomElevatorDoor.transform.localPosition.x >= 64.19f && !elevatorStuff.inElevator)
@@ -183,6 +210,7 @@ public class elevatorStuff : MonoBehaviour
                 elevatorStuff.activate = true;
                 elevatorStuff.direction = false;
                 doorIsClosed = false;
+                wallGaurd.SetActive(false);
 
             }
             else if (bottomElevatorDoor.transform.localPosition.x >= 64.19f)
@@ -197,6 +225,8 @@ public class elevatorStuff : MonoBehaviour
         }
         else if (closeBottomElevator)
         {
+            wallGaurd.SetActive(true);
+
             bottomElevatorDoor.transform.localPosition = Vector3.MoveTowards(bottomElevatorDoor.transform.localPosition, new Vector3(62.591f, 23.391f, -35.17f), Time.deltaTime * .02f);
             leverBottom.transform.localEulerAngles = Vector3.MoveTowards(leverBottom.transform.localEulerAngles, new Vector3(0, 19.531f, 0f), Time.deltaTime * 2f);
 
