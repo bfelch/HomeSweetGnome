@@ -119,7 +119,7 @@ public class scrMenuController : MonoBehaviour
 		yield return new WaitForSeconds(waitTime);
 		
 		//Start Game
-		Application.LoadLevel("HomeSweetGnome");
+		Application.LoadLevel("OpeningCut");
 	}
 
 	public void PlayTransition()

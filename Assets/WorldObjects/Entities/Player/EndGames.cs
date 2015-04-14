@@ -27,6 +27,8 @@ public class EndGames : MonoBehaviour {
     public Material sunnySky;
 	public GameObject wind;
 
+    public GameObject gateEnding; 
+
     //horizontal look
     public MouseLook mouseLook;
     //vertical look
@@ -109,7 +111,7 @@ public class EndGames : MonoBehaviour {
     {
         playerEscaped = true;
         GetTime();
-        StartCoroutine(WaitToReload(8.0F));
+        //StartCoroutine(WaitToReload(8.0F));
     }
 
     public void Experiment()
@@ -172,17 +174,18 @@ public class EndGames : MonoBehaviour {
         if (playerEscaped)
         {
 
-            int second = (int)time;
-            winTextEscaped.text = "You escaped. \n You made it out in " + getTimeString(second);
+            //int second = (int)time;
+            //winTextEscaped.text = "You escaped. \n You made it out in " + getTimeString(second);
 
             //create a new color with the changed alpha value
-            Color changing = new Color(winTextEscaped.color.r, winTextEscaped.color.g, winTextEscaped.color.b, fadeIn);
-            winTextEscaped.enabled = true;
-            GetComponent<FadeToBlack>().enabled = true;
+            //Color changing = new Color(winTextEscaped.color.r, winTextEscaped.color.g, winTextEscaped.color.b, fadeIn);
+            //winTextEscaped.enabled = true;
+            //GetComponent<FadeToBlack>().enabled = true;
+            gateEnding.SetActive(true);
             //set the new color
-            winTextEscaped.color = changing;
+            //winTextEscaped.color = changing;
             //update the alpha value
-            fadeIn += .1f * Time.deltaTime;
+            //fadeIn += .1f * Time.deltaTime;
         }
 
         if (playerSlept)
