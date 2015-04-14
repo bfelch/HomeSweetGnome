@@ -26,6 +26,7 @@ public class Useable : MonoBehaviour
 
 	private CharacterMotor charMotor;
 
+
 	// Use this for initialization
 	void Start () 
     {
@@ -228,7 +229,8 @@ public class Useable : MonoBehaviour
 					// player.GetComponent<Animation>().Play("BoatEnding");
 					//boat.GetComponent<Animation>().Play("BoatEnding");
 					//Run the escape function inside the Player script
-					player.GetComponent<EndGames>().Escape();
+					//player.GetComponent<EndGames>().Escape();
+                    EndGames.endingText.GetComponent<GateEnding>().enabled = true;
 					//for(int i = 0; i < EndGames.dockGnomes.Length; i++)
 					//{
 					//EndGames.dockGnomes[i].SetActive(true);
@@ -241,7 +243,9 @@ public class Useable : MonoBehaviour
 				GameObject.Find("MixingBowl").GetComponent<AudioSource>().Play();
 
                 //Run the escape function inside the Player script
-                player.GetComponent<EndGames>().Experiment();
+                EndGames.endingText.GetComponent<ExperimentEnding>().enabled = true;
+
+                //player.GetComponent<EndGames>().Experiment();
             }
             else if (type == UseableType.LIGHT)
             {
@@ -361,7 +365,9 @@ public class Useable : MonoBehaviour
 				}
 				GameObject player = GameObject.Find("Player");
 
-				player.GetComponent<EndGames>().Escape();
+                EndGames.endingText.GetComponent<ExperimentEnding>().enabled = true;
+
+				//player.GetComponent<EndGames>().Escape();
 			}
 
             return "";

@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class GateEnding : MonoBehaviour {
+public class ExperimentEnding : MonoBehaviour
+{
 
     private float fade = 0;
     private float blackFade = 0;
@@ -13,14 +14,16 @@ public class GateEnding : MonoBehaviour {
     private bool onlyOnce = true;
 
     private int step = 0;
-	// Use this for initialization
-	void Start () {
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    // Use this for initialization
+    void Start()
+    {
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
 
     void OnGUI()
     {
@@ -29,10 +32,10 @@ public class GateEnding : MonoBehaviour {
         Color changing;
         this.GetComponent<GUITexture>().enabled = true;
 
-        
-        if(!(blackFade > 1))
+
+        if (!(blackFade > 1))
         {
-            
+
             changing = new Color(black.color.r, black.color.g, black.color.b, blackFade);
             //set the new color
             black.color = changing;
@@ -43,7 +46,7 @@ public class GateEnding : MonoBehaviour {
         switch (step)
         {
             case 0:
-                endingText.text = "As you run out of the gate you hear a car horn blaring. \nIt’s so loud. Where is it coming from? \n";
+                endingText.text = "As you mix the ingredients in the bowl, \n an explosion of light knocks you onto the floor.";
                 //create a new color with the changed alpha value
                 changing = new Color(endingText.color.r, endingText.color.g, endingText.color.b, fade);
 
@@ -67,7 +70,7 @@ public class GateEnding : MonoBehaviour {
                 }
                 break;
             case 1:
-                endingText.text = "You start to get a splitting headache. \n Bright lights flash. You close your eyes.";
+                endingText.text = "You try to get up but you're stuck. \n You can’t move.";
                 //create a new color with the changed alpha value
                 changing = new Color(endingText.color.r, endingText.color.g, endingText.color.b, fade);
 
@@ -92,7 +95,7 @@ public class GateEnding : MonoBehaviour {
                 break;
 
             case 2:
-                endingText.text = "You open your eyes. You aren’t where you were a second ago. \n You’re lying next to a crashed car, head still pounding.";
+                endingText.text = "Your eyes are heavy, you rest. \n When your eyes open, you realize you’re in a hospital room.";
                 //create a new color with the changed alpha value
                 changing = new Color(endingText.color.r, endingText.color.g, endingText.color.b, fade);
 
@@ -118,7 +121,7 @@ public class GateEnding : MonoBehaviour {
                 }
                 break;
             case 3:
-                endingText.text = "As your vision clears you see something lying in mud. \n You here a faint voice, “Hey buddy are you okay!?”";
+                endingText.text = "There’s a table with flowers, balloons, and various get well-soon stuff.";
                 //create a new color with the changed alpha value
                 changing = new Color(endingText.color.r, endingText.color.g, endingText.color.b, fade);
 
@@ -143,7 +146,7 @@ public class GateEnding : MonoBehaviour {
                 }
                 break;
             case 4:
-                endingText.text = "The mud washes off the object. \n A gnome.";
+                endingText.text = "It’s storming outside. \n The lightning flashes and you see a gnome outside the window";
                 //create a new color with the changed alpha value
                 changing = new Color(endingText.color.r, endingText.color.g, endingText.color.b, fade);
 

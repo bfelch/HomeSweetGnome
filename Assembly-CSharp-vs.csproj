@@ -59,7 +59,11 @@
      <Compile Include="Assets\SoundController.cs" />
      <Compile Include="Assets\TreeWind.cs" />
      <Compile Include="Assets\TunnelGnome.cs" />
+     <Compile Include="Assets\WorldObjects\Cutscenes\BoatEnding.cs" />
+     <Compile Include="Assets\WorldObjects\Cutscenes\ExperimentEnding.cs" />
+     <Compile Include="Assets\WorldObjects\Cutscenes\FallEnding.cs" />
      <Compile Include="Assets\WorldObjects\Cutscenes\GateEnding.cs" />
+     <Compile Include="Assets\WorldObjects\Cutscenes\GnomeEnding.cs" />
      <Compile Include="Assets\WorldObjects\Cutscenes\OpeningScript.cs" />
      <Compile Include="Assets\WorldObjects\Entities\Gargoyle\Gargoyle.cs" />
      <Compile Include="Assets\WorldObjects\Entities\Gargoyle\Perlin.cs" />

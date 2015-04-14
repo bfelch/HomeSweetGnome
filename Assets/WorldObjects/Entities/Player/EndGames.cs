@@ -27,7 +27,7 @@ public class EndGames : MonoBehaviour {
     public Material sunnySky;
 	public GameObject wind;
 
-    public GameObject gateEnding; 
+    public static GameObject endingText; 
 
     //horizontal look
     public MouseLook mouseLook;
@@ -158,22 +158,23 @@ public class EndGames : MonoBehaviour {
     {
         if (experimentComplete)
         {
-            int second = (int)time;
-            winTextExperiment.text = "Experiment Success! \n You completed the experiment in " + getTimeString(second);
+            //int second = (int)time;
+            //winTextExperiment.text = "Experiment Success! \n You completed the experiment in " + getTimeString(second);
             //create a new color with the changed alpha value
-            Color changing = new Color(winTextExperiment.color.r, winTextExperiment.color.g, winTextExperiment.color.b, fadeIn);
+            //Color changing = new Color(winTextExperiment.color.r, winTextExperiment.color.g, winTextExperiment.color.b, fadeIn);
 
-            winTextExperiment.enabled = true;
+            //winTextExperiment.enabled = true;
             //set the new color
-            winTextExperiment.color = changing;
+            //winTextExperiment.color = changing;
             //update the alpha value
-            fadeIn += .1f * Time.deltaTime;
+            //fadeIn += .1f * Time.deltaTime;
+            endingText.GetComponent<ExperimentEnding>().enabled = true;
         }
         else
             winTextExperiment.enabled = false;
+
         if (playerEscaped)
         {
-
             //int second = (int)time;
             //winTextEscaped.text = "You escaped. \n You made it out in " + getTimeString(second);
 
@@ -181,7 +182,7 @@ public class EndGames : MonoBehaviour {
             //Color changing = new Color(winTextEscaped.color.r, winTextEscaped.color.g, winTextEscaped.color.b, fadeIn);
             //winTextEscaped.enabled = true;
             //GetComponent<FadeToBlack>().enabled = true;
-            gateEnding.SetActive(true);
+            endingText.GetComponent<GateEnding>().enabled = true;
             //set the new color
             //winTextEscaped.color = changing;
             //update the alpha value
@@ -190,7 +191,6 @@ public class EndGames : MonoBehaviour {
 
         if (playerSlept)
         {
-
             int second = (int)time;
             deathTextSleep.text = "You fell asleep... \n You stayed awake for " + getTimeString(second);
 
@@ -202,23 +202,16 @@ public class EndGames : MonoBehaviour {
             deathTextSleep.color = changing;
             //update the alpha value
             fadeIn += .1f * Time.deltaTime;
-
-
         }
 
         if (playerFell)
         {
-
-            int second = (int)time;
-           
+            int second = (int)time;          
             deathTextFall.text = "You fell to your death... \n You lasted for " + getTimeString(second);
-
             //create a new color with the changed alpha value
             Color changing = new Color(deathTextFall.color.r, deathTextFall.color.g, deathTextFall.color.b, fadeIn);
-
             deathTextFall.enabled = true;
             GameObject.Find("Main Camera").GetComponent<ScreenOverlay>().enabled = true;
-
             //set the new color
             deathTextFall.color = changing;
             //update the alpha value
