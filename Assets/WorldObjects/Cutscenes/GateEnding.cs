@@ -27,7 +27,7 @@ public class GateEnding : MonoBehaviour {
         GUI.skin.font = bark;
         GUI.skin.box.alignment = TextAnchor.LowerCenter;
         Color changing;
-        this.GetComponent<GUITexture>().enabled = true;
+        black.enabled = true;
 
         
         if(!(blackFade > 1))
