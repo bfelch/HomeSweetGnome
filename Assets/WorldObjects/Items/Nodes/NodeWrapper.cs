@@ -12,7 +12,7 @@ public class NodeWrapper : MonoBehaviour
 
     private bool onlyOnce = true;
 
-    /*
+    
 	// Use this for initialization
 	void Start () 
 	{
@@ -44,5 +44,5 @@ public class NodeWrapper : MonoBehaviour
 	{
 	
 	}
-     * */
+     
 }

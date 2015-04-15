@@ -22,7 +22,14 @@ public class GnomeEnding : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if ((blackFade >= 1) && GameObject.Find("OffAtEnd") != null)
+        {
 
+            GameObject.Find("Main Camera").transform.parent = null;
+            GameObject.Find("OffAtEnd").SetActive(false);
+            GameObject.Find("EndingScripts").GetComponent<AudioListener>().enabled = true;
+
+        }
     }
 
     void OnGUI()
@@ -41,11 +48,6 @@ public class GnomeEnding : MonoBehaviour
             black.color = changing;
             //update the alpha value
             blackFade += blackDelta * Time.deltaTime;
-        }
-        else if (GameObject.Find("OffAtEnd") != null)
-        {
-            GameObject.Find("Main Camera").transform.parent = null;
-            GameObject.Find("OffAtEnd").SetActive(false);
         }
 
         switch (step)

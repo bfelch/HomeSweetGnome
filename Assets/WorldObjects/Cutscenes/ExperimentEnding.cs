@@ -28,6 +28,16 @@ public class ExperimentEnding : MonoBehaviour
             sound.Play();
             playAudioOnce = false;
         }
+
+        if ((blackFade >= 1) && GameObject.Find("OffAtEnd") != null)
+        {
+
+            GameObject.Find("Main Camera").transform.parent = null;
+            GameObject.Find("OffAtEnd").SetActive(false);
+            GameObject.Find("EndingScripts").GetComponent<AudioListener>().enabled = true;
+
+            EndParent.endParent.GetTime();
+        }
     }
 
     void OnGUI()
@@ -47,13 +57,7 @@ public class ExperimentEnding : MonoBehaviour
             //update the alpha value
             blackFade += blackDelta * Time.deltaTime;
         }
-        else if (GameObject.Find("OffAtEnd") != null)
-        {
-            GameObject.Find("Main Camera").transform.parent = null;
-            GameObject.Find("OffAtEnd").SetActive(false);
-            EndParent.endParent.GetTime();
-        }
-
+       
         switch (step)
         {
             case 0:

@@ -11,7 +11,8 @@ public class OpeningCutscene : MonoBehaviour
     private float delta = .1f;
     private float blackDelta = .2f;
     private bool onlyOnce = true;
-
+    public AudioSource sound;
+    private bool playAudioOnce = true;
     private int step = 0;
     // Use this for initialization
     void Start()
@@ -21,7 +22,11 @@ public class OpeningCutscene : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (!sound.isPlaying && playAudioOnce)
+        {
+            sound.Play();
+            playAudioOnce = false;
+        }
     }
 
     void OnGUI()
