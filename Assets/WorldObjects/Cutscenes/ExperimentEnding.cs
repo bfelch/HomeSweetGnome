@@ -9,10 +9,11 @@ public class ExperimentEnding : MonoBehaviour
     public Font bark;
     public GUIText endingText;
     public GUITexture black;
+    public AudioSource sound;
     private float delta = .1f;
     private float blackDelta = .2f;
     private bool onlyOnce = true;
-
+    private bool playAudioOnce = true;
     private int step = 0;
     // Use this for initialization
     void Start()
@@ -22,7 +23,11 @@ public class ExperimentEnding : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (!sound.isPlaying && playAudioOnce)
+        {
+            sound.Play();
+            playAudioOnce = false;
+        }
     }
 
     void OnGUI()
@@ -32,10 +37,10 @@ public class ExperimentEnding : MonoBehaviour
         Color changing;
         black.enabled = true;
 
+        
 
         if (!(blackFade > 1))
         {
-
             changing = new Color(black.color.r, black.color.g, black.color.b, blackFade);
             //set the new color
             black.color = changing;

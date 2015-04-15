@@ -9,9 +9,12 @@ public class BoatEnding : MonoBehaviour
     public Font bark;
     public GUIText endingText;
     public GUITexture black;
+    public AudioSource sound;
     private float delta = .1f;
     private float blackDelta = .2f;
     private bool onlyOnce = true;
+
+    private bool playAudioOnce = true;
 
     private int step = 0;
     // Use this for initialization
@@ -22,7 +25,11 @@ public class BoatEnding : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (!sound.isPlaying && playAudioOnce)
+        {
+            sound.Play();
+            playAudioOnce = false;
+        }
     }
 
     void OnGUI()

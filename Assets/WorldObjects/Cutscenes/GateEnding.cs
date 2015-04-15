@@ -8,6 +8,7 @@ public class GateEnding : MonoBehaviour {
     public Font bark;
     public GUIText endingText;
     public GUITexture black;
+    public AudioSource sound;
     private float delta = .1f;
     private float blackDelta = .2f;
     private bool onlyOnce = true;
@@ -20,7 +21,8 @@ public class GateEnding : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+        if (!sound.isPlaying)
+            sound.Play();
 	}
 
     void OnGUI()
