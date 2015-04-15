@@ -42,6 +42,12 @@ public class ExperimentEnding : MonoBehaviour
             //update the alpha value
             blackFade += blackDelta * Time.deltaTime;
         }
+        else if (GameObject.Find("OffAtEnd") != null)
+        {
+            GameObject.Find("Main Camera").transform.parent = null;
+            GameObject.Find("OffAtEnd").SetActive(false);
+            EndParent.endParent.GetTime();
+        }
 
         switch (step)
         {
@@ -164,8 +170,8 @@ public class ExperimentEnding : MonoBehaviour
 
                 if (fade <= 0)
                 {
-                    Application.LoadLevel("MainMenu");
-
+                    EndParent.enterName = true;
+                    step++;
                 }
                 break;
         }

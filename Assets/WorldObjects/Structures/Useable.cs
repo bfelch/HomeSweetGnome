@@ -225,16 +225,7 @@ public class Useable : MonoBehaviour
 					sound = SoundController.PlayClipAt(boatMotorSound, motor.transform.position);
 					StartCoroutine(SoundController.FadeAudio(12.0F, SoundController.Fade.Out, sound, 1.0F));
 					
-					// player.transform.parent = boat.transform;
-					// player.GetComponent<Animation>().Play("BoatEnding");
-					//boat.GetComponent<Animation>().Play("BoatEnding");
-					//Run the escape function inside the Player script
-					//player.GetComponent<EndGames>().Escape();
-                    EndGames.endingText.GetComponent<GateEnding>().enabled = true;
-					//for(int i = 0; i < EndGames.dockGnomes.Length; i++)
-					//{
-					//EndGames.dockGnomes[i].SetActive(true);
-					//}
+                    EndGames.endingText.GetComponent<BoatEnding>().enabled = true;
 				}
 			}
             else if(type == UseableType.ATTICBOWL)
@@ -242,10 +233,8 @@ public class Useable : MonoBehaviour
 				GameObject player = GameObject.Find("Player");
 				GameObject.Find("MixingBowl").GetComponent<AudioSource>().Play();
 
-                //Run the escape function inside the Player script
                 EndGames.endingText.GetComponent<ExperimentEnding>().enabled = true;
 
-                //player.GetComponent<EndGames>().Experiment();
             }
             else if (type == UseableType.LIGHT)
             {
@@ -365,7 +354,7 @@ public class Useable : MonoBehaviour
 				}
 				GameObject player = GameObject.Find("Player");
 
-                EndGames.endingText.GetComponent<ExperimentEnding>().enabled = true;
+                EndGames.endingText.GetComponent<GateEnding>().enabled = true;
 
 				//player.GetComponent<EndGames>().Escape();
 			}

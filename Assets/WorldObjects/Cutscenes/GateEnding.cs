@@ -12,6 +12,7 @@ public class GateEnding : MonoBehaviour {
     private float blackDelta = .2f;
     private bool onlyOnce = true;
 
+
     private int step = 0;
 	// Use this for initialization
 	void Start () {
@@ -28,7 +29,6 @@ public class GateEnding : MonoBehaviour {
         GUI.skin.box.alignment = TextAnchor.LowerCenter;
         Color changing;
         black.enabled = true;
-
         
         if(!(blackFade > 1))
         {
@@ -38,6 +38,13 @@ public class GateEnding : MonoBehaviour {
             black.color = changing;
             //update the alpha value
             blackFade += blackDelta * Time.deltaTime;
+        }
+        else if (GameObject.Find("OffAtEnd") != null)
+        {
+            GameObject.Find("Main Camera").transform.parent = null;
+            GameObject.Find("OffAtEnd").SetActive(false);
+            EndParent.endParent.GetTime();
+
         }
 
         switch (step)
@@ -161,8 +168,8 @@ public class GateEnding : MonoBehaviour {
 
                 if (fade <= 0)
                 {
-                    Application.LoadLevel("MainMenu");
-
+                    EndParent.enterName = true;
+                    step++;
                 }
                 break;
         }

@@ -42,6 +42,12 @@ public class BoatEnding : MonoBehaviour
             //update the alpha value
             blackFade += blackDelta * Time.deltaTime;
         }
+        else if(GameObject.Find("OffAtEnd") != null)
+        {
+            GameObject.Find("Main Camera").transform.parent = null;
+            GameObject.Find("OffAtEnd").SetActive(false);
+            EndParent.endParent.GetTime();
+        }
 
         switch (step)
         {
@@ -109,7 +115,6 @@ public class BoatEnding : MonoBehaviour
                 {
                     StartCoroutine(WaitToFadeOut());
                     onlyOnce = false;
-
                 }
 
                 if (fade <= 0)
@@ -117,7 +122,6 @@ public class BoatEnding : MonoBehaviour
                     step++;
                     delta = -delta;
                     onlyOnce = true;
-
                 }
                 break;
             case 3:
@@ -139,8 +143,8 @@ public class BoatEnding : MonoBehaviour
 
                 if (fade <= 0)
                 {
-                    Application.LoadLevel("MainMenu");
-
+                    EndParent.enterName = true;
+                    step++;
                 }
                 break;
         }

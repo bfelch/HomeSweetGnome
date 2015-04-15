@@ -60,6 +60,7 @@
      <Compile Include="Assets\TreeWind.cs" />
      <Compile Include="Assets\TunnelGnome.cs" />
      <Compile Include="Assets\WorldObjects\Cutscenes\BoatEnding.cs" />
+     <Compile Include="Assets\WorldObjects\Cutscenes\EndParent.cs" />
      <Compile Include="Assets\WorldObjects\Cutscenes\ExperimentEnding.cs" />
      <Compile Include="Assets\WorldObjects\Cutscenes\FallEnding.cs" />
      <Compile Include="Assets\WorldObjects\Cutscenes\GateEnding.cs" />

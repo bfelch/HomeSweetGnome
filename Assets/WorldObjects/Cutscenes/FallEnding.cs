@@ -10,7 +10,7 @@ public class FallEnding : MonoBehaviour
     public GUIText endingText;
     public GUITexture black;
     private float delta = .1f;
-    private float blackDelta = .5f;
+    private float blackDelta = .4f;
     private bool onlyOnce = true;
 
     private int step = 0;
@@ -42,6 +42,12 @@ public class FallEnding : MonoBehaviour
             //update the alpha value
             blackFade += blackDelta * Time.deltaTime;
         }
+        else if (GameObject.Find("OffAtEnd") != null)
+        {
+            GameObject.Find("Main Camera").transform.parent = null;
+            GameObject.Find("OffAtEnd").SetActive(false);
+
+        }
 
         switch (step)
         {
@@ -72,7 +78,7 @@ public class FallEnding : MonoBehaviour
     public IEnumerator WaitToFadeOut()
     {
         //Wait time
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(3f);
         delta = -delta;
 
     }
