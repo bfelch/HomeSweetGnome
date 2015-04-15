@@ -113,7 +113,6 @@ public class PlayerInteractions : MonoBehaviour
         */
         
 		//CHEATS!
-        /*
 		if(Input.GetKeyDown(KeyCode.Alpha6))
 		{
 			//Gate Teleport
@@ -133,8 +132,13 @@ public class PlayerInteractions : MonoBehaviour
 		{
 			//Tunnel Teleport
 			transform.position = new Vector3(53.2F, -18.12F, -15.15F);
-		}
-        */
+        } 
+        if(Input.GetKeyDown(KeyCode.Alpha0))
+        {
+            //Tunnel Teleport
+            transform.position = new Vector3(57.45F, 26.58F, 19.13F);
+        }
+
     }
 
     void OnGUI()

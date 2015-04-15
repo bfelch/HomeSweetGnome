@@ -312,6 +312,14 @@ public class Useable : MonoBehaviour
 
 					//Play elevator sound
 					GameObject.Find("ElevatorStructure").GetComponent<AudioSource>().Play();
+
+                    AudioSource bellSound = GameObject.Find("LeverBottom").GetComponent<AudioSource>();
+         
+                    //Play bell sound
+                    if (!bellSound.isPlaying)
+                    {
+                        bellSound.Play();
+                    }
                 }
                 else
                     elevatorStuff.openBottomElevator = true;
