@@ -15,6 +15,10 @@ public class ExperimentEnding : MonoBehaviour
     private bool onlyOnce = true;
     private bool playAudioOnce = true;
     private int step = 0;
+
+    public MovieTexture ritualCut;
+    private bool goOnGUI = false;
+
     // Use this for initialization
     void Start()
     {
@@ -37,9 +41,12 @@ public class ExperimentEnding : MonoBehaviour
             GameObject.Find("EndingScripts").GetComponent<AudioListener>().enabled = true;
 
             EndParent.endParent.GetTime();
+
+            goOnGUI = true;
         }
     }
 
+    /*
     void OnGUI()
     {
         GUI.skin.font = bark;
@@ -184,14 +191,54 @@ public class ExperimentEnding : MonoBehaviour
                 }
                 break;
         }
+
+
     }
 
 
+     * */
     public IEnumerator WaitToFadeOut()
     {
         //Wait time
         yield return new WaitForSeconds(5f);
         delta = -delta;
 
+    }
+
+    void OnGUI()
+    {
+        black.enabled = true;
+        if (!(blackFade > 1))
+        {
+            Color changing = new Color(black.color.r, black.color.g, black.color.b, blackFade);
+            //set the new color
+            black.color = changing;
+            //update the alpha value
+            blackFade += blackDelta * Time.deltaTime;
+        }
+        if(goOnGUI)
+        {
+            GUI.DrawTexture(new Rect(0, 0, Screen.width, Screen.height), ritualCut, ScaleMode.StretchToFill, false, 0.0f);
+        
+            if (onlyOnce)
+            {
+                ritualCut.Play();
+                StartCoroutine(StopVideo());
+                onlyOnce = false;
+            }
+        }
+    }
+
+    IEnumerator StopVideo()
+    {
+        yield return new WaitForSeconds(28f);
+        SkipStopVideo();
+    }
+
+    void SkipStopVideo()
+    {
+        //onlyOnce = true;
+        ritualCut.Stop();
+        EndParent.enterName = true;
     }
 }
