@@ -27,11 +27,7 @@ public class BoatEnding : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!sound.isPlaying && playAudioOnce)
-        {
-            sound.Play();
-            playAudioOnce = false;
-        }
+        
 
         if ((blackFade >= 1) && GameObject.Find("OffAtEnd") != null)
         {
@@ -43,6 +39,12 @@ public class BoatEnding : MonoBehaviour
             EndParent.endParent.GetTime();
 
             goOnGUI = true;
+
+			if (!sound.isPlaying && playAudioOnce)
+			{
+				sound.Play();
+				playAudioOnce = false;
+			}
         }
     }
 
