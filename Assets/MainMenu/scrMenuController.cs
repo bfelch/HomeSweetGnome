@@ -22,7 +22,7 @@ public class scrMenuController : MonoBehaviour
     {
         startMenu = GameObject.Find("Start Menu");
         mainMenu = GameObject.Find("Main Menu");
-        leaderMenu = GameObject.Find("Leaderboards Menu");
+        leaderMenu = GameObject.Find("Leaderboard Menu");
         creditsMenu = GameObject.Find("Credits Menu");
 
 		//Set leaderboard text
@@ -108,7 +108,7 @@ public class scrMenuController : MonoBehaviour
                 camMoving = true; //Cam is moving
                 currentMenu = 1; //Set current menu index
 
-				keyText.guiText.text = "[Left Arrow] Credits || [Right Arrow] Leaderboards"; //Set new GUI text
+				keyText.guiText.text = "[Left Arrow] Credits || [Right Arrow] Leaderboard"; //Set new GUI text
             }
         }
     }
@@ -239,7 +239,7 @@ public class scrMenuController : MonoBehaviour
 
                 camMoving = true; //Cam is moving
                 currentMenu = 1; //Set current menu index
-				keyText.guiText.text = "[Left Arrow] Credits || [Right Arrow] Leaderboards"; //Set new GUI text
+				keyText.guiText.text = "[Left Arrow] Credits || [Right Arrow] Leaderboard"; //Set new GUI text
             }
         }
     }
