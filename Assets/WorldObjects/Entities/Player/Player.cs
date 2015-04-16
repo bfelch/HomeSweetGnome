@@ -197,7 +197,7 @@ public class Player : MonoBehaviour
 
     void Sanity()
     {
-        sanity -= .001f;
+        sanity -= .002f;
 
         if (sanity <= 0 && !this.GetComponent<EndGames>().playerSlept)
         {
