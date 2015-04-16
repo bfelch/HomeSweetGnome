@@ -32,9 +32,9 @@ public class PlayerInteractions : MonoBehaviour
 	private bool lookingAtDirt = false;
     //reference to gui
     public GUIWrapper playerGUI;
-    private float lightingValue = .1f;
-    private float xSens=10;
-    private float ySens=10;
+    private float lightingValue = 0.05F;
+    private float xSens=7;
+    private float ySens=7;
     public Texture2D crosshair;
 
     private bool optionsMenu = false;
@@ -199,19 +199,19 @@ public class PlayerInteractions : MonoBehaviour
             GUI.backgroundColor = Color.clear;
             GUI.Box(new Rect(sliderPos, 90, 180, 30), "Adjust Lighting");
             GUI.backgroundColor = Color.white;
-            lightingValue = GUI.HorizontalSlider(new Rect(sliderPos, 120, 180, 10), lightingValue, 0, .2f);
+            lightingValue = GUI.HorizontalSlider(new Rect(sliderPos, 120, 180, 10), lightingValue, 0, 0.1f);
             GameObject.Find("ContrastLight").GetComponent<Light>().intensity = lightingValue;
 
             GUI.backgroundColor = Color.clear;
             GUI.Box(new Rect(sliderPos, 130, 180, 30), "Adjust X Sensitivity");
             GUI.backgroundColor = Color.white;
-            xSens = GUI.HorizontalSlider(new Rect(sliderPos, 160, 180, 10), xSens, 2, 15);
+            xSens = GUI.HorizontalSlider(new Rect(sliderPos, 160, 180, 10), xSens, 2, 12);
             GameObject.Find("Player").GetComponent<MouseLook>().sensitivityX = xSens;
 
             GUI.backgroundColor = Color.clear;
             GUI.Box(new Rect(sliderPos, 170, 180, 30), "Adjust Y Sensitivity");
             GUI.backgroundColor = Color.white;
-            ySens = GUI.HorizontalSlider(new Rect(sliderPos, 200, 180, 10), ySens, 2, 15);
+            ySens = GUI.HorizontalSlider(new Rect(sliderPos, 200, 180, 10), ySens, 2, 12);
             GameObject.Find("Main Camera").GetComponent<MouseLook>().sensitivityY = ySens;
 
             GUI.backgroundColor = Color.clear;

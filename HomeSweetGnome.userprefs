@@ -1,11 +1,8 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\WorldObjects\Structures\Useable.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\WorldObjects\Entities\Player\PlayerInteractions.cs">
     <Files>
-      <File FileName="Assets\MainMenu\menuMouse.cs" Line="39" Column="10" />
-      <File FileName="Assets\MainMenu\scrMenuController.cs" Line="21" Column="17" />
-      <File FileName="Assets\WorldObjects\Entities\Player\EventScript.cs" Line="22" Column="22" />
-      <File FileName="Assets\WorldObjects\Structures\Useable.cs" Line="38" Column="1" />
+      <File FileName="Assets\WorldObjects\Entities\Player\PlayerInteractions.cs" Line="31" Column="28" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -51,9 +51,10 @@ public class elevatorStuff : MonoBehaviour
             if(thePlayerIsInElevator)
                 GameObject.Find("Player").gameObject.transform.parent = GameObject.Find("ElevatorStructure").transform;
 			
-            if(!GetComponent<AudioSource>().isPlaying)
+            if(!GameObject.Find("ElevatorChild").GetComponent<AudioSource>().isPlaying)
 			{
-				GetComponent<AudioSource>().Play();
+				Debug.Log("Play");
+				GameObject.Find("ElevatorChild").GetComponent<AudioSource>().Play();
 			}
 
             if (direction)
@@ -64,7 +65,7 @@ public class elevatorStuff : MonoBehaviour
                 if (transform.localPosition.y <= -19.96F)
                 {
                     elevatorStuff.openBottomElevator = true;
-					GetComponent<AudioSource>().Stop();
+					GameObject.Find("ElevatorChild").GetComponent<AudioSource>().GetComponent<AudioSource>().Stop();
                     thePlayerIsInElevator = false;
                    // Debug.Log("Out of Elevator?");
 

@@ -39,7 +39,7 @@ public class menuMouse : MonoBehaviour
 			//PlayerPrefs.SetInt("LoadGame", 1);
 			//menuController.LoadTransition();
         }
-        else if (this.gameObject.name == ("Leaderboards"))
+        else if (this.gameObject.name == ("Leaderboard"))
         {
 			menuController.LeaderboardsTransition();
         }

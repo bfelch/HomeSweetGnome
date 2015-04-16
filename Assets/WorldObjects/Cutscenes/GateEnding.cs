@@ -46,7 +46,7 @@ public class GateEnding : MonoBehaviour
         }
     }
 
-    /*
+	/*
     void OnGUI()
     {
         GUI.skin.font = bark;
@@ -191,12 +191,8 @@ public class GateEnding : MonoBehaviour
                 }
                 break;
         }
+    }*/
 
-
-    }
-
-
-     * */
     public IEnumerator WaitToFadeOut()
     {
         //Wait time

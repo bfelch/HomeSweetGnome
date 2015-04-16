@@ -27,12 +27,6 @@ public class ExperimentEnding : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!sound.isPlaying && playAudioOnce)
-        {
-            sound.Play();
-            playAudioOnce = false;
-        }
-
         if ((blackFade >= 1) && GameObject.Find("OffAtEnd") != null)
         {
 
@@ -41,6 +35,12 @@ public class ExperimentEnding : MonoBehaviour
             GameObject.Find("EndingScripts").GetComponent<AudioListener>().enabled = true;
 
             EndParent.endParent.GetTime();
+
+			if (!sound.isPlaying && playAudioOnce)
+			{
+				sound.Play();
+				playAudioOnce = false;
+			}
 
             goOnGUI = true;
         }
