@@ -105,7 +105,7 @@ public class Player : MonoBehaviour
     {
 		//Slowly drain energy while game is not paused or during opening cutscene
         if (!this.gameObject.animation.IsPlaying("OpeningCut") 
-		    && !PlayerInteractions.pauseMenu) 
+		    && !PlayerInteractions.pause) 
 		{
             Sanity();
         }
@@ -208,6 +208,7 @@ public class Player : MonoBehaviour
 
         if(sanity > maxSanity)
         {
+			Debug.Log("Over Max");
             sanity = maxSanity;
         }
         else if(sanity < minSanity)

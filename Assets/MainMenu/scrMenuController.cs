@@ -60,7 +60,8 @@ public class scrMenuController : MonoBehaviour
         //Check is all animations are done playing
 		if( !animation.IsPlaying("titleToMain") &&
 		    !animation.IsPlaying("mainToLeaderboards") &&
-            !animation.IsPlaying("mainToCredits"))
+            !animation.IsPlaying("mainToCredits") &&
+		   	!animation.IsPlaying("mainToShed"))
 		{
 			camMoving = false; //Cam is not moving
 

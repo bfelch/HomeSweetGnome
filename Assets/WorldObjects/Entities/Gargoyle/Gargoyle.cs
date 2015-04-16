@@ -40,8 +40,8 @@ public class Gargoyle : MonoBehaviour
 	void Start () 
 	{
 		player = GameObject.FindGameObjectWithTag("Player");
-		playerTop = GameObject.Find ("/Entities/Player/Top");
-		playerBottom = GameObject.Find ("/Entities/Player/Bottom");
+		playerTop = GameObject.Find ("Top");
+		playerBottom = GameObject.Find ("Bottom");
 		eyeLight = transform.Find("Spotlight").gameObject;
 		shakeScript = player.GetComponentInChildren<cameraShake>();
 	}
@@ -78,6 +78,7 @@ public class Gargoyle : MonoBehaviour
 			//Invert bitmask to only ignore this layer
 			ignoreMask = ~ignoreMask;
 
+			Debug.Log(playerTop);
 			fwdTop = (playerTop.transform.position - transform.position).normalized;
 			distanceTop = Vector3.Distance(playerTop.transform.position, transform.position);
 

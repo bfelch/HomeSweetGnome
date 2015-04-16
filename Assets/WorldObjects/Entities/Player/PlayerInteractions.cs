@@ -38,7 +38,7 @@ public class PlayerInteractions : MonoBehaviour
     public Texture2D crosshair;
 
     private bool optionsMenu = false;
-    private bool pause;
+    public static bool pause;
     public static bool pauseMenu;
     private Font bark;
     private EndGames endgame;
@@ -88,7 +88,6 @@ public class PlayerInteractions : MonoBehaviour
                 ToggleGUI(false);
                 Screen.lockCursor = false;
                 Time.timeScale = 0.0f;
-
                 mouseLook.enabled = false;
                 cameraLook.enabled = false;
             }
@@ -113,6 +112,7 @@ public class PlayerInteractions : MonoBehaviour
         */
         
 		//CHEATS!
+		/*
 		if(Input.GetKeyDown(KeyCode.Alpha6))
 		{
 			//Gate Teleport
@@ -137,7 +137,7 @@ public class PlayerInteractions : MonoBehaviour
         {
             //Tunnel Teleport
             transform.position = new Vector3(57.45F, 26.58F, 19.13F);
-        }
+        }*/
 
     }
 

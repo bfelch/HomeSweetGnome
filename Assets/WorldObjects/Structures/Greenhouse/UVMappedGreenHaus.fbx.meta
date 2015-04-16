@@ -1,0 +1,597 @@
+fileFormatVersion: 2
+guid: 2d62bae45d1fbac4aabf45b4f3a93eed
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: curve1
+    100002: door_enter_frame01
+    100004: door_enter_glass01
+    100006: frame01
+    100008: glass01
+    100010: guides01
+    100012: int_bulbSocket01
+    100014: int_bulbSocket01 1
+    100016: int_bulbSocket01 2
+    100018: int_bulbSocket01 3
+    100020: int_bulbSocket01 4
+    100022: int_bulbSocket01 5
+    100024: int_l_counter01
+    100026: int_l_highShelf01
+    100028: int_l_lowShelf01
+    100030: Int_L_ShelfLamps01
+    100032: int_l_sprinkler_a01
+    100034: int_l_sprinkler_b01
+    100036: int_l_sprinklerPipe01
+    100038: Int_L_Tree_a01
+    100040: Int_L_Tree_b01
+    100042: int_l_treeDirt_a01
+    100044: int_l_treeDirt_b01
+    100046: int_l_treePlant_a01
+    100048: int_l_treePlant_b01
+    100050: int_l_treeWall_a01
+    100052: int_l_treeWall_b01
+    100054: int_l_trough_a01
+    100056: int_l_trough_b01
+    100058: int_l_upperShelf_lampA_bulb_a01
+    100060: int_l_upperShelf_lampA_bulb_a01 1
+    100062: int_l_upperShelf_lampA_bulb_a01 10
+    100064: int_l_upperShelf_lampA_bulb_a01 11
+    100066: int_l_upperShelf_lampA_bulb_a01 12
+    100068: int_l_upperShelf_lampA_bulb_a01 13
+    100070: int_l_upperShelf_lampA_bulb_a01 14
+    100072: int_l_upperShelf_lampA_bulb_a01 15
+    100074: int_l_upperShelf_lampA_bulb_a01 2
+    100076: int_l_upperShelf_lampA_bulb_a01 3
+    100078: int_l_upperShelf_lampA_bulb_a01 4
+    100080: int_l_upperShelf_lampA_bulb_a01 5
+    100082: int_l_upperShelf_lampA_bulb_a01 6
+    100084: int_l_upperShelf_lampA_bulb_a01 7
+    100086: int_l_upperShelf_lampA_bulb_a01 8
+    100088: int_l_upperShelf_lampA_bulb_a01 9
+    100090: int_l_upperShelf_lampA_bulb_b01
+    100092: int_l_upperShelf_lampA_bulb_b01 1
+    100094: int_l_upperShelf_lampA_bulb_b01 10
+    100096: int_l_upperShelf_lampA_bulb_b01 11
+    100098: int_l_upperShelf_lampA_bulb_b01 12
+    100100: int_l_upperShelf_lampA_bulb_b01 13
+    100102: int_l_upperShelf_lampA_bulb_b01 14
+    100104: int_l_upperShelf_lampA_bulb_b01 15
+    100106: int_l_upperShelf_lampA_bulb_b01 2
+    100108: int_l_upperShelf_lampA_bulb_b01 3
+    100110: int_l_upperShelf_lampA_bulb_b01 4
+    100112: int_l_upperShelf_lampA_bulb_b01 5
+    100114: int_l_upperShelf_lampA_bulb_b01 6
+    100116: int_l_upperShelf_lampA_bulb_b01 7
+    100118: int_l_upperShelf_lampA_bulb_b01 8
+    100120: int_l_upperShelf_lampA_bulb_b01 9
+    100122: int_l_upperShelf_lampA_bulb_c01
+    100124: int_l_upperShelf_lampA_bulb_c01 1
+    100126: int_l_upperShelf_lampA_bulb_c01 10
+    100128: int_l_upperShelf_lampA_bulb_c01 11
+    100130: int_l_upperShelf_lampA_bulb_c01 12
+    100132: int_l_upperShelf_lampA_bulb_c01 13
+    100134: int_l_upperShelf_lampA_bulb_c01 14
+    100136: int_l_upperShelf_lampA_bulb_c01 15
+    100138: int_l_upperShelf_lampA_bulb_c01 2
+    100140: int_l_upperShelf_lampA_bulb_c01 3
+    100142: int_l_upperShelf_lampA_bulb_c01 4
+    100144: int_l_upperShelf_lampA_bulb_c01 5
+    100146: int_l_upperShelf_lampA_bulb_c01 6
+    100148: int_l_upperShelf_lampA_bulb_c01 7
+    100150: int_l_upperShelf_lampA_bulb_c01 8
+    100152: int_l_upperShelf_lampA_bulb_c01 9
+    100154: int_l_vineGrate01
+    100156: int_l_vineGrate02
+    100158: int_lightBulb01
+    100160: int_lightBulb02
+    100162: int_lightBulb03
+    100164: int_lightBulb04
+    100166: int_lightBulb05
+    100168: int_lightBulb06
+    100170: int_mid_sprinkler_c01
+    100172: Int_Mid_Tree01
+    100174: int_mid_treeDirt01
+    100176: int_mid_treePlant01
+    100178: int_mid_treeWall01
+    100180: int_mid_wallRuins01
+    100182: Int_R_Tree_a01
+    100184: Int_R_Tree_b01
+    100186: int_r_treeDirt_a01
+    100188: int_r_treeDirt_b01
+    100190: int_r_treePlant_a01
+    100192: int_r_treePlant_b01
+    100194: int_r_treeWall_a01
+    100196: int_r_treeWall_b01
+    100198: int_r_trough_a01
+    100200: int_r_trough_b01
+    100202: model_int01
+    100204: model_main01
+    100206: nurbsCircle1
+    100208: nurbsCircle2
+    100210: pCube1
+    100212: pCube1 1
+    100214: pCube1 2
+    100216: pCube1 3
+    100218: pCube1 4
+    100220: pCube1 5
+    100222: polyToCurve1
+    100224: ShelfLamp_Low_A01
+    100226: ShelfLamp_Low_B01
+    100228: ShelfLamp_Low_C01
+    100230: ShelfLamp_Low_D01
+    100232: ShelfLamp_Low_E01
+    100234: ShelfLamp_Low_F01
+    100236: ShelfLamp_Low_G01
+    100238: ShelfLamp_Low_H01
+    100240: ShelfLamp_Up_A01
+    100242: ShelfLamp_Up_B01
+    100244: ShelfLamp_Up_C01
+    100246: ShelfLamp_Up_D01
+    100248: ShelfLamp_Up_E01
+    100250: ShelfLamp_Up_F01
+    100252: ShelfLamp_Up_G01
+    100254: ShelfLamp_Up_H01
+    100256: //RootNode
+    400000: curve1
+    400002: door_enter_frame01
+    400004: door_enter_glass01
+    400006: frame01
+    400008: glass01
+    400010: guides01
+    400012: int_bulbSocket01
+    400014: int_bulbSocket01 1
+    400016: int_bulbSocket01 2
+    400018: int_bulbSocket01 3
+    400020: int_bulbSocket01 4
+    400022: int_bulbSocket01 5
+    400024: int_l_counter01
+    400026: int_l_highShelf01
+    400028: int_l_lowShelf01
+    400030: Int_L_ShelfLamps01
+    400032: int_l_sprinkler_a01
+    400034: int_l_sprinkler_b01
+    400036: int_l_sprinklerPipe01
+    400038: Int_L_Tree_a01
+    400040: Int_L_Tree_b01
+    400042: int_l_treeDirt_a01
+    400044: int_l_treeDirt_b01
+    400046: int_l_treePlant_a01
+    400048: int_l_treePlant_b01
+    400050: int_l_treeWall_a01
+    400052: int_l_treeWall_b01
+    400054: int_l_trough_a01
+    400056: int_l_trough_b01
+    400058: int_l_upperShelf_lampA_bulb_a01
+    400060: int_l_upperShelf_lampA_bulb_a01 1
+    400062: int_l_upperShelf_lampA_bulb_a01 10
+    400064: int_l_upperShelf_lampA_bulb_a01 11
+    400066: int_l_upperShelf_lampA_bulb_a01 12
+    400068: int_l_upperShelf_lampA_bulb_a01 13
+    400070: int_l_upperShelf_lampA_bulb_a01 14
+    400072: int_l_upperShelf_lampA_bulb_a01 15
+    400074: int_l_upperShelf_lampA_bulb_a01 2
+    400076: int_l_upperShelf_lampA_bulb_a01 3
+    400078: int_l_upperShelf_lampA_bulb_a01 4
+    400080: int_l_upperShelf_lampA_bulb_a01 5
+    400082: int_l_upperShelf_lampA_bulb_a01 6
+    400084: int_l_upperShelf_lampA_bulb_a01 7
+    400086: int_l_upperShelf_lampA_bulb_a01 8
+    400088: int_l_upperShelf_lampA_bulb_a01 9
+    400090: int_l_upperShelf_lampA_bulb_b01
+    400092: int_l_upperShelf_lampA_bulb_b01 1
+    400094: int_l_upperShelf_lampA_bulb_b01 10
+    400096: int_l_upperShelf_lampA_bulb_b01 11
+    400098: int_l_upperShelf_lampA_bulb_b01 12
+    400100: int_l_upperShelf_lampA_bulb_b01 13
+    400102: int_l_upperShelf_lampA_bulb_b01 14
+    400104: int_l_upperShelf_lampA_bulb_b01 15
+    400106: int_l_upperShelf_lampA_bulb_b01 2
+    400108: int_l_upperShelf_lampA_bulb_b01 3
+    400110: int_l_upperShelf_lampA_bulb_b01 4
+    400112: int_l_upperShelf_lampA_bulb_b01 5
+    400114: int_l_upperShelf_lampA_bulb_b01 6
+    400116: int_l_upperShelf_lampA_bulb_b01 7
+    400118: int_l_upperShelf_lampA_bulb_b01 8
+    400120: int_l_upperShelf_lampA_bulb_b01 9
+    400122: int_l_upperShelf_lampA_bulb_c01
+    400124: int_l_upperShelf_lampA_bulb_c01 1
+    400126: int_l_upperShelf_lampA_bulb_c01 10
+    400128: int_l_upperShelf_lampA_bulb_c01 11
+    400130: int_l_upperShelf_lampA_bulb_c01 12
+    400132: int_l_upperShelf_lampA_bulb_c01 13
+    400134: int_l_upperShelf_lampA_bulb_c01 14
+    400136: int_l_upperShelf_lampA_bulb_c01 15
+    400138: int_l_upperShelf_lampA_bulb_c01 2
+    400140: int_l_upperShelf_lampA_bulb_c01 3
+    400142: int_l_upperShelf_lampA_bulb_c01 4
+    400144: int_l_upperShelf_lampA_bulb_c01 5
+    400146: int_l_upperShelf_lampA_bulb_c01 6
+    400148: int_l_upperShelf_lampA_bulb_c01 7
+    400150: int_l_upperShelf_lampA_bulb_c01 8
+    400152: int_l_upperShelf_lampA_bulb_c01 9
+    400154: int_l_vineGrate01
+    400156: int_l_vineGrate02
+    400158: int_lightBulb01
+    400160: int_lightBulb02
+    400162: int_lightBulb03
+    400164: int_lightBulb04
+    400166: int_lightBulb05
+    400168: int_lightBulb06
+    400170: int_mid_sprinkler_c01
+    400172: Int_Mid_Tree01
+    400174: int_mid_treeDirt01
+    400176: int_mid_treePlant01
+    400178: int_mid_treeWall01
+    400180: int_mid_wallRuins01
+    400182: Int_R_Tree_a01
+    400184: Int_R_Tree_b01
+    400186: int_r_treeDirt_a01
+    400188: int_r_treeDirt_b01
+    400190: int_r_treePlant_a01
+    400192: int_r_treePlant_b01
+    400194: int_r_treeWall_a01
+    400196: int_r_treeWall_b01
+    400198: int_r_trough_a01
+    400200: int_r_trough_b01
+    400202: model_int01
+    400204: model_main01
+    400206: nurbsCircle1
+    400208: nurbsCircle2
+    400210: pCube1
+    400212: pCube1 1
+    400214: pCube1 2
+    400216: pCube1 3
+    400218: pCube1 4
+    400220: pCube1 5
+    400222: polyToCurve1
+    400224: ShelfLamp_Low_A01
+    400226: ShelfLamp_Low_B01
+    400228: ShelfLamp_Low_C01
+    400230: ShelfLamp_Low_D01
+    400232: ShelfLamp_Low_E01
+    400234: ShelfLamp_Low_F01
+    400236: ShelfLamp_Low_G01
+    400238: ShelfLamp_Low_H01
+    400240: ShelfLamp_Up_A01
+    400242: ShelfLamp_Up_B01
+    400244: ShelfLamp_Up_C01
+    400246: ShelfLamp_Up_D01
+    400248: ShelfLamp_Up_E01
+    400250: ShelfLamp_Up_F01
+    400252: ShelfLamp_Up_G01
+    400254: ShelfLamp_Up_H01
+    400256: //RootNode
+    2300000: door_enter_frame01
+    2300002: door_enter_glass01
+    2300004: frame01
+    2300006: glass01
+    2300008: int_bulbSocket01
+    2300010: int_bulbSocket01 1
+    2300012: int_bulbSocket01 2
+    2300014: int_bulbSocket01 3
+    2300016: int_bulbSocket01 4
+    2300018: int_bulbSocket01 5
+    2300020: int_l_counter01
+    2300022: int_l_highShelf01
+    2300024: int_l_lowShelf01
+    2300026: int_l_sprinkler_a01
+    2300028: int_l_sprinkler_b01
+    2300030: int_l_sprinklerPipe01
+    2300032: int_l_treeDirt_a01
+    2300034: int_l_treeDirt_b01
+    2300036: int_l_treePlant_a01
+    2300038: int_l_treePlant_b01
+    2300040: int_l_treeWall_a01
+    2300042: int_l_treeWall_b01
+    2300044: int_l_trough_a01
+    2300046: int_l_trough_b01
+    2300048: int_l_upperShelf_lampA_bulb_a01
+    2300050: int_l_upperShelf_lampA_bulb_a01 1
+    2300052: int_l_upperShelf_lampA_bulb_a01 10
+    2300054: int_l_upperShelf_lampA_bulb_a01 11
+    2300056: int_l_upperShelf_lampA_bulb_a01 12
+    2300058: int_l_upperShelf_lampA_bulb_a01 13
+    2300060: int_l_upperShelf_lampA_bulb_a01 14
+    2300062: int_l_upperShelf_lampA_bulb_a01 15
+    2300064: int_l_upperShelf_lampA_bulb_a01 2
+    2300066: int_l_upperShelf_lampA_bulb_a01 3
+    2300068: int_l_upperShelf_lampA_bulb_a01 4
+    2300070: int_l_upperShelf_lampA_bulb_a01 5
+    2300072: int_l_upperShelf_lampA_bulb_a01 6
+    2300074: int_l_upperShelf_lampA_bulb_a01 7
+    2300076: int_l_upperShelf_lampA_bulb_a01 8
+    2300078: int_l_upperShelf_lampA_bulb_a01 9
+    2300080: int_l_upperShelf_lampA_bulb_b01
+    2300082: int_l_upperShelf_lampA_bulb_b01 1
+    2300084: int_l_upperShelf_lampA_bulb_b01 10
+    2300086: int_l_upperShelf_lampA_bulb_b01 11
+    2300088: int_l_upperShelf_lampA_bulb_b01 12
+    2300090: int_l_upperShelf_lampA_bulb_b01 13
+    2300092: int_l_upperShelf_lampA_bulb_b01 14
+    2300094: int_l_upperShelf_lampA_bulb_b01 15
+    2300096: int_l_upperShelf_lampA_bulb_b01 2
+    2300098: int_l_upperShelf_lampA_bulb_b01 3
+    2300100: int_l_upperShelf_lampA_bulb_b01 4
+    2300102: int_l_upperShelf_lampA_bulb_b01 5
+    2300104: int_l_upperShelf_lampA_bulb_b01 6
+    2300106: int_l_upperShelf_lampA_bulb_b01 7
+    2300108: int_l_upperShelf_lampA_bulb_b01 8
+    2300110: int_l_upperShelf_lampA_bulb_b01 9
+    2300112: int_l_upperShelf_lampA_bulb_c01
+    2300114: int_l_upperShelf_lampA_bulb_c01 1
+    2300116: int_l_upperShelf_lampA_bulb_c01 10
+    2300118: int_l_upperShelf_lampA_bulb_c01 11
+    2300120: int_l_upperShelf_lampA_bulb_c01 12
+    2300122: int_l_upperShelf_lampA_bulb_c01 13
+    2300124: int_l_upperShelf_lampA_bulb_c01 14
+    2300126: int_l_upperShelf_lampA_bulb_c01 15
+    2300128: int_l_upperShelf_lampA_bulb_c01 2
+    2300130: int_l_upperShelf_lampA_bulb_c01 3
+    2300132: int_l_upperShelf_lampA_bulb_c01 4
+    2300134: int_l_upperShelf_lampA_bulb_c01 5
+    2300136: int_l_upperShelf_lampA_bulb_c01 6
+    2300138: int_l_upperShelf_lampA_bulb_c01 7
+    2300140: int_l_upperShelf_lampA_bulb_c01 8
+    2300142: int_l_upperShelf_lampA_bulb_c01 9
+    2300144: int_l_vineGrate01
+    2300146: int_l_vineGrate02
+    2300148: int_mid_sprinkler_c01
+    2300150: int_mid_treeDirt01
+    2300152: int_mid_treePlant01
+    2300154: int_mid_treeWall01
+    2300156: int_mid_wallRuins01
+    2300158: int_r_treeDirt_a01
+    2300160: int_r_treeDirt_b01
+    2300162: int_r_treePlant_a01
+    2300164: int_r_treePlant_b01
+    2300166: int_r_treeWall_a01
+    2300168: int_r_treeWall_b01
+    2300170: int_r_trough_a01
+    2300172: int_r_trough_b01
+    2300174: pCube1
+    2300176: pCube1 1
+    2300178: pCube1 2
+    2300180: pCube1 3
+    2300182: pCube1 4
+    2300184: pCube1 5
+    3300000: door_enter_frame01
+    3300002: door_enter_glass01
+    3300004: frame01
+    3300006: glass01
+    3300008: int_bulbSocket01
+    3300010: int_bulbSocket01 1
+    3300012: int_bulbSocket01 2
+    3300014: int_bulbSocket01 3
+    3300016: int_bulbSocket01 4
+    3300018: int_bulbSocket01 5
+    3300020: int_l_counter01
+    3300022: int_l_highShelf01
+    3300024: int_l_lowShelf01
+    3300026: int_l_sprinkler_a01
+    3300028: int_l_sprinkler_b01
+    3300030: int_l_sprinklerPipe01
+    3300032: int_l_treeDirt_a01
+    3300034: int_l_treeDirt_b01
+    3300036: int_l_treePlant_a01
+    3300038: int_l_treePlant_b01
+    3300040: int_l_treeWall_a01
+    3300042: int_l_treeWall_b01
+    3300044: int_l_trough_a01
+    3300046: int_l_trough_b01
+    3300048: int_l_upperShelf_lampA_bulb_a01
+    3300050: int_l_upperShelf_lampA_bulb_a01 1
+    3300052: int_l_upperShelf_lampA_bulb_a01 10
+    3300054: int_l_upperShelf_lampA_bulb_a01 11
+    3300056: int_l_upperShelf_lampA_bulb_a01 12
+    3300058: int_l_upperShelf_lampA_bulb_a01 13
+    3300060: int_l_upperShelf_lampA_bulb_a01 14
+    3300062: int_l_upperShelf_lampA_bulb_a01 15
+    3300064: int_l_upperShelf_lampA_bulb_a01 2
+    3300066: int_l_upperShelf_lampA_bulb_a01 3
+    3300068: int_l_upperShelf_lampA_bulb_a01 4
+    3300070: int_l_upperShelf_lampA_bulb_a01 5
+    3300072: int_l_upperShelf_lampA_bulb_a01 6
+    3300074: int_l_upperShelf_lampA_bulb_a01 7
+    3300076: int_l_upperShelf_lampA_bulb_a01 8
+    3300078: int_l_upperShelf_lampA_bulb_a01 9
+    3300080: int_l_upperShelf_lampA_bulb_b01
+    3300082: int_l_upperShelf_lampA_bulb_b01 1
+    3300084: int_l_upperShelf_lampA_bulb_b01 10
+    3300086: int_l_upperShelf_lampA_bulb_b01 11
+    3300088: int_l_upperShelf_lampA_bulb_b01 12
+    3300090: int_l_upperShelf_lampA_bulb_b01 13
+    3300092: int_l_upperShelf_lampA_bulb_b01 14
+    3300094: int_l_upperShelf_lampA_bulb_b01 15
+    3300096: int_l_upperShelf_lampA_bulb_b01 2
+    3300098: int_l_upperShelf_lampA_bulb_b01 3
+    3300100: int_l_upperShelf_lampA_bulb_b01 4
+    3300102: int_l_upperShelf_lampA_bulb_b01 5
+    3300104: int_l_upperShelf_lampA_bulb_b01 6
+    3300106: int_l_upperShelf_lampA_bulb_b01 7
+    3300108: int_l_upperShelf_lampA_bulb_b01 8
+    3300110: int_l_upperShelf_lampA_bulb_b01 9
+    3300112: int_l_upperShelf_lampA_bulb_c01
+    3300114: int_l_upperShelf_lampA_bulb_c01 1
+    3300116: int_l_upperShelf_lampA_bulb_c01 10
+    3300118: int_l_upperShelf_lampA_bulb_c01 11
+    3300120: int_l_upperShelf_lampA_bulb_c01 12
+    3300122: int_l_upperShelf_lampA_bulb_c01 13
+    3300124: int_l_upperShelf_lampA_bulb_c01 14
+    3300126: int_l_upperShelf_lampA_bulb_c01 15
+    3300128: int_l_upperShelf_lampA_bulb_c01 2
+    3300130: int_l_upperShelf_lampA_bulb_c01 3
+    3300132: int_l_upperShelf_lampA_bulb_c01 4
+    3300134: int_l_upperShelf_lampA_bulb_c01 5
+    3300136: int_l_upperShelf_lampA_bulb_c01 6
+    3300138: int_l_upperShelf_lampA_bulb_c01 7
+    3300140: int_l_upperShelf_lampA_bulb_c01 8
+    3300142: int_l_upperShelf_lampA_bulb_c01 9
+    3300144: int_l_vineGrate01
+    3300146: int_l_vineGrate02
+    3300148: int_mid_sprinkler_c01
+    3300150: int_mid_treeDirt01
+    3300152: int_mid_treePlant01
+    3300154: int_mid_treeWall01
+    3300156: int_mid_wallRuins01
+    3300158: int_r_treeDirt_a01
+    3300160: int_r_treeDirt_b01
+    3300162: int_r_treePlant_a01
+    3300164: int_r_treePlant_b01
+    3300166: int_r_treeWall_a01
+    3300168: int_r_treeWall_b01
+    3300170: int_r_trough_a01
+    3300172: int_r_trough_b01
+    3300174: pCube1
+    3300176: pCube1 1
+    3300178: pCube1 2
+    3300180: pCube1 3
+    3300182: pCube1 4
+    3300184: pCube1 5
+    4300000: glass01
+    4300002: frame01
+    4300004: door_enter_glass01
+    4300006: door_enter_frame01
+    4300008: int_l_counter01
+    4300010: int_l_trough_a01
+    4300012: int_r_trough_a01
+    4300014: int_l_trough_b01
+    4300016: int_r_trough_b01
+    4300018: int_mid_wallRuins01
+    4300020: int_l_highShelf01
+    4300022: int_l_lowShelf01
+    4300024: int_l_sprinklerPipe01
+    4300026: int_l_sprinkler_a01
+    4300028: int_l_sprinkler_b01
+    4300030: int_mid_sprinkler_c01
+    4300032: int_l_vineGrate01
+    4300034: int_l_upperShelf_lampA_bulb_a01
+    4300036: int_l_upperShelf_lampA_bulb_b01
+    4300038: int_l_upperShelf_lampA_bulb_c01
+    4300040: int_l_upperShelf_lampA_bulb_a01
+    4300042: int_l_upperShelf_lampA_bulb_b01
+    4300044: int_l_upperShelf_lampA_bulb_c01
+    4300046: int_l_upperShelf_lampA_bulb_a01
+    4300048: int_l_upperShelf_lampA_bulb_b01
+    4300050: int_l_upperShelf_lampA_bulb_c01
+    4300052: int_l_upperShelf_lampA_bulb_a01
+    4300054: int_l_upperShelf_lampA_bulb_b01
+    4300056: int_l_upperShelf_lampA_bulb_c01
+    4300058: int_l_upperShelf_lampA_bulb_a01
+    4300060: int_l_upperShelf_lampA_bulb_b01
+    4300062: int_l_upperShelf_lampA_bulb_c01
+    4300064: int_l_upperShelf_lampA_bulb_a01
+    4300066: int_l_upperShelf_lampA_bulb_b01
+    4300068: int_l_upperShelf_lampA_bulb_c01
+    4300070: int_l_upperShelf_lampA_bulb_a01
+    4300072: int_l_upperShelf_lampA_bulb_b01
+    4300074: int_l_upperShelf_lampA_bulb_c01
+    4300076: int_l_upperShelf_lampA_bulb_a01
+    4300078: int_l_upperShelf_lampA_bulb_b01
+    4300080: int_l_upperShelf_lampA_bulb_c01
+    4300082: int_l_upperShelf_lampA_bulb_a01
+    4300084: int_l_upperShelf_lampA_bulb_b01
+    4300086: int_l_upperShelf_lampA_bulb_c01
+    4300088: int_l_upperShelf_lampA_bulb_a01
+    4300090: int_l_upperShelf_lampA_bulb_b01
+    4300092: int_l_upperShelf_lampA_bulb_c01
+    4300094: int_l_upperShelf_lampA_bulb_a01
+    4300096: int_l_upperShelf_lampA_bulb_b01
+    4300098: int_l_upperShelf_lampA_bulb_c01
+    4300100: int_l_upperShelf_lampA_bulb_a01
+    4300102: int_l_upperShelf_lampA_bulb_b01
+    4300104: int_l_upperShelf_lampA_bulb_c01
+    4300106: int_l_upperShelf_lampA_bulb_a01
+    4300108: int_l_upperShelf_lampA_bulb_b01
+    4300110: int_l_upperShelf_lampA_bulb_c01
+    4300112: int_l_upperShelf_lampA_bulb_a01
+    4300114: int_l_upperShelf_lampA_bulb_b01
+    4300116: int_l_upperShelf_lampA_bulb_c01
+    4300118: int_l_upperShelf_lampA_bulb_a01
+    4300120: int_l_upperShelf_lampA_bulb_b01
+    4300122: int_l_upperShelf_lampA_bulb_c01
+    4300124: int_l_upperShelf_lampA_bulb_a01
+    4300126: int_l_upperShelf_lampA_bulb_b01
+    4300128: int_l_upperShelf_lampA_bulb_c01
+    4300130: int_bulbSocket01
+    4300132: pCube1
+    4300134: int_bulbSocket01
+    4300136: pCube1
+    4300138: int_bulbSocket01
+    4300140: pCube1
+    4300142: int_bulbSocket01
+    4300144: pCube1
+    4300146: int_bulbSocket01
+    4300148: pCube1
+    4300150: int_bulbSocket01
+    4300152: pCube1
+    4300154: int_l_treeWall_a01
+    4300156: int_l_treeDirt_a01
+    4300158: int_l_treePlant_a01
+    4300160: int_l_treeWall_b01
+    4300162: int_l_treeDirt_b01
+    4300164: int_l_treePlant_b01
+    4300166: int_mid_treeWall01
+    4300168: int_mid_treeDirt01
+    4300170: int_mid_treePlant01
+    4300172: int_r_treeWall_a01
+    4300174: int_r_treeDirt_a01
+    4300176: int_r_treePlant_a01
+    4300178: int_r_treeWall_b01
+    4300180: int_r_treeDirt_b01
+    4300182: int_r_treePlant_b01
+    4300184: int_l_vineGrate02
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .0549999997
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 

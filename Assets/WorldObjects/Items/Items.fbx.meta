@@ -1,0 +1,142 @@
+fileFormatVersion: 2
+guid: 0c45fc4ab8159594982ac24bfbeef05e
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: AlchemyBowl_Merged
+    100002: BoatKey_CombinedMesh
+    100004: EnergyBar_Model:pCube1
+    100006: Femur
+    100008: FuelCan
+    100010: //RootNode
+    100012: Key_1
+    100014: Key_2
+    100016: Key_3
+    100018: Key_4
+    100020: Sapling2
+    100022: Screwdriver
+    100024: ShedKey
+    100026: Shovel1
+    100028: SparkPlug
+    100030: Tome
+    100032: Tome_Open
+    400000: AlchemyBowl_Merged
+    400002: BoatKey_CombinedMesh
+    400004: EnergyBar_Model:pCube1
+    400006: Femur
+    400008: FuelCan
+    400010: //RootNode
+    400012: Key_1
+    400014: Key_2
+    400016: Key_3
+    400018: Key_4
+    400020: Sapling2
+    400022: Screwdriver
+    400024: ShedKey
+    400026: Shovel1
+    400028: SparkPlug
+    400030: Tome
+    400032: Tome_Open
+    2300000: AlchemyBowl_Merged
+    2300002: BoatKey_CombinedMesh
+    2300004: EnergyBar_Model:pCube1
+    2300006: Femur
+    2300008: FuelCan
+    2300010: Key_1
+    2300012: Key_2
+    2300014: Key_3
+    2300016: Key_4
+    2300018: Sapling2
+    2300020: Screwdriver
+    2300022: ShedKey
+    2300024: Shovel1
+    2300026: SparkPlug
+    2300028: Tome
+    2300030: Tome_Open
+    3300000: AlchemyBowl_Merged
+    3300002: BoatKey_CombinedMesh
+    3300004: EnergyBar_Model:pCube1
+    3300006: Femur
+    3300008: FuelCan
+    3300010: Key_1
+    3300012: Key_2
+    3300014: Key_3
+    3300016: Key_4
+    3300018: Sapling2
+    3300020: Screwdriver
+    3300022: ShedKey
+    3300024: Shovel1
+    3300026: SparkPlug
+    3300028: Tome
+    3300030: Tome_Open
+    4300000: AlchemyBowl_Merged
+    4300002: BoatKey_CombinedMesh
+    4300004: Femur
+    4300006: EnergyBar_Model:pCube1
+    4300008: FuelCan
+    4300010: Key_1
+    4300012: Key_2
+    4300014: Key_3
+    4300016: Key_4
+    4300018: Tome_Open
+    4300020: Sapling2
+    4300022: Screwdriver
+    4300024: ShedKey
+    4300026: Shovel1
+    4300028: SparkPlug
+    4300030: Tome
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .0549999997
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 

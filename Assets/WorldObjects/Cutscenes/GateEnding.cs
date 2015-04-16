@@ -27,20 +27,19 @@ public class GateEnding : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!sound.isPlaying && playAudioOnce)
-        {
-            sound.Play();
-            playAudioOnce = false;
-        }
-
         if ((blackFade >= 1) && GameObject.Find("OffAtEnd") != null)
         {
-
             GameObject.Find("Main Camera").transform.parent = null;
             GameObject.Find("OffAtEnd").SetActive(false);
             GameObject.Find("EndingScripts").GetComponent<AudioListener>().enabled = true;
 
             EndParent.endParent.GetTime();
+
+			if (!sound.isPlaying && playAudioOnce)
+			{
+				sound.Play();
+				playAudioOnce = false;
+			}
 
             goOnGUI = true;
         }
