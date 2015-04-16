@@ -99,7 +99,7 @@ public class GnomeParent : MonoBehaviour
             blink.BlinkMechanics();
         }
         //check if the snity is above 50%
-        else if (modelNumber != 1 && sanityPercentage > .7)
+        else if (modelNumber != 1 && sanityPercentage >= .4)
         {
             //set the model number to 2
             modelNumber = 1;

@@ -331,10 +331,8 @@ public class PlayerInteractions : MonoBehaviour
             else if (notUseable && activeTarget != null)
             {
                // this.GetComponent<Player>().flashFade();
-				if(activeTarget.name != "MixingBowl")
-				{
-                	GUI.Box(new Rect(0, Screen.height - Screen.height / 2 + 150, Screen.width, 30), "You need the " + GUIString + " to continue.");
-				}
+
+				GUI.Box(new Rect(0, Screen.height - Screen.height / 2 + 150, Screen.width, 30), "You need the " + GUIString + " to continue.");
 
 				if(activeTarget.name == "Dirt")
 				{
