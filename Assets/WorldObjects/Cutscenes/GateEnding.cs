@@ -227,7 +227,7 @@ public class GateEnding : MonoBehaviour
 
     IEnumerator StopVideo()
     {
-        yield return new WaitForSeconds(28f);
+        yield return new WaitForSeconds(21f);
         SkipStopVideo();
     }
 

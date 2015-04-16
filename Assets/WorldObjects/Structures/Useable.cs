@@ -311,7 +311,8 @@ public class Useable : MonoBehaviour
                     elevatorStuff.callingDown = true;
 
 					//Play elevator sound
-					GameObject.Find("ElevatorStructure").GetComponent<AudioSource>().Play();
+					Debug.Log("Player Sound");
+					GameObject.Find("ElevatorChild").GetComponent<AudioSource>().Play();
 
                     AudioSource bellSound = GameObject.Find("LeverBottom").GetComponent<AudioSource>();
          
@@ -345,22 +346,24 @@ public class Useable : MonoBehaviour
 			}
 			if(checkGateKeys())
 			{
-				GameObject.Find("Player").GetComponent<Animation>().Play("GateEnding");
-				GameObject.Find("FrontGate").GetComponent<Animation>().Play("OpenFrontGate");
-				GameObject[] gnomes = GameObject.FindGameObjectsWithTag("Gnome");
+				//GameObject.Find("Player").GetComponent<Animation>().Play("GateEnding");
+				//GameObject.Find("FrontGate").GetComponent<Animation>().Play("OpenFrontGate");
+				//GameObject[] gnomes = GameObject.FindGameObjectsWithTag("Gnome");
 				GameObject.Find ("Player").GetComponent<PlayerMovement>().enabled = false;
 
-                GameObject.Find("KeyOne").SetActive(false);
-                GameObject.Find("KeyTwo").SetActive(false);
-                GameObject.Find("KeyThree").SetActive(false);
-                GameObject.Find("KeyFour").SetActive(false);
+                //GameObject.Find("KeyOne").SetActive(false);
+                //GameObject.Find("KeyTwo").SetActive(false);
+                //GameObject.Find("KeyThree").SetActive(false);
+                //GameObject.Find("KeyFour").SetActive(false);
 
+				/*
 				for (int i = 0; i < gnomes.Length; i++)
 				{
 					gnomes[i].GetComponent<Gnome>().enabled = false;
 					gnomes[i].GetComponent<NavMeshAgent>().enabled = false;
 				}
-				GameObject player = GameObject.Find("Player");
+				*/
+				//GameObject player = GameObject.Find("Player");
 
                 EndGames.endingText.GetComponent<GateEnding>().enabled = true;
 

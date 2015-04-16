@@ -203,7 +203,7 @@ public class Player : MonoBehaviour
         {
             this.GetComponent<EndGames>().playerSlept = true;
             this.GetComponent<EndGames>().GetTime();
-			StartCoroutine(WaitToReload(5.0F));
+			//StartCoroutine(WaitToReload(5.0F));
         }
 
         if(sanity > maxSanity)
@@ -213,6 +213,7 @@ public class Player : MonoBehaviour
         else if(sanity < minSanity)
         {
             sanity = 0;
+
         }
     }
 

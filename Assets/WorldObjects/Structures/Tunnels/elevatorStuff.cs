@@ -78,7 +78,7 @@ public class elevatorStuff : MonoBehaviour
                 if (transform.localPosition.y >= -.01)
                 {
                     elevatorStuff.openTopElevator = true;
-					GetComponent<AudioSource>().Stop();
+					GameObject.Find("ElevatorChild").GetComponent<AudioSource>().Stop();
                     thePlayerIsInElevator = false;
                     //Debug.Log("Out of Elevator?");
                 }

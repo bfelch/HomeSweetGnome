@@ -232,7 +232,7 @@ public class BoatEnding : MonoBehaviour
 
     IEnumerator StopVideo()
     {
-        yield return new WaitForSeconds(28f);
+        yield return new WaitForSeconds(23f);
         SkipStopVideo();
     }
 
