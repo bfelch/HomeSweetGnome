@@ -53,7 +53,7 @@ public class GnomeEnding : MonoBehaviour
         switch (step)
         {
             case 0:
-                endingText.text = "The gnomes have overtaken you.";
+                endingText.text = "You can no longer continue. \n You've failed to escape. \n You've failed to avoid the gnomes.";
                 //create a new color with the changed alpha value
                 changing = new Color(endingText.color.r, endingText.color.g, endingText.color.b, fade);
 

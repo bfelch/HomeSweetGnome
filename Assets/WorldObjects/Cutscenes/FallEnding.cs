@@ -54,7 +54,7 @@ public class FallEnding : MonoBehaviour
         switch (step)
         {
             case 0:
-                endingText.text = "You have fallen. \n The gnomes have won.";
+                endingText.text = "You have been consumed by the water.";
                 //create a new color with the changed alpha value
                 changing = new Color(endingText.color.r, endingText.color.g, endingText.color.b, fade);
 

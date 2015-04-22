@@ -1,8 +1,11 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\WorldObjects\Entities\Gargoyle\Gargoyle.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\WorldObjects\Cutscenes\GnomeEnding.cs">
     <Files>
-      <File FileName="Assets\WorldObjects\Entities\Gargoyle\Gargoyle.cs" Line="45" Column="53" />
+      <File FileName="Assets\WorldObjects\Entities\Player\EndGames.cs" Line="220" Column="1" />
+      <File FileName="Assets\WorldObjects\Entities\Player\PlayerInteractions.cs" Line="575" Column="2" />
+      <File FileName="Assets\WorldObjects\Cutscenes\GnomeEnding.cs" Line="56" Column="129" />
+      <File FileName="Assets\WorldObjects\Cutscenes\FallEnding.cs" Line="64" Column="41" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
