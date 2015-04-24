@@ -33,7 +33,7 @@ public class scrJournal : MonoBehaviour
 	
 	void Update()
 	{
-		if(Input.GetKeyUp(KeyCode.E) && journalOpen && closeOnce)
+		if((Input.GetKeyUp(KeyCode.E) || Input.GetMouseButtonUp(0)) && journalOpen && closeOnce)
 		{
 			CloseJournalPage();
             closeOnce = false;

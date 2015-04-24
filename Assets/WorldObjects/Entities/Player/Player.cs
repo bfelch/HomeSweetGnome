@@ -109,8 +109,8 @@ public class Player : MonoBehaviour
 		{
             Sanity();
         }
-        
-		if (Input.GetKeyDown(KeyCode.E))
+
+        if (Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonUp(0))
 		{
 			Push();
 		}

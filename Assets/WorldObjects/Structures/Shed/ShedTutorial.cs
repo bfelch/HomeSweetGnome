@@ -12,10 +12,20 @@ public class ShedTutorial : MonoBehaviour {
     public bool tutorial = true;
     private Font bark;
 
+    private string[] tutorialText;
+
     void Start () {
         //get the player interactions component
         pi = gameObject.GetComponent<PlayerInteractions>();
         bark = GetComponent<Player>().bark;
+
+        tutorialText = new string[8];
+
+        tutorialText[0] = "[WASD] will make you move. The [MOUSE] will adjust your gaze.";
+        tutorialText[1] = "[R] will close your eyes. [F] will hold your eyes open.";
+        tutorialText[2] = "[SHIFT] will make you run.";
+        tutorialText[3] = "[Q] will open your inventory and display your health.";
+        tutorialText[4] = "[ESC] will pause the game and allow you to quit, switch your settings, and view controls.";
 	}
 	
 	void Update () {
@@ -34,25 +44,14 @@ public class ShedTutorial : MonoBehaviour {
             GUI.color = Color.white;
             GUI.backgroundColor = Color.clear;
 
-            //check if we are at the second interaction and are not hovering over anything
-            if (interaction == 2 && !pi.canHover)
-            {
-                //this.GetComponent<Player>().flashFade();
-                //show GUI box to display to open the GUI
-                GUI.Box(new Rect(0, Screen.height - Screen.height / 2 + 150, Screen.width, 30),
-                "Press 'Q' to open user & close interface.");
-                //once the GUI is opened, switch the interaction so the GUI instructions no longer display
-                if (Input.GetKeyDown(KeyCode.Q)) { interaction = 3; }
-            }
-
             //check if we are hovering and the active target isn't null
-            else if (pi.canHover && pi.activeTarget != null)
+            if (pi.canHover && pi.activeTarget != null)
             {
                 string targetName = pi.activeTarget.name;
                 string improvedName = "";
                 for (int i = 0; i < targetName.Length; i++)
                 {
-                    if (char.IsUpper(targetName[i]) && i != 0)
+                    if ((char.IsUpper(targetName[i]) || char.IsNumber(targetName[i])) && i != 0)
                     {
                         improvedName += " ";
                     }
@@ -64,7 +63,7 @@ public class ShedTutorial : MonoBehaviour {
                    // this.GetComponent<Player>().flashFade();
                     //Display item name with instructions
                     GUI.Box(new Rect(0, Screen.height - Screen.height/2 + 150, Screen.width, 30),
-                    "Press 'E' to pick up the " + improvedName);
+                    "[E] or [LEFT CLICK] will pick up the " + improvedName + ".");
                 }
                 //check if the active target is a useable object
                 else if (pi.activeTarget.tag == "Useable")
@@ -72,7 +71,7 @@ public class ShedTutorial : MonoBehaviour {
                     //this.GetComponent<Player>().flashFade();
                     //Display item name with instructions
                     GUI.Box(new Rect(0, Screen.height - Screen.height / 2 + 150, Screen.width, 30),
-                    "Press 'E' to use the " + improvedName);
+                    "[E] or [LEFT CLICK] will interact with the " + improvedName + ".");
                 }
                 //check if the active target is a consumable object
                 else if (pi.activeTarget.tag == "Consumable")
@@ -80,26 +79,25 @@ public class ShedTutorial : MonoBehaviour {
                     //this.GetComponent<Player>().flashFade();
                     //Display item name with instructions
                     GUI.Box(new Rect(0, Screen.height - Screen.height / 2 + 150, Screen.width, 30),
-                    "Press 'E' to consume the " + improvedName);
+                    "[E] or [LEFT CLICK] will consume the " + improvedName + ".");
                 }
-                //after we have interaction with an object one, switch the interaction to stage 2
-                if (interaction == 1 && Input.GetKeyDown(KeyCode.E))
-                    interaction = 2;
             }
             //check if the interaction is 0
-            if (interaction == 0 && !pi.canHover)
+            if (!pi.canHover && interaction < 5)
             {
                 //start the display timer
                 startTimer = startTimer - Time.deltaTime;
                 //flash the text
                 //this.GetComponent<Player>().flashFade();
                 //display instructions
-                GUI.Box(new Rect(0, Screen.height - Screen.height / 2+100, Screen.width, 150),
-                "Use 'WASD' to move, use the 'MOUSE' to look. \nUse 'SHIFT' to sprint. \nUse 'R' to close your eyes, use 'F' to hold them open. \n \n *Headphones are recommended for full immersion.*");
+                GUI.Box(new Rect(0, Screen.height - Screen.height / 2+150, Screen.width, 30),
+                tutorialText[interaction]);
+                /*"WASD will make you move. The MOUSE will shift your gaze. \n SHIFT will make you run.  \n Your eyes will hold open with F and they will close with R. \n *Headphones are recommended for full immersion.*");*/
+                /*"Use 'WASD' to move, use the 'MOUSE' to look. \nUse 'SHIFT' to sprint. \nUse 'R' to close your eyes, use 'F' to hold them open. \n \n *Headphones are recommended for full immersion.*");*/
 
 
                 //once timer reaches 0, switch interaction to one
-                if (startTimer < 0) { interaction = 1; }
+                if (startTimer < 0) { interaction++; startTimer = 15; }
             }
         }
     }

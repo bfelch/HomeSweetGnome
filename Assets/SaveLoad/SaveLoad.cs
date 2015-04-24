@@ -481,7 +481,7 @@ public class SaveLoad : MonoBehaviour
 
     void OnGUI()
     {
-        //check if we are saving
+        /*check if we are saving
         if (saving)
         {
             //display saving notification
@@ -499,6 +499,7 @@ public class SaveLoad : MonoBehaviour
                 displayTime--;
             }
         }
+         * */
     }
 
     int CompareObNames(GameObject x, GameObject y)

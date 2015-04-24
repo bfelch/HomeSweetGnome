@@ -219,7 +219,7 @@ public class PlayerInteractions : MonoBehaviour
 
             GUI.Box(new Rect(controlPos, 90, 180, 25), "WASD - Move");
             GUI.Box(new Rect(controlPos, 110, 180, 25), "Q - Inventory");
-            GUI.Box(new Rect(controlPos, 130, 180, 25), "E - Interact");
+            GUI.Box(new Rect(controlPos, 130, 180, 25), "E & Left Click - Interact");
             GUI.Box(new Rect(controlPos, 150, 180, 25), "R - Close Eyes");
             GUI.Box(new Rect(controlPos, 170, 180, 25), "F - Open Eyes");
             GUI.Box(new Rect(controlPos, 190, 180, 25), "Shift - Sprint");
@@ -315,7 +315,7 @@ public class PlayerInteractions : MonoBehaviour
             {
 				if(displayWarningMsg)
 				{
-	                GUI.Box(new Rect(0, Screen.height - Screen.height / 2 + 150, Screen.width, 50), "Press 'E' to push a gnome. \n WARNING: This will do you harm, but temporarily disable the gnome.");
+	                GUI.Box(new Rect(0, Screen.height - Screen.height / 2 + 150, Screen.width, 50), "[E] or [LEFT CLICK] will push a gnome. \n WARNING: This will do you harm, but temporarily disable the gnome.");
 	                waitToDisableWarningMsg = true;
 				}
 				else
@@ -325,7 +325,7 @@ public class PlayerInteractions : MonoBehaviour
             }
             else if (lookingAtGargoyle)
             {
-                GUI.Box(new Rect(0, Screen.height - Screen.height / 2 + 150, Screen.width, 50), "Press 'E' to push the gargoyle.");
+                GUI.Box(new Rect(0, Screen.height - Screen.height / 2 + 150, Screen.width, 50), "[E] or [LEFT CLICK] will push the gargoyle.");
 
             }
             else if (notUseable && activeTarget != null)
@@ -449,7 +449,7 @@ public class PlayerInteractions : MonoBehaviour
         canHover = true; //Display item name
 
         //Pressing the E (Interact) key?
-        if (Input.GetKeyUp(KeyCode.E))
+        if (Input.GetKeyUp(KeyCode.E) || Input.GetMouseButtonUp(0))
         {
             if (playerGUI.AddToSlot(targetItem))
             {
@@ -474,7 +474,7 @@ public class PlayerInteractions : MonoBehaviour
         canHover = true; //Display item name
 
         //Pressing the E (Interact) key?
-        if (Input.GetKeyUp(KeyCode.E))
+        if (Input.GetKeyUp(KeyCode.E) || Input.GetMouseButtonUp(0))
         {
             if(targetUseable.Interact() != "")
             {
@@ -563,7 +563,7 @@ public class PlayerInteractions : MonoBehaviour
         string improvedName = "";
         for (int i = 0; i < targetName.Length; i++)
         {
-            if (char.IsUpper(targetName[i]) && i != 0)
+            if ((char.IsUpper(targetName[i]) || char.IsNumber(targetName[i])) && i != 0)
             {
                 improvedName += " ";
             }

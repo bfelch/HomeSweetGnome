@@ -238,19 +238,26 @@ public class Useable : MonoBehaviour
             }
             else if (type == UseableType.LIGHT)
             {
-				if(this.gameObject.name == "ChandelierSwitch" && chandOn == false && chandReady == true)
+				if(this.gameObject.name == "ChandelierSwitch" && chandOn == false)
 				{
-					chandOn = true;
+                    if (chandReady)
+                    {
+                        chandOn = true;
 
-					gameObject.GetComponent<Light>().enabled = true;
-					GameObject.Find("gnomeTrapCircle").GetComponent<MeshRenderer>().enabled = true;
+                        gameObject.GetComponent<Light>().enabled = true;
+                        GameObject.Find("gnomeTrapCircle").GetComponent<MeshRenderer>().enabled = true;
 
-					//enable darkness scripted event
-					GameObject.Find("Darkness").GetComponent<scrDarkness>().PrepareEvent();
+                        //enable darkness scripted event
+                        GameObject.Find("Darkness").GetComponent<scrDarkness>().PrepareEvent();
 
-					//Unhighlight Chand Switch
-					highlighter.Unhighlight(GameObject.Find("ChandSwitch"));
-					highlighter.Unhighlight(GameObject.Find("ChandSwitchBase"));
+                        //Unhighlight Chand Switch
+                        highlighter.Unhighlight(GameObject.Find("ChandSwitch"));
+                        highlighter.Unhighlight(GameObject.Find("ChandSwitchBase"));
+                    }
+                    else
+                    {
+
+                    }
 
 				}
 				else if(this.gameObject.name == "ShedLight")
