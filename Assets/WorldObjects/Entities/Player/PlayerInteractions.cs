@@ -7,6 +7,7 @@ public class PlayerInteractions : MonoBehaviour
     private HingeJoint doorHinge;
     private ShedTutorial st;
     private string GUIString;
+    public GUISkin daSkin;
 
     //duration of play
     public float timePlayed;
@@ -56,7 +57,16 @@ public class PlayerInteractions : MonoBehaviour
     void Start()
     {
         showGUI = false;
+        pause = false;
         StartCoroutine(DelayedStart());
+
+        GameObject.Find("ContrastLight").GetComponent<Light>().intensity = PlayerPrefs.GetFloat("Lighting");
+        GameObject.Find("Player").GetComponent<MouseLook>().sensitivityX = PlayerPrefs.GetFloat("XSens");
+        GameObject.Find("Main Camera").GetComponent<MouseLook>().sensitivityY = PlayerPrefs.GetFloat("YSens");
+
+        lightingValue = PlayerPrefs.GetFloat("Lighting"); ;
+        xSens = PlayerPrefs.GetFloat("XSens"); ;
+        ySens = PlayerPrefs.GetFloat("YSens");
         
     }
 
@@ -112,7 +122,7 @@ public class PlayerInteractions : MonoBehaviour
         */
         
 		//CHEATS!
-		/*
+		
 		if(Input.GetKeyDown(KeyCode.Alpha6))
 		{
 			//Gate Teleport
@@ -137,15 +147,18 @@ public class PlayerInteractions : MonoBehaviour
         {
             //Tunnel Teleport
             transform.position = new Vector3(57.45F, 26.58F, 19.13F);
-        }*/
+        }
 
     }
 
     void OnGUI()
     {
+        /*
         GUI.color = Color.white;
         GUI.backgroundColor = Color.white;
         GUI.skin.font = bark;
+         * */
+        GUI.skin = daSkin;
         if (pause && pauseMenu)
         {
             mouseLook.enabled = false;
@@ -201,25 +214,28 @@ public class PlayerInteractions : MonoBehaviour
             GUI.backgroundColor = Color.white;
             lightingValue = GUI.HorizontalSlider(new Rect(sliderPos, 120, 180, 10), lightingValue, 0, 0.1f);
             GameObject.Find("ContrastLight").GetComponent<Light>().intensity = lightingValue;
+            PlayerPrefs.SetFloat("Lighting", lightingValue);
 
             GUI.backgroundColor = Color.clear;
             GUI.Box(new Rect(sliderPos, 130, 180, 30), "Adjust X Sensitivity");
             GUI.backgroundColor = Color.white;
             xSens = GUI.HorizontalSlider(new Rect(sliderPos, 160, 180, 10), xSens, 2, 12);
             GameObject.Find("Player").GetComponent<MouseLook>().sensitivityX = xSens;
+            PlayerPrefs.SetFloat("XSens", xSens);
 
             GUI.backgroundColor = Color.clear;
             GUI.Box(new Rect(sliderPos, 170, 180, 30), "Adjust Y Sensitivity");
             GUI.backgroundColor = Color.white;
             ySens = GUI.HorizontalSlider(new Rect(sliderPos, 200, 180, 10), ySens, 2, 12);
             GameObject.Find("Main Camera").GetComponent<MouseLook>().sensitivityY = ySens;
+            PlayerPrefs.SetFloat("YSens", ySens);
 
             GUI.backgroundColor = Color.clear;
             GUI.skin.box.alignment = TextAnchor.MiddleLeft;
 
             GUI.Box(new Rect(controlPos, 90, 180, 25), "WASD - Move");
             GUI.Box(new Rect(controlPos, 110, 180, 25), "Q - Inventory");
-            GUI.Box(new Rect(controlPos, 130, 180, 25), "E & Left Click - Interact");
+            GUI.Box(new Rect(controlPos, 130, 180, 25), "E/Left Click - Interact");
             GUI.Box(new Rect(controlPos, 150, 180, 25), "R - Close Eyes");
             GUI.Box(new Rect(controlPos, 170, 180, 25), "F - Open Eyes");
             GUI.Box(new Rect(controlPos, 190, 180, 25), "Shift - Sprint");

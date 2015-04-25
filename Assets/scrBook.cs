@@ -66,6 +66,7 @@ public class scrBook : MonoBehaviour
 
 			//Chandelier Light Switch Indicator
 			GameObject.Find("ChandelierSwitch").GetComponent<Useable>().chandReady = true;
+            GameObject.Find("ChandelierSwitch").tag = "Useable";
 
 			scrHighlightController highlighter = GameObject.Find("Highlighter").GetComponent<scrHighlightController>();
 			//Unhighlight Book
