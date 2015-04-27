@@ -1,0 +1,1759 @@
+fileFormatVersion: 2
+guid: ec7680217746d1e42a498004df2bdf6f
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Middle_01
+    100002: ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Middle_01 1
+    100004: ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Middle_01 2
+    100006: ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Middle_01 3
+    100008: ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Middle_01 4
+    100010: ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Middle_01 5
+    100012: ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Middle_01 6
+    100014: ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Middle_01 7
+    100016: ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Middle_01 8
+    100018: ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Pinky_01
+    100020: ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Pinky_01 1
+    100022: ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Pinky_01 2
+    100024: ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Pinky_01 3
+    100026: ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Pinky_01 4
+    100028: ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Pinky_01 5
+    100030: ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Pinky_01 6
+    100032: ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Pinky_01 7
+    100034: ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Pinky_01 8
+    100036: ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Pointer_01
+    100038: ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Pointer_01 1
+    100040: ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Pointer_01 2
+    100042: ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Pointer_01 3
+    100044: ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Pointer_01 4
+    100046: ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Pointer_01 5
+    100048: ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Pointer_01 6
+    100050: ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Pointer_01 7
+    100052: ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Pointer_01 8
+    100054: ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Ring_01
+    100056: ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Ring_01 1
+    100058: ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Ring_01 2
+    100060: ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Ring_01 3
+    100062: ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Ring_01 4
+    100064: ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Ring_01 5
+    100066: ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Ring_01 6
+    100068: ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Ring_01 7
+    100070: ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Ring_01 8
+    100072: ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Thumb_01
+    100074: ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Thumb_01 1
+    100076: ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Thumb_01 2
+    100078: ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Thumb_01 3
+    100080: ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Thumb_01 4
+    100082: ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Thumb_01 5
+    100084: ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Thumb_01 6
+    100086: ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Thumb_01 7
+    100088: ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Thumb_01 8
+    100090: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01
+    100092: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 1
+    100094: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 2
+    100096: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 3
+    100098: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 4
+    100100: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 5
+    100102: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 6
+    100104: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 7
+    100106: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 8
+    100108: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+    100110: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01 1
+    100112: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01 2
+    100114: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01 3
+    100116: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01 4
+    100118: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01 5
+    100120: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01 6
+    100122: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01 7
+    100124: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01 8
+    100126: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01
+    100128: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 1
+    100130: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 2
+    100132: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 3
+    100134: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 4
+    100136: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 5
+    100138: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 6
+    100140: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 7
+    100142: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 8
+    100144: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_a01
+    100146: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_a01 1
+    100148: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_a01 2
+    100150: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_a01 3
+    100152: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_a01 4
+    100154: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_a01 5
+    100156: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_a01 6
+    100158: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_a01 7
+    100160: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_a01 8
+    100162: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_b01
+    100164: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_b01 1
+    100166: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_b01 2
+    100168: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_b01 3
+    100170: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_b01 4
+    100172: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_b01 5
+    100174: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_b01 6
+    100176: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_b01 7
+    100178: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_b01 8
+    100180: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_c01
+    100182: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_c01 1
+    100184: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_c01 2
+    100186: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_c01 3
+    100188: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_c01 4
+    100190: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_c01 5
+    100192: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_c01 6
+    100194: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_c01 7
+    100196: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_c01 8
+    100198: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01
+    100200: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 1
+    100202: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 2
+    100204: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 3
+    100206: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 4
+    100208: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 5
+    100210: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 6
+    100212: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 7
+    100214: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 8
+    100216: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_a01
+    100218: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_a01 1
+    100220: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_a01 2
+    100222: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_a01 3
+    100224: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_a01 4
+    100226: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_a01 5
+    100228: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_a01 6
+    100230: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_a01 7
+    100232: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_a01 8
+    100234: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_b01
+    100236: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_b01 1
+    100238: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_b01 2
+    100240: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_b01 3
+    100242: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_b01 4
+    100244: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_b01 5
+    100246: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_b01 6
+    100248: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_b01 7
+    100250: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_b01 8
+    100252: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_c01
+    100254: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_c01 1
+    100256: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_c01 2
+    100258: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_c01 3
+    100260: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_c01 4
+    100262: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_c01 5
+    100264: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_c01 6
+    100266: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_c01 7
+    100268: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_c01 8
+    100270: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_a01
+    100272: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_a01 1
+    100274: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_a01 2
+    100276: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_a01 3
+    100278: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_a01 4
+    100280: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_a01 5
+    100282: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_a01 6
+    100284: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_a01 7
+    100286: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_a01 8
+    100288: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_b01
+    100290: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_b01 1
+    100292: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_b01 2
+    100294: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_b01 3
+    100296: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_b01 4
+    100298: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_b01 5
+    100300: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_b01 6
+    100302: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_b01 7
+    100304: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_b01 8
+    100306: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_c01
+    100308: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_c01 1
+    100310: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_c01 2
+    100312: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_c01 3
+    100314: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_c01 4
+    100316: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_c01 5
+    100318: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_c01 6
+    100320: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_c01 7
+    100322: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_c01 8
+    100324: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_a01
+    100326: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_a01 1
+    100328: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_a01 2
+    100330: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_a01 3
+    100332: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_a01 4
+    100334: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_a01 5
+    100336: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_a01 6
+    100338: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_a01 7
+    100340: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_a01 8
+    100342: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_b01
+    100344: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_b01 1
+    100346: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_b01 2
+    100348: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_b01 3
+    100350: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_b01 4
+    100352: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_b01 5
+    100354: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_b01 6
+    100356: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_b01 7
+    100358: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_b01 8
+    100360: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_c01
+    100362: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_c01 1
+    100364: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_c01 2
+    100366: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_c01 3
+    100368: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_c01 4
+    100370: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_c01 5
+    100372: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_c01 6
+    100374: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_c01 7
+    100376: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_c01 8
+    100378: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Thumb_a01
+    100380: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Thumb_a01 1
+    100382: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Thumb_a01 2
+    100384: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Thumb_a01 3
+    100386: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Thumb_a01 4
+    100388: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Thumb_a01 5
+    100390: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Thumb_a01 6
+    100392: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Thumb_a01 7
+    100394: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Thumb_a01 8
+    100396: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Thumb_b01
+    100398: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Thumb_b01 1
+    100400: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Thumb_b01 2
+    100402: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Thumb_b01 3
+    100404: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Thumb_b01 4
+    100406: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Thumb_b01 5
+    100408: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Thumb_b01 6
+    100410: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Thumb_b01 7
+    100412: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Thumb_b01 8
+    100414: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+    100416: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01 1
+    100418: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01 2
+    100420: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01 3
+    100422: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01 4
+    100424: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01 5
+    100426: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01 6
+    100428: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01 7
+    100430: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01 8
+    100432: ArmBeast_SkinWeight:MansionPopulation_Floor2:transform1
+    100434: ArmBeast_SkinWeight:MansionPopulation_Floor2:transform2
+    100436: ArmBeast_SkinWeight:MansionPopulation_Floor2:transform3
+    100438: ArmBeast_SkinWeight:MansionPopulation_Floor2:transform4
+    100440: ArmBeast_SkinWeight:MansionPopulation_Floor2:transform5
+    100442: Jnt_ArmBase_01
+    100444: Jnt_ArmBase_01 1
+    100446: Jnt_ArmBase_01 2
+    100448: Jnt_ArmBase_01 3
+    100450: Jnt_ArmBase_01 4
+    100452: Jnt_ArmBase_01 5
+    100454: Jnt_ArmBase_02
+    100456: Jnt_ArmBase_03
+    100458: Jnt_ArmBase_04
+    100460: MASTER_ARM_MESH_TARGET
+    100462: MASTER_ROOT_01
+    100464: //RootNode
+    400000: ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Middle_01
+    400002: ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Middle_01 1
+    400004: ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Middle_01 2
+    400006: ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Middle_01 3
+    400008: ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Middle_01 4
+    400010: ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Middle_01 5
+    400012: ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Middle_01 6
+    400014: ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Middle_01 7
+    400016: ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Middle_01 8
+    400018: ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Pinky_01
+    400020: ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Pinky_01 1
+    400022: ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Pinky_01 2
+    400024: ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Pinky_01 3
+    400026: ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Pinky_01 4
+    400028: ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Pinky_01 5
+    400030: ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Pinky_01 6
+    400032: ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Pinky_01 7
+    400034: ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Pinky_01 8
+    400036: ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Pointer_01
+    400038: ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Pointer_01 1
+    400040: ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Pointer_01 2
+    400042: ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Pointer_01 3
+    400044: ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Pointer_01 4
+    400046: ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Pointer_01 5
+    400048: ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Pointer_01 6
+    400050: ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Pointer_01 7
+    400052: ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Pointer_01 8
+    400054: ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Ring_01
+    400056: ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Ring_01 1
+    400058: ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Ring_01 2
+    400060: ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Ring_01 3
+    400062: ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Ring_01 4
+    400064: ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Ring_01 5
+    400066: ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Ring_01 6
+    400068: ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Ring_01 7
+    400070: ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Ring_01 8
+    400072: ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Thumb_01
+    400074: ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Thumb_01 1
+    400076: ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Thumb_01 2
+    400078: ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Thumb_01 3
+    400080: ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Thumb_01 4
+    400082: ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Thumb_01 5
+    400084: ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Thumb_01 6
+    400086: ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Thumb_01 7
+    400088: ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Thumb_01 8
+    400090: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01
+    400092: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 1
+    400094: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 2
+    400096: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 3
+    400098: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 4
+    400100: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 5
+    400102: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 6
+    400104: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 7
+    400106: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 8
+    400108: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+    400110: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01 1
+    400112: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01 2
+    400114: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01 3
+    400116: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01 4
+    400118: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01 5
+    400120: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01 6
+    400122: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01 7
+    400124: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01 8
+    400126: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01
+    400128: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 1
+    400130: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 2
+    400132: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 3
+    400134: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 4
+    400136: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 5
+    400138: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 6
+    400140: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 7
+    400142: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 8
+    400144: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_a01
+    400146: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_a01 1
+    400148: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_a01 2
+    400150: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_a01 3
+    400152: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_a01 4
+    400154: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_a01 5
+    400156: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_a01 6
+    400158: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_a01 7
+    400160: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_a01 8
+    400162: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_b01
+    400164: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_b01 1
+    400166: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_b01 2
+    400168: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_b01 3
+    400170: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_b01 4
+    400172: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_b01 5
+    400174: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_b01 6
+    400176: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_b01 7
+    400178: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_b01 8
+    400180: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_c01
+    400182: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_c01 1
+    400184: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_c01 2
+    400186: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_c01 3
+    400188: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_c01 4
+    400190: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_c01 5
+    400192: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_c01 6
+    400194: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_c01 7
+    400196: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_c01 8
+    400198: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01
+    400200: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 1
+    400202: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 2
+    400204: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 3
+    400206: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 4
+    400208: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 5
+    400210: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 6
+    400212: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 7
+    400214: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 8
+    400216: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_a01
+    400218: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_a01 1
+    400220: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_a01 2
+    400222: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_a01 3
+    400224: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_a01 4
+    400226: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_a01 5
+    400228: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_a01 6
+    400230: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_a01 7
+    400232: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_a01 8
+    400234: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_b01
+    400236: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_b01 1
+    400238: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_b01 2
+    400240: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_b01 3
+    400242: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_b01 4
+    400244: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_b01 5
+    400246: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_b01 6
+    400248: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_b01 7
+    400250: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_b01 8
+    400252: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_c01
+    400254: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_c01 1
+    400256: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_c01 2
+    400258: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_c01 3
+    400260: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_c01 4
+    400262: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_c01 5
+    400264: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_c01 6
+    400266: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_c01 7
+    400268: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_c01 8
+    400270: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_a01
+    400272: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_a01 1
+    400274: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_a01 2
+    400276: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_a01 3
+    400278: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_a01 4
+    400280: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_a01 5
+    400282: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_a01 6
+    400284: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_a01 7
+    400286: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_a01 8
+    400288: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_b01
+    400290: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_b01 1
+    400292: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_b01 2
+    400294: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_b01 3
+    400296: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_b01 4
+    400298: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_b01 5
+    400300: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_b01 6
+    400302: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_b01 7
+    400304: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_b01 8
+    400306: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_c01
+    400308: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_c01 1
+    400310: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_c01 2
+    400312: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_c01 3
+    400314: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_c01 4
+    400316: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_c01 5
+    400318: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_c01 6
+    400320: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_c01 7
+    400322: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_c01 8
+    400324: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_a01
+    400326: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_a01 1
+    400328: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_a01 2
+    400330: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_a01 3
+    400332: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_a01 4
+    400334: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_a01 5
+    400336: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_a01 6
+    400338: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_a01 7
+    400340: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_a01 8
+    400342: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_b01
+    400344: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_b01 1
+    400346: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_b01 2
+    400348: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_b01 3
+    400350: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_b01 4
+    400352: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_b01 5
+    400354: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_b01 6
+    400356: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_b01 7
+    400358: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_b01 8
+    400360: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_c01
+    400362: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_c01 1
+    400364: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_c01 2
+    400366: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_c01 3
+    400368: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_c01 4
+    400370: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_c01 5
+    400372: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_c01 6
+    400374: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_c01 7
+    400376: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_c01 8
+    400378: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Thumb_a01
+    400380: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Thumb_a01 1
+    400382: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Thumb_a01 2
+    400384: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Thumb_a01 3
+    400386: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Thumb_a01 4
+    400388: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Thumb_a01 5
+    400390: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Thumb_a01 6
+    400392: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Thumb_a01 7
+    400394: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Thumb_a01 8
+    400396: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Thumb_b01
+    400398: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Thumb_b01 1
+    400400: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Thumb_b01 2
+    400402: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Thumb_b01 3
+    400404: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Thumb_b01 4
+    400406: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Thumb_b01 5
+    400408: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Thumb_b01 6
+    400410: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Thumb_b01 7
+    400412: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Thumb_b01 8
+    400414: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+    400416: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01 1
+    400418: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01 2
+    400420: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01 3
+    400422: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01 4
+    400424: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01 5
+    400426: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01 6
+    400428: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01 7
+    400430: ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01 8
+    400432: ArmBeast_SkinWeight:MansionPopulation_Floor2:transform1
+    400434: ArmBeast_SkinWeight:MansionPopulation_Floor2:transform2
+    400436: ArmBeast_SkinWeight:MansionPopulation_Floor2:transform3
+    400438: ArmBeast_SkinWeight:MansionPopulation_Floor2:transform4
+    400440: ArmBeast_SkinWeight:MansionPopulation_Floor2:transform5
+    400442: Jnt_ArmBase_01
+    400444: Jnt_ArmBase_01 1
+    400446: Jnt_ArmBase_01 2
+    400448: Jnt_ArmBase_01 3
+    400450: Jnt_ArmBase_01 4
+    400452: Jnt_ArmBase_01 5
+    400454: Jnt_ArmBase_02
+    400456: Jnt_ArmBase_03
+    400458: Jnt_ArmBase_04
+    400460: MASTER_ARM_MESH_TARGET
+    400462: MASTER_ROOT_01
+    400464: //RootNode
+    4300000: MASTER_ARM_MESH_TARGET
+    7400000: MonsterArmFlail
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: MASTER_ARM_MESH_TARGET
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: MonsterArmFlail
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 48
+      wrapMode: 8
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: MASTER_ARM_MESH_TARGET
+        weight: 1
+      - path: MASTER_ROOT_01
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform1
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform1/Jnt_ArmBase_01
+          1
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform1/Jnt_ArmBase_01
+          1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 4
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform1/Jnt_ArmBase_01
+          1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          4
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform1/Jnt_ArmBase_01
+          1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 4
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform1/Jnt_ArmBase_01
+          1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          4
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform1/Jnt_ArmBase_01
+          1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 4
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform1/Jnt_ArmBase_01
+          1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_a01
+          4
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform1/Jnt_ArmBase_01
+          1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_a01
+          4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_b01 4
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform1/Jnt_ArmBase_01
+          1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_a01
+          4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_b01 4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_c01
+          4
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform1/Jnt_ArmBase_01
+          1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_a01
+          4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_b01 4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_c01
+          4/ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Middle_01 4
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform1/Jnt_ArmBase_01
+          1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_a01
+          4
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform1/Jnt_ArmBase_01
+          1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_a01
+          4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_b01 4
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform1/Jnt_ArmBase_01
+          1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_a01
+          4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_b01 4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_c01
+          4
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform1/Jnt_ArmBase_01
+          1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_a01
+          4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_b01 4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_c01
+          4/ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Pinky_01 4
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform1/Jnt_ArmBase_01
+          1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_a01
+          4
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform1/Jnt_ArmBase_01
+          1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_a01
+          4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_b01 4
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform1/Jnt_ArmBase_01
+          1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_a01
+          4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_b01 4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_c01
+          4
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform1/Jnt_ArmBase_01
+          1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_a01
+          4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_b01 4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_c01
+          4/ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Pointer_01 4
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform1/Jnt_ArmBase_01
+          1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_a01
+          4
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform1/Jnt_ArmBase_01
+          1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_a01
+          4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_b01 4
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform1/Jnt_ArmBase_01
+          1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_a01
+          4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_b01 4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_c01
+          4
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform1/Jnt_ArmBase_01
+          1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_a01
+          4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_b01 4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_c01
+          4/ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Ring_01 4
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform1/Jnt_ArmBase_01
+          1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Thumb_a01
+          4
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform1/Jnt_ArmBase_01
+          1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Thumb_a01
+          4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Thumb_b01 4
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform1/Jnt_ArmBase_01
+          1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Thumb_a01
+          4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Thumb_b01 4/ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Thumb_01
+          4
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform2
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform2/Jnt_ArmBase_01
+          2
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform2/Jnt_ArmBase_01
+          2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 5
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform2/Jnt_ArmBase_01
+          2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          5
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform2/Jnt_ArmBase_01
+          2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 5
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform2/Jnt_ArmBase_01
+          2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          5
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform2/Jnt_ArmBase_01
+          2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 5
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform2/Jnt_ArmBase_01
+          2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_a01
+          5
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform2/Jnt_ArmBase_01
+          2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_a01
+          5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_b01 5
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform2/Jnt_ArmBase_01
+          2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_a01
+          5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_b01 5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_c01
+          5
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform2/Jnt_ArmBase_01
+          2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_a01
+          5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_b01 5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_c01
+          5/ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Middle_01 5
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform2/Jnt_ArmBase_01
+          2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_a01
+          5
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform2/Jnt_ArmBase_01
+          2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_a01
+          5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_b01 5
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform2/Jnt_ArmBase_01
+          2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_a01
+          5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_b01 5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_c01
+          5
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform2/Jnt_ArmBase_01
+          2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_a01
+          5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_b01 5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_c01
+          5/ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Pinky_01 5
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform2/Jnt_ArmBase_01
+          2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_a01
+          5
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform2/Jnt_ArmBase_01
+          2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_a01
+          5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_b01 5
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform2/Jnt_ArmBase_01
+          2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_a01
+          5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_b01 5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_c01
+          5
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform2/Jnt_ArmBase_01
+          2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_a01
+          5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_b01 5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_c01
+          5/ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Pointer_01 5
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform2/Jnt_ArmBase_01
+          2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_a01
+          5
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform2/Jnt_ArmBase_01
+          2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_a01
+          5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_b01 5
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform2/Jnt_ArmBase_01
+          2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_a01
+          5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_b01 5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_c01
+          5
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform2/Jnt_ArmBase_01
+          2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_a01
+          5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_b01 5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_c01
+          5/ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Ring_01 5
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform2/Jnt_ArmBase_01
+          2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Thumb_a01
+          5
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform2/Jnt_ArmBase_01
+          2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Thumb_a01
+          5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Thumb_b01 5
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform2/Jnt_ArmBase_01
+          2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Thumb_a01
+          5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Thumb_b01 5/ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Thumb_01
+          5
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform3
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform3/Jnt_ArmBase_01
+          3
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform3/Jnt_ArmBase_01
+          3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 6
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform3/Jnt_ArmBase_01
+          3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          6
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform3/Jnt_ArmBase_01
+          3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 6
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform3/Jnt_ArmBase_01
+          3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          6
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform3/Jnt_ArmBase_01
+          3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 6
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform3/Jnt_ArmBase_01
+          3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_a01
+          6
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform3/Jnt_ArmBase_01
+          3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_a01
+          6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_b01 6
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform3/Jnt_ArmBase_01
+          3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_a01
+          6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_b01 6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_c01
+          6
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform3/Jnt_ArmBase_01
+          3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_a01
+          6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_b01 6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_c01
+          6/ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Middle_01 6
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform3/Jnt_ArmBase_01
+          3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_a01
+          6
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform3/Jnt_ArmBase_01
+          3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_a01
+          6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_b01 6
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform3/Jnt_ArmBase_01
+          3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_a01
+          6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_b01 6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_c01
+          6
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform3/Jnt_ArmBase_01
+          3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_a01
+          6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_b01 6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_c01
+          6/ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Pinky_01 6
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform3/Jnt_ArmBase_01
+          3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_a01
+          6
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform3/Jnt_ArmBase_01
+          3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_a01
+          6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_b01 6
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform3/Jnt_ArmBase_01
+          3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_a01
+          6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_b01 6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_c01
+          6
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform3/Jnt_ArmBase_01
+          3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_a01
+          6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_b01 6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_c01
+          6/ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Pointer_01 6
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform3/Jnt_ArmBase_01
+          3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_a01
+          6
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform3/Jnt_ArmBase_01
+          3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_a01
+          6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_b01 6
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform3/Jnt_ArmBase_01
+          3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_a01
+          6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_b01 6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_c01
+          6
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform3/Jnt_ArmBase_01
+          3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_a01
+          6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_b01 6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_c01
+          6/ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Ring_01 6
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform3/Jnt_ArmBase_01
+          3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Thumb_a01
+          6
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform3/Jnt_ArmBase_01
+          3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Thumb_a01
+          6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Thumb_b01 6
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform3/Jnt_ArmBase_01
+          3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Thumb_a01
+          6/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Thumb_b01 6/ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Thumb_01
+          6
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform4
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform4/Jnt_ArmBase_01
+          4
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform4/Jnt_ArmBase_01
+          4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 7
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform4/Jnt_ArmBase_01
+          4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          7
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform4/Jnt_ArmBase_01
+          4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 7
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform4/Jnt_ArmBase_01
+          4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          7
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform4/Jnt_ArmBase_01
+          4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 7
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform4/Jnt_ArmBase_01
+          4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_a01
+          7
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform4/Jnt_ArmBase_01
+          4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_a01
+          7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_b01 7
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform4/Jnt_ArmBase_01
+          4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_a01
+          7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_b01 7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_c01
+          7
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform4/Jnt_ArmBase_01
+          4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_a01
+          7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_b01 7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_c01
+          7/ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Middle_01 7
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform4/Jnt_ArmBase_01
+          4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_a01
+          7
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform4/Jnt_ArmBase_01
+          4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_a01
+          7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_b01 7
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform4/Jnt_ArmBase_01
+          4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_a01
+          7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_b01 7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_c01
+          7
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform4/Jnt_ArmBase_01
+          4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_a01
+          7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_b01 7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_c01
+          7/ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Pinky_01 7
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform4/Jnt_ArmBase_01
+          4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_a01
+          7
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform4/Jnt_ArmBase_01
+          4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_a01
+          7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_b01 7
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform4/Jnt_ArmBase_01
+          4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_a01
+          7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_b01 7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_c01
+          7
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform4/Jnt_ArmBase_01
+          4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_a01
+          7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_b01 7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_c01
+          7/ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Pointer_01 7
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform4/Jnt_ArmBase_01
+          4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_a01
+          7
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform4/Jnt_ArmBase_01
+          4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_a01
+          7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_b01 7
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform4/Jnt_ArmBase_01
+          4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_a01
+          7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_b01 7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_c01
+          7
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform4/Jnt_ArmBase_01
+          4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_a01
+          7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_b01 7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_c01
+          7/ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Ring_01 7
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform4/Jnt_ArmBase_01
+          4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Thumb_a01
+          7
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform4/Jnt_ArmBase_01
+          4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Thumb_a01
+          7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Thumb_b01 7
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform4/Jnt_ArmBase_01
+          4/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Thumb_a01
+          7/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Thumb_b01 7/ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Thumb_01
+          7
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform5
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform5/Jnt_ArmBase_01
+          5
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform5/Jnt_ArmBase_01
+          5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 8
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform5/Jnt_ArmBase_01
+          5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          8
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform5/Jnt_ArmBase_01
+          5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 8
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform5/Jnt_ArmBase_01
+          5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          8
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform5/Jnt_ArmBase_01
+          5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 8
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform5/Jnt_ArmBase_01
+          5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_a01
+          8
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform5/Jnt_ArmBase_01
+          5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_a01
+          8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_b01 8
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform5/Jnt_ArmBase_01
+          5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_a01
+          8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_b01 8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_c01
+          8
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform5/Jnt_ArmBase_01
+          5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_a01
+          8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_b01 8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_c01
+          8/ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Middle_01 8
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform5/Jnt_ArmBase_01
+          5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_a01
+          8
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform5/Jnt_ArmBase_01
+          5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_a01
+          8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_b01 8
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform5/Jnt_ArmBase_01
+          5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_a01
+          8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_b01 8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_c01
+          8
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform5/Jnt_ArmBase_01
+          5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_a01
+          8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_b01 8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_c01
+          8/ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Pinky_01 8
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform5/Jnt_ArmBase_01
+          5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_a01
+          8
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform5/Jnt_ArmBase_01
+          5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_a01
+          8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_b01 8
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform5/Jnt_ArmBase_01
+          5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_a01
+          8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_b01 8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_c01
+          8
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform5/Jnt_ArmBase_01
+          5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_a01
+          8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_b01 8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_c01
+          8/ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Pointer_01 8
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform5/Jnt_ArmBase_01
+          5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_a01
+          8
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform5/Jnt_ArmBase_01
+          5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_a01
+          8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_b01 8
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform5/Jnt_ArmBase_01
+          5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_a01
+          8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_b01 8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_c01
+          8
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform5/Jnt_ArmBase_01
+          5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_a01
+          8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_b01 8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_c01
+          8/ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Ring_01 8
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform5/Jnt_ArmBase_01
+          5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Thumb_a01
+          8
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform5/Jnt_ArmBase_01
+          5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Thumb_a01
+          8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Thumb_b01 8
+        weight: 1
+      - path: MASTER_ROOT_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:transform5/Jnt_ArmBase_01
+          5/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01 8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+          8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01 8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+          8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01 8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Thumb_a01
+          8/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Thumb_b01 8/ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Thumb_01
+          8
+        weight: 1
+      - path: MASTER_ROOT_01/Jnt_ArmBase_01
+        weight: 1
+      - path: MASTER_ROOT_01/Jnt_ArmBase_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01
+        weight: 1
+      - path: MASTER_ROOT_01/Jnt_ArmBase_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01
+        weight: 1
+      - path: MASTER_ROOT_01/Jnt_ArmBase_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01
+        weight: 1
+      - path: MASTER_ROOT_01/Jnt_ArmBase_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01
+        weight: 1
+      - path: MASTER_ROOT_01/Jnt_ArmBase_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01
+        weight: 1
+      - path: MASTER_ROOT_01/Jnt_ArmBase_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_a01
+        weight: 1
+      - path: MASTER_ROOT_01/Jnt_ArmBase_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_a01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_b01
+        weight: 1
+      - path: MASTER_ROOT_01/Jnt_ArmBase_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_a01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_b01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_c01
+        weight: 1
+      - path: MASTER_ROOT_01/Jnt_ArmBase_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_a01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_b01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_c01/ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Middle_01
+        weight: 1
+      - path: MASTER_ROOT_01/Jnt_ArmBase_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_a01
+        weight: 1
+      - path: MASTER_ROOT_01/Jnt_ArmBase_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_a01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_b01
+        weight: 1
+      - path: MASTER_ROOT_01/Jnt_ArmBase_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_a01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_b01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_c01
+        weight: 1
+      - path: MASTER_ROOT_01/Jnt_ArmBase_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_a01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_b01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_c01/ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Pinky_01
+        weight: 1
+      - path: MASTER_ROOT_01/Jnt_ArmBase_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_a01
+        weight: 1
+      - path: MASTER_ROOT_01/Jnt_ArmBase_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_a01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_b01
+        weight: 1
+      - path: MASTER_ROOT_01/Jnt_ArmBase_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_a01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_b01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_c01
+        weight: 1
+      - path: MASTER_ROOT_01/Jnt_ArmBase_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_a01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_b01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_c01/ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Pointer_01
+        weight: 1
+      - path: MASTER_ROOT_01/Jnt_ArmBase_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_a01
+        weight: 1
+      - path: MASTER_ROOT_01/Jnt_ArmBase_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_a01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_b01
+        weight: 1
+      - path: MASTER_ROOT_01/Jnt_ArmBase_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_a01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_b01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_c01
+        weight: 1
+      - path: MASTER_ROOT_01/Jnt_ArmBase_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_a01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_b01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_c01/ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Ring_01
+        weight: 1
+      - path: MASTER_ROOT_01/Jnt_ArmBase_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Thumb_a01
+        weight: 1
+      - path: MASTER_ROOT_01/Jnt_ArmBase_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Thumb_a01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Thumb_b01
+        weight: 1
+      - path: MASTER_ROOT_01/Jnt_ArmBase_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Thumb_a01/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Thumb_b01/ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Thumb_01
+        weight: 1
+      - path: MASTER_ROOT_01/Jnt_ArmBase_02
+        weight: 1
+      - path: MASTER_ROOT_01/Jnt_ArmBase_02/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01
+          1
+        weight: 1
+      - path: MASTER_ROOT_01/Jnt_ArmBase_02/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01
+          1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01 1
+        weight: 1
+      - path: MASTER_ROOT_01/Jnt_ArmBase_02/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01
+          1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01 1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01
+          1
+        weight: 1
+      - path: MASTER_ROOT_01/Jnt_ArmBase_02/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01
+          1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01 1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01
+          1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01 1
+        weight: 1
+      - path: MASTER_ROOT_01/Jnt_ArmBase_02/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01
+          1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01 1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01
+          1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01 1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01
+          1
+        weight: 1
+      - path: MASTER_ROOT_01/Jnt_ArmBase_02/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01
+          1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01 1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01
+          1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01 1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01
+          1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_a01 1
+        weight: 1
+      - path: MASTER_ROOT_01/Jnt_ArmBase_02/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01
+          1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01 1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01
+          1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01 1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01
+          1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_a01 1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_b01
+          1
+        weight: 1
+      - path: MASTER_ROOT_01/Jnt_ArmBase_02/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01
+          1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01 1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01
+          1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01 1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01
+          1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_a01 1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_b01
+          1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_c01 1
+        weight: 1
+      - path: MASTER_ROOT_01/Jnt_ArmBase_02/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01
+          1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01 1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01
+          1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01 1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01
+          1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_a01 1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_b01
+          1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_c01 1/ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Middle_01
+          1
+        weight: 1
+      - path: MASTER_ROOT_01/Jnt_ArmBase_02/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01
+          1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01 1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01
+          1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01 1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01
+          1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_a01 1
+        weight: 1
+      - path: MASTER_ROOT_01/Jnt_ArmBase_02/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01
+          1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01 1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01
+          1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01 1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01
+          1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_a01 1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_b01
+          1
+        weight: 1
+      - path: MASTER_ROOT_01/Jnt_ArmBase_02/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01
+          1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01 1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01
+          1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01 1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01
+          1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_a01 1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_b01
+          1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_c01 1
+        weight: 1
+      - path: MASTER_ROOT_01/Jnt_ArmBase_02/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01
+          1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01 1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01
+          1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01 1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01
+          1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_a01 1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_b01
+          1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_c01 1/ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Pinky_01
+          1
+        weight: 1
+      - path: MASTER_ROOT_01/Jnt_ArmBase_02/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01
+          1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01 1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01
+          1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01 1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01
+          1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_a01 1
+        weight: 1
+      - path: MASTER_ROOT_01/Jnt_ArmBase_02/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01
+          1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01 1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01
+          1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01 1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01
+          1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_a01 1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_b01
+          1
+        weight: 1
+      - path: MASTER_ROOT_01/Jnt_ArmBase_02/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01
+          1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01 1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01
+          1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01 1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01
+          1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_a01 1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_b01
+          1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_c01 1
+        weight: 1
+      - path: MASTER_ROOT_01/Jnt_ArmBase_02/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01
+          1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01 1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01
+          1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01 1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01
+          1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_a01 1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_b01
+          1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_c01 1/ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Pointer_01
+          1
+        weight: 1
+      - path: MASTER_ROOT_01/Jnt_ArmBase_02/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01
+          1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01 1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01
+          1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01 1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01
+          1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_a01 1
+        weight: 1
+      - path: MASTER_ROOT_01/Jnt_ArmBase_02/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01
+          1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01 1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01
+          1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01 1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01
+          1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_a01 1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_b01
+          1
+        weight: 1
+      - path: MASTER_ROOT_01/Jnt_ArmBase_02/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01
+          1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01 1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01
+          1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01 1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01
+          1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_a01 1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_b01
+          1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_c01 1
+        weight: 1
+      - path: MASTER_ROOT_01/Jnt_ArmBase_02/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01
+          1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01 1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01
+          1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01 1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01
+          1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_a01 1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_b01
+          1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_c01 1/ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Ring_01
+          1
+        weight: 1
+      - path: MASTER_ROOT_01/Jnt_ArmBase_02/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01
+          1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01 1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01
+          1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01 1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01
+          1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Thumb_a01 1
+        weight: 1
+      - path: MASTER_ROOT_01/Jnt_ArmBase_02/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01
+          1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01 1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01
+          1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01 1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01
+          1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Thumb_a01 1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Thumb_b01
+          1
+        weight: 1
+      - path: MASTER_ROOT_01/Jnt_ArmBase_02/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01
+          1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01 1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01
+          1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01 1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01
+          1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Thumb_a01 1/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Thumb_b01
+          1/ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Thumb_01 1
+        weight: 1
+      - path: MASTER_ROOT_01/Jnt_ArmBase_03
+        weight: 1
+      - path: MASTER_ROOT_01/Jnt_ArmBase_03/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01
+          2
+        weight: 1
+      - path: MASTER_ROOT_01/Jnt_ArmBase_03/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01
+          2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01 2
+        weight: 1
+      - path: MASTER_ROOT_01/Jnt_ArmBase_03/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01
+          2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01 2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01
+          2
+        weight: 1
+      - path: MASTER_ROOT_01/Jnt_ArmBase_03/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01
+          2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01 2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01
+          2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01 2
+        weight: 1
+      - path: MASTER_ROOT_01/Jnt_ArmBase_03/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01
+          2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01 2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01
+          2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01 2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01
+          2
+        weight: 1
+      - path: MASTER_ROOT_01/Jnt_ArmBase_03/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01
+          2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01 2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01
+          2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01 2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01
+          2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_a01 2
+        weight: 1
+      - path: MASTER_ROOT_01/Jnt_ArmBase_03/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01
+          2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01 2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01
+          2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01 2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01
+          2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_a01 2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_b01
+          2
+        weight: 1
+      - path: MASTER_ROOT_01/Jnt_ArmBase_03/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01
+          2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01 2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01
+          2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01 2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01
+          2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_a01 2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_b01
+          2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_c01 2
+        weight: 1
+      - path: MASTER_ROOT_01/Jnt_ArmBase_03/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01
+          2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01 2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01
+          2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01 2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01
+          2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_a01 2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_b01
+          2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_c01 2/ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Middle_01
+          2
+        weight: 1
+      - path: MASTER_ROOT_01/Jnt_ArmBase_03/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01
+          2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01 2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01
+          2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01 2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01
+          2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_a01 2
+        weight: 1
+      - path: MASTER_ROOT_01/Jnt_ArmBase_03/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01
+          2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01 2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01
+          2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01 2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01
+          2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_a01 2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_b01
+          2
+        weight: 1
+      - path: MASTER_ROOT_01/Jnt_ArmBase_03/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01
+          2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01 2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01
+          2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01 2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01
+          2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_a01 2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_b01
+          2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_c01 2
+        weight: 1
+      - path: MASTER_ROOT_01/Jnt_ArmBase_03/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01
+          2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01 2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01
+          2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01 2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01
+          2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_a01 2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_b01
+          2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_c01 2/ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Pinky_01
+          2
+        weight: 1
+      - path: MASTER_ROOT_01/Jnt_ArmBase_03/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01
+          2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01 2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01
+          2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01 2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01
+          2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_a01 2
+        weight: 1
+      - path: MASTER_ROOT_01/Jnt_ArmBase_03/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01
+          2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01 2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01
+          2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01 2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01
+          2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_a01 2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_b01
+          2
+        weight: 1
+      - path: MASTER_ROOT_01/Jnt_ArmBase_03/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01
+          2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01 2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01
+          2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01 2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01
+          2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_a01 2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_b01
+          2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_c01 2
+        weight: 1
+      - path: MASTER_ROOT_01/Jnt_ArmBase_03/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01
+          2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01 2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01
+          2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01 2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01
+          2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_a01 2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_b01
+          2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_c01 2/ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Pointer_01
+          2
+        weight: 1
+      - path: MASTER_ROOT_01/Jnt_ArmBase_03/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01
+          2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01 2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01
+          2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01 2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01
+          2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_a01 2
+        weight: 1
+      - path: MASTER_ROOT_01/Jnt_ArmBase_03/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01
+          2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01 2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01
+          2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01 2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01
+          2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_a01 2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_b01
+          2
+        weight: 1
+      - path: MASTER_ROOT_01/Jnt_ArmBase_03/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01
+          2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01 2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01
+          2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01 2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01
+          2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_a01 2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_b01
+          2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_c01 2
+        weight: 1
+      - path: MASTER_ROOT_01/Jnt_ArmBase_03/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01
+          2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01 2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01
+          2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01 2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01
+          2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_a01 2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_b01
+          2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_c01 2/ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Ring_01
+          2
+        weight: 1
+      - path: MASTER_ROOT_01/Jnt_ArmBase_03/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01
+          2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01 2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01
+          2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01 2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01
+          2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Thumb_a01 2
+        weight: 1
+      - path: MASTER_ROOT_01/Jnt_ArmBase_03/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01
+          2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01 2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01
+          2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01 2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01
+          2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Thumb_a01 2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Thumb_b01
+          2
+        weight: 1
+      - path: MASTER_ROOT_01/Jnt_ArmBase_03/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01
+          2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01 2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01
+          2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01 2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01
+          2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Thumb_a01 2/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Thumb_b01
+          2/ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Thumb_01 2
+        weight: 1
+      - path: MASTER_ROOT_01/Jnt_ArmBase_04
+        weight: 1
+      - path: MASTER_ROOT_01/Jnt_ArmBase_04/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01
+          3
+        weight: 1
+      - path: MASTER_ROOT_01/Jnt_ArmBase_04/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01
+          3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01 3
+        weight: 1
+      - path: MASTER_ROOT_01/Jnt_ArmBase_04/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01
+          3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01 3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01
+          3
+        weight: 1
+      - path: MASTER_ROOT_01/Jnt_ArmBase_04/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01
+          3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01 3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01
+          3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01 3
+        weight: 1
+      - path: MASTER_ROOT_01/Jnt_ArmBase_04/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01
+          3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01 3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01
+          3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01 3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01
+          3
+        weight: 1
+      - path: MASTER_ROOT_01/Jnt_ArmBase_04/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01
+          3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01 3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01
+          3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01 3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01
+          3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_a01 3
+        weight: 1
+      - path: MASTER_ROOT_01/Jnt_ArmBase_04/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01
+          3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01 3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01
+          3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01 3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01
+          3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_a01 3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_b01
+          3
+        weight: 1
+      - path: MASTER_ROOT_01/Jnt_ArmBase_04/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01
+          3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01 3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01
+          3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01 3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01
+          3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_a01 3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_b01
+          3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_c01 3
+        weight: 1
+      - path: MASTER_ROOT_01/Jnt_ArmBase_04/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01
+          3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01 3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01
+          3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01 3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01
+          3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_a01 3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_b01
+          3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Middle_c01 3/ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Middle_01
+          3
+        weight: 1
+      - path: MASTER_ROOT_01/Jnt_ArmBase_04/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01
+          3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01 3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01
+          3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01 3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01
+          3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_a01 3
+        weight: 1
+      - path: MASTER_ROOT_01/Jnt_ArmBase_04/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01
+          3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01 3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01
+          3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01 3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01
+          3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_a01 3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_b01
+          3
+        weight: 1
+      - path: MASTER_ROOT_01/Jnt_ArmBase_04/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01
+          3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01 3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01
+          3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01 3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01
+          3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_a01 3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_b01
+          3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_c01 3
+        weight: 1
+      - path: MASTER_ROOT_01/Jnt_ArmBase_04/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01
+          3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01 3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01
+          3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01 3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01
+          3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_a01 3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_b01
+          3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pinky_c01 3/ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Pinky_01
+          3
+        weight: 1
+      - path: MASTER_ROOT_01/Jnt_ArmBase_04/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01
+          3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01 3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01
+          3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01 3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01
+          3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_a01 3
+        weight: 1
+      - path: MASTER_ROOT_01/Jnt_ArmBase_04/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01
+          3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01 3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01
+          3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01 3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01
+          3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_a01 3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_b01
+          3
+        weight: 1
+      - path: MASTER_ROOT_01/Jnt_ArmBase_04/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01
+          3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01 3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01
+          3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01 3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01
+          3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_a01 3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_b01
+          3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_c01 3
+        weight: 1
+      - path: MASTER_ROOT_01/Jnt_ArmBase_04/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01
+          3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01 3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01
+          3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01 3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01
+          3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_a01 3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_b01
+          3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Pointer_c01 3/ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Pointer_01
+          3
+        weight: 1
+      - path: MASTER_ROOT_01/Jnt_ArmBase_04/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01
+          3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01 3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01
+          3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01 3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01
+          3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_a01 3
+        weight: 1
+      - path: MASTER_ROOT_01/Jnt_ArmBase_04/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01
+          3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01 3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01
+          3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01 3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01
+          3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_a01 3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_b01
+          3
+        weight: 1
+      - path: MASTER_ROOT_01/Jnt_ArmBase_04/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01
+          3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01 3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01
+          3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01 3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01
+          3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_a01 3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_b01
+          3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_c01 3
+        weight: 1
+      - path: MASTER_ROOT_01/Jnt_ArmBase_04/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01
+          3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01 3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01
+          3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01 3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01
+          3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_a01 3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_b01
+          3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Ring_c01 3/ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Ring_01
+          3
+        weight: 1
+      - path: MASTER_ROOT_01/Jnt_ArmBase_04/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01
+          3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01 3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01
+          3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01 3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01
+          3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Thumb_a01 3
+        weight: 1
+      - path: MASTER_ROOT_01/Jnt_ArmBase_04/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01
+          3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01 3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01
+          3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01 3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01
+          3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Thumb_a01 3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Thumb_b01
+          3
+        weight: 1
+      - path: MASTER_ROOT_01/Jnt_ArmBase_04/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_a01
+          3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_b01 3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_ArmChain_c01
+          3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Wrist_01 3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Palm_01
+          3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Thumb_a01 3/ArmBeast_SkinWeight:MansionPopulation_Floor2:Jnt_Thumb_b01
+          3/ArmBeast_SkinWeight:MansionPopulation_Floor2:be_Thumb_01 3
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .0549999997
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  additionalBone: 0
+  userData: 
