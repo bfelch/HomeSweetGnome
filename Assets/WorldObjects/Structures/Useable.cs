@@ -76,6 +76,13 @@ public class Useable : MonoBehaviour
         elevatorStuff.ElevatorDoors();
     }
 
+	IEnumerator EndAnim(float waitTime)
+	{
+		yield return new WaitForSeconds(waitTime);
+
+		Destroy(GameObject.Find("ArmBeast"));
+	}
+
     public string Interact()
     {
         //checks that player has all required items
@@ -91,6 +98,7 @@ public class Useable : MonoBehaviour
                     if (!GameObject.Find("ArmBeast").GetComponent<Animation>().isPlaying)
                     {
                         GameObject.Find("ArmBeast").GetComponent<Animation>().Play();
+						StartCoroutine(EndAnim(2.0F));
                     }
                 }
             }
