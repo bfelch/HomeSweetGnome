@@ -226,6 +226,14 @@ public class Player : MonoBehaviour
             this.GetComponent<CharacterController>().slopeLimit = 90;
         }
 
+		if(other.name.Equals("StudyArm"))
+		{
+			if(!GameObject.Find("StudyArm").GetComponent<Animation>().isPlaying)
+			{
+				GameObject.Find("StudyArm").GetComponent<Animation>().Play();
+			}
+		}
+
 		if(other.name.Equals("TunnelEventSpawn1"))
 		{
 			//Check Tunnel Gnome Event Version 2

@@ -1,0 +1,206 @@
+fileFormatVersion: 2
+guid: 6b94d0b6f61c9ae49859109170177cf7
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: Arm_Mesh
+    100002: Arm_Skeleton
+    100004: be_Middle_01
+    100006: be_Pinky_01
+    100008: be_Pointer_01
+    100010: be_Ring_01
+    100012: be_Thumb_01
+    100014: CTRL_Root
+    100016: Jnt_ArmBase_01
+    100018: Jnt_ArmChain_a01
+    100020: Jnt_ArmChain_b01
+    100022: Jnt_ArmChain_c01
+    100024: Jnt_Middle_a01
+    100026: Jnt_Middle_b01
+    100028: Jnt_Middle_c01
+    100030: Jnt_Palm_01
+    100032: Jnt_Pinky_a01
+    100034: Jnt_Pinky_b01
+    100036: Jnt_Pinky_c01
+    100038: Jnt_Pointer_a01
+    100040: Jnt_Pointer_b01
+    100042: Jnt_Pointer_c01
+    100044: Jnt_Ring_a01
+    100046: Jnt_Ring_b01
+    100048: Jnt_Ring_c01
+    100050: Jnt_Thumb_a01
+    100052: Jnt_Thumb_b01
+    100054: Jnt_Wrist_01
+    100056: //RootNode
+    400000: Arm_Mesh
+    400002: Arm_Skeleton
+    400004: be_Middle_01
+    400006: be_Pinky_01
+    400008: be_Pointer_01
+    400010: be_Ring_01
+    400012: be_Thumb_01
+    400014: CTRL_Root
+    400016: Jnt_ArmBase_01
+    400018: Jnt_ArmChain_a01
+    400020: Jnt_ArmChain_b01
+    400022: Jnt_ArmChain_c01
+    400024: Jnt_Middle_a01
+    400026: Jnt_Middle_b01
+    400028: Jnt_Middle_c01
+    400030: Jnt_Palm_01
+    400032: Jnt_Pinky_a01
+    400034: Jnt_Pinky_b01
+    400036: Jnt_Pinky_c01
+    400038: Jnt_Pointer_a01
+    400040: Jnt_Pointer_b01
+    400042: Jnt_Pointer_c01
+    400044: Jnt_Ring_a01
+    400046: Jnt_Ring_b01
+    400048: Jnt_Ring_c01
+    400050: Jnt_Thumb_a01
+    400052: Jnt_Thumb_b01
+    400054: Jnt_Wrist_01
+    400056: //RootNode
+    4300000: Arm_Mesh
+    7400000: ArmFlail
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: Arm_Mesh
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: ArmFlail
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 60
+      wrapMode: 8
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Arm_Mesh
+        weight: 1
+      - path: CTRL_Root
+        weight: 1
+      - path: CTRL_Root/Arm_Skeleton
+        weight: 1
+      - path: CTRL_Root/Arm_Skeleton/Jnt_ArmBase_01
+        weight: 1
+      - path: CTRL_Root/Arm_Skeleton/Jnt_ArmBase_01/Jnt_ArmChain_a01
+        weight: 1
+      - path: CTRL_Root/Arm_Skeleton/Jnt_ArmBase_01/Jnt_ArmChain_a01/Jnt_ArmChain_b01
+        weight: 1
+      - path: CTRL_Root/Arm_Skeleton/Jnt_ArmBase_01/Jnt_ArmChain_a01/Jnt_ArmChain_b01/Jnt_ArmChain_c01
+        weight: 1
+      - path: CTRL_Root/Arm_Skeleton/Jnt_ArmBase_01/Jnt_ArmChain_a01/Jnt_ArmChain_b01/Jnt_ArmChain_c01/Jnt_Wrist_01
+        weight: 1
+      - path: CTRL_Root/Arm_Skeleton/Jnt_ArmBase_01/Jnt_ArmChain_a01/Jnt_ArmChain_b01/Jnt_ArmChain_c01/Jnt_Wrist_01/Jnt_Palm_01
+        weight: 1
+      - path: CTRL_Root/Arm_Skeleton/Jnt_ArmBase_01/Jnt_ArmChain_a01/Jnt_ArmChain_b01/Jnt_ArmChain_c01/Jnt_Wrist_01/Jnt_Palm_01/Jnt_Middle_a01
+        weight: 1
+      - path: CTRL_Root/Arm_Skeleton/Jnt_ArmBase_01/Jnt_ArmChain_a01/Jnt_ArmChain_b01/Jnt_ArmChain_c01/Jnt_Wrist_01/Jnt_Palm_01/Jnt_Middle_a01/Jnt_Middle_b01
+        weight: 1
+      - path: CTRL_Root/Arm_Skeleton/Jnt_ArmBase_01/Jnt_ArmChain_a01/Jnt_ArmChain_b01/Jnt_ArmChain_c01/Jnt_Wrist_01/Jnt_Palm_01/Jnt_Middle_a01/Jnt_Middle_b01/Jnt_Middle_c01
+        weight: 1
+      - path: CTRL_Root/Arm_Skeleton/Jnt_ArmBase_01/Jnt_ArmChain_a01/Jnt_ArmChain_b01/Jnt_ArmChain_c01/Jnt_Wrist_01/Jnt_Palm_01/Jnt_Middle_a01/Jnt_Middle_b01/Jnt_Middle_c01/be_Middle_01
+        weight: 1
+      - path: CTRL_Root/Arm_Skeleton/Jnt_ArmBase_01/Jnt_ArmChain_a01/Jnt_ArmChain_b01/Jnt_ArmChain_c01/Jnt_Wrist_01/Jnt_Palm_01/Jnt_Pinky_a01
+        weight: 1
+      - path: CTRL_Root/Arm_Skeleton/Jnt_ArmBase_01/Jnt_ArmChain_a01/Jnt_ArmChain_b01/Jnt_ArmChain_c01/Jnt_Wrist_01/Jnt_Palm_01/Jnt_Pinky_a01/Jnt_Pinky_b01
+        weight: 1
+      - path: CTRL_Root/Arm_Skeleton/Jnt_ArmBase_01/Jnt_ArmChain_a01/Jnt_ArmChain_b01/Jnt_ArmChain_c01/Jnt_Wrist_01/Jnt_Palm_01/Jnt_Pinky_a01/Jnt_Pinky_b01/Jnt_Pinky_c01
+        weight: 1
+      - path: CTRL_Root/Arm_Skeleton/Jnt_ArmBase_01/Jnt_ArmChain_a01/Jnt_ArmChain_b01/Jnt_ArmChain_c01/Jnt_Wrist_01/Jnt_Palm_01/Jnt_Pinky_a01/Jnt_Pinky_b01/Jnt_Pinky_c01/be_Pinky_01
+        weight: 1
+      - path: CTRL_Root/Arm_Skeleton/Jnt_ArmBase_01/Jnt_ArmChain_a01/Jnt_ArmChain_b01/Jnt_ArmChain_c01/Jnt_Wrist_01/Jnt_Palm_01/Jnt_Pointer_a01
+        weight: 1
+      - path: CTRL_Root/Arm_Skeleton/Jnt_ArmBase_01/Jnt_ArmChain_a01/Jnt_ArmChain_b01/Jnt_ArmChain_c01/Jnt_Wrist_01/Jnt_Palm_01/Jnt_Pointer_a01/Jnt_Pointer_b01
+        weight: 1
+      - path: CTRL_Root/Arm_Skeleton/Jnt_ArmBase_01/Jnt_ArmChain_a01/Jnt_ArmChain_b01/Jnt_ArmChain_c01/Jnt_Wrist_01/Jnt_Palm_01/Jnt_Pointer_a01/Jnt_Pointer_b01/Jnt_Pointer_c01
+        weight: 1
+      - path: CTRL_Root/Arm_Skeleton/Jnt_ArmBase_01/Jnt_ArmChain_a01/Jnt_ArmChain_b01/Jnt_ArmChain_c01/Jnt_Wrist_01/Jnt_Palm_01/Jnt_Pointer_a01/Jnt_Pointer_b01/Jnt_Pointer_c01/be_Pointer_01
+        weight: 1
+      - path: CTRL_Root/Arm_Skeleton/Jnt_ArmBase_01/Jnt_ArmChain_a01/Jnt_ArmChain_b01/Jnt_ArmChain_c01/Jnt_Wrist_01/Jnt_Palm_01/Jnt_Ring_a01
+        weight: 1
+      - path: CTRL_Root/Arm_Skeleton/Jnt_ArmBase_01/Jnt_ArmChain_a01/Jnt_ArmChain_b01/Jnt_ArmChain_c01/Jnt_Wrist_01/Jnt_Palm_01/Jnt_Ring_a01/Jnt_Ring_b01
+        weight: 1
+      - path: CTRL_Root/Arm_Skeleton/Jnt_ArmBase_01/Jnt_ArmChain_a01/Jnt_ArmChain_b01/Jnt_ArmChain_c01/Jnt_Wrist_01/Jnt_Palm_01/Jnt_Ring_a01/Jnt_Ring_b01/Jnt_Ring_c01
+        weight: 1
+      - path: CTRL_Root/Arm_Skeleton/Jnt_ArmBase_01/Jnt_ArmChain_a01/Jnt_ArmChain_b01/Jnt_ArmChain_c01/Jnt_Wrist_01/Jnt_Palm_01/Jnt_Ring_a01/Jnt_Ring_b01/Jnt_Ring_c01/be_Ring_01
+        weight: 1
+      - path: CTRL_Root/Arm_Skeleton/Jnt_ArmBase_01/Jnt_ArmChain_a01/Jnt_ArmChain_b01/Jnt_ArmChain_c01/Jnt_Wrist_01/Jnt_Palm_01/Jnt_Thumb_a01
+        weight: 1
+      - path: CTRL_Root/Arm_Skeleton/Jnt_ArmBase_01/Jnt_ArmChain_a01/Jnt_ArmChain_b01/Jnt_ArmChain_c01/Jnt_Wrist_01/Jnt_Palm_01/Jnt_Thumb_a01/Jnt_Thumb_b01
+        weight: 1
+      - path: CTRL_Root/Arm_Skeleton/Jnt_ArmBase_01/Jnt_ArmChain_a01/Jnt_ArmChain_b01/Jnt_ArmChain_c01/Jnt_Wrist_01/Jnt_Palm_01/Jnt_Thumb_a01/Jnt_Thumb_b01/be_Thumb_01
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .0549999997
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  additionalBone: 0
+  userData: 
