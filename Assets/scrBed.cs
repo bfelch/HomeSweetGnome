@@ -17,9 +17,11 @@ public class scrBed : MonoBehaviour
 	public static bool resting = false;
 	private bool fade = false;
 
+    public static bool cantsleep = false;
+
 	public void UseBed()
 	{
-		if(player.GetComponent<Player>().sanity <= 30.0F)
+		//if(player.GetComponent<Player>().sanity <= 30.0F)
 		{
 			blackFade = 0;
 			blackDelta = .2f;
@@ -34,6 +36,14 @@ public class scrBed : MonoBehaviour
 			charMotor.canControl = false;
 			charMotor.jumping.enabled = false;
 		}
+        /*
+        else
+        {
+            cantsleep = true;
+            Debug.Log("cantsleep " + cantsleep);
+
+        }
+             * */
 	}
 
 	void OnGUI()

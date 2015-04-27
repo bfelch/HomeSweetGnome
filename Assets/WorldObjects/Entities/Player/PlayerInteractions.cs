@@ -54,19 +54,26 @@ public class PlayerInteractions : MonoBehaviour
 
 	public static bool objectOpened = false;
 
+    public float startTimer = 10f;
+
     void Start()
     {
         showGUI = false;
         pause = false;
         StartCoroutine(DelayedStart());
 
-        GameObject.Find("ContrastLight").GetComponent<Light>().intensity = PlayerPrefs.GetFloat("Lighting");
-        GameObject.Find("Player").GetComponent<MouseLook>().sensitivityX = PlayerPrefs.GetFloat("XSens");
-        GameObject.Find("Main Camera").GetComponent<MouseLook>().sensitivityY = PlayerPrefs.GetFloat("YSens");
+        
+        if (PlayerPrefs.GetFloat("Lighting") != null || PlayerPrefs.GetFloat("Lighting") != 0)
+        {
+            GameObject.Find("ContrastLight").GetComponent<Light>().intensity = PlayerPrefs.GetFloat("Lighting");
+            GameObject.Find("Player").GetComponent<MouseLook>().sensitivityX = PlayerPrefs.GetFloat("XSens");
+            GameObject.Find("Main Camera").GetComponent<MouseLook>().sensitivityY = PlayerPrefs.GetFloat("YSens");
 
-        lightingValue = PlayerPrefs.GetFloat("Lighting"); ;
-        xSens = PlayerPrefs.GetFloat("XSens"); ;
-        ySens = PlayerPrefs.GetFloat("YSens");
+            lightingValue = PlayerPrefs.GetFloat("Lighting"); ;
+            xSens = PlayerPrefs.GetFloat("XSens"); ;
+            ySens = PlayerPrefs.GetFloat("YSens");
+        }
+        
         
     }
 
@@ -87,7 +94,7 @@ public class PlayerInteractions : MonoBehaviour
     {
         itemAction();
         GUIControl();
-        if(Input.GetKeyDown(KeyCode.Escape) && !this.gameObject.animation.IsPlaying("OpeningCut") && !endgame.playerEscaped && !endgame.playerSlept && !endgame.playerFell)
+        if(Input.GetKeyDown(KeyCode.Escape) && !this.gameObject.animation.IsPlaying("OpeningCut") && !endgame.playerEscaped && !endgame.playerSlept && !endgame.playerFell && !scrBed.resting)
         {
            if(!pause)
            { 
@@ -104,11 +111,14 @@ public class PlayerInteractions : MonoBehaviour
            else
            {
                Screen.lockCursor = true;
-               this.GetComponent<PlayerMovement>().enabled = true;
-               this.GetComponent<Player>().enabled = true;
+               if (!scrBook.bookOpen && !scrJournal.journalOpen)
+               {
+                   this.GetComponent<PlayerMovement>().enabled = true;
+                   this.GetComponent<Player>().enabled = true;
+                   mouseLook.enabled = true;
+                   cameraLook.enabled = true;
+               }
                Time.timeScale = 1.0f;
-               mouseLook.enabled = true;
-               cameraLook.enabled = true;
                pause = false;
                optionsMenu = false;
            }
@@ -171,7 +181,7 @@ public class PlayerInteractions : MonoBehaviour
             second %= 60;
             GUI.skin.box.alignment = TextAnchor.MiddleCenter;
             GUI.Box(new Rect(55, 50, 180, 40), "Time Played\n" + hour.ToString("00") + ":" + minute.ToString("00") + ":" + second.ToString("00"));
-            if (GUI.Button(new Rect(55, 100, 180, 40), "Resume"))
+            if (GUI.Button(new Rect(20, 100, 250, 50), "Resume"))
             {
                 Screen.lockCursor = true;
                 Time.timeScale = 1.0f;
@@ -185,17 +195,17 @@ public class PlayerInteractions : MonoBehaviour
                 pause = false;
 
             }
-            if (GUI.Button(new Rect(55, 150, 180, 40), "Options"))
+            if (GUI.Button(new Rect(20, 150, 250, 50), "Options"))
             {
                 optionsMenu = true;
                 pauseMenu = false;
             }
-            if (GUI.Button( new Rect(55, 200, 180, 40), "Main Menu"))
+            if (GUI.Button( new Rect(20, 200, 250, 50), "Main Menu"))
             {
                 //LoadUnload.showEverything();
                 this.GetComponent<SaveLoad>().Save(true);
             }
-            if (GUI.Button(new Rect(55, 250, 180, 40), "Quit"))
+            if (GUI.Button(new Rect(20, 250, 250, 50), "Quit"))
             {
                 Application.Quit();
             }
@@ -243,7 +253,7 @@ public class PlayerInteractions : MonoBehaviour
             GUI.backgroundColor = Color.white;
             GUI.skin.box.alignment = TextAnchor.MiddleCenter;
 
-            if (GUI.Button(new Rect(55, 230, 180, 40), "Back"))
+            if (GUI.Button(new Rect(50, 230, 250, 50), "Back"))
             {
                 optionsMenu = false;
                 pauseMenu = true;
@@ -364,6 +374,19 @@ public class PlayerInteractions : MonoBehaviour
             {
                 GUI.Box(new Rect(Screen.width / 2-10, Screen.height / 2-10, 20, 20), "+");
             }
+
+
+
+        }
+
+        if (scrBed.cantsleep)
+        {
+            GUI.Box(new Rect(0, Screen.height - Screen.height / 2 + 150, Screen.width, 30),
+                    "You are not tired enough to sleep.");
+
+            startTimer = startTimer - Time.deltaTime;
+            //once timer reaches 0, switch interaction to one
+            if (startTimer < 0) { scrBed.cantsleep = false; startTimer = 10f; }
         }
     }
 
@@ -465,7 +488,7 @@ public class PlayerInteractions : MonoBehaviour
         canHover = true; //Display item name
 
         //Pressing the E (Interact) key?
-        if (Input.GetKeyUp(KeyCode.E) || Input.GetMouseButtonUp(0))
+        if (Input.GetKeyUp(KeyCode.E) || Input.GetMouseButtonUp(0) && !pause)
         {
             if (playerGUI.AddToSlot(targetItem))
             {
@@ -490,7 +513,7 @@ public class PlayerInteractions : MonoBehaviour
         canHover = true; //Display item name
 
         //Pressing the E (Interact) key?
-        if (Input.GetKeyUp(KeyCode.E) || Input.GetMouseButtonUp(0))
+        if (Input.GetKeyUp(KeyCode.E) || Input.GetMouseButtonUp(0) && !pause)
         {
             if(targetUseable.Interact() != "")
             {
@@ -506,7 +529,7 @@ public class PlayerInteractions : MonoBehaviour
         canHover = true; //Display item name
 
         //Pressing the E (Interact) key?
-        if (Input.GetKeyUp(KeyCode.E))
+        if (Input.GetKeyUp(KeyCode.E) && Input.GetMouseButton(0) && !pause)
         {
 			GameObject.Find("Player").GetComponent<Player>().itemEatSound.Play();
 

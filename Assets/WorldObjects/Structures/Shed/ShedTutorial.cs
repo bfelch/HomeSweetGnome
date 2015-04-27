@@ -38,7 +38,7 @@ public class ShedTutorial : MonoBehaviour {
         GUI.skin.font = bark;
         GUI.skin.box.alignment = TextAnchor.LowerCenter;
         //check if we are in the tutorial
-        if (tutorial && !this.GetComponent<PlayerInteractions>().notUseable)
+        if (tutorial && !this.GetComponent<PlayerInteractions>().notUseable && !scrBed.cantsleep)
         {
             //set color and background color
             GUI.color = Color.white;
@@ -66,7 +66,7 @@ public class ShedTutorial : MonoBehaviour {
                     "[E] or [LEFT CLICK] will pick up the " + improvedName + ".");
                 }
                 //check if the active target is a useable object
-                else if (pi.activeTarget.tag == "Useable")
+                else if (pi.activeTarget.tag == "Useable" && !scrBed.resting)
                 {
                     //this.GetComponent<Player>().flashFade();
                     //Display item name with instructions

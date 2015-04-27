@@ -26,6 +26,7 @@ public class Useable : MonoBehaviour
 
 	private CharacterMotor charMotor;
 
+
 	// Use this for initialization
 	void Start () 
     {
@@ -74,6 +75,7 @@ public class Useable : MonoBehaviour
     {
         elevatorStuff.ElevatorDoors();
     }
+
     public string Interact()
     {
         //checks that player has all required items
@@ -83,6 +85,14 @@ public class Useable : MonoBehaviour
             {
                 //opens door
                 this.gameObject.GetComponent<DoorInteraction>().DoorKeyOpen();
+
+                if (this.gameObject.name.Equals("MasterBathroomDoor"))
+                {
+                    if (!GameObject.Find("ArmBeast").GetComponent<Animation>().isPlaying)
+                    {
+                        GameObject.Find("ArmBeast").GetComponent<Animation>().Play();
+                    }
+                }
             }
             else if (type == UseableType.DIRTTRAP)
             {
