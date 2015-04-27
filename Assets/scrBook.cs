@@ -17,7 +17,8 @@ public class scrBook : MonoBehaviour
 	public static bool bookOpen = false;
 	public static bool bookNoGUI = false;
 
-
+	public GameObject gargoyles;
+	public AudioClip gargoyleScreech;
 
 	void Start()
 	{
@@ -72,9 +73,17 @@ public class scrBook : MonoBehaviour
 			//Unhighlight Book
 			highlighter.Unhighlight(this.gameObject);
 
+			GameObject.Find("Player").GetComponent<Blink>().reading = true;
+
 			//Highlight Chandellier Switch
 			highlighter.Highlight(GameObject.Find("ChandSwitch"), scrHighlightController.outline2);
 			highlighter.Highlight(GameObject.Find("ChandSwitchBase"), scrHighlightController.outline2);
+
+			//Enable gargoyles
+			gargoyles.SetActive(true);
+
+			//Play gargoyle one shot
+			SoundController.PlayClipAt(gargoyleScreech, new Vector3(0.75F, 49.7F, -60.78F)); 
 		}
 	}
 
@@ -86,6 +95,8 @@ public class scrBook : MonoBehaviour
 		//activate/deactivate book
 		book.SetActive(false);
         this.GetComponent<AudioSource>().Play();
+
+		GameObject.Find("Player").GetComponent<Blink>().reading = false;
 
         if (!PlayerInteractions.showGUI)
         {

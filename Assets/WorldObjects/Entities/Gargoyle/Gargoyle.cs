@@ -113,6 +113,13 @@ public class Gargoyle : MonoBehaviour
 					
 					//Start screeching
 					screeching = true;
+
+					//Blur the player's camera view
+					player.GetComponentInChildren<BlurEffect>().enabled = true;
+
+					//Adjust light values
+					eyeLight.GetComponent<Light>().range = 30;
+					eyeLight.GetComponent<Light>().spotAngle = 40;
 					
 					//Change color red
 					eyeLight.light.color = Color.red;
@@ -163,10 +170,7 @@ public class Gargoyle : MonoBehaviour
 				transform.LookAt(target);
 			}
 		}
-		
-		//Blur the player's camera view
-		player.GetComponentInChildren<BlurEffect>().enabled = true;
-		
+
 		//Decreases the player's energy
 		player.GetComponent<Player>().sanity -= 0.05f;
 		
@@ -234,6 +238,10 @@ public class Gargoyle : MonoBehaviour
 
 			//Trigger the cameraShake
 			shakeScript.EndShake();
+
+			//Adjust light values
+			eyeLight.GetComponent<Light>().range = 20;
+			eyeLight.GetComponent<Light>().spotAngle = 25;
 			
 			//Change gargoyle light color
 			eyeLight.light.color = Color.white;

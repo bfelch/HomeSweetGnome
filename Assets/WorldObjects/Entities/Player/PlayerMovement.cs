@@ -134,7 +134,6 @@ public class PlayerMovement : MonoBehaviour {
 			//Walking speed
 			if(inWater)
 			{
-
 				SetMovementSpeed(3.0F);
 			}
 			else

@@ -14,10 +14,6 @@ public class GnomeEnding : MonoBehaviour
     private bool onlyOnce = true;
 
     private int step = 0;
-    // Use this for initialization
-    void Start()
-    {
-    }
 
     // Update is called once per frame
     void Update()
@@ -28,7 +24,6 @@ public class GnomeEnding : MonoBehaviour
             GameObject.Find("Main Camera").transform.parent = null;
             GameObject.Find("OffAtEnd").SetActive(false);
             GameObject.Find("EndingScripts").GetComponent<AudioListener>().enabled = true;
-
         }
     }
 
@@ -81,6 +76,5 @@ public class GnomeEnding : MonoBehaviour
         //Wait time
         yield return new WaitForSeconds(3f);
         delta = -delta;
-
     }
 }

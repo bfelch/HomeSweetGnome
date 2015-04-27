@@ -51,7 +51,9 @@ public class scrJournal : MonoBehaviour
         Debug.Log("Playing Open");
 
 		GameObject.Find("Highlighter").GetComponent<scrHighlightController>().Unhighlight(this.gameObject);
-		
+
+		GameObject.Find("Player").GetComponent<Blink>().reading = true;
+
 		//toggle movements, looking, cursor
 		mouseLook.enabled = false;
 		cameraLook.enabled = false;
@@ -73,11 +75,11 @@ public class scrJournal : MonoBehaviour
 
 		//activate/deactivate book
 		journalPage.SetActive(false);
-        Debug.Log("Playing Close");
+
+		GameObject.Find("Player").GetComponent<Blink>().reading = false;
 
         if (!PlayerInteractions.showGUI)
         {
-			Debug.Log("Close Enable");
             //toggle movements, looking, cursor
             mouseLook.enabled = true;
             cameraLook.enabled = true;

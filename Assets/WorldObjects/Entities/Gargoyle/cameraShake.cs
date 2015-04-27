@@ -10,19 +10,21 @@ public class cameraShake : MonoBehaviour
 	public bool shake = false;
 	
 	private Vector3 originalPos;
+	private Vector3 adjustedPos;
 	
 	private void Update()
 	{
 		if(shake)
 		{
 			//Shake and bake!
-			transform.localPosition = originalPos + Vector3.Scale(SmoothRandom.GetVector2(shakeSpeed), shakeRange);
+			transform.localPosition = adjustedPos + Vector3.Scale(SmoothRandom.GetVector2(shakeSpeed), shakeRange);
 		}
 	}
 	
 	public void StartShake()
 	{
 		originalPos = transform.localPosition;
+		adjustedPos = new Vector3(originalPos.x-0.5F, originalPos.y-0.5F, originalPos.z);
 		shake = true;
 	}
 

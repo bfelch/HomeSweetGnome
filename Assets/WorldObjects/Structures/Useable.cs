@@ -26,7 +26,6 @@ public class Useable : MonoBehaviour
 
 	private CharacterMotor charMotor;
 
-
 	// Use this for initialization
 	void Start () 
     {
@@ -351,6 +350,16 @@ public class Useable : MonoBehaviour
 					this.gameObject.GetComponent<scrJournal>().OpenJournalPage();
 				}
 			}
+			else if(type == UseableType.BED)
+			{
+				if(!scrBed.resting
+				   && !PlayerInteractions.showGUI
+				   && charMotor.IsGrounded())
+				{
+					GameObject.Find("ShedBed").GetComponent<scrBed>().UseBed();
+				}
+			}
+
 			if(checkGateKeys())
 			{
 				//GameObject.Find("Player").GetComponent<Animation>().Play("GateEnding");
@@ -403,4 +412,4 @@ public class Useable : MonoBehaviour
 	}
 }
 
-public enum UseableType {DOOR, DIRTTRAP, GATEKEYONE, GATEKEYTWO, GATEKEYTHREE, GATEKEYFOUR, LIGHT, DROPTRAP, ELEVATORTOP, ATTICBOWL, B_HATCH, B_MOTOR, B_FUEL, B_IGNITION, BOOK, JOURNAL, ELEVATORBOTTOM};
+public enum UseableType {DOOR, DIRTTRAP, GATEKEYONE, GATEKEYTWO, GATEKEYTHREE, GATEKEYFOUR, LIGHT, DROPTRAP, ELEVATORTOP, ATTICBOWL, B_HATCH, B_MOTOR, B_FUEL, B_IGNITION, BOOK, JOURNAL, ELEVATORBOTTOM, BED};

@@ -45,6 +45,7 @@ public class Blink : MonoBehaviour
     private float bottomLidDiff = .2255691f;
 
 	private float tempPlayerSanity;
+	public bool reading = false;
 
     // Use this for initialization
     void Start()
@@ -77,7 +78,6 @@ public class Blink : MonoBehaviour
         //get the player sanity values
         playerSanity = gameObject.GetComponent<Player>().sanity;
         playerSlept = gameObject.GetComponent<EndGames>().playerSlept;
-
 
         if (!playerSlept)
         {
@@ -202,7 +202,7 @@ public class Blink : MonoBehaviour
 		}
 
 		//am I holding my eyes open and my blink is recharged?
-		if (Input.GetKey(KeyCode.F) && !rechargeBlink)
+		if (Input.GetKey(KeyCode.F) && !rechargeBlink || reading)
 		{
             //are we greater than 0
             if (openTimer > 0)
@@ -220,8 +220,11 @@ public class Blink : MonoBehaviour
 					bottomLidSlug.transform.localPosition = curBottomSlugPos;
 				}
 
-                //decrease from the openTimer
-                openTimer -= Time.deltaTime;
+				if(!reading)
+				{
+	                //decrease from the openTimer
+	                openTimer -= Time.deltaTime;
+				}
                 //set blinkTimer to 5 to keep from blinking
                 blinkTimer = 5;
             }

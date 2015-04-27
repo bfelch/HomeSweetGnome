@@ -57,7 +57,7 @@ public class groundCheck : MonoBehaviour
 		ignoreMask = ~ignoreMask;
 
 		//Debug.Log (transform);
-		Debug.DrawRay (new Vector3(transform.position.x, transform.position.y, transform.position.z- 1.2F), Vector3.down * (distToGround + 2.1F), Color.cyan);
+		//Debug.DrawRay (new Vector3(transform.position.x, transform.position.y, transform.position.z- 1.2F), Vector3.down * (distToGround + 2.1F), Color.cyan);
 		//Debug.DrawRay(new Vector3(transform.position.x, transform.position.y, transform.position.z + distToEdge), Vector3.down * (distToGround + 0.1F), Color.red);
 		//Debug.DrawRay(new Vector3(transform.position.x, transform.position.y, transform.position.z - distToEdge), Vector3.down * (distToGround + 0.1F), Color.red);
 

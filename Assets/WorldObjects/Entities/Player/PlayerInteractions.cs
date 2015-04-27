@@ -539,7 +539,8 @@ public class PlayerInteractions : MonoBehaviour
 		    && !this.gameObject.animation.IsPlaying("OpeningCut")
 		    && charMotor.IsGrounded()
 		    && !scrJournal.journalNoGUI
-		    && !scrBook.bookNoGUI)
+		    && !scrBook.bookNoGUI
+		    && !scrBed.resting)
         {
             ToggleGUI(!showGUI);
         }
@@ -563,6 +564,8 @@ public class PlayerInteractions : MonoBehaviour
 			playerGUI.keyRing.gui.ResetRotation();
 			playerGUI.energyBar.gui.ResetRotation();
 		}
+
+		GameObject.Find("Player").GetComponent<Blink>().reading = showGUI;
 
 	    //toggle movements, looking, cursor
 	    mouseLook.enabled = !showGUI;
