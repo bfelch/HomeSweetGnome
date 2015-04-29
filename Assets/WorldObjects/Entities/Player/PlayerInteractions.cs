@@ -8,6 +8,9 @@ public class PlayerInteractions : MonoBehaviour
     private ShedTutorial st;
     private string GUIString;
     public GUISkin daSkin;
+	public GUISkin daSkin2;
+	public GUISkin daSkin3;
+	public GUISkin daSkin4;
 
     //duration of play
     public float timePlayed;
@@ -173,15 +176,15 @@ public class PlayerInteractions : MonoBehaviour
         {
             mouseLook.enabled = false;
             cameraLook.enabled = false;
-            GUI.BeginGroup(new Rect(Screen.width / 2 - 150, 20, 300, Screen.height));
+            GUI.BeginGroup(new Rect(Screen.width / 2 - 150, 40, 300, Screen.height));
             //GUI.Box(new Rect(0, 0,200, 250), "");
             int second = (int)(timePlayed + Time.timeSinceLevelLoad);
             int minute = second / 60;
             int hour = minute / 60;
             second %= 60;
             GUI.skin.box.alignment = TextAnchor.MiddleCenter;
-            GUI.Box(new Rect(55, 50, 180, 40), "Time Played\n" + hour.ToString("00") + ":" + minute.ToString("00") + ":" + second.ToString("00"));
-            if (GUI.Button(new Rect(20, 100, 250, 50), "Resume"))
+            GUI.Box(new Rect(20, 0, 250, 124), "Time Played\n" + hour.ToString("00") + ":" + minute.ToString("00") + ":" + second.ToString("00"));
+            if (GUI.Button(new Rect(20, 130, 250, 50), "Resume"))
             {
                 Screen.lockCursor = true;
                 Time.timeScale = 1.0f;
@@ -195,17 +198,21 @@ public class PlayerInteractions : MonoBehaviour
                 pause = false;
 
             }
-            if (GUI.Button(new Rect(20, 150, 250, 50), "Options"))
+			GUI.skin = daSkin2;
+
+            if (GUI.Button(new Rect(20, 180, 250, 50), "Options"))
             {
                 optionsMenu = true;
                 pauseMenu = false;
             }
-            if (GUI.Button( new Rect(20, 200, 250, 50), "Main Menu"))
+			GUI.skin = daSkin3;
+            if (GUI.Button( new Rect(20, 230, 250, 50), "Main Menu"))
             {
                 //LoadUnload.showEverything();
                 this.GetComponent<SaveLoad>().Save(true);
             }
-            if (GUI.Button(new Rect(20, 250, 250, 50), "Quit"))
+			GUI.skin = daSkin4;
+            if (GUI.Button(new Rect(20, 280, 250, 50), "Quit"))
             {
                 Application.Quit();
             }
@@ -253,6 +260,7 @@ public class PlayerInteractions : MonoBehaviour
             GUI.backgroundColor = Color.white;
             GUI.skin.box.alignment = TextAnchor.MiddleCenter;
 
+			GUI.skin = daSkin;
             if (GUI.Button(new Rect(50, 230, 250, 50), "Back"))
             {
                 optionsMenu = false;

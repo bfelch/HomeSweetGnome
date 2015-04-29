@@ -98,6 +98,8 @@ public class Useable : MonoBehaviour
                     if (!GameObject.Find("ArmBeast").GetComponent<Animation>().isPlaying)
                     {
                         GameObject.Find("ArmBeast").GetComponent<Animation>().Play();
+                        GameObject.Find("ArmBeast").GetComponent<AudioSource>().Play();
+
 						StartCoroutine(EndAnim(2.0F));
                     }
                 }
@@ -375,6 +377,7 @@ public class Useable : MonoBehaviour
 				   && charMotor.IsGrounded())
 				{
 					GameObject.Find("ShedBed").GetComponent<scrBed>().UseBed();
+                    GameObject.Find("Player").GetComponent<Player>().yawnSound.Play();
 				}
 			}
 

@@ -14,7 +14,7 @@ public class TreeWind : MonoBehaviour
 	void Update() 
 	{
 		// simple wind animation
-		Color WindRGBA = Wind * ((Mathf.Sin(Time.realtimeSinceStartup * WindFrequency)));
+        Color WindRGBA = Wind * ((Mathf.Sin(Time.time * WindFrequency)));
 		WindRGBA.a = Wind.w;
 		Shader.SetGlobalColor("_Wind", WindRGBA);
 	}
