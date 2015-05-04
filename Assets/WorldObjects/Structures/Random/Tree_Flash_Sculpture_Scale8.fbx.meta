@@ -1,0 +1,269 @@
+fileFormatVersion: 2
+guid: 580bd09a3bc7c754bb501df2689cf515
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: Base
+    100002: Flash_1
+    100004: Flash_10
+    100006: Flash_11
+    100008: Flash_12
+    100010: Flash_13
+    100012: Flash_14
+    100014: Flash_2
+    100016: Flash_3
+    100018: Flash_4
+    100020: Flash_5
+    100022: Flash_6
+    100024: Flash_7
+    100026: Flash_8
+    100028: Flash_9
+    100030: InnerRing
+    100032: MiddleRing
+    100034: OuterRing
+    100036: OuterRing1
+    100038: pCube1
+    100040: pCube2
+    100042: pCube3
+    100044: pCube4
+    100046: pTorus1
+    100048: pTorus2
+    100050: pTorus3
+    100052: pTorus3 1
+    100054: //RootNode
+    400000: Base
+    400002: Flash_1
+    400004: Flash_10
+    400006: Flash_11
+    400008: Flash_12
+    400010: Flash_13
+    400012: Flash_14
+    400014: Flash_2
+    400016: Flash_3
+    400018: Flash_4
+    400020: Flash_5
+    400022: Flash_6
+    400024: Flash_7
+    400026: Flash_8
+    400028: Flash_9
+    400030: InnerRing
+    400032: MiddleRing
+    400034: OuterRing
+    400036: OuterRing1
+    400038: pCube1
+    400040: pCube2
+    400042: pCube3
+    400044: pCube4
+    400046: pTorus1
+    400048: pTorus2
+    400050: pTorus3
+    400052: pTorus3 1
+    400054: //RootNode
+    2300000: Base
+    2300002: Flash_1
+    2300004: Flash_10
+    2300006: Flash_11
+    2300008: Flash_12
+    2300010: Flash_13
+    2300012: Flash_14
+    2300014: Flash_2
+    2300016: Flash_3
+    2300018: Flash_4
+    2300020: Flash_5
+    2300022: Flash_6
+    2300024: Flash_7
+    2300026: Flash_8
+    2300028: Flash_9
+    2300030: pCube1
+    2300032: pCube2
+    2300034: pCube3
+    2300036: pCube4
+    2300038: pTorus1
+    2300040: pTorus2
+    2300042: pTorus3
+    2300044: pTorus3 1
+    3300000: Base
+    3300002: Flash_1
+    3300004: Flash_10
+    3300006: Flash_11
+    3300008: Flash_12
+    3300010: Flash_13
+    3300012: Flash_14
+    3300014: Flash_2
+    3300016: Flash_3
+    3300018: Flash_4
+    3300020: Flash_5
+    3300022: Flash_6
+    3300024: Flash_7
+    3300026: Flash_8
+    3300028: Flash_9
+    3300030: pCube1
+    3300032: pCube2
+    3300034: pCube3
+    3300036: pCube4
+    3300038: pTorus1
+    3300040: pTorus2
+    3300042: pTorus3
+    3300044: pTorus3 1
+    4300000: Base
+    4300002: pCube3
+    4300004: pTorus1
+    4300006: pCube2
+    4300008: pTorus2
+    4300010: pCube1
+    4300012: pTorus3
+    4300014: pCube4
+    4300016: pTorus3
+    4300018: Flash_1
+    4300020: Flash_2
+    4300022: Flash_3
+    4300024: Flash_4
+    4300026: Flash_5
+    4300028: Flash_6
+    4300030: Flash_7
+    4300032: Flash_8
+    4300034: Flash_9
+    4300036: Flash_10
+    4300038: Flash_11
+    4300040: Flash_12
+    4300042: Flash_13
+    4300044: Flash_14
+    7400000: TreeFlash
+    9500000: //RootNode
+    11100000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: TreeFlash
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 240
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Base
+        weight: 1
+      - path: Flash_1
+        weight: 1
+      - path: Flash_2
+        weight: 1
+      - path: Flash_3
+        weight: 1
+      - path: Flash_4
+        weight: 1
+      - path: Flash_5
+        weight: 1
+      - path: Flash_6
+        weight: 1
+      - path: Flash_7
+        weight: 1
+      - path: Flash_8
+        weight: 1
+      - path: Flash_9
+        weight: 1
+      - path: Flash_10
+        weight: 1
+      - path: Flash_11
+        weight: 1
+      - path: Flash_12
+        weight: 1
+      - path: Flash_13
+        weight: 1
+      - path: Flash_14
+        weight: 1
+      - path: InnerRing
+        weight: 1
+      - path: InnerRing/pCube3
+        weight: 1
+      - path: InnerRing/pTorus1
+        weight: 1
+      - path: MiddleRing
+        weight: 1
+      - path: MiddleRing/pCube2
+        weight: 1
+      - path: MiddleRing/pTorus2
+        weight: 1
+      - path: OuterRing
+        weight: 1
+      - path: OuterRing/pCube1
+        weight: 1
+      - path: OuterRing/pTorus3
+        weight: 1
+      - path: OuterRing1
+        weight: 1
+      - path: OuterRing1/pCube4
+        weight: 1
+      - path: OuterRing1/pTorus3 1
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .150000006
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  additionalBone: 0
+  userData: 

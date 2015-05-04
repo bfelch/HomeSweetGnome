@@ -30,6 +30,8 @@ public class GUIWrapper : MonoBehaviour
 	public GameObject objBotLeft;
 	public GameObject objBotRight;
 
+
+
     public bool AddToSlot(Item item)
     {
         //add key to key ring

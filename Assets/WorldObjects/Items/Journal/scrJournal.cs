@@ -33,7 +33,7 @@ public class scrJournal : MonoBehaviour
 	
 	void Update()
 	{
-		if((Input.GetKeyUp(KeyCode.E) || Input.GetMouseButtonUp(0)) && journalOpen && closeOnce)
+		if((Input.GetKeyUp(KeyCode.E) || Input.GetMouseButtonUp(0)) && journalOpen && closeOnce && !PlayerInteractions.delayPause)
 		{
 			CloseJournalPage();
             closeOnce = false;

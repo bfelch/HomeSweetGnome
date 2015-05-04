@@ -35,7 +35,7 @@ public class scrBook : MonoBehaviour
 
 	void Update()
 	{
-		if((Input.GetKeyUp(KeyCode.E) || Input.GetMouseButtonUp(0)) && bookOpen)
+        if ((Input.GetKeyUp(KeyCode.E) || Input.GetMouseButtonUp(0)) && bookOpen && !PlayerInteractions.delayPause)
 		{
 			CloseBook();
 		}

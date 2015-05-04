@@ -110,10 +110,11 @@ public class Player : MonoBehaviour
             Sanity();
         }
 
-        if (Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonUp(0))
+        if (Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonUp(0) && !PlayerInteractions.delayPause)
 		{
 			Push();
 		}
+
     }
 
 	IEnumerator PushTimer(float waitTime, GameObject target)

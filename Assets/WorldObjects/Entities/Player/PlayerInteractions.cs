@@ -44,6 +44,8 @@ public class PlayerInteractions : MonoBehaviour
     private bool optionsMenu = false;
     public static bool pause;
     public static bool pauseMenu;
+
+    public static bool delayPause = false;
     private Font bark;
     private EndGames endgame;
 
@@ -93,6 +95,12 @@ public class PlayerInteractions : MonoBehaviour
 		endgame = GetComponent<EndGames>();
 	}
 
+    public IEnumerator DelayUnpause()
+    {
+        //Wait spawn time
+        yield return new WaitForSeconds(1f);
+        delayPause = false;
+    }
     void Update()
     {
         itemAction();
@@ -102,6 +110,7 @@ public class PlayerInteractions : MonoBehaviour
            if(!pause)
            { 
                 pause = true;
+                delayPause = true;
                 pauseMenu = true;
                 this.GetComponent<PlayerMovement>().enabled = false;
                 this.GetComponent<Player>().enabled = false;
@@ -123,6 +132,7 @@ public class PlayerInteractions : MonoBehaviour
                }
                Time.timeScale = 1.0f;
                pause = false;
+               StartCoroutine(DelayUnpause());
                optionsMenu = false;
            }
         }
@@ -135,7 +145,7 @@ public class PlayerInteractions : MonoBehaviour
         */
         
 		//CHEATS!
-		
+		/*
 		if(Input.GetKeyDown(KeyCode.Alpha6))
 		{
 			//Gate Teleport
@@ -161,7 +171,7 @@ public class PlayerInteractions : MonoBehaviour
             //Tunnel Teleport
             transform.position = new Vector3(57.45F, 26.58F, 19.13F);
         }
-
+        */
     }
 
     void OnGUI()
@@ -196,6 +206,7 @@ public class PlayerInteractions : MonoBehaviour
                     cameraLook.enabled = true;
                 }
                 pause = false;
+                StartCoroutine(DelayUnpause());
 
             }
 			GUI.skin = daSkin2;
@@ -496,7 +507,7 @@ public class PlayerInteractions : MonoBehaviour
         canHover = true; //Display item name
 
         //Pressing the E (Interact) key?
-        if (Input.GetKeyUp(KeyCode.E) || Input.GetMouseButtonUp(0) && !pause)
+        if (Input.GetKeyUp(KeyCode.E) || Input.GetMouseButtonUp(0) && !pause && !delayPause)
         {
             if (playerGUI.AddToSlot(targetItem))
             {
@@ -521,7 +532,7 @@ public class PlayerInteractions : MonoBehaviour
         canHover = true; //Display item name
 
         //Pressing the E (Interact) key?
-        if (Input.GetKeyUp(KeyCode.E) || Input.GetMouseButtonUp(0) && !pause)
+        if (Input.GetKeyUp(KeyCode.E) || Input.GetMouseButtonUp(0) && !pause && !delayPause)
         {
             if(targetUseable.Interact() != "")
             {
@@ -537,7 +548,7 @@ public class PlayerInteractions : MonoBehaviour
         canHover = true; //Display item name
 
         //Pressing the E (Interact) key?
-        if (Input.GetKeyUp(KeyCode.E) && Input.GetMouseButton(0) && !pause)
+        if (Input.GetKeyUp(KeyCode.E) && Input.GetMouseButton(0) && !pause && !delayPause)
         {
 			GameObject.Find("Player").GetComponent<Player>().itemEatSound.Play();
 
