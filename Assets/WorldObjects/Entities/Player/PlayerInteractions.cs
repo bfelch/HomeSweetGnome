@@ -144,6 +144,7 @@ public class PlayerInteractions : MonoBehaviour
         }
         */
         
+        /*
 		//CHEATS!
 		if(Input.GetKeyDown(KeyCode.Alpha6))
 		{
@@ -170,6 +171,7 @@ public class PlayerInteractions : MonoBehaviour
             //Tunnel Teleport
             transform.position = new Vector3(57.45F, 26.58F, 19.13F);
         }
+         * */
     }
 
     void OnGUI()
@@ -281,6 +283,7 @@ public class PlayerInteractions : MonoBehaviour
         }
         else if (showGUI)
         {
+            GUI.skin = daSkin2;
             RaycastHit hit;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             float distance = 1f;
