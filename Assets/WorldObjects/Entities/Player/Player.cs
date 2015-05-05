@@ -289,7 +289,7 @@ public class Player : MonoBehaviour
     {
         if (this.GetComponent<CharacterController>().slopeLimit == 90)
         {
-            this.GetComponent<CharacterController>().slopeLimit = 45;
+            this.GetComponent<CharacterController>().slopeLimit = 50;
         }
 
 		if(other.gameObject.tag == "Gnome" 

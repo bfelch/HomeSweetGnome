@@ -145,7 +145,6 @@ public class PlayerInteractions : MonoBehaviour
         */
         
 		//CHEATS!
-		/*
 		if(Input.GetKeyDown(KeyCode.Alpha6))
 		{
 			//Gate Teleport
@@ -171,7 +170,6 @@ public class PlayerInteractions : MonoBehaviour
             //Tunnel Teleport
             transform.position = new Vector3(57.45F, 26.58F, 19.13F);
         }
-        */
     }
 
     void OnGUI()
@@ -548,7 +546,7 @@ public class PlayerInteractions : MonoBehaviour
         canHover = true; //Display item name
 
         //Pressing the E (Interact) key?
-        if (Input.GetKeyUp(KeyCode.E) && Input.GetMouseButton(0) && !pause && !delayPause)
+        if (Input.GetKeyUp(KeyCode.E) || Input.GetMouseButton(0) && !pause && !delayPause)
         {
 			GameObject.Find("Player").GetComponent<Player>().itemEatSound.Play();
 
